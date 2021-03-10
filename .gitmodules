@@ -1,3 +1,3 @@
 [submodule "scikit-learn"]
 	path = scikit-learn
-	url = ../Grouped_variable_selection_with_RFGV.git
+	url = ./scikit-learn
