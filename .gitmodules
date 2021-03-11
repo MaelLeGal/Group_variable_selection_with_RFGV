@@ -1,1 +1,4 @@
 
+[submodule "scikit-learn"]
+	path = scikit-learn
+	url = https://github.com/scikit-learn/scikit-learn
