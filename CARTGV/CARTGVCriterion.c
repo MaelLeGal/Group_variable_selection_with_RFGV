@@ -1841,7 +1841,7 @@ struct __pyx_obj_7sklearn_4tree_6_utils_WeightedMedianCalculator {
 
 
 /* "CARTGVCriterion.pxd":30
- * # from ._criterion cimport Criterion
+ * # from sklearn.tree._criterion cimport Criterion
  * 
  * cdef class CARTGVCriterion():             # <<<<<<<<<<<<<<
  *     # The criterion computes the impurity of a node and the reduction of

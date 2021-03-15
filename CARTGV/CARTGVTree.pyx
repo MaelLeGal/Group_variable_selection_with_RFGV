@@ -215,25 +215,26 @@ cdef class CARTGVTree():
             # with gil:
             #   node.splitting_tree = pickle.dumps(splitting_tree)
             node.n_childs = n_childs
+            # group should be given here ?
 
         self.node_count += 1
 
         return node_id
 
-    # cpdef np.ndarray predict(self, object X):
-    #     """Predict target for X."""
-    #     out = self._get_value_ndarray().take(self.apply(X), axis=0,
-    #                                          mode='clip')
-    #     if self.n_outputs == 1:
-    #         out = out.reshape(X.shape[0], self.max_n_classes)
-    #     return out
+    cpdef np.ndarray predict(self, object X):
+        """Predict target for X."""
+        out = self._get_value_ndarray().take(self.apply(X), axis=0,
+                                              mode='clip')
+        if self.n_outputs == 1:
+            out = out.reshape(X.shape[0], self.max_n_classes)
+        return out
 
-    # cpdef np.ndarray apply(self, object X):
-    #     """Finds the terminal region (=leaf node) for each sample in X."""
-    #     if issparse(X):
-    #         return self._apply_sparse_csr(X)
-    #     else:
-    #         return self._apply_dense(X)
+    cpdef np.ndarray apply(self, object X):
+        """Finds the terminal region (=leaf node) for each sample in X."""
+        if issparse(X):
+            return self._apply_sparse_csr(X)
+        else:
+            return self._apply_dense(X)
 
     # cdef inline np.ndarray _apply_dense(self, object X):
     #     """Finds the terminal region (=leaf node) for each sample in X."""
@@ -241,7 +242,7 @@ cdef class CARTGVTree():
     #     # Check input
     #     if not isinstance(X, np.ndarray):
     #         raise ValueError("X should be in np.ndarray format, got %s"
-    #                          % type(X))
+    #                           % type(X))
 
     #     if X.dtype != DTYPE:
     #         raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
@@ -272,19 +273,18 @@ cdef class CARTGVTree():
     #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.left_child]
     #                   else:
     #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.right_child]
-    #               node = splitting_tree_node
+    #               node = splitting_tree_node #TODO changer cette ligne assigniation Node a CARTGVNode ici
     #             out_ptr[i] = <SIZE_t>(node - self.nodes)  # node offset
 
     #     return out
 
-    # #TODO : A modifier pour correspondre a CARTGV
     # cdef inline np.ndarray _apply_sparse_csr(self, object X):
     #     """Finds the terminal region (=leaf node) for each sample in sparse X.
     #     """
     #     # Check input
     #     if not isinstance(X, csr_matrix):
     #         raise ValueError("X should be in csr_matrix format, got %s"
-    #                          % type(X))
+    #                           % type(X))
 
     #     if X.dtype != DTYPE:
     #         raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
@@ -303,7 +303,7 @@ cdef class CARTGVTree():
 
     #     # Initialize output
     #     cdef np.ndarray[SIZE_t, ndim=1] out = np.zeros((n_samples,),
-    #                                                    dtype=np.intp)
+    #                                                     dtype=np.intp)
     #     cdef SIZE_t* out_ptr = <SIZE_t*> out.data
 
     #     # Initialize auxiliary data-structure
@@ -347,7 +347,7 @@ cdef class CARTGVTree():
     #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.left_child]
     #                   else:
     #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.right_child]
-    #                 node = splitting_tree_node
+    #                 node = splitting_tree_node  #TODO changer cette ligne assigniation Node a CARTGVNode ici
     #             out_ptr[i] = <SIZE_t>(node - self.nodes)  # node offset
 
     #         # Free auxiliary arrays
@@ -356,12 +356,12 @@ cdef class CARTGVTree():
 
     #     return out
 
-    # cpdef object decision_path(self, object X):
-    #     """Finds the decision path (=node) for each sample in X."""
-    #     if issparse(X):
-    #         return self._decision_path_sparse_csr(X)
-    #     else:
-    #         return self._decision_path_dense(X)
+    cpdef object decision_path(self, object X):
+        """Finds the decision path (=node) for each sample in X."""
+        if issparse(X):
+            return self._decision_path_sparse_csr(X)
+        else:
+            return self._decision_path_dense(X)
 
     # cdef inline object _decision_path_dense(self, object X):
     #     """Finds the decision path (=node) for each sample in X."""
@@ -369,7 +369,7 @@ cdef class CARTGVTree():
     #     # Check input
     #     if not isinstance(X, np.ndarray):
     #         raise ValueError("X should be in np.ndarray format, got %s"
-    #                          % type(X))
+    #                           % type(X))
 
     #     if X.dtype != DTYPE:
     #         raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
@@ -383,8 +383,8 @@ cdef class CARTGVTree():
     #     cdef SIZE_t* indptr_ptr = <SIZE_t*> indptr.data
 
     #     cdef np.ndarray[SIZE_t] indices = np.zeros(n_samples *
-    #                                                (1 + self.max_depth),
-    #                                                dtype=np.intp)
+    #                                                 (1 + self.max_depth),
+    #                                                 dtype=np.intp)
     #     cdef SIZE_t* indices_ptr = <SIZE_t*> indices.data
 
     #     # Initialize auxiliary data-structure
@@ -419,9 +419,9 @@ cdef class CARTGVTree():
 
     #     indices = indices[:indptr[n_samples]]
     #     cdef np.ndarray[SIZE_t] data = np.ones(shape=len(indices),
-    #                                            dtype=np.intp)
+    #                                             dtype=np.intp)
     #     out = csr_matrix((data, indices, indptr),
-    #                      shape=(n_samples, self.node_count))
+    #                       shape=(n_samples, self.node_count))
 
     #     return out
 
@@ -432,7 +432,7 @@ cdef class CARTGVTree():
     #     # Check input
     #     if not isinstance(X, csr_matrix):
     #         raise ValueError("X should be in csr_matrix format, got %s"
-    #                          % type(X))
+    #                           % type(X))
 
     #     if X.dtype != DTYPE:
     #         raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
@@ -454,8 +454,8 @@ cdef class CARTGVTree():
     #     cdef SIZE_t* indptr_ptr = <SIZE_t*> indptr.data
 
     #     cdef np.ndarray[SIZE_t] indices = np.zeros(n_samples *
-    #                                                (1 + self.max_depth),
-    #                                                dtype=np.intp)
+    #                                                 (1 + self.max_depth),
+    #                                                 dtype=np.intp)
     #     cdef SIZE_t* indices_ptr = <SIZE_t*> indices.data
 
     #     # Initialize auxiliary data-structure
@@ -514,9 +514,9 @@ cdef class CARTGVTree():
 
     #     indices = indices[:indptr[n_samples]]
     #     cdef np.ndarray[SIZE_t] data = np.ones(shape=len(indices),
-    #                                            dtype=np.intp)
+    #                                             dtype=np.intp)
     #     out = csr_matrix((data, indices, indptr),
-    #                      shape=(n_samples, self.node_count))
+    #                       shape=(n_samples, self.node_count))
 
     #     return out
 
@@ -559,7 +559,6 @@ cdef class CARTGVTree():
             raise ValueError("Can't initialize array.")
         return arr
 
-    #TODO : Finir de l'adapter pour CARTGV
     # cpdef compute_group_importances(self, penality_function, normalize=True):
     #     """Computes the importance of each group (aka grouped variables)."""
     #     cdef Node* left
@@ -603,8 +602,8 @@ cdef class CARTGVTree():
     #     return importances
 
     # def compute_partial_dependence(self, DTYPE_t[:, ::1] X,
-    #                                int[::1] target_features,
-    #                                double[::1] out):
+    #                                 int[::1] target_features,
+    #                                 double[::1] out):
     #     """Partial dependence of the response on the ``target_feature`` set.
     #     For each sample in ``X`` a tree traversal is performed.
     #     Each traversal starts from the root with weight 1.0.
@@ -689,7 +688,7 @@ cdef class CARTGVTree():
     #                     for i in range(len(current_node.childs)):
     #                       node_idx_stack[stack_size] = current_node.childs[i]
     #                       child_sample_frac = (self.nodes[current_node.childs[i]].weighted_n_node_samples /
-    #                                            current_node.weighted_n_node_samples)
+    #                                             current_node.weighted_n_node_samples)
     #                       current_weight = weight_stack[stack_size]
     #                       weight_stack[stack_size] = current_weight * child_sample_frac
     #                       stack_size += 1
@@ -697,7 +696,7 @@ cdef class CARTGVTree():
     #         # Sanity check. Should never happen.
     #         if not (0.999 < total_weight < 1.001):
     #             raise ValueError("Total weight should be 1.0 but was %.9f" %
-    #                              total_weight)
+    #                               total_weight)
 
 cdef class CARTGVTreeBuilder():
     
@@ -717,7 +716,7 @@ cdef class CARTGVTreeBuilder():
         self.splitting_tree_builder = TreeBuilder(splitter, min_samples_split, min_samples_leaf, min_weight_leaf,
                                                   max_depth, min_impurity_decrease, min_impurity_split)
 
-    cpdef build(self, CARTGVTree tree, object X, np.ndarray y,
+    cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=None):
         """Build a decision tree from the training set (X, y)."""
 
@@ -750,7 +749,7 @@ cdef class CARTGVTreeBuilder():
         cdef double min_impurity_split = self.min_impurity_split
 
         # Recursive partition (without actual recursion)
-        splitter.init(X, y, sample_weight_ptr)
+        splitter.init(X, y, sample_weight_ptr, groups)
 
         cdef SIZE_t start
         cdef SIZE_t end

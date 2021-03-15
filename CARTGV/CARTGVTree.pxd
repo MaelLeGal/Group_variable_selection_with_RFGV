@@ -73,13 +73,13 @@ cdef class CARTGVTree():
   cdef np.ndarray _get_value_ndarray(self)
   cdef np.ndarray _get_node_ndarray(self)
   
-  # cpdef np.ndarray predict(self, object X)
+  cpdef np.ndarray predict(self, object X)
   
-  # cpdef np.ndarray apply(self, object X)
+  cpdef np.ndarray apply(self, object X)
   # cdef np.ndarray _apply_dense(self, object X)
   # cdef np.ndarray _apply_sparse_csr(self, object X)
   
-  # cpdef object decision_path(self, object X)
+  cpdef object decision_path(self, object X)
   # cdef object _decision_path_dense(serlf, object X)
   # cdef object _decision_path_sparse_csr(self,object X)
   
@@ -105,7 +105,7 @@ cdef class CARTGVTreeBuilder():
     cdef double min_impurity_split
     cdef double min_impurity_decrease   # Impurity threshold for early stopping
 
-    cpdef build(self, CARTGVTree tree, object X, np.ndarray y,
+    cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=*)
     cdef _check_input(self, object X, np.ndarray y, np.ndarray sample_weight)  
   

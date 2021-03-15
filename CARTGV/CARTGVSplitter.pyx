@@ -24,8 +24,8 @@ from sklearn.tree._utils cimport log, rand_int, rand_uniform, RAND_R_MAX, safe_r
 from sklearn.tree._tree cimport Tree, TreeBuilder, Node
 from sklearn.tree._splitter cimport Splitter
 
-from numpy import float32 as DTYPE
-from numpy import float64 as DOUBLE
+# from numpy import float32 as DTYPE
+# from numpy import float64 as DOUBLE
 
 cdef double INFINITY = np.inf
 cdef double EPSILON = np.finfo('double').eps
@@ -61,8 +61,13 @@ cdef inline void _init_split(CARTGVSplitRecord* self) nogil:
     self.starts = []
     self.ends = []
     self.improvement = -INFINITY
+    self.splitting_tree = NULL
+    self.n_childs = 0
 
 cdef class CARTGVSplitter():
+    
+    # cdef SIZE_t[:, :] groups
+  
     """Abstract splitter class.
     Splitters are called by tree builders to find the best splits on both
     sparse and dense data, one split at a time.
@@ -104,13 +109,17 @@ cdef class CARTGVSplitter():
         self.min_samples_leaf = min_samples_leaf
         self.min_weight_leaf = min_weight_leaf
         self.random_state = random_state
+        
+        self.groups = np.empty()
+        self.n_groups = 0
+        self.len_groups = []
 
     def __dealloc__(self):
         """Destructor."""
 
         free(self.samples)
         free(self.features)
-        free(self.constant_features)
+        # free(self.constant_features)
         # free(self.feature_values)
 
     def __getstate__(self):
@@ -122,16 +131,62 @@ cdef class CARTGVSplitter():
     cdef int init(self,
                   object X,
                   const DOUBLE_t[:, ::1] y,
-                  DOUBLE_t* sample_weight) except -1:
+                  DOUBLE_t* sample_weight, object groups) except -1:
         """Initialize the splitter
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
         or 0 otherwise.
         """
 
-        # Call parent init
-        Splitter.init(self, X, y, sample_weight)
+        self.rand_r_state = self.random_state.randint(0, RAND_R_MAX)
+        cdef SIZE_t n_samples = X.shape[0]
+
+        # Create a new array which will be used to store nonzero
+        # samples from the feature of interest
+        cdef SIZE_t* samples = safe_realloc(&self.samples, n_samples)
+
+        cdef SIZE_t i, j, k
+        cdef double weighted_n_samples = 0.0
+        j = 0
+
+        for i in range(n_samples):
+            # Only work with positively weighted samples
+            if sample_weight == NULL or sample_weight[i] != 0.0:
+                samples[j] = i
+                j += 1
+
+            if sample_weight != NULL:
+                weighted_n_samples += sample_weight[i]
+            else:
+                weighted_n_samples += 1.0
+
+        # Number of samples is number of positively weighted samples
+        self.n_samples = j
+        self.weighted_n_samples = weighted_n_samples
+
+        cdef SIZE_t n_features = X.shape[1]
+        cdef SIZE_t* features = safe_realloc(&self.features, n_features)
+
+        for i in range(n_features):
+            features[i] = i
+
+        self.n_features = n_features
+
+        # safe_realloc(&self.feature_values, n_samples)
+        # safe_realloc(&self.constant_features, n_features)
+
+        self.y = y
+
+        self.sample_weight = sample_weight
 
         self.X = X
+        
+        self.groups = groups
+        cdef int n_groups = groups.shape[0]
+        self.n_groups = n_groups
+        
+        for k in range(n_groups):
+          self.len_groups[k] = len(groups[k])
+        
         return 0
 
 
@@ -174,9 +229,9 @@ cdef class CARTGVSplitter():
         cdef SIZE_t start = self.start
         cdef SIZE_t end = self.end
 
-        cdef SIZE_t** groups = self.groups
+        cdef SIZE_t[:,:] groups = self.groups
         cdef SIZE_t n_groups = self.n_groups
-        cdef SIZE_t* group
+        cdef SIZE_t[:] group
         cdef int* len_groups = self.len_groups
         cdef int len_group
         cdef SIZE_t feature
@@ -201,6 +256,7 @@ cdef class CARTGVSplitter():
         
         cdef SIZE_t[:] sorted_obs_memoryview
         cdef SIZE_t* sorted_obs
+        cdef SIZE_t* tmp_sorted_obs
         cdef int n_samples
         cdef int n_nodes
         cdef Node* sorted_leaves = []
@@ -232,7 +288,7 @@ cdef class CARTGVSplitter():
               for l in range(len_group):
                 with gil:
                   Xf[i][l] = self.X[samples[i],group[l]]
-               
+                                 
             # Evaluate all splits
             self.criterion.reset()
 
@@ -244,11 +300,8 @@ cdef class CARTGVSplitter():
             n_nodes = self.splitting_tree.node_count
             with gil:
               n_leaves = self.splitting_tree.n_leaves
-              # np.sum(np.logical_and(
-              #   self.splitting_tree.children_left == -1,
-              #   self.splitting_tree.children_right == -1))
             
-            sorted_obs = self.splitting_tree_builder.splitter.samples
+            tmp_sorted_obs = self.splitting_tree_builder.splitter.samples
             n_samples = self.splitting_tree_builder.splitter.n_samples
             for k in range(n_nodes):
               if self.splitting_tree.nodes[k].left_child != _TREE_LEAF and self.splitting_tree.nodes[k].right_child != _TREE_LEAF:
@@ -281,22 +334,23 @@ cdef class CARTGVSplitter():
 
             if current_proxy_improvement > best_proxy_improvement:
                 best_proxy_improvement = current_proxy_improvement
-                # with gil:
-                #   current.splitting_tree = pickle.dumps(self.splitting_tree)
+                with gil:
+                  current.splitting_tree = pickle.dumps(self.splitting_tree)
                 current.starts = starts
                 current.ends = ends
                 current.n_childs = n_leaves
                 best = current  # copy
+                sorted_obs = tmp_sorted_obs
 
-            # Update the samples array
-            self.samples = sorted_obs
+        # Update the samples array
+        self.samples = sorted_obs
 
-            self.criterion.reset()
-            with gil:
-              self.criterion.update(best.starts,best.ends,best.splitting_tree.n_leaves)
-            self.criterion.children_impurity(best.impurity_childs)
-            best.improvement = self.criterion.impurity_improvement(
-                impurity, best.impurity_childs)
+        self.criterion.reset()
+        with gil:
+          self.criterion.update(best.starts,best.ends,best.splitting_tree.n_leaves)
+        self.criterion.children_impurity(best.impurity_childs)
+        best.improvement = self.criterion.impurity_improvement(
+            impurity, best.impurity_childs)
 
         # Return values
         split[0] = best

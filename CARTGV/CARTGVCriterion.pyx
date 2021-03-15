@@ -43,7 +43,7 @@ from numpy.math cimport INFINITY
 
 from sklearn.tree._utils cimport sizet_ptr_to_ndarray, safe_realloc
 
-# from ._criterion cimport Criterion
+# from sklearn.tree._criterion cimport Criterion
 
 # EPSILON is used in the Poisson criterion
 cdef double EPSILON = 10 * np.finfo('double').eps
