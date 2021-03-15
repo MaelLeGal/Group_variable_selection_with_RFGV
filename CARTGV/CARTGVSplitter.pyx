@@ -57,9 +57,10 @@ cdef DTYPE_t FEATURE_THRESHOLD = 1e-7
 cdef DTYPE_t EXTRACT_NNZ_SWITCH = 0.1
 
 cdef inline void _init_split(CARTGVSplitRecord* self) nogil:
-    self.impurity_childs = []
-    self.starts = []
-    self.ends = []
+    with gil : 
+      self.impurity_childs = []
+      self.starts = []
+      self.ends = []
     self.improvement = -INFINITY
     self.splitting_tree = NULL
     self.n_childs = 0
@@ -267,6 +268,8 @@ cdef class CARTGVSplitter():
         cdef int previous_pos = 0
         with gil:
            Xf = self.feature_values
+           
+        cdef bytes splitting_tree
 
         _init_split(&best)
 
@@ -335,7 +338,8 @@ cdef class CARTGVSplitter():
             if current_proxy_improvement > best_proxy_improvement:
                 best_proxy_improvement = current_proxy_improvement
                 with gil:
-                  current.splitting_tree = pickle.dumps(self.splitting_tree)
+                  splitting_tree = pickle.dumps(self.splitting_tree)
+                  current.splitting_tree = splitting_tree #pickle.dumps(self.splitting_tree).decode('UTF-8')
                 current.starts = starts
                 current.ends = ends
                 current.n_childs = n_leaves

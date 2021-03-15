@@ -1822,7 +1822,7 @@ struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder {
 
 
 /* "CARTGVCriterion.pxd":30
- * # from ._criterion cimport Criterion
+ * # from sklearn.tree._criterion cimport Criterion
  * 
  * cdef class CARTGVCriterion():             # <<<<<<<<<<<<<<
  *     # The criterion computes the impurity of a node and the reduction of
@@ -1893,6 +1893,7 @@ struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter {
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *sample_weight;
   struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder *splitting_tree_builder;
   struct __pyx_obj_7sklearn_4tree_5_tree_Tree *splitting_tree;
+  __Pyx_memviewslice groups;
 };
 
 
@@ -2217,7 +2218,7 @@ static struct __pyx_vtabstruct_7sklearn_4tree_5_tree_TreeBuilder *__pyx_vtabptr_
 
 
 /* "CARTGVCriterion.pxd":30
- * # from ._criterion cimport Criterion
+ * # from sklearn.tree._criterion cimport Criterion
  * 
  * cdef class CARTGVCriterion():             # <<<<<<<<<<<<<<
  *     # The criterion computes the impurity of a node and the reduction of
