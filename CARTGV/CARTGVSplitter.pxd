@@ -39,8 +39,6 @@ cdef struct CARTGVSplitRecord:
     SIZE_t* ends            # Array containing the index of the end of each childs in the samples array.
     char* splitting_tree
     int n_childs
-    # void* splitting_tree #Problème d'accès au champs et gestion des références à faire par nous mêmes.
-
 
 cdef class CARTGVSplitter():
     # The splitter searches in the input space for a feature and a threshold
@@ -60,11 +58,10 @@ cdef class CARTGVSplitter():
     cdef SIZE_t* samples                 # Sample indices in X, y
     cdef SIZE_t n_samples                # X.shape[0]
     cdef double weighted_n_samples       # Weighted number of samples
-    cdef SIZE_t** groups
+    # cdef SIZE_t** groups
     cdef SIZE_t n_groups
     cdef int* len_groups
     cdef SIZE_t* features                # Feature indices in X
-    cdef SIZE_t* constant_features       # Constant features indices
     cdef SIZE_t n_features               # X.shape[1]
     cdef object feature_values         # temp. array holding feature values
 
@@ -72,10 +69,12 @@ cdef class CARTGVSplitter():
     cdef SIZE_t end                      # End position for the current node
 
     cdef const DOUBLE_t[:, ::1] y
-    cdef DOUBLE_t** sample_weight
+    cdef DOUBLE_t* sample_weight
     
     cdef TreeBuilder splitting_tree_builder
     cdef Tree splitting_tree
+    
+    cdef SIZE_t[:,:] groups
 
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,
@@ -95,7 +94,7 @@ cdef class CARTGVSplitter():
 
     # Methods
     cdef int init(self, object X, const DOUBLE_t[:, ::1] y,
-                  DOUBLE_t* sample_weight) except -1
+                  DOUBLE_t* sample_weight, object groups) except -1
 
     cdef int node_reset(self, SIZE_t start, SIZE_t end,
                         double* weighted_n_node_samples) nogil except -1

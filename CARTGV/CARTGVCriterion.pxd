@@ -25,7 +25,7 @@ from sklearn.tree._tree cimport SIZE_t
 from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
-# from ._criterion cimport Criterion
+# from sklearn.tree._criterion cimport Criterion
 
 cdef class CARTGVCriterion():
     # The criterion computes the impurity of a node and the reduction of
