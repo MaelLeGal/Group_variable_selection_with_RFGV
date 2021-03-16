@@ -104,6 +104,7 @@ cdef class CARTGVTreeBuilder():
     cdef SIZE_t mvar                    # Number of variable in the group selected during the RF
     cdef double min_impurity_split
     cdef double min_impurity_decrease   # Impurity threshold for early stopping
+    cdef TreeBuilder splitting_tree_builder
 
     cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=*)

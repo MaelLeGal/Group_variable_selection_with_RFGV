@@ -157,7 +157,7 @@ cdef class CARTGVCriterion():
         The absolute impurity improvement is only computed by the
         impurity_improvement method once the best split has been found.
         """
-        cdef double* impurity_childs = []
+        cdef double* impurity_childs = [0]
         self.children_impurity(impurity_childs)
 
         cdef double res = 0
@@ -470,8 +470,8 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
         """
         cdef SIZE_t* n_classes = self.n_classes
         cdef double** sum_childs = self.sum_childs
-        cdef double* gini_childs = []
-        cdef double* sq_count_childs = []
+        cdef double* gini_childs = [0]
+        cdef double* sq_count_childs = [0]
         cdef double count_k
         cdef SIZE_t k
         cdef SIZE_t i
@@ -491,8 +491,7 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
                 sq_count_childs[j] += count_k * count_k
 
           for l in range(n_childs):
-            gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *
-                                                self.weighted_n_childs[l])
+            gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
             sum_childs[l] += self.sum_stride
 
         for m in range(n_childs):

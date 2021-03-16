@@ -3732,7 +3732,7 @@ static double __pyx_f_15CARTGVCriterion_15CARTGVCriterion_proxy_impurity_improve
   int __pyx_v_n_childs;
   int __pyx_v_i;
   double __pyx_r;
-  double __pyx_t_1[0];
+  double __pyx_t_1[1];
   int __pyx_t_2;
   int __pyx_t_3;
   int __pyx_t_4;
@@ -3740,15 +3740,16 @@ static double __pyx_f_15CARTGVCriterion_15CARTGVCriterion_proxy_impurity_improve
   /* "CARTGVCriterion.pyx":160
  *         impurity_improvement method once the best split has been found.
  *         """
- *         cdef double* impurity_childs = []             # <<<<<<<<<<<<<<
+ *         cdef double* impurity_childs = [0]             # <<<<<<<<<<<<<<
  *         self.children_impurity(impurity_childs)
  * 
  */
+  __pyx_t_1[0] = 0.0;
   __pyx_v_impurity_childs = __pyx_t_1;
 
   /* "CARTGVCriterion.pyx":161
  *         """
- *         cdef double* impurity_childs = []
+ *         cdef double* impurity_childs = [0]
  *         self.children_impurity(impurity_childs)             # <<<<<<<<<<<<<<
  * 
  *         cdef double res = 0
@@ -5788,8 +5789,8 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   int __pyx_v_n_childs;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_1;
   double **__pyx_t_2;
-  double __pyx_t_3[0];
-  double __pyx_t_4[0];
+  double __pyx_t_3[1];
+  double __pyx_t_4[1];
   int __pyx_t_5;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_6;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_7;
@@ -5810,7 +5811,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  *         """
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
  *         cdef double** sum_childs = self.sum_childs
- *         cdef double* gini_childs = []
+ *         cdef double* gini_childs = [0]
  */
   __pyx_t_1 = __pyx_v_self->__pyx_base.n_classes;
   __pyx_v_n_classes = __pyx_t_1;
@@ -5819,8 +5820,8 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  *         """
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
- *         cdef double* gini_childs = []
- *         cdef double* sq_count_childs = []
+ *         cdef double* gini_childs = [0]
+ *         cdef double* sq_count_childs = [0]
  */
   __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_2;
@@ -5828,19 +5829,21 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   /* "CARTGVCriterion.pyx":473
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs
- *         cdef double* gini_childs = []             # <<<<<<<<<<<<<<
- *         cdef double* sq_count_childs = []
+ *         cdef double* gini_childs = [0]             # <<<<<<<<<<<<<<
+ *         cdef double* sq_count_childs = [0]
  *         cdef double count_k
  */
+  __pyx_t_3[0] = 0.0;
   __pyx_v_gini_childs = __pyx_t_3;
 
   /* "CARTGVCriterion.pyx":474
  *         cdef double** sum_childs = self.sum_childs
- *         cdef double* gini_childs = []
- *         cdef double* sq_count_childs = []             # <<<<<<<<<<<<<<
+ *         cdef double* gini_childs = [0]
+ *         cdef double* sq_count_childs = [0]             # <<<<<<<<<<<<<<
  *         cdef double count_k
  *         cdef SIZE_t k
  */
+  __pyx_t_4[0] = 0.0;
   __pyx_v_sq_count_childs = __pyx_t_4;
 
   /* "CARTGVCriterion.pyx":482
@@ -5936,8 +5939,8 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  *                 sq_count_childs[j] += count_k * count_k
  * 
  *           for l in range(n_childs):             # <<<<<<<<<<<<<<
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *
- *                                                 self.weighted_n_childs[l])
+ *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
+ *             sum_childs[l] += self.sum_stride
  */
     __pyx_t_5 = __pyx_v_n_childs;
     __pyx_t_9 = __pyx_t_5;
@@ -5947,28 +5950,12 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       /* "CARTGVCriterion.pyx":494
  * 
  *           for l in range(n_childs):
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *             # <<<<<<<<<<<<<<
- *                                                 self.weighted_n_childs[l])
+ *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])             # <<<<<<<<<<<<<<
  *             sum_childs[l] += self.sum_stride
+ * 
  */
       __pyx_t_11 = __pyx_v_l;
-
-      /* "CARTGVCriterion.pyx":495
- *           for l in range(n_childs):
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *
- *                                                 self.weighted_n_childs[l])             # <<<<<<<<<<<<<<
- *             sum_childs[l] += self.sum_stride
- * 
- */
       __pyx_t_15 = ((__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]) * (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]));
-
-      /* "CARTGVCriterion.pyx":494
- * 
- *           for l in range(n_childs):
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *             # <<<<<<<<<<<<<<
- *                                                 self.weighted_n_childs[l])
- *             sum_childs[l] += self.sum_stride
- */
       if (unlikely(__pyx_t_15 == 0)) {
         #ifdef WITH_THREAD
         PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
@@ -5981,9 +5968,9 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       }
       (__pyx_v_gini_childs[__pyx_t_11]) = ((__pyx_v_gini_childs[__pyx_t_11]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_15)));
 
-      /* "CARTGVCriterion.pyx":496
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] *
- *                                                 self.weighted_n_childs[l])
+      /* "CARTGVCriterion.pyx":495
+ *           for l in range(n_childs):
+ *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
  *             sum_childs[l] += self.sum_stride             # <<<<<<<<<<<<<<
  * 
  *         for m in range(n_childs):
@@ -5993,7 +5980,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
     }
   }
 
-  /* "CARTGVCriterion.pyx":498
+  /* "CARTGVCriterion.pyx":497
  *             sum_childs[l] += self.sum_stride
  * 
  *         for m in range(n_childs):             # <<<<<<<<<<<<<<
@@ -6004,7 +5991,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_9; __pyx_t_6+=1) {
     __pyx_v_m = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":499
+    /* "CARTGVCriterion.pyx":498
  * 
  *         for m in range(n_childs):
  *           impurity_childs[m] = gini_childs[m] / self.n_outputs             # <<<<<<<<<<<<<<
@@ -6017,7 +6004,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 499, __pyx_L1_error)
+      __PYX_ERR(0, 498, __pyx_L1_error)
     }
     (__pyx_v_impurity_childs[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
   }
