@@ -144,6 +144,7 @@ cdef class CARTGVTree():
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
         or 0 otherwise.
         """
+        
         if self._resize_c(capacity) != 0:
             # Acquire gil only if we need to raise
             with gil:
@@ -168,14 +169,15 @@ cdef class CARTGVTree():
         # safe_realloc(self.value, capacity * self.value_stride)
 
         # value memory is initialised to 0 to enable classifier argmax
-        if capacity > self.capacity:
-            memset(<void*>(self.value + self.capacity * self.value_stride), 0,
-                   (capacity - self.capacity) * self.value_stride *
-                   sizeof(double))
+        # if capacity > self.capacity:
+        #     memset(<void*>(self.value + self.capacity * self.value_stride), 0,
+        #            (capacity - self.capacity) * self.value_stride *
+        #            sizeof(double))
 
         # if capacity smaller than node_count, adjust the counter
         if capacity < self.node_count:
             self.node_count = capacity
+
 
         self.capacity = capacity
         return 0
@@ -773,6 +775,8 @@ cdef class CARTGVTreeBuilder():
         cdef Stack stack = Stack(INITIAL_STACK_SIZE)
         cdef StackRecord stack_record
 
+        print("End parameters initialization")
+
         with nogil:
             # push root node onto stack
             rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0) #TODO créer une nouvelle class Stack_Record sans is_left
@@ -781,6 +785,9 @@ cdef class CARTGVTreeBuilder():
                 with gil:
                     raise MemoryError()
 
+            with gil:
+              print("Start main loop")
+              
             while not stack.is_empty():
                 stack.pop(&stack_record)
 

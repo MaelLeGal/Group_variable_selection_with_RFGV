@@ -9,6 +9,6 @@ ext_modules = [
 ]
 
 setup(
-  name="cartgvtree",
+  name="cartgv",
   ext_modules=cythonize(ext_modules,gdb_debug=True),
   include_dirs=["."])

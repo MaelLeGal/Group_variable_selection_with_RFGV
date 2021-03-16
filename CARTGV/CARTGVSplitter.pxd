@@ -60,7 +60,7 @@ cdef class CARTGVSplitter():
     cdef double weighted_n_samples       # Weighted number of samples
     # cdef SIZE_t** groups
     cdef SIZE_t n_groups
-    cdef int* len_groups
+    cdef int[:] len_groups
     cdef SIZE_t* features                # Feature indices in X
     cdef SIZE_t n_features               # X.shape[1]
     cdef object feature_values         # temp. array holding feature values
@@ -74,7 +74,9 @@ cdef class CARTGVSplitter():
     cdef TreeBuilder splitting_tree_builder
     cdef Tree splitting_tree
     
-    cdef SIZE_t[:,:] groups
+    cdef int[:,:] groups
+    
+    cdef object X
 
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,

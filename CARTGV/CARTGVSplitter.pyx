@@ -13,7 +13,7 @@ from libc.string cimport memcpy
 from libc.string cimport memset
 
 import numpy as np
-import cPickle as pickle
+import pickle as pickle
 cimport numpy as np
 np.import_array()
 
@@ -57,10 +57,9 @@ cdef DTYPE_t FEATURE_THRESHOLD = 1e-7
 cdef DTYPE_t EXTRACT_NNZ_SWITCH = 0.1
 
 cdef inline void _init_split(CARTGVSplitRecord* self) nogil:
-    with gil : 
-      self.impurity_childs = []
-      self.starts = []
-      self.ends = []
+    self.impurity_childs = [0]
+    self.starts = [0]
+    self.ends = [0]
     self.improvement = -INFINITY
     self.splitting_tree = NULL
     self.n_childs = 0
@@ -74,7 +73,7 @@ cdef class CARTGVSplitter():
     sparse and dense data, one split at a time.
     """
 
-    def __cinit__(self, CARTGVCriterion criterion, SIZE_t max_features,
+    def __cinit__(self, CARTGVCriterion criterion, SIZE_t max_grouped_features, int n_groups,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
                   object random_state):
         """
@@ -106,14 +105,14 @@ cdef class CARTGVSplitter():
 
         self.sample_weight = NULL
 
-        self.max_features = max_features
+        self.max_grouped_features = max_grouped_features
         self.min_samples_leaf = min_samples_leaf
         self.min_weight_leaf = min_weight_leaf
         self.random_state = random_state
         
-        self.groups = np.empty()
-        self.n_groups = 0
-        self.len_groups = []
+        self.groups = np.empty((n_groups,max_grouped_features),dtype=int)
+        self.n_groups = n_groups
+        self.len_groups = np.empty((n_groups),dtype=int)
 
     def __dealloc__(self):
         """Destructor."""
@@ -230,10 +229,10 @@ cdef class CARTGVSplitter():
         cdef SIZE_t start = self.start
         cdef SIZE_t end = self.end
 
-        cdef SIZE_t[:,:] groups = self.groups
+        cdef int[:,:] groups = self.groups
         cdef SIZE_t n_groups = self.n_groups
-        cdef SIZE_t[:] group
-        cdef int* len_groups = self.len_groups
+        cdef int[:] group
+        cdef int[:] len_groups = self.len_groups
         cdef int len_group
         cdef SIZE_t feature
 
@@ -260,14 +259,14 @@ cdef class CARTGVSplitter():
         cdef SIZE_t* tmp_sorted_obs
         cdef int n_samples
         cdef int n_nodes
-        cdef Node* sorted_leaves = []
+        cdef Node* sorted_leaves = NULL
         cdef int n_leaves
-        cdef SIZE_t** samples_leaves = []
-        cdef int* starts = []
-        cdef int* ends = []
+        cdef SIZE_t** samples_leaves = [<SIZE_t*>0]
+        cdef int* starts = [0]
+        cdef int* ends = [0]
         cdef int previous_pos = 0
         with gil:
-           Xf = self.feature_values
+           Xf = np.empty(self.X.shape)
            
         cdef bytes splitting_tree
 
@@ -281,7 +280,7 @@ cdef class CARTGVSplitter():
             # f_j = rand_int(n_drawn_constants, f_i - n_found_constants,
             #                random_state) #TODO : A changer, sélection aléatoire d'un groupe
             with gil:
-              f_j = np.random.randint(0,max_grouped_features+1)
+              f_j = np.random.randint(0,max_grouped_features)
 
             group = groups[f_j]
             len_group = len_groups[f_j]
@@ -297,7 +296,10 @@ cdef class CARTGVSplitter():
 
             # Create the splitting tree
             with gil:
-              self.splitting_tree_builder.build(self.splitting_tree, Xf, self.y)
+              self.splitting_tree_builder.build(self.splitting_tree, np.ndarray(Xf.shape,buffer=Xf), np.ndarray(self.y.shape,buffer=self.y))
+            
+            with gil:
+                  print("Crash ?")
             
             # Get the leaves and their number, the samples and their number
             n_nodes = self.splitting_tree.node_count
