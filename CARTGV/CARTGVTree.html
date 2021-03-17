@@ -329,7 +329,7 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">020</span>: from sklearn.tree._tree cimport Tree, TreeBuilder, Node</pre>
 <pre class="cython line score-0">&#xA0;<span class="">021</span>: from sklearn.tree._splitter cimport Splitter, SplitRecord</pre>
 <pre class="cython line score-0">&#xA0;<span class="">022</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">023</span>: from CARTGVSplitter cimport CARTGVSplitter</pre>
+<pre class="cython line score-0">&#xA0;<span class="">023</span>: from CARTGV.CARTGVSplitter cimport CARTGVSplitter</pre>
 <pre class="cython line score-0">&#xA0;<span class="">024</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">025</span>: np.import_array()</pre>
 <pre class='cython code score-0 '>  __pyx_t_2 = __pyx_f_5numpy_import_array();<span class='error_goto'> if (unlikely(__pyx_t_2 == ((int)-1))) __PYX_ERR(0, 25, __pyx_L1_error)</span>
@@ -2507,7 +2507,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(struct __
 <pre class='cython code score-142 '>/* Python wrapper */
 static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter = 0;
+  struct __pyx_obj_6CARTGV_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter = 0;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_split;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf;
   double __pyx_v_min_weight_leaf;
@@ -2617,7 +2617,7 @@ static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_
       values[7] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 7);
       values[8] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 8);
     }
-    __pyx_v_splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)values[0]);
+    __pyx_v_splitter = ((struct __pyx_obj_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)values[0]);
     __pyx_v_min_samples_split = <span class='pyx_c_api'>__Pyx_PyInt_As_Py_intptr_t</span>(values[1]); if (unlikely((__pyx_v_min_samples_split == ((npy_intp)-1)) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 705, __pyx_L3_error)</span>
     __pyx_v_min_samples_leaf = <span class='pyx_c_api'>__Pyx_PyInt_As_Py_intptr_t</span>(values[2]); if (unlikely((__pyx_v_min_samples_leaf == ((npy_intp)-1)) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 706, __pyx_L3_error)</span>
     __pyx_v_min_weight_leaf = __pyx_<span class='py_c_api'>PyFloat_AsDouble</span>(values[3]); if (unlikely((__pyx_v_min_weight_leaf == (double)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 706, __pyx_L3_error)</span>
@@ -2635,7 +2635,7 @@ static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) <span class='error_goto'>__PYX_ERR(0, 705, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_splitter), __pyx_ptype_6CARTGV_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) <span class='error_goto'>__PYX_ERR(0, 705, __pyx_L1_error)</span>
   __pyx_r = __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(((struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *)__pyx_v_self), __pyx_v_splitter, __pyx_v_min_samples_split, __pyx_v_min_samples_leaf, __pyx_v_min_weight_leaf, __pyx_v_max_depth, __pyx_v_mgroup, __pyx_v_mvar, __pyx_v_min_impurity_decrease, __pyx_v_min_impurity_split);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -2650,7 +2650,7 @@ static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_
   return __pyx_r;
 }
 
-static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_split, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_depth, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mgroup, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mvar, double __pyx_v_min_impurity_decrease, double __pyx_v_min_impurity_split) {
+static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *__pyx_v_self, struct __pyx_obj_6CARTGV_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_split, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_depth, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mgroup, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mvar, double __pyx_v_min_impurity_decrease, double __pyx_v_min_impurity_split) {
   int __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__cinit__", 0);
@@ -2675,12 +2675,15 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
 </pre><pre class="cython line score-0">&#xA0;<span class="">706</span>:                   SIZE_t min_samples_leaf, double min_weight_leaf,</pre>
 <pre class="cython line score-0">&#xA0;<span class="">707</span>:                   SIZE_t max_depth, SIZE_t mgroup, SIZE_t mvar,</pre>
 <pre class="cython line score-0">&#xA0;<span class="">708</span>:                   double min_impurity_decrease, double min_impurity_split):</pre>
-<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">709</span>:         self.splitter = splitter</pre>
-<pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_splitter));
-  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_splitter));
+<pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">709</span>:         self.splitter = splitter</pre>
+<pre class='cython code score-4 '>  if (!(likely(((((PyObject *)__pyx_v_splitter)) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter))))) <span class='error_goto'>__PYX_ERR(0, 709, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_v_splitter);
+  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
+  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_1);
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_v_self-&gt;splitter);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(((PyObject *)__pyx_v_self-&gt;splitter));
-  __pyx_v_self-&gt;splitter = __pyx_v_splitter;
+  __pyx_v_self-&gt;splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)__pyx_t_1);
+  __pyx_t_1 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">710</span>:         self.min_samples_split = min_samples_split</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;min_samples_split = __pyx_v_min_samples_split;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">711</span>:         self.min_samples_leaf = min_samples_leaf</pre>
@@ -2910,7 +2913,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 <pre class='cython code score-49 '>  PyArrayObject *__pyx_v_sample_weight = ((PyArrayObject *)Py_None);
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *__pyx_v_sample_weight_ptr;
   int __pyx_v_init_capacity;
-  struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter = 0;
+  struct __pyx_obj_6CARTGV_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter = 0;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_depth;
   CYTHON_UNUSED __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mgroup;
   CYTHON_UNUSED __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_mvar;
@@ -3133,10 +3136,11 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 <pre class='cython code score-0 '>  __pyx_t_5 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree-&gt;__pyx_vtab)-&gt;_resize(__pyx_v_tree, __pyx_v_init_capacity);<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 740, __pyx_L1_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">741</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">742</span>:         # Parameters</pre>
-<pre class="cython line score-1" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">743</span>:         cdef CARTGVSplitter splitter = self.splitter</pre>
-<pre class='cython code score-1 '>  __pyx_t_1 = ((PyObject *)__pyx_v_self-&gt;splitter);
+<pre class="cython line score-3" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">743</span>:         cdef CARTGVSplitter splitter = self.splitter</pre>
+<pre class='cython code score-3 '>  if (!(likely(((((PyObject *)__pyx_v_self-&gt;splitter)) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(((PyObject *)__pyx_v_self-&gt;splitter), __pyx_ptype_6CARTGV_14CARTGVSplitter_CARTGVSplitter))))) <span class='error_goto'>__PYX_ERR(0, 743, __pyx_L1_error)</span>
+  __pyx_t_1 = ((PyObject *)__pyx_v_self-&gt;splitter);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  __pyx_v_splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)__pyx_t_1);
+  __pyx_v_splitter = ((struct __pyx_obj_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_t_1);
   __pyx_t_1 = 0;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">744</span>:         cdef SIZE_t max_depth = self.max_depth</pre>
 <pre class='cython code score-0 '>  __pyx_t_10 = __pyx_v_self-&gt;max_depth;
@@ -3166,7 +3170,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 <pre class="cython line score-0">&#xA0;<span class="">753</span>:         # Recursive partition (without actual recursion)</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">754</span>:         splitter.init(X, y, sample_weight_ptr, groups)</pre>
 <pre class='cython code score-0 '>  __pyx_t_12 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__(((PyObject *)__pyx_v_y), 0);<span class='error_goto'> if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(0, 754, __pyx_L1_error)</span>
-  __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;init(__pyx_v_splitter, __pyx_v_X, __pyx_t_12, __pyx_v_sample_weight_ptr, __pyx_v_groups);<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 754, __pyx_L1_error)</span>
+  __pyx_t_5 = ((struct __pyx_vtabstruct_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;init(__pyx_v_splitter, __pyx_v_X, __pyx_t_12, __pyx_v_sample_weight_ptr, __pyx_v_groups);<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 754, __pyx_L1_error)</span>
   __PYX_XDEC_MEMVIEW(&amp;__pyx_t_12, 1);
   __pyx_t_12.memview = NULL;
   __pyx_t_12.data = NULL;
@@ -3324,7 +3328,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">801</span>:                 n_node_samples = end - start</pre>
 <pre class='cython code score-0 '>          __pyx_v_n_node_samples = (__pyx_v_end - __pyx_v_start);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">802</span>:                 splitter.node_reset(start, end, &amp;weighted_n_node_samples)</pre>
-<pre class='cython code score-0 '>          __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&amp;__pyx_v_weighted_n_node_samples));<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 802, __pyx_L8_error)</span>
+<pre class='cython code score-0 '>          __pyx_t_5 = ((struct __pyx_vtabstruct_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&amp;__pyx_v_weighted_n_node_samples));<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 802, __pyx_L8_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">803</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">804</span>:                 is_leaf = (depth &gt;= max_depth or</pre>
 <pre class='cython code score-0 '>          __pyx_t_8 = ((__pyx_v_depth &gt;= __pyx_v_max_depth) != 0);
@@ -3359,7 +3363,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 /* … */
           }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">810</span>:                     impurity = splitter.node_impurity()</pre>
-<pre class='cython code score-0 '>            __pyx_v_impurity = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_impurity(__pyx_v_splitter);
+<pre class='cython code score-0 '>            __pyx_v_impurity = ((struct __pyx_vtabstruct_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_impurity(__pyx_v_splitter);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">811</span>:                     first = 0</pre>
 <pre class='cython code score-0 '>            __pyx_v_first = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">812</span>: </pre>
@@ -3382,7 +3386,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 /* … */
           }
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">817</span>:                     splitter.node_split(impurity, &amp;split, &amp;n_constant_features)</pre>
-<pre class='cython code score-0 '>            __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_split(__pyx_v_splitter, __pyx_v_impurity, (&amp;__pyx_v_split), (&amp;__pyx_v_n_constant_features));<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 817, __pyx_L8_error)</span>
+<pre class='cython code score-0 '>            __pyx_t_5 = ((struct __pyx_vtabstruct_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_split(__pyx_v_splitter, __pyx_v_impurity, (&amp;__pyx_v_split), (&amp;__pyx_v_n_constant_features));<span class='error_goto'> if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 817, __pyx_L8_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">818</span>:                     # If EPSILON=0 in the below comparison, float precision</pre>
 <pre class="cython line score-0">&#xA0;<span class="">819</span>:                     # issues stop splitting, producing trees that are</pre>
 <pre class="cython line score-0">&#xA0;<span class="">820</span>:                     # dissimilar to v0.18</pre>
@@ -3469,7 +3473,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
 <pre class="cython line score-0">&#xA0;<span class="">834</span>:                 # Store value for all nodes, to facilitate tree/model</pre>
 <pre class="cython line score-0">&#xA0;<span class="">835</span>:                 # inspection and interpretation</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">836</span>:                 splitter.node_value(tree.value + node_id * tree.value_stride)</pre>
-<pre class='cython code score-0 '>          ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_value(__pyx_v_splitter, (__pyx_v_tree-&gt;value + (__pyx_v_node_id * __pyx_v_tree-&gt;value_stride)));
+<pre class='cython code score-0 '>          ((struct __pyx_vtabstruct_6CARTGV_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter-&gt;__pyx_vtab)-&gt;node_value(__pyx_v_splitter, (__pyx_v_tree-&gt;value + (__pyx_v_node_id * __pyx_v_tree-&gt;value_stride)));
 </pre><pre class="cython line score-0">&#xA0;<span class="">837</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">838</span>:                 if not is_leaf:</pre>
 <pre class='cython code score-0 '>          __pyx_t_9 = ((!(__pyx_v_is_leaf != 0)) != 0);
