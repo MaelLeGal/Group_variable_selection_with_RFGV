@@ -1586,8 +1586,7 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">295</span>:             self.criterion.reset()</pre>
 <pre class='cython code score-0 '>      __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;reset(__pyx_v_self-&gt;criterion);<span class='error_goto'> if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 295, __pyx_L4_error)</span>
 </pre><pre class="cython line score-0">&#xA0;<span class="">296</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">297</span>:             # Create the splitting tree</pre>
-<pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">298</span>:             with gil:</pre>
+<pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">297</span>:             with gil:</pre>
 <pre class='cython code score-6 '>      {
           #ifdef WITH_THREAD
           PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1610,50 +1609,11 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
             __pyx_L29:;
           }
       }
-</pre><pre class="cython line score-52" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">299</span>:               self.splitting_tree_builder.build(self.splitting_tree, np.ndarray(Xf.shape,buffer=Xf), np.ndarray(self.y.shape,buffer=self.y))</pre>
-<pre class='cython code score-52 '>            __pyx_t_11 = ((PyObject *)__pyx_v_self-&gt;splitting_tree);
-            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_11);
-            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_v_Xf, __pyx_n_s_shape);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            __pyx_t_9 = <span class='py_c_api'>PyTuple_New</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
-            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_15);
-            <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_9, 0, __pyx_t_15);
-            __pyx_t_15 = 0;
-            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_15, __pyx_n_s_buffer, __pyx_v_Xf) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 299, __pyx_L28_error)</span>
-            __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_9, __pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
-            if (unlikely(!__pyx_v_self-&gt;y.memview)) {<span class='py_c_api'>PyErr_SetString</span>(PyExc_AttributeError,"Memoryview is not initialized");<span class='error_goto'>__PYX_ERR(0, 299, __pyx_L28_error)</span>}
-            __pyx_t_15 = __Pyx_carray_to_py_Py_ssize_t(__pyx_v_self-&gt;y.shape, 8);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            __pyx_t_9 = <span class='py_c_api'>PyTuple_New</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
-            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_15);
-            <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_9, 0, __pyx_t_15);
-            __pyx_t_15 = 0;
-            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            if (unlikely(!__pyx_v_self-&gt;y.memview)) {<span class='py_c_api'>PyErr_SetString</span>(PyExc_AttributeError,"Memoryview is not initialized");<span class='error_goto'>__PYX_ERR(0, 299, __pyx_L28_error)</span>}
-            __pyx_t_12 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;y, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__, (int (*)(char *, PyObject *)) NULL, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-            if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_15, __pyx_n_s_buffer, __pyx_t_12) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_9, __pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
-            __pyx_t_15 = ((struct __pyx_vtabstruct_7sklearn_4tree_5_tree_TreeBuilder *)__pyx_v_self-&gt;splitting_tree_builder-&gt;__pyx_vtab)-&gt;build(__pyx_v_self-&gt;splitting_tree_builder, ((struct __pyx_obj_7sklearn_4tree_5_tree_Tree *)__pyx_t_11), __pyx_t_10, ((PyArrayObject *)__pyx_t_12), 0, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 299, __pyx_L28_error)</span>
-            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_11); __pyx_t_11 = 0;
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">298</span>:               print("Start splitting_tree build")</pre>
+<pre class='cython code score-2 '>            if (<span class='pyx_c_api'>__Pyx_PrintOne</span>(0, __pyx_kp_s_Start_splitting_tree_build) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 298, __pyx_L28_error)</span>
           }
-</pre><pre class="cython line score-0">&#xA0;<span class="">300</span>: </pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">299</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">300</span>:             # Create the splitting tree</pre>
 <pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">301</span>:             with gil:</pre>
 <pre class='cython code score-6 '>      {
           #ifdef WITH_THREAD
@@ -1677,15 +1637,51 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
             __pyx_L34:;
           }
       }
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">302</span>:                   print("Crash ?")</pre>
-<pre class='cython code score-2 '>            if (<span class='pyx_c_api'>__Pyx_PrintOne</span>(0, __pyx_kp_s_Crash) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 302, __pyx_L33_error)</span>
+</pre><pre class="cython line score-52" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">302</span>:               self.splitting_tree_builder.build(self.splitting_tree, np.ndarray(Xf.shape,buffer=Xf), np.ndarray(self.y.shape,buffer=self.y))</pre>
+<pre class='cython code score-52 '>            __pyx_t_11 = ((PyObject *)__pyx_v_self-&gt;splitting_tree);
+            <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_11);
+            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_v_Xf, __pyx_n_s_shape);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
+            __pyx_t_9 = <span class='py_c_api'>PyTuple_New</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
+            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_15);
+            <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_9, 0, __pyx_t_15);
+            __pyx_t_15 = 0;
+            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
+            if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_15, __pyx_n_s_buffer, __pyx_v_Xf) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 302, __pyx_L33_error)</span>
+            __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_9, __pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
+            if (unlikely(!__pyx_v_self-&gt;y.memview)) {<span class='py_c_api'>PyErr_SetString</span>(PyExc_AttributeError,"Memoryview is not initialized");<span class='error_goto'>__PYX_ERR(0, 302, __pyx_L33_error)</span>}
+            __pyx_t_15 = __Pyx_carray_to_py_Py_ssize_t(__pyx_v_self-&gt;y.shape, 8);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
+            __pyx_t_9 = <span class='py_c_api'>PyTuple_New</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_9);
+            <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_15);
+            <span class='py_macro_api'>PyTuple_SET_ITEM</span>(__pyx_t_9, 0, __pyx_t_15);
+            __pyx_t_15 = 0;
+            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyDict_NewPresized</span>(1);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
+            if (unlikely(!__pyx_v_self-&gt;y.memview)) {<span class='py_c_api'>PyErr_SetString</span>(PyExc_AttributeError,"Memoryview is not initialized");<span class='error_goto'>__PYX_ERR(0, 302, __pyx_L33_error)</span>}
+            __pyx_t_12 = __pyx_memoryview_fromslice(__pyx_v_self-&gt;y, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__, (int (*)(char *, PyObject *)) NULL, 0);;<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
+            if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_t_15, __pyx_n_s_buffer, __pyx_t_12) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
+            __pyx_t_12 = <span class='pyx_c_api'>__Pyx_PyObject_Call</span>(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_9, __pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_9); __pyx_t_9 = 0;
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
+            __pyx_t_15 = ((struct __pyx_vtabstruct_7sklearn_4tree_5_tree_TreeBuilder *)__pyx_v_self-&gt;splitting_tree_builder-&gt;__pyx_vtab)-&gt;build(__pyx_v_self-&gt;splitting_tree_builder, ((struct __pyx_obj_7sklearn_4tree_5_tree_Tree *)__pyx_t_11), __pyx_t_10, ((PyArrayObject *)__pyx_t_12), 0, NULL);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 302, __pyx_L33_error)</span>
+            <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_11); __pyx_t_11 = 0;
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
+            <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
           }
 </pre><pre class="cython line score-0">&#xA0;<span class="">303</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">304</span>:             # Get the leaves and their number, the samples and their number</pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">305</span>:             n_nodes = self.splitting_tree.node_count</pre>
-<pre class='cython code score-0 '>      __pyx_t_2 = __pyx_v_self-&gt;splitting_tree-&gt;node_count;
-      __pyx_v_n_nodes = __pyx_t_2;
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">306</span>:             with gil:</pre>
+<pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">304</span>:             with gil:</pre>
 <pre class='cython code score-6 '>      {
           #ifdef WITH_THREAD
           PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1708,60 +1704,91 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
             __pyx_L39:;
           }
       }
-</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">307</span>:               n_leaves = self.splitting_tree.n_leaves</pre>
-<pre class='cython code score-10 '>            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;splitting_tree), __pyx_n_s_n_leaves);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 307, __pyx_L38_error)</span>
+</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">305</span>:                   print("End splitting_tree build")</pre>
+<pre class='cython code score-2 '>            if (<span class='pyx_c_api'>__Pyx_PrintOne</span>(0, __pyx_kp_s_End_splitting_tree_build) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 305, __pyx_L38_error)</span>
+          }
+</pre><pre class="cython line score-0">&#xA0;<span class="">306</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">307</span>:             # Get the leaves and their number, the samples and their number</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">308</span>:             n_nodes = self.splitting_tree.node_count</pre>
+<pre class='cython code score-0 '>      __pyx_t_2 = __pyx_v_self-&gt;splitting_tree-&gt;node_count;
+      __pyx_v_n_nodes = __pyx_t_2;
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">309</span>:             with gil:</pre>
+<pre class='cython code score-6 '>      {
+          #ifdef WITH_THREAD
+          PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
+          #endif
+          /*try:*/ {
+/* … */
+          /*finally:*/ {
+            /*normal exit:*/{
+              #ifdef WITH_THREAD
+              <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
+              #endif
+              goto __pyx_L44;
+            }
+            __pyx_L43_error: {
+              #ifdef WITH_THREAD
+              <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
+              #endif
+              goto __pyx_L4_error;
+            }
+            __pyx_L44:;
+          }
+      }
+</pre><pre class="cython line score-10" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">310</span>:               n_leaves = self.splitting_tree.n_leaves</pre>
+<pre class='cython code score-10 '>            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;splitting_tree), __pyx_n_s_n_leaves);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 310, __pyx_L43_error)</span>
             <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            __pyx_t_14 = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_t_15); if (unlikely((__pyx_t_14 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 307, __pyx_L38_error)</span>
+            __pyx_t_14 = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_t_15); if (unlikely((__pyx_t_14 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 310, __pyx_L43_error)</span>
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
             __pyx_v_n_leaves = __pyx_t_14;
           }
-</pre><pre class="cython line score-0">&#xA0;<span class="">308</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">309</span>:             tmp_sorted_obs = self.splitting_tree_builder.splitter.samples</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">311</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">312</span>:             tmp_sorted_obs = self.splitting_tree_builder.splitter.samples</pre>
 <pre class='cython code score-0 '>      __pyx_t_1 = __pyx_v_self-&gt;splitting_tree_builder-&gt;splitter-&gt;samples;
       __pyx_v_tmp_sorted_obs = __pyx_t_1;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">310</span>:             n_samples = self.splitting_tree_builder.splitter.n_samples</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">313</span>:             n_samples = self.splitting_tree_builder.splitter.n_samples</pre>
 <pre class='cython code score-0 '>      __pyx_t_2 = __pyx_v_self-&gt;splitting_tree_builder-&gt;splitter-&gt;n_samples;
       __pyx_v_n_samples = __pyx_t_2;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">311</span>:             for k in range(n_nodes):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">314</span>:             for k in range(n_nodes):</pre>
 <pre class='cython code score-0 '>      __pyx_t_14 = __pyx_v_n_nodes;
       __pyx_t_19 = __pyx_t_14;
       for (__pyx_t_2 = 0; __pyx_t_2 &lt; __pyx_t_19; __pyx_t_2+=1) {
         __pyx_v_k = __pyx_t_2;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">312</span>:               if self.splitting_tree.nodes[k].left_child != _TREE_LEAF and self.splitting_tree.nodes[k].right_child != _TREE_LEAF:</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">315</span>:               if self.splitting_tree.nodes[k].left_child != _TREE_LEAF and self.splitting_tree.nodes[k].right_child != _TREE_LEAF:</pre>
 <pre class='cython code score-0 '>        __pyx_t_22 = (((__pyx_v_self-&gt;splitting_tree-&gt;nodes[__pyx_v_k]).left_child != __pyx_v_14CARTGVSplitter__TREE_LEAF) != 0);
         if (__pyx_t_22) {
         } else {
           __pyx_t_13 = __pyx_t_22;
-          goto __pyx_L43_bool_binop_done;
+          goto __pyx_L48_bool_binop_done;
         }
         __pyx_t_22 = (((__pyx_v_self-&gt;splitting_tree-&gt;nodes[__pyx_v_k]).right_child != __pyx_v_14CARTGVSplitter__TREE_LEAF) != 0);
         __pyx_t_13 = __pyx_t_22;
-        __pyx_L43_bool_binop_done:;
+        __pyx_L48_bool_binop_done:;
         if (__pyx_t_13) {
 /* … */
         }
       }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">313</span>:                 sorted_leaves[k] = self.splitting_tree.nodes[k]</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">316</span>:                 sorted_leaves[k] = self.splitting_tree.nodes[k]</pre>
 <pre class='cython code score-0 '>          (__pyx_v_sorted_leaves[__pyx_v_k]) = (__pyx_v_self-&gt;splitting_tree-&gt;nodes[__pyx_v_k]);
-</pre><pre class="cython line score-0">&#xA0;<span class="">314</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">315</span>:             # Get the samples for each leaves and their start and end position in the samples array</pre>
-<pre class="cython line score-0">&#xA0;<span class="">316</span>:             # samples_leaves = []</pre>
-<pre class="cython line score-0">&#xA0;<span class="">317</span>:             # starts = []</pre>
-<pre class="cython line score-0">&#xA0;<span class="">318</span>:             # ends = []</pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">319</span>:             previous_pos = 0</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">317</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">318</span>:             # Get the samples for each leaves and their start and end position in the samples array</pre>
+<pre class="cython line score-0">&#xA0;<span class="">319</span>:             # samples_leaves = []</pre>
+<pre class="cython line score-0">&#xA0;<span class="">320</span>:             # starts = []</pre>
+<pre class="cython line score-0">&#xA0;<span class="">321</span>:             # ends = []</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">322</span>:             previous_pos = 0</pre>
 <pre class='cython code score-0 '>      __pyx_v_previous_pos = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">320</span>:             for j in range(n_leaves):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">323</span>:             for j in range(n_leaves):</pre>
 <pre class='cython code score-0 '>      __pyx_t_14 = __pyx_v_n_leaves;
       __pyx_t_19 = __pyx_t_14;
       for (__pyx_t_2 = 0; __pyx_t_2 &lt; __pyx_t_19; __pyx_t_2+=1) {
         __pyx_v_j = __pyx_t_2;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">321</span>:               if(previous_pos + sorted_leaves[j].n_node_samples &lt; n_samples):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">324</span>:               if(previous_pos + sorted_leaves[j].n_node_samples &lt; n_samples):</pre>
 <pre class='cython code score-0 '>        __pyx_t_13 = (((__pyx_v_previous_pos + (__pyx_v_sorted_leaves[__pyx_v_j]).n_node_samples) &lt; __pyx_v_n_samples) != 0);
         if (__pyx_t_13) {
 /* … */
         }
       }
-</pre><pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">322</span>:                 with gil:</pre>
+</pre><pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">325</span>:                 with gil:</pre>
 <pre class='cython code score-4 '>          {
               #ifdef WITH_THREAD
               PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1773,32 +1800,32 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
                   #ifdef WITH_THREAD
                   <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
                   #endif
-                  goto __pyx_L52;
+                  goto __pyx_L57;
                 }
-                __pyx_L52:;
+                __pyx_L57:;
               }
           }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">323</span>:                   for m in range(previous_pos, previous_pos + sorted_leaves[j].n_node_samples):</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">326</span>:                   for m in range(previous_pos, previous_pos + sorted_leaves[j].n_node_samples):</pre>
 <pre class='cython code score-0 '>                __pyx_t_17 = (__pyx_v_previous_pos + (__pyx_v_sorted_leaves[__pyx_v_j]).n_node_samples);
                 __pyx_t_18 = __pyx_t_17;
                 for (__pyx_t_20 = __pyx_v_previous_pos; __pyx_t_20 &lt; __pyx_t_18; __pyx_t_20+=1) {
                   __pyx_v_m = __pyx_t_20;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">324</span>:                     samples_leaves[j][m] = sorted_obs[m]</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">327</span>:                     samples_leaves[j][m] = sorted_obs[m]</pre>
 <pre class='cython code score-0 '>                  ((__pyx_v_samples_leaves[__pyx_v_j])[__pyx_v_m]) = (__pyx_v_sorted_obs[__pyx_v_m]);
                 }
               }
-</pre><pre class="cython line score-0">&#xA0;<span class="">325</span>:                   # samples_leaves[j] = sorted_obs[previous_pos:previous_pos + sorted_leaves[j].n_node_samples]</pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">326</span>:                 starts[j] = previous_pos</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">328</span>:                   # samples_leaves[j] = sorted_obs[previous_pos:previous_pos + sorted_leaves[j].n_node_samples]</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">329</span>:                 starts[j] = previous_pos</pre>
 <pre class='cython code score-0 '>          (__pyx_v_starts[__pyx_v_j]) = __pyx_v_previous_pos;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">327</span>:                 ends[j] = previous_pos + sorted_leaves[i].n_node_samples</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">330</span>:                 ends[j] = previous_pos + sorted_leaves[i].n_node_samples</pre>
 <pre class='cython code score-0 '>          (__pyx_v_ends[__pyx_v_j]) = (__pyx_v_previous_pos + (__pyx_v_sorted_leaves[__pyx_v_i]).n_node_samples);
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">328</span>:                 previous_pos = previous_pos + sorted_leaves[i].n_node_samples</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">331</span>:                 previous_pos = previous_pos + sorted_leaves[i].n_node_samples</pre>
 <pre class='cython code score-0 '>          __pyx_v_previous_pos = (__pyx_v_previous_pos + (__pyx_v_sorted_leaves[__pyx_v_i]).n_node_samples);
-</pre><pre class="cython line score-0">&#xA0;<span class="">329</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">330</span>:             self.criterion.update(starts,ends, n_leaves) # TODO : Voir le update</pre>
-<pre class='cython code score-0 '>      __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;update(__pyx_v_self-&gt;criterion, __pyx_v_starts, __pyx_v_ends, __pyx_v_n_leaves);<span class='error_goto'> if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 330, __pyx_L4_error)</span>
-</pre><pre class="cython line score-0">&#xA0;<span class="">331</span>: </pre>
-<pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">332</span>:             with gil:</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">332</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">333</span>:             self.criterion.update(starts,ends, n_leaves) # TODO : Voir le update</pre>
+<pre class='cython code score-0 '>      __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;update(__pyx_v_self-&gt;criterion, __pyx_v_starts, __pyx_v_ends, __pyx_v_n_leaves);<span class='error_goto'> if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 333, __pyx_L4_error)</span>
+</pre><pre class="cython line score-0">&#xA0;<span class="">334</span>: </pre>
+<pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">335</span>:             with gil:</pre>
 <pre class='cython code score-8 '>      {
           #ifdef WITH_THREAD
           PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1810,72 +1837,72 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
               #ifdef WITH_THREAD
               <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
               #endif
-              goto __pyx_L59;
+              goto __pyx_L64;
             }
-            __pyx_L55_continue: {
+            __pyx_L60_continue: {
               #ifdef WITH_THREAD
               <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
               #endif
               goto __pyx_L9_continue;
             }
-            __pyx_L58_error: {
+            __pyx_L63_error: {
               #ifdef WITH_THREAD
               <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
               #endif
               goto __pyx_L4_error;
             }
-            __pyx_L59:;
+            __pyx_L64:;
           }
       }
-</pre><pre class="cython line score-0">&#xA0;<span class="">333</span>:             # Reject if min_weight_leaf is not satisfied</pre>
-<pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">334</span>:               if ((self.criterion.weighted_n_left &lt; min_weight_leaf) or</pre>
-<pre class='cython code score-17 '>            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;criterion), __pyx_n_s_weighted_n_left);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 334, __pyx_L58_error)</span>
+</pre><pre class="cython line score-0">&#xA0;<span class="">336</span>:             # Reject if min_weight_leaf is not satisfied</pre>
+<pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">337</span>:               if ((self.criterion.weighted_n_left &lt; min_weight_leaf) or</pre>
+<pre class='cython code score-17 '>            __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;criterion), __pyx_n_s_weighted_n_left);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 337, __pyx_L63_error)</span>
             <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-            __pyx_t_12 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_min_weight_leaf);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 334, __pyx_L58_error)</span>
+            __pyx_t_12 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_min_weight_leaf);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 337, __pyx_L63_error)</span>
             <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-            __pyx_t_10 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_t_15, __pyx_t_12, Py_LT); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_10);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 334, __pyx_L58_error)</span>
+            __pyx_t_10 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_t_15, __pyx_t_12, Py_LT); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_10);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 337, __pyx_L63_error)</span>
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_22 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_10); if (unlikely(__pyx_t_22 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 334, __pyx_L58_error)</span>
+            __pyx_t_22 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_10); if (unlikely(__pyx_t_22 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 337, __pyx_L63_error)</span>
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
             if (!__pyx_t_22) {
             } else {
               __pyx_t_13 = __pyx_t_22;
-              goto __pyx_L61_bool_binop_done;
+              goto __pyx_L66_bool_binop_done;
             }
 /* … */
             if (__pyx_t_13) {
 /* … */
             }
           }
-</pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">335</span>:                       (self.criterion.weighted_n_right &lt; min_weight_leaf)):</pre>
-<pre class='cython code score-17 '>            __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;criterion), __pyx_n_s_weighted_n_right);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 335, __pyx_L58_error)</span>
+</pre><pre class="cython line score-17" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">338</span>:                       (self.criterion.weighted_n_right &lt; min_weight_leaf)):</pre>
+<pre class='cython code score-17 '>            __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(((PyObject *)__pyx_v_self-&gt;criterion), __pyx_n_s_weighted_n_right);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 338, __pyx_L63_error)</span>
             <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
-            __pyx_t_12 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_min_weight_leaf);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 335, __pyx_L58_error)</span>
+            __pyx_t_12 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_min_weight_leaf);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 338, __pyx_L63_error)</span>
             <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-            __pyx_t_15 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_t_10, __pyx_t_12, Py_LT); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 335, __pyx_L58_error)</span>
+            __pyx_t_15 = <span class='py_c_api'>PyObject_RichCompare</span>(__pyx_t_10, __pyx_t_12, Py_LT); <span class='refnanny'>__Pyx_XGOTREF</span>(__pyx_t_15);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 338, __pyx_L63_error)</span>
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-            __pyx_t_22 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_15); if (unlikely(__pyx_t_22 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 335, __pyx_L58_error)</span>
+            __pyx_t_22 = <span class='pyx_c_api'>__Pyx_PyObject_IsTrue</span>(__pyx_t_15); if (unlikely(__pyx_t_22 &lt; 0)) <span class='error_goto'>__PYX_ERR(0, 338, __pyx_L63_error)</span>
             <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
             __pyx_t_13 = __pyx_t_22;
-            __pyx_L61_bool_binop_done:;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">336</span>:                   continue</pre>
-<pre class='cython code score-0 '>              goto __pyx_L55_continue;
-</pre><pre class="cython line score-0">&#xA0;<span class="">337</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">338</span>:             current_proxy_improvement = self.criterion.proxy_impurity_improvement()</pre>
+            __pyx_L66_bool_binop_done:;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">339</span>:                   continue</pre>
+<pre class='cython code score-0 '>              goto __pyx_L60_continue;
+</pre><pre class="cython line score-0">&#xA0;<span class="">340</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">341</span>:             current_proxy_improvement = self.criterion.proxy_impurity_improvement()</pre>
 <pre class='cython code score-0 '>      __pyx_v_current_proxy_improvement = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;proxy_impurity_improvement(__pyx_v_self-&gt;criterion);
-</pre><pre class="cython line score-0">&#xA0;<span class="">339</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">340</span>:             if current_proxy_improvement &gt; best_proxy_improvement:</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">342</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">343</span>:             if current_proxy_improvement &gt; best_proxy_improvement:</pre>
 <pre class='cython code score-0 '>      __pyx_t_13 = ((__pyx_v_current_proxy_improvement &gt; __pyx_v_best_proxy_improvement) != 0);
       if (__pyx_t_13) {
 /* … */
       }
       __pyx_L9_continue:;
     }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">341</span>:                 best_proxy_improvement = current_proxy_improvement</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">344</span>:                 best_proxy_improvement = current_proxy_improvement</pre>
 <pre class='cython code score-0 '>        __pyx_v_best_proxy_improvement = __pyx_v_current_proxy_improvement;
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">342</span>:                 with gil:</pre>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">345</span>:                 with gil:</pre>
 <pre class='cython code score-6 '>        {
             #ifdef WITH_THREAD
             PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1887,21 +1914,21 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
                 #ifdef WITH_THREAD
                 <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
                 #endif
-                goto __pyx_L68;
+                goto __pyx_L73;
               }
-              __pyx_L67_error: {
+              __pyx_L72_error: {
                 #ifdef WITH_THREAD
                 <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
                 #endif
                 goto __pyx_L4_error;
               }
-              __pyx_L68:;
+              __pyx_L73:;
             }
         }
-</pre><pre class="cython line score-30" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">343</span>:                   splitting_tree = pickle.dumps(self.splitting_tree)</pre>
-<pre class='cython code score-30 '>              <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_12, __pyx_n_s_pickle);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 343, __pyx_L67_error)</span>
+</pre><pre class="cython line score-30" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">346</span>:                   splitting_tree = pickle.dumps(self.splitting_tree)</pre>
+<pre class='cython code score-30 '>              <span class='pyx_c_api'>__Pyx_GetModuleGlobalName</span>(__pyx_t_12, __pyx_n_s_pickle);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 346, __pyx_L72_error)</span>
               <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-              __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_12, __pyx_n_s_dumps);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 343, __pyx_L67_error)</span>
+              __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_12, __pyx_n_s_dumps);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 346, __pyx_L72_error)</span>
               <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
               <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
               __pyx_t_12 = NULL;
@@ -1916,38 +1943,38 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
               }
               __pyx_t_15 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_12, ((PyObject *)__pyx_v_self-&gt;splitting_tree)) : <span class='pyx_c_api'>__Pyx_PyObject_CallOneArg</span>(__pyx_t_10, ((PyObject *)__pyx_v_self-&gt;splitting_tree));
               <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-              if (unlikely(!__pyx_t_15)) <span class='error_goto'>__PYX_ERR(0, 343, __pyx_L67_error)</span>
+              if (unlikely(!__pyx_t_15)) <span class='error_goto'>__PYX_ERR(0, 346, __pyx_L72_error)</span>
               <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
               <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
-              if (!(likely(<span class='py_c_api'>PyBytes_CheckExact</span>(__pyx_t_15))||((__pyx_t_15) == Py_None)||(<span class='py_c_api'>PyErr_Format</span>(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_t_15)-&gt;tp_name), 0))) <span class='error_goto'>__PYX_ERR(0, 343, __pyx_L67_error)</span>
+              if (!(likely(<span class='py_c_api'>PyBytes_CheckExact</span>(__pyx_t_15))||((__pyx_t_15) == Py_None)||(<span class='py_c_api'>PyErr_Format</span>(PyExc_TypeError, "Expected %.16s, got %.200s", "bytes", Py_TYPE(__pyx_t_15)-&gt;tp_name), 0))) <span class='error_goto'>__PYX_ERR(0, 346, __pyx_L72_error)</span>
               <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_splitting_tree, ((PyObject*)__pyx_t_15));
               __pyx_t_15 = 0;
-</pre><pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">344</span>:                   current.splitting_tree = splitting_tree #pickle.dumps(self.splitting_tree).decode('UTF-8')</pre>
+</pre><pre class="cython line score-12" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">347</span>:                   current.splitting_tree = splitting_tree #pickle.dumps(self.splitting_tree).decode('UTF-8')</pre>
 <pre class='cython code score-12 '>              if (unlikely(__pyx_v_splitting_tree == Py_None)) {
                 <span class='py_c_api'>PyErr_SetString</span>(PyExc_TypeError, "expected bytes, NoneType found");
-                <span class='error_goto'>__PYX_ERR(0, 344, __pyx_L67_error)</span>
+                <span class='error_goto'>__PYX_ERR(0, 347, __pyx_L72_error)</span>
               }
-              __pyx_t_23 = <span class='pyx_c_api'>__Pyx_PyBytes_AsWritableString</span>(__pyx_v_splitting_tree); if (unlikely((!__pyx_t_23) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 344, __pyx_L67_error)</span>
+              __pyx_t_23 = <span class='pyx_c_api'>__Pyx_PyBytes_AsWritableString</span>(__pyx_v_splitting_tree); if (unlikely((!__pyx_t_23) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 347, __pyx_L72_error)</span>
               __pyx_v_current.splitting_tree = __pyx_t_23;
             }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">345</span>:                 current.starts = starts</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">348</span>:                 current.starts = starts</pre>
 <pre class='cython code score-0 '>        __pyx_v_current.starts = __pyx_v_starts;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">346</span>:                 current.ends = ends</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">349</span>:                 current.ends = ends</pre>
 <pre class='cython code score-0 '>        __pyx_v_current.ends = __pyx_v_ends;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">347</span>:                 current.n_childs = n_leaves</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">350</span>:                 current.n_childs = n_leaves</pre>
 <pre class='cython code score-0 '>        __pyx_v_current.n_childs = __pyx_v_n_leaves;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">348</span>:                 best = current  # copy</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">351</span>:                 best = current  # copy</pre>
 <pre class='cython code score-0 '>        __pyx_v_best = __pyx_v_current;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">349</span>:                 sorted_obs = tmp_sorted_obs</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">352</span>:                 sorted_obs = tmp_sorted_obs</pre>
 <pre class='cython code score-0 '>        __pyx_v_sorted_obs = __pyx_v_tmp_sorted_obs;
-</pre><pre class="cython line score-0">&#xA0;<span class="">350</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">351</span>:         # Update the samples array</pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">352</span>:         self.samples = sorted_obs</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;samples = __pyx_v_sorted_obs;
 </pre><pre class="cython line score-0">&#xA0;<span class="">353</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">354</span>:         self.criterion.reset()</pre>
-<pre class='cython code score-0 '>    __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;reset(__pyx_v_self-&gt;criterion);<span class='error_goto'> if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 354, __pyx_L4_error)</span>
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">355</span>:         with gil:</pre>
+<pre class="cython line score-0">&#xA0;<span class="">354</span>:         # Update the samples array</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">355</span>:         self.samples = sorted_obs</pre>
+<pre class='cython code score-0 '>    __pyx_v_self-&gt;samples = __pyx_v_sorted_obs;
+</pre><pre class="cython line score-0">&#xA0;<span class="">356</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">357</span>:         self.criterion.reset()</pre>
+<pre class='cython code score-0 '>    __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;reset(__pyx_v_self-&gt;criterion);<span class='error_goto'> if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 357, __pyx_L4_error)</span>
+</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">358</span>:         with gil:</pre>
 <pre class='cython code score-6 '>    {
         #ifdef WITH_THREAD
         PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
@@ -1959,53 +1986,53 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
             #ifdef WITH_THREAD
             <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
             #endif
-            goto __pyx_L71;
+            goto __pyx_L76;
           }
-          __pyx_L70_error: {
+          __pyx_L75_error: {
             #ifdef WITH_THREAD
             <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
             #endif
             goto __pyx_L4_error;
           }
-          __pyx_L71:;
+          __pyx_L76:;
         }
     }
-</pre><pre class="cython line score-13" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">356</span>:           self.criterion.update(best.starts,best.ends,best.splitting_tree.n_leaves)</pre>
-<pre class='cython code score-13 '>          __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyBytes_FromString</span>(__pyx_v_best.splitting_tree);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 356, __pyx_L70_error)</span>
+</pre><pre class="cython line score-13" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">359</span>:           self.criterion.update(best.starts,best.ends,best.splitting_tree.n_leaves)</pre>
+<pre class='cython code score-13 '>          __pyx_t_15 = <span class='pyx_c_api'>__Pyx_PyBytes_FromString</span>(__pyx_v_best.splitting_tree);<span class='error_goto'> if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 359, __pyx_L75_error)</span>
           <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_15);
-          __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_15, __pyx_n_s_n_leaves);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 356, __pyx_L70_error)</span>
+          __pyx_t_10 = <span class='pyx_c_api'>__Pyx_PyObject_GetAttrStr</span>(__pyx_t_15, __pyx_n_s_n_leaves);<span class='error_goto'> if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 359, __pyx_L75_error)</span>
           <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_10);
           <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_15); __pyx_t_15 = 0;
-          __pyx_t_14 = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_t_10); if (unlikely((__pyx_t_14 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 356, __pyx_L70_error)</span>
+          __pyx_t_14 = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(__pyx_t_10); if (unlikely((__pyx_t_14 == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 359, __pyx_L75_error)</span>
           <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_10); __pyx_t_10 = 0;
-          __pyx_t_19 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;update(__pyx_v_self-&gt;criterion, __pyx_v_best.starts, __pyx_v_best.ends, __pyx_t_14);<span class='error_goto'> if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 356, __pyx_L70_error)</span>
+          __pyx_t_19 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;update(__pyx_v_self-&gt;criterion, __pyx_v_best.starts, __pyx_v_best.ends, __pyx_t_14);<span class='error_goto'> if (unlikely(__pyx_t_19 == ((int)-1))) __PYX_ERR(0, 359, __pyx_L75_error)</span>
         }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">357</span>:         self.criterion.children_impurity(best.impurity_childs)</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">360</span>:         self.criterion.children_impurity(best.impurity_childs)</pre>
 <pre class='cython code score-0 '>    ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;children_impurity(__pyx_v_self-&gt;criterion, __pyx_v_best.impurity_childs);
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">358</span>:         best.improvement = self.criterion.impurity_improvement(</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">361</span>:         best.improvement = self.criterion.impurity_improvement(</pre>
 <pre class='cython code score-0 '>    __pyx_v_best.improvement = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;impurity_improvement(__pyx_v_self-&gt;criterion, __pyx_v_impurity, __pyx_v_best.impurity_childs);
-</pre><pre class="cython line score-0">&#xA0;<span class="">359</span>:             impurity, best.impurity_childs)</pre>
-<pre class="cython line score-0">&#xA0;<span class="">360</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">361</span>:         # Return values</pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">362</span>:         split[0] = best</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">362</span>:             impurity, best.impurity_childs)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">363</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">364</span>:         # Return values</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">365</span>:         split[0] = best</pre>
 <pre class='cython code score-0 '>    (__pyx_v_split[0]) = __pyx_v_best;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">363</span>:         return 0</pre>
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">366</span>:         return 0</pre>
 <pre class='cython code score-0 '>    __pyx_r = 0;
     goto __pyx_L3_return;
   }
-</pre><pre class="cython line score-0">&#xA0;<span class="">364</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">365</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">366</span>:     cdef void node_value(self, double* dest) nogil:</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">367</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">368</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">369</span>:     cdef void node_value(self, double* dest) nogil:</pre>
 <pre class='cython code score-0 '>static void __pyx_f_14CARTGVSplitter_14CARTGVSplitter_node_value(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, double *__pyx_v_dest) {
 /* … */
   /* function exit code */
 }
-</pre><pre class="cython line score-0">&#xA0;<span class="">367</span>:         """Copy the value of node samples[start:end] into dest."""</pre>
-<pre class="cython line score-0">&#xA0;<span class="">368</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">369</span>:         self.criterion.node_value(dest)</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">370</span>:         """Copy the value of node samples[start:end] into dest."""</pre>
+<pre class="cython line score-0">&#xA0;<span class="">371</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">372</span>:         self.criterion.node_value(dest)</pre>
 <pre class='cython code score-0 '>  ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;node_value(__pyx_v_self-&gt;criterion, __pyx_v_dest);
-</pre><pre class="cython line score-0">&#xA0;<span class="">370</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">371</span>:     cdef double node_impurity(self) nogil:</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">373</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">374</span>:     cdef double node_impurity(self) nogil:</pre>
 <pre class='cython code score-0 '>static double __pyx_f_14CARTGVSplitter_14CARTGVSplitter_node_impurity(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self) {
   double __pyx_r;
 /* … */
@@ -2013,9 +2040,9 @@ __PYX_XDEC_MEMVIEW(&amp;__pyx_v_group, 0);
   __pyx_L0:;
   return __pyx_r;
 }
-</pre><pre class="cython line score-0">&#xA0;<span class="">372</span>:         """Return the impurity of the current node."""</pre>
-<pre class="cython line score-0">&#xA0;<span class="">373</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">374</span>:         return self.criterion.node_impurity()</pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">375</span>:         """Return the impurity of the current node."""</pre>
+<pre class="cython line score-0">&#xA0;<span class="">376</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">377</span>:         return self.criterion.node_impurity()</pre>
 <pre class='cython code score-0 '>  __pyx_r = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self-&gt;criterion-&gt;__pyx_vtab)-&gt;node_impurity(__pyx_v_self-&gt;criterion);
   goto __pyx_L0;
 </pre></div></body></html>

@@ -294,12 +294,15 @@ cdef class CARTGVSplitter():
             # Evaluate all splits
             self.criterion.reset()
 
+            with gil:
+              print("Start splitting_tree build")
+            
             # Create the splitting tree
             with gil:
               self.splitting_tree_builder.build(self.splitting_tree, np.ndarray(Xf.shape,buffer=Xf), np.ndarray(self.y.shape,buffer=self.y))
             
             with gil:
-                  print("Crash ?")
+                  print("End splitting_tree build")
             
             # Get the leaves and their number, the samples and their number
             n_nodes = self.splitting_tree.node_count
