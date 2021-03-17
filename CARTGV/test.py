@@ -4,9 +4,12 @@ Created on Tue Mar 16 10:35:14 2021
 
 @author: Alphonse
 """
+# import sys
+# sys.path.append('./')
 import numpy as np
 import pandas as pd
 
+# import CARTGVTree
 from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
 from CARTGVSplitter import CARTGVSplitter
 from CARTGVCriterion import CARTGVGini
