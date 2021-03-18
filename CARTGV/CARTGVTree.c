@@ -3452,8 +3452,6 @@ static PyTypeObject *__pyx_ptype_14CARTGVSplitter_CARTGVSplitter = 0;
 
 /* Module declarations from 'libc.stdint' */
 
-/* Module declarations from 'CARTGV' */
-
 /* Module declarations from 'sklearn.neighbors._quad_tree' */
 static PyTypeObject *__pyx_ptype_7sklearn_9neighbors_10_quad_tree__QuadTree = 0;
 static float *__pyx_vp_7sklearn_9neighbors_10_quad_tree_EPSILON = 0;

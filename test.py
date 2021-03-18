@@ -6,16 +6,15 @@ Created on Tue Mar 16 10:35:14 2021
 """
 # import sys
 # sys.path.append('./')
+
 import numpy as np
 import pandas as pd
+print("Start import")
 
-from CARTGV.CARTGVCriterion import CARTGVGini
-from CARTGV.CARTGVTree import CARTGVTree, CARTGVTreeBuilder
-from CARTGV.CARTGVSplitter import CARTGVSplitter
+from CARTGV import CARTGVSplitter
+from CARTGV import CARTGVGini
+from CARTGV import CARTGVTree, CARTGVTreeBuilder
 
-# from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
-# from CARTGVSplitter import CARTGVSplitter
-# from CARTGVCriterion import CARTGVGini
 from sklearn.utils.validation import check_random_state
 
 def fit(X, y, groups, sample_weight=None, check_input=True,
