@@ -21,6 +21,7 @@ from sklearn.tree._tree cimport Tree, TreeBuilder, Node
 from sklearn.tree._splitter cimport Splitter, SplitRecord
 
 from CARTGVSplitter cimport CARTGVSplitter
+from CARTGVCriterion cimport CARTGVCriterion
 
 np.import_array()
 
