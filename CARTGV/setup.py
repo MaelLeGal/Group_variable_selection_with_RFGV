@@ -10,5 +10,4 @@ ext_modules = [
 
 setup(
   name="cartgv",
-  ext_modules=cythonize(ext_modules,gdb_debug=True),
-  include_dirs=["."])
+  ext_modules=cythonize(ext_modules,gdb_debug=True))
