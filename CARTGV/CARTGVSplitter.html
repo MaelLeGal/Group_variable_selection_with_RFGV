@@ -306,7 +306,7 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">005</span>: @author: Alphonse</pre>
 <pre class="cython line score-0">&#xA0;<span class="">006</span>: """</pre>
 <pre class="cython line score-0">&#xA0;<span class="">007</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">008</span>: from CARTGV.CARTGVCriterion cimport CARTGVCriterion</pre>
+<pre class="cython line score-0">&#xA0;<span class="">008</span>: from CARTGVCriterion cimport CARTGVCriterion</pre>
 <pre class="cython line score-0">&#xA0;<span class="">009</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">010</span>: from libc.stdlib cimport free</pre>
 <pre class="cython line score-0">&#xA0;<span class="">011</span>: from libc.stdlib cimport qsort</pre>
@@ -495,7 +495,7 @@ static struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *__pyx_vtabptr_14
 <pre class='cython code score-87 '>/* Python wrapper */
 static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion = 0;
+  struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion = 0;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features;
   int __pyx_v_n_groups;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf;
@@ -575,7 +575,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
       values[4] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 4);
       values[5] = <span class='py_macro_api'>PyTuple_GET_ITEM</span>(__pyx_args, 5);
     }
-    __pyx_v_criterion = ((struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *)values[0]);
+    __pyx_v_criterion = ((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)values[0]);
     __pyx_v_max_grouped_features = <span class='pyx_c_api'>__Pyx_PyInt_As_Py_intptr_t</span>(values[1]); if (unlikely((__pyx_v_max_grouped_features == ((npy_intp)-1)) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 76, __pyx_L3_error)</span>
     __pyx_v_n_groups = <span class='pyx_c_api'>__Pyx_PyInt_As_int</span>(values[2]); if (unlikely((__pyx_v_n_groups == (int)-1) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 76, __pyx_L3_error)</span>
     __pyx_v_min_samples_leaf = <span class='pyx_c_api'>__Pyx_PyInt_As_Py_intptr_t</span>(values[3]); if (unlikely((__pyx_v_min_samples_leaf == ((npy_intp)-1)) &amp;&amp; <span class='py_c_api'>PyErr_Occurred</span>())) <span class='error_goto'>__PYX_ERR(0, 77, __pyx_L3_error)</span>
@@ -590,7 +590,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_criterion), __pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion, 1, "criterion", 0))) <span class='error_goto'>__PYX_ERR(0, 76, __pyx_L1_error)</span>
+  if (unlikely(!<span class='pyx_c_api'>__Pyx_ArgTypeTest</span>(((PyObject *)__pyx_v_criterion), __pyx_ptype_15CARTGVCriterion_CARTGVCriterion, 1, "criterion", 0))) <span class='error_goto'>__PYX_ERR(0, 76, __pyx_L1_error)</span>
   __pyx_r = __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_self), __pyx_v_criterion, __pyx_v_max_grouped_features, __pyx_v_n_groups, __pyx_v_min_samples_leaf, __pyx_v_min_weight_leaf, __pyx_v_random_state);
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -605,7 +605,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
   return __pyx_r;
 }
 
-static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state) {
+static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state) {
   int __pyx_r;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("__cinit__", 0);
@@ -647,15 +647,12 @@ static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj
 <pre class="cython line score-0">&#xA0;<span class="">095</span>:             The user inputted random state to be used for pseudo-randomness</pre>
 <pre class="cython line score-0">&#xA0;<span class="">096</span>:         """</pre>
 <pre class="cython line score-0">&#xA0;<span class="">097</span>: </pre>
-<pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">098</span>:         self.criterion = criterion</pre>
-<pre class='cython code score-4 '>  if (!(likely(((((PyObject *)__pyx_v_criterion)) == Py_None) || likely(<span class='pyx_c_api'>__Pyx_TypeTest</span>(((PyObject *)__pyx_v_criterion), __pyx_ptype_15CARTGVCriterion_CARTGVCriterion))))) <span class='error_goto'>__PYX_ERR(0, 98, __pyx_L1_error)</span>
-  __pyx_t_1 = ((PyObject *)__pyx_v_criterion);
-  <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_t_1);
-  <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_t_1);
+<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">098</span>:         self.criterion = criterion</pre>
+<pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_INCREF</span>(((PyObject *)__pyx_v_criterion));
+  <span class='refnanny'>__Pyx_GIVEREF</span>(((PyObject *)__pyx_v_criterion));
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_v_self-&gt;criterion);
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(((PyObject *)__pyx_v_self-&gt;criterion));
-  __pyx_v_self-&gt;criterion = ((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_v_self-&gt;criterion = __pyx_v_criterion;
 </pre><pre class="cython line score-0">&#xA0;<span class="">099</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">100</span>:         self.samples = NULL</pre>
 <pre class='cython code score-0 '>  __pyx_v_self-&gt;samples = NULL;

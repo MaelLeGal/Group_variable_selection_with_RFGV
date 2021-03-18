@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from CARTGV.CARTGVCriterion import CARTGVGini
-# from CARTGV import CARTGVTree, CARTGVTreeBuilder
+from CARTGV.CARTGVTree import CARTGVTree, CARTGVTreeBuilder
 from CARTGV.CARTGVSplitter import CARTGVSplitter
 
 # from CARTGVTree import CARTGVTree, CARTGVTreeBuilder

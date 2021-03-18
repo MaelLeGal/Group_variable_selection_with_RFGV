@@ -1341,8 +1341,6 @@ struct __pyx_obj_7sklearn_4tree_5_tree_Tree;
 struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder;
 struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion;
 struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion;
-struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion;
-struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion;
 struct __pyx_obj_7sklearn_9neighbors_10_quad_tree__QuadTree;
 struct __pyx_obj_7sklearn_4tree_6_utils_Stack;
 struct __pyx_obj_7sklearn_4tree_6_utils_PriorityHeap;
@@ -1815,48 +1813,6 @@ struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion {
 };
 
 
-/* "CARTGV/CARTGVCriterion.pxd":30
- * # from sklearn.tree._criterion cimport Criterion
- * 
- * cdef class CARTGVCriterion():             # <<<<<<<<<<<<<<
- *     # The criterion computes the impurity of a node and the reduction of
- *     # impurity of a split on that node. It also computes the output statistics
- */
-struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion {
-  PyObject_HEAD
-  struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_vtab;
-  __Pyx_memviewslice y;
-  __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *sample_weight;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *samples;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *starts;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *ends;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t n_outputs;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t n_samples;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t n_node_samples;
-  double weighted_n_samples;
-  double weighted_n_node_samples;
-  double *weighted_n_childs;
-  double *impurity_childs;
-  int n_childs;
-  double *sum_total;
-  double **sum_childs;
-};
-
-
-/* "CARTGV/CARTGVCriterion.pxd":75
- *     cdef double proxy_impurity_improvement(self) nogil
- * 
- * cdef class CARTGVClassificationCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
- *     """Abstract criterion for classification."""
- * 
- */
-struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion {
-  struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion __pyx_base;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *n_classes;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t sum_stride;
-};
-
-
 /* "neighbors/_quad_tree.pxd":55
  * 
  * 
@@ -2202,42 +2158,6 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion {
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion;
 
 
-/* "CARTGV/CARTGVCriterion.pxd":30
- * # from sklearn.tree._criterion cimport Criterion
- * 
- * cdef class CARTGVCriterion():             # <<<<<<<<<<<<<<
- *     # The criterion computes the impurity of a node and the reduction of
- *     # impurity of a split on that node. It also computes the output statistics
- */
-
-struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVCriterion {
-  int (*init)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *, __Pyx_memviewslice, __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t);
-  int (*reset)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *);
-  int (*reverse_reset)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *);
-  int (*update)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, int);
-  double (*node_impurity)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *);
-  void (*children_impurity)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *, double *);
-  void (*node_value)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *, double *);
-  double (*impurity_improvement)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *, double, double *);
-  double (*proxy_impurity_improvement)(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *);
-};
-static struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVCriterion;
-
-
-/* "CARTGV/CARTGVCriterion.pxd":75
- *     cdef double proxy_impurity_improvement(self) nogil
- * 
- * cdef class CARTGVClassificationCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
- *     """Abstract criterion for classification."""
- * 
- */
-
-struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion {
-  struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVCriterion __pyx_base;
-};
-static struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion;
-
-
 /* "neighbors/_quad_tree.pxd":55
  * 
  * 
@@ -2497,9 +2417,6 @@ static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
         __Pyx__ArgTypeTest(obj, type, name, exact))
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
-/* ExtTypeTest.proto */
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
-
 /* PyDictVersioning.proto */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 #define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
@@ -2665,6 +2582,9 @@ static CYTHON_INLINE PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* k
 static int __Pyx_SetItemInt_Generic(PyObject *o, PyObject *j, PyObject *v);
 static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObject *v,
                                                int is_list, int wraparound, int boundscheck);
+
+/* ExtTypeTest.proto */
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type);
 
 /* PyThreadStateGet.proto */
 #if CYTHON_FAST_THREAD_STATE
@@ -3362,10 +3282,6 @@ static PyTypeObject *__pyx_ptype_7sklearn_4tree_5_tree_TreeBuilder = 0;
 static PyTypeObject *__pyx_ptype_15CARTGVCriterion_CARTGVCriterion = 0;
 static PyTypeObject *__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion = 0;
 
-/* Module declarations from 'CARTGV.CARTGVCriterion' */
-static PyTypeObject *__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion = 0;
-static PyTypeObject *__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion = 0;
-
 /* Module declarations from 'libc.stdlib' */
 
 /* Module declarations from 'sklearn.neighbors._quad_tree' */
@@ -3774,7 +3690,7 @@ static PyObject *__pyx_n_s_update;
 static PyObject *__pyx_n_s_weighted_n_left;
 static PyObject *__pyx_n_s_weighted_n_node_samples;
 static PyObject *__pyx_n_s_weighted_n_right;
-static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state); /* proto */
+static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state); /* proto */
 static void __pyx_pf_14CARTGVSplitter_14CARTGVSplitter_2__dealloc__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14CARTGVSplitter_14CARTGVSplitter_4__getstate__(CYTHON_UNUSED struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14CARTGVSplitter_14CARTGVSplitter_6__setstate__(CYTHON_UNUSED struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_d); /* proto */
@@ -3972,7 +3888,7 @@ static CYTHON_INLINE void __pyx_f_14CARTGVSplitter__init_split(struct __pyx_t_14
 /* Python wrapper */
 static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion = 0;
+  struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion = 0;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features;
   int __pyx_v_n_groups;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf;
@@ -4055,7 +3971,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
       values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
     }
-    __pyx_v_criterion = ((struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *)values[0]);
+    __pyx_v_criterion = ((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)values[0]);
     __pyx_v_max_grouped_features = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_max_grouped_features == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
     __pyx_v_n_groups = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_n_groups == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 76, __pyx_L3_error)
     __pyx_v_min_samples_leaf = __Pyx_PyInt_As_Py_intptr_t(values[3]); if (unlikely((__pyx_v_min_samples_leaf == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
@@ -4070,7 +3986,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_criterion), __pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion, 1, "criterion", 0))) __PYX_ERR(0, 76, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_criterion), __pyx_ptype_15CARTGVCriterion_CARTGVCriterion, 1, "criterion", 0))) __PYX_ERR(0, 76, __pyx_L1_error)
   __pyx_r = __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_self), __pyx_v_criterion, __pyx_v_max_grouped_features, __pyx_v_n_groups, __pyx_v_min_samples_leaf, __pyx_v_min_weight_leaf, __pyx_v_random_state);
 
   /* function exit code */
@@ -4082,7 +3998,7 @@ static int __pyx_pw_14CARTGVSplitter_14CARTGVSplitter_1__cinit__(PyObject *__pyx
   return __pyx_r;
 }
 
-static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state) {
+static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_self, struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *__pyx_v_criterion, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_max_grouped_features, int __pyx_v_n_groups, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_min_samples_leaf, double __pyx_v_min_weight_leaf, PyObject *__pyx_v_random_state) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4103,14 +4019,11 @@ static int __pyx_pf_14CARTGVSplitter_14CARTGVSplitter___cinit__(struct __pyx_obj
  * 
  *         self.samples = NULL
  */
-  if (!(likely(((((PyObject *)__pyx_v_criterion)) == Py_None) || likely(__Pyx_TypeTest(((PyObject *)__pyx_v_criterion), __pyx_ptype_15CARTGVCriterion_CARTGVCriterion))))) __PYX_ERR(0, 98, __pyx_L1_error)
-  __pyx_t_1 = ((PyObject *)__pyx_v_criterion);
-  __Pyx_INCREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_INCREF(((PyObject *)__pyx_v_criterion));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_criterion));
   __Pyx_GOTREF(__pyx_v_self->criterion);
   __Pyx_DECREF(((PyObject *)__pyx_v_self->criterion));
-  __pyx_v_self->criterion = ((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_v_self->criterion = __pyx_v_criterion;
 
   /* "CARTGVSplitter.pyx":100
  *         self.criterion = criterion
@@ -24286,15 +24199,6 @@ static int __Pyx_modinit_type_import_code(void) {
    if (!__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion) __PYX_ERR(10, 75, __pyx_L1_error)
   __pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion)) __PYX_ERR(10, 75, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyImport_ImportModule("CARTGV.CARTGVCriterion"); if (unlikely(!__pyx_t_1)) __PYX_ERR(10, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion = __Pyx_ImportType(__pyx_t_1, "CARTGV.CARTGVCriterion", "CARTGVCriterion", sizeof(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVCriterion), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion) __PYX_ERR(10, 30, __pyx_L1_error)
-  __pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVCriterion = (struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVCriterion*)__Pyx_GetVtable(__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVCriterion)) __PYX_ERR(10, 30, __pyx_L1_error)
-  __pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion = __Pyx_ImportType(__pyx_t_1, "CARTGV.CARTGVCriterion", "CARTGVClassificationCriterion", sizeof(struct __pyx_obj_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion) __PYX_ERR(10, 75, __pyx_L1_error)
-  __pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion = (struct __pyx_vtabstruct_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion*)__Pyx_GetVtable(__pyx_ptype_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_6CARTGV_15CARTGVCriterion_CARTGVClassificationCriterion)) __PYX_ERR(10, 75, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule("sklearn.neighbors._quad_tree"); if (unlikely(!__pyx_t_1)) __PYX_ERR(11, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_7sklearn_9neighbors_10_quad_tree__QuadTree = __Pyx_ImportType(__pyx_t_1, "sklearn.neighbors._quad_tree", "_QuadTree", sizeof(struct __pyx_obj_7sklearn_9neighbors_10_quad_tree__QuadTree), __Pyx_ImportType_CheckSize_Warn);
@@ -25221,19 +25125,6 @@ static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *nam
     return 0;
 }
 
-/* ExtTypeTest */
-static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
-    if (unlikely(!type)) {
-        PyErr_SetString(PyExc_SystemError, "Missing type object");
-        return 0;
-    }
-    if (likely(__Pyx_TypeCheck(obj, type)))
-        return 1;
-    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
-                 Py_TYPE(obj)->tp_name, type->tp_name);
-    return 0;
-}
-
 /* PyDictVersioning */
 #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
 static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
@@ -25858,6 +25749,19 @@ static CYTHON_INLINE int __Pyx_SetItemInt_Fast(PyObject *o, Py_ssize_t i, PyObje
     }
 #endif
     return __Pyx_SetItemInt_Generic(o, PyInt_FromSsize_t(i), v);
+}
+
+/* ExtTypeTest */
+static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
+    if (unlikely(!type)) {
+        PyErr_SetString(PyExc_SystemError, "Missing type object");
+        return 0;
+    }
+    if (likely(__Pyx_TypeCheck(obj, type)))
+        return 1;
+    PyErr_Format(PyExc_TypeError, "Cannot convert %.200s to %.200s",
+                 Py_TYPE(obj)->tp_name, type->tp_name);
+    return 0;
 }
 
 /* PyErrFetchRestore */
