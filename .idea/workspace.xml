@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scikit-learn" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1pvI2vMYT8RgAFJ7pC5Rmna9WsN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CARTGV" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Group_variable_selection_with_RFGV" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV\test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.test2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="" />
+      <created>1616056939535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616056939535</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

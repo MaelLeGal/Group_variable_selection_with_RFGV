@@ -4,9 +4,6 @@ Created on Tue Mar 16 10:35:14 2021
 
 @author: Alphonse
 """
-# import sys
-# sys.path.append('./')
-
 import numpy as np
 import pandas as pd
 print("Start import")
@@ -74,7 +71,7 @@ def fit(X, y, groups, sample_weight=None, check_input=True,
                   min_impurity_decrease, min_impurity_split)
   
   print("Builder created")
-  
+  print(tree)
   print("Builder launched ...")
   builder.build(tree, X, y, groups)
   
@@ -102,6 +99,8 @@ g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
 groups = np.array([g1_idx,g2_idx,g3_idx,g4_idx,g5_idx])
 
 print(groups)
+
+print(y.shape)
 
 fit(np.array(X),np.array(y),groups)
 

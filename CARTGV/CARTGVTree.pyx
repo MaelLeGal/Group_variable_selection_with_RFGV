@@ -17,8 +17,11 @@ import numpy as np
 import pickle
 cimport numpy as np
 
-from sklearn.tree._tree cimport Tree, TreeBuilder, Node
-from sklearn.tree._splitter cimport Splitter, SplitRecord
+#from sklearn.tree._tree cimport Tree, TreeBuilder, Node
+#from sklearn.tree._splitter cimport Splitter, SplitRecord
+
+#import importlib
+#tree = importlib.import_module("scikit-learn.sklearn.tree")
 
 from CARTGVSplitter cimport CARTGVSplitter
 from CARTGVCriterion cimport CARTGVCriterion
@@ -752,6 +755,8 @@ cdef class CARTGVTreeBuilder():
         cdef double min_impurity_split = self.min_impurity_split
 
         # Recursive partition (without actual recursion)
+        print(np.array(y).shape)
+        print("Splitter initialisation")
         splitter.init(X, y, sample_weight_ptr, groups)
 
         cdef SIZE_t start
@@ -815,6 +820,8 @@ cdef class CARTGVTreeBuilder():
                            (impurity <= min_impurity_split))
 
                 if not is_leaf:
+                    with gil:
+                        print("splitter.node_split called")
                     splitter.node_split(impurity, &split, &n_constant_features)
                     # If EPSILON=0 in the below comparison, float precision
                     # issues stop splitting, producing trees that are

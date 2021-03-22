@@ -37,7 +37,7 @@ cdef struct CARTGVSplitRecord:
     double* impurity_childs # Impurity of the split childs.
     SIZE_t* starts          # Array containing the index at which each childs start in the samples array.
     SIZE_t* ends            # Array containing the index of the end of each childs in the samples array.
-    char* splitting_tree
+    unsigned char* splitting_tree
     int n_childs
 
 cdef class CARTGVSplitter():
