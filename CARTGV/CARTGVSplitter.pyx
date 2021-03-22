@@ -4,25 +4,41 @@ Created on Tue Mar  2 13:54:51 2021
 
 @author: Alphonse
 """
-
 from CARTGVCriterion cimport CARTGVCriterion
 
 from libc.stdlib cimport free
 from libc.stdlib cimport qsort
 from libc.string cimport memcpy
 from libc.string cimport memset
+from libc.stdlib cimport malloc, free
 
 import numpy as np
+#import dill as dill
 import pickle as pickle
+import sys
 cimport numpy as np
 np.import_array()
 
 from scipy.sparse import csc_matrix
 
 from sklearn.tree._utils cimport log, rand_int, rand_uniform, RAND_R_MAX, safe_realloc
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.tree._tree import BestFirstTreeBuilder
+from sklearn.tree._splitter import BestSplitter
+from sklearn.tree._criterion import Gini
+from sklearn.utils.validation import check_random_state
 
-from sklearn.tree._tree cimport Tree, TreeBuilder, Node
-from sklearn.tree._splitter cimport Splitter
+#from _tree cimport Tree, TreeBuilder, Node
+#from _splitter cimport Splitter
+
+#from sklearn.tree._tree cimport Tree, TreeBuilder, Node
+#from sklearn.tree._splitter cimport Splitter
+
+#from ..scikit_learn.sklearn.tree._tree cimport Tree, TreeBuilder, Node
+#from ..scikit_learn.sklearn.tree._splitter cimport Splitter
+
+import importlib
+tree = importlib.import_module("scikit-learn.sklearn.tree")
 
 # from numpy import float32 as DTYPE
 # from numpy import float64 as DOUBLE
@@ -61,13 +77,11 @@ cdef inline void _init_split(CARTGVSplitRecord* self) nogil:
     self.starts = [0]
     self.ends = [0]
     self.improvement = -INFINITY
-    self.splitting_tree = NULL
+    self.splitting_tree
     self.n_childs = 0
 
 cdef class CARTGVSplitter():
-    
-    # cdef SIZE_t[:, :] groups
-  
+
     """Abstract splitter class.
     Splitters are called by tree builders to find the best splits on both
     sparse and dense data, one split at a time.
@@ -174,6 +188,8 @@ cdef class CARTGVSplitter():
         # safe_realloc(&self.feature_values, n_samples)
         # safe_realloc(&self.constant_features, n_features)
 
+        print(y.shape)
+
         self.y = y
 
         self.sample_weight = sample_weight
@@ -186,6 +202,38 @@ cdef class CARTGVSplitter():
         
         for k in range(n_groups):
           self.len_groups[k] = len(groups[k])
+
+        n_outputs =  y.shape[1]
+        classes = []
+        n_classes = []
+        y_encoded = np.zeros((n_samples,1), dtype=int)
+        for k in range(n_outputs):
+          classes_k, y_encoded[:,k] = np.unique(y[:,k], return_inverse=True)
+          classes.append(classes_k)
+          n_classes.append(classes_k.shape[0])
+
+        n_classes = np.array(n_classes, dtype=np.intp)
+
+        self.splitting_tree = Tree(n_features,n_classes, n_outputs)
+
+        max_features = max(1, int(np.sqrt(n_features))) #len(groups[0])
+        max_leaf_nodes = -1 #X.shape[0]
+        min_samples_leaf = 1
+        min_samples_split = 2
+        min_weight_leaf = (0.25 * n_samples)
+        max_depth = 3
+        min_impurity_decrease = 0.
+        min_impurity_split = 0
+        random_state = check_random_state(0)
+
+        criterion = Gini(n_outputs,n_classes)
+        splitter = BestSplitter(criterion,max_features,min_samples_leaf,min_weight_leaf,random_state)
+        self.splitting_tree_builder = TreeBuilder(splitter, min_samples_split,
+                                   min_samples_leaf,
+                                   min_weight_leaf,
+                                   max_depth,
+                                   min_impurity_decrease,
+                                   min_impurity_split)
         
         return 0
 
@@ -266,8 +314,8 @@ cdef class CARTGVSplitter():
         cdef int* ends = [0]
         cdef int previous_pos = 0
         with gil:
-           Xf = np.empty(self.X.shape)
-           
+           Xf = np.empty((end-start,1)) #Obligatoire sinon erreur de compilation ...
+           best_splitting_tree = None
         cdef bytes splitting_tree
 
         _init_split(&best)
@@ -276,14 +324,14 @@ cdef class CARTGVSplitter():
 
             n_visited_grouped_features += 1
 
-            # Draw a feature at random
-            # f_j = rand_int(n_drawn_constants, f_i - n_found_constants,
-            #                random_state) #TODO : A changer, sélection aléatoire d'un groupe
             with gil:
               f_j = np.random.randint(0,max_grouped_features)
 
             group = groups[f_j]
             len_group = len_groups[f_j]
+
+            with gil:
+               Xf = np.empty((end-start,len_group)) # Récupère la shape correcte des données
 
             # Take the observations columns of group f_j between indexes start and end
             for i in range(start,end):
@@ -296,10 +344,9 @@ cdef class CARTGVSplitter():
 
             with gil:
               print("Start splitting_tree build")
-            
-            # Create the splitting tree
-            with gil:
-              self.splitting_tree_builder.build(self.splitting_tree, np.ndarray(Xf.shape,buffer=Xf), np.ndarray(self.y.shape,buffer=self.y))
+              y = np.array(self.y).reshape(Xf.shape[0],1)
+              # Create the splitting tree
+              self.splitting_tree_builder.build(self.splitting_tree, Xf, y)
             
             with gil:
                   print("End splitting_tree build")
@@ -315,36 +362,41 @@ cdef class CARTGVSplitter():
               if self.splitting_tree.nodes[k].left_child != _TREE_LEAF and self.splitting_tree.nodes[k].right_child != _TREE_LEAF:
                 sorted_leaves[k] = self.splitting_tree.nodes[k]
             
-            # Get the samples for each leaves and their start and end position in the samples array 
-            # samples_leaves = []
-            # starts = []
-            # ends = []
+            # Get the samples for each leaves and their start and end position in the samples array
             previous_pos = 0
             for j in range(n_leaves):
               if(previous_pos + sorted_leaves[j].n_node_samples < n_samples):
                 with gil:
                   for m in range(previous_pos, previous_pos + sorted_leaves[j].n_node_samples):
                     samples_leaves[j][m] = sorted_obs[m]
-                  # samples_leaves[j] = sorted_obs[previous_pos:previous_pos + sorted_leaves[j].n_node_samples]
+
                 starts[j] = previous_pos
                 ends[j] = previous_pos + sorted_leaves[i].n_node_samples
                 previous_pos = previous_pos + sorted_leaves[i].n_node_samples
 
-            self.criterion.update(starts,ends, n_leaves) # TODO : Voir le update
-
-            with gil:
-            # Reject if min_weight_leaf is not satisfied
-              if ((self.criterion.weighted_n_left < min_weight_leaf) or
-                      (self.criterion.weighted_n_right < min_weight_leaf)):
-                  continue
+            self.criterion.update(starts,ends, n_leaves)
 
             current_proxy_improvement = self.criterion.proxy_impurity_improvement()
 
             if current_proxy_improvement > best_proxy_improvement:
                 best_proxy_improvement = current_proxy_improvement
                 with gil:
-                  splitting_tree = pickle.dumps(self.splitting_tree)
-                  current.splitting_tree = splitting_tree #pickle.dumps(self.splitting_tree).decode('UTF-8')
+                  print("Current split tree assignment")
+                  best_splitting_tree = self.splitting_tree # TODO: A retirer une fois les problèmes de pickle truncated réglés.
+                  splitting_tree = pickle.dumps(best_splitting_tree,-1)
+                  print(sizeof(current))
+                  print(splitting_tree)
+                  print(sys.getsizeof(splitting_tree))
+                  print(sizeof(current.splitting_tree))
+                  current.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree))
+                  print(sizeof(current))
+#                  if not current.splitting_tree:
+#                    raise MemoryError()
+                  memcpy(current.splitting_tree, <unsigned char*>splitting_tree,sys.getsizeof(splitting_tree))
+                  print(sys.getsizeof(current.splitting_tree))
+#                  current.splitting_tree = splitting_tree #pickle.dumps(self.splitting_tree).decode('UTF-8')
+                  print(current.splitting_tree)
+                  print("End split tree assignment")
                 current.starts = starts
                 current.ends = ends
                 current.n_childs = n_leaves
@@ -356,7 +408,11 @@ cdef class CARTGVSplitter():
 
         self.criterion.reset()
         with gil:
-          self.criterion.update(best.starts,best.ends,best.splitting_tree.n_leaves)
+          bst_splitting_tree = best.splitting_tree
+          print(bst_splitting_tree)
+          best_splitting_tree = pickle.loads(bst_splitting_tree) # TODO : Remettre cette ligne une fois les problèmes de pickle truncated réglés
+          print(best_splitting_tree)
+          self.criterion.update(best.starts,best.ends,best_splitting_tree.n_leaves)
         self.criterion.children_impurity(best.impurity_childs)
         best.improvement = self.criterion.impurity_improvement(
             impurity, best.impurity_childs)
