@@ -50,7 +50,7 @@ def fit(X, y, groups, sample_weight=None, check_input=True,
   y = y_encoded
   
   n_classes = np.array(n_classes, dtype=np.intp)
-    
+
   criterion = CARTGVGini(n_outputs, n_classes)
   
   print("Criterion created")
@@ -76,6 +76,7 @@ def fit(X, y, groups, sample_weight=None, check_input=True,
   builder.build(tree, X, y, groups)
   
   print(tree.node_count)
+  print("END")
   
 
 df = pd.read_csv('CARTGV/data_Mael.csv',sep=";",index_col=0) #names=("Type", "Y", "V3_G1", "V4_G1", "V5_G1", "V6_G1", "V7_G1", "V8_G2", "V9_G2", "V10_G2", "V11_G2", "V12_G2", "V13_G3", "V14_G3", "V15_G3", "V16_G3", "V17_G3", "V18_G4", "V19_G4", "V20_G4", "V21_G4", "V22_G4", "V23_G5", "V24_G5", "V25_G5", "V26_G5", "V27_G5")
