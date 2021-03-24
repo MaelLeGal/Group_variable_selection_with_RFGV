@@ -24,10 +24,11 @@ Created on Wed Mar  3 09:23:33 2021
 # License: BSD 3 clause
 
 from libc.stdlib cimport calloc
-from libc.stdlib cimport free
+from libc.stdlib cimport free, malloc
 from libc.string cimport memcpy
 from libc.string cimport memset
 from libc.math cimport fabs
+from libc.stdio cimport printf
 
 import numpy as np
 cimport numpy as np
@@ -100,7 +101,7 @@ cdef class CARTGVCriterion():
         """
         pass
 
-    cdef int update(self, SIZE_t* starts, SIZE_t* ends, int n_childs) nogil except -1:
+    cdef int update(self, int* starts, int* ends, int n_childs) nogil except -1:
         """Updated statistics by moving samples[pos:new_pos] to the left child.
         This updates the collected statistics by moving samples[pos:new_pos]
         from the right child to the left child. It must be implemented by
@@ -157,6 +158,8 @@ cdef class CARTGVCriterion():
         The absolute impurity improvement is only computed by the
         impurity_improvement method once the best split has been found.
         """
+        with gil:
+            print("Start proxy impurity improvement")
         cdef double* impurity_childs = [0]
         self.children_impurity(impurity_childs)
 
@@ -353,7 +356,7 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         return 0
 
 
-    cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
+    cdef int update(self, int* starts, int* ends,int n_childs) nogil except -1:
         """Updated statistics by moving samples[pos:new_pos] to the left child.
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
         or 0 otherwise.
@@ -372,24 +375,57 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 
         cdef SIZE_t p
         cdef SIZE_t k
+        cdef SIZE_t c
         cdef SIZE_t label_index
         cdef DOUBLE_t w = 1.0
 
         self.n_childs = n_childs
+        sum_childs = <double**> calloc(n_childs,sizeof(double*))
+#        sum_childs = <double**> malloc(n_childs * self.n_outputs * sizeof(double*))
+        self.weighted_n_childs = <double*> malloc(self.n_outputs * sizeof(double))
+        with gil:
+            print(n_childs)
+            print(self.n_outputs)
+            print("Start loop n_childs")
         for j in range(n_childs):
+#          sum_childs[j] = <double*> malloc(self.n_outputs * sizeof(double))
+          sum_childs[j] = <double*> calloc(self.n_outputs,sizeof(double))
           for p in range (starts[j],ends[j]):
+
             i = samples[p]
             
             if sample_weight != NULL:
+              with gil:
+                print(sample_weight[i])
               w = sample_weight[i]
-              
+
             for k in range(self.n_outputs):
+              with gil:
+                  print(j)
+                  print(self.y[i,k])
+                  print(self.sum_stride)
               label_index = k * self.sum_stride +  <SIZE_t> self.y[i, k]
+              with gil:
+                  print(label_index)
+                  print("je passe par la")
               sum_childs[j][label_index] += w
+              with gil:
+                  print("je passe ici")
               sum_childs += self.sum_stride
+              with gil:
+                  print("je passe la")
               sum_total += self.sum_stride
+              with gil:
+                  print("je passe par ici")
               
             self.weighted_n_childs[j] += w
+            with gil:
+                print("weighted")
+
+          for j in range(n_childs):
+              for k in range(self.n_outputs):
+                for c in range(self.n_classes[k]):
+                    sum_childs[j]
 
         self.starts = starts
         self.ends = ends
@@ -413,12 +449,12 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t k
 
         for k in range(self.n_outputs):
-            memcpy(dest, sum_total, n_classes[k] * sizeof(double))
+            memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))
             dest += self.sum_stride
             sum_total += self.sum_stride
 
 cdef class CARTGVGini(CARTGVClassificationCriterion):
-    r"""Gini Index impurity criterion.
+    """Gini Index impurity criterion.
     This handles cases where the target is a classification taking values
     0, 1, ... K-2, K-1. If node m represents a region Rm with Nm observations,
     then let

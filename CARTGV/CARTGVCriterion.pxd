@@ -65,7 +65,7 @@ cdef class CARTGVCriterion():
                   SIZE_t end) nogil except -1
     cdef int reset(self) nogil except -1
     cdef int reverse_reset(self) nogil except -1
-    cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1
+    cdef int update(self, int* starts, int* ends,int n_childs) nogil except -1
     cdef double node_impurity(self) nogil
     cdef void children_impurity(self, double* impurity_childs) nogil
     cdef void node_value(self, double* dest) nogil

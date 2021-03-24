@@ -7,7 +7,7 @@ Created on Mon Mar  1 16:02:22 2021
 
 from cpython cimport Py_INCREF, PyObject, PyTypeObject
 
-from libc.stdlib cimport free
+from libc.stdlib cimport free, realloc
 from libc.math cimport fabs
 from libc.string cimport memcpy
 from libc.string cimport memset
@@ -169,8 +169,11 @@ cdef class CARTGVTree():
             else:
                 capacity = 2 * self.capacity
 
-        # safe_realloc(self.nodes, capacity)
-        # safe_realloc(self.value, capacity * self.value_stride)
+#        safe_realloc(self.nodes, capacity)
+#        safe_realloc(self.value, capacity * self.value_stride)
+        realloc(self.nodes, capacity)
+        realloc(self.value, capacity * self.value_stride)
+
 
         # value memory is initialised to 0 to enable classifier argmax
         # if capacity > self.capacity:
@@ -196,6 +199,8 @@ cdef class CARTGVTree():
         The new node registers itself as the child of its parent.
         Returns (SIZE_t)(-1) on error.
         """
+        with gil:
+            print("Start add_node")
         cdef SIZE_t node_id = self.node_count
         cdef int i
         
@@ -203,14 +208,21 @@ cdef class CARTGVTree():
             if self._resize_c() != 0:
                 return SIZE_MAX
 
-        cdef CARTGVNode* node = &self.nodes[node_id]
+        with gil:
+            print("CARTGV Node création")
+        cdef CARTGVNode node = self.nodes[node_id]
+        node = CARTGVNode()
         node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
 
+        with gil:
+            print("Check parent undefined")
         if parent != _TREE_UNDEFINED:
             self.nodes[parent].childs[self.nodes[parent].n_childs+1] = node_id
-          
+
+        with gil:
+            print("Check is_leaf")
         if is_leaf:
             for i in range(node.n_childs):
               node.childs[i] = _TREE_LEAF
@@ -832,19 +844,31 @@ cdef class CARTGVTreeBuilder():
 
                 with gil:
                   splitting_tree = pickle.loads(split.splitting_tree)
-                node_id = tree._add_node(parent, is_leaf, splitting_tree, impurity, n_node_samples, n_childs,
+                  print("add node _start")
+                  print(split.n_childs)
+                  node_id = tree._add_node(parent, is_leaf, splitting_tree, impurity, n_node_samples, split.n_childs,
                                          weighted_n_node_samples)
+                  print("add node end")
 
                 if node_id == SIZE_MAX:
                     rc = -1
                     break
 
+                with gil:
+                    print("Splitter Node Value start")
+
                 # Store value for all nodes, to facilitate tree/model
                 # inspection and interpretation
                 splitter.node_value(tree.value + node_id * tree.value_stride)
 
+                with gil:
+                    print("Splitter Node Value end")
+
                 if not is_leaf:
                     n_childs = split.n_childs
+                    with gil:
+                        print("Loop on childs and add to Stack")
+                        print(n_childs)
                     for i in range(n_childs):
                       with gil:
                         rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features)
@@ -855,6 +879,8 @@ cdef class CARTGVTreeBuilder():
 
                 if depth > max_depth_seen:
                     max_depth_seen = depth
+                with gil:
+                    print("End main loop")
 
             if rc >= 0:
                 rc = tree._resize_c(tree.node_count)
