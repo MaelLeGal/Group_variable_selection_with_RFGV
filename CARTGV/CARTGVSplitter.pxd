@@ -33,12 +33,12 @@ from sklearn.tree._splitter cimport Splitter
 
 cdef struct CARTGVSplitRecord:
     # Data to track sample split
-    double improvement      # Impurity improvement given parent node.
-    double* impurity_childs # Impurity of the split childs.
-    SIZE_t* starts          # Array containing the index at which each childs start in the samples array.
-    SIZE_t* ends            # Array containing the index of the end of each childs in the samples array.
-    unsigned char* splitting_tree
-    int n_childs
+    double improvement              # Impurity improvement given parent node.
+    double* impurity_childs         # Impurity of the split childs.
+    SIZE_t* starts                  # Array containing the index at which each childs start in the samples array.
+    SIZE_t* ends                    # Array containing the index of the end of each childs in the samples array.
+    unsigned char* splitting_tree   # The splitting tree serialized
+    int n_childs                    # The number of childs in the splitting tree
 
 cdef class CARTGVSplitter():
     # The splitter searches in the input space for a feature and a threshold
@@ -47,36 +47,38 @@ cdef class CARTGVSplitter():
     # The impurity computations are delegated to a criterion object.
 
     # Internal structures
-    cdef public CARTGVCriterion criterion      # Impurity criterion
-    cdef public SIZE_t max_grouped_features      # Number of features to test
-    cdef public SIZE_t min_samples_leaf  # Min samples in a leaf
-    cdef public double min_weight_leaf   # Minimum weight in a leaf
+    cdef public CARTGVCriterion criterion       # Impurity criterion
+    cdef public SIZE_t max_grouped_features     # Number of features to test
+    cdef public SIZE_t min_samples_leaf         # Min samples in a leaf
+    cdef public double min_weight_leaf          # Minimum weight in a leaf
 
-    cdef object random_state             # Random state
-    cdef UINT32_t rand_r_state           # sklearn_rand_r random number state
+    cdef object random_state                    # Random state
+    cdef UINT32_t rand_r_state                  # sklearn_rand_r random number state
 
-    cdef SIZE_t* samples                 # Sample indices in X, y
-    cdef SIZE_t n_samples                # X.shape[0]
-    cdef double weighted_n_samples       # Weighted number of samples
+    cdef SIZE_t* samples                        # Sample indices in X, y
+    cdef SIZE_t n_samples                       # X.shape[0]
+    cdef double weighted_n_samples              # Weighted number of samples
     # cdef SIZE_t** groups
-    cdef SIZE_t n_groups
-    cdef int[:] len_groups
-    cdef SIZE_t* features                # Feature indices in X
-    cdef SIZE_t n_features               # X.shape[1]
-    cdef object feature_values         # temp. array holding feature values
+    cdef SIZE_t n_groups                        # The number of groups
+    cdef int[:] len_groups                      # The length of each group
+    cdef SIZE_t* features                       # Feature indices in X
+    cdef SIZE_t n_features                      # X.shape[1]
+    cdef object feature_values                  # temp. array holding feature values
+    cdef int[:,:] classes                       # The classes in the responses
+    cdef int[:] n_classes                       # The number of each classes in the responses
 
-    cdef SIZE_t start                    # Start position for the current node
-    cdef SIZE_t end                      # End position for the current node
+    cdef SIZE_t start                           # Start position for the current node
+    cdef SIZE_t end                             # End position for the current node
 
-    cdef const DOUBLE_t[:, ::1] y
-    cdef DOUBLE_t* sample_weight
+    cdef const DOUBLE_t[:, ::1] y               # The responses
+    cdef DOUBLE_t* sample_weight                # The weight of each sample
     
-    cdef TreeBuilder splitting_tree_builder
-    cdef Tree splitting_tree
+    cdef TreeBuilder splitting_tree_builder     # The builder of the splitting tree
+    cdef Tree splitting_tree                    # The splitting tree
     
-    cdef int[:,:] groups
+    cdef int[:,:] groups                        # The groups
     
-    cdef object X
+    cdef object X                               # The datas
 
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,

@@ -32,7 +32,8 @@ from libc.stdio cimport printf
 
 import numpy as np
 cimport numpy as np
-import importlib  
+import importlib
+import faulthandler
 
 np.import_array()
 
@@ -101,15 +102,19 @@ cdef class CARTGVCriterion():
         """
         pass
 
-    cdef int update(self, int* starts, int* ends, int n_childs) nogil except -1:
+    cdef int update(self, SIZE_t* starts, SIZE_t* ends, int n_childs) nogil except -1:
         """Updated statistics by moving samples[pos:new_pos] to the left child.
         This updates the collected statistics by moving samples[pos:new_pos]
         from the right child to the left child. It must be implemented by
         the subclass.
         Parameters
         ----------
-        new_pos : SIZE_t
-            New starting index position of the samples in the right child
+        starts : SIZE_t*
+            New starting index position of the samples for each child
+        ends : SIZE_t*
+            New ending index position of the samples for each child
+        n_childs : int
+            The number of childs
         """
         pass
 
@@ -129,12 +134,9 @@ cdef class CARTGVCriterion():
         of samples[pos:end].
         Parameters
         ----------
-        impurity_left : double pointer
-            The memory address where the impurity of the left child should be
+        impurity_childs : double* pointer
+            The memory address where the impurity of each child should be
             stored.
-        impurity_right : double pointer
-            The memory address where the impurity of the right child should be
-            stored
         """
         pass
 
@@ -158,15 +160,13 @@ cdef class CARTGVCriterion():
         The absolute impurity improvement is only computed by the
         impurity_improvement method once the best split has been found.
         """
-        with gil:
-            print("Start proxy impurity improvement")
-        cdef double* impurity_childs = [0]
+        cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))
         self.children_impurity(impurity_childs)
 
         cdef double res = 0
         cdef int n_childs = self.n_childs
         for i in range(n_childs):
-          res -= self.weighted_n_childs[i] * impurity_childs[i]
+          res += -self.weighted_n_childs[i] * impurity_childs[i]
 
         return res
 
@@ -183,19 +183,18 @@ cdef class CARTGVCriterion():
         ----------
         impurity_parent : double
             The initial impurity of the parent node before the split
-        impurity_left : double
-            The impurity of the left child
-        impurity_right : double
-            The impurity of the right child
+        impurity_chimds : double pointer
+            The impurity of each child
         Return
         ------
         double : improvement in impurity after the split occurs
         """
         cdef double res = 0
         cdef int n_childs = self.n_childs
+
         for i in range(n_childs):
           res -= self.weighted_n_childs[i] / self.weighted_n_node_samples * impurity_childs[i]
-        
+
         return ((self.weighted_n_node_samples / self.weighted_n_samples) *
                 (impurity_parent + res))
       
@@ -253,6 +252,8 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         if (self.sum_total == NULL or
             self.sum_childs == NULL):
             raise MemoryError()
+
+        faulthandler.enable()
 
     def __dealloc__(self):
         """Destructor."""
@@ -318,6 +319,10 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
             if sample_weight != NULL:
                 w = sample_weight[i]
 
+#            with gil:
+#                print(len(self.y))
+#                print(i)
+
             # Count weighted class frequency for each target
             for k in range(self.n_outputs):
                 c = <SIZE_t> self.y[i, k]
@@ -343,7 +348,7 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t k
         cdef SIZE_t i
 
-        # self.weighted_n_childs = []
+        self.weighted_n_childs = <double*> calloc(self.n_outputs,sizeof(double))
 
         for k in range(self.n_outputs):
           for i in range(n_childs):
@@ -356,15 +361,18 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         return 0
 
 
-    cdef int update(self, int* starts, int* ends,int n_childs) nogil except -1:
+    cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
         """Updated statistics by moving samples[pos:new_pos] to the left child.
         Returns -1 in case of failure to allocate memory (and raise MemoryError)
         or 0 otherwise.
         Parameters
         ----------
-        new_pos : SIZE_t
-            The new ending position for which to move samples from the right
-            child to the left child.
+        starts : SIZE_t*
+            The new starting position for which to move samples for each child
+        ends : SIZE_t*
+            The new ending position for which to move samples for each child
+        n_childs : int
+            The number of child
         """
         cdef double** sum_childs = self.sum_childs
         cdef double* sum_total = self.sum_total
@@ -378,55 +386,36 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t c
         cdef SIZE_t label_index
         cdef DOUBLE_t w = 1.0
+        cdef SIZE_t n_elements = self.n_outputs * self.sum_stride
 
         self.n_childs = n_childs
         sum_childs = <double**> calloc(n_childs,sizeof(double*))
-#        sum_childs = <double**> malloc(n_childs * self.n_outputs * sizeof(double*))
-        self.weighted_n_childs = <double*> malloc(self.n_outputs * sizeof(double))
-        with gil:
-            print(n_childs)
-            print(self.n_outputs)
-            print("Start loop n_childs")
-        for j in range(n_childs):
-#          sum_childs[j] = <double*> malloc(self.n_outputs * sizeof(double))
-          sum_childs[j] = <double*> calloc(self.n_outputs,sizeof(double))
-          for p in range (starts[j],ends[j]):
+        self.weighted_n_childs = <double*> calloc(self.n_childs,sizeof(double))
 
+        # Loop on each child
+        for j in range(n_childs):
+          sum_childs[j] = <double*> calloc(n_elements,sizeof(double))
+
+          # Loop between the start and end for the current child
+          for p in range (starts[j],ends[j]):
             i = samples[p]
-            
+
             if sample_weight != NULL:
-              with gil:
-                print(sample_weight[i])
               w = sample_weight[i]
 
+            # increment the count of each label for each child
             for k in range(self.n_outputs):
-              with gil:
-                  print(j)
-                  print(self.y[i,k])
-                  print(self.sum_stride)
               label_index = k * self.sum_stride +  <SIZE_t> self.y[i, k]
-              with gil:
-                  print(label_index)
-                  print("je passe par la")
               sum_childs[j][label_index] += w
-              with gil:
-                  print("je passe ici")
-              sum_childs += self.sum_stride
-              with gil:
-                  print("je passe la")
-              sum_total += self.sum_stride
-              with gil:
-                  print("je passe par ici")
-              
             self.weighted_n_childs[j] += w
-            with gil:
-                print("weighted")
 
-          for j in range(n_childs):
-              for k in range(self.n_outputs):
-                for c in range(self.n_classes[k]):
-                    sum_childs[j]
+        for k in range(self.n_outputs):
+            for j in range(n_childs):
+                sum_childs[j][k] += self.sum_stride
+            sum_total += self.sum_stride
 
+        self.sum_childs = sum_childs
+        self.sum_total = sum_total
         self.starts = starts
         self.ends = ends
         return 0
@@ -499,15 +488,13 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
         impurity the right child (samples[pos:end]) using the Gini index.
         Parameters
         ----------
-        impurity_left : double pointer
-            The memory address to save the impurity of the left node to
-        impurity_right : double pointer
-            The memory address to save the impurity of the right node to
+        impurity_childs : double pointer
+            The array where the impurity of each child will be set
         """
         cdef SIZE_t* n_classes = self.n_classes
         cdef double** sum_childs = self.sum_childs
-        cdef double* gini_childs = [0]
-        cdef double* sq_count_childs = [0]
+        cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
+        cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))
         cdef double count_k
         cdef SIZE_t k
         cdef SIZE_t i
@@ -532,3 +519,5 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
 
         for m in range(n_childs):
           impurity_childs[m] = gini_childs[m] / self.n_outputs
+
+        self.sum_childs = sum_childs

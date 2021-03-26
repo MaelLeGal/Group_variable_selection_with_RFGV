@@ -35,14 +35,14 @@ from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
 cdef struct CARTGVNode:
-  SIZE_t* childs
-  SIZE_t parent
-  char* splitting_tree
-  DOUBLE_t impurity
-  SIZE_t n_node_samples
-  DOUBLE_t weighted_n_node_samples
-  int group
-  int n_childs
+  SIZE_t* childs                        # The childs of the node
+  SIZE_t parent                         # The parent of the node
+  unsigned char* splitting_tree         # The serialized splitting tree of the node
+  DOUBLE_t impurity                     # The impurity of the node
+  SIZE_t n_node_samples                 # The number of samples in the node
+  DOUBLE_t weighted_n_node_samples      # The number of weighted samples in the node
+  int group                             # The group selected for the split of the node
+  int n_childs                          # The number of childs of the node
   
 cdef class CARTGVTree():
   
@@ -60,7 +60,7 @@ cdef class CARTGVTree():
   cdef CARTGVNode* nodes                #Array of nodes
   cdef double* value                    #(capacity, n_outputs, max_n_classes) array of values
   cdef SIZE_t value_stride              # = n_outputs * max_n_classes
-  cdef int** groups
+  cdef int** groups                     # The different group
   
   #Methods
   cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
@@ -94,17 +94,17 @@ cdef class CARTGVTreeBuilder():
     # This class controls the various stopping criteria and the node splitting
     # evaluation order, e.g. depth-first or best-first.
 
-    cdef CARTGVSplitter splitter              # Splitting algorithm
+    cdef CARTGVSplitter splitter                # The splitter of the CARTGV Tree
 
-    cdef SIZE_t min_samples_split       # Minimum number of samples in an internal node
-    cdef SIZE_t min_samples_leaf        # Minimum number of samples in a leaf
-    cdef double min_weight_leaf         # Minimum weight in a leaf
-    cdef SIZE_t max_depth               # Maximal tree depth
-    cdef SIZE_t mgroup                  # Number of group selected during the RF
-    cdef SIZE_t mvar                    # Number of variable in the group selected during the RF
-    cdef double min_impurity_split
-    cdef double min_impurity_decrease   # Impurity threshold for early stopping
-    cdef TreeBuilder splitting_tree_builder
+    cdef SIZE_t min_samples_split               # Minimum number of samples in an internal node
+    cdef SIZE_t min_samples_leaf                # Minimum number of samples in a leaf
+    cdef double min_weight_leaf                 # Minimum weight in a leaf
+    cdef SIZE_t max_depth                       # Maximal tree depth
+    cdef SIZE_t mgroup                          # Number of group selected during the RF
+    cdef SIZE_t mvar                            # Number of variable in the group selected during the RF
+    cdef double min_impurity_split              # The minimum impurity needed in a split
+    cdef double min_impurity_decrease           # Impurity threshold for early stopping
+    cdef TreeBuilder splitting_tree_builder     # The builder of the splitting trees
 
     cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=*)
