@@ -37,8 +37,8 @@ cdef class CARTGVCriterion():
     cdef DOUBLE_t* sample_weight         # Sample weights
 
     cdef SIZE_t* samples                 # Sample indices in X, y
-    cdef SIZE_t* starts                    # samples[start:pos] are the samples in the left node
-    cdef SIZE_t* ends
+    cdef SIZE_t* starts                  # The starts of each child in the samples array
+    cdef SIZE_t* ends                    # The ends of each child in the samples array
 
     cdef SIZE_t n_outputs                # Number of outputs
     cdef SIZE_t n_samples                # Number of samples
@@ -46,15 +46,15 @@ cdef class CARTGVCriterion():
     cdef double weighted_n_samples       # Weighted number of samples (in total)
     cdef double weighted_n_node_samples  # Weighted number of samples in the node
     cdef double* weighted_n_childs       # Weighted number of samples in the childs
-    cdef double* impurity_childs
-    cdef int n_childs
+    cdef double* impurity_childs         # The impurity of each child
+    cdef int n_childs                    # The number of childs
 
     cdef double* sum_total          # For classification criteria, the sum of the
                                     # weighted count of each label. For regression,
                                     # the sum of w*y. sum_total[k] is equal to
                                     # sum_{i=start}^{end-1} w[samples[i]]*y[samples[i], k],
                                     # where k is output index.
-    cdef double** sum_childs
+    cdef double** sum_childs        # The sum of the count of each label for each child
 
     # The criterion object is maintained such that left and right collected
     # statistics correspond to samples[start:pos] and samples[pos:end].
@@ -65,7 +65,7 @@ cdef class CARTGVCriterion():
                   SIZE_t end) nogil except -1
     cdef int reset(self) nogil except -1
     cdef int reverse_reset(self) nogil except -1
-    cdef int update(self, int* starts, int* ends,int n_childs) nogil except -1
+    cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1
     cdef double node_impurity(self) nogil
     cdef void children_impurity(self, double* impurity_childs) nogil
     cdef void node_value(self, double* dest) nogil
