@@ -795,7 +795,7 @@ cdef class CARTGVTreeBuilder():
         cdef SIZE_t parent                                                  # The parent of the node
         cdef SIZE_t n_node_samples = splitter.n_samples                     # The number of samples/observations in the node
         cdef double weighted_n_samples = splitter.weighted_n_samples        # The weight of the samples in the node
-        cdef double weighted_n_node_samples                                 # ???
+        cdef double weighted_n_node_samples                                 # The number of weighted sample in the node
         cdef CARTGVSplitRecord split                                        # The structure that contains the split informations
         cdef SIZE_t node_id                                                 # The current node id
 

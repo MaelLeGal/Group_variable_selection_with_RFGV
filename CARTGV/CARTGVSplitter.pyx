@@ -93,6 +93,74 @@ cdef class CARTGVSplitter():
     Splitters are called by tree builders to find the best splits on both
     sparse and dense data, one split at a time.
     """
+    @property
+    def X(self):
+        return self.X
+
+    @property
+    def y(self):
+        return self.y
+
+    @property
+    def criterion(self):
+        return self.criterion
+
+    @property
+    def splitting_tree_builder(self):
+        return self.splitting_tree_builder
+
+    @property
+    def splitting_tree(self):
+        return self.splitting_tree
+
+    @property
+    def groups(self):
+        return self.groups
+
+    @property
+    def n_groups(self):
+        return self.n_groups
+
+    @property
+    def len_groups(self):
+        return self.len_groups
+
+    @property
+    def start(self):
+        return self.start
+
+    @property
+    def end(self):
+        return self.end
+
+    @property
+    def n_features(self):
+        return self.n_features
+
+    @property
+    def weighted_n_samples(self):
+        return self.weighted_n_samples
+
+    @property
+    def n_samples(self):
+        return self.n_samples
+
+    @property
+    def samples(self):
+        return np.asarray(<SIZE_t[:self.n_samples]>self.samples)
+
+    @property
+    def rand_r_state(self):
+        return self.rand_r_state
+
+    @property
+    def random_state(self):
+        return self.random_state
+
+    @property
+    def n_classes(self):
+        return self.n_classes
+
 
     def __cinit__(self, CARTGVCriterion criterion, SIZE_t max_grouped_features, int n_groups,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
@@ -204,11 +272,11 @@ cdef class CARTGVSplitter():
         self.sample_weight = sample_weight
 
         self.X = X
-        
+
         self.groups = groups
         cdef int n_groups = groups.shape[0]
         self.n_groups = n_groups
-        
+
         for k in range(n_groups):
           self.len_groups[k] = <int>len(groups[k])
 
@@ -226,15 +294,16 @@ cdef class CARTGVSplitter():
         # Create the splitting tree
         self.splitting_tree = Tree(n_features,n_classes, n_outputs)
 
-        max_features = max(1, int(np.sqrt(n_features))) #len(groups[0])
+        # TODO make those variable settable parameters
+        max_features = len(groups[0]) #max(1, int(np.sqrt(n_features))) #len(groups[0])
         max_leaf_nodes = X.shape[0]
         min_samples_leaf = 1
         min_samples_split = 2
-        min_weight_leaf = (0.25 * n_samples)
+        min_weight_leaf = 0.0 #(0.25 * n_samples)
         max_depth = 3
         min_impurity_decrease = 0.
         min_impurity_split = 0
-        random_state = check_random_state(0)
+        random_state = check_random_state(2547)
 
         # Create the Criterion, Splitter et TreeBuilder for the splitting tree
         criterion = Gini(n_outputs,n_classes)
@@ -245,9 +314,19 @@ cdef class CARTGVSplitter():
                                    max_depth,
                                    min_impurity_decrease,
                                    min_impurity_split)
-        
+
         return 0
 
+    cpdef int test_init(self,
+                  object X,
+                  DOUBLE_t[:, ::1] y,
+                  np.ndarray sample_weight, object groups):
+        res = -1
+        if(sample_weight == None):
+            res = self.init(X,y,NULL,groups)
+        else:
+            res = self.init(X,y,<DOUBLE_t*>sample_weight.data, groups)
+        return res
 
     cdef int node_reset(self, SIZE_t start, SIZE_t end,
                         double* weighted_n_node_samples) nogil except -1:
@@ -276,6 +355,12 @@ cdef class CARTGVSplitter():
 
         weighted_n_node_samples[0] = self.criterion.weighted_n_node_samples
         return 0
+
+    cpdef int test_node_reset(self, SIZE_t start, SIZE_t end,
+                                double weighted_n_node_samples):
+
+        res = self.node_reset(start,end,&weighted_n_node_samples) #<double*>&wns.data
+        return res
 
     cdef int node_split(self, double impurity, CARTGVSplitRecord* split,
                         SIZE_t* n_constant_features) nogil except -1:
@@ -348,15 +433,16 @@ cdef class CARTGVSplitter():
               for l in range(len_group):
                 with gil:
                   Xf[i][l] = self.X[samples[i],group[l]]
-                                 
+
             # Evaluate all splits
             self.criterion.reset()
 
             with gil:
-              y = np.asarray(self.y)
               # Create the splitting tree
-              random.seed(2457)
-              self.splitting_tree_builder.build(self.splitting_tree, Xf, y) # PLANTE ici, peut être lié au splitting tree et a sa réinitialisation à chaque tour de boucle, ou les shapes de Xf, et y
+              print("splitting_tree build start")
+              y = np.asarray(self.y)
+              self.splitting_tree_builder.build(self.splitting_tree, Xf, y, None) # PLANTE ici, peut être lié au splitting tree et a sa réinitialisation à chaque tour de boucle, ou les shapes de Xf, et y
+              print("splitting_tree build end")
 
               # Necessary loop to get the number of leaves as self.splitting_tree.n_leaves crash the program (the np.sum in the splitting_tree.n_leaves property has an error)
               n_leaves = 0
@@ -464,6 +550,144 @@ cdef class CARTGVSplitter():
         split[0] = best
         return 0
 
+    """
+    --------------------------------------------------------------------------------------------------------------------
+                                                        TEST NODE SPLIT
+    --------------------------------------------------------------------------------------------------------------------
+    """
+
+    cpdef tuple test_node_split(self,
+                        double impurity,
+                        SIZE_t n_constant_features):
+
+        cdef CARTGVSplitRecord split
+        res = self.node_split(impurity,&split,&n_constant_features)
+        return res #TODO, trouver un moyen de retourner le split
+
+    cpdef int test_one_split(self, double imurity, SIZE_t n_constant_features):
+        # Find the best split
+        cdef SIZE_t* samples = self.samples                             # The samples
+        cdef SIZE_t start = self.start                                  # The start of the node in the sample array
+        cdef SIZE_t end = self.end                                      # The end of the node in the sample array
+
+        cdef int[:,:] groups = self.groups                              # The different groups
+        cdef SIZE_t n_groups = self.n_groups                            # The number of groups
+        cdef int[:] group                                               # The selected group
+        cdef int[:] len_groups = self.len_groups                        # The length of each group
+        cdef int len_group                                              # The length of the selected group
+
+        cdef SIZE_t f_j                                                 # The index of the selected group
+        cdef SIZE_t i
+        cdef SIZE_t l
+
+        Xf = np.empty((end-start,1)) #Obligatoire sinon erreur de compilation ...
+        cdef bytes splitting_tree                                       # The variable that will contains the serialized splitting tree
+
+        f_j = 0 #np.random.randint(0,max_grouped_features)           # Select a group at random
+
+        group = groups[f_j]
+        len_group = len_groups[f_j]
+
+        Xf = np.empty((end-start,len_group)) # Récupère la shape correcte des données
+
+        # Take the observations columns of group f_j between indexes start and end
+        for i in range(start,end):
+          for l in range(len_group):
+            Xf[i][l] = self.X[samples[i],group[l]]
+
+        # Evaluate all splits
+        self.criterion.reset()
+
+        y = np.asarray(self.y)
+
+        self.splitting_tree_builder.build(self.splitting_tree, Xf, y, None) # PLANTE ici, peut être lié au splitting tree et a sa réinitialisation à chaque tour de boucle, ou les shapes de Xf, et y
+        print("splitting_tree build end")
+
+        print(self.splitting_tree.nodes[0])
+        print(self.splitting_tree.nodes[1])
+        print(self.splitting_tree.nodes[2])
+        print(self.splitting_tree.nodes[3])
+        print(self.splitting_tree.nodes[4])
+        print(self.splitting_tree.nodes[5])
+        print(self.splitting_tree.nodes[6])
+        print(self.splitting_tree.nodes[7])
+        print(self.splitting_tree.nodes[8])
+        print(self.splitting_tree.nodes[9])
+        print(self.splitting_tree.nodes[10])
+
+        return 0
+
+    cpdef int test_n_split(self, double impurity, SIZE_t n_constant_features, int n_split, int tree_look):
+        # Find the best split
+        cdef SIZE_t* samples = self.samples                             # The samples
+        cdef SIZE_t start = self.start                                  # The start of the node in the sample array
+        cdef SIZE_t end = self.end                                      # The end of the node in the sample array
+
+        cdef int[:,:] groups = self.groups                              # The different groups
+        cdef SIZE_t n_groups = self.n_groups                            # The number of groups
+        cdef int[:] group                                               # The selected group
+        cdef int[:] len_groups = self.len_groups                        # The length of each group
+        cdef int len_group                                              # The length of the selected group
+
+        cdef SIZE_t f_j                                                 # The index of the selected group
+        cdef SIZE_t i
+        cdef SIZE_t j
+        cdef SIZE_t l
+
+        tree = []
+
+        Xf = np.empty((end-start,1)) #Obligatoire sinon erreur de compilation ...
+
+        for j in range(n_split):
+
+            f_j = 0 #np.random.randint(0,max_grouped_features)           # Select a group at random
+
+            group = groups[f_j]
+            len_group = len_groups[f_j]
+
+            Xf = np.empty((end-start,len_group)) # Récupère la shape correcte des données
+
+            # Take the observations columns of group f_j between indexes start and end
+            for i in range(start,end):
+              for l in range(len_group):
+                Xf[i][l] = self.X[samples[i],group[l]]
+
+            # Evaluate all splits
+            self.criterion.reset()
+
+            y = np.asarray(self.y)
+
+            self.splitting_tree_builder.build(self.splitting_tree, Xf, y, None) # PLANTE ici, peut être lié au splitting tree et a sa réinitialisation à chaque tour de boucle, ou les shapes de Xf, et y
+            tree.append(self.splitting_tree)
+            print("splitting_tree build end")
+
+            n_outputs =  y.shape[1]
+            classes = []
+            n_classes = []
+
+            for k in range(n_outputs):
+              classes_k = np.unique(y[:,k])
+              classes.append(classes_k)
+              n_classes.append(classes_k.shape[0])
+
+            n_classes = np.array(n_classes, dtype=np.intp)
+
+            # Reset the splitting tree for the next loop iteration
+            self.splitting_tree = Tree(self.n_features,n_classes, n_outputs)
+
+        self.splitting_tree = tree[tree_look]
+
+        return 0
+
+    cpdef unsigned char[::1] test_splitting_tree_into_struct(self, Tree splitting_tree):
+
+        cdef CARTGVSplitRecord current                            # The best and current split (splitting tree)
+
+        splitting_tree_s = pickle.dumps(splitting_tree,0)         # PLANTE ici, peut être lié à la réinitialisation de l'arbre
+        current.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree_s)*sizeof(unsigned char))
+        current.splitting_tree = splitting_tree_s
+
+        return np.asarray(<unsigned char[:sys.getsizeof(splitting_tree_s)*sizeof(unsigned char)]> current.splitting_tree)
 
     cdef void node_value(self, double* dest) nogil:
         """Copy the value of node samples[start:end] into dest."""

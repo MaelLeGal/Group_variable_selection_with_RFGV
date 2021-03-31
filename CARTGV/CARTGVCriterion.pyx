@@ -66,6 +66,61 @@ cdef class CARTGVCriterion():
     def __setstate__(self, d):
         pass
 
+    @property
+    def y(self):
+        return self.y
+
+    @property
+    def sample_weight(self):
+        if self.sample_weight is not NULL:
+            return np.asarray(<DOUBLE_t[:self.n_samples]>self.sample_weight)
+        else:
+            return None
+
+    @property
+    def samples(self):
+        return np.asarray(<SIZE_t[:self.n_samples]>self.samples)
+
+    @property
+    def starts(self):
+        return np.asarray(<SIZE_t[:self.n_childs+1]>self.starts) #TODO vérifier que le +1 est nécessaire
+
+    @property
+    def ends(self):
+        return np.asarray(<SIZE_t[:self.n_childs+1]>self.ends) #TODO vérifier que le +1 est nécessaire
+
+    @property
+    def n_outputs(self):
+        return self.n_outputs
+
+    @property
+    def n_samples(self):
+        return self.n_samples
+
+    @property
+    def n_node_samples(self):
+        return self.n_node_samples
+
+    @property
+    def weighted_n_samples(self):
+        return self.weighted_n_samples
+
+    @property
+    def weighted_n_node_samples(self):
+        return self.weighted_n_node_samples
+
+    @property
+    def weighted_n_childs(self):
+        return np.asarray(<double[:self.n_childs]>self.weighted_n_childs)
+
+    @property
+    def impurity_childs(self):
+        return np.asarray(<double[:self.n_childs]>self.impurity_childs)
+
+    @property
+    def n_childs(self):
+        return self.n_childs
+
     cdef int init(self, const DOUBLE_t[:, ::1] y, DOUBLE_t* sample_weight,
                   double weighted_n_samples, SIZE_t* samples, SIZE_t start,
                   SIZE_t end) nogil except -1:
@@ -89,6 +144,17 @@ cdef class CARTGVCriterion():
             The last sample used on this node
         """
         pass
+
+    cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,
+                  double weighted_n_samples, np.ndarray samples, SIZE_t start,
+                  SIZE_t end):
+
+        cdef DOUBLE_t* sample_weight_ptr = NULL
+        if sample_weight is not None:
+            sample_weight_ptr = <DOUBLE_t*> sample_weight.data
+        cdef SIZE_t* samples_ptr = <SIZE_t*> samples.data
+
+        return self.init(y, sample_weight_ptr, weighted_n_samples, samples_ptr, start, end)
 
     cdef int reset(self) nogil except -1:
         """Reset the criterion at pos=start.
