@@ -1849,8 +1849,8 @@ struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion {
 };
 
 
-/* "CARTGVCriterion.pxd":75
- *     cdef double proxy_impurity_improvement(self) nogil
+/* "CARTGVCriterion.pxd":83
+ *                   SIZE_t end)
  * 
  * cdef class CARTGVClassificationCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
  *     """Abstract criterion for classification."""
@@ -2239,12 +2239,13 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion {
   void (*node_value)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, double *);
   double (*impurity_improvement)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, double, double *);
   double (*proxy_impurity_improvement)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *);
+  int (*test_init)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, __Pyx_memviewslice, PyArrayObject *, double, PyArrayObject *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int __pyx_skip_dispatch);
 };
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVCriterion;
 
 
-/* "CARTGVCriterion.pxd":75
- *     cdef double proxy_impurity_improvement(self) nogil
+/* "CARTGVCriterion.pxd":83
+ *                   SIZE_t end)
  * 
  * cdef class CARTGVClassificationCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
  *     """Abstract criterion for classification."""
@@ -2267,8 +2268,14 @@ static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *
 
 struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter {
   int (*init)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, PyObject *, __Pyx_memviewslice, __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *, PyObject *);
+  int (*test_init)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, PyObject *, __Pyx_memviewslice, PyArrayObject *, PyObject *, int __pyx_skip_dispatch);
   int (*node_reset)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, double *);
+  int (*test_node_reset)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, double, int __pyx_skip_dispatch);
   int (*node_split)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *);
+  PyObject *(*test_node_split)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int __pyx_skip_dispatch);
+  int (*test_one_split)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int __pyx_skip_dispatch);
+  int (*test_n_split)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, int, int __pyx_skip_dispatch);
+  __Pyx_memviewslice (*test_splitting_tree_into_struct)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, struct __pyx_obj_7sklearn_4tree_5_tree_Tree *, int __pyx_skip_dispatch);
   void (*node_value)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double *);
   double (*node_impurity)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *);
 };
@@ -8276,7 +8283,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj
  *         cdef SIZE_t parent                                                  # The parent of the node
  *         cdef SIZE_t n_node_samples = splitter.n_samples                     # The number of samples/observations in the node             # <<<<<<<<<<<<<<
  *         cdef double weighted_n_samples = splitter.weighted_n_samples        # The weight of the samples in the node
- *         cdef double weighted_n_node_samples                                 # ???
+ *         cdef double weighted_n_node_samples                                 # The number of weighted sample in the node
  */
   __pyx_t_10 = __pyx_v_splitter->n_samples;
   __pyx_v_n_node_samples = __pyx_t_10;
@@ -8285,7 +8292,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj
  *         cdef SIZE_t parent                                                  # The parent of the node
  *         cdef SIZE_t n_node_samples = splitter.n_samples                     # The number of samples/observations in the node
  *         cdef double weighted_n_samples = splitter.weighted_n_samples        # The weight of the samples in the node             # <<<<<<<<<<<<<<
- *         cdef double weighted_n_node_samples                                 # ???
+ *         cdef double weighted_n_node_samples                                 # The number of weighted sample in the node
  *         cdef CARTGVSplitRecord split                                        # The structure that contains the split informations
  */
   __pyx_t_11 = __pyx_v_splitter->weighted_n_samples;
@@ -27133,8 +27140,8 @@ static int __Pyx_modinit_type_import_code(void) {
    if (!__pyx_ptype_15CARTGVCriterion_CARTGVCriterion) __PYX_ERR(10, 30, __pyx_L1_error)
   __pyx_vtabptr_15CARTGVCriterion_CARTGVCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVCriterion)) __PYX_ERR(10, 30, __pyx_L1_error)
   __pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion = __Pyx_ImportType(__pyx_t_1, "CARTGVCriterion", "CARTGVClassificationCriterion", sizeof(struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion) __PYX_ERR(10, 75, __pyx_L1_error)
-  __pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion)) __PYX_ERR(10, 75, __pyx_L1_error)
+   if (!__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion) __PYX_ERR(10, 83, __pyx_L1_error)
+  __pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion)) __PYX_ERR(10, 83, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule("CARTGVSplitter"); if (unlikely(!__pyx_t_1)) __PYX_ERR(11, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);

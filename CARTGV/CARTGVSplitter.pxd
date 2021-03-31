@@ -47,7 +47,7 @@ cdef class CARTGVSplitter():
     # The impurity computations are delegated to a criterion object.
 
     # Internal structures
-    cdef public CARTGVCriterion criterion       # Impurity criterion
+    cdef CARTGVCriterion criterion              # Impurity criterion
     cdef public SIZE_t max_grouped_features     # Number of features to test
     cdef public SIZE_t min_samples_leaf         # Min samples in a leaf
     cdef public double min_weight_leaf          # Minimum weight in a leaf
@@ -100,13 +100,28 @@ cdef class CARTGVSplitter():
     cdef int init(self, object X, const DOUBLE_t[:, ::1] y,
                   DOUBLE_t* sample_weight, object groups) except -1
 
+    cpdef int test_init(self, object X, DOUBLE_t[:, ::1] y,
+                  np.ndarray sample_weight, object groups)
+
     cdef int node_reset(self, SIZE_t start, SIZE_t end,
                         double* weighted_n_node_samples) nogil except -1
+
+    cpdef int test_node_reset(self, SIZE_t start, SIZE_t end, double weighted_n_node_samples)
 
     cdef int node_split(self,
                         double impurity,   # Impurity of the node
                         CARTGVSplitRecord* split,
                         SIZE_t* n_constant_features) nogil except -1
+
+    cpdef tuple test_node_split(self,
+                        double impurity,
+                        SIZE_t n_constant_features)
+
+    cpdef int test_one_split(self, double impurity, SIZE_t n_constant_features)
+
+    cpdef int test_n_split(self, double impurity, SIZE_t n_constant_features, int n_split, int tree_look)
+
+    cpdef unsigned char[::1] test_splitting_tree_into_struct(self, Tree splitting_tree)
 
     cdef void node_value(self, double* dest) nogil
 

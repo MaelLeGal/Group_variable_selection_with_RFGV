@@ -72,6 +72,14 @@ cdef class CARTGVCriterion():
     cdef double impurity_improvement(self, double impurity_parent,double* impurity_childs) nogil
     cdef double proxy_impurity_improvement(self) nogil
 
+
+    """
+    TEST
+    """
+    cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,
+                  double weighted_n_samples, np.ndarray samples, SIZE_t start,
+                  SIZE_t end)
+
 cdef class CARTGVClassificationCriterion(CARTGVCriterion):
     """Abstract criterion for classification."""
 
