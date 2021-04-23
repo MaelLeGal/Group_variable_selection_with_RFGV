@@ -6,9 +6,8 @@ Created on Tue Mar 16 10:35:14 2021
 """
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 print("Start import")
-
-import numpy
 
 from CARTGV import CARTGVSplitter
 from CARTGV import CARTGVGini
