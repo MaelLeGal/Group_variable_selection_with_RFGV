@@ -80,6 +80,8 @@ cdef class CARTGVCriterion():
                   double weighted_n_samples, np.ndarray samples, SIZE_t start,
                   SIZE_t end)
 
+    cpdef int test_reset(self)
+
 cdef class CARTGVClassificationCriterion(CARTGVCriterion):
     """Abstract criterion for classification."""
 
