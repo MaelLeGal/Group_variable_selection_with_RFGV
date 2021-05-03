@@ -1,21 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 2 13:34:12 2021
-
-@author: Alphonse
-"""
-
-# _tree = __import__('scikit-learn.sklearn.tree._tree', globals(), locals(), ['Tree', 'TreeBuilder', "Node"], 0)
-# _splitter = __import__('scikit-learn.sklearn.tree._splitter', globals(), locals(), ['Splitter'], 0)
-
-# Tree = _tree.Tree
-# TreeBuilder = _tree.TreeBuilder
-# Node = _tree.Node
-
-# Splitter = _splitter.Splitter
-
 import numpy as np
 cimport numpy as np
+import sys
 
 from cpython cimport Py_INCREF, PyObject, PyTypeObject
 
@@ -29,7 +14,6 @@ from sklearn.tree._tree cimport UINT32_t
 
 from sklearn.tree._tree cimport Tree, TreeBuilder, Node
 from sklearn.tree._splitter cimport Splitter
-
 
 cdef struct CARTGVSplitRecord:
     # Data to track sample split
@@ -58,7 +42,7 @@ cdef class CARTGVSplitter():
     cdef SIZE_t* samples                        # Sample indices in X, y
     cdef SIZE_t n_samples                       # X.shape[0]
     cdef double weighted_n_samples              # Weighted number of samples
-    # cdef SIZE_t** groups
+    cdef int[:,:] groups                        # The groups
     cdef SIZE_t n_groups                        # The number of groups
     cdef int[:] len_groups                      # The length of each group
     cdef SIZE_t* features                       # Feature indices in X
@@ -70,15 +54,13 @@ cdef class CARTGVSplitter():
     cdef SIZE_t start                           # Start position for the current node
     cdef SIZE_t end                             # End position for the current node
 
-    cdef const DOUBLE_t[:, ::1] y               # The responses
     cdef DOUBLE_t* sample_weight                # The weight of each sample
-    
+
     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting tree
     cdef Tree splitting_tree                    # The splitting tree
-    
-    cdef int[:,:] groups                        # The groups
-    
-    cdef object X                               # The datas
+
+    cdef const DTYPE_t[:,:] X                               # The datas
+    cdef const DOUBLE_t[:, ::1] y               # The responses
 
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,
@@ -103,22 +85,19 @@ cdef class CARTGVSplitter():
     cdef int node_reset(self, SIZE_t start, SIZE_t end,
                         double* weighted_n_node_samples) nogil except -1
 
-    cdef int node_split(self,
-                        double impurity,   # Impurity of the node
-                        CARTGVSplitRecord* split,
-                        SIZE_t* n_constant_features) nogil except -1
-
-    cdef int node_split_v2(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
+    cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
 
     cdef void node_value(self, double* dest) nogil
 
     cdef double node_impurity(self) nogil
 
-    cpdef np.ndarray group_sample(self, int[:] group, int len_group, int start, int end)
+    cdef np.ndarray group_sample(self, int[:] group, int len_group, int start, int end)
 
-    cpdef int splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
+    cdef int reset_scikit_learn_instances(self, np.ndarray y, int len_group)
 
-    cdef int get_splitting_tree_n_leaves(self)
+    cdef int splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
+
+#    cdef int get_splitting_tree_n_leaves(self)
 
     cdef int get_splitting_tree_leaves(self, Node** sorted_leaves)
 
@@ -126,7 +105,7 @@ cdef class CARTGVSplitter():
 
     cdef int switch_best_splitting_tree(self, double current_proxy_improvement, double* best_proxy_improvement, CARTGVSplitRecord* best, CARTGVSplitRecord* current, SIZE_t* starts, SIZE_t* ends, SIZE_t n_leaves, SIZE_t** sorted_obs)
 
-    cpdef int reset_scikit_learn_instances(self, np.ndarray y, int[:] len_groups)
+    cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
 
     ########################################## TESTS #############################################
 
@@ -135,16 +114,20 @@ cdef class CARTGVSplitter():
 
     cpdef int test_node_reset(self, SIZE_t start, SIZE_t end, double weighted_n_node_samples)
 
-    cpdef int test_node_split(self,
-                        double impurity,
-                        SIZE_t n_constant_features)
+    cpdef double test_node_value(self, double dest)
 
-    cpdef int test_one_split(self, double impurity, SIZE_t n_constant_features)
+    cpdef double test_node_impurity(self)
 
-    cpdef int test_n_split(self, double impurity, SIZE_t n_constant_features, int n_split, int tree_look)
+    cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end)
 
-    cpdef unsigned char[::1] test_best_node_split(self, double impurity, SIZE_t n_constant_features)
+    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int len_group)
 
-    cpdef unsigned char[::1] test_splitting_tree_into_struct(self, Tree splitting_tree)
+    cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
 
-    cpdef int test_sklearn_builder_field(self)
+    cpdef int test_get_splitting_tree_leaves(self)
+
+    cpdef int test_get_splitting_tree_leaves_samples_and_pos(self)
+
+    cpdef int test_switch_best_splitting_tree(self)
+
+    cpdef int test_node_split(self)

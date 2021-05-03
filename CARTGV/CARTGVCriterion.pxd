@@ -1,21 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar  3 09:11:20 2021
-
-@author: Alphonse
-"""
-
-# Authors: Gilles Louppe <g.louppe@gmail.com>
-#          Peter Prettenhofer <peter.prettenhofer@gmail.com>
-#          Brian Holt <bdholt1@gmail.com>
-#          Joel Nothman <joel.nothman@gmail.com>
-#          Arnaud Joly <arnaud.v.joly@gmail.com>
-#          Jacob Schreiber <jmschreiber91@gmail.com>
-#
-# License: BSD 3 clause
-
-# See _criterion.pyx for implementation details.
-
 import numpy as np
 cimport numpy as np
 
@@ -25,9 +7,8 @@ from sklearn.tree._tree cimport SIZE_t
 from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
-# from sklearn.tree._criterion cimport Criterion
-
 cdef class CARTGVCriterion():
+
     # The criterion computes the impurity of a node and the reduction of
     # impurity of a split on that node. It also computes the output statistics
     # such as the mean in regression and class probabilities in classification.
@@ -64,31 +45,35 @@ cdef class CARTGVCriterion():
                   double weighted_n_samples, SIZE_t* samples, SIZE_t start,
                   SIZE_t end) nogil except -1
     cdef int reset(self) nogil except -1
-    cdef int reverse_reset(self) nogil except -1
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1
     cdef double node_impurity(self) nogil
-    cdef void children_impurity(self, double* impurity_childs) nogil
+    cdef void children_impurity(self, double** impurity_childs) nogil
     cdef void node_value(self, double* dest) nogil
-    cdef double impurity_improvement(self, double impurity_parent,double* impurity_childs) nogil
     cdef double proxy_impurity_improvement(self) nogil
+    cdef double impurity_improvement(self, double impurity_parent,double* impurity_childs) nogil
 
+    ########################################## TESTS #############################################
 
-    """
-    TEST
-    """
     cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,
                   double weighted_n_samples, np.ndarray samples, SIZE_t start,
                   SIZE_t end)
 
     cpdef int test_reset(self)
 
+    cpdef int test_update(self)
+
+    cpdef void test_node_value(self)
+
+    cpdef double test_node_impurity(self)
+
+    cpdef void test_children_impurity(self)
+
+    cpdef double test_proxy_impurity_improvement(self)
+
+    cpdef double test_impurity_improvement(self, double impurity_parent, np.ndarray impurity_childs)
+
 cdef class CARTGVClassificationCriterion(CARTGVCriterion):
     """Abstract criterion for classification."""
 
     cdef SIZE_t* n_classes
     cdef SIZE_t sum_stride
-
-# cdef class CARTGVRegressionCriterion(CARTGVCriterion):
-#     """Abstract regression criterion."""
-
-#     cdef double sq_sum_total

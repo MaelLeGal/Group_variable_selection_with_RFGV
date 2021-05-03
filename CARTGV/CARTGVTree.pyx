@@ -847,7 +847,8 @@ cdef class CARTGVTreeBuilder():
 
                 # If the node isn't a leaf, we call the splitter to split it
                 if not is_leaf:
-                    splitter.node_split(impurity, &split, &n_constant_features)
+                    with gil:
+                        splitter.node_split(impurity, &split, &n_constant_features) # TODO Make the function no gil
                     # If EPSILON=0 in the below comparison, float precision
                     # issues stop splitting, producing trees that are
                     # dissimilar to v0.18
