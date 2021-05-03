@@ -65,7 +65,7 @@ cdef inline void _init_split(CARTGVSplitRecord* self) nogil:
     self.starts = [0]
     self.ends = [0]
     self.improvement = -INFINITY
-    self.splitting_tree
+    self.splitting_tree = NULL
     self.n_childs = 0
 
 cdef class CARTGVSplitter():
@@ -488,7 +488,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
 
         n_classes = np.array(n_classes, dtype=np.intp)
 
-        self.splitting_tree = Tree(len_group, n_classes, n_outputs)
+        self.splitting_tree = Tree(len_group, n_classes, n_outputs) # TODO Raison de l'erreur EOF ??
 
         ## ACCESS TO FIELDS TO CHECK CORRUPTION ##
         # NO PROBLEM
@@ -574,27 +574,29 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         return 0
 
     cdef int switch_best_splitting_tree(self, double current_proxy_improvement, double* best_proxy_improvement, CARTGVSplitRecord* best, CARTGVSplitRecord* current, SIZE_t* starts, SIZE_t* ends, SIZE_t n_leaves, SIZE_t** sorted_obs):
-        print("SWITCH")
+        ser_splitting_tree = None
         if current_proxy_improvement > best_proxy_improvement[0]:
-          print("Better splitting tree found")
           best_proxy_improvement[0] = current_proxy_improvement
           best_splitting_tree = self.splitting_tree
-          splitting_tree = pickle.dumps(best_splitting_tree,0)
-          current.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree)*sizeof(unsigned char))
-          current.splitting_tree = splitting_tree
-          current.starts = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
-          current.ends = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
-          current.starts = starts
-          current.ends = ends
-          current.n_childs = n_leaves
-          print(self.splitting_tree)
-          print(current[0].splitting_tree)
-          best[0] = current[0]  # copy
+          ser_splitting_tree = pickle.dumps(best_splitting_tree,0)
+          current[0].splitting_tree = <unsigned char*>malloc(sys.getsizeof(ser_splitting_tree)*sizeof(unsigned char))
+          current[0].splitting_tree = ser_splitting_tree
+          current[0].starts = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
+          current[0].ends = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
+          current[0].starts = starts
+          current[0].ends = ends
+          current[0].n_childs = n_leaves
+          best[0].splitting_tree = <unsigned char*>malloc(sys.getsizeof(ser_splitting_tree)*sizeof(unsigned char))
+          for k in range(sys.getsizeof(ser_splitting_tree)):
+            best[0].splitting_tree[k] = current[0].splitting_tree[k]
+          best[0].starts = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
+          best[0].ends = <SIZE_t*> malloc(n_leaves * sizeof(SIZE_t))
+          for i in range(n_leaves):
+            best[0].starts[i] = current[0].starts[i]
+          for j in range(n_leaves):
+            best[0].ends[j] = current[0].ends[j]
+          best[0].n_childs = current[0].n_childs
           sorted_obs[0] = self.splitting_tree_builder.splitter.samples
-
-        print(best[0].splitting_tree)
-#          print(current[0].splitting_tree)
-#          print(splitting_tree)
 
         return 0
 
@@ -631,7 +633,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
             print("############### LOOP " + str(n_visited_grouped_features) + " ###################")
             n_visited_grouped_features += 1
 
-            f_j = 0 #np.random.randint(0,max_grouped_features)
+            f_j = np.random.randint(0,max_grouped_features)
 
             print("## GROUP " + str(f_j) + " ##") #TODO Ne visite pas tout les groupes !!!
 
@@ -675,12 +677,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
 
         self.criterion.reset()
 
-        print("PICKLE LOADS")
-        print(best.splitting_tree)
-
-        best_splitting_tree = pickle.loads(best.splitting_tree) #TODO verify why best.splitting_tree empty
-
-        print(best_splitting_tree)
+        best_splitting_tree = pickle.loads(best.splitting_tree)
 
         n_leaves = self.splitting_tree.n_leaves
 
@@ -775,7 +772,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         self.get_splitting_tree_leaves_samples_and_pos(&starts, &ends, sorted_leaves, self.splitting_tree.n_leaves, &samples_leaves, n_samples)
 
         res = self.switch_best_splitting_tree(current_proxy_improvement, &best_proxy_improvement, &best, &current, starts, ends, self.splitting_tree.n_leaves, &sorted_obs)
-
+#TODO Faire une boucle pour test
 #        print("##### CURRENT #####")
 #        print(current_proxy_improvement)
 #        print(current.improvement)

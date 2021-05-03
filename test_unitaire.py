@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 import pickle as pickle
 import sys
 
-#from CARTGV.scikitlearn.sklearn.tree.CARTGVCriterion import CARTGVGini
-#from CARTGV.scikitlearn.sklearn.tree.CARTGVSplitter import CARTGVSplitter
-#from CARTGV import CARTGVGini
-#from CARTGV import CARTGVSplitter
 from CARTGV import CARTGVTree, CARTGVTreeBuilder
 from CARTGV import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
 from CARTGV import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini
