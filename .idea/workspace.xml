@@ -6,16 +6,19 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pxd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CARTGV/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" afterDir="false" />
@@ -24,7 +27,6 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_unitaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_unitaire.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +44,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -138,8 +141,10 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYDEVD_USE_CYTHON" value="NO" />
+        <env name="PYDEVD_USE_FRAME_EVAL" value="NO" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
