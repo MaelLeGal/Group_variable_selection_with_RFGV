@@ -19,6 +19,7 @@ cimport numpy as np
 import sys
 import faulthandler
 
+
 #from sklearn.tree._tree cimport Tree, TreeBuilder, Node
 #from sklearn.tree._splitter cimport Splitter, SplitRecord
 
@@ -34,8 +35,8 @@ from scipy.sparse import issparse
 from scipy.sparse import csc_matrix
 from scipy.sparse import csr_matrix
 
-from sklearn.tree._utils cimport Stack, StackRecord, PriorityHeap, PriorityHeapRecord, safe_realloc, sizet_ptr_to_ndarray
-
+from sklearn.tree._utils cimport Stack, StackRecord, PriorityHeap, PriorityHeapRecord, sizet_ptr_to_ndarray
+from CARTGVutils cimport safe_realloc
 
 
 cdef extern from "numpy/arrayobject.h":
@@ -80,9 +81,62 @@ cdef class CARTGVTree():
     It uses uses the construction of CART tree as part of its construction.
     """
 
+#    @property
+#    def n_grouped_features(self):
+#        return self.n_grouped_features
+#
+#    @property
+#    def n_outputs(self):
+#        return self.n_outputs
+#
+    @property
+    def n_classes(self):
+        if self.n_classes != NULL:
+            return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
+        else:
+            return None
+#
+#    @property
+#    def max_n_classes(self):
+#        return self.max_n_classes
+#
+    @property
+    def value_stride(self):
+        return self.value_stride
+#
+#    @property
+#    def max_depth(self):
+#        return self.max_depth
+#
+#    @property
+#    def node_count(self):
+#        return self.node_count
+#
+#    @property
+#    def capacity(self):
+#        return self.capacity
+#
+    @property
+    def value(self):
+        if self.value != NULL:
+            return np.asarray(<double[:self.capacity*self.value_stride]>self.value)
+        else:
+            return None
+
+    @property
+    def nodes(self):
+        if self.nodes != NULL:
+            return None #TODO find a way to return the node array
+#            return np.asarray(<CARTGVNode[:self.capacity]>self.nodes)
+        else:
+            return None
 
     def __cinit__(self, int n_grouped_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):
           """Constructor."""
+
+          #Enable error tracking
+          faulthandler.enable()
+
           # Input/Output layout
           self.n_grouped_features = n_grouped_features
           self.n_outputs = n_outputs
@@ -102,10 +156,6 @@ cdef class CARTGVTree():
           self.capacity = 0
           self.value = NULL
           self.nodes = NULL
-
-          #Enable error tracking
-          faulthandler.enable()
-  
       
     def __reduce__(self):
           """Reduce re-implementation, for pickling."""
@@ -179,11 +229,11 @@ cdef class CARTGVTree():
             else:
                 capacity = 2 * self.capacity
 
-#        safe_realloc(&self.nodes, capacity)
-#        safe_realloc(&self.value, capacity * self.value_stride)
+        safe_realloc(&self.nodes, capacity)
+        safe_realloc(&self.value, capacity * self.value_stride)
 #
-        realloc(self.nodes, capacity)
-        realloc(self.value, capacity * self.value_stride)
+#        self.nodes = <CARTGVNode*> realloc(self.nodes, capacity)
+#        self.value = <double*> realloc(self.value, capacity * self.value_stride)
 
 
         # value memory is initialised to 0 to enable classifier argmax
@@ -204,7 +254,7 @@ cdef class CARTGVTree():
     cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
                           Tree splitting_tree, double impurity,
                           SIZE_t n_node_samples, int n_childs,
-                          double weighted_n_node_samples) nogil except -1:
+                          double weighted_n_node_samples, int group) nogil except -1:
         """
         Add a node to the tree.
         The new node registers itself as the child of its parent.
@@ -219,18 +269,18 @@ cdef class CARTGVTree():
             if self._resize_c() != 0:
                 return SIZE_MAX
 
+#        with gil:
+#            print(self.nodes[0].impurity)
 
         # Creation of the node and setting of it's field
-        #cdef CARTGVNode* node = &self.nodes[node_id] # sklearn le fait comme ça.
-        cdef CARTGVNode node = self.nodes[node_id] # Retirer cette ligne et la suivante pour faire comme sklearn
-        node = CARTGVNode()
-        node.impurity = impurity # PLANTE ICI si j'utilise la manière de sklearn
+        cdef CARTGVNode* node = &self.nodes[node_id]
+#        node = CARTGVNode()
+        node.impurity = impurity
         node.n_node_samples = n_node_samples
         node.weighted_n_node_samples = weighted_n_node_samples
         node.n_childs = n_childs
         node.parent = parent
-        with gil:
-            node.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree)*sizeof(unsigned char)) # Allocate memory to the splitting tree field of the node
+        node.childs = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
 
         # Check if the parent is undefined. If it isn't give this node id as the child of this node parent.
         if parent != _TREE_UNDEFINED:
@@ -240,20 +290,28 @@ cdef class CARTGVTree():
         if is_leaf:
             for i in range(node.n_childs):
               node.childs[i] = _TREE_LEAF
-            node.splitting_tree = <unsigned char*>_TREE_UNDEFINED
+            node.splitting_tree = <unsigned char*> malloc(sizeof(SIZE_t))
+            node.splitting_tree = '' #TODO is it necessary ? Empty string for no splitting tree ?
+            node.group = -1
+#            with gil:
+#                print(node_splitting_tree)
+#                print(node.splitting_tree)
 
         # If it isn't a leaf, assign the splitting tree to the node.
         else:
-            # childs will be set later
+            #childs will be set later
             with gil:
                node_splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree)*sizeof(unsigned char))
-               node_splitting_tree = pickle.dumps(splitting_tree,0)  #PLANTE ici, caractère inconnue
+               node_splitting_tree = pickle.dumps(splitting_tree,0)
                node.splitting_tree = node_splitting_tree
                node.n_childs = n_childs
+               node.group = group
             # groups should be given here ?
 
         self.node_count += 1
-        self.nodes[node_id] = node # PLANTE ici avec ma méthode pour créer une node
+#        with gil:
+#            print(node_id)
+#        self.nodes[node_id] = node # PLANTE ici avec ma méthode pour créer une node #TODO erreur ici self.nodes est mal définis
 
         return node_id
 
@@ -734,8 +792,83 @@ cdef class CARTGVTree():
     #             raise ValueError("Total weight should be 1.0 but was %.9f" %
     #                               total_weight)
 
+
+    ########################################## TESTS #############################################
+
+    cpdef void test_resize_CARTGVTree(self, capacity):
+
+        self._resize(capacity)
+
+    cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end):
+
+        cdef SIZE_t parent = -2
+        cdef CARTGVSplitRecord split
+        cdef bint is_leaf = False
+        cdef SIZE_t n_constant_features = 0
+        cdef Tree splitting_tree
+        cdef double weighted_n_node_samples
+        cdef double min_impurity_decrease = 0.1
+
+        n_node_samples = end - start
+        splitter.node_reset(start, end, &weighted_n_node_samples)
+
+        impurity = splitter.node_impurity()
+        splitter.node_split(impurity, &split, &n_constant_features)
+
+        is_leaf = (is_leaf or (split.improvement + EPSILON < min_impurity_decrease))
+
+        splt_tree = split.splitting_tree
+        splitting_tree = pickle.loads(splt_tree)
+#        for i in range(100000):
+        self._add_node(parent, is_leaf, splitting_tree, impurity, n_node_samples, split.n_childs, weighted_n_node_samples, split.group)
+
+#        print(self.nodes[0].n_childs)
+#        print(np.asarray(<SIZE_t[:self.nodes[0].n_childs]>self.nodes[0].childs))
+#        print(self.nodes[0].parent)
+#        print(self.nodes[0].splitting_tree)
+#        print(self.nodes[0].impurity)
+#        print(self.nodes[0].n_node_samples)
+#        print(self.nodes[0].weighted_n_node_samples)
+#        print(self.nodes[0].group)
+
 cdef class CARTGVTreeBuilder():
-    
+
+    @property
+    def splitter(self):
+        return self.splitter
+
+    @property
+    def min_samples_split(self):
+        return self.min_samples_split
+
+    @property
+    def min_samples_leaf(self):
+        return self.min_samples_leaf
+
+    @property
+    def min_weight_leaf(self):
+        return self.min_weight_leaf
+
+    @property
+    def max_depth(self):
+        return self.max_depth
+
+    @property
+    def mgroup(self):
+        return self.mgroup
+
+    @property
+    def mvar(self):
+        return self.mvar
+
+    @property
+    def min_impurity_decrease(self):
+        return self.min_impurity_decrease
+
+    @property
+    def min_impurity_split(self):
+        return self.min_impurity_split
+
     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
                   SIZE_t max_depth, SIZE_t mgroup, SIZE_t mvar, 
@@ -753,7 +886,7 @@ cdef class CARTGVTreeBuilder():
                                                   max_depth, min_impurity_decrease, min_impurity_split)
         faulthandler.enable()
 
-    cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
+    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=None):
         """Build a decision tree from the training set (X, y)."""
 
@@ -801,7 +934,7 @@ cdef class CARTGVTreeBuilder():
 
         cdef double impurity = INFINITY                                     # The current impurity
         cdef SIZE_t n_constant_features                                     # The number of constant features (not used)
-        cdef bint is_leaf                                                   # Boolean, True if the current node is a leaf, False otherwise
+        cdef bint is_leaf = False                                           # Boolean, True if the current node is a leaf, False otherwise
         cdef bint first = 1                                                 # Boolean, True if it is the first node added to the tree, false otherwise
         cdef SIZE_t max_depth_seen = -1                                     #
         cdef int rc = 0                                                     # Return code of the stack
@@ -810,6 +943,8 @@ cdef class CARTGVTreeBuilder():
 
         cdef Stack stack = Stack(INITIAL_STACK_SIZE)                        # The stack that contains the records
         cdef StackRecord stack_record                                       # A record for the stack
+
+        cdef int incr = 0
 
         with nogil:
             # push root node onto stack
@@ -821,6 +956,9 @@ cdef class CARTGVTreeBuilder():
 
             # Loop until the stack is empty (if the last leaf has been treated)
             while not stack.is_empty():
+                with gil:
+                    print("################## LOOP " + str(incr) + " ##################")
+                incr+=1
                 stack.pop(&stack_record)
 
                 start = stack_record.start
@@ -831,6 +969,9 @@ cdef class CARTGVTreeBuilder():
                 n_constant_features = stack_record.n_constant_features
 
                 n_node_samples = end - start
+#                with gil:
+#                    print(start)
+#                    print(end)
                 splitter.node_reset(start, end, &weighted_n_node_samples)
 
                 is_leaf = (depth >= max_depth or
@@ -857,11 +998,12 @@ cdef class CARTGVTreeBuilder():
                                 min_impurity_decrease))
 
                 with gil:
+
                   splt_tree = split.splitting_tree
                   splitting_tree = pickle.loads(splt_tree) # Loads the splitting tree serialized as a Tree object
                   # Add the node to the tree
                   node_id = tree._add_node(parent, is_leaf, splitting_tree, impurity, n_node_samples, split.n_childs,
-                                         weighted_n_node_samples)
+                                         weighted_n_node_samples, split.group)
 
                 if node_id == SIZE_MAX:
                     rc = -1
@@ -921,4 +1063,10 @@ cdef class CARTGVTreeBuilder():
                                            order="C")
 
         return X, y, sample_weight
+
+    ########################################## TESTS #############################################
+
+    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray sample_weight=None):
+
+        self.build(tree, X, y, groups, sample_weight)
 

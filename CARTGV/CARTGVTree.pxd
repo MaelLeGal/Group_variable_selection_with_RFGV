@@ -66,7 +66,7 @@ cdef class CARTGVTree():
   cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
                         Tree splitting_tree, double impurity,
                         SIZE_t n_node_samples, int n_childs,
-                        double weighted_n_samples) nogil except -1
+                        double weighted_n_samples, int group) nogil except -1
   cdef int _resize(self,SIZE_t capacity) nogil except -1
   cdef int _resize_c(self, SIZE_t capacity=*) nogil except -1
   
@@ -84,7 +84,13 @@ cdef class CARTGVTree():
   # cdef object _decision_path_sparse_csr(self,object X)
   
   # cpdef compute_group_importances(self,penality_function,normalize=*)
-  
+
+    ########################################## TESTS #############################################
+
+  cpdef void test_resize_CARTGVTree(self, capacity)
+
+  cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end)
+
 
 cdef class CARTGVTreeBuilder():
     # The TreeBuilder recursively builds a Tree object from training samples,
@@ -106,8 +112,13 @@ cdef class CARTGVTreeBuilder():
     cdef double min_impurity_decrease           # Impurity threshold for early stopping
     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting trees
 
-    cpdef build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
+    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
                 np.ndarray sample_weight=*)
-    cdef _check_input(self, object X, np.ndarray y, np.ndarray sample_weight)  
+    cdef _check_input(self, object X, np.ndarray y, np.ndarray sample_weight)
+
+    ########################################## TESTS #############################################
+
+    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray sample_weight=*)
+
   
   
