@@ -315,6 +315,12 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
                 w = sample_weight[i]
 
             # Count weighted class frequency for each target
+#            with gil:
+#                print(i)
+#                print(samples[333])
+#                print(samples[332])
+#                print(self.n_outputs)
+#                print(self.y.shape)
             for k in range(self.n_outputs):
                 c = <SIZE_t> self.y[i, k]
                 sum_total[k * self.sum_stride + c] += w

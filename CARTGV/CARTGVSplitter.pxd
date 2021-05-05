@@ -23,6 +23,7 @@ cdef struct CARTGVSplitRecord:
     SIZE_t* ends                    # Array containing the index of the end of each childs in the samples array.
     unsigned char* splitting_tree   # The splitting tree serialized
     int n_childs                    # The number of childs in the splitting tree
+    int group
 
 cdef class CARTGVSplitter():
     # The splitter searches in the input space for a feature and a threshold
@@ -59,7 +60,7 @@ cdef class CARTGVSplitter():
     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting tree
     cdef Tree splitting_tree                    # The splitting tree
 
-    cdef const DTYPE_t[:,:] X                               # The datas
+#    cdef const DTYPE_t[:,:] X                               # The datas
     cdef const DOUBLE_t[:, ::1] y               # The responses
 
     # The samples vector `samples` is maintained by the Splitter object such
@@ -85,8 +86,6 @@ cdef class CARTGVSplitter():
     cdef int node_reset(self, SIZE_t start, SIZE_t end,
                         double* weighted_n_node_samples) nogil except -1
 
-    cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
-
     cdef void node_value(self, double* dest) nogil
 
     cdef double node_impurity(self) nogil
@@ -103,7 +102,7 @@ cdef class CARTGVSplitter():
 
     cdef int get_splitting_tree_leaves_samples_and_pos(self, SIZE_t** starts, SIZE_t** ends, Node* sorted_leaves, SIZE_t n_leaves, SIZE_t*** samples_leaves, SIZE_t n_samples)
 
-    cdef int switch_best_splitting_tree(self, double current_proxy_improvement, double* best_proxy_improvement, CARTGVSplitRecord* best, CARTGVSplitRecord* current, SIZE_t* starts, SIZE_t* ends, SIZE_t n_leaves, SIZE_t** sorted_obs)
+    cdef int switch_best_splitting_tree(self, double current_proxy_improvement, double* best_proxy_improvement, CARTGVSplitRecord* best, CARTGVSplitRecord* current, SIZE_t* starts, SIZE_t* ends, SIZE_t n_leaves, int group, SIZE_t** sorted_obs)
 
     cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
 
@@ -131,3 +130,8 @@ cdef class CARTGVSplitter():
     cpdef int test_switch_best_splitting_tree(self)
 
     cpdef int test_node_split(self)
+
+cdef class BaseDenseCARTGVSplitter(CARTGVSplitter):
+
+    cdef SIZE_t n_total_samples
+    cdef const DTYPE_t[:,:] X
