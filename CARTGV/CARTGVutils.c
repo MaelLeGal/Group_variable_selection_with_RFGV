@@ -1593,13 +1593,30 @@ struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord {
   int n_childs;
   int group;
 };
+struct __pyx_t_10CARTGVTree_test;
 struct __pyx_t_10CARTGVTree_CARTGVNode;
 struct __pyx_opt_args_10CARTGVTree_10CARTGVTree__resize_c;
 struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_build;
 struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_test_build;
 
-/* "CARTGVTree.pxd":37
+/* "CARTGVTree.pxd":21
  * from sklearn.tree._tree cimport UINT32_t
+ * 
+ * cdef struct test:             # <<<<<<<<<<<<<<
+ *   SIZE_t parent                         # The parent of the node
+ *   DOUBLE_t impurity                     # The impurity of the node
+ */
+struct __pyx_t_10CARTGVTree_test {
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t parent;
+  __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t impurity;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t n_node_samples;
+  __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t weighted_n_node_samples;
+  int group;
+  int n_childs;
+};
+
+/* "CARTGVTree.pxd":29
+ *   int n_childs                          # The number of childs of the node
  * 
  * cdef struct CARTGVNode:             # <<<<<<<<<<<<<<
  *   SIZE_t* childs                        # The childs of the node
@@ -1614,9 +1631,10 @@ struct __pyx_t_10CARTGVTree_CARTGVNode {
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t weighted_n_node_samples;
   int group;
   int n_childs;
+  int current_child;
 };
 
-/* "CARTGVTree.pxd":71
+/* "CARTGVTree.pxd":64
  *                         double weighted_n_samples, int group) nogil except -1
  *   cdef int _resize(self,SIZE_t capacity) nogil except -1
  *   cdef int _resize_c(self, SIZE_t capacity=*) nogil except -1             # <<<<<<<<<<<<<<
@@ -1628,7 +1646,7 @@ struct __pyx_opt_args_10CARTGVTree_10CARTGVTree__resize_c {
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t capacity;
 };
 
-/* "CARTGVTree.pxd":115
+/* "CARTGVTree.pxd":108
  *     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting trees
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups,             # <<<<<<<<<<<<<<
@@ -1640,7 +1658,7 @@ struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_build {
   PyArrayObject *sample_weight;
 };
 
-/* "CARTGVTree.pxd":121
+/* "CARTGVTree.pxd":114
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray sample_weight=*)             # <<<<<<<<<<<<<<
@@ -1982,8 +2000,8 @@ struct __pyx_obj_14CARTGVSplitter_BaseDenseCARTGVSplitter {
 };
 
 
-/* "CARTGVTree.pxd":47
- *   int n_childs                          # The number of childs of the node
+/* "CARTGVTree.pxd":40
+ *   int current_child
  * 
  * cdef class CARTGVTree():             # <<<<<<<<<<<<<<
  * 
@@ -2006,7 +2024,7 @@ struct __pyx_obj_10CARTGVTree_CARTGVTree {
 };
 
 
-/* "CARTGVTree.pxd":95
+/* "CARTGVTree.pxd":88
  * 
  * 
  * cdef class CARTGVTreeBuilder():             # <<<<<<<<<<<<<<
@@ -2368,7 +2386,7 @@ struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter {
   int (*splitting_tree_construction)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, PyArrayObject *, PyArrayObject *);
   int (*get_splitting_tree_leaves)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, struct __pyx_t_7sklearn_4tree_5_tree_Node **);
   int (*get_splitting_tree_leaves_samples_and_pos)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t **, __pyx_t_7sklearn_4tree_5_tree_SIZE_t **, struct __pyx_t_7sklearn_4tree_5_tree_Node *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t ***, __pyx_t_7sklearn_4tree_5_tree_SIZE_t);
-  int (*switch_best_splitting_tree)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, double *, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, __pyx_t_7sklearn_4tree_5_tree_SIZE_t **);
+  int (*switch_best_splitting_tree)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, double *, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *);
   int (*node_split)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, double, struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *);
   int (*test_init)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, PyObject *, __Pyx_memviewslice, PyArrayObject *, PyObject *, int __pyx_skip_dispatch);
   int (*test_node_reset)(struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, double, int __pyx_skip_dispatch);
@@ -2399,8 +2417,8 @@ struct __pyx_vtabstruct_14CARTGVSplitter_BaseDenseCARTGVSplitter {
 static struct __pyx_vtabstruct_14CARTGVSplitter_BaseDenseCARTGVSplitter *__pyx_vtabptr_14CARTGVSplitter_BaseDenseCARTGVSplitter;
 
 
-/* "CARTGVTree.pxd":47
- *   int n_childs                          # The number of childs of the node
+/* "CARTGVTree.pxd":40
+ *   int current_child
  * 
  * cdef class CARTGVTree():             # <<<<<<<<<<<<<<
  * 
@@ -2408,7 +2426,7 @@ static struct __pyx_vtabstruct_14CARTGVSplitter_BaseDenseCARTGVSplitter *__pyx_v
  */
 
 struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree {
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t (*_add_node)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, struct __pyx_obj_7sklearn_4tree_5_tree_Tree *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, double, int);
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t (*_add_node)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, unsigned char *, double, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int, double, int);
   int (*_resize)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t);
   int (*_resize_c)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, struct __pyx_opt_args_10CARTGVTree_10CARTGVTree__resize_c *__pyx_optional_args);
   PyArrayObject *(*_get_value_ndarray)(struct __pyx_obj_10CARTGVTree_CARTGVTree *);
@@ -2422,7 +2440,7 @@ struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree {
 static struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *__pyx_vtabptr_10CARTGVTree_CARTGVTree;
 
 
-/* "CARTGVTree.pxd":95
+/* "CARTGVTree.pxd":88
  * 
  * 
  * cdef class CARTGVTreeBuilder():             # <<<<<<<<<<<<<<
@@ -27776,14 +27794,14 @@ static int __Pyx_modinit_type_import_code(void) {
    if (!__pyx_ptype_14CARTGVSplitter_BaseDenseCARTGVSplitter) __PYX_ERR(12, 134, __pyx_L1_error)
   __pyx_vtabptr_14CARTGVSplitter_BaseDenseCARTGVSplitter = (struct __pyx_vtabstruct_14CARTGVSplitter_BaseDenseCARTGVSplitter*)__Pyx_GetVtable(__pyx_ptype_14CARTGVSplitter_BaseDenseCARTGVSplitter->tp_dict); if (unlikely(!__pyx_vtabptr_14CARTGVSplitter_BaseDenseCARTGVSplitter)) __PYX_ERR(12, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyImport_ImportModule("CARTGVTree"); if (unlikely(!__pyx_t_1)) __PYX_ERR(13, 47, __pyx_L1_error)
+  __pyx_t_1 = PyImport_ImportModule("CARTGVTree"); if (unlikely(!__pyx_t_1)) __PYX_ERR(13, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_10CARTGVTree_CARTGVTree = __Pyx_ImportType(__pyx_t_1, "CARTGVTree", "CARTGVTree", sizeof(struct __pyx_obj_10CARTGVTree_CARTGVTree), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_10CARTGVTree_CARTGVTree) __PYX_ERR(13, 47, __pyx_L1_error)
-  __pyx_vtabptr_10CARTGVTree_CARTGVTree = (struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree*)__Pyx_GetVtable(__pyx_ptype_10CARTGVTree_CARTGVTree->tp_dict); if (unlikely(!__pyx_vtabptr_10CARTGVTree_CARTGVTree)) __PYX_ERR(13, 47, __pyx_L1_error)
+   if (!__pyx_ptype_10CARTGVTree_CARTGVTree) __PYX_ERR(13, 40, __pyx_L1_error)
+  __pyx_vtabptr_10CARTGVTree_CARTGVTree = (struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree*)__Pyx_GetVtable(__pyx_ptype_10CARTGVTree_CARTGVTree->tp_dict); if (unlikely(!__pyx_vtabptr_10CARTGVTree_CARTGVTree)) __PYX_ERR(13, 40, __pyx_L1_error)
   __pyx_ptype_10CARTGVTree_CARTGVTreeBuilder = __Pyx_ImportType(__pyx_t_1, "CARTGVTree", "CARTGVTreeBuilder", sizeof(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder), __Pyx_ImportType_CheckSize_Warn);
-   if (!__pyx_ptype_10CARTGVTree_CARTGVTreeBuilder) __PYX_ERR(13, 95, __pyx_L1_error)
-  __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder = (struct __pyx_vtabstruct_10CARTGVTree_CARTGVTreeBuilder*)__Pyx_GetVtable(__pyx_ptype_10CARTGVTree_CARTGVTreeBuilder->tp_dict); if (unlikely(!__pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder)) __PYX_ERR(13, 95, __pyx_L1_error)
+   if (!__pyx_ptype_10CARTGVTree_CARTGVTreeBuilder) __PYX_ERR(13, 88, __pyx_L1_error)
+  __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder = (struct __pyx_vtabstruct_10CARTGVTree_CARTGVTreeBuilder*)__Pyx_GetVtable(__pyx_ptype_10CARTGVTree_CARTGVTreeBuilder->tp_dict); if (unlikely(!__pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder)) __PYX_ERR(13, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;
