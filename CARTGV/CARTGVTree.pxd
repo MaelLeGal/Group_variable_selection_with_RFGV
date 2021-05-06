@@ -4,22 +4,6 @@ Created on Mon Mar  1 16:05:19 2021
 
 @author: Alphonse
 """
-# _tree = __import__('scikit-learn.sklearn.tree._tree', globals(), locals(), ['Tree', 'TreeBuilder', "Node"], 0)
-# _splitter = __import__('scikit-learn.sklearn.tree._splitter', globals(), locals(), ['Splitter', 'SplitRecord'], 0)
-
-# Tree = _tree.Tree
-# TreeBuilder = _tree.TreeBuilder
-# Node = _tree.Node
-
-# Splitter = _splitter.Splitter
-# SplitRecord = _splitter.SplitRecord
-
-# ctypedef np.npy_float32 DTYPE_t          # Type of X
-# ctypedef np.npy_float64 DOUBLE_t         # Type of y, sample_weight
-# ctypedef np.npy_intp SIZE_t              # Type for indices and counters
-# ctypedef np.npy_int32 INT32_t            # Signed 32 bit integer
-# ctypedef np.npy_uint32 UINT32_t          # Unsigned 32 bit integer
-
 import numpy as np
 cimport numpy as np
 
@@ -34,6 +18,14 @@ from sklearn.tree._tree cimport SIZE_t
 from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
+cdef struct test:
+  SIZE_t parent                         # The parent of the node
+  DOUBLE_t impurity                     # The impurity of the node
+  SIZE_t n_node_samples                 # The number of samples in the node
+  DOUBLE_t weighted_n_node_samples      # The number of weighted samples in the node
+  int group                             # The group selected for the split of the node
+  int n_childs                          # The number of childs of the node
+
 cdef struct CARTGVNode:
   SIZE_t* childs                        # The childs of the node
   SIZE_t parent                         # The parent of the node
@@ -43,6 +35,7 @@ cdef struct CARTGVNode:
   DOUBLE_t weighted_n_node_samples      # The number of weighted samples in the node
   int group                             # The group selected for the split of the node
   int n_childs                          # The number of childs of the node
+  int current_child
   
 cdef class CARTGVTree():
   
@@ -64,7 +57,7 @@ cdef class CARTGVTree():
   
   #Methods
   cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
-                        Tree splitting_tree, double impurity,
+                        unsigned char* splitting_tree, double impurity,
                         SIZE_t n_node_samples, int n_childs,
                         double weighted_n_samples, int group) nogil except -1
   cdef int _resize(self,SIZE_t capacity) nogil except -1

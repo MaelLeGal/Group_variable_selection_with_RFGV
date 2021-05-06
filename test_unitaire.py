@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pickle as pickle
 import sys
+import time
 
 from CARTGV import CARTGVTree, CARTGVTreeBuilder
 from CARTGV import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
@@ -2095,7 +2096,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         splitter.test_splitting_tree_construction(Xf, y)
         splitter.test_get_splitting_tree_leaves_samples_and_pos()
 
-    def test_switch_best_splitting_tree_BestCARTGVSplitter_v2(self):
+    def _switch_best_splitting_tree_BestCARTGVSplitter_v2(self):
 
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
@@ -2170,7 +2171,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         splitter.test_splitting_tree_construction(Xf, y)
         splitter.test_switch_best_splitting_tree()
 
-    def test_node_split_BestCARTGVSplitter_v2(self):
+    def _node_split_BestCARTGVSplitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -2660,7 +2661,7 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         #     [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]])
 
         n_samples, n_features = X.shape
-        n_grouped_features = 2
+        n_grouped_features = 5
         y = np.atleast_1d(y)
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
@@ -2692,22 +2693,58 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         y = y_encoded
 
         n_classes = np.array(n_classes, dtype=np.intp)
+        times = np.ndarray(1)
+        startLoop = time.time()
+        for i in range(1):
+            start = time.time()
+            criterion = CARTGVGini(n_outputs, n_classes)
 
-        criterion = CARTGVGini(n_outputs, n_classes)
+            splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+                                      min_samples_leaf, min_weight_leaf,
+                                      random_state)
 
-        splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
-                                  min_samples_leaf, min_weight_leaf,
-                                  random_state)
+            tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
 
-        tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+            builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                        min_samples_leaf, min_weight_leaf,
+                                        max_depth, mgroup, mvar,
+                                        min_impurity_decrease, min_impurity_split)
 
-        builder = CARTGVTreeBuilder(splitter, min_samples_split,
-                                    min_samples_leaf, min_weight_leaf,
-                                    max_depth, mgroup, mvar,
-                                    min_impurity_decrease, min_impurity_split)
+            # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+            builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups) #X.to_numpy(dtype=np.float32)
+            end = time.time()
+            times[i] = end-start
+        print("Mean Time for 1 tree : " + str(np.mean(times)))
+        endLoop = time.time()
+        print("Time Loop : " + str(endLoop-startLoop))
+        # clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state, max_features=len(groups[0]),
+        #                              max_leaf_nodes=X.shape[0])
+        #
+        # for i in range(tree.node_count):
+        #     clf.tree_ = tree.nodes_splitting_trees[i]
+        #     if(tree.nodes_splitting_trees[i] != None):
+        #         fig, ax = plt.subplots(1, figsize=(16, 9))
+        #         plot_tree(clf)
+        #         plt.show()
 
-        builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
-        # builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups)
+        # print(tree.nodes_childs)
+        print(tree.nodes_parent)
+        print(tree.nodes_impurities)
+        print(tree.nodes_n_node_samples)
+        print(tree.nodes_weighted_n_node_samples)
+        print(tree.nodes_group)
+        print(tree.nodes_n_childs)
+
+        print(tree.node_count)
+        print(tree.max_depth)
+        print(tree.n_grouped_features)
+        print(tree.n_outputs)
+        print(tree.n_classes)
+        print(tree.max_n_classes)
+        print(tree.value_stride)
+        print(tree.capacity)
+        # print(tree.value) #Not sure what it is supposed to return
+        # print(tree.nodes) #TODO find a way to make it possible
 
 if __name__ == '__main__':
     unittest.main()
