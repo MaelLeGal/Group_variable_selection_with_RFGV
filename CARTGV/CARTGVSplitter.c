@@ -10224,7 +10224,7 @@ static int __pyx_f_14CARTGVSplitter_18BestCARTGVSplitter_reset_scikit_learn_inst
   /* "CARTGVSplitter.pyx":498
  * #        print(self.splitting_tree)
  * 
- *         cdef int max_features = len_group             # <<<<<<<<<<<<<<
+ *         cdef int max_features = len_group # TODO make those variable parameters             # <<<<<<<<<<<<<<
  *         cdef SIZE_t max_leaf_nodes = -1 #self.X.shape[0]
  *         cdef SIZE_t min_samples_leaf = 1
  */
@@ -10232,7 +10232,7 @@ static int __pyx_f_14CARTGVSplitter_18BestCARTGVSplitter_reset_scikit_learn_inst
 
   /* "CARTGVSplitter.pyx":499
  * 
- *         cdef int max_features = len_group
+ *         cdef int max_features = len_group # TODO make those variable parameters
  *         cdef SIZE_t max_leaf_nodes = -1 #self.X.shape[0]             # <<<<<<<<<<<<<<
  *         cdef SIZE_t min_samples_leaf = 1
  *         cdef SIZE_t min_samples_split = 2
@@ -10240,7 +10240,7 @@ static int __pyx_f_14CARTGVSplitter_18BestCARTGVSplitter_reset_scikit_learn_inst
   __pyx_v_max_leaf_nodes = -1;
 
   /* "CARTGVSplitter.pyx":500
- *         cdef int max_features = len_group
+ *         cdef int max_features = len_group # TODO make those variable parameters
  *         cdef SIZE_t max_leaf_nodes = -1 #self.X.shape[0]
  *         cdef SIZE_t min_samples_leaf = 1             # <<<<<<<<<<<<<<
  *         cdef SIZE_t min_samples_split = 2
