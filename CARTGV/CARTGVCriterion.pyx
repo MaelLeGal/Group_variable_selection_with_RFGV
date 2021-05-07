@@ -411,7 +411,7 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t k
 
         for k in range(self.n_outputs):
-            memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))
+            memcpy(dest, sum_total, n_classes[k] * sizeof(double))
             dest += self.sum_stride
             sum_total += self.sum_stride
 
@@ -567,8 +567,8 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
           for c in range(n_classes[k]):
               for j in range(n_childs):
                 count_k = sum_childs[j][c]
-                with gil:
-                    print(count_k)
+#                with gil:
+#                    print(count_k)
                 sq_count_childs[j] += count_k * count_k
 
           for l in range(n_childs):

@@ -1027,9 +1027,6 @@ cdef class CARTGVTreeBuilder():
 
         cdef Stack stack = Stack(INITIAL_STACK_SIZE)                        # The stack that contains the records
         cdef StackRecord stack_record                                       # A record for the stack
-
-        cdef int incr = 0
-
         with nogil:
             # push root node onto stack
             rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0) #TODO créer une nouvelle class Stack_Record sans is_left ?
@@ -1040,8 +1037,6 @@ cdef class CARTGVTreeBuilder():
 
             # Loop until the stack is empty (if the last leaf has been treated)
             while not stack.is_empty():
-                with gil:
-                    print("################## LOOP " + str(incr) + " ##################")
 
                 stack.pop(&stack_record)
 
@@ -1071,8 +1066,8 @@ cdef class CARTGVTreeBuilder():
                 # If the node isn't a leaf, we call the splitter to split it
                 if not is_leaf:
                     with gil:
-#                        print("### INSIDE NODE ###")
                         splitter.node_split(impurity, &split, &n_constant_features) # TODO Make the function no gil
+
                     # If EPSILON=0 in the below comparison, float precision
                     # issues stop splitting, producing trees that are
                     # dissimilar to v0.18
@@ -1082,7 +1077,6 @@ cdef class CARTGVTreeBuilder():
 
                 else:
                     with gil:
-#                        print("### LEAF ###")
                         split.n_childs = 0
                         split.group = -1
                         splitting_tree = None
@@ -1091,27 +1085,23 @@ cdef class CARTGVTreeBuilder():
                 node_id = tree._add_node(parent, is_leaf, split.splitting_tree, impurity, n_node_samples, split.n_childs,
                                         weighted_n_node_samples, split.group)
 
-
                 if node_id == SIZE_MAX:
                     rc = -1
                     break
 
                 # Store value for all nodes, to facilitate tree/model
                 # inspection and interpretation
-                splitter.node_value(tree.value + node_id * tree.value_stride)
+                splitter.node_value(tree.value + node_id * tree.value_stride) # TODO erreur dans cette fonction
 
                 # If the current node isn't a leaf, we add it's childs to the stack to be treated
                 if not is_leaf:
                     n_childs = split.n_childs
                     for i in range(n_childs):
-                      with gil:
-#                        print("STACK PUSH")
                         rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features)
-                      if rc == -1:
-                        break
+                        if rc == -1:
+                            break
                     if rc == -1:
                       break
-                incr+=1
                 if depth > max_depth_seen:
                     max_depth_seen = depth
 
