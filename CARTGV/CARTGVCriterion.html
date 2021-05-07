@@ -3511,8 +3511,8 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_4__r
   __pyx_t_4 = __pyx_t_3;
   for (__pyx_t_5 = 0; __pyx_t_5 &lt; __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_k = __pyx_t_5;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">414</span>:             memcpy(&amp;dest, &amp;sum_total, n_classes[k] * sizeof(double))</pre>
-<pre class='cython code score-0 '>    (void)(memcpy((&amp;__pyx_v_dest), (&amp;__pyx_v_sum_total), ((__pyx_v_n_classes[__pyx_v_k]) * (sizeof(double)))));
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">414</span>:             memcpy(dest, sum_total, n_classes[k] * sizeof(double))</pre>
+<pre class='cython code score-0 '>    (void)(memcpy(__pyx_v_dest, __pyx_v_sum_total, ((__pyx_v_n_classes[__pyx_v_k]) * (sizeof(double)))));
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">415</span>:             dest += self.sum_stride</pre>
 <pre class='cython code score-0 '>    __pyx_v_dest = (__pyx_v_dest + __pyx_v_self-&gt;sum_stride);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">416</span>:             sum_total += self.sum_stride</pre>
@@ -4574,8 +4574,8 @@ static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *__pyx_vtabptr_15CAR
   __pyx_r = (__pyx_v_gini / __pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs);
   goto __pyx_L0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">547</span>: </pre>
-<pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">548</span>:     cdef void children_impurity(self, double** impurity_childs) nogil:</pre>
-<pre class='cython code score-9 '>static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __pyx_obj_15CARTGVCriterion_CARTGVGini *__pyx_v_self, double **__pyx_v_impurity_childs) {
+<pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">548</span>:     cdef void children_impurity(self, double** impurity_childs) nogil:</pre>
+<pre class='cython code score-2 '>static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __pyx_obj_15CARTGVCriterion_CARTGVGini *__pyx_v_self, double **__pyx_v_impurity_childs) {
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_n_classes;
   double **__pyx_v_sum_childs;
   double *__pyx_v_gini_childs;
@@ -4588,53 +4588,24 @@ static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *__pyx_vtabptr_15CAR
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_c;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_m;
   int __pyx_v_n_childs;
-  #ifdef WITH_THREAD
-  PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
-  #endif
-  <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
-  <span class='refnanny'>__Pyx_RefNannySetupContext</span>("children_impurity", 0);
-  #ifdef WITH_THREAD
-  <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
-  #endif
 /* … */
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_t_12);
   <span class='pyx_c_api'>__Pyx_WriteUnraisable</span>("CARTGVCriterion.CARTGVGini.children_impurity", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 1);
   __pyx_L0:;
-  #ifdef WITH_THREAD
-  <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
-  #endif
 }
 </pre><pre class="cython line score-0">&#xA0;<span class="">549</span>: </pre>
-<pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">550</span>:         cdef SIZE_t* n_classes = self.n_classes</pre>
-<pre class='cython code score-4 '>  /*try:*/ {
-    __pyx_t_1 = __pyx_v_self-&gt;__pyx_base.n_classes;
-    __pyx_v_n_classes = __pyx_t_1;
-/* … */
-  /*finally:*/ {
-    /*normal exit:*/{
-      #ifdef WITH_THREAD
-      __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
-      #endif
-      goto __pyx_L5;
-    }
-    __pyx_L4_error: {
-      #ifdef WITH_THREAD
-      __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
-      #endif
-      goto __pyx_L1_error;
-    }
-    __pyx_L5:;
-  }
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">550</span>:         cdef SIZE_t* n_classes = self.n_classes</pre>
+<pre class='cython code score-0 '>  __pyx_t_1 = __pyx_v_self-&gt;__pyx_base.n_classes;
+  __pyx_v_n_classes = __pyx_t_1;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">551</span>:         cdef double** sum_childs = self.sum_childs</pre>
-<pre class='cython code score-0 '>    __pyx_t_2 = __pyx_v_self-&gt;__pyx_base.__pyx_base.sum_childs;
-    __pyx_v_sum_childs = __pyx_t_2;
+<pre class='cython code score-0 '>  __pyx_t_2 = __pyx_v_self-&gt;__pyx_base.__pyx_base.sum_childs;
+  __pyx_v_sum_childs = __pyx_t_2;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">552</span>:         cdef double* gini_childs = &lt;double*&gt; calloc(self.n_childs,sizeof(double))</pre>
-<pre class='cython code score-0 '>    __pyx_v_gini_childs = ((double *)calloc(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs, (sizeof(double))));
+<pre class='cython code score-0 '>  __pyx_v_gini_childs = ((double *)calloc(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">553</span>:         cdef double* sq_count_childs = &lt;double*&gt; calloc(self.n_childs,sizeof(double))</pre>
-<pre class='cython code score-0 '>    __pyx_v_sq_count_childs = ((double *)calloc(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs, (sizeof(double))));
+<pre class='cython code score-0 '>  __pyx_v_sq_count_childs = ((double *)calloc(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 </pre><pre class="cython line score-0">&#xA0;<span class="">554</span>:         cdef double count_k</pre>
 <pre class="cython line score-0">&#xA0;<span class="">555</span>:         cdef SIZE_t k</pre>
 <pre class="cython line score-0">&#xA0;<span class="">556</span>:         cdef SIZE_t i</pre>
@@ -4643,102 +4614,52 @@ static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *__pyx_vtabptr_15CAR
 <pre class="cython line score-0">&#xA0;<span class="">559</span>:         cdef SIZE_t c</pre>
 <pre class="cython line score-0">&#xA0;<span class="">560</span>:         cdef SIZE_t m</pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">561</span>:         cdef int n_childs = self.n_childs</pre>
-<pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs;
-    __pyx_v_n_childs = __pyx_t_3;
+<pre class='cython code score-0 '>  __pyx_t_3 = __pyx_v_self-&gt;__pyx_base.__pyx_base.n_childs;
+  __pyx_v_n_childs = __pyx_t_3;
 </pre><pre class="cython line score-0">&#xA0;<span class="">562</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">563</span>:         for k in range(self.n_outputs):</pre>
-<pre class='cython code score-0 '>    __pyx_t_4 = __pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs;
-    __pyx_t_5 = __pyx_t_4;
-    for (__pyx_t_6 = 0; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
-      __pyx_v_k = __pyx_t_6;
+<pre class='cython code score-0 '>  __pyx_t_4 = __pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs;
+  __pyx_t_5 = __pyx_t_4;
+  for (__pyx_t_6 = 0; __pyx_t_6 &lt; __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_k = __pyx_t_6;
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">564</span>:           for i in range(n_childs):</pre>
-<pre class='cython code score-0 '>      __pyx_t_3 = __pyx_v_n_childs;
-      __pyx_t_7 = __pyx_t_3;
-      for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
-        __pyx_v_i = __pyx_t_8;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">565</span>:             sq_count_childs[i] = 0.0</pre>
-<pre class='cython code score-0 '>        (__pyx_v_sq_count_childs[__pyx_v_i]) = 0.0;
-      }
-</pre><pre class="cython line score-0">&#xA0;<span class="">566</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">567</span>:           for c in range(n_classes[k]):</pre>
-<pre class='cython code score-0 '>      __pyx_t_8 = (__pyx_v_n_classes[__pyx_v_k]);
-      __pyx_t_9 = __pyx_t_8;
-      for (__pyx_t_10 = 0; __pyx_t_10 &lt; __pyx_t_9; __pyx_t_10+=1) {
-        __pyx_v_c = __pyx_t_10;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">568</span>:               for j in range(n_childs):</pre>
-<pre class='cython code score-0 '>        __pyx_t_3 = __pyx_v_n_childs;
-        __pyx_t_7 = __pyx_t_3;
-        for (__pyx_t_11 = 0; __pyx_t_11 &lt; __pyx_t_7; __pyx_t_11+=1) {
-          __pyx_v_j = __pyx_t_11;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">569</span>:                 count_k = sum_childs[j][c]</pre>
-<pre class='cython code score-0 '>          __pyx_v_count_k = ((__pyx_v_sum_childs[__pyx_v_j])[__pyx_v_c]);
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">570</span>:                 with gil:</pre>
-<pre class='cython code score-6 '>          {
-              #ifdef WITH_THREAD
-              PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
-              #endif
-              /*try:*/ {
-/* … */
-              /*finally:*/ {
-                /*normal exit:*/{
-                  #ifdef WITH_THREAD
-                  <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
-                  #endif
-                  goto __pyx_L18;
-                }
-                __pyx_L17_error: {
-                  #ifdef WITH_THREAD
-                  <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
-                  #endif
-                  goto __pyx_L4_error;
-                }
-                __pyx_L18:;
-              }
-          }
-</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">571</span>:                     print(count_k)</pre>
-<pre class='cython code score-8 '>                __pyx_t_12 = <span class='py_c_api'>PyFloat_FromDouble</span>(__pyx_v_count_k);<span class='error_goto'> if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 571, __pyx_L17_error)</span>
-                <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_12);
-                if (<span class='pyx_c_api'>__Pyx_PrintOne</span>(0, __pyx_t_12) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 571, __pyx_L17_error)</span>
-                <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_12); __pyx_t_12 = 0;
-              }
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">572</span>:                 sq_count_childs[j] += count_k * count_k</pre>
-<pre class='cython code score-0 '>          __pyx_t_13 = __pyx_v_j;
-          (__pyx_v_sq_count_childs[__pyx_t_13]) = ((__pyx_v_sq_count_childs[__pyx_t_13]) + (__pyx_v_count_k * __pyx_v_count_k));
-        }
-      }
-</pre><pre class="cython line score-0">&#xA0;<span class="">573</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">574</span>:           for l in range(n_childs):</pre>
-<pre class='cython code score-0 '>      __pyx_t_3 = __pyx_v_n_childs;
-      __pyx_t_7 = __pyx_t_3;
-      for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
-        __pyx_v_l = __pyx_t_8;
-</pre><pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">575</span>:             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])</pre>
-<pre class='cython code score-9 '>        __pyx_t_9 = __pyx_v_l;
-        __pyx_t_14 = ((__pyx_v_self-&gt;__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]) * (__pyx_v_self-&gt;__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]));
-        if (unlikely(__pyx_t_14 == 0)) {
-          #ifdef WITH_THREAD
-          PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
-          #endif
-          <span class='py_c_api'>PyErr_SetString</span>(PyExc_ZeroDivisionError, "float division");
-          #ifdef WITH_THREAD
-          <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
-          #endif
-          <span class='error_goto'>__PYX_ERR(0, 575, __pyx_L4_error)</span>
-        }
-        (__pyx_v_gini_childs[__pyx_t_9]) = ((__pyx_v_gini_childs[__pyx_t_9]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_14)));
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">576</span>:             sum_childs[l] += self.sum_stride</pre>
-<pre class='cython code score-0 '>        __pyx_t_9 = __pyx_v_l;
-        (__pyx_v_sum_childs[__pyx_t_9]) = ((__pyx_v_sum_childs[__pyx_t_9]) + __pyx_v_self-&gt;__pyx_base.sum_stride);
-      }
-    }
-</pre><pre class="cython line score-0">&#xA0;<span class="">577</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">578</span>:         for m in range(n_childs):</pre>
 <pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_n_childs;
     __pyx_t_7 = __pyx_t_3;
-    for (__pyx_t_4 = 0; __pyx_t_4 &lt; __pyx_t_7; __pyx_t_4+=1) {
-      __pyx_v_m = __pyx_t_4;
-</pre><pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">579</span>:           impurity_childs[0][m] = gini_childs[m] / self.n_outputs</pre>
-<pre class='cython code score-9 '>      if (unlikely(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs == 0)) {
+    for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
+      __pyx_v_i = __pyx_t_8;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">565</span>:             sq_count_childs[i] = 0.0</pre>
+<pre class='cython code score-0 '>      (__pyx_v_sq_count_childs[__pyx_v_i]) = 0.0;
+    }
+</pre><pre class="cython line score-0">&#xA0;<span class="">566</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">567</span>:           for c in range(n_classes[k]):</pre>
+<pre class='cython code score-0 '>    __pyx_t_8 = (__pyx_v_n_classes[__pyx_v_k]);
+    __pyx_t_9 = __pyx_t_8;
+    for (__pyx_t_10 = 0; __pyx_t_10 &lt; __pyx_t_9; __pyx_t_10+=1) {
+      __pyx_v_c = __pyx_t_10;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">568</span>:               for j in range(n_childs):</pre>
+<pre class='cython code score-0 '>      __pyx_t_3 = __pyx_v_n_childs;
+      __pyx_t_7 = __pyx_t_3;
+      for (__pyx_t_11 = 0; __pyx_t_11 &lt; __pyx_t_7; __pyx_t_11+=1) {
+        __pyx_v_j = __pyx_t_11;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">569</span>:                 count_k = sum_childs[j][c]</pre>
+<pre class='cython code score-0 '>        __pyx_v_count_k = ((__pyx_v_sum_childs[__pyx_v_j])[__pyx_v_c]);
+</pre><pre class="cython line score-0">&#xA0;<span class="">570</span>: #                with gil:</pre>
+<pre class="cython line score-0">&#xA0;<span class="">571</span>: #                    print(count_k)</pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">572</span>:                 sq_count_childs[j] += count_k * count_k</pre>
+<pre class='cython code score-0 '>        __pyx_t_12 = __pyx_v_j;
+        (__pyx_v_sq_count_childs[__pyx_t_12]) = ((__pyx_v_sq_count_childs[__pyx_t_12]) + (__pyx_v_count_k * __pyx_v_count_k));
+      }
+    }
+</pre><pre class="cython line score-0">&#xA0;<span class="">573</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">574</span>:           for l in range(n_childs):</pre>
+<pre class='cython code score-0 '>    __pyx_t_3 = __pyx_v_n_childs;
+    __pyx_t_7 = __pyx_t_3;
+    for (__pyx_t_8 = 0; __pyx_t_8 &lt; __pyx_t_7; __pyx_t_8+=1) {
+      __pyx_v_l = __pyx_t_8;
+</pre><pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">575</span>:             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])</pre>
+<pre class='cython code score-9 '>      __pyx_t_9 = __pyx_v_l;
+      __pyx_t_13 = ((__pyx_v_self-&gt;__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]) * (__pyx_v_self-&gt;__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]));
+      if (unlikely(__pyx_t_13 == 0)) {
         #ifdef WITH_THREAD
         PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
         #endif
@@ -4746,14 +4667,36 @@ static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *__pyx_vtabptr_15CAR
         #ifdef WITH_THREAD
         <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
         #endif
-        <span class='error_goto'>__PYX_ERR(0, 579, __pyx_L4_error)</span>
+        <span class='error_goto'>__PYX_ERR(0, 575, __pyx_L1_error)</span>
       }
-      ((__pyx_v_impurity_childs[0])[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs);
+      (__pyx_v_gini_childs[__pyx_t_9]) = ((__pyx_v_gini_childs[__pyx_t_9]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_13)));
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">576</span>:             sum_childs[l] += self.sum_stride</pre>
+<pre class='cython code score-0 '>      __pyx_t_9 = __pyx_v_l;
+      (__pyx_v_sum_childs[__pyx_t_9]) = ((__pyx_v_sum_childs[__pyx_t_9]) + __pyx_v_self-&gt;__pyx_base.sum_stride);
     }
+  }
+</pre><pre class="cython line score-0">&#xA0;<span class="">577</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">578</span>:         for m in range(n_childs):</pre>
+<pre class='cython code score-0 '>  __pyx_t_3 = __pyx_v_n_childs;
+  __pyx_t_7 = __pyx_t_3;
+  for (__pyx_t_4 = 0; __pyx_t_4 &lt; __pyx_t_7; __pyx_t_4+=1) {
+    __pyx_v_m = __pyx_t_4;
+</pre><pre class="cython line score-9" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">579</span>:           impurity_childs[0][m] = gini_childs[m] / self.n_outputs</pre>
+<pre class='cython code score-9 '>    if (unlikely(__pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs == 0)) {
+      #ifdef WITH_THREAD
+      PyGILState_STATE __pyx_gilstate_save = <span class='pyx_c_api'>__Pyx_PyGILState_Ensure</span>();
+      #endif
+      <span class='py_c_api'>PyErr_SetString</span>(PyExc_ZeroDivisionError, "float division");
+      #ifdef WITH_THREAD
+      <span class='pyx_c_api'>__Pyx_PyGILState_Release</span>(__pyx_gilstate_save);
+      #endif
+      <span class='error_goto'>__PYX_ERR(0, 579, __pyx_L1_error)</span>
+    }
+    ((__pyx_v_impurity_childs[0])[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self-&gt;__pyx_base.__pyx_base.n_outputs);
+  }
 </pre><pre class="cython line score-0">&#xA0;<span class="">580</span>: </pre>
 <pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">581</span>:         self.sum_childs = sum_childs</pre>
-<pre class='cython code score-0 '>    __pyx_v_self-&gt;__pyx_base.__pyx_base.sum_childs = __pyx_v_sum_childs;
-  }
+<pre class='cython code score-0 '>  __pyx_v_self-&gt;__pyx_base.__pyx_base.sum_childs = __pyx_v_sum_childs;
 </pre><pre class="cython line score-0">&#xA0;<span class="">582</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">583</span>: </pre>
 <pre class="cython line score-0">&#xA0;<span class="">584</span>: </pre>

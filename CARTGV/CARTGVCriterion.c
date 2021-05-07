@@ -2956,13 +2956,6 @@ static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_7sklearn_4tree_5_tree_SIZE
 static CYTHON_INLINE PyObject *__pyx_memview_get_double(const char *itemp);
 static CYTHON_INLINE int __pyx_memview_set_double(const char *itemp, PyObject *obj);
 
-/* Print.proto */
-static int __Pyx_Print(PyObject*, PyObject *, int);
-#if CYTHON_COMPILING_IN_PYPY || PY_MAJOR_VERSION >= 3
-static PyObject* __pyx_print = 0;
-static PyObject* __pyx_print_kwargs = 0;
-#endif
-
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -3088,9 +3081,6 @@ static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE size_t __Pyx_PyInt_As_size_t(PyObject *);
-
-/* PrintOne.proto */
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
@@ -3323,7 +3313,6 @@ static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_sys[] = "sys";
 static const char __pyx_k_base[] = "base";
 static const char __pyx_k_dict[] = "__dict__";
-static const char __pyx_k_file[] = "file";
 static const char __pyx_k_join[] = "join";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mode[] = "mode";
@@ -3340,7 +3329,6 @@ static const char __pyx_k_error[] = "error";
 static const char __pyx_k_finfo[] = "finfo";
 static const char __pyx_k_flags[] = "flags";
 static const char __pyx_k_numpy[] = "numpy";
-static const char __pyx_k_print[] = "print";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_start[] = "start";
@@ -3484,7 +3472,6 @@ static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_eps;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_faulthandler;
-static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_finfo;
 static PyObject *__pyx_n_s_flags;
 static PyObject *__pyx_n_s_format;
@@ -3517,7 +3504,6 @@ static PyObject *__pyx_kp_s_numpy_core_umath_failed_to_impor;
 static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_pickle;
-static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
 static PyObject *__pyx_n_s_pyx_getbuffer;
@@ -8866,7 +8852,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
  *         cdef SIZE_t k
  * 
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
- *             memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))
+ *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride
  */
   __pyx_t_3 = __pyx_v_self->__pyx_base.n_outputs;
@@ -8877,15 +8863,15 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
     /* "CARTGVCriterion.pyx":414
  * 
  *         for k in range(self.n_outputs):
- *             memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))             # <<<<<<<<<<<<<<
+ *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))             # <<<<<<<<<<<<<<
  *             dest += self.sum_stride
  *             sum_total += self.sum_stride
  */
-    (void)(memcpy((&__pyx_v_dest), (&__pyx_v_sum_total), ((__pyx_v_n_classes[__pyx_v_k]) * (sizeof(double)))));
+    (void)(memcpy(__pyx_v_dest, __pyx_v_sum_total, ((__pyx_v_n_classes[__pyx_v_k]) * (sizeof(double)))));
 
     /* "CARTGVCriterion.pyx":415
  *         for k in range(self.n_outputs):
- *             memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))
+ *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride             # <<<<<<<<<<<<<<
  *             sum_total += self.sum_stride
  * 
@@ -8893,7 +8879,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
     __pyx_v_dest = (__pyx_v_dest + __pyx_v_self->sum_stride);
 
     /* "CARTGVCriterion.pyx":416
- *             memcpy(&dest, &sum_total, n_classes[k] * sizeof(double))
+ *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride
  *             sum_total += self.sum_stride             # <<<<<<<<<<<<<<
  * 
@@ -10470,7 +10456,6 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_c;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_m;
   int __pyx_v_n_childs;
-  __Pyx_RefNannyDeclarations
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_1;
   double **__pyx_t_2;
   int __pyx_t_3;
@@ -10482,19 +10467,11 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_9;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_10;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_11;
-  PyObject *__pyx_t_12 = NULL;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_13;
-  double __pyx_t_14;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_12;
+  double __pyx_t_13;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  #ifdef WITH_THREAD
-  PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
-  #endif
-  __Pyx_RefNannySetupContext("children_impurity", 0);
-  #ifdef WITH_THREAD
-  __Pyx_PyGILState_Release(__pyx_gilstate_save);
-  #endif
 
   /* "CARTGVCriterion.pyx":550
  *     cdef void children_impurity(self, double** impurity_childs) nogil:
@@ -10503,242 +10480,148 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
  */
-  /*try:*/ {
-    __pyx_t_1 = __pyx_v_self->__pyx_base.n_classes;
-    __pyx_v_n_classes = __pyx_t_1;
+  __pyx_t_1 = __pyx_v_self->__pyx_base.n_classes;
+  __pyx_v_n_classes = __pyx_t_1;
 
-    /* "CARTGVCriterion.pyx":551
+  /* "CARTGVCriterion.pyx":551
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))
  */
-    __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
-    __pyx_v_sum_childs = __pyx_t_2;
+  __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
+  __pyx_v_sum_childs = __pyx_t_2;
 
-    /* "CARTGVCriterion.pyx":552
+  /* "CARTGVCriterion.pyx":552
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
  *         cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef double count_k
  */
-    __pyx_v_gini_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
+  __pyx_v_gini_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-    /* "CARTGVCriterion.pyx":553
+  /* "CARTGVCriterion.pyx":553
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
  *         cdef double count_k
  *         cdef SIZE_t k
  */
-    __pyx_v_sq_count_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
+  __pyx_v_sq_count_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-    /* "CARTGVCriterion.pyx":561
+  /* "CARTGVCriterion.pyx":561
  *         cdef SIZE_t c
  *         cdef SIZE_t m
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
  * 
  *         for k in range(self.n_outputs):
  */
-    __pyx_t_3 = __pyx_v_self->__pyx_base.__pyx_base.n_childs;
-    __pyx_v_n_childs = __pyx_t_3;
+  __pyx_t_3 = __pyx_v_self->__pyx_base.__pyx_base.n_childs;
+  __pyx_v_n_childs = __pyx_t_3;
 
-    /* "CARTGVCriterion.pyx":563
+  /* "CARTGVCriterion.pyx":563
  *         cdef int n_childs = self.n_childs
  * 
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
  *           for i in range(n_childs):
  *             sq_count_childs[i] = 0.0
  */
-    __pyx_t_4 = __pyx_v_self->__pyx_base.__pyx_base.n_outputs;
-    __pyx_t_5 = __pyx_t_4;
-    for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
-      __pyx_v_k = __pyx_t_6;
+  __pyx_t_4 = __pyx_v_self->__pyx_base.__pyx_base.n_outputs;
+  __pyx_t_5 = __pyx_t_4;
+  for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_k = __pyx_t_6;
 
-      /* "CARTGVCriterion.pyx":564
+    /* "CARTGVCriterion.pyx":564
  * 
  *         for k in range(self.n_outputs):
  *           for i in range(n_childs):             # <<<<<<<<<<<<<<
  *             sq_count_childs[i] = 0.0
  * 
  */
-      __pyx_t_3 = __pyx_v_n_childs;
-      __pyx_t_7 = __pyx_t_3;
-      for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
-        __pyx_v_i = __pyx_t_8;
+    __pyx_t_3 = __pyx_v_n_childs;
+    __pyx_t_7 = __pyx_t_3;
+    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+      __pyx_v_i = __pyx_t_8;
 
-        /* "CARTGVCriterion.pyx":565
+      /* "CARTGVCriterion.pyx":565
  *         for k in range(self.n_outputs):
  *           for i in range(n_childs):
  *             sq_count_childs[i] = 0.0             # <<<<<<<<<<<<<<
  * 
  *           for c in range(n_classes[k]):
  */
-        (__pyx_v_sq_count_childs[__pyx_v_i]) = 0.0;
-      }
+      (__pyx_v_sq_count_childs[__pyx_v_i]) = 0.0;
+    }
 
-      /* "CARTGVCriterion.pyx":567
+    /* "CARTGVCriterion.pyx":567
  *             sq_count_childs[i] = 0.0
  * 
  *           for c in range(n_classes[k]):             # <<<<<<<<<<<<<<
  *               for j in range(n_childs):
  *                 count_k = sum_childs[j][c]
  */
-      __pyx_t_8 = (__pyx_v_n_classes[__pyx_v_k]);
-      __pyx_t_9 = __pyx_t_8;
-      for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
-        __pyx_v_c = __pyx_t_10;
+    __pyx_t_8 = (__pyx_v_n_classes[__pyx_v_k]);
+    __pyx_t_9 = __pyx_t_8;
+    for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
+      __pyx_v_c = __pyx_t_10;
 
-        /* "CARTGVCriterion.pyx":568
+      /* "CARTGVCriterion.pyx":568
  * 
  *           for c in range(n_classes[k]):
  *               for j in range(n_childs):             # <<<<<<<<<<<<<<
  *                 count_k = sum_childs[j][c]
- *                 with gil:
+ * #                with gil:
  */
-        __pyx_t_3 = __pyx_v_n_childs;
-        __pyx_t_7 = __pyx_t_3;
-        for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_7; __pyx_t_11+=1) {
-          __pyx_v_j = __pyx_t_11;
+      __pyx_t_3 = __pyx_v_n_childs;
+      __pyx_t_7 = __pyx_t_3;
+      for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_7; __pyx_t_11+=1) {
+        __pyx_v_j = __pyx_t_11;
 
-          /* "CARTGVCriterion.pyx":569
+        /* "CARTGVCriterion.pyx":569
  *           for c in range(n_classes[k]):
  *               for j in range(n_childs):
  *                 count_k = sum_childs[j][c]             # <<<<<<<<<<<<<<
- *                 with gil:
- *                     print(count_k)
+ * #                with gil:
+ * #                    print(count_k)
  */
-          __pyx_v_count_k = ((__pyx_v_sum_childs[__pyx_v_j])[__pyx_v_c]);
+        __pyx_v_count_k = ((__pyx_v_sum_childs[__pyx_v_j])[__pyx_v_c]);
 
-          /* "CARTGVCriterion.pyx":570
- *               for j in range(n_childs):
- *                 count_k = sum_childs[j][c]
- *                 with gil:             # <<<<<<<<<<<<<<
- *                     print(count_k)
- *                 sq_count_childs[j] += count_k * count_k
- */
-          {
-              #ifdef WITH_THREAD
-              PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
-              #endif
-              /*try:*/ {
-
-                /* "CARTGVCriterion.pyx":571
- *                 count_k = sum_childs[j][c]
- *                 with gil:
- *                     print(count_k)             # <<<<<<<<<<<<<<
- *                 sq_count_childs[j] += count_k * count_k
- * 
- */
-                __pyx_t_12 = PyFloat_FromDouble(__pyx_v_count_k); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 571, __pyx_L17_error)
-                __Pyx_GOTREF(__pyx_t_12);
-                if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 571, __pyx_L17_error)
-                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-              }
-
-              /* "CARTGVCriterion.pyx":570
- *               for j in range(n_childs):
- *                 count_k = sum_childs[j][c]
- *                 with gil:             # <<<<<<<<<<<<<<
- *                     print(count_k)
- *                 sq_count_childs[j] += count_k * count_k
- */
-              /*finally:*/ {
-                /*normal exit:*/{
-                  #ifdef WITH_THREAD
-                  __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                  #endif
-                  goto __pyx_L18;
-                }
-                __pyx_L17_error: {
-                  #ifdef WITH_THREAD
-                  __Pyx_PyGILState_Release(__pyx_gilstate_save);
-                  #endif
-                  goto __pyx_L4_error;
-                }
-                __pyx_L18:;
-              }
-          }
-
-          /* "CARTGVCriterion.pyx":572
- *                 with gil:
- *                     print(count_k)
+        /* "CARTGVCriterion.pyx":572
+ * #                with gil:
+ * #                    print(count_k)
  *                 sq_count_childs[j] += count_k * count_k             # <<<<<<<<<<<<<<
  * 
  *           for l in range(n_childs):
  */
-          __pyx_t_13 = __pyx_v_j;
-          (__pyx_v_sq_count_childs[__pyx_t_13]) = ((__pyx_v_sq_count_childs[__pyx_t_13]) + (__pyx_v_count_k * __pyx_v_count_k));
-        }
+        __pyx_t_12 = __pyx_v_j;
+        (__pyx_v_sq_count_childs[__pyx_t_12]) = ((__pyx_v_sq_count_childs[__pyx_t_12]) + (__pyx_v_count_k * __pyx_v_count_k));
       }
+    }
 
-      /* "CARTGVCriterion.pyx":574
+    /* "CARTGVCriterion.pyx":574
  *                 sq_count_childs[j] += count_k * count_k
  * 
  *           for l in range(n_childs):             # <<<<<<<<<<<<<<
  *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
  *             sum_childs[l] += self.sum_stride
  */
-      __pyx_t_3 = __pyx_v_n_childs;
-      __pyx_t_7 = __pyx_t_3;
-      for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
-        __pyx_v_l = __pyx_t_8;
+    __pyx_t_3 = __pyx_v_n_childs;
+    __pyx_t_7 = __pyx_t_3;
+    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+      __pyx_v_l = __pyx_t_8;
 
-        /* "CARTGVCriterion.pyx":575
+      /* "CARTGVCriterion.pyx":575
  * 
  *           for l in range(n_childs):
  *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])             # <<<<<<<<<<<<<<
  *             sum_childs[l] += self.sum_stride
  * 
  */
-        __pyx_t_9 = __pyx_v_l;
-        __pyx_t_14 = ((__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]) * (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]));
-        if (unlikely(__pyx_t_14 == 0)) {
-          #ifdef WITH_THREAD
-          PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
-          #endif
-          PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-          #ifdef WITH_THREAD
-          __Pyx_PyGILState_Release(__pyx_gilstate_save);
-          #endif
-          __PYX_ERR(0, 575, __pyx_L4_error)
-        }
-        (__pyx_v_gini_childs[__pyx_t_9]) = ((__pyx_v_gini_childs[__pyx_t_9]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_14)));
-
-        /* "CARTGVCriterion.pyx":576
- *           for l in range(n_childs):
- *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
- *             sum_childs[l] += self.sum_stride             # <<<<<<<<<<<<<<
- * 
- *         for m in range(n_childs):
- */
-        __pyx_t_9 = __pyx_v_l;
-        (__pyx_v_sum_childs[__pyx_t_9]) = ((__pyx_v_sum_childs[__pyx_t_9]) + __pyx_v_self->__pyx_base.sum_stride);
-      }
-    }
-
-    /* "CARTGVCriterion.pyx":578
- *             sum_childs[l] += self.sum_stride
- * 
- *         for m in range(n_childs):             # <<<<<<<<<<<<<<
- *           impurity_childs[0][m] = gini_childs[m] / self.n_outputs
- * 
- */
-    __pyx_t_3 = __pyx_v_n_childs;
-    __pyx_t_7 = __pyx_t_3;
-    for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_7; __pyx_t_4+=1) {
-      __pyx_v_m = __pyx_t_4;
-
-      /* "CARTGVCriterion.pyx":579
- * 
- *         for m in range(n_childs):
- *           impurity_childs[0][m] = gini_childs[m] / self.n_outputs             # <<<<<<<<<<<<<<
- * 
- *         self.sum_childs = sum_childs
- */
-      if (unlikely(__pyx_v_self->__pyx_base.__pyx_base.n_outputs == 0)) {
+      __pyx_t_9 = __pyx_v_l;
+      __pyx_t_13 = ((__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]) * (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_l]));
+      if (unlikely(__pyx_t_13 == 0)) {
         #ifdef WITH_THREAD
         PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
         #endif
@@ -10746,43 +10629,62 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 579, __pyx_L4_error)
+        __PYX_ERR(0, 575, __pyx_L1_error)
       }
-      ((__pyx_v_impurity_childs[0])[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
-    }
+      (__pyx_v_gini_childs[__pyx_t_9]) = ((__pyx_v_gini_childs[__pyx_t_9]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_13)));
 
-    /* "CARTGVCriterion.pyx":581
+      /* "CARTGVCriterion.pyx":576
+ *           for l in range(n_childs):
+ *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
+ *             sum_childs[l] += self.sum_stride             # <<<<<<<<<<<<<<
+ * 
+ *         for m in range(n_childs):
+ */
+      __pyx_t_9 = __pyx_v_l;
+      (__pyx_v_sum_childs[__pyx_t_9]) = ((__pyx_v_sum_childs[__pyx_t_9]) + __pyx_v_self->__pyx_base.sum_stride);
+    }
+  }
+
+  /* "CARTGVCriterion.pyx":578
+ *             sum_childs[l] += self.sum_stride
+ * 
+ *         for m in range(n_childs):             # <<<<<<<<<<<<<<
+ *           impurity_childs[0][m] = gini_childs[m] / self.n_outputs
+ * 
+ */
+  __pyx_t_3 = __pyx_v_n_childs;
+  __pyx_t_7 = __pyx_t_3;
+  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_7; __pyx_t_4+=1) {
+    __pyx_v_m = __pyx_t_4;
+
+    /* "CARTGVCriterion.pyx":579
+ * 
+ *         for m in range(n_childs):
+ *           impurity_childs[0][m] = gini_childs[m] / self.n_outputs             # <<<<<<<<<<<<<<
+ * 
+ *         self.sum_childs = sum_childs
+ */
+    if (unlikely(__pyx_v_self->__pyx_base.__pyx_base.n_outputs == 0)) {
+      #ifdef WITH_THREAD
+      PyGILState_STATE __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
+      #endif
+      PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+      #ifdef WITH_THREAD
+      __Pyx_PyGILState_Release(__pyx_gilstate_save);
+      #endif
+      __PYX_ERR(0, 579, __pyx_L1_error)
+    }
+    ((__pyx_v_impurity_childs[0])[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
+  }
+
+  /* "CARTGVCriterion.pyx":581
  *           impurity_childs[0][m] = gini_childs[m] / self.n_outputs
  * 
  *         self.sum_childs = sum_childs             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __pyx_v_self->__pyx_base.__pyx_base.sum_childs = __pyx_v_sum_childs;
-  }
-
-  /* "CARTGVCriterion.pyx":550
- *     cdef void children_impurity(self, double** impurity_childs) nogil:
- * 
- *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
- *         cdef double** sum_childs = self.sum_childs
- *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
- */
-  /*finally:*/ {
-    /*normal exit:*/{
-      #ifdef WITH_THREAD
-      __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
-      #endif
-      goto __pyx_L5;
-    }
-    __pyx_L4_error: {
-      #ifdef WITH_THREAD
-      __pyx_gilstate_save = __Pyx_PyGILState_Ensure();
-      #endif
-      goto __pyx_L1_error;
-    }
-    __pyx_L5:;
-  }
+  __pyx_v_self->__pyx_base.__pyx_base.sum_childs = __pyx_v_sum_childs;
 
   /* "CARTGVCriterion.pyx":548
  *         return gini / self.n_outputs
@@ -10795,12 +10697,8 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   /* function exit code */
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_12);
   __Pyx_WriteUnraisable("CARTGVCriterion.CARTGVGini.children_impurity", __pyx_clineno, __pyx_lineno, __pyx_filename, 1, 1);
   __pyx_L0:;
-  #ifdef WITH_THREAD
-  __Pyx_PyGILState_Release(__pyx_gilstate_save);
-  #endif
 }
 
 /* "CARTGVCriterion.pyx":587
@@ -26691,7 +26589,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_eps, __pyx_k_eps, sizeof(__pyx_k_eps), 0, 0, 1, 1},
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_faulthandler, __pyx_k_faulthandler, sizeof(__pyx_k_faulthandler), 0, 0, 1, 1},
-  {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
   {&__pyx_n_s_finfo, __pyx_k_finfo, sizeof(__pyx_k_finfo), 0, 0, 1, 1},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
@@ -26724,7 +26621,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
-  {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_getbuffer, __pyx_k_pyx_getbuffer, sizeof(__pyx_k_pyx_getbuffer), 0, 0, 1, 1},
@@ -31161,112 +31057,6 @@ static CYTHON_INLINE int __pyx_memview_set_double(const char *itemp, PyObject *o
     return 1;
 }
 
-/* Print */
-  #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
-static PyObject *__Pyx_GetStdout(void) {
-    PyObject *f = PySys_GetObject((char *)"stdout");
-    if (!f) {
-        PyErr_SetString(PyExc_RuntimeError, "lost sys.stdout");
-    }
-    return f;
-}
-static int __Pyx_Print(PyObject* f, PyObject *arg_tuple, int newline) {
-    int i;
-    if (!f) {
-        if (!(f = __Pyx_GetStdout()))
-            return -1;
-    }
-    Py_INCREF(f);
-    for (i=0; i < PyTuple_GET_SIZE(arg_tuple); i++) {
-        PyObject* v;
-        if (PyFile_SoftSpace(f, 1)) {
-            if (PyFile_WriteString(" ", f) < 0)
-                goto error;
-        }
-        v = PyTuple_GET_ITEM(arg_tuple, i);
-        if (PyFile_WriteObject(v, f, Py_PRINT_RAW) < 0)
-            goto error;
-        if (PyString_Check(v)) {
-            char *s = PyString_AsString(v);
-            Py_ssize_t len = PyString_Size(v);
-            if (len > 0) {
-                switch (s[len-1]) {
-                    case ' ': break;
-                    case '\f': case '\r': case '\n': case '\t': case '\v':
-                        PyFile_SoftSpace(f, 0);
-                        break;
-                    default:  break;
-                }
-            }
-        }
-    }
-    if (newline) {
-        if (PyFile_WriteString("\n", f) < 0)
-            goto error;
-        PyFile_SoftSpace(f, 0);
-    }
-    Py_DECREF(f);
-    return 0;
-error:
-    Py_DECREF(f);
-    return -1;
-}
-#else
-static int __Pyx_Print(PyObject* stream, PyObject *arg_tuple, int newline) {
-    PyObject* kwargs = 0;
-    PyObject* result = 0;
-    PyObject* end_string;
-    if (unlikely(!__pyx_print)) {
-        __pyx_print = PyObject_GetAttr(__pyx_b, __pyx_n_s_print);
-        if (!__pyx_print)
-            return -1;
-    }
-    if (stream) {
-        kwargs = PyDict_New();
-        if (unlikely(!kwargs))
-            return -1;
-        if (unlikely(PyDict_SetItem(kwargs, __pyx_n_s_file, stream) < 0))
-            goto bad;
-        if (!newline) {
-            end_string = PyUnicode_FromStringAndSize(" ", 1);
-            if (unlikely(!end_string))
-                goto bad;
-            if (PyDict_SetItem(kwargs, __pyx_n_s_end, end_string) < 0) {
-                Py_DECREF(end_string);
-                goto bad;
-            }
-            Py_DECREF(end_string);
-        }
-    } else if (!newline) {
-        if (unlikely(!__pyx_print_kwargs)) {
-            __pyx_print_kwargs = PyDict_New();
-            if (unlikely(!__pyx_print_kwargs))
-                return -1;
-            end_string = PyUnicode_FromStringAndSize(" ", 1);
-            if (unlikely(!end_string))
-                return -1;
-            if (PyDict_SetItem(__pyx_print_kwargs, __pyx_n_s_end, end_string) < 0) {
-                Py_DECREF(end_string);
-                return -1;
-            }
-            Py_DECREF(end_string);
-        }
-        kwargs = __pyx_print_kwargs;
-    }
-    result = PyObject_Call(__pyx_print, arg_tuple, kwargs);
-    if (unlikely(kwargs) && (kwargs != __pyx_print_kwargs))
-        Py_DECREF(kwargs);
-    if (!result)
-        return -1;
-    Py_DECREF(result);
-    return 0;
-bad:
-    if (kwargs != __pyx_print_kwargs)
-        Py_XDECREF(kwargs);
-    return -1;
-}
-#endif
-
 /* Declarations */
   #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -32349,43 +32139,6 @@ raise_neg_overflow:
         "can't convert negative value to size_t");
     return (size_t) -1;
 }
-
-/* PrintOne */
-  #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
-static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
-    if (!f) {
-        if (!(f = __Pyx_GetStdout()))
-            return -1;
-    }
-    Py_INCREF(f);
-    if (PyFile_SoftSpace(f, 0)) {
-        if (PyFile_WriteString(" ", f) < 0)
-            goto error;
-    }
-    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
-        goto error;
-    if (PyFile_WriteString("\n", f) < 0)
-        goto error;
-    Py_DECREF(f);
-    return 0;
-error:
-    Py_DECREF(f);
-    return -1;
-    /* the line below is just to avoid C compiler
-     * warnings about unused functions */
-    return __Pyx_Print(f, NULL, 0);
-}
-#else
-static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
-    int res;
-    PyObject* arg_tuple = PyTuple_Pack(1, o);
-    if (unlikely(!arg_tuple))
-        return -1;
-    res = __Pyx_Print(stream, arg_tuple, 1);
-    Py_DECREF(arg_tuple);
-    return res;
-}
-#endif
 
 /* CIntFromPy */
   static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *x) {
