@@ -495,7 +495,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         # NO PROBLEM
 #        print(self.splitting_tree)
 
-        cdef int max_features = len_group
+        cdef int max_features = len_group # TODO make those variable parameters
         cdef SIZE_t max_leaf_nodes = -1 #self.X.shape[0]
         cdef SIZE_t min_samples_leaf = 1
         cdef SIZE_t min_samples_split = 2
