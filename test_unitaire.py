@@ -32,7 +32,7 @@ from numpy import float64 as DOUBLE
 
 class CARTGVCriterionTest(unittest.TestCase):
 
-    def test_cinit_CARTGVClassificationCriterion_v2(self):
+    def _cinit_CARTGVClassificationCriterion_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -82,7 +82,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         self.assertEqual(criterion.sum_stride, max(n_classes))
         self.assertSequenceEqual(criterion.sum_total.tolist(), np.zeros(n_outputs*criterion.sum_stride).tolist())
 
-    def test_proxy_impurity_improvement_CARTGVClassificationCriterion_v2(self):
+    def _proxy_impurity_improvement_CARTGVClassificationCriterion_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -158,7 +158,7 @@ class CARTGVCriterionTest(unittest.TestCase):
 
         self.assertTrue(improvement <= 0)
 
-    def test_impurity_improvement_CARTGVClassificationCriterion_v2(self):
+    def _impurity_improvement_CARTGVClassificationCriterion_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -235,7 +235,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         print(improvement)
         # self.assertTrue(improvement >= 0)
 
-    def test_init_CARTGVClassificationCriterion_v2(self):
+    def _init_CARTGVClassificationCriterion_v2(self):
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
         # train = df.loc[df['Type'] == 'train']
@@ -322,7 +322,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         self.assertEqual(criterion.weighted_n_samples, weighted_n_samples)
         self.assertEqual(criterion.weighted_n_node_samples, np.sum(np.ones(X.shape[0])))
 
-    def test_reset_CARTGVClassificationCriterion_v2(self):
+    def _reset_CARTGVClassificationCriterion_v2(self):
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
         # train = df.loc[df['Type'] == 'train']
@@ -402,7 +402,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         criterion.test_init(y, sample_weight, weighted_n_samples, samples, start, end)
         criterion.test_reset()
 
-    def test_update_CARTGVClassificationCriterion_v2(self):
+    def _update_CARTGVClassificationCriterion_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -475,7 +475,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         criterion.test_reset()
         criterion.test_update()
 
-    def test_node_value_CARTGVClassificationCriterion_v2(self):
+    def _node_value_CARTGVClassificationCriterion_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -548,7 +548,7 @@ class CARTGVCriterionTest(unittest.TestCase):
         criterion.test_reset()
         criterion.test_node_value()
 
-    def test_node_impurity_CARTGVGini_v2(self):
+    def _node_impurity_CARTGVGini_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -624,7 +624,7 @@ class CARTGVCriterionTest(unittest.TestCase):
 
         self.assertTrue(impurity >= 0)
 
-    def test_children_impurity_CARTGVGini_v2(self):
+    def _children_impurity_CARTGVGini_v2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
         train = df.loc[df['Type'] == 'train']
@@ -701,7 +701,7 @@ class CARTGVCriterionTest(unittest.TestCase):
 
 class CARTGVSplitterTest(unittest.TestCase):
 
-    def test_cinit_splitter_v2(self):
+    def _cinit_splitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -757,8 +757,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
-
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -784,7 +788,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = CARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split, mvar,
+                                      mgroup)
 
         self.assertEqual(type(splitter.criterion),type(criterion))
         self.assertIsNone(splitter.samples)
@@ -802,7 +807,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         self.assertIsNone(splitter.splitting_tree_builder)
         self.assertIsNone(splitter.splitting_tree)
 
-    def test_init_splitter_v2(self):
+    def _init_splitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -858,7 +863,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = np.random.RandomState(2547)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -884,7 +894,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = CARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         res = splitter.test_init(X, y, sample_weight, groups)
@@ -902,7 +913,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         self.assertEqual(splitter.n_groups, len(groups))
         # self.assertTrue(np.array(splitter.len_groups).all() == np.array([len(group) for group in groups]).all())
 
-    def test_node_reset_splitter_v2(self):
+    def _node_reset_splitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -959,7 +970,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -985,7 +1001,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = CARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups)
@@ -999,7 +1016,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         self.assertEqual(splitter.start,start)
         self.assertEqual(splitter.end,end)
 
-    def test_node_value_splitter_v2(self):
+    def _node_value_splitter_v2(self):
 
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
@@ -1056,7 +1073,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1082,7 +1104,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = CARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split, mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups)
@@ -1096,7 +1119,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         node_value = splitter.test_node_value(test[2])
         self.assertTrue(node_value >= 0)
 
-    def test_node_impurity_splitter_v2(self):
+    def _node_impurity_splitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -1153,7 +1176,13 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
+
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1179,7 +1208,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = CARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state,max_depth, min_impurity_decrease, min_impurity_split, mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups)
@@ -1192,7 +1222,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         node_impurity = splitter.test_node_impurity()
         self.assertTrue(node_impurity >= 0)
 
-    def test_init_BaseDenseSplitter_v2(self):
+    def _init_BaseDenseSplitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -1248,7 +1278,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = np.random.RandomState(2547)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1274,7 +1309,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BaseDenseCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split, mvar,
+                                      mgroup)
 
         sample_weight = None
         res = splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1293,7 +1329,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         # self.assertTrue(np.array(splitter.len_groups).all() == np.array([len(group) for group in groups]).all())
         # self.assertTrue(X.all().all() == np.array(splitter.X).all().all())
 
-    def test_group_sample_BestCARTGVSplitter_v2(self):
+    def _group_sample_BestCARTGVSplitter_v2(self):
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
         # train = df.loc[df['Type'] == 'train']
@@ -1349,7 +1385,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1375,7 +1416,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                      min_samples_leaf, min_weight_leaf,
-                                     random_state)
+                                     random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1389,7 +1431,7 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         # self.assertEqual(Xf.all(), np.array(X)[:,groups[0][0]:len(groups[0])].all())
 
-    def test_reset_scikit_learn_instances_BestCARTGVSplitter_v2(self):
+    def _reset_scikit_learn_instances_BestCARTGVSplitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -1446,7 +1488,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1472,7 +1519,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split, mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1522,7 +1570,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         # self.assertEqual(splitter.splitting_tree_builder.min_impurity_decrease, min_impurity_decrease)
         # self.assertEqual(splitter.splitting_tree_builder.min_impurity_split, min_impurity_split)
 
-    def test_n_reset_scikit_learn_instances_BestCARTGVSplitter_v2(self):
+    def _n_reset_scikit_learn_instances_BestCARTGVSplitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -1579,7 +1627,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = np.random.RandomState(2547)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1605,7 +1658,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1658,7 +1712,7 @@ class CARTGVSplitterTest(unittest.TestCase):
             # self.assertEqual(splitter.splitting_tree_builder.min_impurity_decrease, min_impurity_decrease)
             # self.assertEqual(splitter.splitting_tree_builder.min_impurity_split, min_impurity_split)
 
-    def test_splitting_tree_construction_BestCARTGVSplitter_v2(self):
+    def _splitting_tree_construction_BestCARTGVSplitter_v2(self):
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
         # train = df.loc[df['Type'] == 'train']
@@ -1714,7 +1768,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1740,7 +1799,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1784,7 +1844,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         self.assertEqual(splitter.splitting_tree.capacity, tree.capacity)
         # self.assertEqual(splitter.splitting_tree.value.all(), tree.value.all())
 
-    def test_n_splitting_tree_construction_BestCARTGVSplitter_v2(self):
+    def _n_splitting_tree_construction_BestCARTGVSplitter_v2(self):
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
         # train = df.loc[df['Type'] == 'train']
@@ -1840,7 +1900,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1866,7 +1931,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -1911,7 +1977,7 @@ class CARTGVSplitterTest(unittest.TestCase):
             self.assertEqual(splitter.splitting_tree.capacity, tree.capacity)
             # self.assertEqual(splitter.splitting_tree.value.all(), tree.value.all())
 
-    def test_get_splitting_tree_leaves_BestCARTGVSplitter_v2(self):
+    def _get_splitting_tree_leaves_BestCARTGVSplitter_v2(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -1968,7 +2034,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -1994,7 +2065,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -2022,7 +2094,7 @@ class CARTGVSplitterTest(unittest.TestCase):
         # plot_tree(tree, ax=ax[1])
         # plt.show()
 
-    def test_get_splitting_tree_leaves_samples_and_pos_BestCARTGVSplitter_v2(self):
+    def _get_splitting_tree_leaves_samples_and_pos_BestCARTGVSplitter_v2(self):
 
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
@@ -2056,7 +2128,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -2082,7 +2159,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X.to_numpy(dtype=np.float32), y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -2131,7 +2209,12 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
         random_state = check_random_state(2457)
+        mvar = 5
+        mgroup = 5
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -2157,7 +2240,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X.to_numpy(dtype=np.float32), y, sample_weight, groups) #X.to_numpy(dtype=np.float32)
@@ -2206,6 +2290,11 @@ class CARTGVSplitterTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
+        mvar = 5
+        mgroup = 5
         random_state = check_random_state(2457)
 
         if y.ndim == 1:
@@ -2232,7 +2321,8 @@ class CARTGVSplitterTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                          min_samples_leaf, min_weight_leaf,
-                                         random_state)
+                                         random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups)  # X.to_numpy(dtype=np.float32)
@@ -2246,7 +2336,7 @@ class CARTGVSplitterTest(unittest.TestCase):
 
 class CARTGVTreeTest(unittest.TestCase):
 
-    def test_cinit_CARTGVTree(self):
+    def _cinit_CARTGVTree(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -2315,7 +2405,7 @@ class CARTGVTreeTest(unittest.TestCase):
         self.assertIsNone(cartgvtree.value)
         self.assertIsNone(cartgvtree.nodes)
 
-    def test_resize_CARTGVTree(self):
+    def _resize_CARTGVTree(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -2403,7 +2493,7 @@ class CARTGVTreeTest(unittest.TestCase):
         self.assertEqual(cartgvtree.node_count,0)
         self.assertEqual(cartgvtree.capacity,capacity)
 
-    def test_add_node(self):
+    def _add_node(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -2460,6 +2550,11 @@ class CARTGVTreeTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_weight_leaf = 0
+        max_depth = 3
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
+        mvar = 5
+        mgroup = 5
         random_state = check_random_state(2457)
 
         if y.ndim == 1:
@@ -2486,7 +2581,8 @@ class CARTGVTreeTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                       min_samples_leaf, min_weight_leaf,
-                                      random_state)
+                                      random_state, max_depth, min_impurity_decrease, min_impurity_split,mvar,
+                                      mgroup)
 
         sample_weight = None
         splitter.test_init(X, y, sample_weight, groups)  # X.to_numpy(dtype=np.float32)
@@ -2500,7 +2596,7 @@ class CARTGVTreeTest(unittest.TestCase):
 
 class CARTGVTreeBuilderTest(unittest.TestCase):
 
-    def test_cinit_treebuilder(self):
+    def _cinit_treebuilder(self):
 
         # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
         #
@@ -2558,7 +2654,7 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_samples_split = 2
-        min_weight_leaf = (0.25 * n_samples)
+        min_weight_leaf = 0
         random_state = check_random_state(0)
         max_depth = 3
         mgroup = 1
@@ -2590,7 +2686,10 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
 
         splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                   min_samples_leaf, min_weight_leaf,
-                                  random_state)
+                                  random_state, max_depth, min_impurity_decrease, min_impurity_split,
+                                mvar,
+                                mgroup
+                                )
 
         tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
 
@@ -2609,57 +2708,57 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         self.assertEqual(builder.min_impurity_decrease,min_impurity_decrease)
         self.assertEqual(builder.min_impurity_split, min_impurity_split)
 
-    def test_build_treebuilder(self):
+    def _build_treebuilder(self):
 
-        # df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
-        #
-        # train = df.loc[df['Type'] == 'train']
-        #
-        # X = train.iloc[:, 2:]
-        #
-        # y = train['Y']
-        #
-        # g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
-        # g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
-        # g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
-        # g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
-        # g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
-        #
-        # groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+        df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
-        X = np.array([[-0.962564615251298, -0.0818379297761482, -0.257129359665299, -1.20057124658537,
-                       -1.67321037673198, -0.850857878613548, -1.12636943482486, 0.264691871869928, 0.823490524418768,
-                       -0.289267055667413, 0.375612134943435, 0.689033636785644, -0.0755870733096488,
-                       -0.253686040025422, -0.767686310824219, -0.47706960213735, 0.619681515116366, -0.718706304417254,
-                       -0.625998377401577, 0.595352830214443, -0.826055466109155, 0.841770278364141, 0.525998122722698,
-                       -0.305537695526707, -0.551540574269715],
-                      [-0.0170226173861495, -0.575187308059669, -0.0550716676440694, -0.596082039595892,
-                       -0.153767849941737, -0.152659395126548, 0.103284766044348, 0.945962098961183, 0.11395628892521,
-                       -1.0314335555107, -0.24180964927081, -0.225116148572662, 1.75090409682049, 0.276212128428595,
-                       -0.226985192750251, -0.688321496802469, 0.721869146316049, -0.0427129520106458, 1.71093452174155,
-                       0.440414655312213, -0.219061974136534, 0.370516601227188, -0.579953711046926, -2.4756697600574,
-                       -2.09969534371281],
-                      [0.859846852829686, -0.196768997920202, -0.665097766775893, 1.49845086392502, 0.712519776986412,
-                       0.63382801135412, 0.338132006534241, -1.17912479597116, 0.337710921150664, -0.404533729530606,
-                       0.984579714687047, -1.16236566382262, -0.786198019602607, -0.753822112046281, -0.811264249392465,
-                       -0.594151853267325, -0.322916128201519, -1.2934117213506, 0.531732629482942, -1.6136606736686,
-                       -1.27887838930757, 0.678437793765498, -1.19080597429513, 1.11533360829611, -0.340409112584892],
-                      [-1.46244895844162, 0.508777691805245, -0.42599215315616, -0.570342024814983, -1.13004768682085,
-                       1.12406519881936, 0.251809560422478, -2.06632443310484, -1.23862336004496, 1.6527814698557,
-                       0.336827946772908, -0.233201791535758, 0.590072797080428, 1.7453946472635, 1.02016573606479,
-                       -0.813457453508146, -0.0745696971758758, 2.89463767013771, 0.158622453385045, -1.70880561223817,
-                       0.132671092412739, -0.479946273307748, 0.11444508132886, 1.40287375218729, -0.344499428025485],
-                      [-0.383681631574503, 1.19713456197882, -0.302078922002226, -0.544313316070517, 1.11301409047452,
-                       0.0643648126207925, 0.623795834834719, 0.288528481567621, -0.618352387217919, -0.180420032776369,
-                       -0.974252399377197, -0.78154085269986, 0.673878430962106, -0.14493184535421, -1.58840476437875,
-                       -0.89040398934659, -0.464336091106138, -0.804400496705168, 0.542582301058101, -0.213424538311193,
-                       -0.925675256270349, 0.306707969484467, 0.378645850648093, 0.220134583700443, -0.0925601673405935]
-                      ], dtype=np.float32)
+        train = df.loc[df['Type'] == 'train']
 
-        y = np.array([[0], [1], [0], [1], [1]])
+        X = train.iloc[:, 2:]
 
-        groups = np.array(
-            [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]])
+        y = train['Y']
+
+        g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
+        g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
+        g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
+        g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
+        g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
+
+        groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+
+        # X = np.array([[-0.962564615251298, -0.0818379297761482, -0.257129359665299, -1.20057124658537,
+        #                -1.67321037673198, -0.850857878613548, -1.12636943482486, 0.264691871869928, 0.823490524418768,
+        #                -0.289267055667413, 0.375612134943435, 0.689033636785644, -0.0755870733096488,
+        #                -0.253686040025422, -0.767686310824219, -0.47706960213735, 0.619681515116366, -0.718706304417254,
+        #                -0.625998377401577, 0.595352830214443, -0.826055466109155, 0.841770278364141, 0.525998122722698,
+        #                -0.305537695526707, -0.551540574269715],
+        #               [-0.0170226173861495, -0.575187308059669, -0.0550716676440694, -0.596082039595892,
+        #                -0.153767849941737, -0.152659395126548, 0.103284766044348, 0.945962098961183, 0.11395628892521,
+        #                -1.0314335555107, -0.24180964927081, -0.225116148572662, 1.75090409682049, 0.276212128428595,
+        #                -0.226985192750251, -0.688321496802469, 0.721869146316049, -0.0427129520106458, 1.71093452174155,
+        #                0.440414655312213, -0.219061974136534, 0.370516601227188, -0.579953711046926, -2.4756697600574,
+        #                -2.09969534371281],
+        #               [0.859846852829686, -0.196768997920202, -0.665097766775893, 1.49845086392502, 0.712519776986412,
+        #                0.63382801135412, 0.338132006534241, -1.17912479597116, 0.337710921150664, -0.404533729530606,
+        #                0.984579714687047, -1.16236566382262, -0.786198019602607, -0.753822112046281, -0.811264249392465,
+        #                -0.594151853267325, -0.322916128201519, -1.2934117213506, 0.531732629482942, -1.6136606736686,
+        #                -1.27887838930757, 0.678437793765498, -1.19080597429513, 1.11533360829611, -0.340409112584892],
+        #               [-1.46244895844162, 0.508777691805245, -0.42599215315616, -0.570342024814983, -1.13004768682085,
+        #                1.12406519881936, 0.251809560422478, -2.06632443310484, -1.23862336004496, 1.6527814698557,
+        #                0.336827946772908, -0.233201791535758, 0.590072797080428, 1.7453946472635, 1.02016573606479,
+        #                -0.813457453508146, -0.0745696971758758, 2.89463767013771, 0.158622453385045, -1.70880561223817,
+        #                0.132671092412739, -0.479946273307748, 0.11444508132886, 1.40287375218729, -0.344499428025485],
+        #               [-0.383681631574503, 1.19713456197882, -0.302078922002226, -0.544313316070517, 1.11301409047452,
+        #                0.0643648126207925, 0.623795834834719, 0.288528481567621, -0.618352387217919, -0.180420032776369,
+        #                -0.974252399377197, -0.78154085269986, 0.673878430962106, -0.14493184535421, -1.58840476437875,
+        #                -0.89040398934659, -0.464336091106138, -0.804400496705168, 0.542582301058101, -0.213424538311193,
+        #                -0.925675256270349, 0.306707969484467, 0.378645850648093, 0.220134583700443, -0.0925601673405935]
+        #               ], dtype=np.float32)
+        #
+        # y = np.array([[0], [1], [0], [1], [1]])
+        #
+        # groups = np.array(
+        #     [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]])
 
         n_samples, n_features = X.shape
         n_grouped_features = 5
@@ -2669,11 +2768,14 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         min_samples_split = 2
         min_weight_leaf = 0
         random_state = check_random_state(2547)
-        max_depth = 3
+        max_depth = 10
+        max_depth_splitting_tree = 3
         mgroup = 5
         mvar = 5
         min_impurity_decrease = 0.1
         min_impurity_split = 0.1
+        min_impurity_decrease_splitting_tree = 0.1
+        min_impurity_split_spltting_tree= 0.1
 
         if y.ndim == 1:
             y = np.reshape(y, (-1, 1))
@@ -2702,7 +2804,11 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
 
             splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
                                       min_samples_leaf, min_weight_leaf,
-                                      random_state)
+                                      random_state, max_depth_splitting_tree,
+                                      min_impurity_decrease_splitting_tree,
+                                      min_impurity_split_spltting_tree,
+                                      mvar,
+                                      mgroup)
 
             tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
 
@@ -2712,21 +2818,22 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
                                         min_impurity_decrease, min_impurity_split)
 
             # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
-            builder.test_build(tree, X, y, groups) #X.to_numpy(dtype=np.float32)
+            print("####################### Tree Builder tree #####################")
+            builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups) #X.to_numpy(dtype=np.float32)
             end = time.time()
             times[i] = end-start
         print("Mean Time for 1 tree : " + str(np.mean(times)))
         endLoop = time.time()
         print("Time Loop : " + str(endLoop-startLoop))
-        # clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state, max_features=len(groups[0]),
-        #                              max_leaf_nodes=X.shape[0])
-        #
-        # for i in range(tree.node_count):
-        #     clf.tree_ = tree.nodes_splitting_trees[i]
-        #     if(tree.nodes_splitting_trees[i] != None):
-        #         fig, ax = plt.subplots(1, figsize=(16, 9))
-        #         plot_tree(clf)
-        #         plt.show()
+        clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state, max_features=len(groups[0]),
+                                     max_leaf_nodes=X.shape[0])
+
+        for i in range(tree.node_count):
+            if (tree.nodes_splitting_trees[i] != None):
+                clf.tree_ = tree.nodes_splitting_trees[i]
+                fig, ax = plt.subplots(1, figsize=(16, 9))
+                plot_tree(clf)
+                plt.show()
 
         # print(tree.nodes_childs)
         print(tree.nodes_parent)
@@ -2746,6 +2853,392 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         print(tree.capacity)
         print(tree.value) #Not sure what it represent
         # print(tree.nodes) #TODO find a way to make it possible
+
+class Cython_R_Comparison(unittest.TestCase):
+
+    def _comparison(self):
+
+        df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
+
+        train = df.loc[df['Type'] == 'train']
+
+        X = train.iloc[:, 2:]
+
+        y = train['Y']
+
+        g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
+        g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
+        g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
+        g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
+        g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
+
+        groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+
+        # X = np.array([[-0.962564615251298, -0.0818379297761482, -0.257129359665299, -1.20057124658537,
+        #                -1.67321037673198, -0.850857878613548, -1.12636943482486, 0.264691871869928, 0.823490524418768,
+        #                -0.289267055667413, 0.375612134943435, 0.689033636785644, -0.0755870733096488,
+        #                -0.253686040025422, -0.767686310824219, -0.47706960213735, 0.619681515116366, -0.718706304417254,
+        #                -0.625998377401577, 0.595352830214443, -0.826055466109155, 0.841770278364141, 0.525998122722698,
+        #                -0.305537695526707, -0.551540574269715],
+        #               [-0.0170226173861495, -0.575187308059669, -0.0550716676440694, -0.596082039595892,
+        #                -0.153767849941737, -0.152659395126548, 0.103284766044348, 0.945962098961183, 0.11395628892521,
+        #                -1.0314335555107, -0.24180964927081, -0.225116148572662, 1.75090409682049, 0.276212128428595,
+        #                -0.226985192750251, -0.688321496802469, 0.721869146316049, -0.0427129520106458, 1.71093452174155,
+        #                0.440414655312213, -0.219061974136534, 0.370516601227188, -0.579953711046926, -2.4756697600574,
+        #                -2.09969534371281],
+        #               [0.859846852829686, -0.196768997920202, -0.665097766775893, 1.49845086392502, 0.712519776986412,
+        #                0.63382801135412, 0.338132006534241, -1.17912479597116, 0.337710921150664, -0.404533729530606,
+        #                0.984579714687047, -1.16236566382262, -0.786198019602607, -0.753822112046281, -0.811264249392465,
+        #                -0.594151853267325, -0.322916128201519, -1.2934117213506, 0.531732629482942, -1.6136606736686,
+        #                -1.27887838930757, 0.678437793765498, -1.19080597429513, 1.11533360829611, -0.340409112584892],
+        #               [-1.46244895844162, 0.508777691805245, -0.42599215315616, -0.570342024814983, -1.13004768682085,
+        #                1.12406519881936, 0.251809560422478, -2.06632443310484, -1.23862336004496, 1.6527814698557,
+        #                0.336827946772908, -0.233201791535758, 0.590072797080428, 1.7453946472635, 1.02016573606479,
+        #                -0.813457453508146, -0.0745696971758758, 2.89463767013771, 0.158622453385045, -1.70880561223817,
+        #                0.132671092412739, -0.479946273307748, 0.11444508132886, 1.40287375218729, -0.344499428025485],
+        #               [-0.383681631574503, 1.19713456197882, -0.302078922002226, -0.544313316070517, 1.11301409047452,
+        #                0.0643648126207925, 0.623795834834719, 0.288528481567621, -0.618352387217919, -0.180420032776369,
+        #                -0.974252399377197, -0.78154085269986, 0.673878430962106, -0.14493184535421, -1.58840476437875,
+        #                -0.89040398934659, -0.464336091106138, -0.804400496705168, 0.542582301058101, -0.213424538311193,
+        #                -0.925675256270349, 0.306707969484467, 0.378645850648093, 0.220134583700443, -0.0925601673405935]
+        #               ], dtype=np.float32)
+        #
+        # y = np.array([[0], [1], [0], [1], [1]])
+        #
+        # groups = np.array(
+        #     [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]])
+
+        n_samples, n_features = X.shape
+        n_grouped_features = 5
+        y = np.atleast_1d(y)
+        max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
+        min_samples_leaf = 1
+        min_samples_split = 2
+        min_weight_leaf = 0
+        random_state = check_random_state(2547)
+        max_depth = 2
+        max_depth_splitting_tree = 3
+        mgroup = 5
+        mvar = 5
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
+        min_impurity_decrease_splitting_tree = 0.1
+        min_impurity_split_spltting_tree = 0.1
+
+        if y.ndim == 1:
+            y = np.reshape(y, (-1, 1))
+
+        n_outputs = y.shape[1]
+
+        y = np.copy(y)
+
+        classes = []
+        n_classes = []
+
+        y_encoded = np.zeros(y.shape, dtype=int)
+        for k in range(n_outputs):
+            classes_k, y_encoded[:, k] = np.unique(y[:, k], return_inverse=True)
+            classes.append(classes_k)
+            n_classes.append(classes_k.shape[0])
+
+        y = y_encoded
+
+        n_classes = np.array(n_classes, dtype=np.intp)
+
+        criterion = CARTGVGini(n_outputs, n_classes)
+
+        splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+                                      min_samples_leaf, min_weight_leaf,
+                                      random_state, max_depth_splitting_tree,
+                                      min_impurity_decrease_splitting_tree,
+                                      min_impurity_split_spltting_tree,
+                                      mvar,
+                                      mgroup)
+
+        tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+
+        builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                    min_samples_leaf, min_weight_leaf,
+                                    max_depth, mgroup, mvar,
+                                    min_impurity_decrease, min_impurity_split)
+
+        # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+        print("####################### TEST COMPARAISON ##############################")
+        builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups)  # X.to_numpy(dtype=np.float32)
+
+        # print(tree.nodes_group)
+        # print(tree.nodes_parent)
+        # print(tree.nodes_n_node_samples)
+        print([(x,y) for x, y in sorted(zip(tree.nodes_parent, tree.nodes_n_node_samples))])
+        print([(x,y) for x, y in sorted(zip(tree.nodes_parent, tree.nodes_group))])
+
+        print(np.sum(tree.nodes_n_node_samples[np.where(tree.nodes_parent == 0)]))
+
+        print(tree.nodes_impurities)
+        print(len(tree.nodes_impurities))
+        print(tree.node_count)
+
+        R_n_nodes_samples_df = pd.read_csv('../Code_R/R_n_nodes_samples.csv', sep="\t", dtype=int, header=None)
+
+        print(len(np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten())))
+        print(len(np.bincount(np.array(tree.nodes_n_node_samples, dtype=int))))
+
+        self.assertSequenceEqual(np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten()).tolist(),
+                                 np.bincount(np.array(tree.nodes_n_node_samples, dtype=int)).tolist())
+
+
+
+    def test_CARTTree(self):
+        df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
+
+        train = df.loc[df['Type'] == 'train']
+
+        X = train.iloc[:, 2:]
+
+        y = train['Y']
+
+        # groups = np.array([[i] for i in range(len(X.columns))])
+
+        # X = np.array([[-0.962564615251298, -0.0818379297761482, -0.257129359665299, -1.20057124658537,
+        #                -1.67321037673198, -0.850857878613548, -1.12636943482486, 0.264691871869928, 0.823490524418768,
+        #                -0.289267055667413, 0.375612134943435, 0.689033636785644, -0.0755870733096488,
+        #                -0.253686040025422, -0.767686310824219, -0.47706960213735, 0.619681515116366, -0.718706304417254,
+        #                -0.625998377401577, 0.595352830214443, -0.826055466109155, 0.841770278364141, 0.525998122722698,
+        #                -0.305537695526707, -0.551540574269715],
+        #               [-0.0170226173861495, -0.575187308059669, -0.0550716676440694, -0.596082039595892,
+        #                -0.153767849941737, -0.152659395126548, 0.103284766044348, 0.945962098961183, 0.11395628892521,
+        #                -1.0314335555107, -0.24180964927081, -0.225116148572662, 1.75090409682049, 0.276212128428595,
+        #                -0.226985192750251, -0.688321496802469, 0.721869146316049, -0.0427129520106458, 1.71093452174155,
+        #                0.440414655312213, -0.219061974136534, 0.370516601227188, -0.579953711046926, -2.4756697600574,
+        #                -2.09969534371281],
+        #               [0.859846852829686, -0.196768997920202, -0.665097766775893, 1.49845086392502, 0.712519776986412,
+        #                0.63382801135412, 0.338132006534241, -1.17912479597116, 0.337710921150664, -0.404533729530606,
+        #                0.984579714687047, -1.16236566382262, -0.786198019602607, -0.753822112046281, -0.811264249392465,
+        #                -0.594151853267325, -0.322916128201519, -1.2934117213506, 0.531732629482942, -1.6136606736686,
+        #                -1.27887838930757, 0.678437793765498, -1.19080597429513, 1.11533360829611, -0.340409112584892],
+        #               [-1.46244895844162, 0.508777691805245, -0.42599215315616, -0.570342024814983, -1.13004768682085,
+        #                1.12406519881936, 0.251809560422478, -2.06632443310484, -1.23862336004496, 1.6527814698557,
+        #                0.336827946772908, -0.233201791535758, 0.590072797080428, 1.7453946472635, 1.02016573606479,
+        #                -0.813457453508146, -0.0745696971758758, 2.89463767013771, 0.158622453385045, -1.70880561223817,
+        #                0.132671092412739, -0.479946273307748, 0.11444508132886, 1.40287375218729, -0.344499428025485],
+        #               [-0.383681631574503, 1.19713456197882, -0.302078922002226, -0.544313316070517, 1.11301409047452,
+        #                0.0643648126207925, 0.623795834834719, 0.288528481567621, -0.618352387217919, -0.180420032776369,
+        #                -0.974252399377197, -0.78154085269986, 0.673878430962106, -0.14493184535421, -1.58840476437875,
+        #                -0.89040398934659, -0.464336091106138, -0.804400496705168, 0.542582301058101, -0.213424538311193,
+        #                -0.925675256270349, 0.306707969484467, 0.378645850648093, 0.220134583700443, -0.0925601673405935]
+        #               ], dtype=np.float32)
+
+        # y = np.array([[0], [1], [0], [1], [1]])
+
+        sample_size = 100
+        nb_first_variable = 1
+
+        X = X.head(sample_size).to_numpy(dtype=np.float32)
+
+        for i in range(nb_first_variable): #X.shape[1]
+            X_one_variable = []
+            for j in range(len(X[:,i])):
+                X_one_variable.append([X[j,i]])
+            print("### VARIABLE " + str(i) + "###")
+
+            X_one_variable = np.array(X_one_variable, dtype=np.float32)
+
+            y_np = y.head(sample_size).to_numpy(dtype=np.intp)
+
+            groups = np.array([[i] for i in range(len(X_one_variable[0]))])
+
+            n_samples, n_features = X.shape
+            n_grouped_features = 1
+            y_np = np.atleast_1d(y_np)
+            max_grouped_features = 1 #max([len(groups[i]) for i in range(len(groups))])
+            min_samples_leaf = 1
+            min_samples_split = 2
+            min_weight_leaf = 0
+            random_state = check_random_state(2547)
+            max_depth = 2
+            max_depth_splitting_tree = 1
+            mgroup = 1
+            mvar = 1
+            min_impurity_decrease = 0.1
+            min_impurity_split = 0.1
+            min_impurity_decrease_splitting_tree = 0.1
+            min_impurity_split_spltting_tree = 0.1
+
+            if y_np.ndim == 1:
+                y_np = np.reshape(y_np, (-1, 1))
+
+            n_outputs = y_np.shape[1]
+
+            y_np = np.copy(y_np)
+
+            classes = []
+            n_classes = []
+
+            y_encoded = np.zeros(y_np.shape, dtype=int)
+            for k in range(n_outputs):
+                classes_k, y_encoded[:, k] = np.unique(y_np[:, k], return_inverse=True)
+                classes.append(classes_k)
+                n_classes.append(classes_k.shape[0])
+
+            y_np = y_encoded
+
+            n_classes = np.array(n_classes, dtype=np.intp)
+
+            criterion = CARTGVGini(n_outputs, n_classes)
+
+            splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+                                          min_samples_leaf, min_weight_leaf,
+                                          random_state, max_depth_splitting_tree,
+                                          min_impurity_decrease_splitting_tree,
+                                          min_impurity_split_spltting_tree,
+                                          mvar,
+                                          mgroup)
+
+            tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+
+            builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                        min_samples_leaf, min_weight_leaf,
+                                        max_depth, mgroup, mvar,
+                                        min_impurity_decrease, min_impurity_split)
+
+            # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+            print("####################### TEST CARTTREE ##############################")
+            builder.test_build(tree, X_one_variable, y_np, groups)  # X.to_numpy(dtype=np.float32)
+
+            clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
+                                         max_leaf_nodes=X_one_variable.shape[0]
+                                         )
+            clf.fit(X_one_variable,y_np)
+
+            print(tree.node_count)
+            print(np.count_nonzero(tree.nodes_n_childs)) # Number of leaves of CARTGVTree
+            print(clf.tree_.node_count)
+            print(clf.get_n_leaves())
+
+            print(tree.nodes_impurities)
+            print(clf.tree_.threshold)
+
+            fig, ax = plt.subplots(2, figsize=(16, 9))
+            plot_tree(clf, ax=ax[0])
+
+            clf.tree_ = tree.nodes_splitting_trees[0]
+
+            plot_tree(clf, ax=ax[1])
+            plt.show()
+
+    def test_CARTTree_2(self):
+        df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
+
+        train = df.loc[df['Type'] == 'train']
+
+        X = train.iloc[:, 2:]
+
+        y = train['Y']
+
+        # groups = np.array([[i] for i in range(len(X.columns))])
+
+        sample_size = 10
+        start_var = 0
+        end_var = 25
+
+        g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
+        g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
+        g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
+        g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
+        g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
+
+        groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+
+        X = X.head(sample_size).to_numpy(dtype=np.float32)
+
+        # X = X[:,start_var:end_var]
+
+        y_np = y.head(sample_size).to_numpy(dtype=np.intp)
+
+
+
+        # groups = np.array([[i] for i in range(len(X[0]))])
+        # groups = np.array([np.arange(end_var-start_var)])
+        print(groups)
+
+        n_samples, n_features = X.shape
+        n_grouped_features = end_var - start_var
+        y_np = np.atleast_1d(y_np)
+        max_grouped_features = 5 #max([len(groups[i]) for i in range(len(groups))])
+        min_samples_leaf = 1
+        min_samples_split = 2
+        min_weight_leaf = 0
+        random_state = check_random_state(2547)
+        max_depth = 2
+        max_depth_splitting_tree = 1
+        mgroup = 1
+        mvar = 5
+        min_impurity_decrease = 0.1
+        min_impurity_split = 0.1
+        min_impurity_decrease_splitting_tree = 0.1
+        min_impurity_split_spltting_tree = 0.1
+
+        if y_np.ndim == 1:
+            y_np = np.reshape(y_np, (-1, 1))
+
+        n_outputs = y_np.shape[1]
+
+        y_np = np.copy(y_np)
+
+        classes = []
+        n_classes = []
+
+        y_encoded = np.zeros(y_np.shape, dtype=int)
+        for k in range(n_outputs):
+            classes_k, y_encoded[:, k] = np.unique(y_np[:, k], return_inverse=True)
+            classes.append(classes_k)
+            n_classes.append(classes_k.shape[0])
+
+        y_np = y_encoded
+
+        n_classes = np.array(n_classes, dtype=np.intp)
+
+        criterion = CARTGVGini(n_outputs, n_classes)
+
+        splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+                                      min_samples_leaf, min_weight_leaf,
+                                      random_state, max_depth_splitting_tree,
+                                      min_impurity_decrease_splitting_tree,
+                                      min_impurity_split_spltting_tree,
+                                      mvar,
+                                      mgroup)
+
+        tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+
+        builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                    min_samples_leaf, min_weight_leaf,
+                                    max_depth, mgroup, mvar,
+                                    min_impurity_decrease, min_impurity_split)
+
+        # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+        print("####################### TEST CARTTREE 2 ##############################")
+        builder.test_build(tree, X, y_np, groups)  # X.to_numpy(dtype=np.float32)
+
+        clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
+                                     max_leaf_nodes=X.shape[0]
+                                     )
+        clf.fit(X,y_np)
+
+        print(tree.node_count)
+        print(np.count_nonzero(tree.nodes_n_childs)) # Number of leaves of CARTGVTree
+        print(clf.tree_.node_count)
+        print(clf.get_n_leaves())
+
+        print(tree.nodes_impurities)
+        print(clf.tree_.threshold)
+
+        fig, ax = plt.subplots(2, figsize=(16, 9))
+        plot_tree(clf, ax=ax[0])
+
+        clf.tree_ = tree.nodes_splitting_trees[0]
+
+        plot_tree(clf, ax=ax[1])
+        plt.show()
 
 if __name__ == '__main__':
     unittest.main()
