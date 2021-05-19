@@ -42,7 +42,7 @@ cdef class CARTGVCriterion():
 
     # Methods
     cdef int init(self, const DOUBLE_t[:, ::1] y, DOUBLE_t* sample_weight,
-                  double weighted_n_samples, SIZE_t* samples, SIZE_t start,
+                  double weighted_n_samples, SIZE_t* samples, SIZE_t n_samples , SIZE_t start,
                   SIZE_t end) nogil except -1
     cdef int reset(self) nogil except -1
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1

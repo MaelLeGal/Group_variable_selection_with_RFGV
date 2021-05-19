@@ -147,7 +147,7 @@ cdef class CARTGVTree():
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count,dtype=Tree)
             for i in range(self.node_count):
-                if(self.nodes[i].n_childs > 0):
+                if(self.nodes[i].n_childs > 0 and self.nodes[i].splitting_tree != b''):
                     arr[i] = pickle.loads(self.nodes[i].splitting_tree)
                 else:
                     arr[i] = None
@@ -180,6 +180,7 @@ cdef class CARTGVTree():
     @property
     def nodes_impurities(self):
         if self.nodes != NULL:
+            print("### NODE COUNT = " + str(self.node_count))
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
                 arr[i] = self.nodes[i].impurity
@@ -350,7 +351,7 @@ cdef class CARTGVTree():
     cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
                           unsigned char* splitting_tree, double impurity,
                           SIZE_t n_node_samples, int n_childs,
-                          double weighted_n_node_samples, int group) nogil except -1:
+                          double weighted_n_node_samples, int group, int start, int end) nogil except -1:
         """
         Add a node to the tree.
         The new node registers itself as the child of its parent.
@@ -375,6 +376,8 @@ cdef class CARTGVTree():
         node.parent = parent
         node.childs = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
         node.current_child = 0
+        node.start = start
+        node.end = end
 
         # Check if the parent is undefined. If it isn't give this node id as the child of this node parent.
         if parent != _TREE_UNDEFINED:
@@ -384,7 +387,7 @@ cdef class CARTGVTree():
         # Check if the current node is a leaf, if it is, define it as a leaf with _TREE_LEAF and _TREE_UNDEFINED
         if is_leaf:
             node.splitting_tree = <unsigned char*> malloc(sizeof(SIZE_t))
-            node.splitting_tree = '' #TODO is it necessary ? Empty string for no splitting tree ?
+            node.splitting_tree = '' #splitting_tree #TODO is it necessary ? Empty string for no splitting tree ?
             node.group = -1
 
         # If it isn't a leaf, assign the splitting tree to the node.
@@ -892,19 +895,21 @@ cdef class CARTGVTree():
         cdef Tree splitting_tree
         cdef double weighted_n_node_samples
         cdef double min_impurity_decrease = 0.1
+        cdef parent_start = start
+        cdef parent_end = end
 
         n_node_samples = end - start
         splitter.node_reset(start, end, &weighted_n_node_samples)
 
         impurity = splitter.node_impurity()
-        splitter.node_split(impurity, &split, &n_constant_features)
+        splitter.node_split(impurity, &split, &n_constant_features, parent_start, parent_end)
 
         is_leaf = (is_leaf or (split.improvement + EPSILON < min_impurity_decrease))
 
         splt_tree = split.splitting_tree
 #        splitting_tree = pickle.loads(splt_tree)
 #        for i in range(100000):
-        self._add_node(parent, is_leaf, splt_tree, impurity, n_node_samples, split.n_childs, weighted_n_node_samples, split.group)
+        self._add_node(parent, is_leaf, splt_tree, impurity, n_node_samples, split.n_childs, weighted_n_node_samples, split.group, start, end)
 
 #        print(self.nodes[0].n_childs)
 #        print(np.asarray(<SIZE_t[:self.nodes[0].n_childs]>self.nodes[0].childs))
@@ -1002,6 +1007,7 @@ cdef class CARTGVTreeBuilder():
         cdef SIZE_t min_samples_split = self.min_samples_split              # The minimum number needed to split a node
         cdef double min_impurity_decrease = self.min_impurity_decrease      # The minimum decrease in impurity needed for a node
         cdef double min_impurity_split = self.min_impurity_split            # The minimum impurity decrease needed for a split
+        cdef bint impurity_childs_bool = True
 
         # Recursive partition (without actual recursion)
         splitter.init(X, y, sample_weight_ptr, groups)
@@ -1054,11 +1060,23 @@ cdef class CARTGVTreeBuilder():
                 is_leaf = (depth >= max_depth or
                            n_node_samples < min_samples_split or
                            n_node_samples < 2 * min_samples_leaf or
-                           weighted_n_node_samples < 2 * min_weight_leaf)
+                           weighted_n_node_samples < 2 * min_weight_leaf or
+                           impurity <= min_impurity_split)
 
                 if first:
                     impurity = splitter.node_impurity()
                     first = 0
+                    with gil:
+                        print("### GET ROOT POS ###")
+                        print(start)
+                    parent_start = start
+                    parent_end = end
+                else:
+                    with gil:
+                        print("### GET PARENT POS ###")
+                        print(tree.nodes[parent].start)
+                    parent_start = tree.nodes[parent].start
+                    parent_end = tree.nodes[parent].end
 
                 is_leaf = (is_leaf or
                            (impurity <= min_impurity_split))
@@ -1066,14 +1084,21 @@ cdef class CARTGVTreeBuilder():
                 # If the node isn't a leaf, we call the splitter to split it
                 if not is_leaf:
                     with gil:
-                        splitter.node_split(impurity, &split, &n_constant_features) # TODO Make the function no gil
+                        splitter.node_split(impurity, &split, &n_constant_features, start, end) # TODO Make the function no gil
 
                     # If EPSILON=0 in the below comparison, float precision
                     # issues stop splitting, producing trees that are
                     # dissimilar to v0.18
+
+#                    for i in range(split.n_childs):
+#                        impurity_childs_bool = split.impurity_childs[i] <= min_impurity_split
+#                        if not impurity_childs_bool:
+#                            break;
+
                     is_leaf = (is_leaf or
                                (split.improvement + EPSILON <
                                 min_impurity_decrease))
+#                                or impurity_childs_bool)
 
                 else:
                     with gil:
@@ -1083,7 +1108,7 @@ cdef class CARTGVTreeBuilder():
 
                 # Add the node to the tree
                 node_id = tree._add_node(parent, is_leaf, split.splitting_tree, impurity, n_node_samples, split.n_childs,
-                                        weighted_n_node_samples, split.group)
+                                        weighted_n_node_samples, split.group, start, end)
 
                 if node_id == SIZE_MAX:
                     rc = -1
@@ -1092,6 +1117,9 @@ cdef class CARTGVTreeBuilder():
                 # Store value for all nodes, to facilitate tree/model
                 # inspection and interpretation
                 splitter.node_value(tree.value + node_id * tree.value_stride) # TODO erreur dans cette fonction
+
+#                with gil:
+#                    print("Impurity : " + str(impurity))
 
                 # If the current node isn't a leaf, we add it's childs to the stack to be treated
                 if not is_leaf:

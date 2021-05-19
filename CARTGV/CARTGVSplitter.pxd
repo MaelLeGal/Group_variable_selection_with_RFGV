@@ -59,6 +59,12 @@ cdef class CARTGVSplitter():
 
     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting tree
     cdef Tree splitting_tree                    # The splitting tree
+    cdef int max_depth
+    cdef SIZE_t min_samples_split
+    cdef double min_impurity_decrease
+    cdef double min_impurity_split
+    cdef int mvar
+    cdef int mgroup
 
 #    cdef const DTYPE_t[:,:] X                               # The datas
     cdef const DOUBLE_t[:, ::1] y               # The responses
@@ -104,7 +110,7 @@ cdef class CARTGVSplitter():
 
     cdef int switch_best_splitting_tree(self, double current_proxy_improvement, double* best_proxy_improvement, CARTGVSplitRecord* best, CARTGVSplitRecord* current, SIZE_t* starts, SIZE_t* ends, SIZE_t n_leaves, int group, SIZE_t* sorted_obs)
 
-    cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features)
+    cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features, int parent_start, int parent_end)
 
     ########################################## TESTS #############################################
 

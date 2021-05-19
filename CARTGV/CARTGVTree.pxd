@@ -36,6 +36,8 @@ cdef struct CARTGVNode:
   int group                             # The group selected for the split of the node
   int n_childs                          # The number of childs of the node
   int current_child
+  int start
+  int end
   
 cdef class CARTGVTree():
   
@@ -59,7 +61,7 @@ cdef class CARTGVTree():
   cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,
                         unsigned char* splitting_tree, double impurity,
                         SIZE_t n_node_samples, int n_childs,
-                        double weighted_n_samples, int group) nogil except -1
+                        double weighted_n_samples, int group, int start, int end) nogil except -1
   cdef int _resize(self,SIZE_t capacity) nogil except -1
   cdef int _resize_c(self, SIZE_t capacity=*) nogil except -1
   
