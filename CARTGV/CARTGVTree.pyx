@@ -8,7 +8,7 @@ Created on Mon Mar  1 16:02:22 2021
 from cpython cimport Py_INCREF, PyObject, PyTypeObject
 
 from libc.stdlib cimport free, realloc, malloc
-from libc.math cimport fabs
+from libc.math cimport fabs, sqrt, fmax, log
 from libc.string cimport memcpy
 from libc.string cimport memset
 from libc.stdint cimport SIZE_MAX
@@ -228,14 +228,15 @@ cdef class CARTGVTree():
         else:
             return None
 
-    def __cinit__(self, int n_grouped_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):
+    def __cinit__(self, int n_groups, np.ndarray n_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):
           """Constructor."""
 
           #Enable error tracking
           faulthandler.enable()
 
           # Input/Output layout
-          self.n_grouped_features = n_grouped_features
+          self.n_groups = n_groups
+          self.n_features = n_features
           self.n_outputs = n_outputs
           self.n_classes = NULL
           safe_realloc(&self.n_classes, n_outputs)
@@ -960,25 +961,22 @@ cdef class CARTGVTreeBuilder():
 
     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
-                  SIZE_t max_depth, SIZE_t mgroup, SIZE_t mvar, 
-                  double min_impurity_decrease, double min_impurity_split):
+                  SIZE_t max_depth, double min_impurity_decrease, double min_impurity_split):
         self.splitter = splitter
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
         self.min_weight_leaf = min_weight_leaf
         self.max_depth = max_depth
-        self.mgroup = mgroup
-        self.mvar = mvar
         self.min_impurity_decrease = min_impurity_decrease
         self.min_impurity_split = min_impurity_split
         self.splitting_tree_builder = TreeBuilder(splitter, min_samples_split, min_samples_leaf, min_weight_leaf,
                                                   max_depth, min_impurity_decrease, min_impurity_split)
         faulthandler.enable()
 
-    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
-                np.ndarray sample_weight=None):
+    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
+                object pen, np.ndarray sample_weight=None):
         """Build a decision tree from the training set (X, y)."""
-
+        print(len_groups)
         # check input
         X, y, sample_weight = self._check_input(X, y, sample_weight)
 
@@ -1000,8 +998,6 @@ cdef class CARTGVTreeBuilder():
         # Parameters
         cdef CARTGVSplitter splitter = self.splitter                        # The splitter to create our tree
         cdef SIZE_t max_depth = self.max_depth                              # The maximum depth of our splitting tree
-        cdef SIZE_t mgroup = self.mgroup                                    # The number of group to take into account during the splitting tree creation (not used yet)
-        cdef SIZE_t mvar = self.mvar                                        # The number of variable to take into account during the splitting tree creation (not used yet)
         cdef SIZE_t min_samples_leaf = self.min_samples_leaf                # The minimum number of observation/sample in a leaf
         cdef double min_weight_leaf = self.min_weight_leaf                  # The minimum weight in a leaf
         cdef SIZE_t min_samples_split = self.min_samples_split              # The minimum number needed to split a node
@@ -1066,15 +1062,15 @@ cdef class CARTGVTreeBuilder():
                 if first:
                     impurity = splitter.node_impurity()
                     first = 0
-                    with gil:
-                        print("### GET ROOT POS ###")
-                        print(start)
+#                    with gil:
+#                        print("### GET ROOT POS ###")
+#                        print(start)
                     parent_start = start
                     parent_end = end
                 else:
-                    with gil:
-                        print("### GET PARENT POS ###")
-                        print(tree.nodes[parent].start)
+#                    with gil:
+#                        print("### GET PARENT POS ###")
+#                        print(tree.nodes[parent].start)
                     parent_start = tree.nodes[parent].start
                     parent_end = tree.nodes[parent].end
 
@@ -1106,6 +1102,22 @@ cdef class CARTGVTreeBuilder():
                         split.group = -1
                         splitting_tree = None
 
+                with gil:
+                    penality = 0
+                    if pen == None:
+                        penality = 1
+                    elif pen == "sqrt":
+                        penality = sqrt(len_groups[split.group])
+                    elif pen == "inv":
+                        penality = 1.0/len_groups[split.group]
+                    elif pen == "log":
+                        penality = fmax(log(len_groups[split.group]),1)
+                    else:
+                        penality = 1
+
+                    print("Impurity Node : " + str(penality*impurity))
+                    impurity = penality*impurity
+
                 # Add the node to the tree
                 node_id = tree._add_node(parent, is_leaf, split.splitting_tree, impurity, n_node_samples, split.n_childs,
                                         weighted_n_node_samples, split.group, start, end)
@@ -1116,7 +1128,7 @@ cdef class CARTGVTreeBuilder():
 
                 # Store value for all nodes, to facilitate tree/model
                 # inspection and interpretation
-                splitter.node_value(tree.value + node_id * tree.value_stride) # TODO erreur dans cette fonction
+                splitter.node_value(tree.value + node_id * tree.value_stride)
 
 #                with gil:
 #                    print("Impurity : " + str(impurity))
@@ -1172,9 +1184,9 @@ cdef class CARTGVTreeBuilder():
 
     ########################################## TESTS #############################################
 
-    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray sample_weight=None):
+    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=None):
 
-        self.build(tree, X, y, groups, sample_weight)
+        self.build(tree, X, y, groups, len_groups, pen, sample_weight)
 #        for i in range(tree.node_count):
 #            print("################## Node ID : " + str(i) + " ######################")
 #            print("Node splitting tree : ")
