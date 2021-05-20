@@ -18,14 +18,6 @@ from sklearn.tree._tree cimport SIZE_t
 from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
-cdef struct test:
-  SIZE_t parent                         # The parent of the node
-  DOUBLE_t impurity                     # The impurity of the node
-  SIZE_t n_node_samples                 # The number of samples in the node
-  DOUBLE_t weighted_n_node_samples      # The number of weighted samples in the node
-  int group                             # The group selected for the split of the node
-  int n_childs                          # The number of childs of the node
-
 cdef struct CARTGVNode:
   SIZE_t* childs                        # The childs of the node
   SIZE_t parent                         # The parent of the node
@@ -42,7 +34,8 @@ cdef struct CARTGVNode:
 cdef class CARTGVTree():
   
   # Input/Output layout
-  cdef public SIZE_t n_grouped_features # Number of feature's group
+  cdef public SIZE_t n_groups           # Number of group
+  cdef public np.ndarray n_features     # Number of features per group
   cdef SIZE_t* n_classes                # Number of classes un y[:, k]
   cdef public SIZE_t n_outputs          # Number of outputs in k
   cdef public SIZE_t max_n_classes      # max(n_classes)
@@ -101,19 +94,17 @@ cdef class CARTGVTreeBuilder():
     cdef SIZE_t min_samples_leaf                # Minimum number of samples in a leaf
     cdef double min_weight_leaf                 # Minimum weight in a leaf
     cdef SIZE_t max_depth                       # Maximal tree depth
-    cdef SIZE_t mgroup                          # Number of group selected during the RF
-    cdef SIZE_t mvar                            # Number of variable in the group selected during the RF
     cdef double min_impurity_split              # The minimum impurity needed in a split
     cdef double min_impurity_decrease           # Impurity threshold for early stopping
     cdef TreeBuilder splitting_tree_builder     # The builder of the splitting trees
 
-    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups,
-                np.ndarray sample_weight=*)
+    cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
+                object pen, np.ndarray sample_weight=*)
     cdef _check_input(self, object X, np.ndarray y, np.ndarray sample_weight)
 
     ########################################## TESTS #############################################
 
-    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray sample_weight=*)
+    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=*)
 
   
   

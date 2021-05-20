@@ -392,19 +392,20 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 #                print(np.asarray(<SIZE_t[:n_childs]>starts))
 #                print(np.asarray(<SIZE_t[:n_childs]>ends))
 
-        with gil:
-            print("Before Update")
-            print(np.asarray(<double[:n_elements]>sum_childs[0]))
+#        with gil:
+#            print("Before Update")
+#            print(np.asarray(<double[:n_elements]>sum_childs[0]))
+#            print("Y")
 #            print(np.asarray(self.y))
 #            print(np.asarray(<double[:n_childs]>self.weighted_n_childs))
 
         for j in range(n_childs):
             with gil:
+                print("START AND END")
                 print(starts[j])
                 print(ends[j])
             for k in range(starts[j],ends[j]):
                 i = samples[k]
-
 
                 if sample_weight != NULL:
                     w = sample_weight[i]
@@ -658,13 +659,12 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
                 sum_childs[l] += self.sum_stride
 #            with gil:
 #                print("Gini childs " + str(gini_childs[l]))
-
-        for m in range(n_childs):
-          impurity_childs[0][m] = gini_childs[m] / self.n_outputs
-          with gil:
-#              print("impurity_childs : " + str(m))
-#              print(gini_childs[m])
-              print("Impureté : " + str(gini_childs[m] / self.n_outputs))
+          for m in range(n_childs):
+              impurity_childs[0][m] = gini_childs[m] / self.n_outputs
+              with gil:
+    #              print("impurity_childs : " + str(m))
+    #              print(gini_childs[m])
+                  print("Impureté : " + str(gini_childs[m] / self.n_outputs))
 #              print(impurity_childs[0][m])
 #        self.sum_childs = sum_childs
 

@@ -33,7 +33,6 @@ cdef class CARTGVSplitter():
 
     # Internal structures
     cdef CARTGVCriterion criterion              # Impurity criterion
-    cdef public SIZE_t max_grouped_features     # Number of features to test
     cdef public SIZE_t min_samples_leaf         # Min samples in a leaf
     cdef public double min_weight_leaf          # Minimum weight in a leaf
 

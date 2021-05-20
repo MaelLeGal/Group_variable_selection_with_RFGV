@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Script_notebook-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Script_notebook-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pxd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVCriterion.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
@@ -32,7 +30,6 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVutils" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVutils" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Script_notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Script_notebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_unitaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_unitaire.py" afterDir="false" />

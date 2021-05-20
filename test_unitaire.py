@@ -2763,12 +2763,12 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
         n_samples, n_features = X.shape
         n_grouped_features = 5
         y = np.atleast_1d(y)
-        max_grouped_features = max([len(groups[i]) for i in range(len(groups))])
+        max_grouped_features = 5 #max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_samples_split = 2
         min_weight_leaf = 0
         random_state = check_random_state(2547)
-        max_depth = 10
+        max_depth = 2
         max_depth_splitting_tree = 3
         mgroup = 5
         mvar = 5
@@ -3030,7 +3030,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         # y = np.array([[0], [1], [0], [1], [1]])
 
-        sample_size = 100
+        sample_size = 5
         nb_first_variable = 1
 
         X = X.head(sample_size).to_numpy(dtype=np.float32)
@@ -3046,11 +3046,11 @@ class Cython_R_Comparison(unittest.TestCase):
             y_np = y.head(sample_size).to_numpy(dtype=np.intp)
 
             groups = np.array([[i] for i in range(len(X_one_variable[0]))])
+            len_groups = np.array([len(group) for group in groups])
+            print(len_groups)
 
             n_samples, n_features = X.shape
-            n_grouped_features = 1
             y_np = np.atleast_1d(y_np)
-            max_grouped_features = 1 #max([len(groups[i]) for i in range(len(groups))])
             min_samples_leaf = 1
             min_samples_split = 2
             min_weight_leaf = 0
@@ -3058,11 +3058,11 @@ class Cython_R_Comparison(unittest.TestCase):
             max_depth = 2
             max_depth_splitting_tree = 1
             mgroup = 1
-            mvar = 1
-            min_impurity_decrease = 0.1
-            min_impurity_split = 0.1
-            min_impurity_decrease_splitting_tree = 0.1
-            min_impurity_split_spltting_tree = 0.1
+            mvar = 1 #max([len(groups[i]) for i in range(len(groups))])
+            min_impurity_decrease = 0.0
+            min_impurity_split = 0.0
+            min_impurity_decrease_splitting_tree = 0.0
+            min_impurity_split_spltting_tree = 0.0
 
             if y_np.ndim == 1:
                 y_np = np.reshape(y_np, (-1, 1))
@@ -3086,7 +3086,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
             criterion = CARTGVGini(n_outputs, n_classes)
 
-            splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+            splitter = BestCARTGVSplitter(criterion, len(groups),
                                           min_samples_leaf, min_weight_leaf,
                                           random_state, max_depth_splitting_tree,
                                           min_impurity_decrease_splitting_tree,
@@ -3094,16 +3094,16 @@ class Cython_R_Comparison(unittest.TestCase):
                                           mvar,
                                           mgroup)
 
-            tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+            tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
 
             builder = CARTGVTreeBuilder(splitter, min_samples_split,
                                         min_samples_leaf, min_weight_leaf,
-                                        max_depth, mgroup, mvar,
-                                        min_impurity_decrease, min_impurity_split)
+                                        max_depth, min_impurity_decrease, min_impurity_split)
 
             # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
             print("####################### TEST CARTTREE ##############################")
-            builder.test_build(tree, X_one_variable, y_np, groups)  # X.to_numpy(dtype=np.float32)
+
+            builder.test_build(tree, X_one_variable, y_np, groups, len_groups, "sqrt")  # X.to_numpy(dtype=np.float32)
 
             clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
                                          max_leaf_nodes=X_one_variable.shape[0]
@@ -3137,7 +3137,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         # groups = np.array([[i] for i in range(len(X.columns))])
 
-        sample_size = 10
+        sample_size = 100
         start_var = 0
         end_var = 25
 
@@ -3155,28 +3155,30 @@ class Cython_R_Comparison(unittest.TestCase):
 
         y_np = y.head(sample_size).to_numpy(dtype=np.intp)
 
-
+        print(y_np)
 
         # groups = np.array([[i] for i in range(len(X[0]))])
         # groups = np.array([np.arange(end_var-start_var)])
+        len_groups = np.array([len(group) for group in groups])
         print(groups)
+        print(len_groups)
 
         n_samples, n_features = X.shape
-        n_grouped_features = end_var - start_var
         y_np = np.atleast_1d(y_np)
-        max_grouped_features = 5 #max([len(groups[i]) for i in range(len(groups))])
         min_samples_leaf = 1
         min_samples_split = 2
         min_weight_leaf = 0
         random_state = check_random_state(2547)
         max_depth = 2
         max_depth_splitting_tree = 1
-        mgroup = 1
+        # mgroup = 1 #max([len(groups[i]) for i in range(len(groups))])
+        mgroup = 5
         mvar = 5
-        min_impurity_decrease = 0.1
-        min_impurity_split = 0.1
-        min_impurity_decrease_splitting_tree = 0.1
-        min_impurity_split_spltting_tree = 0.1
+        # mvar = end_var - start_var
+        min_impurity_decrease = 0.0
+        min_impurity_split = 0.0
+        min_impurity_decrease_splitting_tree = 0.0
+        min_impurity_split_spltting_tree = 0.0
 
         if y_np.ndim == 1:
             y_np = np.reshape(y_np, (-1, 1))
@@ -3200,7 +3202,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         criterion = CARTGVGini(n_outputs, n_classes)
 
-        splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+        splitter = BestCARTGVSplitter(criterion, len(groups),
                                       min_samples_leaf, min_weight_leaf,
                                       random_state, max_depth_splitting_tree,
                                       min_impurity_decrease_splitting_tree,
@@ -3208,16 +3210,15 @@ class Cython_R_Comparison(unittest.TestCase):
                                       mvar,
                                       mgroup)
 
-        tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+        tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
 
         builder = CARTGVTreeBuilder(splitter, min_samples_split,
                                     min_samples_leaf, min_weight_leaf,
-                                    max_depth, mgroup, mvar,
-                                    min_impurity_decrease, min_impurity_split)
+                                    max_depth, min_impurity_decrease, min_impurity_split)
 
         # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
         print("####################### TEST CARTTREE 2 ##############################")
-        builder.test_build(tree, X, y_np, groups)  # X.to_numpy(dtype=np.float32)
+        builder.test_build(tree, X, y_np, groups, len_groups, None)  # X.to_numpy(dtype=np.float32)
 
         clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
                                      max_leaf_nodes=X.shape[0]
@@ -3230,7 +3231,7 @@ class Cython_R_Comparison(unittest.TestCase):
         print(clf.get_n_leaves())
 
         print(tree.nodes_impurities)
-        print(clf.tree_.threshold)
+        # print(clf.tree_.threshold)
 
         fig, ax = plt.subplots(2, figsize=(16, 9))
         plot_tree(clf, ax=ax[0])
