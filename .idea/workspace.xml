@@ -18,7 +18,6 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.pxd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVutils.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
@@ -29,7 +28,6 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVCriterion" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVCriterion" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVutils" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVutils" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_unitaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_unitaire.py" afterDir="false" />

@@ -401,7 +401,6 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 
         for j in range(n_childs):
             with gil:
-                print("START AND END")
                 print(starts[j])
                 print(ends[j])
             for k in range(starts[j],ends[j]):

@@ -3103,7 +3103,7 @@ class Cython_R_Comparison(unittest.TestCase):
             # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
             print("####################### TEST CARTTREE ##############################")
 
-            builder.test_build(tree, X_one_variable, y_np, groups, len_groups, "sqrt")  # X.to_numpy(dtype=np.float32)
+            builder.test_build(tree, X_one_variable, y_np, groups, len_groups, "root")  # X.to_numpy(dtype=np.float32)
 
             clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
                                          max_leaf_nodes=X_one_variable.shape[0]
@@ -3137,7 +3137,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         # groups = np.array([[i] for i in range(len(X.columns))])
 
-        sample_size = 100
+        sample_size = 334
         start_var = 0
         end_var = 25
 
@@ -3170,10 +3170,10 @@ class Cython_R_Comparison(unittest.TestCase):
         min_weight_leaf = 0
         random_state = check_random_state(2547)
         max_depth = 2
-        max_depth_splitting_tree = 1
+        max_depth_splitting_tree = 3
         # mgroup = 1 #max([len(groups[i]) for i in range(len(groups))])
-        mgroup = 5
-        mvar = 5
+        mgroup = 2
+        mvar = "root"
         # mvar = end_var - start_var
         min_impurity_decrease = 0.0
         min_impurity_split = 0.0
