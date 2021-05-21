@@ -6,6 +6,8 @@ from libc.string cimport memcpy
 from libc.string cimport memset
 from libc.stdlib cimport malloc, free, calloc
 from libc.stdio cimport printf
+from libc.math cimport sqrt
+
 
 import numpy as np
 import pickle as pickle
@@ -173,14 +175,14 @@ cdef class CARTGVSplitter():
                   SIZE_t min_samples_leaf, double min_weight_leaf,
                   object random_state, int max_depth, double min_impurity_decrease,
                   double min_impurity_split,
-                  int mvar,
+                  object mvar,
                   int mgroup):
         """
         Parameters
         ----------
         criterion : CARTGVCriterion
             The criterion to measure the quality of a split.
-        max_grouped_features : SIZE_t
+        mgroup : SIZE_t
             The maximal number of randomly selected group of features which can be
             considered for a split.
         n_groups : int
@@ -217,7 +219,19 @@ cdef class CARTGVSplitter():
         self.splitting_tree = None
 
         self.max_depth = max_depth
-        self.mvar = mvar
+        if isinstance(mvar,int):
+            self.mvar = np.repeat(mvar,n_groups) #TODO cas d'erreur lorsque mvar est supérieur à l'un des groupes
+        elif isinstance(mvar, list):
+            self.mvar = np.array(mvar) #TODO cas d'erreur taille liste inférieure à n_groups
+        elif isinstance(mvar,np.ndarray) and mvar.ndim == 1:
+            self.mvar = mvar #TODO cas d'erreur taille tableau inférieure à n_groups
+        elif isinstance(mvar, str):
+            self.mvar = mvar  # We need to know the size of each group for this one
+        else:
+            self.mvar = mvar #TODO error case, mvar does't correpsond to anything
+
+
+#        self.mvar = mvar
         self.mgroup = mgroup
 #        self.min_impurity_decrease = min_impurity_decrease
 #        self.min_impurity_split = min_impurity_split
@@ -301,6 +315,12 @@ cdef class CARTGVSplitter():
         for k in range(n_groups):
           self.len_groups[k] = len(groups[k])
 
+        if isinstance(self.mvar,str):
+            if self.mvar == "root":
+                self.mvar = np.sqrt(self.len_groups)
+            elif self.mvar == "third":
+                self.mvar = np.divide(self.len_groups,3)
+
         ## ACCESS TO FIELDS TO CHECK CORRUPTION ##
         # NO PROBLEM
 #        print(self.rand_r_state)
@@ -353,7 +373,7 @@ cdef class CARTGVSplitter():
     cdef np.ndarray group_sample(self, int[:] group, int len_group, int start, int end):
         pass
 
-    cdef int reset_scikit_learn_instances(self, np.ndarray y, int len_group):
+    cdef int reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
         pass
 
     cdef int splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
@@ -405,7 +425,7 @@ cdef class CARTGVSplitter():
     cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end):
         pass
 
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int len_group):
+    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
         pass
 
     cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
@@ -508,7 +528,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
 
         return Xf
 
-    cdef int reset_scikit_learn_instances(self, np.ndarray y, int len_group):
+    cdef int reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
         cdef SIZE_t k
 
         cdef SIZE_t n_outputs = y.shape[1]
@@ -528,7 +548,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         # NO PROBLEM
 #        print(self.splitting_tree)
 
-        cdef int max_features = self.mvar
+        cdef int max_features = self.mvar[group]
 #        cdef SIZE_t max_leaf_nodes = -1 #self.X.shape[0]
         cdef SIZE_t min_samples_leaf = self.min_samples_leaf
         cdef SIZE_t min_samples_split = self.min_samples_split
@@ -713,7 +733,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
                     y[incr][j] = self.y[self.samples[i],j]
                 incr+=1
 
-            self.reset_scikit_learn_instances(y, len_group)
+            self.reset_scikit_learn_instances(y, f_j, len_group)
 
             self.splitting_tree_construction(Xf, y)
 
@@ -771,17 +791,26 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
             self.samples[k] = sorted_samples[incr]
             incr+=1
 
+        print("BEST STARTS AND ENDS")
+        print(np.asarray(<SIZE_t[:best.n_childs]>best.starts))
+        print(np.asarray(<SIZE_t[:best.n_childs]>best.ends))
+
         for s in range(best.n_childs):
             best.starts[s]+=parent_start #TODO necessary ? It is
         for e in range(best.n_childs):
             best.ends[e]+=parent_start #TODO necessary ? It is
+
+        print("BEST STARTS AND ENDS CHANGED")
+        print(np.asarray(<SIZE_t[:best.n_childs]>best.starts))
+        print(np.asarray(<SIZE_t[:best.n_childs]>best.ends))
+        print(parent_start)
 
         self.criterion.reset()
 
 #        print("### THRESHOLD ###")
 #        print(best_splitting_tree.threshold)
 
-        n_leaves = self.splitting_tree.n_leaves
+        n_leaves = pickle.loads(best.splitting_tree).n_leaves
 
         self.criterion.update(best.starts,best.ends,n_leaves)
 
@@ -799,6 +828,12 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
 #        print(np.asarray(<SIZE_t[:best.n_childs]>best.starts))
 #        print(np.asarray(<SIZE_t[:best.n_childs]>best.ends))
 #        print(best.splitting_tree)
+
+        clf = DecisionTreeClassifier()
+
+        clf.tree_ = pickle.loads(best.splitting_tree)
+        plot_tree(clf)
+        plt.show()
 
         split[0] = best
 
@@ -836,8 +871,8 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
     cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end):
         return self.group_sample(group,len_group,start,end)
 
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int len_group):
-        return self.reset_scikit_learn_instances(y,len_group)
+    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
+        return self.reset_scikit_learn_instances(y,group,len_group)
 
     cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
         return self.splitting_tree_construction(Xf,y)

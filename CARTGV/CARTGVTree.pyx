@@ -1106,15 +1106,16 @@ cdef class CARTGVTreeBuilder():
                     penality = 0
                     if pen == None:
                         penality = 1
-                    elif pen == "sqrt":
-                        penality = sqrt(len_groups[split.group])
-                    elif pen == "inv":
+                    elif pen == "root":
+                        penality = 1.0/sqrt(len_groups[split.group])
+                    elif pen == "size":
                         penality = 1.0/len_groups[split.group]
                     elif pen == "log":
-                        penality = fmax(log(len_groups[split.group]),1)
+                        penality = 1.0/fmax(log(len_groups[split.group]),1)
                     else:
                         penality = 1
 
+                    print("Impurity Node before penality : " + str(impurity))
                     print("Impurity Node : " + str(penality*impurity))
                     impurity = penality*impurity
 

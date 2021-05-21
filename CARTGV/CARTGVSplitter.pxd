@@ -62,7 +62,7 @@ cdef class CARTGVSplitter():
     cdef SIZE_t min_samples_split
     cdef double min_impurity_decrease
     cdef double min_impurity_split
-    cdef int mvar
+    cdef object mvar
     cdef int mgroup
 
 #    cdef const DTYPE_t[:,:] X                               # The datas
@@ -97,7 +97,7 @@ cdef class CARTGVSplitter():
 
     cdef np.ndarray group_sample(self, int[:] group, int len_group, int start, int end)
 
-    cdef int reset_scikit_learn_instances(self, np.ndarray y, int len_group)
+    cdef int reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group)
 
     cdef int splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
 
@@ -124,7 +124,7 @@ cdef class CARTGVSplitter():
 
     cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end)
 
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int len_group)
+    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group)
 
     cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
 
