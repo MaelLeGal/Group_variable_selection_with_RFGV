@@ -13,13 +13,11 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pxd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVSplitter.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVTree.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVutils.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
@@ -28,6 +26,7 @@
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVCriterion" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVCriterion" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/CARTGV/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Script_notebook.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Script_notebook.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/scikit-learn/sklearn/tree/_splitter.pyx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_unitaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_unitaire.py" afterDir="false" />
