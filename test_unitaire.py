@@ -2856,7 +2856,7 @@ class CARTGVTreeBuilderTest(unittest.TestCase):
 
 class Cython_R_Comparison(unittest.TestCase):
 
-    def _comparison(self):
+    def test_comparison(self):
 
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
@@ -2908,6 +2908,8 @@ class Cython_R_Comparison(unittest.TestCase):
         # groups = np.array(
         #     [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [10, 11, 12, 13, 14], [15, 16, 17, 18, 19], [20, 21, 22, 23, 24]])
 
+        len_groups = np.array([len(group) for group in groups])
+
         n_samples, n_features = X.shape
         n_grouped_features = 5
         y = np.atleast_1d(y)
@@ -2947,7 +2949,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         criterion = CARTGVGini(n_outputs, n_classes)
 
-        splitter = BestCARTGVSplitter(criterion, max_grouped_features, len(groups),
+        splitter = BestCARTGVSplitter(criterion, len(groups),
                                       min_samples_leaf, min_weight_leaf,
                                       random_state, max_depth_splitting_tree,
                                       min_impurity_decrease_splitting_tree,
@@ -2955,16 +2957,16 @@ class Cython_R_Comparison(unittest.TestCase):
                                       mvar,
                                       mgroup)
 
-        tree = CARTGVTree(n_grouped_features, n_classes, n_outputs)
+        tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
+
 
         builder = CARTGVTreeBuilder(splitter, min_samples_split,
                                     min_samples_leaf, min_weight_leaf,
-                                    max_depth, mgroup, mvar,
-                                    min_impurity_decrease, min_impurity_split)
+                                    max_depth, min_impurity_decrease, min_impurity_split)
 
         # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
         print("####################### TEST COMPARAISON ##############################")
-        builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups)  # X.to_numpy(dtype=np.float32)
+        builder.test_build(tree, X.to_numpy(dtype=np.float32), y, groups, len_groups, None)  # X.to_numpy(dtype=np.float32)
 
         # print(tree.nodes_group)
         # print(tree.nodes_parent)
@@ -2980,11 +2982,11 @@ class Cython_R_Comparison(unittest.TestCase):
 
         R_n_nodes_samples_df = pd.read_csv('../Code_R/R_n_nodes_samples.csv', sep="\t", dtype=int, header=None)
 
-        print(len(np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten())))
-        print(len(np.bincount(np.array(tree.nodes_n_node_samples, dtype=int))))
+        print((np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten())))
+        print((np.bincount(np.array(tree.nodes_n_node_samples, dtype=np.intp))))
 
-        self.assertSequenceEqual(np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten()).tolist(),
-                                 np.bincount(np.array(tree.nodes_n_node_samples, dtype=int)).tolist())
+        # self.assertSequenceEqual(np.bincount(R_n_nodes_samples_df.iloc[:].to_numpy().flatten()).tolist(),
+        #                          np.bincount(np.array(tree.nodes_n_node_samples, dtype=int)).tolist())
 
 
 
@@ -3123,8 +3125,8 @@ class Cython_R_Comparison(unittest.TestCase):
 
             clf.tree_ = tree.nodes_splitting_trees[0]
 
-            plot_tree(clf, ax=ax[1])
-            plt.show()
+            # plot_tree(clf, ax=ax[1])
+            # plt.show()
 
     def test_CARTTree_2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
@@ -3169,11 +3171,11 @@ class Cython_R_Comparison(unittest.TestCase):
         min_samples_split = 2
         min_weight_leaf = 0
         random_state = check_random_state(2547)
-        max_depth = 2
-        max_depth_splitting_tree = 3
+        max_depth = 100
+        max_depth_splitting_tree = 2
         # mgroup = 1 #max([len(groups[i]) for i in range(len(groups))])
-        mgroup = 2
-        mvar = "root"
+        mgroup = 5
+        mvar = 5
         # mvar = end_var - start_var
         min_impurity_decrease = 0.0
         min_impurity_split = 0.0
@@ -3230,16 +3232,38 @@ class Cython_R_Comparison(unittest.TestCase):
         print(clf.tree_.node_count)
         print(clf.get_n_leaves())
 
+        print("Nodes impurities")
         print(tree.nodes_impurities)
-        # print(clf.tree_.threshold)
+        print("Nodes parents")
+        print(tree.nodes_parent)
+        # print("Nodes childs")
+        # print(tree.nodes_childs)
+        print("Nodes n childs")
+        print(tree.nodes_n_childs)
+        print("Nodes n samples")
+        print(tree.nodes_n_node_samples)
+        print("Nodes group")
+        print(tree.nodes_group)
 
-        fig, ax = plt.subplots(2, figsize=(16, 9))
-        plot_tree(clf, ax=ax[0])
+        print("Nodes splitting trees")
+        print(tree.nodes_splitting_trees)
+        print(np.where(np.array(tree.nodes_splitting_trees != None)))
+        print(len(np.where(np.array(tree.nodes_splitting_trees != None))[0]))
+
+        # fig, ax = plt.subplots(2, figsize=(16, 9))
+        # plot_tree(clf, ax=ax[0])
 
         clf.tree_ = tree.nodes_splitting_trees[0]
 
-        plot_tree(clf, ax=ax[1])
-        plt.show()
+        # plot_tree(clf, ax=ax[1])
+        # plt.show()
+
+        # for i in range(len(tree.nodes_splitting_trees)):
+        #     if tree.nodes_splitting_trees[i] != None:
+        #         clf.tree_ = tree.nodes_splitting_trees[i]
+        #         fig, ax = plt.subplots(1, figsize=(16, 9))
+        #         plot_tree(clf, ax=ax)
+        #         plt.show()
 
 if __name__ == '__main__':
     unittest.main()
