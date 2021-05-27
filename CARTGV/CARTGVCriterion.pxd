@@ -77,3 +77,8 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 
     cdef SIZE_t* n_classes
     cdef SIZE_t sum_stride
+
+cdef class CARTGVRegressionCriterion(CARTGVCriterion):
+    """Abstract criterion for regression."""
+
+    cdef double sq_sum_total

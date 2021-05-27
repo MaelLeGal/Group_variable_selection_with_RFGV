@@ -253,6 +253,13 @@ cdef class CARTGVTree():
           self.capacity = 0
           self.value = NULL
           self.nodes = NULL
+
+    def __dealloc__(self):
+        for i in range(self.node_count):
+            free(self.nodes[i].childs)
+        free(self.nodes)
+        free(self.n_classes)
+        free(self.value)
       
     def __reduce__(self):
           """Reduce re-implementation, for pickling."""
@@ -417,47 +424,47 @@ cdef class CARTGVTree():
         else:
             return self._apply_dense(X)
 
-    # cdef inline np.ndarray _apply_dense(self, object X):
-    #     """Finds the terminal region (=leaf node) for each sample in X."""
-
-    #     # Check input
-    #     if not isinstance(X, np.ndarray):
-    #         raise ValueError("X should be in np.ndarray format, got %s"
-    #                           % type(X))
-
-    #     if X.dtype != DTYPE:
-    #         raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
-
-    #     # Extract input
-    #     cdef const DTYPE_t[:, :] X_ndarray = X
-    #     cdef SIZE_t n_samples = X.shape[0]
-
-    #     # Initialize output
-    #     cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)
-    #     cdef SIZE_t* out_ptr = <SIZE_t*> out.data
-
-    #     # Initialize auxiliary data-structure
-    #     cdef CARTGVNode* node = NULL
-    #     cdef Node* splitting_tree_node = NULL
-    #     cdef SIZE_t i = 0
-
-    #     with nogil:
-    #         for i in range(n_samples):
-    #             node = self.nodes
-    #             # While node not a leaf
-    #             while node.childs[0] != _TREE_LEAF:
-    #               # splitting_tree_node = node.splitting_tree._apply_dense(X)
-    #               splitting_tree_node = node.splitting_tree.nodes
-    #               while splitting_tree_node.left_child != _TREE_LEAF:
-    #                   # ... and node.right_child != _TREE_LEAF:
-    #                   if X_ndarray[i, splitting_tree_node.feature] <= splitting_tree_node.threshold:
-    #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.left_child]
-    #                   else:
-    #                       splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.right_child]
-    #               node = splitting_tree_node #TODO changer cette ligne assigniation Node a CARTGVNode ici
-    #             out_ptr[i] = <SIZE_t>(node - self.nodes)  # node offset
-
-    #     return out
+#    cdef inline np.ndarray _apply_dense(self, object X):
+#        """Finds the terminal region (=leaf node) for each sample in X."""
+#
+#        # Check input
+#        if not isinstance(X, np.ndarray):
+#            raise ValueError("X should be in np.ndarray format, got %s"
+#                            % type(X))
+#
+#        if X.dtype != DTYPE:
+#            raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
+#
+#        # Extract input
+#        cdef const DTYPE_t[:, :] X_ndarray = X
+#        cdef SIZE_t n_samples = X.shape[0]
+#
+#        # Initialize output
+#        cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)
+#        cdef SIZE_t* out_ptr = <SIZE_t*> out.data
+#
+#        # Initialize auxiliary data-structure
+#        cdef CARTGVNode* node = NULL
+#        cdef Node* splitting_tree_node = NULL
+#        cdef SIZE_t i = 0
+#
+#        with nogil:
+#            for i in range(n_samples):
+#                node = self.nodes
+#                # While node not a leaf
+#                while node.childs[0] != _TREE_LEAF:
+#                    # splitting_tree_node = node.splitting_tree._apply_dense(X)
+#                    splitting_tree_node = node.splitting_tree.nodes
+#                    while splitting_tree_node.left_child != _TREE_LEAF:
+#                        # ... and node.right_child != _TREE_LEAF:
+#                        if X_ndarray[i, splitting_tree_node.feature] <= splitting_tree_node.threshold:
+#                            splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.left_child]
+#                        else:
+#                            splitting_tree_node = &node.splitting_tree.nodes[splitting_tree_node.right_child]
+#                    node = splitting_tree_node #TODO changer cette ligne assigniation Node a CARTGVNode ici
+#                out_ptr[i] = <SIZE_t>(node - self.nodes)  # node offset
+#
+#        return out
 
     # cdef inline np.ndarray _apply_sparse_csr(self, object X):
     #     """Finds the terminal region (=leaf node) for each sample in sparse X.
@@ -1029,7 +1036,7 @@ cdef class CARTGVTreeBuilder():
         cdef StackRecord stack_record                                       # A record for the stack
         with nogil:
             # push root node onto stack
-            rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0) #TODO créer une nouvelle class Stack_Record sans is_left ?
+            rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0)
             if rc == -1:
                 # got return code -1 - out-of-memory
                 with gil:
@@ -1037,7 +1044,8 @@ cdef class CARTGVTreeBuilder():
 
             # Loop until the stack is empty (if the last leaf has been treated)
             while not stack.is_empty():
-
+#                with gil:
+#                    print("### LOOP " + str(tree.node_count) + " ####")
                 stack.pop(&stack_record)
 
                 start = stack_record.start
@@ -1068,7 +1076,6 @@ cdef class CARTGVTreeBuilder():
                 if not is_leaf:
                     with gil:
                         splitter.node_split(impurity, &split, &n_constant_features, start, end) # TODO Make the function no gil
-
                     # If EPSILON=0 in the below comparison, float precision
                     # issues stop splitting, producing trees that are
                     # dissimilar to v0.18
@@ -1093,12 +1100,12 @@ cdef class CARTGVTreeBuilder():
                         penality = 1.0/len_groups[split.group]
                     elif pen == "log":
                         penality = 1.0/fmax(log(len_groups[split.group]),1)
-                    elif isinstance(pen,object) and not isinstance(pen,str): #TODO Verifier qu'il n'y a pas d'autre cas d'erreur
+                    elif callable(pen):
                         penality = pen(len_groups[split.group])
                     else:
                         penality = 1
 
-                    print("Impurity Node : " + str(penality*impurity))
+#                    print("Impurity Node : " + str(penality*impurity))
                     impurity = penality*impurity
 
                 # Add the node to the tree
@@ -1122,6 +1129,10 @@ cdef class CARTGVTreeBuilder():
                             break
                     if rc == -1:
                       break
+                #        free(split.starts) #TODO free those fields either here or in the Splitter
+                #        free(split.ends)
+                #        free(split.splitting_tree)
+                #        free(split.impurity_childs)
                 if depth > max_depth_seen:
                     max_depth_seen = depth
 
