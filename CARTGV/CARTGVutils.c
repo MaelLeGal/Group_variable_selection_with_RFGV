@@ -1353,6 +1353,7 @@ struct __pyx_obj_7sklearn_4tree_5_tree_TreeBuilder;
 struct __pyx_obj_7sklearn_9neighbors_10_quad_tree__QuadTree;
 struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion;
 struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion;
+struct __pyx_obj_15CARTGVCriterion_CARTGVRegressionCriterion;
 struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter;
 struct __pyx_obj_14CARTGVSplitter_BaseDenseCARTGVSplitter;
 struct __pyx_obj_10CARTGVTree_CARTGVTree;
@@ -1935,6 +1936,19 @@ struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion {
 };
 
 
+/* "CARTGVCriterion.pxd":81
+ *     cdef SIZE_t sum_stride
+ * 
+ * cdef class CARTGVRegressionCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
+ *     """Abstract criterion for regression."""
+ * 
+ */
+struct __pyx_obj_15CARTGVCriterion_CARTGVRegressionCriterion {
+  struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion __pyx_base;
+  double sq_sum_total;
+};
+
+
 /* "CARTGVSplitter.pxd":28
  *     int group
  * 
@@ -2355,6 +2369,20 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion {
   struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion __pyx_base;
 };
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion;
+
+
+/* "CARTGVCriterion.pxd":81
+ *     cdef SIZE_t sum_stride
+ * 
+ * cdef class CARTGVRegressionCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
+ *     """Abstract criterion for regression."""
+ * 
+ */
+
+struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion {
+  struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVCriterion __pyx_base;
+};
+static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion;
 
 
 /* "CARTGVSplitter.pxd":28
@@ -3445,6 +3473,7 @@ static float *__pyx_vp_7sklearn_9neighbors_10_quad_tree_EPSILON = 0;
 /* Module declarations from 'CARTGVCriterion' */
 static PyTypeObject *__pyx_ptype_15CARTGVCriterion_CARTGVCriterion = 0;
 static PyTypeObject *__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion = 0;
+static PyTypeObject *__pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion = 0;
 
 /* Module declarations from 'CARTGVSplitter' */
 static PyTypeObject *__pyx_ptype_14CARTGVSplitter_CARTGVSplitter = 0;
@@ -27773,6 +27802,9 @@ static int __Pyx_modinit_type_import_code(void) {
   __pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion = __Pyx_ImportType(__pyx_t_1, "CARTGVCriterion", "CARTGVClassificationCriterion", sizeof(struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion), __Pyx_ImportType_CheckSize_Warn);
    if (!__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion) __PYX_ERR(11, 75, __pyx_L1_error)
   __pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion)) __PYX_ERR(11, 75, __pyx_L1_error)
+  __pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion = __Pyx_ImportType(__pyx_t_1, "CARTGVCriterion", "CARTGVRegressionCriterion", sizeof(struct __pyx_obj_15CARTGVCriterion_CARTGVRegressionCriterion), __Pyx_ImportType_CheckSize_Warn);
+   if (!__pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion) __PYX_ERR(11, 81, __pyx_L1_error)
+  __pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion = (struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion*)__Pyx_GetVtable(__pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion->tp_dict); if (unlikely(!__pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion)) __PYX_ERR(11, 81, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = PyImport_ImportModule("CARTGVSplitter"); if (unlikely(!__pyx_t_1)) __PYX_ERR(12, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
