@@ -41,15 +41,50 @@ cdef class CARTGVCriterion():
     # statistics correspond to samples[start:pos] and samples[pos:end].
 
     # Methods
+
+    # Initialise the CARTGVCriterion
+    #
+    # params y : a memoryview (ndarray), the responses of current sample
+    # params sample_weight : a DOUBLE_t*, the weight of each sample
+    # params weighted_n_samples : a double, the total weight of all samples
+    # params samples : a SIZE_t*, the indices array of the samples
+    # params n_samples : a SIZE_t, the number of samples
+    # params start : a SIZE_t, the starting position in the samples array
+    # params end : a SIZE_t, the ending position in the samples array
     cdef int init(self, const DOUBLE_t[:, ::1] y, DOUBLE_t* sample_weight,
                   double weighted_n_samples, SIZE_t* samples, SIZE_t n_samples , SIZE_t start,
                   SIZE_t end) nogil except -1
+
+    # Reset the criterion
     cdef int reset(self) nogil except -1
+
+    # Update the criterion with the informations about the children of the current node
+    #
+    # params starts : a SIZE_t*, the starting positions of the children of the current node
+    # params ends : a SIZE_t*, the ending positions of the children of the current node
+    # params n_childs : an int, the number of children
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1
+
+    # Compute the impurity of the node
     cdef double node_impurity(self) nogil
+
+    # Compute the impurity of the children
+    #
+    # params impurity_childs : a double**, an empty array for the children impurity
     cdef void children_impurity(self, double** impurity_childs) nogil
+
+    # Get the node value
+    #
+    # params dest : a double*, a double where the value will be put
     cdef void node_value(self, double* dest) nogil
+
+    # Compute the proxy impurity improvement
     cdef double proxy_impurity_improvement(self) nogil
+
+    # Compute the real impurity improvement
+    #
+    # params impurity_parent : a double, the impurity of the parent
+    # params impurity_childs : a double*, the impurities of the children
     cdef double impurity_improvement(self, double impurity_parent,double* impurity_childs) nogil
 
     ########################################## TESTS #############################################

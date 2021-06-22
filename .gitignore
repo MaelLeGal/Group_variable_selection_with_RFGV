@@ -1,11 +1,11 @@
 # Ignore the R src folder
-Code_R
+Code_R/
 
 # Ignore the data folder
-data
+data/
 
 # Ignore the GitHub Pycharl link folder
-.idea
+.idea/
 
 # Ignore the notebook checkpoints folder
-notebook/.ipynb_checkpoints
+notebook/.ipynb_checkpoints/

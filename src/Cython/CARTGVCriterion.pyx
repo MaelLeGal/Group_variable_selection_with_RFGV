@@ -29,7 +29,11 @@ cdef class CARTGVCriterion():
 
     def __dealloc__(self):
         """Destructor."""
+        for i in range(self.n_childs):
+            free(self.sum_childs[i])
+        free(self.sum_childs)
         free(self.sum_total)
+        free(self.weighted_n_childs)
 
     def __getstate__(self):
         return {}
@@ -130,16 +134,14 @@ cdef class CARTGVCriterion():
     cdef double proxy_impurity_improvement(self) nogil:
 
         cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))
-#        with gil:
-#            print(np.asarray(<double[:self.n_childs]>impurity_childs))
         self.children_impurity(&impurity_childs)
-#        with gil:
-#            print(np.asarray(<double[:self.n_childs]>impurity_childs))
 
         cdef double res = 0
         cdef int n_childs = self.n_childs
         for i in range(n_childs):
           res -= self.weighted_n_childs[i] * impurity_childs[i]
+
+        free(impurity_childs)
 
         return res
 
@@ -255,12 +257,6 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 
     def __dealloc__(self):
         """Destructor."""
-        free(self.n_classes)
-        for i in range(self.n_childs):
-            free(self.sum_childs[i])
-        free(self.sum_childs)
-#        free(self.sum_total) #TODO free self.sum_total
-        free(self.weighted_n_childs)
 
     def __reduce__(self):
         return (type(self),
@@ -345,16 +341,6 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t k
         cdef SIZE_t i
 
-
-#        self.weighted_n_childs = <double*> calloc(self.n_outputs,sizeof(double))
-#        for k in range(self.n_outputs):
-#          for i in range(n_childs):
-
-#            memset(sum_childs[i], 0, n_classes[k] * sizeof(double))
-#            sum_childs[i] = <double*> calloc(n_classes[k],sizeof(double))
-#            for j in range(n_classes[k]):
-#                sum_childs[i] += self.sum_stride
-
         return 0
 
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
@@ -380,31 +366,19 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         for j in range(n_childs):
             for k in range(starts[j],ends[j]):
                 i = samples[k]
-#                with gil:
-#                    if i < 0 and i > self.y.shape[0]:
-#                        print(i)
-#                        print("ERROR")
 
                 if sample_weight != NULL:
                     w = sample_weight[i]
 
-#                with gil:
-#                    print("UPDATE")
-#                    print(self.n_outputs)
-#                    print(self.sum_stride)
                 for l in range(self.n_outputs):
                     label_index = l * self.sum_stride +  <SIZE_t> self.y[i, l]
                     sum_childs[j][label_index] += w
-#                    with gil:
-#                        print(label_index)
 
                 self.weighted_n_childs[j] += w
 
 
         for n in range(self.n_outputs):
             for c in range(n_classes[n]):
-#                for o in range(n_childs):
-#                    sum_childs[o][c] += self.sum_stride
                 sum_total[c] += self.sum_stride
 
         self.sum_childs = sum_childs
@@ -424,17 +398,23 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef double* sum_total = self.sum_total
         cdef SIZE_t* n_classes = self.n_classes
         cdef SIZE_t k
-
+#        with gil:
+#            print(n_classes[0])
+#            print(np.asarray(sum_total))
         for k in range(self.n_outputs):
-#            memcpy(dest, sum_total, n_classes[k] * sizeof(double))
-#            dest += self.sum_stride
-#            sum_total += self.sum_stride
-
-            dest = <double*> calloc(n_classes[k],sizeof(double))
-            dest = sum_total
+            memcpy(dest, sum_total, n_classes[k] * sizeof(double))
             dest += self.sum_stride
-            for l in range(n_classes[k]):
-                sum_total[l] += self.sum_stride
+            sum_total += self.sum_stride
+
+#            with gil:
+#                print(self.sum_stride)
+#                print(np.asarray(sum_total))
+
+#            dest = <double*> calloc(n_classes[k],sizeof(double))
+#            dest = sum_total
+#            dest += self.sum_stride
+#            for l in range(n_classes[k]):
+#                sum_total[l] += self.sum_stride
 
 
     ########################################## TESTS #############################################
@@ -475,19 +455,6 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         ends[3] = 333
         ends[4] = 334
 
-#        n_childs = 3
-#
-#        cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
-#        cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
-#
-#        starts[0] = 0
-#        starts[1] = 1
-#        starts[2] = 3
-#
-#        ends[0] = 1
-#        ends[1] = 3
-#        ends[2] = 5
-
         res = self.update(starts, ends, n_childs)
 
         return res
@@ -509,19 +476,6 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         ends[2] = 314
         ends[3] = 333
         ends[4] = 334
-
-#        n_childs = 3
-#
-#        cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
-#        cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
-#
-#        starts[0] = 0
-#        starts[1] = 1
-#        starts[2] = 3
-#
-#        ends[0] = 1
-#        ends[1] = 3
-#        ends[2] = 5
 
         self.update(starts, ends, n_childs)
 
@@ -652,11 +606,6 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
 
     def __dealloc__(self):
         """Destructor."""
-        for i in range(self.n_childs):
-            free(self.sum_childs[i])
-        free(self.sum_childs)
-#        free(self.sum_total) #TODO free self.sum_total
-        free(self.weighted_n_childs)
 
     def __reduce__(self):
         return (type(self),
@@ -698,7 +647,6 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
 
         self.sq_sum_total = 0.0
         self.sum_total = <double*> calloc(self.n_outputs, sizeof(double))
-#        cdef double* sum_total = self.sum_total
 
         cdef SIZE_t i
         cdef SIZE_t p
@@ -738,15 +686,6 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
         cdef SIZE_t k
         cdef SIZE_t i
 
-#        self.weighted_n_childs = <double*> calloc(self.n_outputs,sizeof(double))
-#        for k in range(self.n_outputs):
-#          for i in range(n_childs):
-
-#            memset(sum_childs[i], 0, n_classes[k] * sizeof(double))
-#            sum_childs[i] = <double*> calloc(n_classes[k],sizeof(double))
-#            for j in range(n_classes[k]):
-#                sum_childs[i] += self.sum_stride
-
         return 0
 
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
@@ -769,17 +708,10 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
         for j in range(n_childs):
             for k in range(starts[j],ends[j]):
                 i = samples[k]
-#                with gil:
-#                    if i < 0 and i > self.y.shape[0]:
-#                        print(i)
-#                        print("ERROR")
 
                 if sample_weight != NULL:
                     w = sample_weight[i]
 
-#                with gil:
-#                    print("UPDATE")
-#                    print(self.n_outputs)
                 for l in range(self.n_outputs):
                     sum_childs[j][l] += w * self.y[i, l]
 
@@ -798,13 +730,11 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
     cdef void children_impurity(self, double** impurity_childs) nogil:
         pass
 
+    #TODO Check ZeroDivisionError: float division
     cdef void node_value(self, double* dest) nogil:
         cdef SIZE_t k
 
         for k in range(self.n_outputs):
-#            memcpy(dest, sum_total, n_classes[k] * sizeof(double))
-#            dest += self.sum_stride
-#            sum_total += self.sum_stride
 
             dest[k] = self.sum_total[k] / self.weighted_n_node_samples
 
@@ -824,15 +754,9 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
 
     cdef double proxy_impurity_improvement(self) nogil:
 
-#        cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))
         cdef SIZE_t k,j,i
         cdef double* proxy_impurity_childs = <double*> calloc(self.n_childs,sizeof(double))
         cdef double** sum_childs = self.sum_childs
-#        with gil:
-#            print(np.asarray(<double[:self.n_childs]>impurity_childs))
-#        self.children_impurity(&impurity_childs)
-#        with gil:
-#            print(np.asarray(<double[:self.n_childs]>impurity_childs))
 
         for j in range(self.n_childs):
             for k in range(self.n_outputs):
@@ -848,9 +772,6 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
     cdef void children_impurity(self, double** impurity_childs) nogil:
 
         cdef double** sum_childs = self.sum_childs
-#        cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
-#        cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))
-#        cdef double count_k
         cdef SIZE_t k
         cdef SIZE_t i
         cdef SIZE_t j
@@ -865,23 +786,9 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
         cdef DOUBLE_t* sample_weight = self.sample_weight
 
         for i in range(n_childs):
-#            with gil:
-#                print(np.asarray(self.y).shape)
-#                print(np.asarray(self.y))
-#                print(self.starts[i])
-#                print(self.ends[i])
-#                print(samples[self.ends[i]])
-#                print(self.n_samples)
-#                print(n_childs)
-#                print(np.asarray(<SIZE_t[:n_childs]>self.starts))
-#                print(np.asarray(<SIZE_t[:n_childs]>self.ends))
             for j in range(self.starts[i],self.ends[i]):
                 k = samples[j]
-#                with gil:
-#                    if k < 0 or k > np.asarray(self.y).shape[0]:
-#                        print("Error")
-#                        print(k)
-#                    print(k)
+
                 if sample_weight != NULL:
                     w = sample_weight[k]
 
@@ -889,10 +796,6 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
                     y_ik = self.y[k,l]
                     sq_sum_childs[i] += w * y_ik * y_ik
 
-
-#        with gil:
-#            print(n_childs)
-#            print(np.asarray(<double[:n_childs]>self.weighted_n_childs))
         for i in range(n_childs):
             impurity_childs[0][i] = sq_sum_childs[i] / self.weighted_n_childs[i]
         for i in range(n_childs):
@@ -901,22 +804,4 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
         for i in range(n_childs):
             impurity_childs[0][i] /= self.n_outputs
 
-#        for k in range(self.n_outputs):
-#          for i in range(n_childs):
-#            sq_count_childs[i] = 0.0
-#
-#
-#          for j in range(n_childs):
-#            for c in range(n_classes[k]):
-#                count_k = sum_childs[j][c]
-#                sq_count_childs[j] += count_k * count_k
-#
-#          for l in range(n_childs):
-#            gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
-#            for c in range(n_classes[k]):
-#                sum_childs[l] += self.sum_stride
-#          for m in range(n_childs):
-#              impurity_childs[0][m] = gini_childs[m] / self.n_outputs
-#
-#        free(gini_childs)
-#        free(sq_count_childs)
+        free(sq_sum_childs)
