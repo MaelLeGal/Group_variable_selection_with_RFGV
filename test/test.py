@@ -9,9 +9,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 print("Start import")
 
-from CARTGV import CARTGVSplitter
-from CARTGV import CARTGVGini
-from CARTGV import CARTGVTree, CARTGVTreeBuilder
+from CARTGVCriterion import CARTGVGini
+from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
+from CARTGVSplitter import CARTGVSplitter
 
 from sklearn.utils.validation import check_random_state
 

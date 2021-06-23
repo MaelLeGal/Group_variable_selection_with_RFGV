@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import time
 
-from CARTGV import CARTGVTree, CARTGVTreeBuilder
-from CARTGV import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
-from CARTGV import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini
+from CARTGVCriterion import CARTGVGini, CARTGVMSE
+from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
+from CARTGVSplitter import BestCARTGVSplitter
 
 from sklearn.utils.validation import check_random_state
 from sklearn.tree import DecisionTreeClassifier

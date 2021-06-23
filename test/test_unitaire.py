@@ -6,10 +6,18 @@ import matplotlib.pyplot as plt
 import pickle as pickle
 import sys
 import time
+from TS_Extrinsic_Regression_utils.data_loader import load_from_tsfile_to_dataframe
+from TS_Extrinsic_Regression_utils.regressor_tools import process_data, fit_regressor, calculate_regression_metrics
+from TS_Extrinsic_Regression_utils.tools import create_directory
+from TS_Extrinsic_Regression_utils.transformer_tools import fit_transformer
 
-from CARTGV import CARTGVTree, CARTGVTreeBuilder
-from CARTGV import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
-from CARTGV import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
+from CARTGVCriterion import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
+from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
+from CARTGVSplitter import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
+
+# from ..src.Cython import CARTGVTree, CARTGVTreeBuilder
+# from ..src.Cython import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
+# from ..src.Cython import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
 
 from sklearn.utils.validation import check_random_state
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
@@ -18,6 +26,12 @@ from sklearn.tree._tree import DepthFirstTreeBuilder, BestFirstTreeBuilder, Tree
 from sklearn.tree._splitter import BestSplitter
 from sklearn.tree._criterion import Gini, Entropy
 from sklearn.datasets import load_iris, load_digits, fetch_california_housing
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import export_graphviz
 import graphviz
 
@@ -2995,86 +3009,106 @@ class Cython_R_Comparison(unittest.TestCase):
 
 
     def _CARTTree(self):
-        df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
 
-        train = df.loc[df['Type'] == 'train']
+        df = pd.read_csv('CARTGV/training.csv', sep=",")
+        df_test = pd.read_csv('CARTGV/testing.csv', sep=",")
 
-        X = train.iloc[:, 2:]
+        # # print(df)
+        # # train = df.loc[df['Type'] == 'train']
+        # #
+        # # X = train.iloc[:, 2:]
+        # #
+        # # y = train['Y']
+        #
+        X = df.iloc[:, 1:]
+        #
+        y = df['class']
 
-        y = train['Y']
+        X_test = df_test.iloc[:, 1:]
+        y_test = df_test['class']
+        # # print(np.unique(y.to_numpy()))
 
-        g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
-        g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
-        g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
-        g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
-        g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
+        g0_idx = [col for col in range(len(X.columns)) if ('_40' not in X.columns[col] and '_60' not in X.columns[col] and '_80' not in X.columns[col] and '_100' not in X.columns[col] and '_120' not in X.columns[col] and '_140' not in X.columns[col])]
+        g0_idx = np.array([col for col in range(20)])
+        g1_idx = np.array([col for col in range(len(X.columns)) if '_40' in X.columns[col]])
+        g2_idx = np.array([col for col in range(len(X.columns)) if '_60' in X.columns[col]])
+        g3_idx = np.array([col for col in range(len(X.columns)) if '_80' in X.columns[col]])
+        g4_idx = np.array([col for col in range(len(X.columns)) if '_100' in X.columns[col]])
+        g5_idx = np.array([col for col in range(len(X.columns)) if '_120' in X.columns[col]])
+        g6_idx = np.array([col for col in range(len(X.columns)) if '_140' in X.columns[col]])
+        g7_idx = np.hstack([[col for col in range(len(X.columns)) if 'Bright' in X.columns[col]], [col for col in range(len(X.columns)) if 'Mean_' in X.columns[col]], [col for col in range(len(X.columns)) if 'NDVI' in X.columns[col]]])
+        g8_idx = np.hstack([[col for col in range(len(X.columns)) if 'SD_' in X.columns[col]], [col for col in range(len(X.columns)) if 'GLCM' in X.columns[col]]])
+        g9_idx = np.array([X.columns.get_loc("BrdIndx"),X.columns.get_loc("Area"),X.columns.get_loc("Round"),X.columns.get_loc("Compact"),X.columns.get_loc("ShpIndx"),X.columns.get_loc("LW"),X.columns.get_loc("Rect"),X.columns.get_loc("Dens"),X.columns.get_loc("Assym"),X.columns.get_loc("BordLngth")])
 
-        groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+        groups = np.array([g0_idx, g1_idx, g2_idx, g3_idx, g4_idx, g5_idx, g6_idx, g7_idx, g8_idx, g9_idx], dtype=object)
+        len_groups = np.array([len(group) for group in groups])
+        groups_v2 = []
+        for group_idx in range(len(groups)):
+            if len(groups[group_idx]) < max(len_groups):
+                groups_v2.append(np.pad(groups[group_idx], (0,max(len_groups)-len(groups[group_idx])), constant_values=-1))
+            else:
+                groups_v2.append(groups[group_idx])
 
-        # X = np.array([[-0.962564615251298, -0.0818379297761482, -0.257129359665299, -1.20057124658537,
-        #                -1.67321037673198, -0.850857878613548, -1.12636943482486, 0.264691871869928, 0.823490524418768,
-        #                -0.289267055667413, 0.375612134943435, 0.689033636785644, -0.0755870733096488,
-        #                -0.253686040025422, -0.767686310824219, -0.47706960213735, 0.619681515116366, -0.718706304417254,
-        #                -0.625998377401577, 0.595352830214443, -0.826055466109155, 0.841770278364141, 0.525998122722698,
-        #                -0.305537695526707, -0.551540574269715],
-        #               [-0.0170226173861495, -0.575187308059669, -0.0550716676440694, -0.596082039595892,
-        #                -0.153767849941737, -0.152659395126548, 0.103284766044348, 0.945962098961183, 0.11395628892521,
-        #                -1.0314335555107, -0.24180964927081, -0.225116148572662, 1.75090409682049, 0.276212128428595,
-        #                -0.226985192750251, -0.688321496802469, 0.721869146316049, -0.0427129520106458, 1.71093452174155,
-        #                0.440414655312213, -0.219061974136534, 0.370516601227188, -0.579953711046926, -2.4756697600574,
-        #                -2.09969534371281],
-        #               [0.859846852829686, -0.196768997920202, -0.665097766775893, 1.49845086392502, 0.712519776986412,
-        #                0.63382801135412, 0.338132006534241, -1.17912479597116, 0.337710921150664, -0.404533729530606,
-        #                0.984579714687047, -1.16236566382262, -0.786198019602607, -0.753822112046281, -0.811264249392465,
-        #                -0.594151853267325, -0.322916128201519, -1.2934117213506, 0.531732629482942, -1.6136606736686,
-        #                -1.27887838930757, 0.678437793765498, -1.19080597429513, 1.11533360829611, -0.340409112584892],
-        #               [-1.46244895844162, 0.508777691805245, -0.42599215315616, -0.570342024814983, -1.13004768682085,
-        #                1.12406519881936, 0.251809560422478, -2.06632443310484, -1.23862336004496, 1.6527814698557,
-        #                0.336827946772908, -0.233201791535758, 0.590072797080428, 1.7453946472635, 1.02016573606479,
-        #                -0.813457453508146, -0.0745696971758758, 2.89463767013771, 0.158622453385045, -1.70880561223817,
-        #                0.132671092412739, -0.479946273307748, 0.11444508132886, 1.40287375218729, -0.344499428025485],
-        #               [-0.383681631574503, 1.19713456197882, -0.302078922002226, -0.544313316070517, 1.11301409047452,
-        #                0.0643648126207925, 0.623795834834719, 0.288528481567621, -0.618352387217919, -0.180420032776369,
-        #                -0.974252399377197, -0.78154085269986, 0.673878430962106, -0.14493184535421, -1.58840476437875,
-        #                -0.89040398934659, -0.464336091106138, -0.804400496705168, 0.542582301058101, -0.213424538311193,
-        #                -0.925675256270349, 0.306707969484467, 0.378645850648093, 0.220134583700443, -0.0925601673405935]
-        #               ], dtype=np.float32)
+        groups = np.array(groups_v2)
 
-        # y = np.array([[0], [1], [0], [1], [1]])
+        # plt.hist([X["BrdIndx"],X["BrdIndx_40"],X["BrdIndx_60"],X["BrdIndx_80"],X["BrdIndx_100"],X["BrdIndx_120"],X["BrdIndx_140"]],
+        #          X.shape[0], label=["BrdIndx","BrdIndx_40","BrdIndx_60","BrdIndx_80","BrdIndx_100","BrdIndx_120", "BrdIndx_140"])
+        # plt.hist(X["NDVI"],X.shape[0],label="NDVI")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_40"], X.shape[0], label="NDVI_40")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_60"], X.shape[0], label="NDVI_60")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_80"], X.shape[0], label="NDVI_80")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_100"], X.shape[0], label="NDVI_100")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_120"], X.shape[0], label="NDVI_120")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        # plt.hist(X["NDVI_140"], X.shape[0], label="NDVI_140")
+        # plt.legend(loc="upper right")
+        # plt.show()
 
-        sample_size = 334
-        nb_first_variable = 1
+        sample_size = X.shape[0]
 
         X = X.head(sample_size).to_numpy(dtype=np.float32)
 
-        # for i in range(nb_first_variable): #X.shape[1]
-        #     X_one_variable = []
-        #     for j in range(len(X[:,i])):
-        #         X_one_variable.append([X[j,i]])
-        #     print("### VARIABLE " + str(i) + "###")
-        #
-        #     X_one_variable = np.array(X_one_variable, dtype=np.float32)
+        y = y.head(sample_size)
 
-        y_np = y.head(sample_size).to_numpy(dtype=np.intp)
+        X_test = X_test.head(X_test.shape[0]).to_numpy(dtype=np.float32)
+        y_test = y_test.head(X_test.shape[0])
 
-        # groups = np.array([[i] for i in range(len(X_one_variable[0]))])
+        # X, X_test, y, y_test = train_test_split(X, y.to_numpy(), test_size = 0.33, random_state=42)
+
+        # print(X.shape)
+        # print(y_np.shape)
+
         len_groups = np.array([len(group) for group in groups])
-        print(len_groups)
+        # print(len_groups)
+        # print(groups)
 
-        n_samples, n_features = X.shape
-        y_np = np.atleast_1d(y_np)
+        y_np = np.atleast_1d(y)
         min_samples_leaf = 1
         min_samples_split = 2
         min_weight_leaf = 0
-        random_state = check_random_state(2547)
-        max_depth = 10
-        max_depth_splitting_tree = 1
-        mgroup = 5
-        mvar = len_groups #max([len(groups[i]) for i in range(len(groups))])
+        random_state = None #check_random_state(2547)
+        max_depth = None
+        max_depth_splitting_tree = 2
+        # mgroup = len(groups)
+        # mvar = len_groups
+        mgroup = len(groups)/3
+        mvar = "root" #len_groups
         min_impurity_decrease = 0.0
         min_impurity_split = 0.0
         min_impurity_decrease_splitting_tree = 0.0
         min_impurity_split_spltting_tree = 0.0
+        an = X.shape[0]
 
         if y_np.ndim == 1:
             y_np = np.reshape(y_np, (-1, 1))
@@ -3096,59 +3130,175 @@ class Cython_R_Comparison(unittest.TestCase):
 
         n_classes = np.array(n_classes, dtype=np.intp)
 
-        criterion = CARTGVGini(n_outputs, n_classes)
+        nbtrees = 100
+        times = []
+        trees = []
+        for i in range(nbtrees):
+            idx = np.random.choice(np.arange(len(X)), an, replace=False)
 
-        splitter = BestCARTGVSplitter(criterion, len(groups),
-                                      min_samples_leaf, min_weight_leaf,
-                                      random_state, max_depth_splitting_tree,
-                                      min_impurity_decrease_splitting_tree,
-                                      min_impurity_split_spltting_tree,
-                                      mvar,
-                                      mgroup)
+            X = X[idx]
+            y_np = y_np[idx]
 
-        tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
+            criterion = CARTGVGini(n_outputs, n_classes)
 
-        builder = CARTGVTreeBuilder(splitter, min_samples_split,
-                                    min_samples_leaf, min_weight_leaf,
-                                    max_depth, min_impurity_decrease, min_impurity_split)
+            splitter = BestCARTGVSplitter(criterion, len(groups),
+                                          min_samples_leaf, min_weight_leaf,
+                                          random_state, max_depth_splitting_tree,
+                                          min_impurity_decrease_splitting_tree,
+                                          min_impurity_split_spltting_tree,
+                                          mvar,
+                                          mgroup,
+                                          "gini")
 
-        # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
-        print("####################### TEST CARTTREE ##############################")
+            tree = CARTGVTree(len(groups), len_groups, groups, X.shape[1], n_classes, n_outputs)
 
-        builder.test_build(tree, X, y_np, groups, len_groups, "root")  # X.to_numpy(dtype=np.float32)
+            builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                        min_samples_leaf, min_weight_leaf,
+                                        max_depth, min_impurity_decrease, min_impurity_split)
 
-        clf = DecisionTreeClassifier(max_depth=max_depth, random_state=None, max_features=None,
-                                     max_leaf_nodes=X.shape[0]
-                                     )
-        clf.fit(X,y_np)
+            # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+            # print("####################### TEST CARTTREE ##############################")
+            start = time.time()
+            builder.test_build(tree, X, y_np, groups, len_groups, "size")  # X.to_numpy(dtype=np.float32)
+            end = time.time()
+            trees.append(tree)
+            times.append(end-start)
+        print("Mean Time for tree construction : ", np.mean(times))
+        print("Sum Times for trees construction : ", np.sum(times))
+        print("Memory Size of " + str(nbtrees) + " trees : " + str(np.array(trees).nbytes))
 
-        print(tree.node_count)
-        print(np.count_nonzero(tree.nodes_n_childs)) # Number of leaves of CARTGVTree
-        print(clf.tree_.node_count)
-        print(clf.get_n_leaves())
+        y_test = np.atleast_1d(y_test)
 
-        print(tree.nodes_impurities)
-        print(clf.tree_.threshold)
+        if y_test.ndim == 1:
+            y_test = np.reshape(y_test, (-1, 1))
 
-        # fig, ax = plt.subplots(2, figsize=(16, 9))
-        # plot_tree(clf, ax=ax[0])
+        # n_outputs = y_test.shape[1]
 
-        clf.tree_ = tree.nodes_splitting_trees[0]
+        y_test = np.copy(y_test)
 
-        # plot_tree(clf, ax=ax[1])
+        y_encoded = np.zeros(y_test.shape, dtype=int)
+        for k in range(n_outputs):
+            classes_k, y_encoded[:, k] = np.unique(y_test[:, k], return_inverse=True)
+
+        y_test = y_encoded
+        classes = np.arange(0,9)
+        # print(classes)
+        # print(len_groups)
+
+        rf_preds = []
+        start = time.time()
+        # print(tree.predict(X_test[:1])[0])
+        # for j in range(X_test.shape[0]):
+        #     preds = []
+        #     for i in range(nbtrees):
+        #         preds.append(trees[i].predict(X_test[j]).flatten())
+        #     rf_preds.append(np.argmax(np.bincount(np.array(preds).flatten())))
+
+        # print(trees[0].predict(X_test).shape)
+        # print(np.argmax(trees[0].predict(X_test), axis=0)[:10])
+        # print(np.argmax(trees[0].predict(X_test), axis=0).shape)
+        # print(trees[0].value)
+        # print(trees[0].value.shape)
+        # pred = trees[0].predict(X_test)
+        # print(pred)
+        # pred_tree = []
+        # for i in range(X_test.shape[0]):
+        #         pred_tree.append(np.argmax(pred[i]))
+        # print(pred_tree)
+        # print(np.array(pred_tree).shape)
+        preds = []
+        for i in range(nbtrees):
+                preds.append(np.argmax(trees[i].predict(X_test), axis=1))
+        # print(preds)
+        # print(np.array(preds).shape)
+        stacked = np.stack(preds, axis=-1)
+        # print(stacked.shape)
+        for i in range(X_test.shape[0]):
+            rf_preds.append(np.bincount(stacked[i]).argmax())
+        # print(np.array(rf_preds).shape)
+
+        # preds = []
+        # for j in range(X_test.shape[0]):
+        #     for i in range(nbtrees):
+        #             preds.append(trees[i].predict(X_test[j].reshape((1,X_test.shape[1]))))
+        # preds = np.array(preds, dtype=int).reshape((nbtrees*X_test.shape[0],len(np.unique(y_test))))
+        # print(preds)
+        # for i in range(X_test.shape[0]):
+        #         rf_preds.append(np.argmax(preds[i]))
+        # print(rf_preds)
+        # # print(preds.shape)
+        # stacked = np.stack(preds)
+        # print(stacked)
+        # print(stacked.shape)
+        # print(np.bincount(stacked, axis=-1))
+        # rf_preds = np.argmax(preds, axis=-1).reshape((1,X_test.shape[0]))
+        # print(preds)
+        # print(np.argmax(preds, axis = -1))
+        # stacked = np.stack(preds, axis=-1)
+        # print(stacked)
+        # print(stacked[0])
+        # print(np.argmax(stacked[0]))
+        # # for i in range(X_test.shape[0]):
+        #     rf_preds.append(np.argmax(preds[i]))
+        # print(rf_preds)
+
+        end = time.time()
+        print("Temps predict : " + str(end-start))
+        print("Taux de bonne classification de la forêt : " + str((X_test.shape[0]-np.count_nonzero(rf_preds-y_test.reshape(y_test.shape[0])))/X_test.shape[0]))
+
+        start = time.time()
+        clf = DecisionTreeClassifier(random_state=random_state)
+        clf.fit(X, y_np)
+
+        end = time.time()
+        # print(clf.tree_.value)
+        # print(clf.tree_.value.shape)
+        print("Sklearn end time tree construction : " + str(end-start))
+        print("Score tree Scikit-learn : ",clf.score(X_test, y_test))
+
+        rf = RandomForestClassifier(n_estimators=nbtrees)
+        start = time.time()
+        rf.fit(X, y_np.ravel())
+        end = time.time()
+        print("Time for Scikit learn forest construction : ", end - start)
+        print("Score forêt Scikit-learn : ",rf.score(X_test,y_test))
+
+        # for i in range(tree.node_count):
+        #     # print(tree.nodes_childs[i]) #+ " | Fils : " + np.array_str(tree.nodes_childs[i])
+        #     if(isinstance(tree.nodes_splitting_trees[i], Tree)):
+        #         print( "\t"*int(tree.nodes_depths[i]) +"Noeud N°" + str(i) + " | Parent : " + str(int(tree.nodes_parent[i])) + " | Impureté : " + str(
+        #             tree.nodes_impurities[i]) + " | Groupe : " + str(
+        #             int(tree.nodes_group[i])) + " | Nombre de fils : " + str(
+        #             int(tree.nodes_n_childs[i])) + " | Nombre d'échantillon : " + str(int(tree.nodes_n_node_samples[i])))
+        #
+        #         # clf.tree_ = tree.nodes_splitting_trees[i]
+        #         # plot_tree(clf)
+        #         # plt.show()
+        #     else :
+        #         print("\t"*int(tree.nodes_depths[i]) + "FEUILLE | Noeud N°" + str(i) + " | Parent : " + str(int(tree.nodes_parent[i])) + " | Impureté : " + str(
+        #             tree.nodes_impurities[i]) + " | Groupe : " + str(
+        #             int(tree.nodes_group[i])) + " | Nombre de fils : " + str(
+        #             int(tree.nodes_n_childs[i])) + " | Nombre d'échantillon : " + str(int(tree.nodes_n_node_samples[i])))
+        #
+        # fig, ax = plt.subplots(1, figsize=(16, 9))
+        # # plot_tree(clf, ax=ax[0])
+        #
+        # clf.tree_ = tree.nodes_splitting_trees[0]
+        #
+        # plot_tree(clf)
         # plt.show()
 
     def _CARTTree_2(self):
         df = pd.read_csv('CARTGV/data_Mael.csv', sep=";", index_col=0)
-        datas = load_iris(return_X_y=True, as_frame=True)
+        # datas = load_iris(return_X_y=True, as_frame=True)
 
         train = df.loc[df['Type'] == 'train']
 
-        # X = train.iloc[:, 2:]
-        X = datas[0]
+        X = train.iloc[:, 2:]
+        # X = datas[0]
 
-        # y = train['Y']
-        y = datas[1]
+        y = train['Y']
+        # y = datas[1]
 
         # groups = np.array([[i] for i in range(len(X.columns))])
 
@@ -3157,13 +3307,13 @@ class Cython_R_Comparison(unittest.TestCase):
         start_var = 0
         end_var = 25
 
-        # g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
-        # g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
-        # g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
-        # g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
-        # g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
-        #
-        # groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
+        g1_idx = [col for col in range(len(X.columns)) if '_G1' in X.columns[col]]
+        g2_idx = [col for col in range(len(X.columns)) if '_G2' in X.columns[col]]
+        g3_idx = [col for col in range(len(X.columns)) if '_G3' in X.columns[col]]
+        g4_idx = [col for col in range(len(X.columns)) if '_G4' in X.columns[col]]
+        g5_idx = [col for col in range(len(X.columns)) if '_G5' in X.columns[col]]
+
+        groups = np.array([g1_idx, g2_idx, g3_idx, g4_idx, g5_idx])
 
         X = X.head(sample_size).to_numpy(dtype=np.float32)
 
@@ -3175,7 +3325,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         # groups = np.array([[i] for i in range(len(X[0]))])
         # groups = np.array([np.arange(end_var-start_var)])
-        groups = np.array([np.arange(X.shape[1])])
+        # groups = np.array([np.arange(X.shape[1])])
         len_groups = np.array([len(group) for group in groups])
         print(groups)
         print(len_groups)
@@ -3185,17 +3335,18 @@ class Cython_R_Comparison(unittest.TestCase):
         min_samples_leaf = 1
         min_samples_split = 2
         min_weight_leaf = 0
-        random_state = check_random_state(2547)
+        random_state = None #check_random_state(2547)
         max_depth = 100
-        max_depth_splitting_tree = 1
-        mgroup = 1 #max([len(groups[i]) for i in range(len(groups))])
+        max_depth_splitting_tree = 2
+        mgroup = 3 #max([len(groups[i]) for i in range(len(groups))])
         # mgroup = 5
+        mvar = 2
         # mvar = 5
-        mvar = "root"
         min_impurity_decrease = 0.0
         min_impurity_split = 0.0
         min_impurity_decrease_splitting_tree = 0.0
         min_impurity_split_spltting_tree = 0.0
+        an = 100
 
         if y_np.ndim == 1:
             y_np = np.reshape(y_np, (-1, 1))
@@ -3216,36 +3367,38 @@ class Cython_R_Comparison(unittest.TestCase):
         y_np = y_encoded
 
         n_classes = np.array(n_classes, dtype=np.intp)
+        times = []
+        for i in range(100):
+            idx = np.random.choice(np.arange(len(X)), an, replace=False)
 
-        criterion = CARTGVGini(n_outputs, n_classes)
+            X = X[idx]
+            y_np = y_np[idx]
 
-        splitter = BestCARTGVSplitter(criterion, len(groups),
-                                      min_samples_leaf, min_weight_leaf,
-                                      random_state, max_depth_splitting_tree,
-                                      min_impurity_decrease_splitting_tree,
-                                      min_impurity_split_spltting_tree,
-                                      mvar,
-                                      mgroup)
+            criterion = CARTGVGini(n_outputs, n_classes)
 
-        tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
+            splitter = BestCARTGVSplitter(criterion, len(groups),
+                                          min_samples_leaf, min_weight_leaf,
+                                          random_state, max_depth_splitting_tree,
+                                          min_impurity_decrease_splitting_tree,
+                                          min_impurity_split_spltting_tree,
+                                          mvar,
+                                          mgroup,
+                                          "gini")
 
-        builder = CARTGVTreeBuilder(splitter, min_samples_split,
-                                    min_samples_leaf, min_weight_leaf,
-                                    max_depth, min_impurity_decrease, min_impurity_split)
+            tree = CARTGVTree(len(groups), len_groups, n_classes, n_outputs)
+
+            builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                        min_samples_leaf, min_weight_leaf,
+                                        max_depth, min_impurity_decrease, min_impurity_split)
 
         # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
-        print("####################### TEST CARTTREE 2 ##############################")
-        start = time.time()
-        print(tree)
-        print(X.shape)
-        print(y_np.shape)
-        print(X)
-        print(y_np)
-        print(groups)
-        print(len_groups)
-        builder.test_build(tree, X, y_np, groups, len_groups, None)  # X.to_numpy(dtype=np.float32)
-        end = time.time()
-        print("Time for 1 tree : " + str(end-start))
+        # print("####################### TEST CARTTREE 2 ##############################")
+            start = time.time()
+            builder.test_build(tree, X, y_np, groups, len_groups, None)  # X.to_numpy(dtype=np.float32)
+            end = time.time()
+            times.append(end-start)
+        print("Mean time for tree construction : " + str(np.mean(times)))
+        print("Total time for tree construction : " + str(np.sum(times)))
 
         clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state, max_features="sqrt",
                                      max_leaf_nodes=X.shape[0], min_samples_leaf=min_samples_leaf,
@@ -3304,7 +3457,7 @@ class Cython_R_Comparison(unittest.TestCase):
 
         y = res.iloc[:,-1:] #datas[1]
 
-        sample_size = X.shape[0]
+        sample_size = 5#X.shape[0]
 
         X = X.head(sample_size).to_numpy(dtype=np.float32)
 
@@ -3346,7 +3499,7 @@ class Cython_R_Comparison(unittest.TestCase):
         mgroup = 8  # max([len(groups[i]) for i in range(len(groups))])
         # mgroup = 5
         # mvar = 5
-        mvar = "root"
+        mvar = 8
         min_impurity_decrease = 0.0
         min_impurity_split = 0.0
         min_impurity_decrease_splitting_tree = 0.0
@@ -3373,7 +3526,7 @@ class Cython_R_Comparison(unittest.TestCase):
         n_classes = np.array(n_classes, dtype=np.intp)
         print("N CLASSES ",n_classes)
         times = []
-        for i in range(100):
+        for i in range(1):
             criterion = CARTGVGini(n_outputs, n_classes)
 
             splitter = BestCARTGVSplitter(criterion, len(groups),
@@ -3405,35 +3558,40 @@ class Cython_R_Comparison(unittest.TestCase):
             print("Time for 1 tree : " + str(end - start))
             times.append(end-start)
         print("Mean Time for tree construction : ", np.mean(times))
-
+        print(y_np[0:2])
+        print(classes[0])
+        tree.predict(X[0:2], np.array(y_np[0:2]), np.array(classes[0]))
         clf = DecisionTreeClassifier(max_depth=max_depth, random_state=random_state, max_features="sqrt",
                                      max_leaf_nodes=X.shape[0], min_samples_leaf=min_samples_leaf,
                                      min_samples_split=min_samples_split, min_impurity_decrease=min_impurity_decrease
                                      )
         clf.fit(X, y_np)
 
-        print(tree.node_count)
-        print(np.count_nonzero(tree.nodes_n_childs))  # Number of leaves of CARTGVTree
-        # print(clf.tree_.node_count)
-        # print(clf.get_n_leaves())
-
-        print("Nodes impurities")
-        print(tree.nodes_impurities)
-        print("Nodes parents")
-        print(tree.nodes_parent)
-        # print("Nodes childs")
-        # print(tree.nodes_childs)
-        print("Nodes n childs")
-        print(tree.nodes_n_childs)
-        print("Nodes n samples")
-        print(tree.nodes_n_node_samples)
-        print("Nodes group")
-        print(tree.nodes_group)
-
-        print("Nodes splitting trees")
-        print(tree.nodes_splitting_trees)
-        print(np.where(np.array(tree.nodes_splitting_trees != None)))
-        print(len(np.where(np.array(tree.nodes_splitting_trees != None))[0]))
+        print("SKLEARN")
+        print(clf.predict(X[0:2]))
+        #
+        # print(tree.node_count)
+        # print(np.count_nonzero(tree.nodes_n_childs))  # Number of leaves of CARTGVTree
+        # # print(clf.tree_.node_count)
+        # # print(clf.get_n_leaves())
+        #
+        # print("Nodes impurities")
+        # print(tree.nodes_impurities)
+        # print("Nodes parents")
+        # print(tree.nodes_parent)
+        # # print("Nodes childs")
+        # # print(tree.nodes_childs)
+        # print("Nodes n childs")
+        # print(tree.nodes_n_childs)
+        # print("Nodes n samples")
+        # print(tree.nodes_n_node_samples)
+        # print("Nodes group")
+        # print(tree.nodes_group)
+        #
+        # print("Nodes splitting trees")
+        # print(tree.nodes_splitting_trees)
+        # print(np.where(np.array(tree.nodes_splitting_trees != None)))
+        # print(len(np.where(np.array(tree.nodes_splitting_trees != None))[0]))
 
         # fig, ax = plt.subplots(2, figsize=(16, 9))
         # plot_tree(clf, ax=ax[0])
@@ -3452,26 +3610,53 @@ class Cython_R_Comparison(unittest.TestCase):
 
     def test_regression(self):
         datas = fetch_california_housing(return_X_y=True, as_frame=True)
-        df = datas[0].join(datas[1])
+        # df = datas[0].join(datas[1])
+
+        X = datas[0]
+        y = datas[1]
+
+        # print(X)
+        # print(y)
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state = 42)
+
+        print(X_train.columns)
+
+        # print(X_train)
+        # print(y_train)
+
         # res = df[(df["target"] == 1) | (df["target"] == 6) | (df["target"] == 0) |
         #          (df["target"] == 3) | (df["target"] == 2) | (df["target"] == 4) |
         #          (df["target"] == 5) | (df["target"] == 7) | (df["target"] == 8) |
         #          (df["target"] == 9)]
 
-        X = datas[0]
+        # X_train = pd.read_csv('../data/live_fuel_moisture_content_train_data.csv', sep=';')
+        # y_train = pd.read_csv('../data/live_fuel_moisture_content_train_responses.csv', sep=';')
+        # X_test = pd.read_csv('../data/live_fuel_moisture_content_test_data.csv', sep=';')
+        # y_test = pd.read_csv('../data/live_fuel_moisture_content_test_responses.csv', sep=';')
 
-        y = datas[1]
+        # maxm = max(y_train) if max(y_train) > max(y_test) else max(y_test)
 
-        sample_size = X.shape[0]
+        # y_train = pd.DataFrame(np.array(y_train).reshape((y_train.shape[0], 1)))
+        # y_test = pd.DataFrame(np.array(y_test).reshape((y_test.shape[0], 1)))
 
-        X = X.head(sample_size).to_numpy(dtype=np.float32)
+        # X = datas[0]
+        #
+        # y = datas[1]
 
-        y_np = y.head(sample_size).to_numpy(dtype=np.intp)
+        sample_size = X_train.shape[0]
 
-        print(X)
-        print(y_np)
+        # X_train = X_train.head(sample_size).to_numpy(dtype=np.float32)
 
-        groups = np.array([np.arange(X.shape[1])])
+        # y_train = y_train.head(sample_size).to_numpy(dtype=np.intp)
+
+        print(X_train.shape)
+        print(y_train.shape)
+
+        # groups = np.array([[j for j in range(i * 365, i * 365 + 365)] for i in range(7)])
+        # len_groups = np.array([len(group) for group in groups])
+
+        # groups = np.array([np.arange(X.shape[1])])
         # groups = np.array([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         #                     21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
         #                     41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
@@ -3488,98 +3673,135 @@ class Cython_R_Comparison(unittest.TestCase):
         # groups = np.ndarray(shape=(8,8), buffer=np.array([[0,1,2,3,4,5,6,7],[8,9,10,11,12,13,14,15],[16,17,18,19,20,21,22,23],
         #                   [24,25,26,27,28,29,30,31],[32,33,34,35,36,37,38,39],[40,41,42,43,44,45,46,47],
         #                   [48,49,50,51,52,53,54,55],[56,57,58,59,60,61,62,63]]))
+        for j in range(1):
+            random_groups = [np.random.choice(8,np.random.randint(1,5), replace=False) for i in range(np.random.randint(3,5))]
+            print(random_groups)
+            groups= np.array(random_groups,dtype=object)
+            # groups = np.array([[2,3,4],[6,7],[0],[4,7,5],[1,3]], dtype=object)
 
-        len_groups = np.array([len(group) for group in groups])
-        print(groups)
-        print(len_groups)
+            len_groups = np.array([len(group) for group in groups])
+            groups_v2 = []
+            for group_idx in range(len(groups)):
+                if len(groups[group_idx]) < max(len_groups):
+                    groups_v2.append(
+                        np.pad(groups[group_idx], (0, max(len_groups) - len(groups[group_idx])), constant_values=-1))
+                else:
+                    groups_v2.append(groups[group_idx])
 
-        n_samples, n_features = X.shape
-        y_np = np.atleast_1d(y_np)
-        min_samples_leaf = 1
-        min_samples_split = 2
-        min_weight_leaf = 0
-        random_state = check_random_state(35166)  # 2547
-        max_depth = 100
-        max_depth_splitting_tree = 1
-        mgroup = 1  # max([len(groups[i]) for i in range(len(groups))])
-        # mgroup = 5
-        # mvar = 5
-        mvar = "third"
-        min_impurity_decrease = 0.0
-        min_impurity_split = 0.0
-        min_impurity_decrease_splitting_tree = 0.0
-        min_impurity_split_spltting_tree = 0.0
+            groups = np.array(groups_v2, dtype=int)
 
-        if y_np.ndim == 1:
-            y_np = np.reshape(y_np, (-1, 1))
+            # len_groups = np.array([len(group) for group in groups])
+            print(groups)
+            print(len_groups)
 
-        n_outputs = y_np.shape[1]
+            n_samples, n_features = X_train.shape
+            y_train = np.atleast_1d(y_train)
+            min_samples_leaf = 5
+            min_samples_split = 2
+            min_weight_leaf = 0
+            random_state = None #check_random_state(35166)  # 2547
+            max_depth = None
+            max_depth_splitting_tree = 2
+            # mgroup = 1  # max([len(groups[i]) for i in range(len(groups))])
+            mgroup = len(groups)#len(groups)/3
+            mvar = len_groups#"third"
+            # mvar = "third"
+            min_impurity_decrease = 0.0
+            min_impurity_split = 0.0
+            min_impurity_decrease_splitting_tree = 0.0
+            min_impurity_split_spltting_tree = 0.0
+            an = X_train.shape[0]
 
-        times = []
-        for i in range(1):
-            criterion = CARTGVMSE(n_outputs, X.shape[0])
+            if y_train.ndim == 1:
+                y_train = np.reshape(y_train, (-1, 1))
 
-            splitter = BestCARTGVSplitter(criterion, len(groups),
-                                          min_samples_leaf, min_weight_leaf,
-                                          random_state, max_depth_splitting_tree,
-                                          min_impurity_decrease_splitting_tree,
-                                          min_impurity_split_spltting_tree,
-                                          mvar,
-                                          mgroup)
+            n_outputs = y_train.shape[1]
 
-            tree = CARTGVTree(len(groups), len_groups, np.array([1] * n_outputs, dtype=np.intp), n_outputs)
+            times = []
+            for i in range(1):
+                idx = np.random.choice(np.arange(len(X_train)), an, replace=False)
 
-            builder = CARTGVTreeBuilder(splitter, min_samples_split,
-                                        min_samples_leaf, min_weight_leaf,
-                                        max_depth, min_impurity_decrease, min_impurity_split)
+                X_train = np.array(X_train)[idx]
+                y_train = np.array(y_train)[idx]
 
-            print("####################### TEST REGRESSION ##############################")
-            print("TEST N°" + str(i))
-            start = time.time()
-            # print(tree)
-            # print(X.shape)
-            # print(y_np.shape)
-            # print(X)
-            # print(y_np)
-            # print(groups)
-            # print(len_groups)
-            builder.build(tree, X, y_np, groups, len_groups, None, None)  # X.to_numpy(dtype=np.float32)
-            end = time.time()
-            print("Time for 1 tree : " + str(end - start))
-            times.append(end - start)
-        print("Mean Time for tree construction : ", np.mean(times))
+                # X_train = np.array(X_train[:an], dtype=np.float32)
+                # y_train = np.array(y_train[:an], dtype=np.float32)
 
-        clf = DecisionTreeRegressor(max_depth=max_depth, random_state=random_state, max_features=None,
-                                     max_leaf_nodes=None, min_samples_leaf=min_samples_leaf,
-                                     min_samples_split=min_samples_split, min_impurity_decrease=min_impurity_decrease
-                                     )
+                #X_train = np.array(X_train, dtype=np.float32)
+
+                criterion = CARTGVMSE(n_outputs, X_train.shape[0])
+
+                splitter = BestCARTGVSplitter(criterion, len(groups),
+                                              min_samples_leaf, min_weight_leaf,
+                                              random_state, max_depth_splitting_tree,
+                                              min_impurity_decrease_splitting_tree,
+                                              min_impurity_split_spltting_tree,
+                                              mvar,
+                                              mgroup,
+                                              "mse")
+
+                tree = CARTGVTree(len(groups), len_groups, groups, X.shape[1], np.array([1] * n_outputs, dtype=np.intp), n_outputs)
+
+                builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                            min_samples_leaf, min_weight_leaf,
+                                            max_depth, min_impurity_decrease, min_impurity_split)
+
+                # print("####################### TEST REGRESSION ##############################")
+                start = time.time()
+                builder.build(tree, X_train, y_train, groups, len_groups, "root", None)  # X.to_numpy(dtype=np.float32)
+                end = time.time()
+                times.append(end - start)
+            print("Mean Time for tree construction : ", np.mean(times))
+            print("Total time for tree construction : ", np.sum(times))
+
+            clf = DecisionTreeRegressor()
+            clf.tree_ = tree.nodes_splitting_trees[0]
+            fig, ax = plt.subplots(1,figsize=(16,9))
+            plot_tree(clf,ax=ax)
+            plt.show()
+
+            # pred = tree.predict(np.array(X_test,dtype=np.float32))
+            # residual = np.square(y_test.to_numpy().reshape((y_test.shape[0],1)) - pred).sum()
+            # sumsquare = np.square(y_test.to_numpy().reshape((y_test.shape[0],1)) - np.mean(y_test.to_numpy().reshape((y_test.shape[0],1)))).sum()
+            # R2 = 1 - residual/sumsquare
+            # print(R2)
+
+        clf = DecisionTreeRegressor()
         start = time.time()
-        clf.fit(X, y_np)
+        clf.fit(X_train, y_train)
+        print(clf.score(X_test,y_test))
         end = time.time()
-        print("Time for Scikit learn : " + str(end - start))
+        print("Time for Scikit learn 1 tree: " + str(end - start))
 
-        print(tree.node_count)
-        print(np.count_nonzero(tree.nodes_n_childs))  # Number of leaves of CARTGVTree
-        # print(clf.tree_.node_count)
-        # print(clf.get_n_leaves())
-
-        print("Nodes impurities")
-        print(tree.nodes_impurities)
-        print("Nodes parents")
-        print(tree.nodes_parent)
-        # print("Nodes childs")
-        # print(tree.nodes_childs)
-        print("Nodes n childs")
-        print(tree.nodes_n_childs)
-        print("Nodes n samples")
-        print(tree.nodes_n_node_samples)
-        print("Nodes group")
-        print(tree.nodes_group)
-
-        print("Nodes splitting trees")
-        print(tree.nodes_splitting_trees)
-        print(np.where(np.array(tree.nodes_splitting_trees != None)))
-        print(len(np.where(np.array(tree.nodes_splitting_trees != None))[0]))
+        # rf = RandomForestRegressor(n_estimators=500)
+        # start = time.time()
+        # rf.fit(X_train, y_train)
+        # print(rf.score(X_test, y_test))
+        # end = time.time()
+        # print("Time for Scikit learn forest: " + str(end - start))
+        #
+        # print(tree.node_count)
+        # print(np.count_nonzero(tree.nodes_n_childs))  # Number of leaves of CARTGVTree
+        # # print(clf.tree_.node_count)
+        # # print(clf.get_n_leaves())
+        #
+        # print("Nodes impurities")
+        # print(tree.nodes_impurities)
+        # print("Nodes parents")
+        # print(tree.nodes_parent)
+        # # print("Nodes childs")
+        # # print(tree.nodes_childs)
+        # print("Nodes n childs")
+        # print(tree.nodes_n_childs)
+        # print("Nodes n samples")
+        # print(tree.nodes_n_node_samples)
+        # print("Nodes group")
+        # print(tree.nodes_group)
+        #
+        # print("Nodes splitting trees")
+        # print(tree.nodes_splitting_trees)
+        # print(np.where(np.array(tree.nodes_splitting_trees != None)))
+        # print(len(np.where(np.array(tree.nodes_splitting_trees != None))[0]))
 
         # graphdata = export_graphviz(clf,filled=True, rounded=True)
         # 
@@ -3594,12 +3816,429 @@ class Cython_R_Comparison(unittest.TestCase):
         # plot_tree(clf, ax=ax[1])
         # plt.show()
 
-        for i in range(len(tree.nodes_splitting_trees)):
-            if tree.nodes_splitting_trees[i] != None:
-                clf.tree_ = tree.nodes_splitting_trees[i]
-                fig, ax = plt.subplots(1, figsize=(16, 9))
-                plot_tree(clf, ax=ax)
-                plt.show()
+        # for i in range(len(tree.nodes_splitting_trees)):
+        #     if tree.nodes_splitting_trees[i] != None:
+        #         clf.tree_ = tree.nodes_splitting_trees[i]
+        #         fig, ax = plt.subplots(1, figsize=(16, 9))
+        #         plot_tree(clf, ax=ax)
+        #         plt.show()
+
+    def _exemple_regression_CART_RF(self):
+
+        # train_live_fuel = pd.read_table('CARTGV/LiveFuelMoistureContent_TRAIN.ts', sep=",")
+        # print(train_live_fuel)
+        train_file = 'CARTGV/LiveFuelMoistureContent_TRAIN.ts'
+        test_file = 'CARTGV/LiveFuelMoistureContent_TEST.ts'
+        transformer_name = "none"
+        norm = "none"
+
+        # transformer parameters
+        flatten = False  # if flatten, do not transform per dimension
+        n_components = 10  # number of principal components
+        n_basis = 10  # number of basis functions
+        bspline_order = 4  # bspline order
+
+        # X_train, y_train = load_from_tsfile_to_dataframe(train_file, return_separate_X_and_y=True, replace_missing_vals_with='NaN')
+        # X_test, y_test = load_from_tsfile_to_dataframe(test_file, return_separate_X_and_y=True, replace_missing_vals_with='NaN')
+        #
+        # X = np.zeros((X_train.shape[0], X_train.shape[1]*365))
+        # for i in range(X_train.shape[0]):
+        #     for j in range(X_train.shape[1]):
+        #         for k in range(365):
+        #             X[i,j*365+k] = X_train.iloc[i,j][k]
+        #
+        # print(X)
+        # print(X.shape)
+        # print(y_train.shape)
+        # # column_names = ["B1", "B2", "B3", "B4", "B5", "B6", "B7"]
+        # df = pd.DataFrame(data=X)
+        # df.to_csv("live_fuel_moisture_content_train_data.csv", sep=';', index=None)
+        # df = pd.DataFrame(data=y_train)
+        # df.to_csv("live_fuel_moisture_content_train_responses.csv", sep=";", index=None)
+        #
+        # x_test = np.zeros((X_test.shape[0], X_test.shape[1] * 365))
+        # for i in range(X_test.shape[0]):
+        #     for j in range(X_test.shape[1]):
+        #         for k in range(365):
+        #             x_test[i, j * 365 + k] = X_test.iloc[i, j][k]
+        #
+        # # column_names = ["B1", "B2", "B3", "B4", "B5", "B6", "B7"]
+        # df = pd.DataFrame(data=x_test)
+        # df.to_csv("live_fuel_moisture_content_test_data.csv", sep=';', index=None)
+        # df = pd.DataFrame(data=y_test)
+        # df.to_csv("live_fuel_moisture_content_test_responses.csv", sep=";", index=None)
+
+        # print(X_train.shape)
+        # print(X_test.shape)
+        # print(y_train.shape)
+        # print(y_test.shape)
+        #
+        # min_len = np.inf
+        # for i in range(len(X_train)):
+        #     x = X_train.iloc[i, :]
+        #     all_len = [len(y) for y in x]
+        #     min_len = min(min(all_len), min_len)
+        # for i in range(len(X_test)):
+        #     x = X_test.iloc[i, :]
+        #     all_len = [len(y) for y in x]
+        #     min_len = min(min(all_len), min_len)
+        #
+        # x_train = process_data(X_train, normalise=norm, min_len=min_len)
+        # x_test = process_data(X_test, normalise=norm, min_len=min_len)
+        #
+        # print(x_train.shape)
+        # print(x_test.shape)
+        # print(y_train.shape)
+        # print(y_test.shape)
+        #
+        # # transform the data if needed
+        # if transformer_name != "none":
+        #     if transformer_name == "pca":
+        #         kwargs = {"n_components": n_components}
+        #     elif transformer_name == "fpca":
+        #         kwargs = {"n_components": n_components}
+        #     elif transformer_name == "fpca_bspline":
+        #         kwargs = {"n_components": n_components,
+        #                   "n_basis": n_basis,
+        #                   "order": bspline_order,
+        #                   "smooth": "bspline"}
+        #     else:
+        #         kwargs = {}
+        #     x_train, transformer = fit_transformer(transformer_name, x_train, flatten=flatten, **kwargs)
+        #     x_test = transformer.transform(x_test)
+        #
+        # print(x_train.shape)
+        # print(x_test.shape)
+        # print(y_train.shape)
+        # print(y_test.shape)
+        #
+        # X_train = x_train.reshape((3493,365*7))
+        # print(X_train.shape)
+
+        # X_train, y_train = load_from_tsfile_to_dataframe('CARTGV/LiveFuelMoistureContent_TRAIN.ts',
+        #                                                  return_separate_X_and_y=True,
+        #                                                  replace_missing_vals_with='NaN')
+        # X_test, y_test = load_from_tsfile_to_dataframe('CARTGV/LiveFuelMoistureContent_TEST.ts',
+        #                                                return_separate_X_and_y=True,
+        #                                                replace_missing_vals_with='NaN')
+        #
+        # print(X_train)
+        #
+        X_train = pd.read_csv('CARTGV/live_fuel_moisture_content_train_data.csv', sep=';')
+        y_train = pd.read_csv('CARTGV/live_fuel_moisture_content_train_responses.csv', sep=';')
+        X_test = pd.read_csv('CARTGV/live_fuel_moisture_content_test_data.csv', sep=';')
+        y_test = pd.read_csv('CARTGV/live_fuel_moisture_content_test_responses.csv', sep=';')
+
+        # plt.hist(y_train,
+        #          y_train.shape[0], label="y_train")
+        # plt.hist(y_test,y_test.shape[0],label="y_test")
+        # plt.legend(loc="upper right")
+        # plt.show()
+        #
+        # print(X)
+        #
+        # # maxm = max(y_train) if max(y_train) > max(y_test) else max(y_test)
+        # # print(maxm)
+        #
+        # y = pd.DataFrame(y_train.reshape((y_train.shape[0],1)))
+        # y_test = pd.DataFrame(y_test.reshape((y_test.shape[0], 1)))
+        #
+        # # y = pd.DataFrame((y_train.reshape((y_train.shape[0], 1))/maxm)*100)
+        # # y_test = pd.DataFrame((y_test.reshape((y_test.shape[0], 1))/maxm)*100)
+        #
+        # # groups = np.array([[j for j in range(i * 365, i * 365 + 365)] for i in range(7)])
+        # # len_groups = np.array([len(group) for group in groups])
+        #
+        # sample_size = X.shape[0]
+        # random_state = 1442
+        #
+        # # X = X.head(sample_size)
+        #
+        # # y = y.head(sample_size)
+        #
+        # print(X)
+        # print(X.shape)
+        # print("######################")
+        # print(y)
+        # print(y.shape)
+        # print("######################")
+        # # print(X_train)
+        # # print(X_train.shape)
+        # # print("######################")
+        # print(X_test)
+        # print(X_test.shape)
+        # print("######################")
+        # print(y_test)
+        # print(y_test.shape)
+        # score_values = []
+        # # for i in range(1,500):
+        # print("Start Regression Scikit-learn")
+        # clf = DecisionTreeRegressor() #=300, min_samples_split=350
+        # start = time.time()
+        # clf.fit(X_train.to_numpy(), y_train.to_numpy().reshape(y_train.shape[0]))
+        # end = time.time()
+        # print("Time Scikit-learn Regression : ", end-start)
+        # path = clf.cost_complexity_pruning_path(X_train, y_train)
+        # ccp_alphas, impurities = path.ccp_alphas, path.impurities
+        # print("Start SKLEARN")
+        # start = time.time()
+        # clfs = []
+        # for ccp_alpha in ccp_alphas:
+        #     clf = DecisionTreeRegressor(random_state=0, ccp_alpha=ccp_alpha)
+        #     clf.fit(X_train.to_numpy(), y_train.to_numpy().reshape(y_train.shape[0]))
+        #     clfs.append(clf)
+        # print("Number of nodes in the last tree is: {} with ccp_alpha: {}".format(
+        #     clfs[-1].tree_.node_count, ccp_alphas[-1]))
+
+        # print(clf.tree_.n_node_samples)
+        # print(clf.tree_.value)
+        # print(clf.tree_.feature)
+        # print(clf.tree_.threshold)
+        # print(clf.get_n_leaves())
+        # print(clf.get_params())
+        # end = time.time()
+        # print("Sklearn end time : " + str(end - start))
+        # score_values.append(clf.score(X_test,y_test))
+        # plt.plot(score_values)
+        # plt.show()
+        # n_nodes = clf.tree_.node_count
+        # children_left = clf.tree_.children_left
+        # children_right = clf.tree_.children_right
+        # feature = clf.tree_.feature
+        # threshold = clf.tree_.threshold
+        # impurity = clf.tree_.impurity
+        # n_nodes_samples = clf.tree_.n_node_samples
+        #
+        # node_depth = np.zeros(shape=n_nodes, dtype=np.int64)
+        # is_leaves = np.zeros(shape=n_nodes, dtype=bool)
+        # stack = [(0, 0)]  # start with the root node id (0) and its depth (0)
+        # while len(stack) > 0:
+        #     # `pop` ensures each node is only visited once
+        #     node_id, depth = stack.pop()
+        #     node_depth[node_id] = depth
+        #
+        #     # If the left and right child of a node is not the same we have a split
+        #     # node
+        #     is_split_node = children_left[node_id] != children_right[node_id]
+        #     # If a split node, append left and right children and depth to `stack`
+        #     # so we can loop through them
+        #     if is_split_node:
+        #         stack.append((children_left[node_id], depth + 1))
+        #         stack.append((children_right[node_id], depth + 1))
+        #     else:
+        #         is_leaves[node_id] = True
+        #
+        # print("The binary tree structure has {n} nodes and has "
+        #       "the following tree structure:\n".format(n=n_nodes))
+        # for i in range(n_nodes):
+        #     if is_leaves[i]:
+        #         print("{space}node={node} is a leaf node with an mse value of {impurity} and with {node_samples} samples.".format(
+        #             space=node_depth[i] * "\t", node=i, impurity=impurity[i], node_samples=n_nodes_samples[i]))
+        #     else:
+        #         print("{space}node={node} is a split node with mse value of {impurity} and with {node_samples} samples: "
+        #               "go to node {left} if X[:, {feature}] <= {threshold} "
+        #               "else to node {right}.".format(
+        #             space=node_depth[i] * "\t",
+        #             node=i,
+        #             impurity=impurity[i],
+        #             node_samples = n_nodes_samples[i],
+        #             left=children_left[i],
+        #             feature=feature[i],
+        #             threshold=threshold[i],
+        #             right=children_right[i]))
+        #
+        # print(np.mean(clf.tree_.impurity))
+        # # print(clf.tree_.n_node_samples)
+        # pred = clf.predict(X_test)
+        # print(clf.score(X_test.to_numpy(), y_test.to_numpy()))
+        # print(r2_score(y_test.to_numpy(), pred.reshape((y_test.shape[0],1))))
+        # print(mean_squared_error(y_test.to_numpy(), pred))
+        # print(pd.concat([pd.DataFrame(pred), pd.DataFrame(y_test)]))
+        # print(pred)
+        # print(y_test)
+        # print(np.subtract(y_test.to_numpy().reshape(y_test.shape[0]), pred))
+
+        # print(accuracy_score(y_test,pred, normalize=True))
+
+        # fig, ax = plt.subplots(1, figsize=(19, 12))
+        # plot_tree(clf)
+        # plt.show()
+        #
+        # rf = RandomForestClassifier(500,"gini",random_state=random_state)
+        rf = RandomForestRegressor(500, criterion="mse")
+        print("Start SKLEARN RF")
+        start = time.time()
+        rf.fit(X_train, y_train)
+        end = time.time()
+        print("Sklearn end time : " + str(end - start))
+        # pred = rf.predict(X_test)
+        # # print(accuracy_score(y_test, pred, normalize=True))
+        print(rf.score(X_test, y_test))
+        # print(r2_score(y_test, pred))
+        # print(mean_squared_error(y_test,pred))
+
+    def _imagerie_satelitte(self):
+        df = pd.read_csv('../data/T30UVU_mean.csv')
+        df = df[(df["code_group"] == 1) | (df["code_group"] == 3)]
+
+        # X = df.loc[:, (df.columns != 'code_group') | (df.columns != "id_parcel") | (df.columns != "code_cultu") | (df.columns != "area") | (df.columns != "originfid")]
+        X = df.drop(['code_group', "id_parcel", "code_cultu", "area", "originfid"], axis=1)
+
+        y = df["code_group"]
+
+        X, X_test, y, y_test = train_test_split(X.to_numpy(dtype=np.float32), y.to_numpy(dtype=np.float32), test_size = 0.33, random_state=42)
+
+        # band_per_date = np.array([[j for j in range(i * 10, i * 10 + 10)] for i in range(58)])
+        groups = np.array([[j for j in range(i * 10, i * 10 + 10)] for i in range(58)])
+        # groups = np.array([[i] for i in range(580)])
+        len_groups = np.array([len(group) for group in groups])
+
+        print(X.shape)
+        print(X_test.shape)
+
+        y = np.atleast_1d(y)
+        min_samples_leaf = 1
+        min_samples_split = 2
+        min_weight_leaf = 0
+        random_state = None  # check_random_state(2547)
+        max_depth = None
+        max_depth_splitting_tree = 2
+        mgroup = len(groups)/3 #len(groups)
+        mvar =  "root" #len_groups
+        min_impurity_decrease = 0.0
+        min_impurity_split = 0.0
+        min_impurity_decrease_splitting_tree = 0.0
+        min_impurity_split_spltting_tree = 0.0
+        an = X.shape[0]
+        print(an)
+
+        if y.ndim == 1:
+            y = np.reshape(y, (-1, 1))
+
+        n_outputs = y.shape[1]
+
+        y = np.copy(y)
+
+        classes = []
+        n_classes = []
+
+        y_encoded = np.zeros(y.shape, dtype=int)
+        for k in range(n_outputs):
+            classes_k, y_encoded[:, k] = np.unique(y[:, k], return_inverse=True)
+            classes.append(classes_k)
+            n_classes.append(classes_k.shape[0])
+
+        y = y_encoded
+
+        n_classes = np.array(n_classes, dtype=np.intp)
+        nbtrees = 20
+        trees = []
+        times = []
+        print("START")
+        for i in range(nbtrees): #20 arbres sans bootstrap et full var Total time 8539.165985584259 secondes, Mean Time 426.95829927921295 secondes
+            idx = np.random.choice(np.arange(len(X)), an, replace=True)
+
+            X = X[idx]
+            y = y[idx]
+
+            criterion = CARTGVGini(n_outputs, n_classes)
+
+            splitter = BestCARTGVSplitter(criterion, len(groups),
+                                          min_samples_leaf, min_weight_leaf,
+                                          random_state, max_depth_splitting_tree,
+                                          min_impurity_decrease_splitting_tree,
+                                          min_impurity_split_spltting_tree,
+                                          mvar,
+                                          mgroup,
+                                          "gini")
+
+            tree = CARTGVTree(len(groups), len_groups, groups, X.shape[1], n_classes, n_outputs)
+
+            builder = CARTGVTreeBuilder(splitter, min_samples_split,
+                                        min_samples_leaf, min_weight_leaf,
+                                        max_depth, min_impurity_decrease, min_impurity_split)
+
+            # builder.build(tree, X.to_numpy(dtype=np.float32), y, groups, None) #X.to_numpy(dtype=np.float32)
+            # print("####################### TEST CARTTREE 2 ##############################")
+            start = time.time()
+            builder.test_build(tree, X, y, groups, len_groups, "root")  # X.to_numpy(dtype=np.float32)
+            end = time.time()
+            trees.append(tree)
+            times.append(end - start)
+            # print(tree.node_count)
+        print("Mean time for tree construction : " + str(np.mean(times)))
+        print("Total time for tree construction : " + str(np.sum(times)))
+
+        y_test = np.atleast_1d(y_test)
+
+        if y_test.ndim == 1:
+            y_test = np.reshape(y_test, (-1, 1))
+
+        y_test = np.copy(y_test)
+
+        y_encoded = np.zeros(y_test.shape, dtype=int)
+        for k in range(n_outputs):
+            classes_k, y_encoded[:, k] = np.unique(y_test[:, k], return_inverse=True)
+
+        y_test = y_encoded
+        classes = np.arange(0, 9)
+
+        rf_preds = []
+        start = time.time()
+        preds = []
+        for i in range(nbtrees):
+            preds.append(np.argmax(trees[i].predict(X_test), axis=1))
+
+        stacked = np.stack(preds, axis=-1)
+        for i in range(X_test.shape[0]):
+            rf_preds.append(np.bincount(stacked[i]).argmax())
+
+        end = time.time()
+        print("Temps predict : " + str(end - start))
+        print("Taux de bonne classification de la forêt : " + str(
+            (X_test.shape[0] - np.count_nonzero(rf_preds - y_test.reshape(y_test.shape[0]))) / X_test.shape[0]))
+
+        start = time.time()
+        clf = DecisionTreeClassifier(random_state=random_state)
+        clf.fit(X, y)
+
+        end = time.time()
+        print("Sklearn end time tree construction : " + str(end - start))
+        print("Score tree Scikit-learn : ", clf.score(X_test, y_test))
+
+        rf = RandomForestClassifier(n_estimators=nbtrees)
+        start = time.time()
+        rf.fit(X, y.ravel())
+        end = time.time()
+        print("Time for Scikit learn forest construction : ", end - start)
+        print("Score forêt Scikit-learn : ", rf.score(X_test, y_test))
+
+    def _groups(self):
+        X, y = load_iris(return_X_y=True, as_frame=True)
+        X, X_test, y, y_test = train_test_split(X.to_numpy(), y.to_numpy(), test_size=0.33, random_state=42)
+
+        clf = DecisionTreeRegressor()
+        clf.fit(X[:,:2],X[:,-1])
+        print(clf.score(X_test[:,:2],X_test[:,-1]))
+
+        # band_per_date = np.array([[j for j in range(i * 10, i * 10 + 10)] for i in range(58)])
+        # date_per_band = np.array([[j * 10 + i for j in range(58)] for i in range(10)])
+        # df = pd.read_csv('CARTGV/T30UVU_mean.csv')
+
+
+        # X = df.loc[:, (df.columns != 'code_group') | (df.columns != "id_parcel") | (df.columns != "code_cultu") | (
+        #             df.columns != "area") | (df.columns != "originfid")]
+        #
+        # X = df.drop(['code_group',"id_parcel","code_cultu","area","originfid"], axis=1)
+        #
+        # print(X.head(10))
+        # print(df.head(10))
+        # print(band_per_date)
+        # print(date_per_band.shape)
+        # print(np.array([band_per_date,date_per_band]).shape)
+        # print(date_per_band)
+        # concat = np.concatenate(band_per_date,date_per_band)
+        # print(concat)
 
 
 if __name__ == '__main__':

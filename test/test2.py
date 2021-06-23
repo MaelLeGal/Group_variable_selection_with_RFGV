@@ -5,9 +5,9 @@ import pickle as pickle
 import sys
 print("Start import")
 
-from CARTGV import CARTGVSplitter
-from CARTGV import CARTGVGini
-from CARTGV import CARTGVTree, CARTGVTreeBuilder
+from CARTGVCriterion import CARTGVGini
+from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
+from CARTGVSplitter import CARTGVSplitter
 
 from sklearn.utils.validation import check_random_state
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor

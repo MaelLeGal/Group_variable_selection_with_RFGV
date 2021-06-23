@@ -24,9 +24,9 @@ from sklearn.utils.multiclass import check_classification_targets
 from sklearn.utils.validation import check_is_fitted
 from sklearn.utils.validation import _deprecate_positional_args
 
-from CARTGV import CARTGVTree, CARTGVTreeBuilder
-from CARTGV import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
-from CARTGV import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
+from CARTGVCriterion import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
+from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
+from CARTGVSplitter import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
 
 from sklearn.tree import _tree, _splitter, _criterion
 
