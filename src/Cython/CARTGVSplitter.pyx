@@ -274,8 +274,8 @@ cdef class CARTGVSplitter():
                   const DOUBLE_t[:, ::1] y,
                   DOUBLE_t* sample_weight, object groups, np.ndarray len_groups) except -1:
 
-#        self.rand_r_state = self.random_state.randint(0, RAND_R_MAX) #TODO remettre l'aléatoire
-        self.rand_r_state = 2547
+        self.rand_r_state = self.random_state.randint(0, RAND_R_MAX)
+#        self.rand_r_state = 2547
 
         cdef SIZE_t n_samples, n_features
         n_samples, n_features = X.shape
@@ -336,6 +336,9 @@ cdef class CARTGVSplitter():
 
         if self.mgroup > len(groups):
             raise ValueError("The mgroup value : " + str(self.mgroup) + " is bigger than the number of groups : " + str(len(groups)))
+
+        if self.mgroup <= 0:
+            raise ValueError("The mgroup value : " + str(self.mgroup) + " is lower than 0, need 1 minimum")
 
         return 0
 
@@ -459,7 +462,6 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         cdef SIZE_t i
         cdef SIZE_t j
         cdef SIZE_t incr = 0
-
         Xf = np.empty((end-start,len_group)) # Récupère la shape correcte des données
         for i in range(start,end):
               for j in range(len_group):
@@ -501,7 +503,8 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         cdef SIZE_t max_depth = self.max_depth
         cdef double min_impurity_decrease = self.min_impurity_decrease
         cdef double min_impurity_split = self.min_impurity_split
-        cdef object random_state = check_random_state(self.random_state)
+        cdef object random_state = self.random_state
+#        random_state = check_random_state(2547)
 
         cdef Criterion criterion
         #TODO find a better way to know if we are in classif or reg
@@ -530,6 +533,11 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
     cdef int splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
 
         self.splitting_tree_builder.build(self.splitting_tree, Xf, y)
+#        print(self.splitting_tree.feature)
+#        clf = DecisionTreeClassifier()
+#        clf.tree_ = self.splitting_tree
+#        plot_tree(clf)
+#        plt.show()
 
         return 0
 
@@ -628,7 +636,7 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
 
         while(n_visited_grouped_features < mgroup):
 
-            f_j = np.random.choice(np.setdiff1d(groups_id,groups_taken),1)[0]
+            f_j = self.random_state.choice(np.setdiff1d(groups_id,groups_taken),1)[0]
 
             groups_taken[n_visited_grouped_features] = f_j
 

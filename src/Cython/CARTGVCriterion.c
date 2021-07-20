@@ -992,7 +992,7 @@ typedef struct {
 } __Pyx_BufFmt_Context;
 
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":690
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":690
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -1001,7 +1001,7 @@ typedef struct {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":691
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":691
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -1010,7 +1010,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":692
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":692
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -1019,7 +1019,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":693
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":693
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -1028,7 +1028,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":697
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":697
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -1037,7 +1037,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":698
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":698
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -1046,7 +1046,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":699
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":699
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -1055,7 +1055,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":700
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":700
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -1064,7 +1064,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":704
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":704
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -1073,7 +1073,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":705
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":705
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -1082,7 +1082,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":714
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":714
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -1091,7 +1091,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":715
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":715
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -1100,7 +1100,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":716
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":716
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1109,7 +1109,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":718
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":718
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1118,7 +1118,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":719
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":719
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1127,7 +1127,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":720
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":720
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1136,7 +1136,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":722
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":722
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1145,7 +1145,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":723
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":723
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1154,7 +1154,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":725
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":725
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1163,7 +1163,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":726
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":726
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1172,7 +1172,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":727
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":727
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1353,7 +1353,7 @@ struct __pyx_MemviewEnum_obj;
 struct __pyx_memoryview_obj;
 struct __pyx_memoryviewslice_obj;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":729
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":729
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1362,7 +1362,7 @@ struct __pyx_memoryviewslice_obj;
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":730
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":730
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1371,7 +1371,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":731
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":731
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1380,7 +1380,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":733
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":733
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1897,7 +1897,7 @@ struct __pyx_obj_15CARTGVCriterion_CARTGVRegressionCriterion {
 };
 
 
-/* "CARTGVCriterion.pyx":492
+/* "CARTGVCriterion.pyx":497
  *         pass
  * 
  * cdef class CARTGVGini(CARTGVClassificationCriterion):             # <<<<<<<<<<<<<<
@@ -1909,7 +1909,7 @@ struct __pyx_obj_15CARTGVCriterion_CARTGVGini {
 };
 
 
-/* "CARTGVCriterion.pyx":741
+/* "CARTGVCriterion.pyx":748
  *             dest[k] = self.sum_total[k] / self.weighted_n_node_samples
  * 
  * cdef class CARTGVMSE(CARTGVRegressionCriterion):             # <<<<<<<<<<<<<<
@@ -2253,7 +2253,7 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion {
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion;
 
 
-/* "CARTGVCriterion.pyx":567
+/* "CARTGVCriterion.pyx":572
  *         self.children_impurity(&impurity_childs)
  * 
  * cdef class CARTGVRegressionCriterion(CARTGVCriterion):             # <<<<<<<<<<<<<<
@@ -2267,7 +2267,7 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion {
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion *__pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion;
 
 
-/* "CARTGVCriterion.pyx":492
+/* "CARTGVCriterion.pyx":497
  *         pass
  * 
  * cdef class CARTGVGini(CARTGVClassificationCriterion):             # <<<<<<<<<<<<<<
@@ -2281,7 +2281,7 @@ struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini {
 static struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *__pyx_vtabptr_15CARTGVCriterion_CARTGVGini;
 
 
-/* "CARTGVCriterion.pyx":741
+/* "CARTGVCriterion.pyx":748
  *             dest[k] = self.sum_total[k] / self.weighted_n_node_samples
  * 
  * cdef class CARTGVMSE(CARTGVRegressionCriterion):             # <<<<<<<<<<<<<<
@@ -8295,21 +8295,21 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_init(struct
  * 
  *             self.weighted_n_node_samples += w             # <<<<<<<<<<<<<<
  * 
- *         self.reset()
+ * #        with gil:
  */
     __pyx_v_self->__pyx_base.weighted_n_node_samples = (__pyx_v_self->__pyx_base.weighted_n_node_samples + __pyx_v_w);
   }
 
-  /* "CARTGVCriterion.pyx":330
- *             self.weighted_n_node_samples += w
+  /* "CARTGVCriterion.pyx":334
+ * 
  * 
  *         self.reset()             # <<<<<<<<<<<<<<
  * 
  *         return 0
  */
-  __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_14 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 334, __pyx_L1_error)
 
-  /* "CARTGVCriterion.pyx":332
+  /* "CARTGVCriterion.pyx":336
  *         self.reset()
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -8343,66 +8343,54 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_init(struct
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":334
+/* "CARTGVCriterion.pyx":338
  *         return 0
  * 
  *     cdef int reset(self) nogil except -1: #TODO Methode inutile             # <<<<<<<<<<<<<<
  * 
- *         cdef double* sum_total = self.sum_total
+ * #        cdef double* sum_total = self.sum_total
  */
 
 static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_reset(struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_v_self) {
-  CYTHON_UNUSED double *__pyx_v_sum_total;
   CYTHON_UNUSED double **__pyx_v_sum_childs;
   CYTHON_UNUSED __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_n_classes;
   CYTHON_UNUSED int __pyx_v_n_childs;
   int __pyx_r;
-  double *__pyx_t_1;
-  double **__pyx_t_2;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_3;
-  int __pyx_t_4;
+  double **__pyx_t_1;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_2;
+  int __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":336
- *     cdef int reset(self) nogil except -1: #TODO Methode inutile
+  /* "CARTGVCriterion.pyx":341
  * 
- *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
- *         cdef double** sum_childs = self.sum_childs
- * 
- */
-  __pyx_t_1 = __pyx_v_self->__pyx_base.sum_total;
-  __pyx_v_sum_total = __pyx_t_1;
-
-  /* "CARTGVCriterion.pyx":337
- * 
- *         cdef double* sum_total = self.sum_total
+ * #        cdef double* sum_total = self.sum_total
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  */
-  __pyx_t_2 = __pyx_v_self->__pyx_base.sum_childs;
-  __pyx_v_sum_childs = __pyx_t_2;
+  __pyx_t_1 = __pyx_v_self->__pyx_base.sum_childs;
+  __pyx_v_sum_childs = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":339
+  /* "CARTGVCriterion.pyx":343
  *         cdef double** sum_childs = self.sum_childs
  * 
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
  *         cdef int n_childs = self.n_childs
  *         cdef SIZE_t k
  */
-  __pyx_t_3 = __pyx_v_self->n_classes;
-  __pyx_v_n_classes = __pyx_t_3;
+  __pyx_t_2 = __pyx_v_self->n_classes;
+  __pyx_v_n_classes = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":340
+  /* "CARTGVCriterion.pyx":344
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
  *         cdef SIZE_t k
  *         cdef SIZE_t i
  */
-  __pyx_t_4 = __pyx_v_self->__pyx_base.n_childs;
-  __pyx_v_n_childs = __pyx_t_4;
+  __pyx_t_3 = __pyx_v_self->__pyx_base.n_childs;
+  __pyx_v_n_childs = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":344
+  /* "CARTGVCriterion.pyx":348
  *         cdef SIZE_t i
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -8412,12 +8400,12 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_reset(struc
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":334
+  /* "CARTGVCriterion.pyx":338
  *         return 0
  * 
  *     cdef int reset(self) nogil except -1: #TODO Methode inutile             # <<<<<<<<<<<<<<
  * 
- *         cdef double* sum_total = self.sum_total
+ * #        cdef double* sum_total = self.sum_total
  */
 
   /* function exit code */
@@ -8425,7 +8413,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_reset(struc
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":346
+/* "CARTGVCriterion.pyx":350
  *         return 0
  * 
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:             # <<<<<<<<<<<<<<
@@ -8435,8 +8423,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_reset(struc
 
 static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion *__pyx_v_self, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_starts, __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_ends, int __pyx_v_n_childs) {
   double **__pyx_v_sum_childs;
-  double *__pyx_v_sum_total;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_n_classes;
+  CYTHON_UNUSED __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_n_classes;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_samples;
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *__pyx_v_sample_weight;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_i;
@@ -8444,86 +8431,73 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_k;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_l;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_m;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_n;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_label_index;
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t __pyx_v_w;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_n_elements;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_c;
   int __pyx_r;
   double **__pyx_t_1;
-  double *__pyx_t_2;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_3;
-  __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *__pyx_t_4;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_2;
+  __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *__pyx_t_3;
+  int __pyx_t_4;
   int __pyx_t_5;
-  int __pyx_t_6;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_6;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_7;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_8;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_9;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_10;
-  int __pyx_t_11;
+  int __pyx_t_10;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_11;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_12;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_13;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_14;
+  Py_ssize_t __pyx_t_14;
   Py_ssize_t __pyx_t_15;
-  Py_ssize_t __pyx_t_16;
-  int __pyx_t_17;
+  int __pyx_t_16;
+  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_17;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_18;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_19;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":348
+  /* "CARTGVCriterion.pyx":352
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
  * 
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
- *         cdef double* sum_total = self.sum_total
+ * #        cdef double* sum_total = self.sum_total
  * 
  */
   __pyx_t_1 = __pyx_v_self->__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":349
- * 
- *         cdef double** sum_childs = self.sum_childs
- *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
- * 
- *         cdef SIZE_t* n_classes = self.n_classes
- */
-  __pyx_t_2 = __pyx_v_self->__pyx_base.sum_total;
-  __pyx_v_sum_total = __pyx_t_2;
-
-  /* "CARTGVCriterion.pyx":351
- *         cdef double* sum_total = self.sum_total
+  /* "CARTGVCriterion.pyx":355
+ * #        cdef double* sum_total = self.sum_total
  * 
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
  *         cdef SIZE_t* samples = self.samples
  *         cdef DOUBLE_t* sample_weight = self.sample_weight
  */
-  __pyx_t_3 = __pyx_v_self->n_classes;
-  __pyx_v_n_classes = __pyx_t_3;
+  __pyx_t_2 = __pyx_v_self->n_classes;
+  __pyx_v_n_classes = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":352
+  /* "CARTGVCriterion.pyx":356
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef SIZE_t* samples = self.samples             # <<<<<<<<<<<<<<
  *         cdef DOUBLE_t* sample_weight = self.sample_weight
  * 
  */
-  __pyx_t_3 = __pyx_v_self->__pyx_base.samples;
-  __pyx_v_samples = __pyx_t_3;
+  __pyx_t_2 = __pyx_v_self->__pyx_base.samples;
+  __pyx_v_samples = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":353
+  /* "CARTGVCriterion.pyx":357
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef SIZE_t* samples = self.samples
  *         cdef DOUBLE_t* sample_weight = self.sample_weight             # <<<<<<<<<<<<<<
  * 
  *         cdef SIZE_t i,j,k,l,m,n,o
  */
-  __pyx_t_4 = __pyx_v_self->__pyx_base.sample_weight;
-  __pyx_v_sample_weight = __pyx_t_4;
+  __pyx_t_3 = __pyx_v_self->__pyx_base.sample_weight;
+  __pyx_v_sample_weight = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":357
+  /* "CARTGVCriterion.pyx":361
  *         cdef SIZE_t i,j,k,l,m,n,o
  *         cdef SIZE_t label_index
  *         cdef DOUBLE_t w = 1.0             # <<<<<<<<<<<<<<
@@ -8532,7 +8506,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_w = 1.0;
 
-  /* "CARTGVCriterion.pyx":358
+  /* "CARTGVCriterion.pyx":362
  *         cdef SIZE_t label_index
  *         cdef DOUBLE_t w = 1.0
  *         cdef SIZE_t n_elements = self.n_outputs * self.sum_stride             # <<<<<<<<<<<<<<
@@ -8541,7 +8515,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_n_elements = (__pyx_v_self->__pyx_base.n_outputs * __pyx_v_self->sum_stride);
 
-  /* "CARTGVCriterion.pyx":360
+  /* "CARTGVCriterion.pyx":364
  *         cdef SIZE_t n_elements = self.n_outputs * self.sum_stride
  * 
  *         self.n_childs = n_childs             # <<<<<<<<<<<<<<
@@ -8550,7 +8524,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_self->__pyx_base.n_childs = __pyx_v_n_childs;
 
-  /* "CARTGVCriterion.pyx":361
+  /* "CARTGVCriterion.pyx":365
  * 
  *         self.n_childs = n_childs
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))             # <<<<<<<<<<<<<<
@@ -8559,19 +8533,19 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_sum_childs = ((double **)malloc((__pyx_v_n_childs * (sizeof(double *)))));
 
-  /* "CARTGVCriterion.pyx":362
+  /* "CARTGVCriterion.pyx":366
  *         self.n_childs = n_childs
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))
  *         for m in range(n_childs):             # <<<<<<<<<<<<<<
  *             sum_childs[m] = <double*> calloc(n_elements,sizeof(double))
  *         self.weighted_n_childs = <double*> calloc(n_childs,sizeof(double))
  */
-  __pyx_t_5 = __pyx_v_n_childs;
-  __pyx_t_6 = __pyx_t_5;
-  for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
-    __pyx_v_m = __pyx_t_7;
+  __pyx_t_4 = __pyx_v_n_childs;
+  __pyx_t_5 = __pyx_t_4;
+  for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_m = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":363
+    /* "CARTGVCriterion.pyx":367
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))
  *         for m in range(n_childs):
  *             sum_childs[m] = <double*> calloc(n_elements,sizeof(double))             # <<<<<<<<<<<<<<
@@ -8581,7 +8555,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
     (__pyx_v_sum_childs[__pyx_v_m]) = ((double *)calloc(__pyx_v_n_elements, (sizeof(double))));
   }
 
-  /* "CARTGVCriterion.pyx":364
+  /* "CARTGVCriterion.pyx":368
  *         for m in range(n_childs):
  *             sum_childs[m] = <double*> calloc(n_elements,sizeof(double))
  *         self.weighted_n_childs = <double*> calloc(n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -8590,31 +8564,31 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_self->__pyx_base.weighted_n_childs = ((double *)calloc(__pyx_v_n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":366
+  /* "CARTGVCriterion.pyx":370
  *         self.weighted_n_childs = <double*> calloc(n_childs,sizeof(double))
  * 
  *         for j in range(n_childs):             # <<<<<<<<<<<<<<
  *             for k in range(starts[j],ends[j]):
  *                 i = samples[k]
  */
-  __pyx_t_5 = __pyx_v_n_childs;
-  __pyx_t_6 = __pyx_t_5;
-  for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
-    __pyx_v_j = __pyx_t_7;
+  __pyx_t_4 = __pyx_v_n_childs;
+  __pyx_t_5 = __pyx_t_4;
+  for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+    __pyx_v_j = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":367
+    /* "CARTGVCriterion.pyx":371
  * 
  *         for j in range(n_childs):
  *             for k in range(starts[j],ends[j]):             # <<<<<<<<<<<<<<
  *                 i = samples[k]
  * 
  */
-    __pyx_t_8 = (__pyx_v_ends[__pyx_v_j]);
-    __pyx_t_9 = __pyx_t_8;
-    for (__pyx_t_10 = (__pyx_v_starts[__pyx_v_j]); __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
-      __pyx_v_k = __pyx_t_10;
+    __pyx_t_7 = (__pyx_v_ends[__pyx_v_j]);
+    __pyx_t_8 = __pyx_t_7;
+    for (__pyx_t_9 = (__pyx_v_starts[__pyx_v_j]); __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
+      __pyx_v_k = __pyx_t_9;
 
-      /* "CARTGVCriterion.pyx":368
+      /* "CARTGVCriterion.pyx":372
  *         for j in range(n_childs):
  *             for k in range(starts[j],ends[j]):
  *                 i = samples[k]             # <<<<<<<<<<<<<<
@@ -8623,17 +8597,17 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
       __pyx_v_i = (__pyx_v_samples[__pyx_v_k]);
 
-      /* "CARTGVCriterion.pyx":370
+      /* "CARTGVCriterion.pyx":374
  *                 i = samples[k]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
  *                     w = sample_weight[i]
  * 
  */
-      __pyx_t_11 = ((__pyx_v_sample_weight != NULL) != 0);
-      if (__pyx_t_11) {
+      __pyx_t_10 = ((__pyx_v_sample_weight != NULL) != 0);
+      if (__pyx_t_10) {
 
-        /* "CARTGVCriterion.pyx":371
+        /* "CARTGVCriterion.pyx":375
  * 
  *                 if sample_weight != NULL:
  *                     w = sample_weight[i]             # <<<<<<<<<<<<<<
@@ -8642,7 +8616,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
         __pyx_v_w = (__pyx_v_sample_weight[__pyx_v_i]);
 
-        /* "CARTGVCriterion.pyx":370
+        /* "CARTGVCriterion.pyx":374
  *                 i = samples[k]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -8651,132 +8625,87 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
       }
 
-      /* "CARTGVCriterion.pyx":373
+      /* "CARTGVCriterion.pyx":377
  *                     w = sample_weight[i]
  * 
  *                 for l in range(self.n_outputs):             # <<<<<<<<<<<<<<
  *                     label_index = l * self.sum_stride +  <SIZE_t> self.y[i, l]
  *                     sum_childs[j][label_index] += w
  */
-      __pyx_t_12 = __pyx_v_self->__pyx_base.n_outputs;
-      __pyx_t_13 = __pyx_t_12;
-      for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
-        __pyx_v_l = __pyx_t_14;
+      __pyx_t_11 = __pyx_v_self->__pyx_base.n_outputs;
+      __pyx_t_12 = __pyx_t_11;
+      for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
+        __pyx_v_l = __pyx_t_13;
 
-        /* "CARTGVCriterion.pyx":374
+        /* "CARTGVCriterion.pyx":378
  * 
  *                 for l in range(self.n_outputs):
  *                     label_index = l * self.sum_stride +  <SIZE_t> self.y[i, l]             # <<<<<<<<<<<<<<
  *                     sum_childs[j][label_index] += w
  * 
  */
-        if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 374, __pyx_L1_error)}
-        __pyx_t_15 = __pyx_v_i;
-        __pyx_t_16 = __pyx_v_l;
-        __pyx_t_17 = -1;
+        if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 378, __pyx_L1_error)}
+        __pyx_t_14 = __pyx_v_i;
+        __pyx_t_15 = __pyx_v_l;
+        __pyx_t_16 = -1;
+        if (__pyx_t_14 < 0) {
+          __pyx_t_14 += __pyx_v_self->__pyx_base.y.shape[0];
+          if (unlikely(__pyx_t_14 < 0)) __pyx_t_16 = 0;
+        } else if (unlikely(__pyx_t_14 >= __pyx_v_self->__pyx_base.y.shape[0])) __pyx_t_16 = 0;
         if (__pyx_t_15 < 0) {
-          __pyx_t_15 += __pyx_v_self->__pyx_base.y.shape[0];
-          if (unlikely(__pyx_t_15 < 0)) __pyx_t_17 = 0;
-        } else if (unlikely(__pyx_t_15 >= __pyx_v_self->__pyx_base.y.shape[0])) __pyx_t_17 = 0;
-        if (__pyx_t_16 < 0) {
-          __pyx_t_16 += __pyx_v_self->__pyx_base.y.shape[1];
-          if (unlikely(__pyx_t_16 < 0)) __pyx_t_17 = 1;
-        } else if (unlikely(__pyx_t_16 >= __pyx_v_self->__pyx_base.y.shape[1])) __pyx_t_17 = 1;
-        if (unlikely(__pyx_t_17 != -1)) {
-          __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_17);
-          __PYX_ERR(0, 374, __pyx_L1_error)
+          __pyx_t_15 += __pyx_v_self->__pyx_base.y.shape[1];
+          if (unlikely(__pyx_t_15 < 0)) __pyx_t_16 = 1;
+        } else if (unlikely(__pyx_t_15 >= __pyx_v_self->__pyx_base.y.shape[1])) __pyx_t_16 = 1;
+        if (unlikely(__pyx_t_16 != -1)) {
+          __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_16);
+          __PYX_ERR(0, 378, __pyx_L1_error)
         }
-        __pyx_v_label_index = ((__pyx_v_l * __pyx_v_self->sum_stride) + ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)(*((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=1 */ ((char *) (((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=0 */ (__pyx_v_self->__pyx_base.y.data + __pyx_t_15 * __pyx_v_self->__pyx_base.y.strides[0]) )) + __pyx_t_16)) )))));
+        __pyx_v_label_index = ((__pyx_v_l * __pyx_v_self->sum_stride) + ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)(*((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=1 */ ((char *) (((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=0 */ (__pyx_v_self->__pyx_base.y.data + __pyx_t_14 * __pyx_v_self->__pyx_base.y.strides[0]) )) + __pyx_t_15)) )))));
 
-        /* "CARTGVCriterion.pyx":375
+        /* "CARTGVCriterion.pyx":379
  *                 for l in range(self.n_outputs):
  *                     label_index = l * self.sum_stride +  <SIZE_t> self.y[i, l]
  *                     sum_childs[j][label_index] += w             # <<<<<<<<<<<<<<
  * 
  *                 self.weighted_n_childs[j] += w
  */
-        __pyx_t_18 = __pyx_v_j;
-        __pyx_t_19 = __pyx_v_label_index;
-        ((__pyx_v_sum_childs[__pyx_t_18])[__pyx_t_19]) = (((__pyx_v_sum_childs[__pyx_t_18])[__pyx_t_19]) + __pyx_v_w);
+        __pyx_t_17 = __pyx_v_j;
+        __pyx_t_18 = __pyx_v_label_index;
+        ((__pyx_v_sum_childs[__pyx_t_17])[__pyx_t_18]) = (((__pyx_v_sum_childs[__pyx_t_17])[__pyx_t_18]) + __pyx_v_w);
       }
 
-      /* "CARTGVCriterion.pyx":377
+      /* "CARTGVCriterion.pyx":381
  *                     sum_childs[j][label_index] += w
  * 
  *                 self.weighted_n_childs[j] += w             # <<<<<<<<<<<<<<
  * 
  * 
  */
-      __pyx_t_12 = __pyx_v_j;
-      (__pyx_v_self->__pyx_base.weighted_n_childs[__pyx_t_12]) = ((__pyx_v_self->__pyx_base.weighted_n_childs[__pyx_t_12]) + __pyx_v_w);
+      __pyx_t_11 = __pyx_v_j;
+      (__pyx_v_self->__pyx_base.weighted_n_childs[__pyx_t_11]) = ((__pyx_v_self->__pyx_base.weighted_n_childs[__pyx_t_11]) + __pyx_v_w);
     }
   }
 
-  /* "CARTGVCriterion.pyx":380
- * 
- * 
- *         for n in range(self.n_outputs):             # <<<<<<<<<<<<<<
- *             for c in range(n_classes[n]):
- *                 sum_total[c] += self.sum_stride
- */
-  __pyx_t_7 = __pyx_v_self->__pyx_base.n_outputs;
-  __pyx_t_8 = __pyx_t_7;
-  for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
-    __pyx_v_n = __pyx_t_9;
-
-    /* "CARTGVCriterion.pyx":381
- * 
- *         for n in range(self.n_outputs):
- *             for c in range(n_classes[n]):             # <<<<<<<<<<<<<<
- *                 sum_total[c] += self.sum_stride
- * 
- */
-    __pyx_t_10 = (__pyx_v_n_classes[__pyx_v_n]);
-    __pyx_t_12 = __pyx_t_10;
-    for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
-      __pyx_v_c = __pyx_t_13;
-
-      /* "CARTGVCriterion.pyx":382
- *         for n in range(self.n_outputs):
- *             for c in range(n_classes[n]):
- *                 sum_total[c] += self.sum_stride             # <<<<<<<<<<<<<<
- * 
- *         self.sum_childs = sum_childs
- */
-      __pyx_t_14 = __pyx_v_c;
-      (__pyx_v_sum_total[__pyx_t_14]) = ((__pyx_v_sum_total[__pyx_t_14]) + __pyx_v_self->sum_stride);
-    }
-  }
-
-  /* "CARTGVCriterion.pyx":384
- *                 sum_total[c] += self.sum_stride
+  /* "CARTGVCriterion.pyx":388
+ * #                sum_total[c] += self.sum_stride
  * 
  *         self.sum_childs = sum_childs             # <<<<<<<<<<<<<<
- *         self.sum_total = sum_total
+ * #        self.sum_total = sum_total
  *         self.starts = starts
  */
   __pyx_v_self->__pyx_base.sum_childs = __pyx_v_sum_childs;
 
-  /* "CARTGVCriterion.pyx":385
- * 
+  /* "CARTGVCriterion.pyx":390
  *         self.sum_childs = sum_childs
- *         self.sum_total = sum_total             # <<<<<<<<<<<<<<
- *         self.starts = starts
- *         self.ends = ends
- */
-  __pyx_v_self->__pyx_base.sum_total = __pyx_v_sum_total;
-
-  /* "CARTGVCriterion.pyx":386
- *         self.sum_childs = sum_childs
- *         self.sum_total = sum_total
+ * #        self.sum_total = sum_total
  *         self.starts = starts             # <<<<<<<<<<<<<<
  *         self.ends = ends
  * 
  */
   __pyx_v_self->__pyx_base.starts = __pyx_v_starts;
 
-  /* "CARTGVCriterion.pyx":387
- *         self.sum_total = sum_total
+  /* "CARTGVCriterion.pyx":391
+ * #        self.sum_total = sum_total
  *         self.starts = starts
  *         self.ends = ends             # <<<<<<<<<<<<<<
  * 
@@ -8784,7 +8713,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
  */
   __pyx_v_self->__pyx_base.ends = __pyx_v_ends;
 
-  /* "CARTGVCriterion.pyx":389
+  /* "CARTGVCriterion.pyx":393
  *         self.ends = ends
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -8794,7 +8723,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":346
+  /* "CARTGVCriterion.pyx":350
  *         return 0
  * 
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:             # <<<<<<<<<<<<<<
@@ -8818,7 +8747,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_update(stru
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":391
+/* "CARTGVCriterion.pyx":395
  *         return 0
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -8834,7 +8763,7 @@ static double __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_imp
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":394
+/* "CARTGVCriterion.pyx":398
  *         pass
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -8847,7 +8776,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_children_i
   /* function exit code */
 }
 
-/* "CARTGVCriterion.pyx":397
+/* "CARTGVCriterion.pyx":401
  *         pass
  * 
  *     cdef void node_value(self, double* dest) nogil:             # <<<<<<<<<<<<<<
@@ -8865,7 +8794,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_4;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_5;
 
-  /* "CARTGVCriterion.pyx":398
+  /* "CARTGVCriterion.pyx":402
  * 
  *     cdef void node_value(self, double* dest) nogil:
  *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
@@ -8875,7 +8804,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
   __pyx_t_1 = __pyx_v_self->__pyx_base.sum_total;
   __pyx_v_sum_total = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":399
+  /* "CARTGVCriterion.pyx":403
  *     cdef void node_value(self, double* dest) nogil:
  *         cdef double* sum_total = self.sum_total
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
@@ -8885,9 +8814,9 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
   __pyx_t_2 = __pyx_v_self->n_classes;
   __pyx_v_n_classes = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":404
- * #            print(n_classes[0])
- * #            print(np.asarray(sum_total))
+  /* "CARTGVCriterion.pyx":409
+ * #            print(np.asarray(<double[:self.n_outputs*self.sum_stride]>sum_total))
+ * #            print(self.sum_stride)
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
  *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride
@@ -8897,8 +8826,8 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_k = __pyx_t_5;
 
-    /* "CARTGVCriterion.pyx":405
- * #            print(np.asarray(sum_total))
+    /* "CARTGVCriterion.pyx":410
+ * #            print(self.sum_stride)
  *         for k in range(self.n_outputs):
  *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))             # <<<<<<<<<<<<<<
  *             dest += self.sum_stride
@@ -8906,7 +8835,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
  */
     (void)(memcpy(__pyx_v_dest, __pyx_v_sum_total, ((__pyx_v_n_classes[__pyx_v_k]) * (sizeof(double)))));
 
-    /* "CARTGVCriterion.pyx":406
+    /* "CARTGVCriterion.pyx":411
  *         for k in range(self.n_outputs):
  *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride             # <<<<<<<<<<<<<<
@@ -8915,7 +8844,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
  */
     __pyx_v_dest = (__pyx_v_dest + __pyx_v_self->sum_stride);
 
-    /* "CARTGVCriterion.pyx":407
+    /* "CARTGVCriterion.pyx":412
  *             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
  *             dest += self.sum_stride
  *             sum_total += self.sum_stride             # <<<<<<<<<<<<<<
@@ -8925,7 +8854,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
     __pyx_v_sum_total = (__pyx_v_sum_total + __pyx_v_self->sum_stride);
   }
 
-  /* "CARTGVCriterion.pyx":397
+  /* "CARTGVCriterion.pyx":401
  *         pass
  * 
  *     cdef void node_value(self, double* dest) nogil:             # <<<<<<<<<<<<<<
@@ -8936,7 +8865,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_node_value
   /* function exit code */
 }
 
-/* "CARTGVCriterion.pyx":422
+/* "CARTGVCriterion.pyx":427
  *     ########################################## TESTS #############################################
  * 
  *     cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,             # <<<<<<<<<<<<<<
@@ -8976,17 +8905,17 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_init); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_init); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_7test_init)) {
-        if (unlikely(!__pyx_v_y.memview)) { __Pyx_RaiseUnboundLocalError("y"); __PYX_ERR(0, 422, __pyx_L1_error) }
-        __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_y, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__, (int (*)(char *, PyObject *)) NULL, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 422, __pyx_L1_error)
+        if (unlikely(!__pyx_v_y.memview)) { __Pyx_RaiseUnboundLocalError("y"); __PYX_ERR(0, 427, __pyx_L1_error) }
+        __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_y, 2, (PyObject *(*)(char *)) __pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__, (int (*)(char *, PyObject *)) NULL, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 427, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weighted_n_samples); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 422, __pyx_L1_error)
+        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_weighted_n_samples); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 427, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 422, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 427, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_6 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 422, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 427, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_7 = __pyx_t_1; __pyx_t_8 = NULL;
@@ -9004,7 +8933,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_7)) {
           PyObject *__pyx_temp[7] = {__pyx_t_8, __pyx_t_3, ((PyObject *)__pyx_v_sample_weight), __pyx_t_4, ((PyObject *)__pyx_v_samples), __pyx_t_5, __pyx_t_6};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 6+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 6+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -9016,7 +8945,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
           PyObject *__pyx_temp[7] = {__pyx_t_8, __pyx_t_3, ((PyObject *)__pyx_v_sample_weight), __pyx_t_4, ((PyObject *)__pyx_v_samples), __pyx_t_5, __pyx_t_6};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 6+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_9, 6+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -9026,7 +8955,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
         } else
         #endif
         {
-          __pyx_t_10 = PyTuple_New(6+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 422, __pyx_L1_error)
+          __pyx_t_10 = PyTuple_New(6+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 427, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
           if (__pyx_t_8) {
             __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -9049,12 +8978,12 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
           __pyx_t_4 = 0;
           __pyx_t_5 = 0;
           __pyx_t_6 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         }
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 422, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 427, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_9;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9073,7 +9002,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":426
+  /* "CARTGVCriterion.pyx":431
  *                   SIZE_t end):
  * 
  *         cdef DOUBLE_t* sample_weight_ = NULL             # <<<<<<<<<<<<<<
@@ -9082,7 +9011,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
  */
   __pyx_v_sample_weight_ = NULL;
 
-  /* "CARTGVCriterion.pyx":427
+  /* "CARTGVCriterion.pyx":432
  * 
  *         cdef DOUBLE_t* sample_weight_ = NULL
  *         if sample_weight is not None:             # <<<<<<<<<<<<<<
@@ -9093,7 +9022,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
   __pyx_t_12 = (__pyx_t_11 != 0);
   if (__pyx_t_12) {
 
-    /* "CARTGVCriterion.pyx":428
+    /* "CARTGVCriterion.pyx":433
  *         cdef DOUBLE_t* sample_weight_ = NULL
  *         if sample_weight is not None:
  *             sample_weight_ = <DOUBLE_t*> sample_weight.data             # <<<<<<<<<<<<<<
@@ -9102,7 +9031,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
  */
     __pyx_v_sample_weight_ = ((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *)__pyx_v_sample_weight->data);
 
-    /* "CARTGVCriterion.pyx":427
+    /* "CARTGVCriterion.pyx":432
  * 
  *         cdef DOUBLE_t* sample_weight_ = NULL
  *         if sample_weight is not None:             # <<<<<<<<<<<<<<
@@ -9111,7 +9040,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
  */
   }
 
-  /* "CARTGVCriterion.pyx":429
+  /* "CARTGVCriterion.pyx":434
  *         if sample_weight is not None:
  *             sample_weight_ = <DOUBLE_t*> sample_weight.data
  *         cdef SIZE_t* samples_ = <SIZE_t*> samples.data             # <<<<<<<<<<<<<<
@@ -9120,19 +9049,19 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(s
  */
   __pyx_v_samples_ = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)__pyx_v_samples->data);
 
-  /* "CARTGVCriterion.pyx":431
+  /* "CARTGVCriterion.pyx":436
  *         cdef SIZE_t* samples_ = <SIZE_t*> samples.data
  * 
  *         return self.init(y, sample_weight_, weighted_n_samples, samples_,len(samples), start, end)             # <<<<<<<<<<<<<<
  * 
  *     cpdef int test_reset(self):
  */
-  __pyx_t_13 = PyObject_Length(((PyObject *)__pyx_v_samples)); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(0, 431, __pyx_L1_error)
-  __pyx_t_9 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.init(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_y, __pyx_v_sample_weight_, __pyx_v_weighted_n_samples, __pyx_v_samples_, __pyx_t_13, __pyx_v_start, __pyx_v_end); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_13 = PyObject_Length(((PyObject *)__pyx_v_samples)); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(0, 436, __pyx_L1_error)
+  __pyx_t_9 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.init(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_y, __pyx_v_sample_weight_, __pyx_v_weighted_n_samples, __pyx_v_samples_, __pyx_t_13, __pyx_v_start, __pyx_v_end); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 436, __pyx_L1_error)
   __pyx_r = __pyx_t_9;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":422
+  /* "CARTGVCriterion.pyx":427
  *     ########################################## TESTS #############################################
  * 
  *     cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,             # <<<<<<<<<<<<<<
@@ -9204,35 +9133,35 @@ static PyObject *__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_7tes
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_sample_weight)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 1); __PYX_ERR(0, 422, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 1); __PYX_ERR(0, 427, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_weighted_n_samples)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 2); __PYX_ERR(0, 422, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 2); __PYX_ERR(0, 427, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_samples)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 3); __PYX_ERR(0, 422, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 3); __PYX_ERR(0, 427, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_start)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 4); __PYX_ERR(0, 422, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 4); __PYX_ERR(0, 427, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_end)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 5); __PYX_ERR(0, 422, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, 5); __PYX_ERR(0, 427, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_init") < 0)) __PYX_ERR(0, 422, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_init") < 0)) __PYX_ERR(0, 427, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -9244,23 +9173,23 @@ static PyObject *__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_7tes
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
       values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
     }
-    __pyx_v_y = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__(values[0], 0); if (unlikely(!__pyx_v_y.memview)) __PYX_ERR(0, 422, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__(values[0], 0); if (unlikely(!__pyx_v_y.memview)) __PYX_ERR(0, 427, __pyx_L3_error)
     __pyx_v_sample_weight = ((PyArrayObject *)values[1]);
-    __pyx_v_weighted_n_samples = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weighted_n_samples == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 423, __pyx_L3_error)
+    __pyx_v_weighted_n_samples = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_weighted_n_samples == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L3_error)
     __pyx_v_samples = ((PyArrayObject *)values[3]);
-    __pyx_v_start = __Pyx_PyInt_As_Py_intptr_t(values[4]); if (unlikely((__pyx_v_start == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 423, __pyx_L3_error)
-    __pyx_v_end = __Pyx_PyInt_As_Py_intptr_t(values[5]); if (unlikely((__pyx_v_end == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 424, __pyx_L3_error)
+    __pyx_v_start = __Pyx_PyInt_As_Py_intptr_t(values[4]); if (unlikely((__pyx_v_start == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L3_error)
+    __pyx_v_end = __Pyx_PyInt_As_Py_intptr_t(values[5]); if (unlikely((__pyx_v_end == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 422, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_init", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 427, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVCriterion.CARTGVClassificationCriterion.test_init", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(0, 422, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_samples), __pyx_ptype_5numpy_ndarray, 1, "samples", 0))) __PYX_ERR(0, 423, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(0, 427, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_samples), __pyx_ptype_5numpy_ndarray, 1, "samples", 0))) __PYX_ERR(0, 428, __pyx_L1_error)
   __pyx_r = __pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_6test_init(((struct __pyx_obj_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self), __pyx_v_y, __pyx_v_sample_weight, __pyx_v_weighted_n_samples, __pyx_v_samples, __pyx_v_start, __pyx_v_end);
 
   /* function exit code */
@@ -9281,8 +9210,8 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_6tes
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_init", 0);
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_y.memview)) { __Pyx_RaiseUnboundLocalError("y"); __PYX_ERR(0, 422, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(__pyx_v_self, __pyx_v_y, __pyx_v_sample_weight, __pyx_v_weighted_n_samples, __pyx_v_samples, __pyx_v_start, __pyx_v_end, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
+  if (unlikely(!__pyx_v_y.memview)) { __Pyx_RaiseUnboundLocalError("y"); __PYX_ERR(0, 427, __pyx_L1_error) }
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_init(__pyx_v_self, __pyx_v_y, __pyx_v_sample_weight, __pyx_v_weighted_n_samples, __pyx_v_samples, __pyx_v_start, __pyx_v_end, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9300,7 +9229,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_6tes
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":433
+/* "CARTGVCriterion.pyx":438
  *         return self.init(y, sample_weight_, weighted_n_samples, samples_,len(samples), start, end)
  * 
  *     cpdef int test_reset(self):             # <<<<<<<<<<<<<<
@@ -9331,7 +9260,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_reset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_reset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_9test_reset)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -9347,10 +9276,10 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 433, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 438, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9369,17 +9298,17 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":435
+  /* "CARTGVCriterion.pyx":440
  *     cpdef int test_reset(self):
  * 
  *         res = self.reset()             # <<<<<<<<<<<<<<
  * 
  *         return res
  */
-  __pyx_t_5 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_5 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 440, __pyx_L1_error)
   __pyx_v_res = __pyx_t_5;
 
-  /* "CARTGVCriterion.pyx":437
+  /* "CARTGVCriterion.pyx":442
  *         res = self.reset()
  * 
  *         return res             # <<<<<<<<<<<<<<
@@ -9389,7 +9318,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":433
+  /* "CARTGVCriterion.pyx":438
  *         return self.init(y, sample_weight_, weighted_n_samples, samples_,len(samples), start, end)
  * 
  *     cpdef int test_reset(self):             # <<<<<<<<<<<<<<
@@ -9432,7 +9361,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_8tes
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_reset", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_reset(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9449,7 +9378,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_8tes
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":439
+/* "CARTGVCriterion.pyx":444
  *         return res
  * 
  *     cpdef int test_update(self):             # <<<<<<<<<<<<<<
@@ -9485,7 +9414,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_update); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 439, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_update); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_11test_update)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -9501,10 +9430,10 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 439, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 439, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 444, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -9523,7 +9452,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":441
+  /* "CARTGVCriterion.pyx":446
  *     cpdef int test_update(self):
  * 
  *         n_childs = 5             # <<<<<<<<<<<<<<
@@ -9533,39 +9462,39 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
   __Pyx_INCREF(__pyx_int_5);
   __pyx_v_n_childs = __pyx_int_5;
 
-  /* "CARTGVCriterion.pyx":443
+  /* "CARTGVCriterion.pyx":448
  *         n_childs = 5
  * 
  *         cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))             # <<<<<<<<<<<<<<
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_starts = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)malloc(__pyx_t_6));
 
-  /* "CARTGVCriterion.pyx":444
+  /* "CARTGVCriterion.pyx":449
  * 
  *         cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))             # <<<<<<<<<<<<<<
  * 
  *         starts[0] = 0
  */
-  __pyx_t_2 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 449, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_ends = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)malloc(__pyx_t_6));
 
-  /* "CARTGVCriterion.pyx":446
+  /* "CARTGVCriterion.pyx":451
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  * 
  *         starts[0] = 0             # <<<<<<<<<<<<<<
@@ -9574,7 +9503,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_starts[0]) = 0;
 
-  /* "CARTGVCriterion.pyx":447
+  /* "CARTGVCriterion.pyx":452
  * 
  *         starts[0] = 0
  *         starts[1] = 215             # <<<<<<<<<<<<<<
@@ -9583,7 +9512,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_starts[1]) = 0xD7;
 
-  /* "CARTGVCriterion.pyx":448
+  /* "CARTGVCriterion.pyx":453
  *         starts[0] = 0
  *         starts[1] = 215
  *         starts[2] = 308             # <<<<<<<<<<<<<<
@@ -9592,7 +9521,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_starts[2]) = 0x134;
 
-  /* "CARTGVCriterion.pyx":449
+  /* "CARTGVCriterion.pyx":454
  *         starts[1] = 215
  *         starts[2] = 308
  *         starts[3] = 315             # <<<<<<<<<<<<<<
@@ -9601,7 +9530,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_starts[3]) = 0x13B;
 
-  /* "CARTGVCriterion.pyx":450
+  /* "CARTGVCriterion.pyx":455
  *         starts[2] = 308
  *         starts[3] = 315
  *         starts[4] = 333             # <<<<<<<<<<<<<<
@@ -9610,7 +9539,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_starts[4]) = 0x14D;
 
-  /* "CARTGVCriterion.pyx":452
+  /* "CARTGVCriterion.pyx":457
  *         starts[4] = 333
  * 
  *         ends[0] = 215             # <<<<<<<<<<<<<<
@@ -9619,7 +9548,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_ends[0]) = 0xD7;
 
-  /* "CARTGVCriterion.pyx":453
+  /* "CARTGVCriterion.pyx":458
  * 
  *         ends[0] = 215
  *         ends[1] = 308             # <<<<<<<<<<<<<<
@@ -9628,7 +9557,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_ends[1]) = 0x134;
 
-  /* "CARTGVCriterion.pyx":454
+  /* "CARTGVCriterion.pyx":459
  *         ends[0] = 215
  *         ends[1] = 308
  *         ends[2] = 314             # <<<<<<<<<<<<<<
@@ -9637,7 +9566,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_ends[2]) = 0x13A;
 
-  /* "CARTGVCriterion.pyx":455
+  /* "CARTGVCriterion.pyx":460
  *         ends[1] = 308
  *         ends[2] = 314
  *         ends[3] = 333             # <<<<<<<<<<<<<<
@@ -9646,7 +9575,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_ends[3]) = 0x14D;
 
-  /* "CARTGVCriterion.pyx":456
+  /* "CARTGVCriterion.pyx":461
  *         ends[2] = 314
  *         ends[3] = 333
  *         ends[4] = 334             # <<<<<<<<<<<<<<
@@ -9655,18 +9584,18 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
  */
   (__pyx_v_ends[4]) = 0x14E;
 
-  /* "CARTGVCriterion.pyx":458
+  /* "CARTGVCriterion.pyx":463
  *         ends[4] = 334
  * 
  *         res = self.update(starts, ends, n_childs)             # <<<<<<<<<<<<<<
  * 
  *         return res
  */
-  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_v_n_childs); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 458, __pyx_L1_error)
-  __pyx_t_7 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.update(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_starts, __pyx_v_ends, __pyx_t_5); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 458, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_v_n_childs); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 463, __pyx_L1_error)
+  __pyx_t_7 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.update(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_starts, __pyx_v_ends, __pyx_t_5); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 463, __pyx_L1_error)
   __pyx_v_res = __pyx_t_7;
 
-  /* "CARTGVCriterion.pyx":460
+  /* "CARTGVCriterion.pyx":465
  *         res = self.update(starts, ends, n_childs)
  * 
  *         return res             # <<<<<<<<<<<<<<
@@ -9676,7 +9605,7 @@ static int __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":439
+  /* "CARTGVCriterion.pyx":444
  *         return res
  * 
  *     cpdef int test_update(self):             # <<<<<<<<<<<<<<
@@ -9720,7 +9649,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_10te
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_update", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_update(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -9737,7 +9666,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_10te
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":462
+/* "CARTGVCriterion.pyx":467
  *         return res
  * 
  *     cpdef void test_node_value(self):             # <<<<<<<<<<<<<<
@@ -9772,7 +9701,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 462, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_value); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_13test_node_value)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -9788,7 +9717,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 462, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -9808,7 +9737,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":463
+  /* "CARTGVCriterion.pyx":468
  * 
  *     cpdef void test_node_value(self):
  *         n_childs = 5             # <<<<<<<<<<<<<<
@@ -9818,39 +9747,39 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
   __Pyx_INCREF(__pyx_int_5);
   __pyx_v_n_childs = __pyx_int_5;
 
-  /* "CARTGVCriterion.pyx":465
+  /* "CARTGVCriterion.pyx":470
  *         n_childs = 5
  * 
  *         cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))             # <<<<<<<<<<<<<<
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 465, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 470, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_starts = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)malloc(__pyx_t_5));
 
-  /* "CARTGVCriterion.pyx":466
+  /* "CARTGVCriterion.pyx":471
  * 
  *         cdef SIZE_t* starts = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))             # <<<<<<<<<<<<<<
  * 
  *         starts[0] = 0
  */
-  __pyx_t_2 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 466, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_FromSize_t((sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 466, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_childs, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 466, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_5 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_ends = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)malloc(__pyx_t_5));
 
-  /* "CARTGVCriterion.pyx":468
+  /* "CARTGVCriterion.pyx":473
  *         cdef SIZE_t* ends = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  * 
  *         starts[0] = 0             # <<<<<<<<<<<<<<
@@ -9859,7 +9788,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_starts[0]) = 0;
 
-  /* "CARTGVCriterion.pyx":469
+  /* "CARTGVCriterion.pyx":474
  * 
  *         starts[0] = 0
  *         starts[1] = 215             # <<<<<<<<<<<<<<
@@ -9868,7 +9797,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_starts[1]) = 0xD7;
 
-  /* "CARTGVCriterion.pyx":470
+  /* "CARTGVCriterion.pyx":475
  *         starts[0] = 0
  *         starts[1] = 215
  *         starts[2] = 308             # <<<<<<<<<<<<<<
@@ -9877,7 +9806,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_starts[2]) = 0x134;
 
-  /* "CARTGVCriterion.pyx":471
+  /* "CARTGVCriterion.pyx":476
  *         starts[1] = 215
  *         starts[2] = 308
  *         starts[3] = 315             # <<<<<<<<<<<<<<
@@ -9886,7 +9815,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_starts[3]) = 0x13B;
 
-  /* "CARTGVCriterion.pyx":472
+  /* "CARTGVCriterion.pyx":477
  *         starts[2] = 308
  *         starts[3] = 315
  *         starts[4] = 333             # <<<<<<<<<<<<<<
@@ -9895,7 +9824,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_starts[4]) = 0x14D;
 
-  /* "CARTGVCriterion.pyx":474
+  /* "CARTGVCriterion.pyx":479
  *         starts[4] = 333
  * 
  *         ends[0] = 215             # <<<<<<<<<<<<<<
@@ -9904,7 +9833,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_ends[0]) = 0xD7;
 
-  /* "CARTGVCriterion.pyx":475
+  /* "CARTGVCriterion.pyx":480
  * 
  *         ends[0] = 215
  *         ends[1] = 308             # <<<<<<<<<<<<<<
@@ -9913,7 +9842,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_ends[1]) = 0x134;
 
-  /* "CARTGVCriterion.pyx":476
+  /* "CARTGVCriterion.pyx":481
  *         ends[0] = 215
  *         ends[1] = 308
  *         ends[2] = 314             # <<<<<<<<<<<<<<
@@ -9922,7 +9851,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_ends[2]) = 0x13A;
 
-  /* "CARTGVCriterion.pyx":477
+  /* "CARTGVCriterion.pyx":482
  *         ends[1] = 308
  *         ends[2] = 314
  *         ends[3] = 333             # <<<<<<<<<<<<<<
@@ -9931,7 +9860,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_ends[3]) = 0x14D;
 
-  /* "CARTGVCriterion.pyx":478
+  /* "CARTGVCriterion.pyx":483
  *         ends[2] = 314
  *         ends[3] = 333
  *         ends[4] = 334             # <<<<<<<<<<<<<<
@@ -9940,17 +9869,17 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   (__pyx_v_ends[4]) = 0x14E;
 
-  /* "CARTGVCriterion.pyx":480
+  /* "CARTGVCriterion.pyx":485
  *         ends[4] = 334
  * 
  *         self.update(starts, ends, n_childs)             # <<<<<<<<<<<<<<
  * 
  *         cdef double* dest = <double*> malloc(self.n_classes[0]*sizeof(double))
  */
-  __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_v_n_childs); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 480, __pyx_L1_error)
-  __pyx_t_7 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.update(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_starts, __pyx_v_ends, __pyx_t_6); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 480, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_v_n_childs); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 485, __pyx_L1_error)
+  __pyx_t_7 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.update(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_starts, __pyx_v_ends, __pyx_t_6); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 485, __pyx_L1_error)
 
-  /* "CARTGVCriterion.pyx":482
+  /* "CARTGVCriterion.pyx":487
  *         self.update(starts, ends, n_childs)
  * 
  *         cdef double* dest = <double*> malloc(self.n_classes[0]*sizeof(double))             # <<<<<<<<<<<<<<
@@ -9959,7 +9888,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   __pyx_v_dest = ((double *)malloc(((__pyx_v_self->n_classes[0]) * (sizeof(double)))));
 
-  /* "CARTGVCriterion.pyx":484
+  /* "CARTGVCriterion.pyx":489
  *         cdef double* dest = <double*> malloc(self.n_classes[0]*sizeof(double))
  * 
  *         self.node_value(dest)             # <<<<<<<<<<<<<<
@@ -9968,7 +9897,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_
  */
   ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVClassificationCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.node_value(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), __pyx_v_dest);
 
-  /* "CARTGVCriterion.pyx":462
+  /* "CARTGVCriterion.pyx":467
  *         return res
  * 
  *     cpdef void test_node_value(self):             # <<<<<<<<<<<<<<
@@ -10011,7 +9940,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_12te
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_node_value", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_value(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 462, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_value(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10028,7 +9957,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_12te
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":486
+/* "CARTGVCriterion.pyx":491
  *         self.node_value(dest)
  * 
  *     cpdef double test_node_impurity(self):             # <<<<<<<<<<<<<<
@@ -10058,7 +9987,7 @@ static double __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_nod
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 486, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 491, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_15test_node_impurity)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -10074,10 +10003,10 @@ static double __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_nod
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 486, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 491, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 486, __pyx_L1_error)
+        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 491, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10096,7 +10025,7 @@ static double __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_nod
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":487
+  /* "CARTGVCriterion.pyx":492
  * 
  *     cpdef double test_node_impurity(self):
  *         pass             # <<<<<<<<<<<<<<
@@ -10119,7 +10048,7 @@ static double __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_nod
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":486
+/* "CARTGVCriterion.pyx":491
  *         self.node_value(dest)
  * 
  *     cpdef double test_node_impurity(self):             # <<<<<<<<<<<<<<
@@ -10149,7 +10078,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_14te
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_node_impurity", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 486, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_node_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10166,7 +10095,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_14te
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":489
+/* "CARTGVCriterion.pyx":494
  *         pass
  * 
  *     cpdef void test_children_impurity(self):             # <<<<<<<<<<<<<<
@@ -10194,7 +10123,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_child
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_children_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 489, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_children_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 494, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_29CARTGVClassificationCriterion_17test_children_impurity)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -10210,7 +10139,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_child
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 489, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10230,7 +10159,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_child
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":490
+  /* "CARTGVCriterion.pyx":495
  * 
  *     cpdef void test_children_impurity(self):
  *         pass             # <<<<<<<<<<<<<<
@@ -10250,7 +10179,7 @@ static void __pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_child
   __Pyx_RefNannyFinishContext();
 }
 
-/* "CARTGVCriterion.pyx":489
+/* "CARTGVCriterion.pyx":494
  *         pass
  * 
  *     cpdef void test_children_impurity(self):             # <<<<<<<<<<<<<<
@@ -10280,7 +10209,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_16te
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_children_impurity", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_children_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 489, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_29CARTGVClassificationCriterion_test_children_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 494, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10297,7 +10226,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_29CARTGVClassificationCriterion_16te
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":494
+/* "CARTGVCriterion.pyx":499
  * cdef class CARTGVGini(CARTGVClassificationCriterion):
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -10323,12 +10252,11 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_7;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_8;
   double __pyx_t_9;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_10;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":496
+  /* "CARTGVCriterion.pyx":501
  *     cdef double node_impurity(self) nogil:
  * 
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
@@ -10338,7 +10266,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
   __pyx_t_1 = __pyx_v_self->__pyx_base.n_classes;
   __pyx_v_n_classes = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":497
+  /* "CARTGVCriterion.pyx":502
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
@@ -10348,7 +10276,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
   __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.sum_total;
   __pyx_v_sum_total = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":498
+  /* "CARTGVCriterion.pyx":503
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double* sum_total = self.sum_total
  *         cdef double gini = 0.0             # <<<<<<<<<<<<<<
@@ -10357,7 +10285,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
  */
   __pyx_v_gini = 0.0;
 
-  /* "CARTGVCriterion.pyx":504
+  /* "CARTGVCriterion.pyx":509
  *         cdef SIZE_t c
  * 
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -10369,7 +10297,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
   for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_k = __pyx_t_5;
 
-    /* "CARTGVCriterion.pyx":505
+    /* "CARTGVCriterion.pyx":510
  * 
  *         for k in range(self.n_outputs):
  *             sq_count = 0.0             # <<<<<<<<<<<<<<
@@ -10378,7 +10306,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
  */
     __pyx_v_sq_count = 0.0;
 
-    /* "CARTGVCriterion.pyx":507
+    /* "CARTGVCriterion.pyx":512
  *             sq_count = 0.0
  * 
  *             for c in range(n_classes[k]):             # <<<<<<<<<<<<<<
@@ -10390,7 +10318,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_c = __pyx_t_8;
 
-      /* "CARTGVCriterion.pyx":508
+      /* "CARTGVCriterion.pyx":513
  * 
  *             for c in range(n_classes[k]):
  *                 count_k = sum_total[c]             # <<<<<<<<<<<<<<
@@ -10399,7 +10327,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
  */
       __pyx_v_count_k = (__pyx_v_sum_total[__pyx_v_c]);
 
-      /* "CARTGVCriterion.pyx":509
+      /* "CARTGVCriterion.pyx":514
  *             for c in range(n_classes[k]):
  *                 count_k = sum_total[c]
  *                 sq_count += count_k * count_k             # <<<<<<<<<<<<<<
@@ -10409,7 +10337,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
       __pyx_v_sq_count = (__pyx_v_sq_count + (__pyx_v_count_k * __pyx_v_count_k));
     }
 
-    /* "CARTGVCriterion.pyx":511
+    /* "CARTGVCriterion.pyx":516
  *                 sq_count += count_k * count_k
  * 
  *             gini += 1.0 - sq_count / (self.weighted_n_node_samples *             # <<<<<<<<<<<<<<
@@ -10425,36 +10353,13 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 511, __pyx_L1_error)
+      __PYX_ERR(0, 516, __pyx_L1_error)
     }
     __pyx_v_gini = (__pyx_v_gini + (1.0 - (__pyx_v_sq_count / __pyx_t_9)));
-
-    /* "CARTGVCriterion.pyx":514
- *                                       self.weighted_n_node_samples)
- * 
- *             for c in range(n_classes[k]):             # <<<<<<<<<<<<<<
- *                 sum_total[c] += self.sum_stride
- * 
- */
-    __pyx_t_6 = (__pyx_v_n_classes[__pyx_v_k]);
-    __pyx_t_7 = __pyx_t_6;
-    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
-      __pyx_v_c = __pyx_t_8;
-
-      /* "CARTGVCriterion.pyx":515
- * 
- *             for c in range(n_classes[k]):
- *                 sum_total[c] += self.sum_stride             # <<<<<<<<<<<<<<
- * 
- *         return gini / self.n_outputs
- */
-      __pyx_t_10 = __pyx_v_c;
-      (__pyx_v_sum_total[__pyx_t_10]) = ((__pyx_v_sum_total[__pyx_t_10]) + __pyx_v_self->__pyx_base.sum_stride);
-    }
   }
 
-  /* "CARTGVCriterion.pyx":517
- *                 sum_total[c] += self.sum_stride
+  /* "CARTGVCriterion.pyx":522
+ * #                sum_total[c] += self.sum_stride
  * 
  *         return gini / self.n_outputs             # <<<<<<<<<<<<<<
  * 
@@ -10468,12 +10373,12 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
     #ifdef WITH_THREAD
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
     #endif
-    __PYX_ERR(0, 517, __pyx_L1_error)
+    __PYX_ERR(0, 522, __pyx_L1_error)
   }
   __pyx_r = (__pyx_v_gini / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":494
+  /* "CARTGVCriterion.pyx":499
  * cdef class CARTGVGini(CARTGVClassificationCriterion):
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -10489,7 +10394,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_node_impurity(struct __pyx_
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":519
+/* "CARTGVCriterion.pyx":524
  *         return gini / self.n_outputs
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -10527,7 +10432,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":521
+  /* "CARTGVCriterion.pyx":526
  *     cdef void children_impurity(self, double** impurity_childs) nogil:
  * 
  *         cdef SIZE_t* n_classes = self.n_classes             # <<<<<<<<<<<<<<
@@ -10537,7 +10442,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_t_1 = __pyx_v_self->__pyx_base.n_classes;
   __pyx_v_n_classes = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":522
+  /* "CARTGVCriterion.pyx":527
  * 
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
@@ -10547,7 +10452,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":523
+  /* "CARTGVCriterion.pyx":528
  *         cdef SIZE_t* n_classes = self.n_classes
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -10556,7 +10461,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  */
   __pyx_v_gini_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":524
+  /* "CARTGVCriterion.pyx":529
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* gini_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef double* sq_count_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -10565,7 +10470,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  */
   __pyx_v_sq_count_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":532
+  /* "CARTGVCriterion.pyx":537
  *         cdef SIZE_t c
  *         cdef SIZE_t m
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
@@ -10575,7 +10480,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_t_3 = __pyx_v_self->__pyx_base.__pyx_base.n_childs;
   __pyx_v_n_childs = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":534
+  /* "CARTGVCriterion.pyx":539
  *         cdef int n_childs = self.n_childs
  * 
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -10587,7 +10492,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_k = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":535
+    /* "CARTGVCriterion.pyx":540
  * 
  *         for k in range(self.n_outputs):
  *           for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -10599,7 +10504,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_i = __pyx_t_8;
 
-      /* "CARTGVCriterion.pyx":536
+      /* "CARTGVCriterion.pyx":541
  *         for k in range(self.n_outputs):
  *           for i in range(n_childs):
  *             sq_count_childs[i] = 0.0             # <<<<<<<<<<<<<<
@@ -10609,7 +10514,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       (__pyx_v_sq_count_childs[__pyx_v_i]) = 0.0;
     }
 
-    /* "CARTGVCriterion.pyx":539
+    /* "CARTGVCriterion.pyx":544
  * 
  * 
  *           for j in range(n_childs):             # <<<<<<<<<<<<<<
@@ -10621,7 +10526,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_j = __pyx_t_8;
 
-      /* "CARTGVCriterion.pyx":540
+      /* "CARTGVCriterion.pyx":545
  * 
  *           for j in range(n_childs):
  *             for c in range(n_classes[k]):             # <<<<<<<<<<<<<<
@@ -10633,7 +10538,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
         __pyx_v_c = __pyx_t_11;
 
-        /* "CARTGVCriterion.pyx":541
+        /* "CARTGVCriterion.pyx":546
  *           for j in range(n_childs):
  *             for c in range(n_classes[k]):
  *                 count_k = sum_childs[j][c]             # <<<<<<<<<<<<<<
@@ -10642,7 +10547,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  */
         __pyx_v_count_k = ((__pyx_v_sum_childs[__pyx_v_j])[__pyx_v_c]);
 
-        /* "CARTGVCriterion.pyx":542
+        /* "CARTGVCriterion.pyx":547
  *             for c in range(n_classes[k]):
  *                 count_k = sum_childs[j][c]
  *                 sq_count_childs[j] += count_k * count_k             # <<<<<<<<<<<<<<
@@ -10654,7 +10559,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       }
     }
 
-    /* "CARTGVCriterion.pyx":544
+    /* "CARTGVCriterion.pyx":549
  *                 sq_count_childs[j] += count_k * count_k
  * 
  *           for l in range(n_childs):             # <<<<<<<<<<<<<<
@@ -10666,7 +10571,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_l = __pyx_t_8;
 
-      /* "CARTGVCriterion.pyx":545
+      /* "CARTGVCriterion.pyx":550
  * 
  *           for l in range(n_childs):
  *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])             # <<<<<<<<<<<<<<
@@ -10683,11 +10588,11 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 545, __pyx_L1_error)
+        __PYX_ERR(0, 550, __pyx_L1_error)
       }
       (__pyx_v_gini_childs[__pyx_t_9]) = ((__pyx_v_gini_childs[__pyx_t_9]) + (1.0 - ((__pyx_v_sq_count_childs[__pyx_v_l]) / __pyx_t_13)));
 
-      /* "CARTGVCriterion.pyx":546
+      /* "CARTGVCriterion.pyx":551
  *           for l in range(n_childs):
  *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
  *             for c in range(n_classes[k]):             # <<<<<<<<<<<<<<
@@ -10699,7 +10604,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
         __pyx_v_c = __pyx_t_11;
 
-        /* "CARTGVCriterion.pyx":547
+        /* "CARTGVCriterion.pyx":552
  *             gini_childs[l] += 1.0 - sq_count_childs[l] / (self.weighted_n_childs[l] * self.weighted_n_childs[l])
  *             for c in range(n_classes[k]):
  *                 sum_childs[l] += self.sum_stride             # <<<<<<<<<<<<<<
@@ -10711,7 +10616,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
       }
     }
 
-    /* "CARTGVCriterion.pyx":548
+    /* "CARTGVCriterion.pyx":553
  *             for c in range(n_classes[k]):
  *                 sum_childs[l] += self.sum_stride
  *           for m in range(n_childs):             # <<<<<<<<<<<<<<
@@ -10723,7 +10628,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_v_m = __pyx_t_8;
 
-      /* "CARTGVCriterion.pyx":549
+      /* "CARTGVCriterion.pyx":554
  *                 sum_childs[l] += self.sum_stride
  *           for m in range(n_childs):
  *               impurity_childs[0][m] = gini_childs[m] / self.n_outputs             # <<<<<<<<<<<<<<
@@ -10738,13 +10643,13 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 549, __pyx_L1_error)
+        __PYX_ERR(0, 554, __pyx_L1_error)
       }
       ((__pyx_v_impurity_childs[0])[__pyx_v_m]) = ((__pyx_v_gini_childs[__pyx_v_m]) / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
     }
   }
 
-  /* "CARTGVCriterion.pyx":551
+  /* "CARTGVCriterion.pyx":556
  *               impurity_childs[0][m] = gini_childs[m] / self.n_outputs
  * 
  *         free(gini_childs)             # <<<<<<<<<<<<<<
@@ -10753,7 +10658,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  */
   free(__pyx_v_gini_childs);
 
-  /* "CARTGVCriterion.pyx":552
+  /* "CARTGVCriterion.pyx":557
  * 
  *         free(gini_childs)
  *         free(sq_count_childs)             # <<<<<<<<<<<<<<
@@ -10762,7 +10667,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
  */
   free(__pyx_v_sq_count_childs);
 
-  /* "CARTGVCriterion.pyx":519
+  /* "CARTGVCriterion.pyx":524
  *         return gini / self.n_outputs
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -10777,7 +10682,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_children_impurity(struct __py
   __pyx_L0:;
 }
 
-/* "CARTGVCriterion.pyx":558
+/* "CARTGVCriterion.pyx":563
  *     ########################################## TESTS #############################################
  * 
  *     cpdef double test_node_impurity(self):             # <<<<<<<<<<<<<<
@@ -10807,7 +10712,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(struct _
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 558, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_node_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_10CARTGVGini_1test_node_impurity)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -10823,10 +10728,10 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(struct _
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 558, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 563, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 558, __pyx_L1_error)
+        __pyx_t_5 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_5 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 563, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_r = __pyx_t_5;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10845,7 +10750,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(struct _
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":559
+  /* "CARTGVCriterion.pyx":564
  * 
  *     cpdef double test_node_impurity(self):
  *         return self.node_impurity()             # <<<<<<<<<<<<<<
@@ -10855,7 +10760,7 @@ static double __pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(struct _
   __pyx_r = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *)__pyx_v_self->__pyx_base.__pyx_base.__pyx_vtab)->__pyx_base.__pyx_base.node_impurity(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self));
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":558
+  /* "CARTGVCriterion.pyx":563
  *     ########################################## TESTS #############################################
  * 
  *     cpdef double test_node_impurity(self):             # <<<<<<<<<<<<<<
@@ -10898,7 +10803,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_10CARTGVGini_test_node_impurity(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_node_impurity", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 558, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10915,7 +10820,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_10CARTGVGini_test_node_impurity(stru
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":561
+/* "CARTGVCriterion.pyx":566
  *         return self.node_impurity()
  * 
  *     cpdef void test_children_impurity(self):             # <<<<<<<<<<<<<<
@@ -10944,7 +10849,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(struct
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_children_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_children_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 566, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_15CARTGVCriterion_10CARTGVGini_3test_children_impurity)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -10960,7 +10865,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(struct
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 561, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 566, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10980,7 +10885,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(struct
     #endif
   }
 
-  /* "CARTGVCriterion.pyx":563
+  /* "CARTGVCriterion.pyx":568
  *     cpdef void test_children_impurity(self):
  * 
  *         cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))             # <<<<<<<<<<<<<<
@@ -10989,7 +10894,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(struct
  */
   __pyx_v_impurity_childs = ((double *)malloc((__pyx_v_self->__pyx_base.__pyx_base.n_childs * (sizeof(double)))));
 
-  /* "CARTGVCriterion.pyx":565
+  /* "CARTGVCriterion.pyx":570
  *         cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))
  * 
  *         self.children_impurity(&impurity_childs)             # <<<<<<<<<<<<<<
@@ -10998,7 +10903,7 @@ static void __pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(struct
  */
   ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVGini *)__pyx_v_self->__pyx_base.__pyx_base.__pyx_vtab)->__pyx_base.__pyx_base.children_impurity(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self), (&__pyx_v_impurity_childs));
 
-  /* "CARTGVCriterion.pyx":561
+  /* "CARTGVCriterion.pyx":566
  *         return self.node_impurity()
  * 
  *     cpdef void test_children_impurity(self):             # <<<<<<<<<<<<<<
@@ -11040,7 +10945,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_10CARTGVGini_2test_children_impurity
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_children_impurity", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity(__pyx_v_self, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 566, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -11057,7 +10962,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_10CARTGVGini_2test_children_impurity
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":569
+/* "CARTGVCriterion.pyx":574
  * cdef class CARTGVRegressionCriterion(CARTGVCriterion):
  * 
  *     def __cinit__(self, SIZE_t n_outputs, SIZE_t n_samples):             # <<<<<<<<<<<<<<
@@ -11099,11 +11004,11 @@ static int __pyx_pw_15CARTGVCriterion_25CARTGVRegressionCriterion_1__cinit__(PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n_samples)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 569, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 574, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 569, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 574, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -11111,12 +11016,12 @@ static int __pyx_pw_15CARTGVCriterion_25CARTGVRegressionCriterion_1__cinit__(PyO
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_n_outputs = __Pyx_PyInt_As_Py_intptr_t(values[0]); if (unlikely((__pyx_v_n_outputs == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 569, __pyx_L3_error)
-    __pyx_v_n_samples = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_n_samples == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 569, __pyx_L3_error)
+    __pyx_v_n_outputs = __Pyx_PyInt_As_Py_intptr_t(values[0]); if (unlikely((__pyx_v_n_outputs == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 574, __pyx_L3_error)
+    __pyx_v_n_samples = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_n_samples == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(0, 574, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 569, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 574, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVCriterion.CARTGVRegressionCriterion.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -11142,16 +11047,16 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "CARTGVCriterion.pyx":578
+  /* "CARTGVCriterion.pyx":583
  *             The number of unique classes in each target
  *         """
  *         faulthandler.enable()             # <<<<<<<<<<<<<<
  * 
  *         self.sample_weight = NULL
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 578, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_enable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 578, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_enable); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -11166,12 +11071,12 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 578, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVCriterion.pyx":580
+  /* "CARTGVCriterion.pyx":585
  *         faulthandler.enable()
  * 
  *         self.sample_weight = NULL             # <<<<<<<<<<<<<<
@@ -11180,7 +11085,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.sample_weight = NULL;
 
-  /* "CARTGVCriterion.pyx":582
+  /* "CARTGVCriterion.pyx":587
  *         self.sample_weight = NULL
  * 
  *         self.samples = NULL             # <<<<<<<<<<<<<<
@@ -11189,7 +11094,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.samples = NULL;
 
-  /* "CARTGVCriterion.pyx":583
+  /* "CARTGVCriterion.pyx":588
  * 
  *         self.samples = NULL
  *         self.starts = NULL             # <<<<<<<<<<<<<<
@@ -11198,7 +11103,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.starts = NULL;
 
-  /* "CARTGVCriterion.pyx":584
+  /* "CARTGVCriterion.pyx":589
  *         self.samples = NULL
  *         self.starts = NULL
  *         self.ends = NULL             # <<<<<<<<<<<<<<
@@ -11207,7 +11112,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.ends = NULL;
 
-  /* "CARTGVCriterion.pyx":585
+  /* "CARTGVCriterion.pyx":590
  *         self.starts = NULL
  *         self.ends = NULL
  *         self.impurity_childs = NULL             # <<<<<<<<<<<<<<
@@ -11216,7 +11121,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.impurity_childs = NULL;
 
-  /* "CARTGVCriterion.pyx":586
+  /* "CARTGVCriterion.pyx":591
  *         self.ends = NULL
  *         self.impurity_childs = NULL
  *         self.n_childs = 0             # <<<<<<<<<<<<<<
@@ -11225,7 +11130,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.n_childs = 0;
 
-  /* "CARTGVCriterion.pyx":588
+  /* "CARTGVCriterion.pyx":593
  *         self.n_childs = 0
  * 
  *         self.n_outputs = n_outputs             # <<<<<<<<<<<<<<
@@ -11234,7 +11139,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.n_outputs = __pyx_v_n_outputs;
 
-  /* "CARTGVCriterion.pyx":589
+  /* "CARTGVCriterion.pyx":594
  * 
  *         self.n_outputs = n_outputs
  *         self.n_samples = n_samples             # <<<<<<<<<<<<<<
@@ -11243,7 +11148,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.n_samples = __pyx_v_n_samples;
 
-  /* "CARTGVCriterion.pyx":590
+  /* "CARTGVCriterion.pyx":595
  *         self.n_outputs = n_outputs
  *         self.n_samples = n_samples
  *         self.n_node_samples = 0             # <<<<<<<<<<<<<<
@@ -11252,7 +11157,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.n_node_samples = 0;
 
-  /* "CARTGVCriterion.pyx":591
+  /* "CARTGVCriterion.pyx":596
  *         self.n_samples = n_samples
  *         self.n_node_samples = 0
  *         self.weighted_n_node_samples = 0.0             # <<<<<<<<<<<<<<
@@ -11261,7 +11166,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.weighted_n_node_samples = 0.0;
 
-  /* "CARTGVCriterion.pyx":592
+  /* "CARTGVCriterion.pyx":597
  *         self.n_node_samples = 0
  *         self.weighted_n_node_samples = 0.0
  *         self.weighted_n_childs = NULL             # <<<<<<<<<<<<<<
@@ -11270,7 +11175,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.weighted_n_childs = NULL;
 
-  /* "CARTGVCriterion.pyx":594
+  /* "CARTGVCriterion.pyx":599
  *         self.weighted_n_childs = NULL
  * 
  *         self.sq_sum_total = 0.0             # <<<<<<<<<<<<<<
@@ -11279,7 +11184,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->sq_sum_total = 0.0;
 
-  /* "CARTGVCriterion.pyx":597
+  /* "CARTGVCriterion.pyx":602
  * 
  *         # Count labels for each output
  *         self.sum_total = NULL             # <<<<<<<<<<<<<<
@@ -11288,7 +11193,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.sum_total = NULL;
 
-  /* "CARTGVCriterion.pyx":598
+  /* "CARTGVCriterion.pyx":603
  *         # Count labels for each output
  *         self.sum_total = NULL
  *         self.sum_childs = NULL             # <<<<<<<<<<<<<<
@@ -11297,7 +11202,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.sum_childs = NULL;
 
-  /* "CARTGVCriterion.pyx":600
+  /* "CARTGVCriterion.pyx":605
  *         self.sum_childs = NULL
  * 
  *         self.sum_total = <double*> calloc(n_outputs, sizeof(double))             # <<<<<<<<<<<<<<
@@ -11306,7 +11211,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.sum_total = ((double *)calloc(__pyx_v_n_outputs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":601
+  /* "CARTGVCriterion.pyx":606
  * 
  *         self.sum_total = <double*> calloc(n_outputs, sizeof(double))
  *         self.sum_childs = <double**> calloc(n_outputs, sizeof(double))             # <<<<<<<<<<<<<<
@@ -11315,7 +11220,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   __pyx_v_self->__pyx_base.sum_childs = ((double **)calloc(__pyx_v_n_outputs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":603
+  /* "CARTGVCriterion.pyx":608
  *         self.sum_childs = <double**> calloc(n_outputs, sizeof(double))
  * 
  *         if (self.sum_total == NULL or             # <<<<<<<<<<<<<<
@@ -11329,7 +11234,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
     goto __pyx_L4_bool_binop_done;
   }
 
-  /* "CARTGVCriterion.pyx":604
+  /* "CARTGVCriterion.pyx":609
  * 
  *         if (self.sum_total == NULL or
  *             self.sum_childs == NULL):             # <<<<<<<<<<<<<<
@@ -11340,7 +11245,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
   __pyx_t_4 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
 
-  /* "CARTGVCriterion.pyx":603
+  /* "CARTGVCriterion.pyx":608
  *         self.sum_childs = <double**> calloc(n_outputs, sizeof(double))
  * 
  *         if (self.sum_total == NULL or             # <<<<<<<<<<<<<<
@@ -11349,16 +11254,16 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   if (unlikely(__pyx_t_4)) {
 
-    /* "CARTGVCriterion.pyx":605
+    /* "CARTGVCriterion.pyx":610
  *         if (self.sum_total == NULL or
  *             self.sum_childs == NULL):
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-    PyErr_NoMemory(); __PYX_ERR(0, 605, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(0, 610, __pyx_L1_error)
 
-    /* "CARTGVCriterion.pyx":603
+    /* "CARTGVCriterion.pyx":608
  *         self.sum_childs = <double**> calloc(n_outputs, sizeof(double))
  * 
  *         if (self.sum_total == NULL or             # <<<<<<<<<<<<<<
@@ -11367,7 +11272,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
  */
   }
 
-  /* "CARTGVCriterion.pyx":569
+  /* "CARTGVCriterion.pyx":574
  * cdef class CARTGVRegressionCriterion(CARTGVCriterion):
  * 
  *     def __cinit__(self, SIZE_t n_outputs, SIZE_t n_samples):             # <<<<<<<<<<<<<<
@@ -11389,7 +11294,7 @@ static int __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion___cinit__(stru
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":607
+/* "CARTGVCriterion.pyx":612
  *             raise MemoryError()
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -11416,7 +11321,7 @@ static void __pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_2__dealloc__(
   __Pyx_RefNannyFinishContext();
 }
 
-/* "CARTGVCriterion.pyx":610
+/* "CARTGVCriterion.pyx":615
  *         """Destructor."""
  * 
  *     def __reduce__(self):             # <<<<<<<<<<<<<<
@@ -11449,7 +11354,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__reduce__", 0);
 
-  /* "CARTGVCriterion.pyx":611
+  /* "CARTGVCriterion.pyx":616
  * 
  *     def __reduce__(self):
  *         return (type(self),             # <<<<<<<<<<<<<<
@@ -11458,18 +11363,18 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
  */
   __Pyx_XDECREF(__pyx_r);
 
-  /* "CARTGVCriterion.pyx":612
+  /* "CARTGVCriterion.pyx":617
  *     def __reduce__(self):
  *         return (type(self),
  *                 (self.n_outputs, self.n_samples),             # <<<<<<<<<<<<<<
  *                 self.__getstate__())
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->__pyx_base.n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 612, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->__pyx_base.n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 617, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->__pyx_base.n_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 612, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->__pyx_base.n_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 617, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 612, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 617, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -11478,14 +11383,14 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
 
-  /* "CARTGVCriterion.pyx":613
+  /* "CARTGVCriterion.pyx":618
  *         return (type(self),
  *                 (self.n_outputs, self.n_samples),
  *                 self.__getstate__())             # <<<<<<<<<<<<<<
  * 
  *     cdef int init(self, const DOUBLE_t[:, ::1] y,
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getstate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 613, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getstate); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 618, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -11499,18 +11404,18 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
   }
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_4) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 618, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVCriterion.pyx":611
+  /* "CARTGVCriterion.pyx":616
  * 
  *     def __reduce__(self):
  *         return (type(self),             # <<<<<<<<<<<<<<
  *                 (self.n_outputs, self.n_samples),
  *                 self.__getstate__())
  */
-  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 611, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 616, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
   __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
@@ -11525,7 +11430,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":610
+  /* "CARTGVCriterion.pyx":615
  *         """Destructor."""
  * 
  *     def __reduce__(self):             # <<<<<<<<<<<<<<
@@ -11547,7 +11452,7 @@ static PyObject *__pyx_pf_15CARTGVCriterion_25CARTGVRegressionCriterion_4__reduc
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":615
+/* "CARTGVCriterion.pyx":620
  *                 self.__getstate__())
  * 
  *     cdef int init(self, const DOUBLE_t[:, ::1] y,             # <<<<<<<<<<<<<<
@@ -11580,7 +11485,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":638
+  /* "CARTGVCriterion.pyx":643
  *             The last sample to use in the mask
  *         """
  *         self.y = y             # <<<<<<<<<<<<<<
@@ -11591,7 +11496,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   __PYX_INC_MEMVIEW(&__pyx_v_y, 1);
   __pyx_v_self->__pyx_base.y = __pyx_v_y;
 
-  /* "CARTGVCriterion.pyx":639
+  /* "CARTGVCriterion.pyx":644
  *         """
  *         self.y = y
  *         self.sample_weight = sample_weight             # <<<<<<<<<<<<<<
@@ -11600,7 +11505,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.sample_weight = __pyx_v_sample_weight;
 
-  /* "CARTGVCriterion.pyx":640
+  /* "CARTGVCriterion.pyx":645
  *         self.y = y
  *         self.sample_weight = sample_weight
  *         self.samples = samples             # <<<<<<<<<<<<<<
@@ -11609,7 +11514,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.samples = __pyx_v_samples;
 
-  /* "CARTGVCriterion.pyx":641
+  /* "CARTGVCriterion.pyx":646
  *         self.sample_weight = sample_weight
  *         self.samples = samples
  *         self.starts = [start]             # <<<<<<<<<<<<<<
@@ -11619,7 +11524,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   __pyx_t_1[0] = __pyx_v_start;
   __pyx_v_self->__pyx_base.starts = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":642
+  /* "CARTGVCriterion.pyx":647
  *         self.samples = samples
  *         self.starts = [start]
  *         self.ends = [end]             # <<<<<<<<<<<<<<
@@ -11629,7 +11534,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   __pyx_t_2[0] = __pyx_v_end;
   __pyx_v_self->__pyx_base.ends = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":643
+  /* "CARTGVCriterion.pyx":648
  *         self.starts = [start]
  *         self.ends = [end]
  *         self.n_childs = 0 #TODO ATTENTION             # <<<<<<<<<<<<<<
@@ -11638,7 +11543,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.n_childs = 0;
 
-  /* "CARTGVCriterion.pyx":644
+  /* "CARTGVCriterion.pyx":649
  *         self.ends = [end]
  *         self.n_childs = 0 #TODO ATTENTION
  *         self.n_node_samples = end - start             # <<<<<<<<<<<<<<
@@ -11647,7 +11552,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.n_node_samples = (__pyx_v_end - __pyx_v_start);
 
-  /* "CARTGVCriterion.pyx":645
+  /* "CARTGVCriterion.pyx":650
  *         self.n_childs = 0 #TODO ATTENTION
  *         self.n_node_samples = end - start
  *         self.weighted_n_samples = weighted_n_samples             # <<<<<<<<<<<<<<
@@ -11656,7 +11561,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.weighted_n_samples = __pyx_v_weighted_n_samples;
 
-  /* "CARTGVCriterion.pyx":646
+  /* "CARTGVCriterion.pyx":651
  *         self.n_node_samples = end - start
  *         self.weighted_n_samples = weighted_n_samples
  *         self.weighted_n_node_samples = 0.0             # <<<<<<<<<<<<<<
@@ -11665,7 +11570,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.weighted_n_node_samples = 0.0;
 
-  /* "CARTGVCriterion.pyx":648
+  /* "CARTGVCriterion.pyx":653
  *         self.weighted_n_node_samples = 0.0
  * 
  *         self.sq_sum_total = 0.0             # <<<<<<<<<<<<<<
@@ -11674,7 +11579,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->sq_sum_total = 0.0;
 
-  /* "CARTGVCriterion.pyx":649
+  /* "CARTGVCriterion.pyx":654
  * 
  *         self.sq_sum_total = 0.0
  *         self.sum_total = <double*> calloc(self.n_outputs, sizeof(double))             # <<<<<<<<<<<<<<
@@ -11683,7 +11588,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_self->__pyx_base.sum_total = ((double *)calloc(__pyx_v_self->__pyx_base.n_outputs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":655
+  /* "CARTGVCriterion.pyx":660
  *         cdef SIZE_t k
  *         cdef SIZE_t c
  *         cdef DOUBLE_t w = 1.0             # <<<<<<<<<<<<<<
@@ -11692,7 +11597,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
   __pyx_v_w = 1.0;
 
-  /* "CARTGVCriterion.pyx":659
+  /* "CARTGVCriterion.pyx":664
  *         cdef DOUBLE_t w_y_ik
  * 
  *         for p in range(start, end):             # <<<<<<<<<<<<<<
@@ -11704,7 +11609,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   for (__pyx_t_5 = __pyx_v_start; __pyx_t_5 < __pyx_t_4; __pyx_t_5+=1) {
     __pyx_v_p = __pyx_t_5;
 
-    /* "CARTGVCriterion.pyx":660
+    /* "CARTGVCriterion.pyx":665
  * 
  *         for p in range(start, end):
  *             i = samples[p]             # <<<<<<<<<<<<<<
@@ -11713,7 +11618,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
     __pyx_v_i = (__pyx_v_samples[__pyx_v_p]);
 
-    /* "CARTGVCriterion.pyx":664
+    /* "CARTGVCriterion.pyx":669
  *             # w is originally set to be 1.0, meaning that if no sample weights
  *             # are given, the default weight of each sample is 1.0
  *             if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -11723,7 +11628,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
     __pyx_t_6 = ((__pyx_v_sample_weight != NULL) != 0);
     if (__pyx_t_6) {
 
-      /* "CARTGVCriterion.pyx":665
+      /* "CARTGVCriterion.pyx":670
  *             # are given, the default weight of each sample is 1.0
  *             if sample_weight != NULL:
  *                 w = sample_weight[i]             # <<<<<<<<<<<<<<
@@ -11732,7 +11637,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
       __pyx_v_w = (__pyx_v_sample_weight[__pyx_v_i]);
 
-      /* "CARTGVCriterion.pyx":664
+      /* "CARTGVCriterion.pyx":669
  *             # w is originally set to be 1.0, meaning that if no sample weights
  *             # are given, the default weight of each sample is 1.0
  *             if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -11741,7 +11646,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
     }
 
-    /* "CARTGVCriterion.pyx":668
+    /* "CARTGVCriterion.pyx":673
  * 
  *             # Count weighted class frequency for each target
  *             for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -11753,14 +11658,14 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
     for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
       __pyx_v_k = __pyx_t_9;
 
-      /* "CARTGVCriterion.pyx":669
+      /* "CARTGVCriterion.pyx":674
  *             # Count weighted class frequency for each target
  *             for k in range(self.n_outputs):
  *                 y_ik = self.y[i, k]             # <<<<<<<<<<<<<<
  *                 w_y_ik = w * y_ik
  *                 self.sum_total[k] += w_y_ik
  */
-      if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 669, __pyx_L1_error)}
+      if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 674, __pyx_L1_error)}
       __pyx_t_10 = __pyx_v_i;
       __pyx_t_11 = __pyx_v_k;
       __pyx_t_12 = -1;
@@ -11774,11 +11679,11 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
       } else if (unlikely(__pyx_t_11 >= __pyx_v_self->__pyx_base.y.shape[1])) __pyx_t_12 = 1;
       if (unlikely(__pyx_t_12 != -1)) {
         __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_12);
-        __PYX_ERR(0, 669, __pyx_L1_error)
+        __PYX_ERR(0, 674, __pyx_L1_error)
       }
       __pyx_v_y_ik = (*((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=1 */ ((char *) (((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=0 */ (__pyx_v_self->__pyx_base.y.data + __pyx_t_10 * __pyx_v_self->__pyx_base.y.strides[0]) )) + __pyx_t_11)) )));
 
-      /* "CARTGVCriterion.pyx":670
+      /* "CARTGVCriterion.pyx":675
  *             for k in range(self.n_outputs):
  *                 y_ik = self.y[i, k]
  *                 w_y_ik = w * y_ik             # <<<<<<<<<<<<<<
@@ -11787,7 +11692,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
  */
       __pyx_v_w_y_ik = (__pyx_v_w * __pyx_v_y_ik);
 
-      /* "CARTGVCriterion.pyx":671
+      /* "CARTGVCriterion.pyx":676
  *                 y_ik = self.y[i, k]
  *                 w_y_ik = w * y_ik
  *                 self.sum_total[k] += w_y_ik             # <<<<<<<<<<<<<<
@@ -11797,7 +11702,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
       __pyx_t_13 = __pyx_v_k;
       (__pyx_v_self->__pyx_base.sum_total[__pyx_t_13]) = ((__pyx_v_self->__pyx_base.sum_total[__pyx_t_13]) + __pyx_v_w_y_ik);
 
-      /* "CARTGVCriterion.pyx":672
+      /* "CARTGVCriterion.pyx":677
  *                 w_y_ik = w * y_ik
  *                 self.sum_total[k] += w_y_ik
  *                 self.sq_sum_total += w_y_ik * y_ik             # <<<<<<<<<<<<<<
@@ -11807,7 +11712,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
       __pyx_v_self->sq_sum_total = (__pyx_v_self->sq_sum_total + (__pyx_v_w_y_ik * __pyx_v_y_ik));
     }
 
-    /* "CARTGVCriterion.pyx":674
+    /* "CARTGVCriterion.pyx":679
  *                 self.sq_sum_total += w_y_ik * y_ik
  * 
  *             self.weighted_n_node_samples += w             # <<<<<<<<<<<<<<
@@ -11817,16 +11722,16 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
     __pyx_v_self->__pyx_base.weighted_n_node_samples = (__pyx_v_self->__pyx_base.weighted_n_node_samples + __pyx_v_w);
   }
 
-  /* "CARTGVCriterion.pyx":676
+  /* "CARTGVCriterion.pyx":681
  *             self.weighted_n_node_samples += w
  * 
  *         self.reset()             # <<<<<<<<<<<<<<
  * 
  *         return 0
  */
-  __pyx_t_12 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 676, __pyx_L1_error)
+  __pyx_t_12 = ((struct __pyx_vtabstruct_15CARTGVCriterion_CARTGVRegressionCriterion *)__pyx_v_self->__pyx_base.__pyx_vtab)->__pyx_base.reset(((struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *)__pyx_v_self)); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 681, __pyx_L1_error)
 
-  /* "CARTGVCriterion.pyx":678
+  /* "CARTGVCriterion.pyx":683
  *         self.reset()
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -11836,7 +11741,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":615
+  /* "CARTGVCriterion.pyx":620
  *                 self.__getstate__())
  * 
  *     cdef int init(self, const DOUBLE_t[:, ::1] y,             # <<<<<<<<<<<<<<
@@ -11860,7 +11765,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_init(struct __p
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":680
+/* "CARTGVCriterion.pyx":685
  *         return 0
  * 
  *     cdef int reset(self) nogil except -1: #TODO Methode inutile             # <<<<<<<<<<<<<<
@@ -11877,7 +11782,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   double **__pyx_t_2;
   int __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":682
+  /* "CARTGVCriterion.pyx":687
  *     cdef int reset(self) nogil except -1: #TODO Methode inutile
  * 
  *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
@@ -11887,7 +11792,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   __pyx_t_1 = __pyx_v_self->__pyx_base.sum_total;
   __pyx_v_sum_total = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":683
+  /* "CARTGVCriterion.pyx":688
  * 
  *         cdef double* sum_total = self.sum_total
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
@@ -11897,7 +11802,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   __pyx_t_2 = __pyx_v_self->__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":685
+  /* "CARTGVCriterion.pyx":690
  *         cdef double** sum_childs = self.sum_childs
  * 
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
@@ -11907,7 +11812,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   __pyx_t_3 = __pyx_v_self->__pyx_base.n_childs;
   __pyx_v_n_childs = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":689
+  /* "CARTGVCriterion.pyx":694
  *         cdef SIZE_t i
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -11917,7 +11822,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":680
+  /* "CARTGVCriterion.pyx":685
  *         return 0
  * 
  *     cdef int reset(self) nogil except -1: #TODO Methode inutile             # <<<<<<<<<<<<<<
@@ -11930,7 +11835,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_reset(struct __
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":691
+/* "CARTGVCriterion.pyx":696
  *         return 0
  * 
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:             # <<<<<<<<<<<<<<
@@ -11973,7 +11878,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":693
+  /* "CARTGVCriterion.pyx":698
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
  * 
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
@@ -11983,7 +11888,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   __pyx_t_1 = __pyx_v_self->__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":694
+  /* "CARTGVCriterion.pyx":699
  * 
  *         cdef double** sum_childs = self.sum_childs
  *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
@@ -11993,7 +11898,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   __pyx_t_2 = __pyx_v_self->__pyx_base.sum_total;
   __pyx_v_sum_total = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":696
+  /* "CARTGVCriterion.pyx":701
  *         cdef double* sum_total = self.sum_total
  * 
  *         cdef SIZE_t* samples = self.samples             # <<<<<<<<<<<<<<
@@ -12003,7 +11908,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   __pyx_t_3 = __pyx_v_self->__pyx_base.samples;
   __pyx_v_samples = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":697
+  /* "CARTGVCriterion.pyx":702
  * 
  *         cdef SIZE_t* samples = self.samples
  *         cdef DOUBLE_t* sample_weight = self.sample_weight             # <<<<<<<<<<<<<<
@@ -12013,7 +11918,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   __pyx_t_4 = __pyx_v_self->__pyx_base.sample_weight;
   __pyx_v_sample_weight = __pyx_t_4;
 
-  /* "CARTGVCriterion.pyx":700
+  /* "CARTGVCriterion.pyx":705
  * 
  *         cdef SIZE_t i,j,k,l,m,n,o
  *         cdef DOUBLE_t w = 1.0             # <<<<<<<<<<<<<<
@@ -12022,7 +11927,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_w = 1.0;
 
-  /* "CARTGVCriterion.pyx":702
+  /* "CARTGVCriterion.pyx":707
  *         cdef DOUBLE_t w = 1.0
  * 
  *         self.n_childs = n_childs             # <<<<<<<<<<<<<<
@@ -12031,7 +11936,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.n_childs = __pyx_v_n_childs;
 
-  /* "CARTGVCriterion.pyx":703
+  /* "CARTGVCriterion.pyx":708
  * 
  *         self.n_childs = n_childs
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))             # <<<<<<<<<<<<<<
@@ -12040,7 +11945,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_sum_childs = ((double **)malloc((__pyx_v_n_childs * (sizeof(double *)))));
 
-  /* "CARTGVCriterion.pyx":704
+  /* "CARTGVCriterion.pyx":709
  *         self.n_childs = n_childs
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))
  *         for m in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12052,7 +11957,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
     __pyx_v_m = __pyx_t_7;
 
-    /* "CARTGVCriterion.pyx":705
+    /* "CARTGVCriterion.pyx":710
  *         sum_childs = <double**> malloc(n_childs*sizeof(double*))
  *         for m in range(n_childs):
  *             sum_childs[m] = <double*> calloc(self.n_outputs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -12062,7 +11967,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
     (__pyx_v_sum_childs[__pyx_v_m]) = ((double *)calloc(__pyx_v_self->__pyx_base.n_outputs, (sizeof(double))));
   }
 
-  /* "CARTGVCriterion.pyx":706
+  /* "CARTGVCriterion.pyx":711
  *         for m in range(n_childs):
  *             sum_childs[m] = <double*> calloc(self.n_outputs,sizeof(double))
  *         self.weighted_n_childs = <double*> calloc(n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -12071,7 +11976,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.weighted_n_childs = ((double *)calloc(__pyx_v_n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":708
+  /* "CARTGVCriterion.pyx":713
  *         self.weighted_n_childs = <double*> calloc(n_childs,sizeof(double))
  * 
  *         for j in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12083,7 +11988,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
     __pyx_v_j = __pyx_t_7;
 
-    /* "CARTGVCriterion.pyx":709
+    /* "CARTGVCriterion.pyx":714
  * 
  *         for j in range(n_childs):
  *             for k in range(starts[j],ends[j]):             # <<<<<<<<<<<<<<
@@ -12095,7 +12000,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
     for (__pyx_t_10 = (__pyx_v_starts[__pyx_v_j]); __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
       __pyx_v_k = __pyx_t_10;
 
-      /* "CARTGVCriterion.pyx":710
+      /* "CARTGVCriterion.pyx":715
  *         for j in range(n_childs):
  *             for k in range(starts[j],ends[j]):
  *                 i = samples[k]             # <<<<<<<<<<<<<<
@@ -12104,7 +12009,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
       __pyx_v_i = (__pyx_v_samples[__pyx_v_k]);
 
-      /* "CARTGVCriterion.pyx":712
+      /* "CARTGVCriterion.pyx":717
  *                 i = samples[k]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -12114,7 +12019,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
       __pyx_t_11 = ((__pyx_v_sample_weight != NULL) != 0);
       if (__pyx_t_11) {
 
-        /* "CARTGVCriterion.pyx":713
+        /* "CARTGVCriterion.pyx":718
  * 
  *                 if sample_weight != NULL:
  *                     w = sample_weight[i]             # <<<<<<<<<<<<<<
@@ -12123,7 +12028,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
         __pyx_v_w = (__pyx_v_sample_weight[__pyx_v_i]);
 
-        /* "CARTGVCriterion.pyx":712
+        /* "CARTGVCriterion.pyx":717
  *                 i = samples[k]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -12132,7 +12037,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
       }
 
-      /* "CARTGVCriterion.pyx":715
+      /* "CARTGVCriterion.pyx":720
  *                     w = sample_weight[i]
  * 
  *                 for l in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -12144,7 +12049,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
       for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
         __pyx_v_l = __pyx_t_14;
 
-        /* "CARTGVCriterion.pyx":716
+        /* "CARTGVCriterion.pyx":721
  * 
  *                 for l in range(self.n_outputs):
  *                     sum_childs[j][l] += w * self.y[i, l]             # <<<<<<<<<<<<<<
@@ -12153,7 +12058,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
         __pyx_t_15 = __pyx_v_j;
         __pyx_t_16 = __pyx_v_l;
-        if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 716, __pyx_L1_error)}
+        if (unlikely(!__pyx_v_self->__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 721, __pyx_L1_error)}
         __pyx_t_17 = __pyx_v_i;
         __pyx_t_18 = __pyx_v_l;
         __pyx_t_19 = -1;
@@ -12167,12 +12072,12 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
         } else if (unlikely(__pyx_t_18 >= __pyx_v_self->__pyx_base.y.shape[1])) __pyx_t_19 = 1;
         if (unlikely(__pyx_t_19 != -1)) {
           __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_19);
-          __PYX_ERR(0, 716, __pyx_L1_error)
+          __PYX_ERR(0, 721, __pyx_L1_error)
         }
         ((__pyx_v_sum_childs[__pyx_t_15])[__pyx_t_16]) = (((__pyx_v_sum_childs[__pyx_t_15])[__pyx_t_16]) + (__pyx_v_w * (*((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=1 */ ((char *) (((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=0 */ (__pyx_v_self->__pyx_base.y.data + __pyx_t_17 * __pyx_v_self->__pyx_base.y.strides[0]) )) + __pyx_t_18)) )))));
       }
 
-      /* "CARTGVCriterion.pyx":718
+      /* "CARTGVCriterion.pyx":723
  *                     sum_childs[j][l] += w * self.y[i, l]
  * 
  *                 self.weighted_n_childs[j] += w             # <<<<<<<<<<<<<<
@@ -12184,7 +12089,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
     }
   }
 
-  /* "CARTGVCriterion.pyx":720
+  /* "CARTGVCriterion.pyx":725
  *                 self.weighted_n_childs[j] += w
  * 
  *         self.sum_childs = sum_childs             # <<<<<<<<<<<<<<
@@ -12193,7 +12098,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.sum_childs = __pyx_v_sum_childs;
 
-  /* "CARTGVCriterion.pyx":721
+  /* "CARTGVCriterion.pyx":726
  * 
  *         self.sum_childs = sum_childs
  *         self.sum_total = sum_total             # <<<<<<<<<<<<<<
@@ -12202,7 +12107,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.sum_total = __pyx_v_sum_total;
 
-  /* "CARTGVCriterion.pyx":722
+  /* "CARTGVCriterion.pyx":727
  *         self.sum_childs = sum_childs
  *         self.sum_total = sum_total
  *         self.starts = starts             # <<<<<<<<<<<<<<
@@ -12211,7 +12116,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.starts = __pyx_v_starts;
 
-  /* "CARTGVCriterion.pyx":723
+  /* "CARTGVCriterion.pyx":728
  *         self.sum_total = sum_total
  *         self.starts = starts
  *         self.ends = ends             # <<<<<<<<<<<<<<
@@ -12220,7 +12125,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
  */
   __pyx_v_self->__pyx_base.ends = __pyx_v_ends;
 
-  /* "CARTGVCriterion.pyx":725
+  /* "CARTGVCriterion.pyx":730
  *         self.ends = ends
  * 
  *         return 0             # <<<<<<<<<<<<<<
@@ -12230,7 +12135,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":691
+  /* "CARTGVCriterion.pyx":696
  *         return 0
  * 
  *     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:             # <<<<<<<<<<<<<<
@@ -12254,7 +12159,7 @@ static int __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_update(struct _
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":727
+/* "CARTGVCriterion.pyx":732
  *         return 0
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -12270,7 +12175,7 @@ static double __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_impurit
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":730
+/* "CARTGVCriterion.pyx":735
  *         pass
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -12283,12 +12188,12 @@ static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_children_impur
   /* function exit code */
 }
 
-/* "CARTGVCriterion.pyx":734
+/* "CARTGVCriterion.pyx":739
  * 
  *     #TODO Check ZeroDivisionError: float division
  *     cdef void node_value(self, double* dest) nogil:             # <<<<<<<<<<<<<<
  *         cdef SIZE_t k
- * 
+ * #        with gil:
  */
 
 static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value(struct __pyx_obj_15CARTGVCriterion_CARTGVRegressionCriterion *__pyx_v_self, double *__pyx_v_dest) {
@@ -12300,9 +12205,9 @@ static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value(str
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":737
- *         cdef SIZE_t k
- * 
+  /* "CARTGVCriterion.pyx":744
+ * #            print(self.sum_total[0])
+ * #            print(self.weighted_n_node_samples)
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
  * 
  *             dest[k] = self.sum_total[k] / self.weighted_n_node_samples
@@ -12312,7 +12217,7 @@ static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value(str
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_k = __pyx_t_3;
 
-    /* "CARTGVCriterion.pyx":739
+    /* "CARTGVCriterion.pyx":746
  *         for k in range(self.n_outputs):
  * 
  *             dest[k] = self.sum_total[k] / self.weighted_n_node_samples             # <<<<<<<<<<<<<<
@@ -12327,17 +12232,17 @@ static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value(str
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 739, __pyx_L1_error)
+      __PYX_ERR(0, 746, __pyx_L1_error)
     }
     (__pyx_v_dest[__pyx_v_k]) = ((__pyx_v_self->__pyx_base.sum_total[__pyx_v_k]) / __pyx_v_self->__pyx_base.weighted_n_node_samples);
   }
 
-  /* "CARTGVCriterion.pyx":734
+  /* "CARTGVCriterion.pyx":739
  * 
  *     #TODO Check ZeroDivisionError: float division
  *     cdef void node_value(self, double* dest) nogil:             # <<<<<<<<<<<<<<
  *         cdef SIZE_t k
- * 
+ * #        with gil:
  */
 
   /* function exit code */
@@ -12347,7 +12252,7 @@ static void __pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value(str
   __pyx_L0:;
 }
 
-/* "CARTGVCriterion.pyx":743
+/* "CARTGVCriterion.pyx":750
  * cdef class CARTGVMSE(CARTGVRegressionCriterion):
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -12368,7 +12273,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":745
+  /* "CARTGVCriterion.pyx":752
  *     cdef double node_impurity(self) nogil:
  * 
  *         cdef double* sum_total = self.sum_total             # <<<<<<<<<<<<<<
@@ -12378,7 +12283,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
   __pyx_t_1 = __pyx_v_self->__pyx_base.__pyx_base.sum_total;
   __pyx_v_sum_total = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":749
+  /* "CARTGVCriterion.pyx":756
  *         cdef SIZE_t k
  * 
  *         impurity = self.sq_sum_total / self.weighted_n_node_samples             # <<<<<<<<<<<<<<
@@ -12393,11 +12298,11 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
     #ifdef WITH_THREAD
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
     #endif
-    __PYX_ERR(0, 749, __pyx_L1_error)
+    __PYX_ERR(0, 756, __pyx_L1_error)
   }
   __pyx_v_impurity = (__pyx_v_self->__pyx_base.sq_sum_total / __pyx_v_self->__pyx_base.__pyx_base.weighted_n_node_samples);
 
-  /* "CARTGVCriterion.pyx":750
+  /* "CARTGVCriterion.pyx":757
  * 
  *         impurity = self.sq_sum_total / self.weighted_n_node_samples
  *         for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -12409,7 +12314,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_k = __pyx_t_4;
 
-    /* "CARTGVCriterion.pyx":751
+    /* "CARTGVCriterion.pyx":758
  *         impurity = self.sq_sum_total / self.weighted_n_node_samples
  *         for k in range(self.n_outputs):
  *             impurity -= (sum_total[k] / self.weighted_n_node_samples)**2.0             # <<<<<<<<<<<<<<
@@ -12424,12 +12329,12 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 751, __pyx_L1_error)
+      __PYX_ERR(0, 758, __pyx_L1_error)
     }
     __pyx_v_impurity = (__pyx_v_impurity - pow(((__pyx_v_sum_total[__pyx_v_k]) / __pyx_v_self->__pyx_base.__pyx_base.weighted_n_node_samples), 2.0));
   }
 
-  /* "CARTGVCriterion.pyx":753
+  /* "CARTGVCriterion.pyx":760
  *             impurity -= (sum_total[k] / self.weighted_n_node_samples)**2.0
  * 
  *         return impurity / self.n_outputs             # <<<<<<<<<<<<<<
@@ -12444,12 +12349,12 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
     #ifdef WITH_THREAD
     __Pyx_PyGILState_Release(__pyx_gilstate_save);
     #endif
-    __PYX_ERR(0, 753, __pyx_L1_error)
+    __PYX_ERR(0, 760, __pyx_L1_error)
   }
   __pyx_r = (__pyx_v_impurity / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":743
+  /* "CARTGVCriterion.pyx":750
  * cdef class CARTGVMSE(CARTGVRegressionCriterion):
  * 
  *     cdef double node_impurity(self) nogil:             # <<<<<<<<<<<<<<
@@ -12465,7 +12370,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_node_impurity(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":755
+/* "CARTGVCriterion.pyx":762
  *         return impurity / self.n_outputs
  * 
  *     cdef double proxy_impurity_improvement(self) nogil:             # <<<<<<<<<<<<<<
@@ -12494,7 +12399,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":758
+  /* "CARTGVCriterion.pyx":765
  * 
  *         cdef SIZE_t k,j,i
  *         cdef double* proxy_impurity_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -12503,7 +12408,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
  */
   __pyx_v_proxy_impurity_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":759
+  /* "CARTGVCriterion.pyx":766
  *         cdef SIZE_t k,j,i
  *         cdef double* proxy_impurity_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
@@ -12513,7 +12418,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   __pyx_t_1 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":761
+  /* "CARTGVCriterion.pyx":768
  *         cdef double** sum_childs = self.sum_childs
  * 
  *         for j in range(self.n_childs):             # <<<<<<<<<<<<<<
@@ -12525,7 +12430,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_j = __pyx_t_4;
 
-    /* "CARTGVCriterion.pyx":762
+    /* "CARTGVCriterion.pyx":769
  * 
  *         for j in range(self.n_childs):
  *             for k in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -12537,7 +12442,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
     for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
       __pyx_v_k = __pyx_t_7;
 
-      /* "CARTGVCriterion.pyx":763
+      /* "CARTGVCriterion.pyx":770
  *         for j in range(self.n_childs):
  *             for k in range(self.n_outputs):
  *                 proxy_impurity_childs[j] += sum_childs[j][k] * sum_childs[j][k]             # <<<<<<<<<<<<<<
@@ -12549,7 +12454,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
     }
   }
 
-  /* "CARTGVCriterion.pyx":765
+  /* "CARTGVCriterion.pyx":772
  *                 proxy_impurity_childs[j] += sum_childs[j][k] * sum_childs[j][k]
  * 
  *         cdef double res = 0             # <<<<<<<<<<<<<<
@@ -12558,7 +12463,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
  */
   __pyx_v_res = 0.0;
 
-  /* "CARTGVCriterion.pyx":766
+  /* "CARTGVCriterion.pyx":773
  * 
  *         cdef double res = 0
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
@@ -12568,7 +12473,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.n_childs;
   __pyx_v_n_childs = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":767
+  /* "CARTGVCriterion.pyx":774
  *         cdef double res = 0
  *         cdef int n_childs = self.n_childs
  *         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12580,7 +12485,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
     __pyx_v_i = __pyx_t_4;
 
-    /* "CARTGVCriterion.pyx":768
+    /* "CARTGVCriterion.pyx":775
  *         cdef int n_childs = self.n_childs
  *         for i in range(n_childs):
  *           res += proxy_impurity_childs[i] / self.weighted_n_childs[i]             # <<<<<<<<<<<<<<
@@ -12595,12 +12500,12 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 768, __pyx_L1_error)
+      __PYX_ERR(0, 775, __pyx_L1_error)
     }
     __pyx_v_res = (__pyx_v_res + ((__pyx_v_proxy_impurity_childs[__pyx_v_i]) / (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_i])));
   }
 
-  /* "CARTGVCriterion.pyx":770
+  /* "CARTGVCriterion.pyx":777
  *           res += proxy_impurity_childs[i] / self.weighted_n_childs[i]
  * 
  *         return res             # <<<<<<<<<<<<<<
@@ -12610,7 +12515,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   __pyx_r = __pyx_v_res;
   goto __pyx_L0;
 
-  /* "CARTGVCriterion.pyx":755
+  /* "CARTGVCriterion.pyx":762
  *         return impurity / self.n_outputs
  * 
  *     cdef double proxy_impurity_improvement(self) nogil:             # <<<<<<<<<<<<<<
@@ -12626,7 +12531,7 @@ static double __pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement(st
   return __pyx_r;
 }
 
-/* "CARTGVCriterion.pyx":772
+/* "CARTGVCriterion.pyx":779
  *         return res
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -12668,7 +12573,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "CARTGVCriterion.pyx":774
+  /* "CARTGVCriterion.pyx":781
  *     cdef void children_impurity(self, double** impurity_childs) nogil:
  * 
  *         cdef double** sum_childs = self.sum_childs             # <<<<<<<<<<<<<<
@@ -12678,7 +12583,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   __pyx_t_1 = __pyx_v_self->__pyx_base.__pyx_base.sum_childs;
   __pyx_v_sum_childs = __pyx_t_1;
 
-  /* "CARTGVCriterion.pyx":781
+  /* "CARTGVCriterion.pyx":788
  *         cdef SIZE_t c
  *         cdef SIZE_t m
  *         cdef DOUBLE_t w = 1.0             # <<<<<<<<<<<<<<
@@ -12687,7 +12592,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
  */
   __pyx_v_w = 1.0;
 
-  /* "CARTGVCriterion.pyx":783
+  /* "CARTGVCriterion.pyx":790
  *         cdef DOUBLE_t w = 1.0
  *         cdef DOUBLE_t y_ik
  *         cdef double* sq_sum_childs = <double*> calloc(self.n_childs,sizeof(double))             # <<<<<<<<<<<<<<
@@ -12696,7 +12601,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
  */
   __pyx_v_sq_sum_childs = ((double *)calloc(__pyx_v_self->__pyx_base.__pyx_base.n_childs, (sizeof(double))));
 
-  /* "CARTGVCriterion.pyx":784
+  /* "CARTGVCriterion.pyx":791
  *         cdef DOUBLE_t y_ik
  *         cdef double* sq_sum_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef int n_childs = self.n_childs             # <<<<<<<<<<<<<<
@@ -12706,7 +12611,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   __pyx_t_2 = __pyx_v_self->__pyx_base.__pyx_base.n_childs;
   __pyx_v_n_childs = __pyx_t_2;
 
-  /* "CARTGVCriterion.pyx":785
+  /* "CARTGVCriterion.pyx":792
  *         cdef double* sq_sum_childs = <double*> calloc(self.n_childs,sizeof(double))
  *         cdef int n_childs = self.n_childs
  *         cdef SIZE_t* samples = self.samples             # <<<<<<<<<<<<<<
@@ -12716,7 +12621,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   __pyx_t_3 = __pyx_v_self->__pyx_base.__pyx_base.samples;
   __pyx_v_samples = __pyx_t_3;
 
-  /* "CARTGVCriterion.pyx":786
+  /* "CARTGVCriterion.pyx":793
  *         cdef int n_childs = self.n_childs
  *         cdef SIZE_t* samples = self.samples
  *         cdef DOUBLE_t* sample_weight = self.sample_weight             # <<<<<<<<<<<<<<
@@ -12726,7 +12631,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   __pyx_t_4 = __pyx_v_self->__pyx_base.__pyx_base.sample_weight;
   __pyx_v_sample_weight = __pyx_t_4;
 
-  /* "CARTGVCriterion.pyx":788
+  /* "CARTGVCriterion.pyx":795
  *         cdef DOUBLE_t* sample_weight = self.sample_weight
  * 
  *         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12738,7 +12643,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_i = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":789
+    /* "CARTGVCriterion.pyx":796
  * 
  *         for i in range(n_childs):
  *             for j in range(self.starts[i],self.ends[i]):             # <<<<<<<<<<<<<<
@@ -12750,7 +12655,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
     for (__pyx_t_9 = (__pyx_v_self->__pyx_base.__pyx_base.starts[__pyx_v_i]); __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
       __pyx_v_j = __pyx_t_9;
 
-      /* "CARTGVCriterion.pyx":790
+      /* "CARTGVCriterion.pyx":797
  *         for i in range(n_childs):
  *             for j in range(self.starts[i],self.ends[i]):
  *                 k = samples[j]             # <<<<<<<<<<<<<<
@@ -12759,7 +12664,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
  */
       __pyx_v_k = (__pyx_v_samples[__pyx_v_j]);
 
-      /* "CARTGVCriterion.pyx":792
+      /* "CARTGVCriterion.pyx":799
  *                 k = samples[j]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -12769,7 +12674,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
       __pyx_t_10 = ((__pyx_v_sample_weight != NULL) != 0);
       if (__pyx_t_10) {
 
-        /* "CARTGVCriterion.pyx":793
+        /* "CARTGVCriterion.pyx":800
  * 
  *                 if sample_weight != NULL:
  *                     w = sample_weight[k]             # <<<<<<<<<<<<<<
@@ -12778,7 +12683,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
  */
         __pyx_v_w = (__pyx_v_sample_weight[__pyx_v_k]);
 
-        /* "CARTGVCriterion.pyx":792
+        /* "CARTGVCriterion.pyx":799
  *                 k = samples[j]
  * 
  *                 if sample_weight != NULL:             # <<<<<<<<<<<<<<
@@ -12787,7 +12692,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
  */
       }
 
-      /* "CARTGVCriterion.pyx":795
+      /* "CARTGVCriterion.pyx":802
  *                     w = sample_weight[k]
  * 
  *                 for l in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -12799,14 +12704,14 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
       for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
         __pyx_v_l = __pyx_t_13;
 
-        /* "CARTGVCriterion.pyx":796
+        /* "CARTGVCriterion.pyx":803
  * 
  *                 for l in range(self.n_outputs):
  *                     y_ik = self.y[k,l]             # <<<<<<<<<<<<<<
  *                     sq_sum_childs[i] += w * y_ik * y_ik
  * 
  */
-        if (unlikely(!__pyx_v_self->__pyx_base.__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 796, __pyx_L1_error)}
+        if (unlikely(!__pyx_v_self->__pyx_base.__pyx_base.y.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 803, __pyx_L1_error)}
         __pyx_t_14 = __pyx_v_k;
         __pyx_t_15 = __pyx_v_l;
         __pyx_t_16 = -1;
@@ -12820,11 +12725,11 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
         } else if (unlikely(__pyx_t_15 >= __pyx_v_self->__pyx_base.__pyx_base.y.shape[1])) __pyx_t_16 = 1;
         if (unlikely(__pyx_t_16 != -1)) {
           __Pyx_RaiseBufferIndexErrorNogil(__pyx_t_16);
-          __PYX_ERR(0, 796, __pyx_L1_error)
+          __PYX_ERR(0, 803, __pyx_L1_error)
         }
         __pyx_v_y_ik = (*((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=1 */ ((char *) (((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const  *) ( /* dim=0 */ (__pyx_v_self->__pyx_base.__pyx_base.y.data + __pyx_t_14 * __pyx_v_self->__pyx_base.__pyx_base.y.strides[0]) )) + __pyx_t_15)) )));
 
-        /* "CARTGVCriterion.pyx":797
+        /* "CARTGVCriterion.pyx":804
  *                 for l in range(self.n_outputs):
  *                     y_ik = self.y[k,l]
  *                     sq_sum_childs[i] += w * y_ik * y_ik             # <<<<<<<<<<<<<<
@@ -12837,7 +12742,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
     }
   }
 
-  /* "CARTGVCriterion.pyx":799
+  /* "CARTGVCriterion.pyx":806
  *                     sq_sum_childs[i] += w * y_ik * y_ik
  * 
  *         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12849,7 +12754,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_i = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":800
+    /* "CARTGVCriterion.pyx":807
  * 
  *         for i in range(n_childs):
  *             impurity_childs[0][i] = sq_sum_childs[i] / self.weighted_n_childs[i]             # <<<<<<<<<<<<<<
@@ -12864,12 +12769,12 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 800, __pyx_L1_error)
+      __PYX_ERR(0, 807, __pyx_L1_error)
     }
     ((__pyx_v_impurity_childs[0])[__pyx_v_i]) = ((__pyx_v_sq_sum_childs[__pyx_v_i]) / (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_i]));
   }
 
-  /* "CARTGVCriterion.pyx":801
+  /* "CARTGVCriterion.pyx":808
  *         for i in range(n_childs):
  *             impurity_childs[0][i] = sq_sum_childs[i] / self.weighted_n_childs[i]
  *         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12881,7 +12786,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_i = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":802
+    /* "CARTGVCriterion.pyx":809
  *             impurity_childs[0][i] = sq_sum_childs[i] / self.weighted_n_childs[i]
  *         for i in range(n_childs):
  *             for j in range(self.n_outputs):             # <<<<<<<<<<<<<<
@@ -12893,7 +12798,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
     for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
       __pyx_v_j = __pyx_t_9;
 
-      /* "CARTGVCriterion.pyx":803
+      /* "CARTGVCriterion.pyx":810
  *         for i in range(n_childs):
  *             for j in range(self.n_outputs):
  *                 impurity_childs[0][i] -= (sum_childs[i][j] / self.weighted_n_childs[i]) ** 2             # <<<<<<<<<<<<<<
@@ -12910,13 +12815,13 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
         #ifdef WITH_THREAD
         __Pyx_PyGILState_Release(__pyx_gilstate_save);
         #endif
-        __PYX_ERR(0, 803, __pyx_L1_error)
+        __PYX_ERR(0, 810, __pyx_L1_error)
       }
       ((__pyx_v_impurity_childs[__pyx_t_18])[__pyx_t_11]) = (((__pyx_v_impurity_childs[__pyx_t_18])[__pyx_t_11]) - pow((((__pyx_v_sum_childs[__pyx_v_i])[__pyx_v_j]) / (__pyx_v_self->__pyx_base.__pyx_base.weighted_n_childs[__pyx_v_i])), 2.0));
     }
   }
 
-  /* "CARTGVCriterion.pyx":804
+  /* "CARTGVCriterion.pyx":811
  *             for j in range(self.n_outputs):
  *                 impurity_childs[0][i] -= (sum_childs[i][j] / self.weighted_n_childs[i]) ** 2
  *         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -12928,7 +12833,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
     __pyx_v_i = __pyx_t_6;
 
-    /* "CARTGVCriterion.pyx":805
+    /* "CARTGVCriterion.pyx":812
  *                 impurity_childs[0][i] -= (sum_childs[i][j] / self.weighted_n_childs[i]) ** 2
  *         for i in range(n_childs):
  *             impurity_childs[0][i] /= self.n_outputs             # <<<<<<<<<<<<<<
@@ -12945,19 +12850,19 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
       #ifdef WITH_THREAD
       __Pyx_PyGILState_Release(__pyx_gilstate_save);
       #endif
-      __PYX_ERR(0, 805, __pyx_L1_error)
+      __PYX_ERR(0, 812, __pyx_L1_error)
     }
     ((__pyx_v_impurity_childs[__pyx_t_18])[__pyx_t_7]) = (((__pyx_v_impurity_childs[__pyx_t_18])[__pyx_t_7]) / __pyx_v_self->__pyx_base.__pyx_base.n_outputs);
   }
 
-  /* "CARTGVCriterion.pyx":807
+  /* "CARTGVCriterion.pyx":814
  *             impurity_childs[0][i] /= self.n_outputs
  * 
  *         free(sq_sum_childs)             # <<<<<<<<<<<<<<
  */
   free(__pyx_v_sq_sum_childs);
 
-  /* "CARTGVCriterion.pyx":772
+  /* "CARTGVCriterion.pyx":779
  *         return res
  * 
  *     cdef void children_impurity(self, double** impurity_childs) nogil:             # <<<<<<<<<<<<<<
@@ -12972,7 +12877,7 @@ static void __pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity(struct __pyx_
   __pyx_L0:;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":735
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -12989,7 +12894,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":736
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":736
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -13003,7 +12908,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":735
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -13022,7 +12927,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":738
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -13039,7 +12944,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":739
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":739
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -13053,7 +12958,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":738
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -13072,7 +12977,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":741
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -13089,7 +12994,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":742
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":742
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -13103,7 +13008,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":741
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -13122,7 +13027,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":744
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -13139,7 +13044,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":745
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":745
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -13153,7 +13058,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":744
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -13172,7 +13077,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":747
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -13189,7 +13094,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":748
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":748
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -13203,7 +13108,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":747
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -13222,7 +13127,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":750
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -13236,7 +13141,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":751
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -13246,7 +13151,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":752
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":752
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -13258,7 +13163,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":751
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -13267,7 +13172,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":754
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":754
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -13281,7 +13186,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":750
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -13296,7 +13201,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":931
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":931
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -13308,7 +13213,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":932
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":932
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -13317,7 +13222,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":933
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":933
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -13326,7 +13231,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":931
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":931
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -13338,7 +13243,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":935
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":935
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -13353,7 +13258,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":936
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":936
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -13362,7 +13267,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":937
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":937
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -13372,7 +13277,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":938
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":938
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -13383,7 +13288,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":937
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":937
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -13392,7 +13297,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":939
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":939
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -13404,7 +13309,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":935
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":935
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -13419,7 +13324,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":943
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":943
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -13443,7 +13348,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13459,7 +13364,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":945
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":945
  * cdef inline int import_array() except -1:
  *     try:
  *         __pyx_import_array()             # <<<<<<<<<<<<<<
@@ -13468,7 +13373,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 945, __pyx_L3_error)
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13482,7 +13387,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":946
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":946
  *     try:
  *         __pyx_import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13497,7 +13402,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":947
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":947
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -13513,7 +13418,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":944
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13528,7 +13433,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":943
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":943
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -13551,7 +13456,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":949
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":949
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -13575,7 +13480,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13591,7 +13496,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":951
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":951
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -13600,7 +13505,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 951, __pyx_L3_error)
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13614,7 +13519,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":952
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":952
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13629,7 +13534,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":953
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":953
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -13645,7 +13550,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":950
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13660,7 +13565,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":949
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":949
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -13683,7 +13588,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":955
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":955
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -13707,7 +13612,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13723,7 +13628,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":957
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":957
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -13732,7 +13637,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(2, 957, __pyx_L3_error)
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13746,7 +13651,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":958
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":958
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -13761,7 +13666,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":959
+      /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":959
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -13777,7 +13682,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
+    /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":956
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -13792,7 +13697,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":955
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":955
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -13815,7 +13720,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":969
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":969
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -13828,7 +13733,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_timedelta64_object", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":981
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":981
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyTimedeltaArrType_Type)             # <<<<<<<<<<<<<<
@@ -13838,7 +13743,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyTimedeltaArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":969
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":969
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -13852,7 +13757,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":984
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":984
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -13865,7 +13770,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_datetime64_object", 0);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":996
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":996
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyDatetimeArrType_Type)             # <<<<<<<<<<<<<<
@@ -13875,7 +13780,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyDatetimeArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":984
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":984
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -13889,7 +13794,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":999
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":999
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -13900,7 +13805,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
 static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *__pyx_v_obj) {
   npy_datetime __pyx_r;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1006
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1006
  *     also needed.  That can be found using `get_datetime64_unit`.
  *     """
  *     return (<PyDatetimeScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -13910,7 +13815,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   __pyx_r = ((PyDatetimeScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":999
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":999
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -13923,7 +13828,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1009
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1009
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -13934,7 +13839,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
 static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject *__pyx_v_obj) {
   npy_timedelta __pyx_r;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1013
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1013
  *     returns the int64 value underlying scalar numpy timedelta64 object
  *     """
  *     return (<PyTimedeltaScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -13944,7 +13849,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   __pyx_r = ((PyTimedeltaScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1009
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1009
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -13957,7 +13862,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   return __pyx_r;
 }
 
-/* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1016
+/* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1016
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -13968,7 +13873,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
 static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObject *__pyx_v_obj) {
   NPY_DATETIMEUNIT __pyx_r;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1020
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1020
  *     returns the unit part of the dtype for a numpy datetime64 object.
  *     """
  *     return <NPY_DATETIMEUNIT>(<PyDatetimeScalarObject*>obj).obmeta.base             # <<<<<<<<<<<<<<
@@ -13976,7 +13881,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   __pyx_r = ((NPY_DATETIMEUNIT)((PyDatetimeScalarObject *)__pyx_v_obj)->obmeta.base);
   goto __pyx_L0;
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1016
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":1016
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -28883,7 +28788,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":947
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":947
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -28894,7 +28799,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":953
+  /* "../../../../../../../../../../Python38/lib/site-packages/numpy/__init__.pxd":953
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -29298,15 +29203,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_15CARTGVCriterion_CARTGVRegressionCriterion.__pyx_base.children_impurity = (void (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, double **))__pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_children_impurity;
   __pyx_vtable_15CARTGVCriterion_CARTGVRegressionCriterion.__pyx_base.node_value = (void (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, double *))__pyx_f_15CARTGVCriterion_25CARTGVRegressionCriterion_node_value;
   __pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_base = __pyx_ptype_15CARTGVCriterion_CARTGVCriterion;
-  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 567, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_dictoffset && __pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 567, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVRegressionCriterion, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 567, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVRegressionCriterion, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion) < 0) __PYX_ERR(0, 572, __pyx_L1_error)
   __pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion = &__pyx_type_15CARTGVCriterion_CARTGVRegressionCriterion;
   __pyx_vtabptr_15CARTGVCriterion_CARTGVGini = &__pyx_vtable_15CARTGVCriterion_CARTGVGini;
   __pyx_vtable_15CARTGVCriterion_CARTGVGini.__pyx_base = *__pyx_vtabptr_15CARTGVCriterion_CARTGVClassificationCriterion;
@@ -29315,15 +29220,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_15CARTGVCriterion_CARTGVGini.__pyx_base.__pyx_base.test_node_impurity = (double (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, int __pyx_skip_dispatch))__pyx_f_15CARTGVCriterion_10CARTGVGini_test_node_impurity;
   __pyx_vtable_15CARTGVCriterion_CARTGVGini.__pyx_base.__pyx_base.test_children_impurity = (void (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, int __pyx_skip_dispatch))__pyx_f_15CARTGVCriterion_10CARTGVGini_test_children_impurity;
   __pyx_type_15CARTGVCriterion_CARTGVGini.tp_base = __pyx_ptype_15CARTGVCriterion_CARTGVClassificationCriterion;
-  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 497, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_15CARTGVCriterion_CARTGVGini.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_15CARTGVCriterion_CARTGVGini.tp_dictoffset && __pyx_type_15CARTGVCriterion_CARTGVGini.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_15CARTGVCriterion_CARTGVGini.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVGini.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVGini, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVGini.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 497, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVGini, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVGini) < 0) __PYX_ERR(0, 497, __pyx_L1_error)
   __pyx_ptype_15CARTGVCriterion_CARTGVGini = &__pyx_type_15CARTGVCriterion_CARTGVGini;
   __pyx_vtabptr_15CARTGVCriterion_CARTGVMSE = &__pyx_vtable_15CARTGVCriterion_CARTGVMSE;
   __pyx_vtable_15CARTGVCriterion_CARTGVMSE.__pyx_base = *__pyx_vtabptr_15CARTGVCriterion_CARTGVRegressionCriterion;
@@ -29331,15 +29236,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_15CARTGVCriterion_CARTGVMSE.__pyx_base.__pyx_base.children_impurity = (void (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *, double **))__pyx_f_15CARTGVCriterion_9CARTGVMSE_children_impurity;
   __pyx_vtable_15CARTGVCriterion_CARTGVMSE.__pyx_base.__pyx_base.proxy_impurity_improvement = (double (*)(struct __pyx_obj_15CARTGVCriterion_CARTGVCriterion *))__pyx_f_15CARTGVCriterion_9CARTGVMSE_proxy_impurity_improvement;
   __pyx_type_15CARTGVCriterion_CARTGVMSE.tp_base = __pyx_ptype_15CARTGVCriterion_CARTGVRegressionCriterion;
-  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 741, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 748, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_15CARTGVCriterion_CARTGVMSE.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_15CARTGVCriterion_CARTGVMSE.tp_dictoffset && __pyx_type_15CARTGVCriterion_CARTGVMSE.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_15CARTGVCriterion_CARTGVMSE.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVMSE.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 741, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVMSE, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 741, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_15CARTGVCriterion_CARTGVMSE.tp_dict, __pyx_vtabptr_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 748, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVMSE, (PyObject *)&__pyx_type_15CARTGVCriterion_CARTGVMSE) < 0) __PYX_ERR(0, 748, __pyx_L1_error)
   __pyx_ptype_15CARTGVCriterion_CARTGVMSE = &__pyx_type_15CARTGVCriterion_CARTGVMSE;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;

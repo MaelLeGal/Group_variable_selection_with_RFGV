@@ -69,6 +69,8 @@ cdef class CARTGVSplitter():
 #    cdef const DTYPE_t[:,:] X                               # The datas
     cdef const DOUBLE_t[:, ::1] y               # The responses
 
+    cdef int test
+
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,
     # `node_split` reorganizes the node samples `samples[start:end]` in two

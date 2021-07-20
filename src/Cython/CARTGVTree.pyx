@@ -76,17 +76,130 @@ cdef SIZE_t INITIAL_STACK_SIZE = 10
 # This works by casting `dummy` to an array of Node of length 1, which numpy
 # can construct a `dtype`-object for. See https://stackoverflow.com/q/62448946
 # for a more detailed explanation.
-cdef Node dummy;
-NODE_DTYPE = np.asarray(<Node[:1]>(&dummy)).dtype
+#cdef CARTGVNode dummy;
+#NODE_DTYPE = np.asarray(<CARTGVNode[:1]>(&dummy)).dtype
+#child_type = np.asarray(<SIZE_t[:1]>(&dummy.childs)).dtype
+#print(child_type)
+#splitting_tree_type = np.asarray(<unsigned char[:1]>(&dummy.splitting_tree)).dtype
+#print(splitting_tree_type)
+NODE_DTYPE = np.dtype([('childs',np.ndarray),
+                        ('parent','i8'),
+                        ('splitting_tree',np.str_),
+                        ('impurity','f8'),
+                        ('n_node_samples','i8'),
+                        ('weighted_n_node_samples','f8'),
+                        ('group','i8'),
+                        ('n_childs','i8'),
+                        ('current_child','i8'),
+                        ('start','i8'),
+                        ('end','i8'),
+                        ('depth','i8')])
+#NODE_DTYPE = CARTGVNodeClass
+ctypedef struct CARTGVNode_PyObject:
+#  PyObject_HEAD;
+  SIZE_t* childs;                        # The childs of the node
+  SIZE_t parent;                         # The parent of the node
+  unsigned char* splitting_tree;         # The serialized splitting tree of the node
+  DOUBLE_t impurity;                     # The impurity of the node
+  SIZE_t n_node_samples;                 # The number of samples in the node
+  DOUBLE_t weighted_n_node_samples;      # The number of weighted samples in the node
+  int group;                             # The group selected for the split of the node
+  int n_childs;                          # The number of childs of the node
+  int current_child;                     # The current number of children of the node
+  int start;                             # The starting position in the samples array
+  int end;                               # The ending position in the samples array
+  int depth;
 
-dt = np.dtype([('childs', np.dtype('intp')),
-               ('parent', np.dtype('intp')),
-               ('splitting_tree','B'),
-               ('impurity', np.dtype('float64')),
-               ('n_node_samples', np.dtype('intp')),
-               ('weighted_n_node_samples',np.dtype('float64')),
-               ('group',np.dtype('intp')),
-               ('n_childs',np.dtype('intp'))])
+#cdef CARTGVNodeClass dummy;
+#NODE_DTYPE = np.asarray(dummy).dtype
+
+#NODE_DTYPE = PyArray_RegisterDataType(CARTGVNode_PyObject)
+
+#print(NODE_DTYPE)
+#dt = np.dtype([('childs', np.dtype('intp')),
+#               ('parent', np.dtype('intp')),
+#               ('splitting_tree','B'),
+#               ('impurity', np.dtype('float64')),
+#               ('n_node_samples', np.dtype('intp')),
+#               ('weighted_n_node_samples',np.dtype('float64')),
+#               ('group',np.dtype('intp')),
+#               ('n_childs',np.dtype('intp'))])
+#print(dt)
+
+cdef class CARTGVNodeClass():
+
+    cdef CARTGVNode *ptr
+
+    def __cinit__(self):
+        self.ptr = NULL
+
+    def __dealloc__(self):
+        free(self.ptr)
+        self.ptr = NULL
+
+    @property
+    def childs(self):
+        return np.asarray(<SIZE_t[:self.ptr.n_childs]> self.ptr.childs) if self.ptr is not NULL else None
+
+    @property
+    def splitting_tree(self):
+        if self.ptr is not NULL:
+            if(self.ptr.n_childs > 0 and self.ptr.splitting_tree != b''):
+                return pickle.loads(self.ptr.splitting_tree)
+            else:
+                return None
+        else:
+            return None
+
+    @property
+    def parent(self):
+        return self.ptr.parent if self.ptr is not NULL else None
+
+    @property
+    def impurity(self):
+        return self.ptr.impurity if self.ptr is not NULL else None
+
+    @property
+    def n_node_samples(self):
+        return self.ptr.n_node_samples if self.ptr is not NULL else None
+
+
+    @property
+    def weighted_n_node_samples(self):
+        return self.ptr.weighted_n_node_samples if self.ptr is not NULL else None
+
+    @property
+    def group(self):
+        return self.ptr.group if self.ptr is not NULL else None
+
+    @property
+    def n_childs(self):
+        return self.ptr.n_childs if self.ptr is not NULL else None
+
+    @property
+    def current_child(self):
+        return self.ptr.current_child if self.ptr is not NULL else None
+
+    @property
+    def start(self):
+        return self.ptr.start if self.ptr is not NULL else None
+
+    @property
+    def end(self):
+        return self.ptr.end if self.ptr is not NULL else None
+
+    @property
+    def depth(self):
+        return self.ptr.depth if self.ptr is not NULL else None
+
+    @staticmethod
+    cdef CARTGVNodeClass from_ptr(CARTGVNode *ptr):
+
+        # Call to __new__ bypasses __init__ constructor
+        cdef CARTGVNodeClass wrapper = CARTGVNodeClass.__new__(CARTGVNodeClass)
+        wrapper.ptr = ptr
+        return wrapper
+
 
 cdef class CARTGVTree():
     """
@@ -104,6 +217,9 @@ cdef class CARTGVTree():
 #
     @property
     def n_classes(self):
+        """
+        Return the number of classes
+        """
         if self.n_classes != NULL:
             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
         else:
@@ -115,6 +231,9 @@ cdef class CARTGVTree():
 #
     @property
     def value_stride(self):
+        """
+        Return the value stride
+        """
         return self.value_stride
 
 #    @property
@@ -135,6 +254,9 @@ cdef class CARTGVTree():
 #
     @property
     def value(self):
+        """
+        Return the values of each node (The number of observation in each class for the current node)
+        """
         return self._get_value_ndarray()[:self.node_count]
 #        if self.value != NULL:
 #            return np.asarray(<double[:self.capacity*self.value_stride]>self.value)
@@ -143,6 +265,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes(self):
+        """
+        Return an array of nodes
+        """
         if self.nodes != NULL:
             arr = self._get_node_ndarray()
 #            return None #TODO find a way to return the node array
@@ -153,6 +278,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_splitting_trees(self):
+        """
+        Return the splitting tree of each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count,dtype=Tree)
             for i in range(self.node_count):
@@ -165,6 +293,9 @@ cdef class CARTGVTree():
             return None
     @property
     def nodes_childs(self):
+        """
+        Return the ids of children of each nodes
+        """
         if self.nodes != NULL:
             arr = np.ndarray((self.node_count))
             for i in range(self.node_count):
@@ -178,6 +309,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_parent(self):
+        """
+        Return the id of the parent of each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -188,6 +322,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_impurities(self):
+        """
+        Return the impurity of each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -198,6 +335,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_n_node_samples(self):
+        """
+        Return the number of samples/observations in each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -208,6 +348,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_weighted_n_node_samples(self):
+        """
+        Return the number of weighted samples/observations in each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -218,6 +361,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_group(self):
+        """
+        Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -228,6 +374,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_n_childs(self):
+        """
+        Return the number of children for each node in an array
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -238,6 +387,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_depths(self):
+        """
+        Return the depth of each node
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -248,6 +400,9 @@ cdef class CARTGVTree():
 
     @property
     def nodes_cart_idx(self):
+        """
+        Return the place of the node in the splitting tree
+        """
         if self.nodes != NULL:
             arr = np.ndarray(self.node_count)
             for i in range(self.node_count):
@@ -257,7 +412,15 @@ cdef class CARTGVTree():
             return None
 
     def __cinit__(self, int n_groups, np.ndarray len_groups, object groups, int n_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):
-          """Constructor."""
+          """
+          Constructor of the CARTGVTree class
+          params n_groups : an int, the number of groups
+          params len_groups : a numpy ndarray, An array containing the length of each group
+          params groups : a numpy ndarray, A 2D array containing the index of each variable for each group (example : data = (V1,V2,V3), groups = [[V1,V2],[V1,V3],[V2]])
+          params n_features : an int, the number of variables in the datas
+          params n_classes : a numpy ndarray #TODO
+          params n_outputs : an int, the number of outputs, the number of dimension of the responses
+          """
 
           #Enable error tracking
           faulthandler.enable()
@@ -289,6 +452,9 @@ cdef class CARTGVTree():
           self.nodes_cart_idx = NULL
 
     def __dealloc__(self):
+        """
+        Free the allocated memory used or managed by the object
+        """
         for i in range(self.node_count):
             free(self.nodes[i].childs)
             if(self.nodes[i].splitting_tree != b''):
@@ -300,9 +466,32 @@ cdef class CARTGVTree():
       
     def __reduce__(self):
           """Reduce re-implementation, for pickling."""
-          return (CARTGVTree, (self.n_grouped_features,
+          return (CARTGVTree, (self.n_groups,
+                         self.len_groups,
+                         self.groups,
+                         self.n_features,
                          sizet_ptr_to_ndarray(self.n_classes, self.n_outputs),
                          self.n_outputs), self.__getstate__())
+
+    def __getstate__(self):
+        """Getstate re-implementation, for pickling."""
+        d = {}
+        # capacity is inferred during the __setstate__ using nodes
+        d["max_depth"] = self.max_depth
+        d["node_count"] = self.node_count
+
+        d["values"] = self._get_value_ndarray()
+        d["groups"] = self.groups
+        d["n_leaves"] = self.n_leaves
+        d["len_groups"] = self.len_groups
+        d["nodes_cart_idx"] = self._get_nodes_cart_idx_ndarray()
+
+        print(d)
+
+        d["nodes"] = self._get_node_ndarray()
+
+#        print(d)
+        return d
 
     def __setstate__(self, d):
         """Setstate re-implementation, for unpickling."""
@@ -321,7 +510,7 @@ cdef class CARTGVTree():
 
         if (node_ndarray.dtype != NODE_DTYPE):
             # possible mismatch of big/little endian due to serialization
-            # on a different architecture. Try swapping the byte order.  
+            # on a different architecture. Try swapping the byte order.
             node_ndarray = node_ndarray.byteswap().newbyteorder()
             if (node_ndarray.dtype != NODE_DTYPE):
                 raise ValueError('Did not recognise loaded array dytpe')
@@ -401,6 +590,16 @@ cdef class CARTGVTree():
         Add a node to the tree.
         The new node registers itself as the child of its parent.
         Returns (SIZE_t)(-1) on error.
+        params parent : A SIZE_t, the parent of the node
+        params is_leaf : A bint, a boolean true if the node is a leaf, false otherwise
+        params splitting_tree : An unsigned char*, the serialized node splitting_tree
+        params impurity : A double, the impurity of the node
+        params n_node_samples : A SIZE_t, the number of samples in the node
+        params group : An int, the group used to split the node
+        params start : An int, the index at which we start in the samples array to take the correct samples/observations in the node
+        params end : An int, the index at which we end in the samples array to take the correct samples/observations in the node
+        params depth : An int, the depth of the node
+        params cart_idx : A SIZE_t, the index of the node in the leaves of the splitting tree
         """
 
         cdef SIZE_t node_id = self.node_count #The current node id
@@ -436,7 +635,7 @@ cdef class CARTGVTree():
         if is_leaf:
 #            node.splitting_tree = <unsigned char*> malloc(sizeof(SIZE_t))
             node.splitting_tree = '' #splitting_tree #TODO is it necessary ? Empty string for no splitting tree ?
-            node.group = -1
+            node.group = -2
 
         # If it isn't a leaf, assign the splitting tree to the node.
         else:
@@ -452,7 +651,10 @@ cdef class CARTGVTree():
         return node_id
 
     cpdef np.ndarray predict(self, object X):
-        """Predict target for X."""
+        """
+        Predict target for X.
+        params X : an object, the data to predict
+        """
         out = self._get_value_ndarray().take(self.apply(X), axis=0,
                                               mode='clip')
         if self.n_outputs == 1:
@@ -460,14 +662,20 @@ cdef class CARTGVTree():
         return out
 
     cpdef np.ndarray apply(self, object X):
-        """Finds the terminal region (=leaf node) for each sample in X."""
+        """
+        Finds the terminal region (=leaf node) for each sample in X.
+        params X : an object, the data for which we want the terminal regions
+        """
         if issparse(X):
             return self._apply_sparse_csr(X)
         else:
             return self._apply_dense(X)
 
     cdef inline np.ndarray _apply_dense(self, object X):
-        """Finds the terminal region (=leaf node) for each sample in X."""
+        """
+        Finds the terminal region (=leaf node) for each sample in X.
+        params X : an object, the data for which we want the terminal regions
+        """
 
         # Check input
         if not isinstance(X, np.ndarray):
@@ -525,17 +733,6 @@ cdef class CARTGVTree():
                         Xf[i,j] = X[i,group[j]]
                     else:
                         Xf[j] = X[group[j]]
-
-#                print(current_node.group)
-#                print(group)
-#                print(len_group)
-#                print(Xf)
-#                clf = DecisionTreeRegressor()
-#                clf.tree_ = current_split_tree
-#                fig, ax = plt.subplots(1,figsize=(16,9))
-#                plot_tree(clf, ax=ax)
-#                plt.show()
-
 
                 # Get the id of the splitting tree lead in which the data went
                 if X.ndim > 1:
@@ -653,8 +850,173 @@ cdef class CARTGVTree():
 
     #     return out
 
+#    cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx):
+#
+#        return self.apply_sobol(X, group_j, in_bag_idx, oob_idx)
+#
+#
+#    cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_indx, int[::1] oob_indx):
+#
+#        cdef np.ndarray in_bag_idx = np.asarray(in_bag_indx)
+#        cdef np.ndarray oob_idx = np.asarray(oob_indx)
+#
+#                # Check input
+#        if not isinstance(X, np.ndarray):
+#            raise ValueError("X should be in np.ndarray format, got %s"
+#                            % type(X))
+#
+#        if X.dtype != DTYPE:
+#            raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
+#
+#        # Extract input
+#        cdef const DTYPE_t[:, :] X_ndarray = X
+#        cdef SIZE_t n_samples = X.shape[0]
+#
+#        # Initialize output
+#        cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)
+#        cdef SIZE_t* out_ptr = <SIZE_t*> out.data
+#
+#        # Initialize auxiliary data-structure
+#        cdef CARTGVNode* node = NULL
+#        cdef Node* splitting_tree_node = NULL
+#        cdef SIZE_t i = 0
+#
+#        cdef CARTGVNode current_node
+#        X = np.array(X)
+#        prediction = np.array([], dtype=int)
+#        prob = []
+#
+#        # Check if there's more than one sample to predict
+#        if(X.ndim > 1):
+#            nb_samples = X.shape[0]
+#        else:
+#            nb_samples = 1
+#
+##        cdef CARTGVNode* final_nodes = <CARTGVNode*> malloc(sizeof(CARTGVNode)) #Tableau à réalouer à chaque nouveau noeud final
+##        cdef int final_node_counter = 0
+##
+##        cdef CARTGVNode* stack = <CARTGVNode*> malloc(sizeof(CARTGVNode))
+##        cdef int counter = 0
+#
+#
+#        pred = []
+#        list_final_nodes = []
+#        # Loop on the number of samples to predict
+#        print("NB samples : "  + str(nb_samples))
+#        for i in range(nb_samples):
+##            stack[0] = self.nodes[0]
+##            counter += 1
+#            final_nodes = []
+#            stack = []
+#            stack.append(0)
+#            while stack:
+#                print(len(stack))
+#                id = stack.pop()
+#                print("id : " + str(id))
+#                current_node = self.nodes[id]
+#
+##            while counter > 0:
+##                current_node = stack[counter-1]
+##                counter -= 1
+#
+#                if current_node.n_childs != 0:
+#                    if current_node.group != group_j:
+#
+#                        # Loads the splitting tree
+#                        current_split_tree = pickle.loads(current_node.splitting_tree)
+#
+#                        group = self.groups[current_node.group]
+#                        len_group = self.len_groups[current_node.group]
+#                        if X.ndim > 1:
+#                            Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
+#                        else:
+#                            Xf = np.empty(len_group, dtype=np.float32)
+#
+#                        for j in range(len_group):
+#                            if X.ndim > 1:
+#                                Xf[i,j] = X[i,group[j]]
+#                            else:
+#                                Xf[j] = X[group[j]]
+#
+#                        # Get the id of the splitting tree lead in which the data went
+#                        if X.ndim > 1:
+#                            leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
+#                        else:
+#                            leaf_id = current_split_tree.apply(Xf.reshape((1,len(Xf))))
+#
+#                        # Get the index of the child in the current node
+#                        idx_cart_tree = np.take(np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx), np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs))
+#
+#                        # Get the index in the splitting tree of the leaf
+#                        leaf_idx = np.where(idx_cart_tree == leaf_id[0])[0][0]
+#
+#                        out_ptr[i] = <SIZE_t>(&self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]] - self.nodes)
+#
+#                        # Get the next node
+##                        stack[counter] = self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]]
+##                        counter += 1
+#                        stack.append(np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx])
+#
+#                    else:
+##                        print(np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs))
+##                        stack = <CARTGVNode*> realloc(stack, (counter+current_node.n_childs)*sizeof(CARTGVNode))
+##                        for j in range(current_node.n_childs):
+##                            stack[counter+j] = self.nodes[current_node.childs[j]]
+##                        counter += current_node.n_childs
+#
+#                         for j in range(current_node.n_childs):
+#                            stack.append(current_node.childs[j])
+#                else:
+##                    final_nodes = <CARTGVNode*> realloc(final_nodes, (final_node_counter+1)*sizeof(CARTGVNode))
+##                    final_nodes[final_node_counter] = current_node
+##                    final_node_counter += 1
+#
+#                    final_nodes.append(id)
+#
+#            print(final_nodes)
+#            print(self._get_value_ndarray()[final_nodes])
+#
+#            list_final_nodes.append(final_nodes)
+##            np.append(prediction,np.argmax(np.sum(self._get_value_ndarray()[final_nodes], axis=0)))
+##            print(prediction)
+#        print(np.asarray(in_bag_idx))
+#
+#        in_bag_collection = np.array(list_final_nodes)[in_bag_idx]
+#        oob_collection = np.array(list_final_nodes)[oob_idx]
+#
+#        print(in_bag_collection)
+#        print(oob_collection)
+#
+#        for k in range(len(oob_collection)):
+#            shared_nodes = []
+#            for l in range(len(in_bag_collection)):
+##                shared_nodes = np.where(np.intersect1d(oob_collection[k], in_bag_collection[l])) #pas bon
+#                shared_nodes = np.nonzero(np.in1d(oob_collection[k], in_bag_collection[l]))
+##        shared_nodes = np.intersect1d(in_bag_collection,oob_collection)
+#
+#            print(shared_nodes)
+#
+#            if len(shared_nodes[0]) == 0:
+#                idx = np.where(self.nodes[k].parent in in_bag_collection)
+#            else:
+#                idx = shared_nodes
+##                parent_nodes = []
+##                parent_nodes.append(self.nodes[k].parent)
+##                final_nodes = parent_nodes
+#
+#            pred.append(np.argmax(np.sum(self._get_value_ndarray()[idx], axis=0)))
+#
+#        return np.array(pred)
+#
+##            current_node = self.nodes[0]
+##            current_split_tree = None
+
+
     cpdef object decision_path(self, object X):
-        """Finds the decision path (=node) for each sample in X."""
+        """
+        Finds the decision path (=node) for each sample in X.
+        params X : an object, the data for which we want the decision path
+        """
         if issparse(X):
             return self._decision_path_sparse_csr(X)
         else:
@@ -844,17 +1206,23 @@ cdef class CARTGVTree():
         cdef np.npy_intp shape[1]
         shape[0] = <np.npy_intp> self.node_count
         cdef np.npy_intp strides[1]
-        strides[0] = sizeof(Node)
+        strides[0] = sizeof(CARTGVNode)
         cdef np.ndarray arr
-        Py_INCREF(dt)
+        Py_INCREF(NODE_DTYPE)
         arr = PyArray_NewFromDescr(<PyTypeObject *> np.ndarray,
-                                   <np.dtype> dt, 1, shape,
+                                   <np.dtype> NODE_DTYPE, 1, shape,
                                    strides, <void*> self.nodes,
                                    np.NPY_DEFAULT, None)
         Py_INCREF(self)
         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
             raise ValueError("Can't initialize array.")
         return arr
+
+    cdef np.ndarray _get_nodes_cart_idx_ndarray(self):
+        """
+        Return an array containing the indexes of the nodes in their respective parent splitting tree
+        """
+        return np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx)
 
     # cpdef compute_group_importances(self, penality_function, normalize=True):
     #     """Computes the importance of each group (aka grouped variables)."""
@@ -1040,43 +1408,80 @@ cdef class CARTGVTreeBuilder():
 
     @property
     def splitter(self):
+        """
+        Return the splitter of the class
+        """
         return self.splitter
 
     @property
     def min_samples_split(self):
+        """
+        Return the minimal number of samples in a node needed to split it
+        """
         return self.min_samples_split
 
     @property
     def min_samples_leaf(self):
+        """
+        Return the minimal number under which the nodes are considered leaves
+        """
         return self.min_samples_leaf
 
     @property
     def min_weight_leaf(self):
+        """
+        Return the minimal weigth in a node under which it is considered a leaf
+        """
         return self.min_weight_leaf
 
     @property
     def max_depth(self):
+        """
+        Return the maximal depth at which the tree can grow
+        """
         return self.max_depth
 
     @property
     def mgroup(self):
+        """
+        Return the number of group that will be selected to split each node
+        """
         return self.mgroup
 
     @property
     def mvar(self):
+        """
+        Return the number of variables in the selected group that will be used to build the splitting tree
+        """
         return self.mvar
 
     @property
     def min_impurity_decrease(self):
+        """
+        Return the minimal decrease in impurity needed above which the node isn't considerd a leaf
+        """
         return self.min_impurity_decrease
 
     @property
     def min_impurity_split(self):
+        """
+        Return the minimal impurity under which the node is considered a leaf
+        """
         return self.min_impurity_split
 
     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,
                   SIZE_t min_samples_leaf, double min_weight_leaf,
                   object max_depth, double min_impurity_decrease, double min_impurity_split):
+        """
+        The constructor of the CARTGVTreeBuilder class
+        params splitter : A CARTGVSplitter, the splitter instance that will split the nodes
+        params min_samples_split : A SIZE_t, the minimal number of samples in a node needed to split it
+        params min_samples_split : A SIZE_t, the minimal number under which the nodes are considered leaves
+        params min_weight_leaf : A double, the minimal weigth in a node under which it is considered a leaf
+        params max_depth : An object, the maximal depth at which the tree can grow
+        params min_impurity_decrease : A double, the minimal decrease in impurity needed above which the node isn't considerd a leaf
+        params min_impurity_split : A double the minimal impurity under which the node is considered a leaf
+        """
         self.splitter = splitter
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
@@ -1091,7 +1496,16 @@ cdef class CARTGVTreeBuilder():
 
     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
                 object pen, np.ndarray sample_weight=None):
-        """Build a decision tree from the training set (X, y)."""
+        """
+        Build a decision tree from the training set (X, y).
+        params tree : An instance of CARTGVTree that will be fiiled by
+        params X : An object, the datas
+        params y : A numpy ndarray,  the responses
+        params groups : An object, an array containing the groups
+        params len_groups : A numpy ndarray, the length of each group
+        params pen : An object (string, function with only one parameter), the penality function
+        params sample_weight : A numpy ndarray, the weight  of each samples
+        """
         # check input
         X, y, sample_weight = self._check_input(X, y, sample_weight)
 
@@ -1179,6 +1593,7 @@ cdef class CARTGVTreeBuilder():
                            n_node_samples < 2 * min_samples_leaf or
                            weighted_n_node_samples < 2 * min_weight_leaf or
                            impurity <= min_impurity_split)
+#                           or (n_node_samples == 2 and impurity == 0.5)) #TODO check si cela ne cause pas d'autre erreur
 
                 if first:
                     impurity = splitter.node_impurity()
@@ -1198,6 +1613,13 @@ cdef class CARTGVTreeBuilder():
                     is_leaf = (is_leaf or
                                (split.improvement + EPSILON <
                                 min_impurity_decrease))
+
+                    if not is_leaf and split.n_childs == 1:
+                        is_leaf = True
+                        split.n_childs = 0
+                        split.group = -1
+                        with gil:
+                            splitting_tree = None
 
                 else:
                     with gil:
@@ -1272,7 +1694,12 @@ cdef class CARTGVTreeBuilder():
 
     cdef inline _check_input(self, object X, np.ndarray y,
                              np.ndarray sample_weight):
-        """Check input dtype, layout and format"""
+        """
+        Check input dtype, layout and format
+        params X : An object, the data
+        params y : a numpy ndarray the responses
+        params sample_weight : a numpy ndarray, the weight of each sample
+        """
         if issparse(X):
             X = X.tocsc()
             X.sort_indices()

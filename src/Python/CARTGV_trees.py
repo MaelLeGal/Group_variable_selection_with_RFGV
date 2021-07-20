@@ -30,7 +30,8 @@ from CARTGVSplitter import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSp
 
 from sklearn.tree import _tree, _splitter, _criterion
 
-__all__ = ["DecisionCARTGVTreeClassifier"]
+__all__ = ["DecisionCARTGVTreeClassifier",
+           "DecisionCARTGVTreeRegressor"]
 
 
 # =============================================================================
@@ -309,6 +310,12 @@ class DecisionCARTGVTree(BaseDecisionTree):
 
         splitter = self.splitter
 
+        if self.mvar is None:
+            self.mvar = len_groups
+
+        if self.mgroup == None:
+            self.mgroup = len(groups)
+
         if not isinstance(self.splitter, CARTGVSplitter):
             splitter = DENSE_SPLITTERS[self.splitter](criterion,
                                                 len(groups),
@@ -316,8 +323,8 @@ class DecisionCARTGVTree(BaseDecisionTree):
                                                 min_weight_leaf,
                                                 random_state,
                                                 self.max_depth_splitting_tree,
-                                                0.0,
-                                                0.0,
+                                                self.min_impurity_decrease,
+                                                min_impurity_split,
                                                 self.mvar,
                                                 self.mgroup,
                                                 split_criterion)
@@ -406,7 +413,7 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
             check_input=check_input)
         return self
 
-class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin):
+class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #DecisionTreeRegressor
 
     def __init__(self, *,
                  criterion="mse",

@@ -18,7 +18,7 @@ from sklearn.tree._tree cimport SIZE_t
 from sklearn.tree._tree cimport INT32_t
 from sklearn.tree._tree cimport UINT32_t
 
-cdef struct CARTGVNode:
+ctypedef struct CARTGVNode:
   SIZE_t* childs                        # The childs of the node
   SIZE_t parent                         # The parent of the node
   unsigned char* splitting_tree         # The serialized splitting tree of the node
@@ -31,6 +31,25 @@ cdef struct CARTGVNode:
   int start                             # The starting position in the samples array
   int end                               # The ending position in the samples array
   int depth                             # The depth of the node in the tree
+
+#cdef class CARTGVNodeClass():
+
+    #cdef CARTGVNode *ptr
+
+    #np.ndarray childs
+    #SIZE_t parent
+    #Tree splitting_tree
+    #DOUBLE_t impurity
+    #SIZE_t n_node_samples
+    #DOUBLE_t weighted_n_node_samples
+    #int group                             # The group selected for the split of the node
+    #int n_childs                          # The number of childs of the node
+    #int current_child                     # The current number of children of the node
+    #int start                             # The starting position in the samples array
+    #int end                               # The ending position in the samples array
+    #int depth                             # The depth of the node in the tree
+
+    #cdef CARTGVNodeClass from_ptr(CARTGVNode *ptr)
 
 cdef class CARTGVTree():
   
@@ -91,6 +110,9 @@ cdef class CARTGVTree():
   # Get the array of nodes of the tree (Doesn't work yet)
   cdef np.ndarray _get_node_ndarray(self)
 
+  # Get the array of index in their corresponding parent splitting trees for each node
+  cdef np.ndarray _get_nodes_cart_idx_ndarray(self)
+
   # Predict the value(s) or class(es) for new observations
   #
   # params X, an object (list, ndarray), the data to be predicted
@@ -106,6 +128,10 @@ cdef class CARTGVTree():
   # params X, an object (list, ndarray), the data to be predicted
   cdef np.ndarray _apply_dense(self, object X)
   # cdef np.ndarray _apply_sparse_csr(self, object X)
+
+  #cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx)
+
+  #cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx)
 
   # Give the decision path for a new observation
   #

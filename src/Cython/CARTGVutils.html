@@ -541,10 +541,10 @@ static struct __pyx_t_7sklearn_4tree_5_tree_Node **__pyx_fuse_7__pyx_f_11CARTGVu
   return __pyx_r;
 }
 
-static struct __pyx_t_10CARTGVTree_CARTGVNode *__pyx_fuse_8__pyx_f_11CARTGVutils_safe_realloc(struct __pyx_t_10CARTGVTree_CARTGVNode **__pyx_v_p, size_t __pyx_v_nelems) {
+static __pyx_t_10CARTGVTree_CARTGVNode *__pyx_fuse_8__pyx_f_11CARTGVutils_safe_realloc(__pyx_t_10CARTGVTree_CARTGVNode **__pyx_v_p, size_t __pyx_v_nelems) {
   size_t __pyx_v_nbytes;
-  struct __pyx_t_10CARTGVTree_CARTGVNode *__pyx_v_tmp;
-  struct __pyx_t_10CARTGVTree_CARTGVNode *__pyx_r;
+  __pyx_t_10CARTGVTree_CARTGVNode *__pyx_v_tmp;
+  __pyx_t_10CARTGVTree_CARTGVNode *__pyx_r;
   #ifdef WITH_THREAD
   PyGILState_STATE __pyx_gilstate_save;
   #endif
@@ -567,10 +567,10 @@ static struct __pyx_t_10CARTGVTree_CARTGVNode *__pyx_fuse_8__pyx_f_11CARTGVutils
   return __pyx_r;
 }
 
-static struct __pyx_t_10CARTGVTree_CARTGVNode **__pyx_fuse_9__pyx_f_11CARTGVutils_safe_realloc(struct __pyx_t_10CARTGVTree_CARTGVNode ***__pyx_v_p, size_t __pyx_v_nelems) {
+static __pyx_t_10CARTGVTree_CARTGVNode **__pyx_fuse_9__pyx_f_11CARTGVutils_safe_realloc(__pyx_t_10CARTGVTree_CARTGVNode ***__pyx_v_p, size_t __pyx_v_nelems) {
   size_t __pyx_v_nbytes;
-  struct __pyx_t_10CARTGVTree_CARTGVNode **__pyx_v_tmp;
-  struct __pyx_t_10CARTGVTree_CARTGVNode **__pyx_r;
+  __pyx_t_10CARTGVTree_CARTGVNode **__pyx_v_tmp;
+  __pyx_t_10CARTGVTree_CARTGVNode **__pyx_r;
   #ifdef WITH_THREAD
   PyGILState_STATE __pyx_gilstate_save;
   #endif
@@ -1331,9 +1331,9 @@ static struct __pyx_t_11CARTGVutils_StackRecord *__pyx_fuse_10__pyx_f_11CARTGVut
 /* … */
     __pyx_v_tmp = ((struct __pyx_t_7sklearn_4tree_5_tree_Node **)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
 /* … */
-    __pyx_v_tmp = ((struct __pyx_t_10CARTGVTree_CARTGVNode *)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
+    __pyx_v_tmp = ((__pyx_t_10CARTGVTree_CARTGVNode *)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
 /* … */
-    __pyx_v_tmp = ((struct __pyx_t_10CARTGVTree_CARTGVNode **)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
+    __pyx_v_tmp = ((__pyx_t_10CARTGVTree_CARTGVNode **)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
 /* … */
     __pyx_v_tmp = ((struct __pyx_t_11CARTGVutils_StackRecord *)realloc((__pyx_v_p[0]), __pyx_v_nbytes));
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">039</span>:     if tmp == NULL:</pre>

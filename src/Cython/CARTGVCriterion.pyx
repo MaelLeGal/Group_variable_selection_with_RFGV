@@ -327,13 +327,17 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 
             self.weighted_n_node_samples += w
 
+#        with gil:
+#            print(np.asarray(<double[:self.n_outputs*self.sum_stride]>sum_total))
+
+
         self.reset()
 
         return 0
 
     cdef int reset(self) nogil except -1: #TODO Methode inutile
 
-        cdef double* sum_total = self.sum_total
+#        cdef double* sum_total = self.sum_total
         cdef double** sum_childs = self.sum_childs
 
         cdef SIZE_t* n_classes = self.n_classes
@@ -346,7 +350,7 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
 
         cdef double** sum_childs = self.sum_childs
-        cdef double* sum_total = self.sum_total
+#        cdef double* sum_total = self.sum_total
 
         cdef SIZE_t* n_classes = self.n_classes
         cdef SIZE_t* samples = self.samples
@@ -377,12 +381,12 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
                 self.weighted_n_childs[j] += w
 
 
-        for n in range(self.n_outputs):
-            for c in range(n_classes[n]):
-                sum_total[c] += self.sum_stride
+#        for n in range(self.n_outputs):
+#            for c in range(n_classes[n]):
+#                sum_total[c] += self.sum_stride
 
         self.sum_childs = sum_childs
-        self.sum_total = sum_total
+#        self.sum_total = sum_total
         self.starts = starts
         self.ends = ends
 
@@ -400,7 +404,8 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         cdef SIZE_t k
 #        with gil:
 #            print(n_classes[0])
-#            print(np.asarray(sum_total))
+#            print(np.asarray(<double[:self.n_outputs*self.sum_stride]>sum_total))
+#            print(self.sum_stride)
         for k in range(self.n_outputs):
             memcpy(dest, sum_total, n_classes[k] * sizeof(double))
             dest += self.sum_stride
@@ -511,8 +516,8 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
             gini += 1.0 - sq_count / (self.weighted_n_node_samples *
                                       self.weighted_n_node_samples)
 
-            for c in range(n_classes[k]):
-                sum_total[c] += self.sum_stride
+#            for c in range(n_classes[k]):
+#                sum_total[c] += self.sum_stride
 
         return gini / self.n_outputs
 
@@ -733,7 +738,9 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
     #TODO Check ZeroDivisionError: float division
     cdef void node_value(self, double* dest) nogil:
         cdef SIZE_t k
-
+#        with gil:
+#            print(self.sum_total[0])
+#            print(self.weighted_n_node_samples)
         for k in range(self.n_outputs):
 
             dest[k] = self.sum_total[k] / self.weighted_n_node_samples
