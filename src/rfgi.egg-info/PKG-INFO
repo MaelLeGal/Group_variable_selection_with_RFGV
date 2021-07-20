@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: rfgi
+Version: 0.0.1
+Summary: Random Forest for Grouped Inputs
+Home-page: https://github.com/apoterie/Group_variable_selection_with_RFGV
+Author: "Maël Le Gal, Audrey Poterie, Charlotte Pelletier"
+Author-email: "mael.legal@live.fr"
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+
+# Group_variable_selection_with_RFGV
+
+Two main objectives:
+
+  1) Fast implementation of CARTGV and RFGV, the extension of CART and Breiman's RF to Grouped inputs (see Arbres de décision et forêts aléatoires pour variables 
+     groupées, A. Poterie, 2018).
+
+  2) Development of a group variable selection technique based on RFGV.
+
+

@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.cfg
+src/Cython/__init__.py
+src/Cython/setup.py
+src/Python/CARTGV_trees.py
+src/Python/RFGV.py
+src/Python/__init__.py
+src/rfgi.egg-info/PKG-INFO
+src/rfgi.egg-info/SOURCES.txt
+src/rfgi.egg-info/dependency_links.txt
+src/rfgi.egg-info/top_level.txt
+test/test.py
+test/test2.py
+test/test_predict_score.py
+test/test_unitaire.py
+test/test_unitaire2.py
