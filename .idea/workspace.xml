@@ -6,6 +6,47 @@
   <component name="ChangeListManager">
     <list default="true" id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/src.win-amd64-3.8/numpy/distutils/include/npy_cpu_dispatch_config.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/ccompiler_opt_cache_ext.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVCriterion.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVCriterion.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVCriterion.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVSplitter.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVSplitter.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVSplitter.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVTree.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVTree.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVTree.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVutils.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVutils.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/temp.win-amd64-3.8/Release/src/Cython/CARTGVutils.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.1-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.2-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.2.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.lib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
