@@ -10,6 +10,7 @@ cimport numpy as np
 from sklearn.tree._tree cimport Tree, TreeBuilder, Node
 from sklearn.tree._splitter cimport Splitter, SplitRecord
 
+#from .CARTGVSplitter cimport CARTGVSplitter, CARTGVSplitRecord
 from CARTGVSplitter cimport CARTGVSplitter, CARTGVSplitRecord
 
 from sklearn.tree._tree cimport DTYPE_t

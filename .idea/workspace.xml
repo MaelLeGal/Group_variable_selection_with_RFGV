@@ -6,42 +6,64 @@
   <component name="ChangeListManager">
     <list default="true" id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pxd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVTree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVTree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVTree.pxd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVTree.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVutils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/CARTGVutils.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVCriterion" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVCriterion" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVutils" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVutils" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cython/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cython/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Python/CARTGV_trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Python/CARTGV_trees.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Python/RFGV.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Python/RFGV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Python/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Python/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVCriterion.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVTree.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/CARTGVutils.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGVutils.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/lib.win-amd64-3.8/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/lib.win-amd64-3.8/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/lib.win-amd64-3.8/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/build/lib.win-amd64-3.8/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVCriterion_v2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVSplitter_v2.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVCriterion" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVCriterion" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVCriterion_v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVCriterion_v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVSplitter_v2" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVSplitter_v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/cython_debug_info_CARTGVutils" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/cython_debug_info_CARTGVutils" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/cython_debug/interpreter" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/Cython/cython_debug/interpreter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cython/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Python/CARTGV_trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/CARTGV_trees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Python/RFGV.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/RFGV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Python/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/Test_python_packaging.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/Test_python_packaging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/cartgvtree_size.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/cartgvtree_size.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_predict_score.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_predict_score.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_unitaire.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_unitaire.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +99,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/test_score.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/test_unitaire2.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -96,7 +118,7 @@
       <recent name="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_score">
+  <component name="RunManager" selected="Python.Test_python_packaging">
     <configuration name="Test_python_packaging" type="PythonConfigurationType" factoryName="Python">
       <module name="Group_variable_selection_with_RFGV" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -256,11 +278,11 @@
         <env name="PYDEVD_USE_FRAME_EVAL" value="NO" />
       </envs>
       <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_unitaire2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test_unitaire2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -297,8 +319,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_predict_score.MyTestCase.test_predict_CART_classif_multi_result" />
         <item itemvalue="Python.test_unitaire" />
+        <item itemvalue="Python tests.pytest for test_predict_score.MyTestCase.test_predict_CART_classif_multi_result" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test_unitaire" />

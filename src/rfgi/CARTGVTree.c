@@ -1690,7 +1690,7 @@ struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_test_build;
 struct __pyx_t_10CARTGVTree_CARTGVNode_PyObject;
 typedef struct __pyx_t_10CARTGVTree_CARTGVNode_PyObject __pyx_t_10CARTGVTree_CARTGVNode_PyObject;
 
-/* "CARTGVTree.pxd":21
+/* "CARTGVTree.pxd":22
  * from sklearn.tree._tree cimport UINT32_t
  * 
  * ctypedef struct CARTGVNode:             # <<<<<<<<<<<<<<
@@ -1712,7 +1712,7 @@ struct __pyx_t_10CARTGVTree_CARTGVNode {
   int depth;
 };
 
-/* "CARTGVTree.pxd":105
+/* "CARTGVTree.pxd":106
  *   #
  *   # params capacity : a SIZE_t, the new capacity of the tree
  *   cdef int _resize_c(self, SIZE_t capacity=*) nogil except -1             # <<<<<<<<<<<<<<
@@ -1724,7 +1724,7 @@ struct __pyx_opt_args_10CARTGVTree_10CARTGVTree__resize_c {
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t capacity;
 };
 
-/* "CARTGVTree.pxd":180
+/* "CARTGVTree.pxd":181
  *     # params pen, an object (None, "root", "size", "log", or a function with 1 param), the penality function for the impurity
  *     # params sample_weight, a ndarray, the weight of each sample (can be None)
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,             # <<<<<<<<<<<<<<
@@ -1736,7 +1736,7 @@ struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_build {
   PyArrayObject *sample_weight;
 };
 
-/* "CARTGVTree.pxd":192
+/* "CARTGVTree.pxd":193
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=*)             # <<<<<<<<<<<<<<
@@ -1748,7 +1748,7 @@ struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_test_build {
   PyArrayObject *sample_weight;
 };
 
-/* "CARTGVTree.pyx":98
+/* "CARTGVTree.pyx":104
  *                         ('depth','i8')])
  * #NODE_DTYPE = CARTGVNodeClass
  * ctypedef struct CARTGVNode_PyObject:             # <<<<<<<<<<<<<<
@@ -2114,7 +2114,7 @@ struct __pyx_obj_11CARTGVutils_Stack {
 };
 
 
-/* "CARTGVTree.pxd":54
+/* "CARTGVTree.pxd":55
  *     #cdef CARTGVNodeClass from_ptr(CARTGVNode *ptr)
  * 
  * cdef class CARTGVTree():             # <<<<<<<<<<<<<<
@@ -2142,7 +2142,7 @@ struct __pyx_obj_10CARTGVTree_CARTGVTree {
 };
 
 
-/* "CARTGVTree.pxd":152
+/* "CARTGVTree.pxd":153
  * 
  * 
  * cdef class CARTGVTreeBuilder():             # <<<<<<<<<<<<<<
@@ -2162,7 +2162,7 @@ struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder {
 };
 
 
-/* "CARTGVTree.pyx":129
+/* "CARTGVTree.pyx":135
  * #print(dt)
  * 
  * cdef class CARTGVNodeClass():             # <<<<<<<<<<<<<<
@@ -2587,7 +2587,7 @@ struct __pyx_vtabstruct_11CARTGVutils_Stack {
 static struct __pyx_vtabstruct_11CARTGVutils_Stack *__pyx_vtabptr_11CARTGVutils_Stack;
 
 
-/* "CARTGVTree.pyx":204
+/* "CARTGVTree.pyx":210
  * 
  * 
  * cdef class CARTGVTree():             # <<<<<<<<<<<<<<
@@ -2605,8 +2605,6 @@ struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree {
   PyArrayObject *(*predict)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch);
   PyArrayObject *(*apply)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch);
   PyArrayObject *(*_apply_dense)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *);
-  PyArrayObject *(*sobol_indice)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch);
-  PyArrayObject *(*apply_sobol)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int, __Pyx_memviewslice, __Pyx_memviewslice);
   PyObject *(*decision_path)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch);
   void (*test_resize_CARTGVTree)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch);
   void (*test_add_node)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int __pyx_skip_dispatch);
@@ -2615,7 +2613,7 @@ static struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *__pyx_vtabptr_10CARTGVTr
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *);
 
 
-/* "CARTGVTree.pyx":1343
+/* "CARTGVTree.pyx":1413
  * #        print(self.nodes[0].group)
  * 
  * cdef class CARTGVTreeBuilder():             # <<<<<<<<<<<<<<
@@ -2632,7 +2630,7 @@ static struct __pyx_vtabstruct_10CARTGVTree_CARTGVTreeBuilder *__pyx_vtabptr_10C
 static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *, PyObject *, PyArrayObject *, PyArrayObject *);
 
 
-/* "CARTGVTree.pyx":129
+/* "CARTGVTree.pyx":135
  * #print(dt)
  * 
  * cdef class CARTGVNodeClass():             # <<<<<<<<<<<<<<
@@ -3059,72 +3057,6 @@ static CYTHON_INLINE int __pyx_sub_acquisition_count_locked(
 static CYTHON_INLINE void __Pyx_INC_MEMVIEW(__Pyx_memviewslice *, int, int);
 static CYTHON_INLINE void __Pyx_XDEC_MEMVIEW(__Pyx_memviewslice *, int, int);
 
-/* None.proto */
-static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
-
-/* ListAppend.proto */
-#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
-static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
-    PyListObject* L = (PyListObject*) list;
-    Py_ssize_t len = Py_SIZE(list);
-    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
-        Py_INCREF(x);
-        PyList_SET_ITEM(list, len, x);
-        __Pyx_SET_SIZE(list, len + 1);
-        return 0;
-    }
-    return PyList_Append(list, x);
-}
-#else
-#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
-#endif
-
-/* PyObjectGetMethod.proto */
-static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method);
-
-/* PyObjectCallMethod0.proto */
-static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name);
-
-/* pop.proto */
-static CYTHON_INLINE PyObject* __Pyx__PyObject_Pop(PyObject* L);
-#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
-static CYTHON_INLINE PyObject* __Pyx_PyList_Pop(PyObject* L);
-#define __Pyx_PyObject_Pop(L) (likely(PyList_CheckExact(L)) ?\
-    __Pyx_PyList_Pop(L) : __Pyx__PyObject_Pop(L))
-#else
-#define __Pyx_PyList_Pop(L)  __Pyx__PyObject_Pop(L)
-#define __Pyx_PyObject_Pop(L)  __Pyx__PyObject_Pop(L)
-#endif
-
-/* UnpackUnboundCMethod.proto */
-typedef struct {
-    PyObject *type;
-    PyObject **method_name;
-    PyCFunction func;
-    PyObject *method;
-    int flag;
-} __Pyx_CachedCFunction;
-
-/* CallUnboundCMethod0.proto */
-static PyObject* __Pyx__CallUnboundCMethod0(__Pyx_CachedCFunction* cfunc, PyObject* self);
-#if CYTHON_COMPILING_IN_CPYTHON
-#define __Pyx_CallUnboundCMethod0(cfunc, self)\
-    (likely((cfunc)->func) ?\
-        (likely((cfunc)->flag == METH_NOARGS) ?  (*((cfunc)->func))(self, NULL) :\
-         (PY_VERSION_HEX >= 0x030600B1 && likely((cfunc)->flag == METH_FASTCALL) ?\
-            (PY_VERSION_HEX >= 0x030700A0 ?\
-                (*(__Pyx_PyCFunctionFast)(void*)(PyCFunction)(cfunc)->func)(self, &__pyx_empty_tuple, 0) :\
-                (*(__Pyx_PyCFunctionFastWithKeywords)(void*)(PyCFunction)(cfunc)->func)(self, &__pyx_empty_tuple, 0, NULL)) :\
-          (PY_VERSION_HEX >= 0x030700A0 && (cfunc)->flag == (METH_FASTCALL | METH_KEYWORDS) ?\
-            (*(__Pyx_PyCFunctionFastWithKeywords)(void*)(PyCFunction)(cfunc)->func)(self, &__pyx_empty_tuple, 0, NULL) :\
-            (likely((cfunc)->flag == (METH_VARARGS | METH_KEYWORDS)) ?  ((*(PyCFunctionWithKeywords)(void*)(PyCFunction)(cfunc)->func)(self, __pyx_empty_tuple, NULL)) :\
-               ((cfunc)->flag == METH_VARARGS ?  (*((cfunc)->func))(self, __pyx_empty_tuple) :\
-               __Pyx__CallUnboundCMethod0(cfunc, self)))))) :\
-        __Pyx__CallUnboundCMethod0(cfunc, self))
-#else
-#define __Pyx_CallUnboundCMethod0(cfunc, self)  __Pyx__CallUnboundCMethod0(cfunc, self)
-#endif
-
 /* RaiseTooManyValuesToUnpack.proto */
 static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected);
 
@@ -3307,6 +3239,26 @@ static CYTHON_INLINE int __Pyx_PyList_Extend(PyObject* L, PyObject* v) {
 #endif
 }
 
+/* ListAppend.proto */
+#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
+static CYTHON_INLINE int __Pyx_PyList_Append(PyObject* list, PyObject* x) {
+    PyListObject* L = (PyListObject*) list;
+    Py_ssize_t len = Py_SIZE(list);
+    if (likely(L->allocated > len) & likely(len > (L->allocated >> 1))) {
+        Py_INCREF(x);
+        PyList_SET_ITEM(list, len, x);
+        __Pyx_SET_SIZE(list, len + 1);
+        return 0;
+    }
+    return PyList_Append(list, x);
+}
+#else
+#define __Pyx_PyList_Append(L,x) PyList_Append(L,x)
+#endif
+
+/* None.proto */
+static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname);
+
 /* None.proto */
 static CYTHON_INLINE long __Pyx_div_long(long, long);
 
@@ -3445,23 +3397,6 @@ static CYTHON_INLINE PyObject *__pyx_capsule_create(void *p, const char *sig);
 #define __Pyx_HAS_GCC_DIAGNOSTIC
 #endif
 
-/* TypeInfoCompare.proto */
-static int __pyx_typeinfo_cmp(__Pyx_TypeInfo *a, __Pyx_TypeInfo *b);
-
-/* MemviewSliceValidateAndInit.proto */
-static int __Pyx_ValidateAndInit_memviewslice(
-                int *axes_specs,
-                int c_or_f_flag,
-                int buf_flags,
-                int ndim,
-                __Pyx_TypeInfo *dtype,
-                __Pyx_BufFmt_StackElem stack[],
-                __Pyx_memviewslice *memviewslice,
-                PyObject *original_obj);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_int(PyObject *, int writable_flag);
-
 /* MemviewDtypeToObject.proto */
 static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t(const char *itemp);
 static CYTHON_INLINE int __pyx_memview_set_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t(const char *itemp, PyObject *obj);
@@ -3475,10 +3410,6 @@ static PyObject* __pyx_print_kwargs = 0;
 
 /* None.proto */
 static CYTHON_INLINE int __Pyx_ErrOccurredWithGIL(void); /* proto */
-
-/* MemviewDtypeToObject.proto */
-static CYTHON_INLINE PyObject *__pyx_memview_get_int(const char *itemp);
-static CYTHON_INLINE int __pyx_memview_set_int(const char *itemp, PyObject *obj);
 
 /* None.proto */
 static CYTHON_INLINE long __Pyx_pow_long(long, long);
@@ -3621,6 +3552,20 @@ static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
 /* CIntFromPy.proto */
 static CYTHON_INLINE char __Pyx_PyInt_As_char(PyObject *);
 
+/* TypeInfoCompare.proto */
+static int __pyx_typeinfo_cmp(__Pyx_TypeInfo *a, __Pyx_TypeInfo *b);
+
+/* MemviewSliceValidateAndInit.proto */
+static int __Pyx_ValidateAndInit_memviewslice(
+                int *axes_specs,
+                int c_or_f_flag,
+                int buf_flags,
+                int ndim,
+                __Pyx_TypeInfo *dtype,
+                __Pyx_BufFmt_StackElem stack[],
+                __Pyx_memviewslice *memviewslice,
+                PyObject *original_obj);
+
 /* ObjectToMemviewSlice.proto */
 static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7sklearn_4tree_5_tree_DTYPE_t__const__(PyObject *, int writable_flag);
 
@@ -3646,8 +3591,6 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_skip_dispatch); /* proto*/
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_skip_dispatch); /* proto*/
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X); /* proto*/
-static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_sobol_indice(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_idx, __Pyx_memviewslice __pyx_v_oob_idx, int __pyx_skip_dispatch); /* proto*/
-static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply_sobol(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_indx, __Pyx_memviewslice __pyx_v_oob_indx); /* proto*/
 static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_skip_dispatch); /* proto*/
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self); /* proto*/
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self); /* proto*/
@@ -3883,7 +3826,6 @@ static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 static PyObject *__pyx_format_from_typeinfo(__Pyx_TypeInfo *); /*proto*/
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t = { "SIZE_t", NULL, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_7sklearn_4tree_5_tree_SIZE_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, IS_UNSIGNED(int) ? 'U' : 'I', IS_UNSIGNED(int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_DTYPE_t__const__ = { "const DTYPE_t", NULL, sizeof(__pyx_t_7sklearn_4tree_5_tree_DTYPE_t const ), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__ = { "const DOUBLE_t", NULL, sizeof(__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t const ), { 0 }, 0, 'R', 0, 0 };
 #define __Pyx_MODULE_NAME "CARTGVTree"
@@ -3910,7 +3852,7 @@ static const char __pyx_k_T[] = "T{";
   static const char __pyx_k_y[] = "y";
   static const char __pyx_k_f8[] = "f8";
   static const char __pyx_k_i8[] = "i8";
-  static const char __pyx_k_id[] = "id : ";
+  static const char __pyx_k_id[] = "id";
   static const char __pyx_k_np[] = "np";
   static const char __pyx_k__32[] = "^";
   static const char __pyx_k__33[] = ":";
@@ -3925,9 +3867,7 @@ static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_pen[] = "pen";
 static const char __pyx_k_plt[] = "plt";
-static const char __pyx_k_pop[] = "pop";
 static const char __pyx_k_str[] = "str_";
-static const char __pyx_k_sum[] = "sum";
 static const char __pyx_k_sys[] = "sys";
 static const char __pyx_k_axis[] = "axis";
 static const char __pyx_k_base[] = "base";
@@ -3935,8 +3875,6 @@ static const char __pyx_k_clip[] = "clip";
 static const char __pyx_k_data[] = "data";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_file[] = "file";
-static const char __pyx_k_id_2[] = "id";
-static const char __pyx_k_in1d[] = "in1d";
 static const char __pyx_k_intp[] = "intp";
 static const char __pyx_k_join[] = "join";
 static const char __pyx_k_main[] = "__main__";
@@ -3978,7 +3916,6 @@ static const char __pyx_k_tocsc[] = "tocsc";
 static const char __pyx_k_where[] = "where";
 static const char __pyx_k_zeros[] = "zeros";
 static const char __pyx_k_DOUBLE[] = "DOUBLE";
-static const char __pyx_k_argmax[] = "argmax";
 static const char __pyx_k_childs[] = "childs";
 static const char __pyx_k_enable[] = "enable";
 static const char __pyx_k_encode[] = "encode";
@@ -4001,11 +3938,8 @@ static const char __pyx_k_feature[] = "feature";
 static const char __pyx_k_float32[] = "float32";
 static const char __pyx_k_float64[] = "float64";
 static const char __pyx_k_fortran[] = "fortran";
-static const char __pyx_k_group_j[] = "group_j";
 static const char __pyx_k_indices[] = "indices";
 static const char __pyx_k_memview[] = "memview";
-static const char __pyx_k_nonzero[] = "nonzero";
-static const char __pyx_k_oob_idx[] = "oob_idx";
 static const char __pyx_k_predict[] = "predict";
 static const char __pyx_k_reshape[] = "reshape";
 static const char __pyx_k_Ellipsis[] = "Ellipsis";
@@ -4032,13 +3966,11 @@ static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_CARTGVTree[] = "CARTGVTree";
 static const char __pyx_k_IndexError[] = "IndexError";
-static const char __pyx_k_NB_samples[] = "NB samples : ";
 static const char __pyx_k_NODE_DTYPE[] = "NODE_DTYPE";
 static const char __pyx_k_ValueError[] = "ValueError";
 static const char __pyx_k_contiguous[] = "contiguous";
 static const char __pyx_k_csc_matrix[] = "csc_matrix";
 static const char __pyx_k_csr_matrix[] = "csr_matrix";
-static const char __pyx_k_in_bag_idx[] = "in_bag_idx";
 static const char __pyx_k_len_groups[] = "len_groups";
 static const char __pyx_k_n_features[] = "n_features";
 static const char __pyx_k_node_count[] = "node_count";
@@ -4046,10 +3978,8 @@ static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
 static const char __pyx_k_test_build[] = "test_build";
 static const char __pyx_k_ImportError[] = "ImportError";
-static const char __pyx_k_Je_passe_la[] = "Je passe la";
 static const char __pyx_k_MemoryError[] = "MemoryError";
 static const char __pyx_k_PickleError[] = "PickleError";
-static const char __pyx_k_Je_passe_ici[] = "Je passe ici";
 static const char __pyx_k_c_contiguous[] = "c_contiguous";
 static const char __pyx_k_faulthandler[] = "faulthandler";
 static const char __pyx_k_newbyteorder[] = "newbyteorder";
@@ -4057,7 +3987,6 @@ static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
 static const char __pyx_k_scipy_sparse[] = "scipy.sparse";
 static const char __pyx_k_sklearn_base[] = "sklearn.base";
 static const char __pyx_k_sklearn_tree[] = "sklearn.tree";
-static const char __pyx_k_sobol_indice[] = "sobol_indice";
 static const char __pyx_k_sort_indices[] = "sort_indices";
 static const char __pyx_k_stringsource[] = "stringsource";
 static const char __pyx_k_current_child[] = "current_child";
@@ -4156,12 +4085,9 @@ static PyObject *__pyx_n_s_IndexError;
 static PyObject *__pyx_kp_s_Indirect_dimensions_not_supporte;
 static PyObject *__pyx_kp_s_Invalid_mode_expected_c_or_fortr;
 static PyObject *__pyx_kp_s_Invalid_shape_in_axis_d_d;
-static PyObject *__pyx_kp_s_Je_passe_ici;
-static PyObject *__pyx_kp_s_Je_passe_la;
 static PyObject *__pyx_n_s_MemoryError;
 static PyObject *__pyx_kp_s_MemoryView_of_r_at_0x_x;
 static PyObject *__pyx_kp_s_MemoryView_of_r_object;
-static PyObject *__pyx_kp_s_NB_samples;
 static PyObject *__pyx_n_s_NODE_DTYPE;
 static PyObject *__pyx_kp_s_No_support_for_np_int64_index_ba;
 static PyObject *__pyx_n_b_O;
@@ -4186,7 +4112,6 @@ static PyObject *__pyx_n_s__36;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_apply;
 static PyObject *__pyx_n_s_apply_sparse_csr;
-static PyObject *__pyx_n_s_argmax;
 static PyObject *__pyx_n_s_array;
 static PyObject *__pyx_n_s_asarray;
 static PyObject *__pyx_n_s_ascontiguousarray;
@@ -4236,16 +4161,12 @@ static PyObject *__pyx_n_s_getsizeof;
 static PyObject *__pyx_n_s_getstate;
 static PyObject *__pyx_kp_s_got_differing_extents_in_dimensi;
 static PyObject *__pyx_n_s_group;
-static PyObject *__pyx_n_s_group_j;
 static PyObject *__pyx_n_s_groups;
 static PyObject *__pyx_n_s_i8;
-static PyObject *__pyx_kp_s_id;
-static PyObject *__pyx_n_s_id_2;
+static PyObject *__pyx_n_s_id;
 static PyObject *__pyx_n_s_iinfo;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_impurity;
-static PyObject *__pyx_n_s_in1d;
-static PyObject *__pyx_n_s_in_bag_idx;
 static PyObject *__pyx_n_s_indices;
 static PyObject *__pyx_n_s_indptr;
 static PyObject *__pyx_n_s_inf;
@@ -4289,13 +4210,11 @@ static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_node_count;
 static PyObject *__pyx_n_s_nodes;
 static PyObject *__pyx_n_s_nodes_cart_idx;
-static PyObject *__pyx_n_s_nonzero;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
 static PyObject *__pyx_kp_s_numpy_core_multiarray_failed_to;
 static PyObject *__pyx_kp_s_numpy_core_umath_failed_to_impor;
 static PyObject *__pyx_n_s_obj;
-static PyObject *__pyx_n_s_oob_idx;
 static PyObject *__pyx_n_s_order;
 static PyObject *__pyx_n_s_pack;
 static PyObject *__pyx_n_s_parent;
@@ -4303,7 +4222,6 @@ static PyObject *__pyx_n_s_pen;
 static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_plot_tree;
 static PyObject *__pyx_n_s_plt;
-static PyObject *__pyx_n_s_pop;
 static PyObject *__pyx_n_s_predict;
 static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_pyx_PickleError;
@@ -4330,7 +4248,6 @@ static PyObject *__pyx_n_s_shape;
 static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_sklearn_base;
 static PyObject *__pyx_n_s_sklearn_tree;
-static PyObject *__pyx_n_s_sobol_indice;
 static PyObject *__pyx_n_s_sort_indices;
 static PyObject *__pyx_n_s_splitter;
 static PyObject *__pyx_n_s_splitting_tree;
@@ -4343,7 +4260,6 @@ static PyObject *__pyx_kp_s_strided_and_direct_or_indirect;
 static PyObject *__pyx_kp_s_strided_and_indirect;
 static PyObject *__pyx_kp_s_stringsource;
 static PyObject *__pyx_n_s_struct;
-static PyObject *__pyx_n_s_sum;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_take;
 static PyObject *__pyx_n_s_test;
@@ -4398,10 +4314,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
 static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_d); /* proto */
 static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_10predict(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X); /* proto */
 static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12apply(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X); /* proto */
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14sobol_indice(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_idx, __Pyx_memviewslice __pyx_v_oob_idx); /* proto */
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X); /* proto */
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_capacity); /* proto */
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20test_add_node(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end); /* proto */
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X); /* proto */
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16test_resize_CARTGVTree(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_capacity); /* proto */
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_add_node(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end); /* proto */
 static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8n_groups___get__(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self); /* proto */
 static int __pyx_pf_10CARTGVTree_10CARTGVTree_8n_groups_2__set__(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_value); /* proto */
 static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_10len_groups___get__(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self); /* proto */
@@ -4482,7 +4397,6 @@ static PyObject *__pyx_tp_new_array(PyTypeObject *t, PyObject *a, PyObject *k); 
 static PyObject *__pyx_tp_new_Enum(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_memoryview(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new__memoryviewslice(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static __Pyx_CachedCFunction __pyx_umethod_PyList_Type_pop = {0, &__pyx_n_s_pop, 0, 0, 0};
 static PyObject *__pyx_float_1_0;
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
@@ -4538,7 +4452,7 @@ static PyObject *__pyx_tuple__52;
 static PyObject *__pyx_codeobj__53;
 /* Late includes */
 
-/* "CARTGVTree.pyx":133
+/* "CARTGVTree.pyx":139
  *     cdef CARTGVNode *ptr
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -4567,7 +4481,7 @@ static int __pyx_pf_10CARTGVTree_15CARTGVNodeClass___cinit__(struct __pyx_obj_10
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "CARTGVTree.pyx":134
+  /* "CARTGVTree.pyx":140
  * 
  *     def __cinit__(self):
  *         self.ptr = NULL             # <<<<<<<<<<<<<<
@@ -4576,7 +4490,7 @@ static int __pyx_pf_10CARTGVTree_15CARTGVNodeClass___cinit__(struct __pyx_obj_10
  */
   __pyx_v_self->ptr = NULL;
 
-  /* "CARTGVTree.pyx":133
+  /* "CARTGVTree.pyx":139
  *     cdef CARTGVNode *ptr
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -4590,7 +4504,7 @@ static int __pyx_pf_10CARTGVTree_15CARTGVNodeClass___cinit__(struct __pyx_obj_10
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":136
+/* "CARTGVTree.pyx":142
  *         self.ptr = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4613,7 +4527,7 @@ static void __pyx_pf_10CARTGVTree_15CARTGVNodeClass_2__dealloc__(struct __pyx_ob
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "CARTGVTree.pyx":137
+  /* "CARTGVTree.pyx":143
  * 
  *     def __dealloc__(self):
  *         free(self.ptr)             # <<<<<<<<<<<<<<
@@ -4622,7 +4536,7 @@ static void __pyx_pf_10CARTGVTree_15CARTGVNodeClass_2__dealloc__(struct __pyx_ob
  */
   free(__pyx_v_self->ptr);
 
-  /* "CARTGVTree.pyx":138
+  /* "CARTGVTree.pyx":144
  *     def __dealloc__(self):
  *         free(self.ptr)
  *         self.ptr = NULL             # <<<<<<<<<<<<<<
@@ -4631,7 +4545,7 @@ static void __pyx_pf_10CARTGVTree_15CARTGVNodeClass_2__dealloc__(struct __pyx_ob
  */
   __pyx_v_self->ptr = NULL;
 
-  /* "CARTGVTree.pyx":136
+  /* "CARTGVTree.pyx":142
  *         self.ptr = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4643,7 +4557,7 @@ static void __pyx_pf_10CARTGVTree_15CARTGVNodeClass_2__dealloc__(struct __pyx_ob
   __Pyx_RefNannyFinishContext();
 }
 
-/* "CARTGVTree.pyx":141
+/* "CARTGVTree.pyx":147
  * 
  *     @property
  *     def childs(self):             # <<<<<<<<<<<<<<
@@ -4679,7 +4593,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6childs___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":142
+  /* "CARTGVTree.pyx":148
  *     @property
  *     def childs(self):
  *         return np.asarray(<SIZE_t[:self.ptr.n_childs]> self.ptr.childs) if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -4688,22 +4602,22 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6childs___get__(struct 
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 142, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 142, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = __pyx_v_self->ptr->childs;
     if (!__pyx_t_5) {
       PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-      __PYX_ERR(1, 142, __pyx_L1_error)
+      __PYX_ERR(1, 148, __pyx_L1_error)
     }
-    __pyx_t_7 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 142, __pyx_L1_error)
+    __pyx_t_7 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->ptr->n_childs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 142, __pyx_L1_error)
+    __pyx_t_3 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->ptr->n_childs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_6 = __pyx_array_new(__pyx_t_3, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_7), (char *) "c", (char *) __pyx_t_5);
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 142, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -4720,7 +4634,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6childs___get__(struct 
     __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_7, ((PyObject *)__pyx_t_6)) : __Pyx_PyObject_CallOneArg(__pyx_t_4, ((PyObject *)__pyx_t_6));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(((PyObject *)__pyx_t_6)); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 142, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_1 = __pyx_t_2;
@@ -4733,7 +4647,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6childs___get__(struct 
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":141
+  /* "CARTGVTree.pyx":147
  * 
  *     @property
  *     def childs(self):             # <<<<<<<<<<<<<<
@@ -4757,7 +4671,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6childs___get__(struct 
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":145
+/* "CARTGVTree.pyx":151
  * 
  *     @property
  *     def splitting_tree(self):             # <<<<<<<<<<<<<<
@@ -4792,7 +4706,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":146
+  /* "CARTGVTree.pyx":152
  *     @property
  *     def splitting_tree(self):
  *         if self.ptr is not NULL:             # <<<<<<<<<<<<<<
@@ -4802,7 +4716,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
   __pyx_t_1 = ((__pyx_v_self->ptr != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":147
+    /* "CARTGVTree.pyx":153
  *     def splitting_tree(self):
  *         if self.ptr is not NULL:
  *             if(self.ptr.n_childs > 0 and self.ptr.splitting_tree != b''):             # <<<<<<<<<<<<<<
@@ -4815,15 +4729,15 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
       __pyx_t_1 = __pyx_t_2;
       goto __pyx_L5_bool_binop_done;
     }
-    __pyx_t_3 = __Pyx_PyBytes_FromCString(__pyx_v_self->ptr->splitting_tree); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 147, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBytes_FromCString(__pyx_v_self->ptr->splitting_tree); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 153, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = (__Pyx_PyBytes_Equals(__pyx_t_3, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 147, __pyx_L1_error)
+    __pyx_t_2 = (__Pyx_PyBytes_Equals(__pyx_t_3, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 153, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = __pyx_t_2;
     __pyx_L5_bool_binop_done:;
     if (__pyx_t_1) {
 
-      /* "CARTGVTree.pyx":148
+      /* "CARTGVTree.pyx":154
  *         if self.ptr is not NULL:
  *             if(self.ptr.n_childs > 0 and self.ptr.splitting_tree != b''):
  *                 return pickle.loads(self.ptr.splitting_tree)             # <<<<<<<<<<<<<<
@@ -4831,12 +4745,12 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
  *                 return None
  */
       __Pyx_XDECREF(__pyx_r);
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pickle); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 148, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pickle); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_loads); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 148, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_loads); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyBytes_FromCString(__pyx_v_self->ptr->splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 148, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyBytes_FromCString(__pyx_v_self->ptr->splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -4851,14 +4765,14 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
       __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_4);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 148, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_r = __pyx_t_3;
       __pyx_t_3 = 0;
       goto __pyx_L0;
 
-      /* "CARTGVTree.pyx":147
+      /* "CARTGVTree.pyx":153
  *     def splitting_tree(self):
  *         if self.ptr is not NULL:
  *             if(self.ptr.n_childs > 0 and self.ptr.splitting_tree != b''):             # <<<<<<<<<<<<<<
@@ -4867,7 +4781,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
  */
     }
 
-    /* "CARTGVTree.pyx":150
+    /* "CARTGVTree.pyx":156
  *                 return pickle.loads(self.ptr.splitting_tree)
  *             else:
  *                 return None             # <<<<<<<<<<<<<<
@@ -4880,7 +4794,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
       goto __pyx_L0;
     }
 
-    /* "CARTGVTree.pyx":146
+    /* "CARTGVTree.pyx":152
  *     @property
  *     def splitting_tree(self):
  *         if self.ptr is not NULL:             # <<<<<<<<<<<<<<
@@ -4889,7 +4803,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
  */
   }
 
-  /* "CARTGVTree.pyx":152
+  /* "CARTGVTree.pyx":158
  *                 return None
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -4902,7 +4816,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":145
+  /* "CARTGVTree.pyx":151
  * 
  *     @property
  *     def splitting_tree(self):             # <<<<<<<<<<<<<<
@@ -4924,7 +4838,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14splitting_tree___get_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":155
+/* "CARTGVTree.pyx":161
  * 
  *     @property
  *     def parent(self):             # <<<<<<<<<<<<<<
@@ -4955,7 +4869,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6parent___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":156
+  /* "CARTGVTree.pyx":162
  *     @property
  *     def parent(self):
  *         return self.ptr.parent if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -4964,7 +4878,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6parent___get__(struct 
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->ptr->parent); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 156, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->ptr->parent); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 162, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -4976,7 +4890,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6parent___get__(struct 
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":155
+  /* "CARTGVTree.pyx":161
  * 
  *     @property
  *     def parent(self):             # <<<<<<<<<<<<<<
@@ -4996,7 +4910,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6parent___get__(struct 
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":159
+/* "CARTGVTree.pyx":165
  * 
  *     @property
  *     def impurity(self):             # <<<<<<<<<<<<<<
@@ -5027,7 +4941,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8impurity___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":160
+  /* "CARTGVTree.pyx":166
  *     @property
  *     def impurity(self):
  *         return self.ptr.impurity if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5036,7 +4950,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8impurity___get__(struc
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->ptr->impurity); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 160, __pyx_L1_error)
+    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->ptr->impurity); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 166, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5048,7 +4962,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8impurity___get__(struc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":159
+  /* "CARTGVTree.pyx":165
  * 
  *     @property
  *     def impurity(self):             # <<<<<<<<<<<<<<
@@ -5068,7 +4982,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8impurity___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":163
+/* "CARTGVTree.pyx":169
  * 
  *     @property
  *     def n_node_samples(self):             # <<<<<<<<<<<<<<
@@ -5099,7 +5013,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14n_node_samples___get_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":164
+  /* "CARTGVTree.pyx":170
  *     @property
  *     def n_node_samples(self):
  *         return self.ptr.n_node_samples if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5108,7 +5022,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14n_node_samples___get_
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->ptr->n_node_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 164, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->ptr->n_node_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 170, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5120,7 +5034,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14n_node_samples___get_
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":163
+  /* "CARTGVTree.pyx":169
  * 
  *     @property
  *     def n_node_samples(self):             # <<<<<<<<<<<<<<
@@ -5140,7 +5054,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_14n_node_samples___get_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":168
+/* "CARTGVTree.pyx":174
  * 
  *     @property
  *     def weighted_n_node_samples(self):             # <<<<<<<<<<<<<<
@@ -5171,7 +5085,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_23weighted_n_node_sampl
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":169
+  /* "CARTGVTree.pyx":175
  *     @property
  *     def weighted_n_node_samples(self):
  *         return self.ptr.weighted_n_node_samples if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5180,7 +5094,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_23weighted_n_node_sampl
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->ptr->weighted_n_node_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 169, __pyx_L1_error)
+    __pyx_t_2 = PyFloat_FromDouble(__pyx_v_self->ptr->weighted_n_node_samples); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 175, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5192,7 +5106,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_23weighted_n_node_sampl
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":168
+  /* "CARTGVTree.pyx":174
  * 
  *     @property
  *     def weighted_n_node_samples(self):             # <<<<<<<<<<<<<<
@@ -5212,7 +5126,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_23weighted_n_node_sampl
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":172
+/* "CARTGVTree.pyx":178
  * 
  *     @property
  *     def group(self):             # <<<<<<<<<<<<<<
@@ -5243,7 +5157,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5group___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":173
+  /* "CARTGVTree.pyx":179
  *     @property
  *     def group(self):
  *         return self.ptr.group if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5252,7 +5166,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5group___get__(struct _
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->group); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 173, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->group); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5264,7 +5178,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5group___get__(struct _
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":172
+  /* "CARTGVTree.pyx":178
  * 
  *     @property
  *     def group(self):             # <<<<<<<<<<<<<<
@@ -5284,7 +5198,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5group___get__(struct _
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":176
+/* "CARTGVTree.pyx":182
  * 
  *     @property
  *     def n_childs(self):             # <<<<<<<<<<<<<<
@@ -5315,7 +5229,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8n_childs___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":177
+  /* "CARTGVTree.pyx":183
  *     @property
  *     def n_childs(self):
  *         return self.ptr.n_childs if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5324,7 +5238,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8n_childs___get__(struc
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->n_childs); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 177, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->n_childs); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 183, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5336,7 +5250,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8n_childs___get__(struc
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":176
+  /* "CARTGVTree.pyx":182
  * 
  *     @property
  *     def n_childs(self):             # <<<<<<<<<<<<<<
@@ -5356,7 +5270,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_8n_childs___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":180
+/* "CARTGVTree.pyx":186
  * 
  *     @property
  *     def current_child(self):             # <<<<<<<<<<<<<<
@@ -5387,7 +5301,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_13current_child___get__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":181
+  /* "CARTGVTree.pyx":187
  *     @property
  *     def current_child(self):
  *         return self.ptr.current_child if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5396,7 +5310,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_13current_child___get__
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->current_child); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 181, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->current_child); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 187, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5408,7 +5322,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_13current_child___get__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":180
+  /* "CARTGVTree.pyx":186
  * 
  *     @property
  *     def current_child(self):             # <<<<<<<<<<<<<<
@@ -5428,7 +5342,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_13current_child___get__
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":184
+/* "CARTGVTree.pyx":190
  * 
  *     @property
  *     def start(self):             # <<<<<<<<<<<<<<
@@ -5459,7 +5373,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5start___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":185
+  /* "CARTGVTree.pyx":191
  *     @property
  *     def start(self):
  *         return self.ptr.start if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5468,7 +5382,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5start___get__(struct _
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->start); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 185, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->start); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 191, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5480,7 +5394,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5start___get__(struct _
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":184
+  /* "CARTGVTree.pyx":190
  * 
  *     @property
  *     def start(self):             # <<<<<<<<<<<<<<
@@ -5500,7 +5414,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5start___get__(struct _
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":188
+/* "CARTGVTree.pyx":194
  * 
  *     @property
  *     def end(self):             # <<<<<<<<<<<<<<
@@ -5531,7 +5445,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_3end___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":189
+  /* "CARTGVTree.pyx":195
  *     @property
  *     def end(self):
  *         return self.ptr.end if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5540,7 +5454,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_3end___get__(struct __p
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->end); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 189, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->end); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 195, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5552,7 +5466,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_3end___get__(struct __p
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":188
+  /* "CARTGVTree.pyx":194
  * 
  *     @property
  *     def end(self):             # <<<<<<<<<<<<<<
@@ -5572,7 +5486,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_3end___get__(struct __p
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":192
+/* "CARTGVTree.pyx":198
  * 
  *     @property
  *     def depth(self):             # <<<<<<<<<<<<<<
@@ -5603,7 +5517,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5depth___get__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":193
+  /* "CARTGVTree.pyx":199
  *     @property
  *     def depth(self):
  *         return self.ptr.depth if self.ptr is not NULL else None             # <<<<<<<<<<<<<<
@@ -5612,7 +5526,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5depth___get__(struct _
  */
   __Pyx_XDECREF(__pyx_r);
   if (((__pyx_v_self->ptr != NULL) != 0)) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->depth); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 193, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->ptr->depth); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 199, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -5624,7 +5538,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5depth___get__(struct _
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":192
+  /* "CARTGVTree.pyx":198
  * 
  *     @property
  *     def depth(self):             # <<<<<<<<<<<<<<
@@ -5644,7 +5558,7 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_5depth___get__(struct _
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":196
+/* "CARTGVTree.pyx":202
  * 
  *     @staticmethod
  *     cdef CARTGVNodeClass from_ptr(CARTGVNode *ptr):             # <<<<<<<<<<<<<<
@@ -5662,19 +5576,19 @@ static struct __pyx_obj_10CARTGVTree_CARTGVNodeClass *__pyx_f_10CARTGVTree_15CAR
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("from_ptr", 0);
 
-  /* "CARTGVTree.pyx":199
+  /* "CARTGVTree.pyx":205
  * 
  *         # Call to __new__ bypasses __init__ constructor
  *         cdef CARTGVNodeClass wrapper = CARTGVNodeClass.__new__(CARTGVNodeClass)             # <<<<<<<<<<<<<<
  *         wrapper.ptr = ptr
  *         return wrapper
  */
-  __pyx_t_1 = ((PyObject *)__pyx_tp_new_10CARTGVTree_CARTGVNodeClass(((PyTypeObject *)__pyx_ptype_10CARTGVTree_CARTGVNodeClass), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 199, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_tp_new_10CARTGVTree_CARTGVNodeClass(((PyTypeObject *)__pyx_ptype_10CARTGVTree_CARTGVNodeClass), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 205, __pyx_L1_error)
   __Pyx_GOTREF(((PyObject *)__pyx_t_1));
   __pyx_v_wrapper = ((struct __pyx_obj_10CARTGVTree_CARTGVNodeClass *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":200
+  /* "CARTGVTree.pyx":206
  *         # Call to __new__ bypasses __init__ constructor
  *         cdef CARTGVNodeClass wrapper = CARTGVNodeClass.__new__(CARTGVNodeClass)
  *         wrapper.ptr = ptr             # <<<<<<<<<<<<<<
@@ -5683,7 +5597,7 @@ static struct __pyx_obj_10CARTGVTree_CARTGVNodeClass *__pyx_f_10CARTGVTree_15CAR
  */
   __pyx_v_wrapper->ptr = __pyx_v_ptr;
 
-  /* "CARTGVTree.pyx":201
+  /* "CARTGVTree.pyx":207
  *         cdef CARTGVNodeClass wrapper = CARTGVNodeClass.__new__(CARTGVNodeClass)
  *         wrapper.ptr = ptr
  *         return wrapper             # <<<<<<<<<<<<<<
@@ -5695,7 +5609,7 @@ static struct __pyx_obj_10CARTGVTree_CARTGVNodeClass *__pyx_f_10CARTGVTree_15CAR
   __pyx_r = __pyx_v_wrapper;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":196
+  /* "CARTGVTree.pyx":202
  * 
  *     @staticmethod
  *     cdef CARTGVNodeClass from_ptr(CARTGVNode *ptr):             # <<<<<<<<<<<<<<
@@ -5828,12 +5742,12 @@ static PyObject *__pyx_pf_10CARTGVTree_15CARTGVNodeClass_6__setstate_cython__(CY
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":219
+/* "CARTGVTree.pyx":225
  * #
  *     @property
  *     def n_classes(self):             # <<<<<<<<<<<<<<
- *         if self.n_classes != NULL:
- *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
+ *         """
+ *         Return the number of classes
  */
 
 /* Python wrapper */
@@ -5864,9 +5778,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_classes___get__(struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":220
- *     @property
- *     def n_classes(self):
+  /* "CARTGVTree.pyx":229
+ *         Return the number of classes
+ *         """
  *         if self.n_classes != NULL:             # <<<<<<<<<<<<<<
  *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
  *         else:
@@ -5874,30 +5788,30 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_classes___get__(struct __
   __pyx_t_1 = ((__pyx_v_self->n_classes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":221
- *     def n_classes(self):
+    /* "CARTGVTree.pyx":230
+ *         """
  *         if self.n_classes != NULL:
  *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)             # <<<<<<<<<<<<<<
  *         else:
  *             return None
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 221, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 221, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_5 = __pyx_v_self->n_classes;
     if (!__pyx_t_5) {
       PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-      __PYX_ERR(1, 221, __pyx_L1_error)
+      __PYX_ERR(1, 230, __pyx_L1_error)
     }
-    __pyx_t_7 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 221, __pyx_L1_error)
+    __pyx_t_7 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->n_outputs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 221, __pyx_L1_error)
+    __pyx_t_3 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->n_outputs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_6 = __pyx_array_new(__pyx_t_3, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_7), (char *) "c", (char *) __pyx_t_5);
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 221, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -5914,23 +5828,23 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_classes___get__(struct __
     __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_7, ((PyObject *)__pyx_t_6)) : __Pyx_PyObject_CallOneArg(__pyx_t_4, ((PyObject *)__pyx_t_6));
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(((PyObject *)__pyx_t_6)); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 221, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_r = __pyx_t_2;
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":220
- *     @property
- *     def n_classes(self):
+    /* "CARTGVTree.pyx":229
+ *         Return the number of classes
+ *         """
  *         if self.n_classes != NULL:             # <<<<<<<<<<<<<<
  *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
  *         else:
  */
   }
 
-  /* "CARTGVTree.pyx":223
+  /* "CARTGVTree.pyx":232
  *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -5943,12 +5857,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_classes___get__(struct __
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":219
+  /* "CARTGVTree.pyx":225
  * #
  *     @property
  *     def n_classes(self):             # <<<<<<<<<<<<<<
- *         if self.n_classes != NULL:
- *             return np.asarray(<SIZE_t[:self.n_outputs]>self.n_classes)
+ *         """
+ *         Return the number of classes
  */
 
   /* function exit code */
@@ -5966,12 +5880,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_classes___get__(struct __
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":230
+/* "CARTGVTree.pyx":239
  * #
  *     @property
  *     def value_stride(self):             # <<<<<<<<<<<<<<
- *         return self.value_stride
- * 
+ *         """
+ *         Return the value stride
  */
 
 /* Python wrapper */
@@ -5996,26 +5910,26 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12value_stride___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":231
- *     @property
- *     def value_stride(self):
+  /* "CARTGVTree.pyx":243
+ *         Return the value stride
+ *         """
  *         return self.value_stride             # <<<<<<<<<<<<<<
  * 
  * #    @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->value_stride); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 231, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->value_stride); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 243, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":230
+  /* "CARTGVTree.pyx":239
  * #
  *     @property
  *     def value_stride(self):             # <<<<<<<<<<<<<<
- *         return self.value_stride
- * 
+ *         """
+ *         Return the value stride
  */
 
   /* function exit code */
@@ -6029,12 +5943,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12value_stride___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":250
+/* "CARTGVTree.pyx":262
  * #
  *     @property
  *     def value(self):             # <<<<<<<<<<<<<<
- *         return self._get_value_ndarray()[:self.node_count]
- * #        if self.value != NULL:
+ *         """
+ *         Return the values of each node (The number of observation in each class for the current node)
  */
 
 /* Python wrapper */
@@ -6060,29 +5974,29 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5value___get__(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":251
- *     @property
- *     def value(self):
+  /* "CARTGVTree.pyx":266
+ *         Return the values of each node (The number of observation in each class for the current node)
+ *         """
  *         return self._get_value_ndarray()[:self.node_count]             # <<<<<<<<<<<<<<
  * #        if self.value != NULL:
  * #            return np.asarray(<double[:self.capacity*self.value_stride]>self.value)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 251, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, __pyx_v_self->node_count, NULL, NULL, NULL, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 251, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, __pyx_v_self->node_count, NULL, NULL, NULL, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":250
+  /* "CARTGVTree.pyx":262
  * #
  *     @property
  *     def value(self):             # <<<<<<<<<<<<<<
- *         return self._get_value_ndarray()[:self.node_count]
- * #        if self.value != NULL:
+ *         """
+ *         Return the values of each node (The number of observation in each class for the current node)
  */
 
   /* function exit code */
@@ -6097,12 +6011,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5value___get__(struct __pyx_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":258
+/* "CARTGVTree.pyx":273
  * 
  *     @property
  *     def nodes(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = self._get_node_ndarray()
+ *         """
+ *         Return an array of nodes
  */
 
 /* Python wrapper */
@@ -6129,9 +6043,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5nodes___get__(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":259
- *     @property
- *     def nodes(self):
+  /* "CARTGVTree.pyx":277
+ *         Return an array of nodes
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = self._get_node_ndarray()
  * #            return None #TODO find a way to return the node array
@@ -6139,19 +6053,19 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5nodes___get__(struct __pyx_
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":260
- *     def nodes(self):
+    /* "CARTGVTree.pyx":278
+ *         """
  *         if self.nodes != NULL:
  *             arr = self._get_node_ndarray()             # <<<<<<<<<<<<<<
  * #            return None #TODO find a way to return the node array
  * #            return np.asarray(<CARTGVNode[:self.capacity]>self.nodes)
  */
-    __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_node_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 260, __pyx_L1_error)
+    __pyx_t_2 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_node_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 278, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_arr = ((PyArrayObject *)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "CARTGVTree.pyx":263
+    /* "CARTGVTree.pyx":281
  * #            return None #TODO find a way to return the node array
  * #            return np.asarray(<CARTGVNode[:self.capacity]>self.nodes)
  *             return arr             # <<<<<<<<<<<<<<
@@ -6163,16 +6077,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5nodes___get__(struct __pyx_
     __pyx_r = ((PyObject *)__pyx_v_arr);
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":259
- *     @property
- *     def nodes(self):
+    /* "CARTGVTree.pyx":277
+ *         Return an array of nodes
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = self._get_node_ndarray()
  * #            return None #TODO find a way to return the node array
  */
   }
 
-  /* "CARTGVTree.pyx":265
+  /* "CARTGVTree.pyx":283
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -6185,12 +6099,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5nodes___get__(struct __pyx_
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":258
+  /* "CARTGVTree.pyx":273
  * 
  *     @property
  *     def nodes(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = self._get_node_ndarray()
+ *         """
+ *         Return an array of nodes
  */
 
   /* function exit code */
@@ -6205,12 +6119,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_5nodes___get__(struct __pyx_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":268
+/* "CARTGVTree.pyx":286
  * 
  *     @property
  *     def nodes_splitting_trees(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count,dtype=Tree)
+ *         """
+ *         Return the splitting tree of each node
  */
 
 /* Python wrapper */
@@ -6245,9 +6159,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":269
- *     @property
- *     def nodes_splitting_trees(self):
+  /* "CARTGVTree.pyx":290
+ *         Return the splitting tree of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count,dtype=Tree)
  *             for i in range(self.node_count):
@@ -6255,31 +6169,31 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":270
- *     def nodes_splitting_trees(self):
+    /* "CARTGVTree.pyx":291
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count,dtype=Tree)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0 and self.nodes[i].splitting_tree != b''):
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 270, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 270, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_2);
     PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
     __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 270, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, ((PyObject *)__pyx_ptype_7sklearn_4tree_5_tree_Tree)) < 0) __PYX_ERR(1, 270, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 270, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, ((PyObject *)__pyx_ptype_7sklearn_4tree_5_tree_Tree)) < 0) __PYX_ERR(1, 291, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 291, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "CARTGVTree.pyx":271
+    /* "CARTGVTree.pyx":292
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count,dtype=Tree)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -6291,7 +6205,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
     for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
       __pyx_v_i = __pyx_t_7;
 
-      /* "CARTGVTree.pyx":272
+      /* "CARTGVTree.pyx":293
  *             arr = np.ndarray(self.node_count,dtype=Tree)
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0 and self.nodes[i].splitting_tree != b''):             # <<<<<<<<<<<<<<
@@ -6304,27 +6218,27 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
         __pyx_t_1 = __pyx_t_8;
         goto __pyx_L7_bool_binop_done;
       }
-      __pyx_t_4 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 272, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 293, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_8 = (__Pyx_PyBytes_Equals(__pyx_t_4, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 272, __pyx_L1_error)
+      __pyx_t_8 = (__Pyx_PyBytes_Equals(__pyx_t_4, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 293, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_1 = __pyx_t_8;
       __pyx_L7_bool_binop_done:;
       if (__pyx_t_1) {
 
-        /* "CARTGVTree.pyx":273
+        /* "CARTGVTree.pyx":294
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0 and self.nodes[i].splitting_tree != b''):
  *                     arr[i] = pickle.loads(self.nodes[i].splitting_tree)             # <<<<<<<<<<<<<<
  *                 else:
  *                     arr[i] = None
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pickle); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 273, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_pickle); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 294, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_loads); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 273, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_loads); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 294, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 273, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 294, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_9 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -6339,13 +6253,13 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
         __pyx_t_4 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_9, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 273, __pyx_L1_error)
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 294, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_4, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 273, __pyx_L1_error)
+        if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_4, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 294, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-        /* "CARTGVTree.pyx":272
+        /* "CARTGVTree.pyx":293
  *             arr = np.ndarray(self.node_count,dtype=Tree)
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0 and self.nodes[i].splitting_tree != b''):             # <<<<<<<<<<<<<<
@@ -6355,7 +6269,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
         goto __pyx_L6;
       }
 
-      /* "CARTGVTree.pyx":275
+      /* "CARTGVTree.pyx":296
  *                     arr[i] = pickle.loads(self.nodes[i].splitting_tree)
  *                 else:
  *                     arr[i] = None             # <<<<<<<<<<<<<<
@@ -6363,12 +6277,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
  *         else:
  */
       /*else*/ {
-        if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, Py_None, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 275, __pyx_L1_error)
+        if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, Py_None, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 296, __pyx_L1_error)
       }
       __pyx_L6:;
     }
 
-    /* "CARTGVTree.pyx":276
+    /* "CARTGVTree.pyx":297
  *                 else:
  *                     arr[i] = None
  *             return arr             # <<<<<<<<<<<<<<
@@ -6380,16 +6294,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":269
- *     @property
- *     def nodes_splitting_trees(self):
+    /* "CARTGVTree.pyx":290
+ *         Return the splitting tree of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count,dtype=Tree)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":278
+  /* "CARTGVTree.pyx":299
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -6402,12 +6316,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":268
+  /* "CARTGVTree.pyx":286
  * 
  *     @property
  *     def nodes_splitting_trees(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count,dtype=Tree)
+ *         """
+ *         Return the splitting tree of each node
  */
 
   /* function exit code */
@@ -6425,12 +6339,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_21nodes_splitting_trees___ge
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":280
+/* "CARTGVTree.pyx":301
  *             return None
  *     @property
  *     def nodes_childs(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray((self.node_count))
+ *         """
+ *         Return the ids of children of each nodes
  */
 
 /* Python wrapper */
@@ -6468,9 +6382,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":281
- *     @property
- *     def nodes_childs(self):
+  /* "CARTGVTree.pyx":305
+ *         Return the ids of children of each nodes
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray((self.node_count))
  *             for i in range(self.node_count):
@@ -6478,22 +6392,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":282
- *     def nodes_childs(self):
+    /* "CARTGVTree.pyx":306
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray((self.node_count))             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0):
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 282, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 282, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":283
+    /* "CARTGVTree.pyx":307
  *         if self.nodes != NULL:
  *             arr = np.ndarray((self.node_count))
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -6505,7 +6419,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":284
+      /* "CARTGVTree.pyx":308
  *             arr = np.ndarray((self.node_count))
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0):             # <<<<<<<<<<<<<<
@@ -6515,36 +6429,36 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
       __pyx_t_1 = (((__pyx_v_self->nodes[__pyx_v_i]).n_childs > 0) != 0);
       if (__pyx_t_1) {
 
-        /* "CARTGVTree.pyx":285
+        /* "CARTGVTree.pyx":309
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0):
  *                     np.insert(arr,i,np.asarray(<SIZE_t[:self.nodes[i].n_childs]> self.nodes[i].childs), axis=0)             # <<<<<<<<<<<<<<
  *                 else:
  *                     np.insert(arr,i, None, axis=0) #arr[i] = None
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_insert); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_insert); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __pyx_t_10 = (__pyx_v_self->nodes[__pyx_v_i]).childs;
         if (!__pyx_t_10) {
           PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-          __PYX_ERR(1, 285, __pyx_L1_error)
+          __PYX_ERR(1, 309, __pyx_L1_error)
         }
-        __pyx_t_12 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_12 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)(__pyx_v_self->nodes[__pyx_v_i]).n_childs)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)(__pyx_v_self->nodes[__pyx_v_i]).n_childs)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __pyx_t_11 = __pyx_array_new(__pyx_t_8, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_12), (char *) "c", (char *) __pyx_t_10);
-        if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 285, __pyx_L1_error)
+        if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -6561,10 +6475,10 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
         __pyx_t_7 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_12, ((PyObject *)__pyx_t_11)) : __Pyx_PyObject_CallOneArg(__pyx_t_9, ((PyObject *)__pyx_t_11));
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
         __Pyx_DECREF(((PyObject *)__pyx_t_11)); __pyx_t_11 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 285, __pyx_L1_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_INCREF(__pyx_v_arr);
         __Pyx_GIVEREF(__pyx_v_arr);
@@ -6575,17 +6489,17 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
         PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_t_7);
         __pyx_t_3 = 0;
         __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 285, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 285, __pyx_L1_error)
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 285, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 309, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_9, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 309, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "CARTGVTree.pyx":284
+        /* "CARTGVTree.pyx":308
  *             arr = np.ndarray((self.node_count))
  *             for i in range(self.node_count):
  *                 if(self.nodes[i].n_childs > 0):             # <<<<<<<<<<<<<<
@@ -6595,7 +6509,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
         goto __pyx_L6;
       }
 
-      /* "CARTGVTree.pyx":287
+      /* "CARTGVTree.pyx":311
  *                     np.insert(arr,i,np.asarray(<SIZE_t[:self.nodes[i].n_childs]> self.nodes[i].childs), axis=0)
  *                 else:
  *                     np.insert(arr,i, None, axis=0) #arr[i] = None             # <<<<<<<<<<<<<<
@@ -6603,14 +6517,14 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
  *         else:
  */
       /*else*/ {
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 287, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_insert); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 287, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_insert); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 287, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 287, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_INCREF(__pyx_v_arr);
         __Pyx_GIVEREF(__pyx_v_arr);
@@ -6621,10 +6535,10 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
         __Pyx_GIVEREF(Py_None);
         PyTuple_SET_ITEM(__pyx_t_9, 2, Py_None);
         __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 287, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 287, __pyx_L1_error)
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_9, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 287, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 311, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_9, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -6634,7 +6548,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
       __pyx_L6:;
     }
 
-    /* "CARTGVTree.pyx":288
+    /* "CARTGVTree.pyx":312
  *                 else:
  *                     np.insert(arr,i, None, axis=0) #arr[i] = None
  *             return arr             # <<<<<<<<<<<<<<
@@ -6646,16 +6560,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":281
- *     @property
- *     def nodes_childs(self):
+    /* "CARTGVTree.pyx":305
+ *         Return the ids of children of each nodes
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray((self.node_count))
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":290
+  /* "CARTGVTree.pyx":314
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -6668,12 +6582,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":280
+  /* "CARTGVTree.pyx":301
  *             return None
  *     @property
  *     def nodes_childs(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray((self.node_count))
+ *         """
+ *         Return the ids of children of each nodes
  */
 
   /* function exit code */
@@ -6694,12 +6608,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_childs___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":293
+/* "CARTGVTree.pyx":317
  * 
  *     @property
  *     def nodes_parent(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the id of the parent of each node
  */
 
 /* Python wrapper */
@@ -6731,9 +6645,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":294
- *     @property
- *     def nodes_parent(self):
+  /* "CARTGVTree.pyx":321
+ *         Return the id of the parent of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -6741,22 +6655,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":295
- *     def nodes_parent(self):
+    /* "CARTGVTree.pyx":322
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].parent
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 295, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 322, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 295, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 322, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":296
+    /* "CARTGVTree.pyx":323
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -6768,20 +6682,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":297
+      /* "CARTGVTree.pyx":324
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].parent             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes[__pyx_v_i]).parent); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 297, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes[__pyx_v_i]).parent); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 324, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 297, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 324, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":298
+    /* "CARTGVTree.pyx":325
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].parent
  *             return arr             # <<<<<<<<<<<<<<
@@ -6793,16 +6707,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":294
- *     @property
- *     def nodes_parent(self):
+    /* "CARTGVTree.pyx":321
+ *         Return the id of the parent of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":300
+  /* "CARTGVTree.pyx":327
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -6815,12 +6729,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":293
+  /* "CARTGVTree.pyx":317
  * 
  *     @property
  *     def nodes_parent(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the id of the parent of each node
  */
 
   /* function exit code */
@@ -6836,12 +6750,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_parent___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":303
+/* "CARTGVTree.pyx":330
  * 
  *     @property
  *     def nodes_impurities(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the impurity of each node
  */
 
 /* Python wrapper */
@@ -6873,9 +6787,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":304
- *     @property
- *     def nodes_impurities(self):
+  /* "CARTGVTree.pyx":334
+ *         Return the impurity of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -6883,22 +6797,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":305
- *     def nodes_impurities(self):
+    /* "CARTGVTree.pyx":335
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].impurity
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 305, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 305, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 335, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":306
+    /* "CARTGVTree.pyx":336
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -6910,20 +6824,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":307
+      /* "CARTGVTree.pyx":337
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].impurity             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->nodes[__pyx_v_i]).impurity); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 307, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->nodes[__pyx_v_i]).impurity); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 337, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 307, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 337, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":308
+    /* "CARTGVTree.pyx":338
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].impurity
  *             return arr             # <<<<<<<<<<<<<<
@@ -6935,16 +6849,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":304
- *     @property
- *     def nodes_impurities(self):
+    /* "CARTGVTree.pyx":334
+ *         Return the impurity of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":310
+  /* "CARTGVTree.pyx":340
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -6957,12 +6871,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":303
+  /* "CARTGVTree.pyx":330
  * 
  *     @property
  *     def nodes_impurities(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the impurity of each node
  */
 
   /* function exit code */
@@ -6978,12 +6892,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16nodes_impurities___get__(s
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":313
+/* "CARTGVTree.pyx":343
  * 
  *     @property
  *     def nodes_n_node_samples(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of samples/observations in each node
  */
 
 /* Python wrapper */
@@ -7015,9 +6929,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":314
- *     @property
- *     def nodes_n_node_samples(self):
+  /* "CARTGVTree.pyx":347
+ *         Return the number of samples/observations in each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7025,22 +6939,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":315
- *     def nodes_n_node_samples(self):
+    /* "CARTGVTree.pyx":348
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_node_samples
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 315, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 315, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 348, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":316
+    /* "CARTGVTree.pyx":349
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7052,20 +6966,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":317
+      /* "CARTGVTree.pyx":350
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_node_samples             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes[__pyx_v_i]).n_node_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 317, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes[__pyx_v_i]).n_node_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 350, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 317, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 350, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":318
+    /* "CARTGVTree.pyx":351
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_node_samples
  *             return arr             # <<<<<<<<<<<<<<
@@ -7077,16 +6991,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":314
- *     @property
- *     def nodes_n_node_samples(self):
+    /* "CARTGVTree.pyx":347
+ *         Return the number of samples/observations in each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":320
+  /* "CARTGVTree.pyx":353
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7099,12 +7013,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":313
+  /* "CARTGVTree.pyx":343
  * 
  *     @property
  *     def nodes_n_node_samples(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of samples/observations in each node
  */
 
   /* function exit code */
@@ -7120,12 +7034,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20nodes_n_node_samples___get
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":323
+/* "CARTGVTree.pyx":356
  * 
  *     @property
  *     def nodes_weighted_n_node_samples(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of weighted samples/observations in each node
  */
 
 /* Python wrapper */
@@ -7157,9 +7071,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":324
- *     @property
- *     def nodes_weighted_n_node_samples(self):
+  /* "CARTGVTree.pyx":360
+ *         Return the number of weighted samples/observations in each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7167,22 +7081,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":325
- *     def nodes_weighted_n_node_samples(self):
+    /* "CARTGVTree.pyx":361
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].weighted_n_node_samples
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 325, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 361, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 325, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 361, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":326
+    /* "CARTGVTree.pyx":362
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7194,20 +7108,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":327
+      /* "CARTGVTree.pyx":363
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].weighted_n_node_samples             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->nodes[__pyx_v_i]).weighted_n_node_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 327, __pyx_L1_error)
+      __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->nodes[__pyx_v_i]).weighted_n_node_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 363, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 327, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 363, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":328
+    /* "CARTGVTree.pyx":364
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].weighted_n_node_samples
  *             return arr             # <<<<<<<<<<<<<<
@@ -7219,16 +7133,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":324
- *     @property
- *     def nodes_weighted_n_node_samples(self):
+    /* "CARTGVTree.pyx":360
+ *         Return the number of weighted samples/observations in each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":330
+  /* "CARTGVTree.pyx":366
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7241,12 +7155,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":323
+  /* "CARTGVTree.pyx":356
  * 
  *     @property
  *     def nodes_weighted_n_node_samples(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of weighted samples/observations in each node
  */
 
   /* function exit code */
@@ -7262,12 +7176,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_29nodes_weighted_n_node_samp
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":333
+/* "CARTGVTree.pyx":369
  * 
  *     @property
  *     def nodes_group(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)
  */
 
 /* Python wrapper */
@@ -7299,9 +7213,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":334
- *     @property
- *     def nodes_group(self):
+  /* "CARTGVTree.pyx":373
+ *         Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7309,22 +7223,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":335
- *     def nodes_group(self):
+    /* "CARTGVTree.pyx":374
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].group
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 335, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 374, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 335, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 374, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":336
+    /* "CARTGVTree.pyx":375
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7336,20 +7250,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":337
+      /* "CARTGVTree.pyx":376
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].group             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).group); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 337, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).group); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 376, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 337, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 376, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":338
+    /* "CARTGVTree.pyx":377
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].group
  *             return arr             # <<<<<<<<<<<<<<
@@ -7361,16 +7275,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":334
- *     @property
- *     def nodes_group(self):
+    /* "CARTGVTree.pyx":373
+ *         Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":340
+  /* "CARTGVTree.pyx":379
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7383,12 +7297,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":333
+  /* "CARTGVTree.pyx":369
  * 
  *     @property
  *     def nodes_group(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)
  */
 
   /* function exit code */
@@ -7404,12 +7318,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_11nodes_group___get__(struct
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":343
+/* "CARTGVTree.pyx":382
  * 
  *     @property
  *     def nodes_n_childs(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of children for each node in an array
  */
 
 /* Python wrapper */
@@ -7441,9 +7355,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":344
- *     @property
- *     def nodes_n_childs(self):
+  /* "CARTGVTree.pyx":386
+ *         Return the number of children for each node in an array
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7451,22 +7365,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":345
- *     def nodes_n_childs(self):
+    /* "CARTGVTree.pyx":387
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_childs
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 345, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 387, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 345, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 387, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":346
+    /* "CARTGVTree.pyx":388
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7478,20 +7392,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":347
+      /* "CARTGVTree.pyx":389
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_childs             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).n_childs); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 347, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).n_childs); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 389, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 347, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 389, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":348
+    /* "CARTGVTree.pyx":390
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].n_childs
  *             return arr             # <<<<<<<<<<<<<<
@@ -7503,16 +7417,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":344
- *     @property
- *     def nodes_n_childs(self):
+    /* "CARTGVTree.pyx":386
+ *         Return the number of children for each node in an array
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":350
+  /* "CARTGVTree.pyx":392
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7525,12 +7439,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":343
+  /* "CARTGVTree.pyx":382
  * 
  *     @property
  *     def nodes_n_childs(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the number of children for each node in an array
  */
 
   /* function exit code */
@@ -7546,12 +7460,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_n_childs___get__(str
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":353
+/* "CARTGVTree.pyx":395
  * 
  *     @property
  *     def nodes_depths(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the depth of each node
  */
 
 /* Python wrapper */
@@ -7583,9 +7497,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":354
- *     @property
- *     def nodes_depths(self):
+  /* "CARTGVTree.pyx":399
+ *         Return the depth of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7593,22 +7507,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":355
- *     def nodes_depths(self):
+    /* "CARTGVTree.pyx":400
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].depth
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 355, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 400, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 355, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 400, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":356
+    /* "CARTGVTree.pyx":401
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7620,20 +7534,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":357
+      /* "CARTGVTree.pyx":402
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].depth             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).depth); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 357, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int((__pyx_v_self->nodes[__pyx_v_i]).depth); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 402, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 357, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 402, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":358
+    /* "CARTGVTree.pyx":403
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes[i].depth
  *             return arr             # <<<<<<<<<<<<<<
@@ -7645,16 +7559,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":354
- *     @property
- *     def nodes_depths(self):
+    /* "CARTGVTree.pyx":399
+ *         Return the depth of each node
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":360
+  /* "CARTGVTree.pyx":405
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7667,12 +7581,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":353
+  /* "CARTGVTree.pyx":395
  * 
  *     @property
  *     def nodes_depths(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the depth of each node
  */
 
   /* function exit code */
@@ -7688,12 +7602,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12nodes_depths___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":363
+/* "CARTGVTree.pyx":408
  * 
  *     @property
  *     def nodes_cart_idx(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the place of the node in the splitting tree
  */
 
 /* Python wrapper */
@@ -7725,9 +7639,9 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":364
- *     @property
- *     def nodes_cart_idx(self):
+  /* "CARTGVTree.pyx":412
+ *         Return the place of the node in the splitting tree
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
@@ -7735,22 +7649,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
   __pyx_t_1 = ((__pyx_v_self->nodes != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":365
- *     def nodes_cart_idx(self):
+    /* "CARTGVTree.pyx":413
+ *         """
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)             # <<<<<<<<<<<<<<
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes_cart_idx[i]
  */
-    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 365, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 413, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 365, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_ndarray), __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 413, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_arr = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":366
+    /* "CARTGVTree.pyx":414
  *         if self.nodes != NULL:
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):             # <<<<<<<<<<<<<<
@@ -7762,20 +7676,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_i = __pyx_t_6;
 
-      /* "CARTGVTree.pyx":367
+      /* "CARTGVTree.pyx":415
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes_cart_idx[i]             # <<<<<<<<<<<<<<
  *             return arr
  *         else:
  */
-      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes_cart_idx[__pyx_v_i])); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 367, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes_cart_idx[__pyx_v_i])); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 367, __pyx_L1_error)
+      if (unlikely(__Pyx_SetItemInt(__pyx_v_arr, __pyx_v_i, __pyx_t_3, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1) < 0)) __PYX_ERR(1, 415, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "CARTGVTree.pyx":368
+    /* "CARTGVTree.pyx":416
  *             for i in range(self.node_count):
  *                 arr[i] = self.nodes_cart_idx[i]
  *             return arr             # <<<<<<<<<<<<<<
@@ -7787,16 +7701,16 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
     __pyx_r = __pyx_v_arr;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":364
- *     @property
- *     def nodes_cart_idx(self):
+    /* "CARTGVTree.pyx":412
+ *         Return the place of the node in the splitting tree
+ *         """
  *         if self.nodes != NULL:             # <<<<<<<<<<<<<<
  *             arr = np.ndarray(self.node_count)
  *             for i in range(self.node_count):
  */
   }
 
-  /* "CARTGVTree.pyx":370
+  /* "CARTGVTree.pyx":418
  *             return arr
  *         else:
  *             return None             # <<<<<<<<<<<<<<
@@ -7809,12 +7723,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":363
+  /* "CARTGVTree.pyx":408
  * 
  *     @property
  *     def nodes_cart_idx(self):             # <<<<<<<<<<<<<<
- *         if self.nodes != NULL:
- *             arr = np.ndarray(self.node_count)
+ *         """
+ *         Return the place of the node in the splitting tree
  */
 
   /* function exit code */
@@ -7830,12 +7744,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14nodes_cart_idx___get__(str
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":372
+/* "CARTGVTree.pyx":420
  *             return None
  * 
  *     def __cinit__(self, int n_groups, np.ndarray len_groups, object groups, int n_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):             # <<<<<<<<<<<<<<
- *           """Constructor."""
- * 
+ *           """
+ *           Constructor of the CARTGVTree class
  */
 
 /* Python wrapper */
@@ -7884,35 +7798,35 @@ static int __pyx_pw_10CARTGVTree_10CARTGVTree_1__cinit__(PyObject *__pyx_v_self,
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_len_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 1); __PYX_ERR(1, 372, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 1); __PYX_ERR(1, 420, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 2); __PYX_ERR(1, 372, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 2); __PYX_ERR(1, 420, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n_features)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 3); __PYX_ERR(1, 372, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 3); __PYX_ERR(1, 420, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n_classes)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 4); __PYX_ERR(1, 372, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 4); __PYX_ERR(1, 420, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_n_outputs)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 5); __PYX_ERR(1, 372, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, 5); __PYX_ERR(1, 420, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(1, 372, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(1, 420, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -7924,23 +7838,23 @@ static int __pyx_pw_10CARTGVTree_10CARTGVTree_1__cinit__(PyObject *__pyx_v_self,
       values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
       values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
     }
-    __pyx_v_n_groups = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_n_groups == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 372, __pyx_L3_error)
+    __pyx_v_n_groups = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_n_groups == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 420, __pyx_L3_error)
     __pyx_v_len_groups = ((PyArrayObject *)values[1]);
     __pyx_v_groups = values[2];
-    __pyx_v_n_features = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n_features == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 372, __pyx_L3_error)
+    __pyx_v_n_features = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_n_features == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 420, __pyx_L3_error)
     __pyx_v_n_classes = ((PyArrayObject *)values[4]);
-    __pyx_v_n_outputs = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_n_outputs == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 372, __pyx_L3_error)
+    __pyx_v_n_outputs = __Pyx_PyInt_As_int(values[5]); if (unlikely((__pyx_v_n_outputs == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 420, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 372, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 420, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVTree.CARTGVTree.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 372, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n_classes), __pyx_ptype_5numpy_ndarray, 1, "n_classes", 0))) __PYX_ERR(1, 372, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 420, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_n_classes), __pyx_ptype_5numpy_ndarray, 1, "n_classes", 0))) __PYX_ERR(1, 420, __pyx_L1_error)
   __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), __pyx_v_n_groups, __pyx_v_len_groups, __pyx_v_groups, __pyx_v_n_features, __pyx_v_n_classes, __pyx_v_n_outputs);
 
   /* function exit code */
@@ -7976,20 +7890,20 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   __pyx_pybuffernd_n_classes.rcbuffer = &__pyx_pybuffer_n_classes;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_n_classes.rcbuffer->pybuffer, (PyObject*)__pyx_v_n_classes, &__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(1, 372, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_n_classes.rcbuffer->pybuffer, (PyObject*)__pyx_v_n_classes, &__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(1, 420, __pyx_L1_error)
   }
   __pyx_pybuffernd_n_classes.diminfo[0].strides = __pyx_pybuffernd_n_classes.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_n_classes.diminfo[0].shape = __pyx_pybuffernd_n_classes.rcbuffer->pybuffer.shape[0];
 
-  /* "CARTGVTree.pyx":376
+  /* "CARTGVTree.pyx":432
  * 
  *           #Enable error tracking
  *           faulthandler.enable()             # <<<<<<<<<<<<<<
  * 
  *           # Input/Output layout
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 376, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_enable); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 376, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_enable); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -8004,12 +7918,12 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 376, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":379
+  /* "CARTGVTree.pyx":435
  * 
  *           # Input/Output layout
  *           self.n_groups = n_groups             # <<<<<<<<<<<<<<
@@ -8018,7 +7932,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->n_groups = __pyx_v_n_groups;
 
-  /* "CARTGVTree.pyx":380
+  /* "CARTGVTree.pyx":436
  *           # Input/Output layout
  *           self.n_groups = n_groups
  *           self.len_groups = len_groups             # <<<<<<<<<<<<<<
@@ -8031,7 +7945,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   __Pyx_DECREF(((PyObject *)__pyx_v_self->len_groups));
   __pyx_v_self->len_groups = __pyx_v_len_groups;
 
-  /* "CARTGVTree.pyx":381
+  /* "CARTGVTree.pyx":437
  *           self.n_groups = n_groups
  *           self.len_groups = len_groups
  *           self.groups = groups             # <<<<<<<<<<<<<<
@@ -8044,7 +7958,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   __Pyx_DECREF(__pyx_v_self->groups);
   __pyx_v_self->groups = __pyx_v_groups;
 
-  /* "CARTGVTree.pyx":382
+  /* "CARTGVTree.pyx":438
  *           self.len_groups = len_groups
  *           self.groups = groups
  *           self.n_features = n_features             # <<<<<<<<<<<<<<
@@ -8053,7 +7967,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->n_features = __pyx_v_n_features;
 
-  /* "CARTGVTree.pyx":383
+  /* "CARTGVTree.pyx":439
  *           self.groups = groups
  *           self.n_features = n_features
  *           self.n_outputs = n_outputs             # <<<<<<<<<<<<<<
@@ -8062,7 +7976,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->n_outputs = __pyx_v_n_outputs;
 
-  /* "CARTGVTree.pyx":384
+  /* "CARTGVTree.pyx":440
  *           self.n_features = n_features
  *           self.n_outputs = n_outputs
  *           self.n_classes = NULL             # <<<<<<<<<<<<<<
@@ -8071,25 +7985,25 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->n_classes = NULL;
 
-  /* "CARTGVTree.pyx":386
+  /* "CARTGVTree.pyx":442
  *           self.n_classes = NULL
  * 
  *           safe_realloc(&self.n_classes, n_outputs)             # <<<<<<<<<<<<<<
  * 
  *           self.max_n_classes = np.max(n_classes)
  */
-  __pyx_fuse_1__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->n_classes), __pyx_v_n_outputs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 386, __pyx_L1_error)
+  __pyx_fuse_1__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->n_classes), __pyx_v_n_outputs); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 442, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":388
+  /* "CARTGVTree.pyx":444
  *           safe_realloc(&self.n_classes, n_outputs)
  * 
  *           self.max_n_classes = np.max(n_classes)             # <<<<<<<<<<<<<<
  *           self.value_stride = n_outputs * self.max_n_classes
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 388, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_max); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 388, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_max); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -8104,14 +8018,14 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, ((PyObject *)__pyx_v_n_classes)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_n_classes));
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 388, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_4 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 388, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_4 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 444, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->max_n_classes = __pyx_t_4;
 
-  /* "CARTGVTree.pyx":389
+  /* "CARTGVTree.pyx":445
  * 
  *           self.max_n_classes = np.max(n_classes)
  *           self.value_stride = n_outputs * self.max_n_classes             # <<<<<<<<<<<<<<
@@ -8120,7 +8034,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->value_stride = (__pyx_v_n_outputs * __pyx_v_self->max_n_classes);
 
-  /* "CARTGVTree.pyx":392
+  /* "CARTGVTree.pyx":448
  * 
  *           cdef SIZE_t k
  *           for k in range(n_outputs):             # <<<<<<<<<<<<<<
@@ -8132,7 +8046,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_6; __pyx_t_4+=1) {
     __pyx_v_k = __pyx_t_4;
 
-    /* "CARTGVTree.pyx":393
+    /* "CARTGVTree.pyx":449
  *           cdef SIZE_t k
  *           for k in range(n_outputs):
  *               self.n_classes[k] = n_classes[k]             # <<<<<<<<<<<<<<
@@ -8147,12 +8061,12 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
     } else if (unlikely(__pyx_t_7 >= __pyx_pybuffernd_n_classes.diminfo[0].shape)) __pyx_t_8 = 0;
     if (unlikely(__pyx_t_8 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_8);
-      __PYX_ERR(1, 393, __pyx_L1_error)
+      __PYX_ERR(1, 449, __pyx_L1_error)
     }
     (__pyx_v_self->n_classes[__pyx_v_k]) = (*__Pyx_BufPtrStrided1d(__pyx_t_7sklearn_4tree_5_tree_SIZE_t *, __pyx_pybuffernd_n_classes.rcbuffer->pybuffer.buf, __pyx_t_7, __pyx_pybuffernd_n_classes.diminfo[0].strides));
   }
 
-  /* "CARTGVTree.pyx":396
+  /* "CARTGVTree.pyx":452
  * 
  *           # Inner structures
  *           self.max_depth = 0             # <<<<<<<<<<<<<<
@@ -8161,7 +8075,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->max_depth = 0;
 
-  /* "CARTGVTree.pyx":397
+  /* "CARTGVTree.pyx":453
  *           # Inner structures
  *           self.max_depth = 0
  *           self.node_count = 0             # <<<<<<<<<<<<<<
@@ -8170,7 +8084,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->node_count = 0;
 
-  /* "CARTGVTree.pyx":398
+  /* "CARTGVTree.pyx":454
  *           self.max_depth = 0
  *           self.node_count = 0
  *           self.n_leaves = 0             # <<<<<<<<<<<<<<
@@ -8179,7 +8093,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->n_leaves = 0;
 
-  /* "CARTGVTree.pyx":399
+  /* "CARTGVTree.pyx":455
  *           self.node_count = 0
  *           self.n_leaves = 0
  *           self.capacity = 0             # <<<<<<<<<<<<<<
@@ -8188,7 +8102,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->capacity = 0;
 
-  /* "CARTGVTree.pyx":400
+  /* "CARTGVTree.pyx":456
  *           self.n_leaves = 0
  *           self.capacity = 0
  *           self.value = NULL             # <<<<<<<<<<<<<<
@@ -8197,7 +8111,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->value = NULL;
 
-  /* "CARTGVTree.pyx":401
+  /* "CARTGVTree.pyx":457
  *           self.capacity = 0
  *           self.value = NULL
  *           self.nodes = NULL             # <<<<<<<<<<<<<<
@@ -8206,7 +8120,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->nodes = NULL;
 
-  /* "CARTGVTree.pyx":402
+  /* "CARTGVTree.pyx":458
  *           self.value = NULL
  *           self.nodes = NULL
  *           self.nodes_cart_idx = NULL             # <<<<<<<<<<<<<<
@@ -8215,12 +8129,12 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
  */
   __pyx_v_self->nodes_cart_idx = NULL;
 
-  /* "CARTGVTree.pyx":372
+  /* "CARTGVTree.pyx":420
  *             return None
  * 
  *     def __cinit__(self, int n_groups, np.ndarray len_groups, object groups, int n_features, np.ndarray[SIZE_t, ndim=1] n_classes, int n_outputs):             # <<<<<<<<<<<<<<
- *           """Constructor."""
- * 
+ *           """
+ *           Constructor of the CARTGVTree class
  */
 
   /* function exit code */
@@ -8246,12 +8160,12 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree___cinit__(struct __pyx_obj_10CARTG
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":404
+/* "CARTGVTree.pyx":460
  *           self.nodes_cart_idx = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         for i in range(self.node_count):
- *             free(self.nodes[i].childs)
+ *         """
+ *         Free the allocated memory used or managed by the object
  */
 
 /* Python wrapper */
@@ -8278,9 +8192,9 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "CARTGVTree.pyx":405
- * 
- *     def __dealloc__(self):
+  /* "CARTGVTree.pyx":464
+ *         Free the allocated memory used or managed by the object
+ *         """
  *         for i in range(self.node_count):             # <<<<<<<<<<<<<<
  *             free(self.nodes[i].childs)
  *             if(self.nodes[i].splitting_tree != b''):
@@ -8290,8 +8204,8 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "CARTGVTree.pyx":406
- *     def __dealloc__(self):
+    /* "CARTGVTree.pyx":465
+ *         """
  *         for i in range(self.node_count):
  *             free(self.nodes[i].childs)             # <<<<<<<<<<<<<<
  *             if(self.nodes[i].splitting_tree != b''):
@@ -8299,20 +8213,20 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
     free((__pyx_v_self->nodes[__pyx_v_i]).childs);
 
-    /* "CARTGVTree.pyx":407
+    /* "CARTGVTree.pyx":466
  *         for i in range(self.node_count):
  *             free(self.nodes[i].childs)
  *             if(self.nodes[i].splitting_tree != b''):             # <<<<<<<<<<<<<<
  *                 free(self.nodes[i].splitting_tree)
  *         free(self.nodes)
  */
-    __pyx_t_4 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 407, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyBytes_FromCString((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 466, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = (__Pyx_PyBytes_Equals(__pyx_t_4, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 407, __pyx_L1_error)
+    __pyx_t_5 = (__Pyx_PyBytes_Equals(__pyx_t_4, __pyx_kp_b_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 466, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_5) {
 
-      /* "CARTGVTree.pyx":408
+      /* "CARTGVTree.pyx":467
  *             free(self.nodes[i].childs)
  *             if(self.nodes[i].splitting_tree != b''):
  *                 free(self.nodes[i].splitting_tree)             # <<<<<<<<<<<<<<
@@ -8321,7 +8235,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
       free((__pyx_v_self->nodes[__pyx_v_i]).splitting_tree);
 
-      /* "CARTGVTree.pyx":407
+      /* "CARTGVTree.pyx":466
  *         for i in range(self.node_count):
  *             free(self.nodes[i].childs)
  *             if(self.nodes[i].splitting_tree != b''):             # <<<<<<<<<<<<<<
@@ -8331,7 +8245,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
     }
   }
 
-  /* "CARTGVTree.pyx":409
+  /* "CARTGVTree.pyx":468
  *             if(self.nodes[i].splitting_tree != b''):
  *                 free(self.nodes[i].splitting_tree)
  *         free(self.nodes)             # <<<<<<<<<<<<<<
@@ -8340,7 +8254,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
   free(__pyx_v_self->nodes);
 
-  /* "CARTGVTree.pyx":410
+  /* "CARTGVTree.pyx":469
  *                 free(self.nodes[i].splitting_tree)
  *         free(self.nodes)
  *         free(self.nodes_cart_idx)             # <<<<<<<<<<<<<<
@@ -8349,7 +8263,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
   free(__pyx_v_self->nodes_cart_idx);
 
-  /* "CARTGVTree.pyx":411
+  /* "CARTGVTree.pyx":470
  *         free(self.nodes)
  *         free(self.nodes_cart_idx)
  *         free(self.n_classes)             # <<<<<<<<<<<<<<
@@ -8358,7 +8272,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
   free(__pyx_v_self->n_classes);
 
-  /* "CARTGVTree.pyx":412
+  /* "CARTGVTree.pyx":471
  *         free(self.nodes_cart_idx)
  *         free(self.n_classes)
  *         free(self.value)             # <<<<<<<<<<<<<<
@@ -8367,12 +8281,12 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
  */
   free(__pyx_v_self->value);
 
-  /* "CARTGVTree.pyx":404
+  /* "CARTGVTree.pyx":460
  *           self.nodes_cart_idx = NULL
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         for i in range(self.node_count):
- *             free(self.nodes[i].childs)
+ *         """
+ *         Free the allocated memory used or managed by the object
  */
 
   /* function exit code */
@@ -8384,7 +8298,7 @@ static void __pyx_pf_10CARTGVTree_10CARTGVTree_2__dealloc__(struct __pyx_obj_10C
   __Pyx_RefNannyFinishContext();
 }
 
-/* "CARTGVTree.pyx":414
+/* "CARTGVTree.pyx":473
  *         free(self.value)
  * 
  *     def __reduce__(self):             # <<<<<<<<<<<<<<
@@ -8419,7 +8333,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__reduce__", 0);
 
-  /* "CARTGVTree.pyx":416
+  /* "CARTGVTree.pyx":475
  *     def __reduce__(self):
  *           """Reduce re-implementation, for pickling."""
  *           return (CARTGVTree, (self.n_groups,             # <<<<<<<<<<<<<<
@@ -8427,47 +8341,47 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
  *                          self.groups,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 416, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "CARTGVTree.pyx":419
+  /* "CARTGVTree.pyx":478
  *                          self.len_groups,
  *                          self.groups,
  *                          self.n_features,             # <<<<<<<<<<<<<<
  *                          sizet_ptr_to_ndarray(self.n_classes, self.n_outputs),
  *                          self.n_outputs), self.__getstate__())
  */
-  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->n_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 419, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->n_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "CARTGVTree.pyx":420
+  /* "CARTGVTree.pyx":479
  *                          self.groups,
  *                          self.n_features,
  *                          sizet_ptr_to_ndarray(self.n_classes, self.n_outputs),             # <<<<<<<<<<<<<<
  *                          self.n_outputs), self.__getstate__())
  * 
  */
-  __pyx_t_3 = ((PyObject *)__pyx_f_7sklearn_4tree_6_utils_sizet_ptr_to_ndarray(__pyx_v_self->n_classes, __pyx_v_self->n_outputs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 420, __pyx_L1_error)
+  __pyx_t_3 = ((PyObject *)__pyx_f_7sklearn_4tree_6_utils_sizet_ptr_to_ndarray(__pyx_v_self->n_classes, __pyx_v_self->n_outputs)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "CARTGVTree.pyx":421
+  /* "CARTGVTree.pyx":480
  *                          self.n_features,
  *                          sizet_ptr_to_ndarray(self.n_classes, self.n_outputs),
  *                          self.n_outputs), self.__getstate__())             # <<<<<<<<<<<<<<
  * 
  *     def __getstate__(self):
  */
-  __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 421, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 480, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "CARTGVTree.pyx":416
+  /* "CARTGVTree.pyx":475
  *     def __reduce__(self):
  *           """Reduce re-implementation, for pickling."""
  *           return (CARTGVTree, (self.n_groups,             # <<<<<<<<<<<<<<
  *                          self.len_groups,
  *                          self.groups,
  */
-  __pyx_t_5 = PyTuple_New(6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 416, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8488,14 +8402,14 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
   __pyx_t_3 = 0;
   __pyx_t_4 = 0;
 
-  /* "CARTGVTree.pyx":421
+  /* "CARTGVTree.pyx":480
  *                          self.n_features,
  *                          sizet_ptr_to_ndarray(self.n_classes, self.n_outputs),
  *                          self.n_outputs), self.__getstate__())             # <<<<<<<<<<<<<<
  * 
  *     def __getstate__(self):
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getstate); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 421, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_getstate); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 480, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -8509,18 +8423,18 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
   }
   __pyx_t_4 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 421, __pyx_L1_error)
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 480, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "CARTGVTree.pyx":416
+  /* "CARTGVTree.pyx":475
  *     def __reduce__(self):
  *           """Reduce re-implementation, for pickling."""
  *           return (CARTGVTree, (self.n_groups,             # <<<<<<<<<<<<<<
  *                          self.len_groups,
  *                          self.groups,
  */
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 416, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(((PyObject *)__pyx_ptype_10CARTGVTree_CARTGVTree));
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_10CARTGVTree_CARTGVTree));
@@ -8535,7 +8449,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":414
+  /* "CARTGVTree.pyx":473
  *         free(self.value)
  * 
  *     def __reduce__(self):             # <<<<<<<<<<<<<<
@@ -8558,7 +8472,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_4__reduce__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":423
+/* "CARTGVTree.pyx":482
  *                          self.n_outputs), self.__getstate__())
  * 
  *     def __getstate__(self):             # <<<<<<<<<<<<<<
@@ -8590,55 +8504,55 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__getstate__", 0);
 
-  /* "CARTGVTree.pyx":425
+  /* "CARTGVTree.pyx":484
  *     def __getstate__(self):
  *         """Getstate re-implementation, for pickling."""
  *         d = {}             # <<<<<<<<<<<<<<
  *         # capacity is inferred during the __setstate__ using nodes
  *         d["max_depth"] = self.max_depth
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 425, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_d = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":427
+  /* "CARTGVTree.pyx":486
  *         d = {}
  *         # capacity is inferred during the __setstate__ using nodes
  *         d["max_depth"] = self.max_depth             # <<<<<<<<<<<<<<
  *         d["node_count"] = self.node_count
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 427, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_max_depth, __pyx_t_1) < 0)) __PYX_ERR(1, 427, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_max_depth, __pyx_t_1) < 0)) __PYX_ERR(1, 486, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":428
+  /* "CARTGVTree.pyx":487
  *         # capacity is inferred during the __setstate__ using nodes
  *         d["max_depth"] = self.max_depth
  *         d["node_count"] = self.node_count             # <<<<<<<<<<<<<<
  * 
  *         d["values"] = self._get_value_ndarray()
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 428, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 487, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_node_count, __pyx_t_1) < 0)) __PYX_ERR(1, 428, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_node_count, __pyx_t_1) < 0)) __PYX_ERR(1, 487, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":430
+  /* "CARTGVTree.pyx":489
  *         d["node_count"] = self.node_count
  * 
  *         d["values"] = self._get_value_ndarray()             # <<<<<<<<<<<<<<
  *         d["groups"] = self.groups
  *         d["n_leaves"] = self.n_leaves
  */
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 430, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_values, __pyx_t_1) < 0)) __PYX_ERR(1, 430, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_values, __pyx_t_1) < 0)) __PYX_ERR(1, 489, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":431
+  /* "CARTGVTree.pyx":490
  * 
  *         d["values"] = self._get_value_ndarray()
  *         d["groups"] = self.groups             # <<<<<<<<<<<<<<
@@ -8647,22 +8561,22 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
  */
   __pyx_t_1 = __pyx_v_self->groups;
   __Pyx_INCREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_groups, __pyx_t_1) < 0)) __PYX_ERR(1, 431, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_groups, __pyx_t_1) < 0)) __PYX_ERR(1, 490, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":432
+  /* "CARTGVTree.pyx":491
  *         d["values"] = self._get_value_ndarray()
  *         d["groups"] = self.groups
  *         d["n_leaves"] = self.n_leaves             # <<<<<<<<<<<<<<
  *         d["len_groups"] = self.len_groups
  *         d["nodes_cart_idx"] = self._get_nodes_cart_idx_ndarray()
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n_leaves); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 432, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n_leaves); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 491, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_n_leaves, __pyx_t_1) < 0)) __PYX_ERR(1, 432, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_n_leaves, __pyx_t_1) < 0)) __PYX_ERR(1, 491, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":433
+  /* "CARTGVTree.pyx":492
  *         d["groups"] = self.groups
  *         d["n_leaves"] = self.n_leaves
  *         d["len_groups"] = self.len_groups             # <<<<<<<<<<<<<<
@@ -8671,43 +8585,43 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
  */
   __pyx_t_1 = ((PyObject *)__pyx_v_self->len_groups);
   __Pyx_INCREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_len_groups, __pyx_t_1) < 0)) __PYX_ERR(1, 433, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_len_groups, __pyx_t_1) < 0)) __PYX_ERR(1, 492, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":434
+  /* "CARTGVTree.pyx":493
  *         d["n_leaves"] = self.n_leaves
  *         d["len_groups"] = self.len_groups
  *         d["nodes_cart_idx"] = self._get_nodes_cart_idx_ndarray()             # <<<<<<<<<<<<<<
  * 
  *         print(d)
  */
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_nodes_cart_idx_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 434, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_nodes_cart_idx_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_nodes_cart_idx, __pyx_t_1) < 0)) __PYX_ERR(1, 434, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_nodes_cart_idx, __pyx_t_1) < 0)) __PYX_ERR(1, 493, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":436
+  /* "CARTGVTree.pyx":495
  *         d["nodes_cart_idx"] = self._get_nodes_cart_idx_ndarray()
  * 
  *         print(d)             # <<<<<<<<<<<<<<
  * 
  *         d["nodes"] = self._get_node_ndarray()
  */
-  if (__Pyx_PrintOne(0, __pyx_v_d) < 0) __PYX_ERR(1, 436, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_v_d) < 0) __PYX_ERR(1, 495, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":438
+  /* "CARTGVTree.pyx":497
  *         print(d)
  * 
  *         d["nodes"] = self._get_node_ndarray()             # <<<<<<<<<<<<<<
  * 
  * #        print(d)
  */
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_node_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 438, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_node_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_nodes, __pyx_t_1) < 0)) __PYX_ERR(1, 438, __pyx_L1_error)
+  if (unlikely(PyDict_SetItem(__pyx_v_d, __pyx_n_s_nodes, __pyx_t_1) < 0)) __PYX_ERR(1, 497, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":441
+  /* "CARTGVTree.pyx":500
  * 
  * #        print(d)
  *         return d             # <<<<<<<<<<<<<<
@@ -8719,7 +8633,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
   __pyx_r = __pyx_v_d;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":423
+  /* "CARTGVTree.pyx":482
  *                          self.n_outputs), self.__getstate__())
  * 
  *     def __getstate__(self):             # <<<<<<<<<<<<<<
@@ -8739,7 +8653,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_6__getstate__(struct __pyx_o
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":443
+/* "CARTGVTree.pyx":502
  *         return d
  * 
  *     def __setstate__(self, d):             # <<<<<<<<<<<<<<
@@ -8784,57 +8698,57 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__setstate__", 0);
 
-  /* "CARTGVTree.pyx":445
+  /* "CARTGVTree.pyx":504
  *     def __setstate__(self, d):
  *         """Setstate re-implementation, for unpickling."""
  *         self.max_depth = d["max_depth"]             # <<<<<<<<<<<<<<
  *         self.node_count = d["node_count"]
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 445, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 504, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 445, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 504, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->max_depth = __pyx_t_2;
 
-  /* "CARTGVTree.pyx":446
+  /* "CARTGVTree.pyx":505
  *         """Setstate re-implementation, for unpickling."""
  *         self.max_depth = d["max_depth"]
  *         self.node_count = d["node_count"]             # <<<<<<<<<<<<<<
  * 
  *         if 'nodes' not in d:
  */
-  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 446, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 505, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 446, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 505, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->node_count = __pyx_t_2;
 
-  /* "CARTGVTree.pyx":448
+  /* "CARTGVTree.pyx":507
  *         self.node_count = d["node_count"]
  * 
  *         if 'nodes' not in d:             # <<<<<<<<<<<<<<
  *             raise ValueError('You have loaded Tree version which '
  *                              'cannot be imported')
  */
-  __pyx_t_3 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_nodes, __pyx_v_d, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 448, __pyx_L1_error)
+  __pyx_t_3 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_nodes, __pyx_v_d, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 507, __pyx_L1_error)
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "CARTGVTree.pyx":449
+    /* "CARTGVTree.pyx":508
  * 
  *         if 'nodes' not in d:
  *             raise ValueError('You have loaded Tree version which '             # <<<<<<<<<<<<<<
  *                              'cannot be imported')
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 449, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 508, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(1, 449, __pyx_L1_error)
+    __PYX_ERR(1, 508, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":448
+    /* "CARTGVTree.pyx":507
  *         self.node_count = d["node_count"]
  * 
  *         if 'nodes' not in d:             # <<<<<<<<<<<<<<
@@ -8843,63 +8757,63 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   }
 
-  /* "CARTGVTree.pyx":452
+  /* "CARTGVTree.pyx":511
  *                              'cannot be imported')
  * 
  *         node_ndarray = d['nodes']             # <<<<<<<<<<<<<<
  *         value_ndarray = d['values']
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_nodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 452, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_nodes); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 511, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_node_ndarray = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":453
+  /* "CARTGVTree.pyx":512
  * 
  *         node_ndarray = d['nodes']
  *         value_ndarray = d['values']             # <<<<<<<<<<<<<<
  * 
  *         value_shape = (node_ndarray.shape[0], self.n_outputs,
  */
-  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 453, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Dict_GetItem(__pyx_v_d, __pyx_n_s_values); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_value_ndarray = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":455
+  /* "CARTGVTree.pyx":514
  *         value_ndarray = d['values']
  * 
  *         value_shape = (node_ndarray.shape[0], self.n_outputs,             # <<<<<<<<<<<<<<
  *                        self.max_n_classes)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "CARTGVTree.pyx":456
+  /* "CARTGVTree.pyx":515
  * 
  *         value_shape = (node_ndarray.shape[0], self.n_outputs,
  *                        self.max_n_classes)             # <<<<<<<<<<<<<<
  * 
  *         if (node_ndarray.dtype != NODE_DTYPE):
  */
-  __pyx_t_6 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 456, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 515, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "CARTGVTree.pyx":455
+  /* "CARTGVTree.pyx":514
  *         value_ndarray = d['values']
  * 
  *         value_shape = (node_ndarray.shape[0], self.n_outputs,             # <<<<<<<<<<<<<<
  *                        self.max_n_classes)
  * 
  */
-  __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 455, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_5);
   PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5);
@@ -8913,32 +8827,32 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
   __pyx_v_value_shape = ((PyObject*)__pyx_t_7);
   __pyx_t_7 = 0;
 
-  /* "CARTGVTree.pyx":458
+  /* "CARTGVTree.pyx":517
  *                        self.max_n_classes)
  * 
  *         if (node_ndarray.dtype != NODE_DTYPE):             # <<<<<<<<<<<<<<
  *             # possible mismatch of big/little endian due to serialization
  *             # on a different architecture. Try swapping the byte order.
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 458, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 517, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 458, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 517, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_7, __pyx_t_6, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 458, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_7, __pyx_t_6, Py_NE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 517, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 458, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 517, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "CARTGVTree.pyx":461
+    /* "CARTGVTree.pyx":520
  *             # possible mismatch of big/little endian due to serialization
  *             # on a different architecture. Try swapping the byte order.
  *             node_ndarray = node_ndarray.byteswap().newbyteorder()             # <<<<<<<<<<<<<<
  *             if (node_ndarray.dtype != NODE_DTYPE):
  *                 raise ValueError('Did not recognise loaded array dytpe')
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_byteswap); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 461, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_byteswap); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
@@ -8952,10 +8866,10 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     }
     __pyx_t_6 = (__pyx_t_5) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_5) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 461, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_newbyteorder); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 461, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_newbyteorder); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -8970,44 +8884,44 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     }
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 461, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF_SET(__pyx_v_node_ndarray, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "CARTGVTree.pyx":462
+    /* "CARTGVTree.pyx":521
  *             # on a different architecture. Try swapping the byte order.
  *             node_ndarray = node_ndarray.byteswap().newbyteorder()
  *             if (node_ndarray.dtype != NODE_DTYPE):             # <<<<<<<<<<<<<<
  *                 raise ValueError('Did not recognise loaded array dytpe')
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 462, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 521, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 462, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 521, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 462, __pyx_L1_error)
+    __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_7, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 521, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 462, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 521, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (unlikely(__pyx_t_4)) {
 
-      /* "CARTGVTree.pyx":463
+      /* "CARTGVTree.pyx":522
  *             node_ndarray = node_ndarray.byteswap().newbyteorder()
  *             if (node_ndarray.dtype != NODE_DTYPE):
  *                 raise ValueError('Did not recognise loaded array dytpe')             # <<<<<<<<<<<<<<
  * 
  *         if (node_ndarray.ndim != 1 or
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 463, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 522, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __PYX_ERR(1, 463, __pyx_L1_error)
+      __PYX_ERR(1, 522, __pyx_L1_error)
 
-      /* "CARTGVTree.pyx":462
+      /* "CARTGVTree.pyx":521
  *             # on a different architecture. Try swapping the byte order.
  *             node_ndarray = node_ndarray.byteswap().newbyteorder()
  *             if (node_ndarray.dtype != NODE_DTYPE):             # <<<<<<<<<<<<<<
@@ -9016,7 +8930,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
     }
 
-    /* "CARTGVTree.pyx":458
+    /* "CARTGVTree.pyx":517
  *                        self.max_n_classes)
  * 
  *         if (node_ndarray.dtype != NODE_DTYPE):             # <<<<<<<<<<<<<<
@@ -9025,19 +8939,19 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   }
 
-  /* "CARTGVTree.pyx":465
+  /* "CARTGVTree.pyx":524
  *                 raise ValueError('Did not recognise loaded array dytpe')
  * 
  *         if (node_ndarray.ndim != 1 or             # <<<<<<<<<<<<<<
  *                 not node_ndarray.flags.c_contiguous or
  *                 value_ndarray.shape != value_shape or
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_ndim); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_ndim); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 524, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyInt_NeObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_NeObjC(__pyx_t_6, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 524, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 465, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 524, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (!__pyx_t_3) {
   } else {
@@ -9045,19 +8959,19 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":466
+  /* "CARTGVTree.pyx":525
  * 
  *         if (node_ndarray.ndim != 1 or
  *                 not node_ndarray.flags.c_contiguous or             # <<<<<<<<<<<<<<
  *                 value_ndarray.shape != value_shape or
  *                 not value_ndarray.flags.c_contiguous or
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c_contiguous); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c_contiguous); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 466, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 525, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_8 = ((!__pyx_t_3) != 0);
   if (!__pyx_t_8) {
@@ -9066,18 +8980,18 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":467
+  /* "CARTGVTree.pyx":526
  *         if (node_ndarray.ndim != 1 or
  *                 not node_ndarray.flags.c_contiguous or
  *                 value_ndarray.shape != value_shape or             # <<<<<<<<<<<<<<
  *                 not value_ndarray.flags.c_contiguous or
  *                 value_ndarray.dtype != np.float64):
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 467, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 526, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = PyObject_RichCompare(__pyx_t_6, __pyx_v_value_shape, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 467, __pyx_L1_error)
+  __pyx_t_7 = PyObject_RichCompare(__pyx_t_6, __pyx_v_value_shape, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 526, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 467, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 526, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (!__pyx_t_8) {
   } else {
@@ -9085,19 +8999,19 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":468
+  /* "CARTGVTree.pyx":527
  *                 not node_ndarray.flags.c_contiguous or
  *                 value_ndarray.shape != value_shape or
  *                 not value_ndarray.flags.c_contiguous or             # <<<<<<<<<<<<<<
  *                 value_ndarray.dtype != np.float64):
  *             raise ValueError('Did not recognise loaded array layout')
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 468, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 527, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c_contiguous); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 468, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c_contiguous); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 527, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 468, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_8 < 0)) __PYX_ERR(1, 527, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_3 = ((!__pyx_t_8) != 0);
   if (!__pyx_t_3) {
@@ -9106,29 +9020,29 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
     goto __pyx_L7_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":469
+  /* "CARTGVTree.pyx":528
  *                 value_ndarray.shape != value_shape or
  *                 not value_ndarray.flags.c_contiguous or
  *                 value_ndarray.dtype != np.float64):             # <<<<<<<<<<<<<<
  *             raise ValueError('Did not recognise loaded array layout')
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 469, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_value_ndarray, __pyx_n_s_dtype); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 528, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 469, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 528, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_float64); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 469, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_float64); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 528, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 469, __pyx_L1_error)
+  __pyx_t_7 = PyObject_RichCompare(__pyx_t_6, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 528, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 469, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(1, 528, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_4 = __pyx_t_3;
   __pyx_L7_bool_binop_done:;
 
-  /* "CARTGVTree.pyx":465
+  /* "CARTGVTree.pyx":524
  *                 raise ValueError('Did not recognise loaded array dytpe')
  * 
  *         if (node_ndarray.ndim != 1 or             # <<<<<<<<<<<<<<
@@ -9137,20 +9051,20 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   if (unlikely(__pyx_t_4)) {
 
-    /* "CARTGVTree.pyx":470
+    /* "CARTGVTree.pyx":529
  *                 not value_ndarray.flags.c_contiguous or
  *                 value_ndarray.dtype != np.float64):
  *             raise ValueError('Did not recognise loaded array layout')             # <<<<<<<<<<<<<<
  * 
  *         self.capacity = node_ndarray.shape[0]
  */
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 470, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 529, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_Raise(__pyx_t_7, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __PYX_ERR(1, 470, __pyx_L1_error)
+    __PYX_ERR(1, 529, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":465
+    /* "CARTGVTree.pyx":524
  *                 raise ValueError('Did not recognise loaded array dytpe')
  * 
  *         if (node_ndarray.ndim != 1 or             # <<<<<<<<<<<<<<
@@ -9159,23 +9073,23 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   }
 
-  /* "CARTGVTree.pyx":472
+  /* "CARTGVTree.pyx":531
  *             raise ValueError('Did not recognise loaded array layout')
  * 
  *         self.capacity = node_ndarray.shape[0]             # <<<<<<<<<<<<<<
  *         if self._resize_c(self.capacity) != 0:
  *             raise MemoryError("resizing tree to %d" % self.capacity)
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 472, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_node_ndarray, __pyx_n_s_shape); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 531, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 472, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 531, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 472, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_2 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 531, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_self->capacity = __pyx_t_2;
 
-  /* "CARTGVTree.pyx":473
+  /* "CARTGVTree.pyx":532
  * 
  *         self.capacity = node_ndarray.shape[0]
  *         if self._resize_c(self.capacity) != 0:             # <<<<<<<<<<<<<<
@@ -9184,30 +9098,30 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   __pyx_t_10.__pyx_n = 1;
   __pyx_t_10.capacity = __pyx_v_self->capacity;
-  __pyx_t_9 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, &__pyx_t_10); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 473, __pyx_L1_error)
+  __pyx_t_9 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, &__pyx_t_10); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 532, __pyx_L1_error)
   __pyx_t_4 = ((__pyx_t_9 != 0) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "CARTGVTree.pyx":474
+    /* "CARTGVTree.pyx":533
  *         self.capacity = node_ndarray.shape[0]
  *         if self._resize_c(self.capacity) != 0:
  *             raise MemoryError("resizing tree to %d" % self.capacity)             # <<<<<<<<<<<<<<
  *         nodes = memcpy(self.nodes, (<np.ndarray> node_ndarray).data,
  *                        self.capacity * sizeof(CARTGVNode))
  */
-    __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->capacity); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 474, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->capacity); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 533, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyString_Format(__pyx_kp_s_resizing_tree_to_d, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 474, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyString_Format(__pyx_kp_s_resizing_tree_to_d, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 533, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 474, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 533, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(1, 474, __pyx_L1_error)
+    __PYX_ERR(1, 533, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":473
+    /* "CARTGVTree.pyx":532
  * 
  *         self.capacity = node_ndarray.shape[0]
  *         if self._resize_c(self.capacity) != 0:             # <<<<<<<<<<<<<<
@@ -9216,7 +9130,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   }
 
-  /* "CARTGVTree.pyx":475
+  /* "CARTGVTree.pyx":534
  *         if self._resize_c(self.capacity) != 0:
  *             raise MemoryError("resizing tree to %d" % self.capacity)
  *         nodes = memcpy(self.nodes, (<np.ndarray> node_ndarray).data,             # <<<<<<<<<<<<<<
@@ -9225,7 +9139,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   __pyx_v_nodes = memcpy(__pyx_v_self->nodes, ((PyArrayObject *)__pyx_v_node_ndarray)->data, (__pyx_v_self->capacity * (sizeof(__pyx_t_10CARTGVTree_CARTGVNode))));
 
-  /* "CARTGVTree.pyx":477
+  /* "CARTGVTree.pyx":536
  *         nodes = memcpy(self.nodes, (<np.ndarray> node_ndarray).data,
  *                        self.capacity * sizeof(CARTGVNode))
  *         value = memcpy(self.value, (<np.ndarray> value_ndarray).data,             # <<<<<<<<<<<<<<
@@ -9234,7 +9148,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
  */
   __pyx_v_value = memcpy(__pyx_v_self->value, ((PyArrayObject *)__pyx_v_value_ndarray)->data, ((__pyx_v_self->capacity * __pyx_v_self->value_stride) * (sizeof(double))));
 
-  /* "CARTGVTree.pyx":443
+  /* "CARTGVTree.pyx":502
  *         return d
  * 
  *     def __setstate__(self, d):             # <<<<<<<<<<<<<<
@@ -9261,7 +9175,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8__setstate__(struct __pyx_o
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":481
+/* "CARTGVTree.pyx":540
  * 
  * 
  *     cdef int _resize(self, SIZE_t capacity) nogil except -1:             # <<<<<<<<<<<<<<
@@ -9286,7 +9200,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
 
-  /* "CARTGVTree.pyx":482
+  /* "CARTGVTree.pyx":541
  * 
  *     cdef int _resize(self, SIZE_t capacity) nogil except -1:
  *         """Resize all inner arrays to `capacity`, if `capacity` == -1, then             # <<<<<<<<<<<<<<
@@ -9295,7 +9209,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
  */
   /*try:*/ {
 
-    /* "CARTGVTree.pyx":489
+    /* "CARTGVTree.pyx":548
  *         """
  * 
  *         if self._resize_c(capacity) != 0:             # <<<<<<<<<<<<<<
@@ -9304,11 +9218,11 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
  */
     __pyx_t_2.__pyx_n = 1;
     __pyx_t_2.capacity = __pyx_v_capacity;
-    __pyx_t_1 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, &__pyx_t_2); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(1, 489, __pyx_L4_error)
+    __pyx_t_1 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, &__pyx_t_2); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(1, 548, __pyx_L4_error)
     __pyx_t_3 = ((__pyx_t_1 != 0) != 0);
     if (__pyx_t_3) {
 
-      /* "CARTGVTree.pyx":491
+      /* "CARTGVTree.pyx":550
  *         if self._resize_c(capacity) != 0:
  *             # Acquire gil only if we need to raise
  *             with gil:             # <<<<<<<<<<<<<<
@@ -9321,17 +9235,17 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
           #endif
           /*try:*/ {
 
-            /* "CARTGVTree.pyx":492
+            /* "CARTGVTree.pyx":551
  *             # Acquire gil only if we need to raise
  *             with gil:
  *                 raise MemoryError()             # <<<<<<<<<<<<<<
  * 
  *     cdef int _resize_c(self, SIZE_t capacity=SIZE_MAX) nogil except -1:
  */
-            PyErr_NoMemory(); __PYX_ERR(1, 492, __pyx_L8_error)
+            PyErr_NoMemory(); __PYX_ERR(1, 551, __pyx_L8_error)
           }
 
-          /* "CARTGVTree.pyx":491
+          /* "CARTGVTree.pyx":550
  *         if self._resize_c(capacity) != 0:
  *             # Acquire gil only if we need to raise
  *             with gil:             # <<<<<<<<<<<<<<
@@ -9348,7 +9262,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
           }
       }
 
-      /* "CARTGVTree.pyx":489
+      /* "CARTGVTree.pyx":548
  *         """
  * 
  *         if self._resize_c(capacity) != 0:             # <<<<<<<<<<<<<<
@@ -9358,7 +9272,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
     }
   }
 
-  /* "CARTGVTree.pyx":482
+  /* "CARTGVTree.pyx":541
  * 
  *     cdef int _resize(self, SIZE_t capacity) nogil except -1:
  *         """Resize all inner arrays to `capacity`, if `capacity` == -1, then             # <<<<<<<<<<<<<<
@@ -9381,7 +9295,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
     __pyx_L5:;
   }
 
-  /* "CARTGVTree.pyx":481
+  /* "CARTGVTree.pyx":540
  * 
  * 
  *     cdef int _resize(self, SIZE_t capacity) nogil except -1:             # <<<<<<<<<<<<<<
@@ -9402,7 +9316,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize(struct __pyx_obj_10CARTGVTr
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":494
+/* "CARTGVTree.pyx":553
  *                 raise MemoryError()
  * 
  *     cdef int _resize_c(self, SIZE_t capacity=SIZE_MAX) nogil except -1:             # <<<<<<<<<<<<<<
@@ -9424,7 +9338,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
     }
   }
 
-  /* "CARTGVTree.pyx":500
+  /* "CARTGVTree.pyx":559
  *         or 0 otherwise.
  *         """
  *         if capacity == self.capacity and self.nodes != NULL:             # <<<<<<<<<<<<<<
@@ -9442,7 +9356,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":501
+    /* "CARTGVTree.pyx":560
  *         """
  *         if capacity == self.capacity and self.nodes != NULL:
  *             return 0             # <<<<<<<<<<<<<<
@@ -9452,7 +9366,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
     __pyx_r = 0;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":500
+    /* "CARTGVTree.pyx":559
  *         or 0 otherwise.
  *         """
  *         if capacity == self.capacity and self.nodes != NULL:             # <<<<<<<<<<<<<<
@@ -9461,7 +9375,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
   }
 
-  /* "CARTGVTree.pyx":503
+  /* "CARTGVTree.pyx":562
  *             return 0
  * 
  *         if capacity == SIZE_MAX:             # <<<<<<<<<<<<<<
@@ -9471,7 +9385,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
   __pyx_t_1 = ((__pyx_v_capacity == SIZE_MAX) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":504
+    /* "CARTGVTree.pyx":563
  * 
  *         if capacity == SIZE_MAX:
  *             if self.capacity == 0:             # <<<<<<<<<<<<<<
@@ -9481,7 +9395,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
     __pyx_t_1 = ((__pyx_v_self->capacity == 0) != 0);
     if (__pyx_t_1) {
 
-      /* "CARTGVTree.pyx":505
+      /* "CARTGVTree.pyx":564
  *         if capacity == SIZE_MAX:
  *             if self.capacity == 0:
  *                 capacity = 3  # default initial value             # <<<<<<<<<<<<<<
@@ -9490,7 +9404,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
       __pyx_v_capacity = 3;
 
-      /* "CARTGVTree.pyx":504
+      /* "CARTGVTree.pyx":563
  * 
  *         if capacity == SIZE_MAX:
  *             if self.capacity == 0:             # <<<<<<<<<<<<<<
@@ -9500,7 +9414,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
       goto __pyx_L7;
     }
 
-    /* "CARTGVTree.pyx":507
+    /* "CARTGVTree.pyx":566
  *                 capacity = 3  # default initial value
  *             else:
  *                 capacity = 2 * self.capacity             # <<<<<<<<<<<<<<
@@ -9512,7 +9426,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
     }
     __pyx_L7:;
 
-    /* "CARTGVTree.pyx":503
+    /* "CARTGVTree.pyx":562
  *             return 0
  * 
  *         if capacity == SIZE_MAX:             # <<<<<<<<<<<<<<
@@ -9521,34 +9435,34 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
   }
 
-  /* "CARTGVTree.pyx":509
+  /* "CARTGVTree.pyx":568
  *                 capacity = 2 * self.capacity
  * 
  *         safe_realloc(&self.nodes, capacity)             # <<<<<<<<<<<<<<
  *         safe_realloc(&self.value, capacity * self.value_stride)
  *         safe_realloc(&self.nodes_cart_idx, capacity)
  */
-  __pyx_fuse_8__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->nodes), __pyx_v_capacity); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 509, __pyx_L1_error)
+  __pyx_fuse_8__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->nodes), __pyx_v_capacity); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 568, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":510
+  /* "CARTGVTree.pyx":569
  * 
  *         safe_realloc(&self.nodes, capacity)
  *         safe_realloc(&self.value, capacity * self.value_stride)             # <<<<<<<<<<<<<<
  *         safe_realloc(&self.nodes_cart_idx, capacity)
  * #
  */
-  __pyx_fuse_3__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->value), (__pyx_v_capacity * __pyx_v_self->value_stride)); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 510, __pyx_L1_error)
+  __pyx_fuse_3__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->value), (__pyx_v_capacity * __pyx_v_self->value_stride)); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 569, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":511
+  /* "CARTGVTree.pyx":570
  *         safe_realloc(&self.nodes, capacity)
  *         safe_realloc(&self.value, capacity * self.value_stride)
  *         safe_realloc(&self.nodes_cart_idx, capacity)             # <<<<<<<<<<<<<<
  * #
  * #        self.nodes = <CARTGVNode*> realloc(self.nodes, capacity)
  */
-  __pyx_fuse_1__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->nodes_cart_idx), __pyx_v_capacity); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 511, __pyx_L1_error)
+  __pyx_fuse_1__pyx_f_11CARTGVutils_safe_realloc((&__pyx_v_self->nodes_cart_idx), __pyx_v_capacity); if (unlikely(__Pyx_ErrOccurredWithGIL())) __PYX_ERR(1, 570, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":524
+  /* "CARTGVTree.pyx":583
  * 
  *         # if capacity smaller than node_count, adjust the counter
  *         if capacity < self.node_count:             # <<<<<<<<<<<<<<
@@ -9558,7 +9472,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
   __pyx_t_1 = ((__pyx_v_capacity < __pyx_v_self->node_count) != 0);
   if (__pyx_t_1) {
 
-    /* "CARTGVTree.pyx":525
+    /* "CARTGVTree.pyx":584
  *         # if capacity smaller than node_count, adjust the counter
  *         if capacity < self.node_count:
  *             self.node_count = capacity             # <<<<<<<<<<<<<<
@@ -9567,7 +9481,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
     __pyx_v_self->node_count = __pyx_v_capacity;
 
-    /* "CARTGVTree.pyx":524
+    /* "CARTGVTree.pyx":583
  * 
  *         # if capacity smaller than node_count, adjust the counter
  *         if capacity < self.node_count:             # <<<<<<<<<<<<<<
@@ -9576,7 +9490,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
   }
 
-  /* "CARTGVTree.pyx":528
+  /* "CARTGVTree.pyx":587
  * 
  * 
  *         self.capacity = capacity             # <<<<<<<<<<<<<<
@@ -9585,7 +9499,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
  */
   __pyx_v_self->capacity = __pyx_v_capacity;
 
-  /* "CARTGVTree.pyx":529
+  /* "CARTGVTree.pyx":588
  * 
  *         self.capacity = capacity
  *         return 0             # <<<<<<<<<<<<<<
@@ -9595,7 +9509,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":494
+  /* "CARTGVTree.pyx":553
  *                 raise MemoryError()
  * 
  *     cdef int _resize_c(self, SIZE_t capacity=SIZE_MAX) nogil except -1:             # <<<<<<<<<<<<<<
@@ -9619,7 +9533,7 @@ static int __pyx_f_10CARTGVTree_10CARTGVTree__resize_c(struct __pyx_obj_10CARTGV
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":532
+/* "CARTGVTree.pyx":591
  * 
  * 
  *     cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,             # <<<<<<<<<<<<<<
@@ -9651,7 +9565,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
   __Pyx_PyGILState_Release(__pyx_gilstate_save);
   #endif
 
-  /* "CARTGVTree.pyx":536
+  /* "CARTGVTree.pyx":595
  *                           SIZE_t n_node_samples, int n_childs,
  *                           double weighted_n_node_samples, int group, int start, int end, int depth, SIZE_t cart_idx) nogil except -1:
  *         """             # <<<<<<<<<<<<<<
@@ -9660,7 +9574,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
   /*try:*/ {
 
-    /* "CARTGVTree.pyx":542
+    /* "CARTGVTree.pyx":611
  *         """
  * 
  *         cdef SIZE_t node_id = self.node_count #The current node id             # <<<<<<<<<<<<<<
@@ -9670,7 +9584,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     __pyx_t_1 = __pyx_v_self->node_count;
     __pyx_v_node_id = __pyx_t_1;
 
-    /* "CARTGVTree.pyx":546
+    /* "CARTGVTree.pyx":615
  * 
  *         #Check if the number of nodes is bigger than the capacity
  *         if node_id >= self.capacity:             # <<<<<<<<<<<<<<
@@ -9680,18 +9594,18 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     __pyx_t_2 = ((__pyx_v_node_id >= __pyx_v_self->capacity) != 0);
     if (__pyx_t_2) {
 
-      /* "CARTGVTree.pyx":547
+      /* "CARTGVTree.pyx":616
  *         #Check if the number of nodes is bigger than the capacity
  *         if node_id >= self.capacity:
  *             if self._resize_c() != 0:             # <<<<<<<<<<<<<<
  *                 return SIZE_MAX
  * 
  */
-      __pyx_t_3 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(1, 547, __pyx_L4_error)
+      __pyx_t_3 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize_c(__pyx_v_self, NULL); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(1, 616, __pyx_L4_error)
       __pyx_t_2 = ((__pyx_t_3 != 0) != 0);
       if (__pyx_t_2) {
 
-        /* "CARTGVTree.pyx":548
+        /* "CARTGVTree.pyx":617
  *         if node_id >= self.capacity:
  *             if self._resize_c() != 0:
  *                 return SIZE_MAX             # <<<<<<<<<<<<<<
@@ -9701,7 +9615,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
         __pyx_r = SIZE_MAX;
         goto __pyx_L3_return;
 
-        /* "CARTGVTree.pyx":547
+        /* "CARTGVTree.pyx":616
  *         #Check if the number of nodes is bigger than the capacity
  *         if node_id >= self.capacity:
  *             if self._resize_c() != 0:             # <<<<<<<<<<<<<<
@@ -9710,7 +9624,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
       }
 
-      /* "CARTGVTree.pyx":546
+      /* "CARTGVTree.pyx":615
  * 
  *         #Check if the number of nodes is bigger than the capacity
  *         if node_id >= self.capacity:             # <<<<<<<<<<<<<<
@@ -9719,7 +9633,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     }
 
-    /* "CARTGVTree.pyx":551
+    /* "CARTGVTree.pyx":620
  * 
  *         # Creation of the node and setting of it's field
  *         cdef CARTGVNode* node = &self.nodes[node_id]             # <<<<<<<<<<<<<<
@@ -9728,7 +9642,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node = (&(__pyx_v_self->nodes[__pyx_v_node_id]));
 
-    /* "CARTGVTree.pyx":553
+    /* "CARTGVTree.pyx":622
  *         cdef CARTGVNode* node = &self.nodes[node_id]
  * #        node = CARTGVNode()
  *         node.impurity = impurity             # <<<<<<<<<<<<<<
@@ -9737,7 +9651,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->impurity = __pyx_v_impurity;
 
-    /* "CARTGVTree.pyx":554
+    /* "CARTGVTree.pyx":623
  * #        node = CARTGVNode()
  *         node.impurity = impurity
  *         node.n_node_samples = n_node_samples             # <<<<<<<<<<<<<<
@@ -9746,7 +9660,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->n_node_samples = __pyx_v_n_node_samples;
 
-    /* "CARTGVTree.pyx":555
+    /* "CARTGVTree.pyx":624
  *         node.impurity = impurity
  *         node.n_node_samples = n_node_samples
  *         node.weighted_n_node_samples = weighted_n_node_samples             # <<<<<<<<<<<<<<
@@ -9755,7 +9669,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->weighted_n_node_samples = __pyx_v_weighted_n_node_samples;
 
-    /* "CARTGVTree.pyx":556
+    /* "CARTGVTree.pyx":625
  *         node.n_node_samples = n_node_samples
  *         node.weighted_n_node_samples = weighted_n_node_samples
  *         node.n_childs = n_childs             # <<<<<<<<<<<<<<
@@ -9764,7 +9678,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->n_childs = __pyx_v_n_childs;
 
-    /* "CARTGVTree.pyx":557
+    /* "CARTGVTree.pyx":626
  *         node.weighted_n_node_samples = weighted_n_node_samples
  *         node.n_childs = n_childs
  *         node.parent = parent             # <<<<<<<<<<<<<<
@@ -9773,7 +9687,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->parent = __pyx_v_parent;
 
-    /* "CARTGVTree.pyx":558
+    /* "CARTGVTree.pyx":627
  *         node.n_childs = n_childs
  *         node.parent = parent
  *         node.childs = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))             # <<<<<<<<<<<<<<
@@ -9782,7 +9696,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->childs = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)malloc((__pyx_v_n_childs * (sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t)))));
 
-    /* "CARTGVTree.pyx":559
+    /* "CARTGVTree.pyx":628
  *         node.parent = parent
  *         node.childs = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  *         node.current_child = 0             # <<<<<<<<<<<<<<
@@ -9791,7 +9705,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->current_child = 0;
 
-    /* "CARTGVTree.pyx":560
+    /* "CARTGVTree.pyx":629
  *         node.childs = <SIZE_t*> malloc(n_childs*sizeof(SIZE_t))
  *         node.current_child = 0
  *         node.start = start             # <<<<<<<<<<<<<<
@@ -9800,7 +9714,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->start = __pyx_v_start;
 
-    /* "CARTGVTree.pyx":561
+    /* "CARTGVTree.pyx":630
  *         node.current_child = 0
  *         node.start = start
  *         node.end = end             # <<<<<<<<<<<<<<
@@ -9809,7 +9723,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->end = __pyx_v_end;
 
-    /* "CARTGVTree.pyx":562
+    /* "CARTGVTree.pyx":631
  *         node.start = start
  *         node.end = end
  *         node.depth = depth             # <<<<<<<<<<<<<<
@@ -9818,7 +9732,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_node->depth = __pyx_v_depth;
 
-    /* "CARTGVTree.pyx":564
+    /* "CARTGVTree.pyx":633
  *         node.depth = depth
  * 
  *         self.nodes_cart_idx[node_id] = cart_idx             # <<<<<<<<<<<<<<
@@ -9827,7 +9741,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     (__pyx_v_self->nodes_cart_idx[__pyx_v_node_id]) = __pyx_v_cart_idx;
 
-    /* "CARTGVTree.pyx":567
+    /* "CARTGVTree.pyx":636
  * 
  *         # Check if the parent is undefined. If it isn't give this node id as the child of this node parent.
  *         if parent != _TREE_UNDEFINED:             # <<<<<<<<<<<<<<
@@ -9837,7 +9751,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     __pyx_t_2 = ((__pyx_v_parent != __pyx_v_10CARTGVTree__TREE_UNDEFINED) != 0);
     if (__pyx_t_2) {
 
-      /* "CARTGVTree.pyx":568
+      /* "CARTGVTree.pyx":637
  *         # Check if the parent is undefined. If it isn't give this node id as the child of this node parent.
  *         if parent != _TREE_UNDEFINED:
  *                 self.nodes[parent].childs[self.nodes[parent].current_child] = node_id             # <<<<<<<<<<<<<<
@@ -9846,7 +9760,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
       ((__pyx_v_self->nodes[__pyx_v_parent]).childs[(__pyx_v_self->nodes[__pyx_v_parent]).current_child]) = __pyx_v_node_id;
 
-      /* "CARTGVTree.pyx":569
+      /* "CARTGVTree.pyx":638
  *         if parent != _TREE_UNDEFINED:
  *                 self.nodes[parent].childs[self.nodes[parent].current_child] = node_id
  *                 self.nodes[parent].current_child += 1             # <<<<<<<<<<<<<<
@@ -9856,7 +9770,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
       __pyx_t_1 = __pyx_v_parent;
       (__pyx_v_self->nodes[__pyx_t_1]).current_child = ((__pyx_v_self->nodes[__pyx_t_1]).current_child + 1);
 
-      /* "CARTGVTree.pyx":567
+      /* "CARTGVTree.pyx":636
  * 
  *         # Check if the parent is undefined. If it isn't give this node id as the child of this node parent.
  *         if parent != _TREE_UNDEFINED:             # <<<<<<<<<<<<<<
@@ -9865,7 +9779,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     }
 
-    /* "CARTGVTree.pyx":572
+    /* "CARTGVTree.pyx":641
  * 
  *         # Check if the current node is a leaf, if it is, define it as a leaf with _TREE_LEAF and _TREE_UNDEFINED
  *         if is_leaf:             # <<<<<<<<<<<<<<
@@ -9875,7 +9789,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     __pyx_t_2 = (__pyx_v_is_leaf != 0);
     if (__pyx_t_2) {
 
-      /* "CARTGVTree.pyx":574
+      /* "CARTGVTree.pyx":643
  *         if is_leaf:
  * #            node.splitting_tree = <unsigned char*> malloc(sizeof(SIZE_t))
  *             node.splitting_tree = '' #splitting_tree #TODO is it necessary ? Empty string for no splitting tree ?             # <<<<<<<<<<<<<<
@@ -9884,7 +9798,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
       __pyx_v_node->splitting_tree = ((unsigned char *)((char const *)""));
 
-      /* "CARTGVTree.pyx":575
+      /* "CARTGVTree.pyx":644
  * #            node.splitting_tree = <unsigned char*> malloc(sizeof(SIZE_t))
  *             node.splitting_tree = '' #splitting_tree #TODO is it necessary ? Empty string for no splitting tree ?
  *             node.group = -2             # <<<<<<<<<<<<<<
@@ -9893,7 +9807,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
       __pyx_v_node->group = -2;
 
-      /* "CARTGVTree.pyx":572
+      /* "CARTGVTree.pyx":641
  * 
  *         # Check if the current node is a leaf, if it is, define it as a leaf with _TREE_LEAF and _TREE_UNDEFINED
  *         if is_leaf:             # <<<<<<<<<<<<<<
@@ -9903,7 +9817,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
       goto __pyx_L9;
     }
 
-    /* "CARTGVTree.pyx":580
+    /* "CARTGVTree.pyx":649
  *         else:
  *             #childs will be set later
  *             with gil:             # <<<<<<<<<<<<<<
@@ -9917,19 +9831,19 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
           #endif
           /*try:*/ {
 
-            /* "CARTGVTree.pyx":581
+            /* "CARTGVTree.pyx":650
  *             #childs will be set later
  *             with gil:
  *                 node.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree)*sizeof(unsigned char))             # <<<<<<<<<<<<<<
  *                 memcpy(node.splitting_tree, splitting_tree, sys.getsizeof(splitting_tree)*sizeof(unsigned char))
  * #                node.splitting_tree = splitting_tree
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_sys); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 581, __pyx_L11_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_sys); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_5);
-            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_getsizeof); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 581, __pyx_L11_error)
+            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_getsizeof); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            __pyx_t_5 = __Pyx_PyBytes_FromCString(__pyx_v_splitting_tree); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 581, __pyx_L11_error)
+            __pyx_t_5 = __Pyx_PyBytes_FromCString(__pyx_v_splitting_tree); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_5);
             __pyx_t_7 = NULL;
             if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
@@ -9944,32 +9858,32 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
             __pyx_t_4 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5);
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-            if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 581, __pyx_L11_error)
+            if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __pyx_t_6 = __Pyx_PyInt_FromSize_t((sizeof(unsigned char))); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 581, __pyx_L11_error)
+            __pyx_t_6 = __Pyx_PyInt_FromSize_t((sizeof(unsigned char))); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_5 = PyNumber_Multiply(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 581, __pyx_L11_error)
+            __pyx_t_5 = PyNumber_Multiply(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_5); if (unlikely((__pyx_t_8 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 581, __pyx_L11_error)
+            __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_5); if (unlikely((__pyx_t_8 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 650, __pyx_L11_error)
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __pyx_v_node->splitting_tree = ((unsigned char *)malloc(__pyx_t_8));
 
-            /* "CARTGVTree.pyx":582
+            /* "CARTGVTree.pyx":651
  *             with gil:
  *                 node.splitting_tree = <unsigned char*>malloc(sys.getsizeof(splitting_tree)*sizeof(unsigned char))
  *                 memcpy(node.splitting_tree, splitting_tree, sys.getsizeof(splitting_tree)*sizeof(unsigned char))             # <<<<<<<<<<<<<<
  * #                node.splitting_tree = splitting_tree
  *                 node.group = group
  */
-            __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_sys); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 582, __pyx_L11_error)
+            __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_sys); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_getsizeof); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 582, __pyx_L11_error)
+            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_getsizeof); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_4);
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __pyx_t_6 = __Pyx_PyBytes_FromCString(__pyx_v_splitting_tree); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 582, __pyx_L11_error)
+            __pyx_t_6 = __Pyx_PyBytes_FromCString(__pyx_v_splitting_tree); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_6);
             __pyx_t_7 = NULL;
             if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -9984,20 +9898,20 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
             __pyx_t_5 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6);
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 582, __pyx_L11_error)
+            if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_5);
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(unsigned char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 582, __pyx_L11_error)
+            __pyx_t_4 = __Pyx_PyInt_FromSize_t((sizeof(unsigned char))); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_6 = PyNumber_Multiply(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 582, __pyx_L11_error)
+            __pyx_t_6 = PyNumber_Multiply(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_GOTREF(__pyx_t_6);
             __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
             __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_6); if (unlikely((__pyx_t_8 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 582, __pyx_L11_error)
+            __pyx_t_8 = __Pyx_PyInt_As_size_t(__pyx_t_6); if (unlikely((__pyx_t_8 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 651, __pyx_L11_error)
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
             (void)(memcpy(__pyx_v_node->splitting_tree, __pyx_v_splitting_tree, __pyx_t_8));
 
-            /* "CARTGVTree.pyx":584
+            /* "CARTGVTree.pyx":653
  *                 memcpy(node.splitting_tree, splitting_tree, sys.getsizeof(splitting_tree)*sizeof(unsigned char))
  * #                node.splitting_tree = splitting_tree
  *                 node.group = group             # <<<<<<<<<<<<<<
@@ -10007,7 +9921,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
             __pyx_v_node->group = __pyx_v_group;
           }
 
-          /* "CARTGVTree.pyx":580
+          /* "CARTGVTree.pyx":649
  *         else:
  *             #childs will be set later
  *             with gil:             # <<<<<<<<<<<<<<
@@ -10033,7 +9947,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     }
     __pyx_L9:;
 
-    /* "CARTGVTree.pyx":586
+    /* "CARTGVTree.pyx":655
  *                 node.group = group
  * 
  *         self.node_count += 1             # <<<<<<<<<<<<<<
@@ -10042,7 +9956,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
  */
     __pyx_v_self->node_count = (__pyx_v_self->node_count + 1);
 
-    /* "CARTGVTree.pyx":588
+    /* "CARTGVTree.pyx":657
  *         self.node_count += 1
  * 
  *         return node_id             # <<<<<<<<<<<<<<
@@ -10053,7 +9967,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     goto __pyx_L3_return;
   }
 
-  /* "CARTGVTree.pyx":536
+  /* "CARTGVTree.pyx":595
  *                           SIZE_t n_node_samples, int n_childs,
  *                           double weighted_n_node_samples, int group, int start, int end, int depth, SIZE_t cart_idx) nogil except -1:
  *         """             # <<<<<<<<<<<<<<
@@ -10075,7 +9989,7 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
     }
   }
 
-  /* "CARTGVTree.pyx":532
+  /* "CARTGVTree.pyx":591
  * 
  * 
  *     cdef SIZE_t _add_node(self, SIZE_t parent, bint is_leaf,             # <<<<<<<<<<<<<<
@@ -10100,12 +10014,12 @@ static __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_f_10CARTGVTree_10CARTGVTree__a
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":590
+/* "CARTGVTree.pyx":659
  *         return node_id
  * 
  *     cpdef np.ndarray predict(self, object X):             # <<<<<<<<<<<<<<
- *         """Predict target for X."""
- *         out = self._get_value_ndarray().take(self.apply(X), axis=0,
+ *         """
+ *         Predict target for X.
  */
 
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_11predict(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
@@ -10134,7 +10048,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 590, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 659, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_11predict)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
@@ -10151,10 +10065,10 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_X);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 590, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 659, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 590, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 659, __pyx_L1_error)
         __pyx_r = ((PyArrayObject *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10173,30 +10087,30 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     #endif
   }
 
-  /* "CARTGVTree.pyx":592
- *     cpdef np.ndarray predict(self, object X):
- *         """Predict target for X."""
+  /* "CARTGVTree.pyx":664
+ *         params X : an object, the data to predict
+ *         """
  *         out = self._get_value_ndarray().take(self.apply(X), axis=0,             # <<<<<<<<<<<<<<
  *                                               mode='clip')
  *         if self.n_outputs == 1:
  */
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 592, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_take); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 592, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_take); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->apply(__pyx_v_self, __pyx_v_X, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 592, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->apply(__pyx_v_self, __pyx_v_X, 0)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 592, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 592, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 592, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_mode, __pyx_n_s_clip) < 0) __PYX_ERR(1, 592, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 592, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 664, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_mode, __pyx_n_s_clip) < 0) __PYX_ERR(1, 664, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10204,7 +10118,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
   __pyx_v_out = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "CARTGVTree.pyx":594
+  /* "CARTGVTree.pyx":666
  *         out = self._get_value_ndarray().take(self.apply(X), axis=0,
  *                                               mode='clip')
  *         if self.n_outputs == 1:             # <<<<<<<<<<<<<<
@@ -10214,21 +10128,21 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
   __pyx_t_5 = ((__pyx_v_self->n_outputs == 1) != 0);
   if (__pyx_t_5) {
 
-    /* "CARTGVTree.pyx":595
+    /* "CARTGVTree.pyx":667
  *                                               mode='clip')
  *         if self.n_outputs == 1:
  *             out = out.reshape(X.shape[0], self.max_n_classes)             # <<<<<<<<<<<<<<
  *         return out
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_out, __pyx_n_s_reshape); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 595, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_out, __pyx_n_s_reshape); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 595, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 595, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 595, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -10245,7 +10159,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 595, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 667, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10255,7 +10169,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_t_3};
-      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 595, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 667, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10263,7 +10177,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 595, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 667, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -10274,7 +10188,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_3);
       __pyx_t_2 = 0;
       __pyx_t_3 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 595, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 667, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
@@ -10282,7 +10196,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
     __Pyx_DECREF_SET(__pyx_v_out, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "CARTGVTree.pyx":594
+    /* "CARTGVTree.pyx":666
  *         out = self._get_value_ndarray().take(self.apply(X), axis=0,
  *                                               mode='clip')
  *         if self.n_outputs == 1:             # <<<<<<<<<<<<<<
@@ -10291,7 +10205,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
  */
   }
 
-  /* "CARTGVTree.pyx":596
+  /* "CARTGVTree.pyx":668
  *         if self.n_outputs == 1:
  *             out = out.reshape(X.shape[0], self.max_n_classes)
  *         return out             # <<<<<<<<<<<<<<
@@ -10299,17 +10213,17 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
  *     cpdef np.ndarray apply(self, object X):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  if (!(likely(((__pyx_v_out) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_out, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 596, __pyx_L1_error)
+  if (!(likely(((__pyx_v_out) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_out, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 668, __pyx_L1_error)
   __Pyx_INCREF(__pyx_v_out);
   __pyx_r = ((PyArrayObject *)__pyx_v_out);
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":590
+  /* "CARTGVTree.pyx":659
  *         return node_id
  * 
  *     cpdef np.ndarray predict(self, object X):             # <<<<<<<<<<<<<<
- *         """Predict target for X."""
- *         out = self._get_value_ndarray().take(self.apply(X), axis=0,
+ *         """
+ *         Predict target for X.
  */
 
   /* function exit code */
@@ -10331,7 +10245,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_predict(struct __pyx_obj
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_11predict(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
-static char __pyx_doc_10CARTGVTree_10CARTGVTree_10predict[] = "Predict target for X.";
+static char __pyx_doc_10CARTGVTree_10CARTGVTree_10predict[] = "\n        Predict target for X.\n        params X : an object, the data to predict\n        ";
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_11predict(PyObject *__pyx_v_self, PyObject *__pyx_v_X) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -10352,7 +10266,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_10predict(struct __pyx_obj_1
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree_predict(__pyx_v_self, __pyx_v_X, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 590, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree_predict(__pyx_v_self, __pyx_v_X, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 659, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10369,12 +10283,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_10predict(struct __pyx_obj_1
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":598
+/* "CARTGVTree.pyx":670
  *         return out
  * 
  *     cpdef np.ndarray apply(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the terminal region (=leaf node) for each sample in X."""
- *         if issparse(X):
+ *         """
+ *         Finds the terminal region (=leaf node) for each sample in X.
  */
 
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_13apply(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
@@ -10399,7 +10313,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_apply); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 598, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_apply); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 670, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_13apply)) {
         __Pyx_XDECREF(((PyObject *)__pyx_r));
@@ -10416,10 +10330,10 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_X);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 598, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 670, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 598, __pyx_L1_error)
+        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 670, __pyx_L1_error)
         __pyx_r = ((PyArrayObject *)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -10438,14 +10352,14 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
     #endif
   }
 
-  /* "CARTGVTree.pyx":600
- *     cpdef np.ndarray apply(self, object X):
- *         """Finds the terminal region (=leaf node) for each sample in X."""
+  /* "CARTGVTree.pyx":675
+ *         params X : an object, the data for which we want the terminal regions
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             return self._apply_sparse_csr(X)
  *         else:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 600, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 675, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -10459,22 +10373,22 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 600, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 675, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 600, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 675, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "CARTGVTree.pyx":601
- *         """Finds the terminal region (=leaf node) for each sample in X."""
+    /* "CARTGVTree.pyx":676
+ *         """
  *         if issparse(X):
  *             return self._apply_sparse_csr(X)             # <<<<<<<<<<<<<<
  *         else:
  *             return self._apply_dense(X)
  */
     __Pyx_XDECREF(((PyObject *)__pyx_r));
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_apply_sparse_csr); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 601, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_apply_sparse_csr); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 676, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -10488,24 +10402,24 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 601, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 676, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 601, __pyx_L1_error)
+    if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 676, __pyx_L1_error)
     __pyx_r = ((PyArrayObject *)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":600
- *     cpdef np.ndarray apply(self, object X):
- *         """Finds the terminal region (=leaf node) for each sample in X."""
+    /* "CARTGVTree.pyx":675
+ *         params X : an object, the data for which we want the terminal regions
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             return self._apply_sparse_csr(X)
  *         else:
  */
   }
 
-  /* "CARTGVTree.pyx":603
+  /* "CARTGVTree.pyx":678
  *             return self._apply_sparse_csr(X)
  *         else:
  *             return self._apply_dense(X)             # <<<<<<<<<<<<<<
@@ -10514,19 +10428,19 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
  */
   /*else*/ {
     __Pyx_XDECREF(((PyObject *)__pyx_r));
-    __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(__pyx_v_self, __pyx_v_X)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 603, __pyx_L1_error)
+    __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(__pyx_v_self, __pyx_v_X)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 678, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_r = ((PyArrayObject *)__pyx_t_1);
     __pyx_t_1 = 0;
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":598
+  /* "CARTGVTree.pyx":670
  *         return out
  * 
  *     cpdef np.ndarray apply(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the terminal region (=leaf node) for each sample in X."""
- *         if issparse(X):
+ *         """
+ *         Finds the terminal region (=leaf node) for each sample in X.
  */
 
   /* function exit code */
@@ -10545,7 +10459,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply(struct __pyx_obj_1
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_13apply(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
-static char __pyx_doc_10CARTGVTree_10CARTGVTree_12apply[] = "Finds the terminal region (=leaf node) for each sample in X.";
+static char __pyx_doc_10CARTGVTree_10CARTGVTree_12apply[] = "\n        Finds the terminal region (=leaf node) for each sample in X.\n        params X : an object, the data for which we want the terminal regions\n        ";
 static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_13apply(PyObject *__pyx_v_self, PyObject *__pyx_v_X) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
@@ -10566,7 +10480,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12apply(struct __pyx_obj_10C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("apply", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree_apply(__pyx_v_self, __pyx_v_X, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 598, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree_apply(__pyx_v_self, __pyx_v_X, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -10583,12 +10497,12 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_12apply(struct __pyx_obj_10C
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":605
+/* "CARTGVTree.pyx":680
  *             return self._apply_dense(X)
  * 
  *     cdef inline np.ndarray _apply_dense(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the terminal region (=leaf node) for each sample in X."""
- * 
+ *         """
+ *         Finds the terminal region (=leaf node) for each sample in X.
  */
 
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X) {
@@ -10644,7 +10558,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   __pyx_pybuffernd_out.data = NULL;
   __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
 
-  /* "CARTGVTree.pyx":609
+  /* "CARTGVTree.pyx":687
  * 
  *         # Check input
  *         if not isinstance(X, np.ndarray):             # <<<<<<<<<<<<<<
@@ -10655,31 +10569,31 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   __pyx_t_2 = ((!(__pyx_t_1 != 0)) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "CARTGVTree.pyx":611
+    /* "CARTGVTree.pyx":689
  *         if not isinstance(X, np.ndarray):
  *             raise ValueError("X should be in np.ndarray format, got %s"
  *                             % type(X))             # <<<<<<<<<<<<<<
  * 
  *         if X.dtype != DTYPE:
  */
-    __pyx_t_3 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_should_be_in_np_ndarray_format, ((PyObject *)Py_TYPE(__pyx_v_X))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 611, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_should_be_in_np_ndarray_format, ((PyObject *)Py_TYPE(__pyx_v_X))); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 689, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
 
-    /* "CARTGVTree.pyx":610
+    /* "CARTGVTree.pyx":688
  *         # Check input
  *         if not isinstance(X, np.ndarray):
  *             raise ValueError("X should be in np.ndarray format, got %s"             # <<<<<<<<<<<<<<
  *                             % type(X))
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 610, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 688, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_4, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __PYX_ERR(1, 610, __pyx_L1_error)
+    __PYX_ERR(1, 688, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":609
+    /* "CARTGVTree.pyx":687
  * 
  *         # Check input
  *         if not isinstance(X, np.ndarray):             # <<<<<<<<<<<<<<
@@ -10688,44 +10602,44 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   }
 
-  /* "CARTGVTree.pyx":613
+  /* "CARTGVTree.pyx":691
  *                             % type(X))
  * 
  *         if X.dtype != DTYPE:             # <<<<<<<<<<<<<<
  *             raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
  * 
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 613, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 691, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 613, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 691, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_t_4, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 613, __pyx_L1_error)
+  __pyx_t_5 = PyObject_RichCompare(__pyx_t_4, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 691, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 613, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 691, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (unlikely(__pyx_t_2)) {
 
-    /* "CARTGVTree.pyx":614
+    /* "CARTGVTree.pyx":692
  * 
  *         if X.dtype != DTYPE:
  *             raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)             # <<<<<<<<<<<<<<
  * 
  *         # Extract input
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 614, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_dtype_should_be_np_float32_got, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 614, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_dtype_should_be_np_float32_got, __pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 692, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 614, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 692, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_5, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __PYX_ERR(1, 614, __pyx_L1_error)
+    __PYX_ERR(1, 692, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":613
+    /* "CARTGVTree.pyx":691
  *                             % type(X))
  * 
  *         if X.dtype != DTYPE:             # <<<<<<<<<<<<<<
@@ -10734,79 +10648,79 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   }
 
-  /* "CARTGVTree.pyx":617
+  /* "CARTGVTree.pyx":695
  * 
  *         # Extract input
  *         cdef const DTYPE_t[:, :] X_ndarray = X             # <<<<<<<<<<<<<<
  *         cdef SIZE_t n_samples = X.shape[0]
  * 
  */
-  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7sklearn_4tree_5_tree_DTYPE_t__const__(__pyx_v_X, 0); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(1, 617, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7sklearn_4tree_5_tree_DTYPE_t__const__(__pyx_v_X, 0); if (unlikely(!__pyx_t_6.memview)) __PYX_ERR(1, 695, __pyx_L1_error)
   __pyx_v_X_ndarray = __pyx_t_6;
   __pyx_t_6.memview = NULL;
   __pyx_t_6.data = NULL;
 
-  /* "CARTGVTree.pyx":618
+  /* "CARTGVTree.pyx":696
  *         # Extract input
  *         cdef const DTYPE_t[:, :] X_ndarray = X
  *         cdef SIZE_t n_samples = X.shape[0]             # <<<<<<<<<<<<<<
  * 
  *         # Initialize output
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 696, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 696, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_3); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 618, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_3); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 696, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_n_samples = __pyx_t_7;
 
-  /* "CARTGVTree.pyx":621
+  /* "CARTGVTree.pyx":699
  * 
  *         # Initialize output
  *         cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)             # <<<<<<<<<<<<<<
  *         cdef SIZE_t* out_ptr = <SIZE_t*> out.data
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_n_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_n_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
   __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_intp); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_intp); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_9) < 0) __PYX_ERR(1, 621, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_9) < 0) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 621, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 699, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_9) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_9, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 621, __pyx_L1_error)
+  if (!(likely(((__pyx_t_9) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_9, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 699, __pyx_L1_error)
   __pyx_t_10 = ((PyArrayObject *)__pyx_t_9);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_out.rcbuffer->pybuffer, (PyObject*)__pyx_t_10, &__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) {
       __pyx_v_out = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_out.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 621, __pyx_L1_error)
+      __PYX_ERR(1, 699, __pyx_L1_error)
     } else {__pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
     }
   }
@@ -10814,7 +10728,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   __pyx_v_out = ((PyArrayObject *)__pyx_t_9);
   __pyx_t_9 = 0;
 
-  /* "CARTGVTree.pyx":622
+  /* "CARTGVTree.pyx":700
  *         # Initialize output
  *         cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)
  *         cdef SIZE_t* out_ptr = <SIZE_t*> out.data             # <<<<<<<<<<<<<<
@@ -10823,7 +10737,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   __pyx_v_out_ptr = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)__pyx_v_out->data);
 
-  /* "CARTGVTree.pyx":625
+  /* "CARTGVTree.pyx":703
  * 
  *         # Initialize auxiliary data-structure
  *         cdef CARTGVNode* node = NULL             # <<<<<<<<<<<<<<
@@ -10832,7 +10746,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   __pyx_v_node = NULL;
 
-  /* "CARTGVTree.pyx":626
+  /* "CARTGVTree.pyx":704
  *         # Initialize auxiliary data-structure
  *         cdef CARTGVNode* node = NULL
  *         cdef Node* splitting_tree_node = NULL             # <<<<<<<<<<<<<<
@@ -10841,7 +10755,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   __pyx_v_splitting_tree_node = NULL;
 
-  /* "CARTGVTree.pyx":627
+  /* "CARTGVTree.pyx":705
  *         cdef CARTGVNode* node = NULL
  *         cdef Node* splitting_tree_node = NULL
  *         cdef SIZE_t i = 0             # <<<<<<<<<<<<<<
@@ -10850,16 +10764,16 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
   __pyx_v_i = 0;
 
-  /* "CARTGVTree.pyx":630
+  /* "CARTGVTree.pyx":708
  * 
  *         cdef CARTGVNode current_node
  *         X = np.array(X)             # <<<<<<<<<<<<<<
  *         prediction = np.array([], dtype=int)
  *         prob = []
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 708, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 630, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 708, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -10874,35 +10788,35 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   }
   __pyx_t_9 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_X);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 630, __pyx_L1_error)
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 708, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_9);
   __pyx_t_9 = 0;
 
-  /* "CARTGVTree.pyx":631
+  /* "CARTGVTree.pyx":709
  *         cdef CARTGVNode current_node
  *         X = np.array(X)
  *         prediction = np.array([], dtype=int)             # <<<<<<<<<<<<<<
  *         prob = []
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_9);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_9);
   __pyx_t_9 = 0;
-  __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 631, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, ((PyObject *)(&PyInt_Type))) < 0) __PYX_ERR(1, 631, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_9); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 631, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, ((PyObject *)(&PyInt_Type))) < 0) __PYX_ERR(1, 709, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, __pyx_t_9); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -10910,49 +10824,49 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   __pyx_v_prediction = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "CARTGVTree.pyx":632
+  /* "CARTGVTree.pyx":710
  *         X = np.array(X)
  *         prediction = np.array([], dtype=int)
  *         prob = []             # <<<<<<<<<<<<<<
  * 
  *         # Check if there's more than one sample to predict
  */
-  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 632, __pyx_L1_error)
+  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 710, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_prob = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "CARTGVTree.pyx":635
+  /* "CARTGVTree.pyx":713
  * 
  *         # Check if there's more than one sample to predict
  *         if(X.ndim > 1):             # <<<<<<<<<<<<<<
  *             nb_samples = X.shape[0]
  *         else:
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 635, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 713, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_9 = PyObject_RichCompare(__pyx_t_5, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 635, __pyx_L1_error)
+  __pyx_t_9 = PyObject_RichCompare(__pyx_t_5, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 713, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 635, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 713, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   if (__pyx_t_2) {
 
-    /* "CARTGVTree.pyx":636
+    /* "CARTGVTree.pyx":714
  *         # Check if there's more than one sample to predict
  *         if(X.ndim > 1):
  *             nb_samples = X.shape[0]             # <<<<<<<<<<<<<<
  *         else:
  *             nb_samples = 1
  */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 636, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 714, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_9, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 636, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_9, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 714, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __pyx_v_nb_samples = __pyx_t_5;
     __pyx_t_5 = 0;
 
-    /* "CARTGVTree.pyx":635
+    /* "CARTGVTree.pyx":713
  * 
  *         # Check if there's more than one sample to predict
  *         if(X.ndim > 1):             # <<<<<<<<<<<<<<
@@ -10962,7 +10876,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
     goto __pyx_L5;
   }
 
-  /* "CARTGVTree.pyx":638
+  /* "CARTGVTree.pyx":716
  *             nb_samples = X.shape[0]
  *         else:
  *             nb_samples = 1             # <<<<<<<<<<<<<<
@@ -10975,19 +10889,19 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   }
   __pyx_L5:;
 
-  /* "CARTGVTree.pyx":641
+  /* "CARTGVTree.pyx":719
  * 
  *         # Loop on the number of samples to predict
  *         for i in range(nb_samples):             # <<<<<<<<<<<<<<
  *             current_node = self.nodes[0]
  *             current_split_tree = None
  */
-  __pyx_t_11 = __Pyx_PyInt_As_long(__pyx_v_nb_samples); if (unlikely((__pyx_t_11 == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 641, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyInt_As_long(__pyx_v_nb_samples); if (unlikely((__pyx_t_11 == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 719, __pyx_L1_error)
   __pyx_t_12 = __pyx_t_11;
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_12; __pyx_t_7+=1) {
     __pyx_v_i = __pyx_t_7;
 
-    /* "CARTGVTree.pyx":642
+    /* "CARTGVTree.pyx":720
  *         # Loop on the number of samples to predict
  *         for i in range(nb_samples):
  *             current_node = self.nodes[0]             # <<<<<<<<<<<<<<
@@ -10996,7 +10910,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  */
     __pyx_v_current_node = (__pyx_v_self->nodes[0]);
 
-    /* "CARTGVTree.pyx":643
+    /* "CARTGVTree.pyx":721
  *         for i in range(nb_samples):
  *             current_node = self.nodes[0]
  *             current_split_tree = None             # <<<<<<<<<<<<<<
@@ -11006,7 +10920,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
     __Pyx_INCREF(Py_None);
     __Pyx_XDECREF_SET(__pyx_v_current_split_tree, Py_None);
 
-    /* "CARTGVTree.pyx":647
+    /* "CARTGVTree.pyx":725
  * #            leaf_idx = 0
  *             # Loop until we arrive at a leaf
  *             while current_node.n_childs != 0:             # <<<<<<<<<<<<<<
@@ -11017,19 +10931,19 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_2 = ((__pyx_v_current_node.n_childs != 0) != 0);
       if (!__pyx_t_2) break;
 
-      /* "CARTGVTree.pyx":650
+      /* "CARTGVTree.pyx":728
  * 
  *                 # Loads the splitting tree
  *                 current_split_tree = pickle.loads(current_node.splitting_tree)             # <<<<<<<<<<<<<<
  * 
  *                 group = self.groups[current_node.group]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_pickle); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 650, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_pickle); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 728, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_loads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 650, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_loads); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 728, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = __Pyx_PyBytes_FromCString(__pyx_v_current_node.splitting_tree); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 650, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyBytes_FromCString(__pyx_v_current_node.splitting_tree); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 728, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_3 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -11044,69 +10958,69 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_5 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_9);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 650, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 728, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF_SET(__pyx_v_current_split_tree, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "CARTGVTree.pyx":652
+      /* "CARTGVTree.pyx":730
  *                 current_split_tree = pickle.loads(current_node.splitting_tree)
  * 
  *                 group = self.groups[current_node.group]             # <<<<<<<<<<<<<<
  *                 len_group = self.len_groups[current_node.group]
  *                 if X.ndim > 1:
  */
-      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->groups, __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 652, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->groups, __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 730, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_XDECREF_SET(__pyx_v_group, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "CARTGVTree.pyx":653
+      /* "CARTGVTree.pyx":731
  * 
  *                 group = self.groups[current_node.group]
  *                 len_group = self.len_groups[current_node.group]             # <<<<<<<<<<<<<<
  *                 if X.ndim > 1:
  *                     Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
  */
-      __pyx_t_5 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->len_groups), __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 653, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->len_groups), __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 731, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_XDECREF_SET(__pyx_v_len_group, __pyx_t_5);
       __pyx_t_5 = 0;
 
-      /* "CARTGVTree.pyx":654
+      /* "CARTGVTree.pyx":732
  *                 group = self.groups[current_node.group]
  *                 len_group = self.len_groups[current_node.group]
  *                 if X.ndim > 1:             # <<<<<<<<<<<<<<
  *                     Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
  *                 else:
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 654, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 732, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 654, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_t_5, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 732, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 654, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 732, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_2) {
 
-        /* "CARTGVTree.pyx":655
+        /* "CARTGVTree.pyx":733
  *                 len_group = self.len_groups[current_node.group]
  *                 if X.ndim > 1:
  *                     Xf = np.empty((X.shape[0],len_group), dtype=np.float32)             # <<<<<<<<<<<<<<
  *                 else:
  *                     Xf = np.empty(len_group, dtype=np.float32)
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_GIVEREF(__pyx_t_9);
         PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_9);
@@ -11114,21 +11028,21 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __Pyx_GIVEREF(__pyx_v_len_group);
         PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_len_group);
         __pyx_t_9 = 0;
-        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_4);
         PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_4);
         __pyx_t_4 = 0;
-        __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_8) < 0) __PYX_ERR(1, 655, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_8) < 0) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_9, __pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 655, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_9, __pyx_t_4); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 733, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -11136,7 +11050,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __Pyx_XDECREF_SET(__pyx_v_Xf, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "CARTGVTree.pyx":654
+        /* "CARTGVTree.pyx":732
  *                 group = self.groups[current_node.group]
  *                 len_group = self.len_groups[current_node.group]
  *                 if X.ndim > 1:             # <<<<<<<<<<<<<<
@@ -11146,7 +11060,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         goto __pyx_L10;
       }
 
-      /* "CARTGVTree.pyx":657
+      /* "CARTGVTree.pyx":735
  *                     Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
  *                 else:
  *                     Xf = np.empty(len_group, dtype=np.float32)             # <<<<<<<<<<<<<<
@@ -11154,26 +11068,26 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  *                 for j in range(len_group):
  */
       /*else*/ {
-        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_empty); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-        __pyx_t_8 = PyTuple_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_v_len_group);
         __Pyx_GIVEREF(__pyx_v_len_group);
         PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_v_len_group);
-        __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_float32); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(1, 657, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 657, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 735, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -11183,22 +11097,22 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       }
       __pyx_L10:;
 
-      /* "CARTGVTree.pyx":659
+      /* "CARTGVTree.pyx":737
  *                     Xf = np.empty(len_group, dtype=np.float32)
  * 
  *                 for j in range(len_group):             # <<<<<<<<<<<<<<
  *                     if X.ndim > 1:
  *                         Xf[i,j] = X[i,group[j]]
  */
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_len_group); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 659, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_len_group); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 737, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
         __pyx_t_9 = __pyx_t_3; __Pyx_INCREF(__pyx_t_9); __pyx_t_13 = 0;
         __pyx_t_14 = NULL;
       } else {
-        __pyx_t_13 = -1; __pyx_t_9 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 659, __pyx_L1_error)
+        __pyx_t_13 = -1; __pyx_t_9 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 737, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_14 = Py_TYPE(__pyx_t_9)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 659, __pyx_L1_error)
+        __pyx_t_14 = Py_TYPE(__pyx_t_9)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(1, 737, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       for (;;) {
@@ -11206,17 +11120,17 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
           if (likely(PyList_CheckExact(__pyx_t_9))) {
             if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_9)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_9, __pyx_t_13); __Pyx_INCREF(__pyx_t_3); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(1, 659, __pyx_L1_error)
+            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_9, __pyx_t_13); __Pyx_INCREF(__pyx_t_3); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(1, 737, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_9, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 659, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_9, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 737, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           } else {
             if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_9)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_9, __pyx_t_13); __Pyx_INCREF(__pyx_t_3); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(1, 659, __pyx_L1_error)
+            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_9, __pyx_t_13); __Pyx_INCREF(__pyx_t_3); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(1, 737, __pyx_L1_error)
             #else
-            __pyx_t_3 = PySequence_ITEM(__pyx_t_9, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 659, __pyx_L1_error)
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_9, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 737, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_3);
             #endif
           }
@@ -11226,7 +11140,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(1, 659, __pyx_L1_error)
+              else __PYX_ERR(1, 737, __pyx_L1_error)
             }
             break;
           }
@@ -11235,33 +11149,33 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_3);
         __pyx_t_3 = 0;
 
-        /* "CARTGVTree.pyx":660
+        /* "CARTGVTree.pyx":738
  * 
  *                 for j in range(len_group):
  *                     if X.ndim > 1:             # <<<<<<<<<<<<<<
  *                         Xf[i,j] = X[i,group[j]]
  *                     else:
  */
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 660, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 738, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_8 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 660, __pyx_L1_error)
+        __pyx_t_8 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 738, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 660, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 738, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         if (__pyx_t_2) {
 
-          /* "CARTGVTree.pyx":661
+          /* "CARTGVTree.pyx":739
  *                 for j in range(len_group):
  *                     if X.ndim > 1:
  *                         Xf[i,j] = X[i,group[j]]             # <<<<<<<<<<<<<<
  *                     else:
  *                         Xf[j] = X[group[j]]
  */
-          __pyx_t_8 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_8 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
-          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           __Pyx_GIVEREF(__pyx_t_8);
           PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_8);
@@ -11269,12 +11183,12 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
           PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3);
           __pyx_t_8 = 0;
           __pyx_t_3 = 0;
-          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 661, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_GIVEREF(__pyx_t_4);
           PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_4);
@@ -11282,11 +11196,11 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
           __Pyx_GIVEREF(__pyx_v_j);
           PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_j);
           __pyx_t_4 = 0;
-          if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_t_8, __pyx_t_3) < 0)) __PYX_ERR(1, 661, __pyx_L1_error)
+          if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_t_8, __pyx_t_3) < 0)) __PYX_ERR(1, 739, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "CARTGVTree.pyx":660
+          /* "CARTGVTree.pyx":738
  * 
  *                 for j in range(len_group):
  *                     if X.ndim > 1:             # <<<<<<<<<<<<<<
@@ -11296,25 +11210,25 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
           goto __pyx_L13;
         }
 
-        /* "CARTGVTree.pyx":663
+        /* "CARTGVTree.pyx":741
  *                         Xf[i,j] = X[i,group[j]]
  *                     else:
  *                         Xf[j] = X[group[j]]             # <<<<<<<<<<<<<<
  * 
- * #                if i == 18:
+ *                 # Get the id of the splitting tree lead in which the data went
  */
         /*else*/ {
-          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 663, __pyx_L1_error)
+          __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 741, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 663, __pyx_L1_error)
+          __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_3); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 741, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_v_j, __pyx_t_8) < 0)) __PYX_ERR(1, 663, __pyx_L1_error)
+          if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_v_j, __pyx_t_8) < 0)) __PYX_ERR(1, 741, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
         __pyx_L13:;
 
-        /* "CARTGVTree.pyx":659
+        /* "CARTGVTree.pyx":737
  *                     Xf = np.empty(len_group, dtype=np.float32)
  * 
  *                 for j in range(len_group):             # <<<<<<<<<<<<<<
@@ -11324,42 +11238,42 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       }
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "CARTGVTree.pyx":677
+      /* "CARTGVTree.pyx":744
  * 
  *                 # Get the id of the splitting tree lead in which the data went
  *                 if X.ndim > 1:             # <<<<<<<<<<<<<<
  *                     leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
  *                 else:
  */
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 677, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 744, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_8 = PyObject_RichCompare(__pyx_t_9, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 677, __pyx_L1_error)
+      __pyx_t_8 = PyObject_RichCompare(__pyx_t_9, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 744, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 677, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 744, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_2) {
 
-        /* "CARTGVTree.pyx":678
+        /* "CARTGVTree.pyx":745
  *                 # Get the id of the splitting tree lead in which the data went
  *                 if X.ndim > 1:
  *                     leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))             # <<<<<<<<<<<<<<
  *                 else:
  *                     leaf_id = current_split_tree.apply(Xf.reshape((1,len(Xf))))
  */
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_reshape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_reshape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_13 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_13 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_13); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_13); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_15 = PyTuple_New(2); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 678, __pyx_L1_error)
+        __pyx_t_15 = PyTuple_New(2); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
         __Pyx_INCREF(__pyx_int_1);
         __Pyx_GIVEREF(__pyx_int_1);
@@ -11380,7 +11294,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_15) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_15);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 678, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_t_5 = NULL;
@@ -11396,13 +11310,13 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __pyx_t_8 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 678, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 745, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_XDECREF_SET(__pyx_v_leaf_id, __pyx_t_8);
         __pyx_t_8 = 0;
 
-        /* "CARTGVTree.pyx":677
+        /* "CARTGVTree.pyx":744
  * 
  *                 # Get the id of the splitting tree lead in which the data went
  *                 if X.ndim > 1:             # <<<<<<<<<<<<<<
@@ -11412,7 +11326,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         goto __pyx_L14;
       }
 
-      /* "CARTGVTree.pyx":680
+      /* "CARTGVTree.pyx":747
  *                     leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
  *                 else:
  *                     leaf_id = current_split_tree.apply(Xf.reshape((1,len(Xf))))             # <<<<<<<<<<<<<<
@@ -11420,14 +11334,14 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
  *                 # Get the index of the child in the current node
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 680, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_Xf, __pyx_n_s_reshape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 680, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_Xf, __pyx_n_s_reshape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_13 = PyObject_Length(__pyx_v_Xf); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(1, 680, __pyx_L1_error)
-        __pyx_t_15 = PyInt_FromSsize_t(__pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 680, __pyx_L1_error)
+        __pyx_t_13 = PyObject_Length(__pyx_v_Xf); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(1, 747, __pyx_L1_error)
+        __pyx_t_15 = PyInt_FromSsize_t(__pyx_t_13); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
-        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 680, __pyx_L1_error)
+        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_INCREF(__pyx_int_1);
         __Pyx_GIVEREF(__pyx_int_1);
@@ -11448,7 +11362,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __pyx_t_3 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_15, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_4);
         __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 680, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_t_5 = NULL;
@@ -11464,7 +11378,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         __pyx_t_8 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_3);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 680, __pyx_L1_error)
+        if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 747, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_XDECREF_SET(__pyx_v_leaf_id, __pyx_t_8);
@@ -11472,34 +11386,34 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       }
       __pyx_L14:;
 
-      /* "CARTGVTree.pyx":683
+      /* "CARTGVTree.pyx":750
  * 
  *                 # Get the index of the child in the current node
  *                 idx_cart_tree = np.take(np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx), np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs))             # <<<<<<<<<<<<<<
  * 
  *                 # Get the index in the splitting tree of the leaf
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_take); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_take); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_16 = __pyx_v_self->nodes_cart_idx;
       if (!__pyx_t_16) {
         PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-        __PYX_ERR(1, 683, __pyx_L1_error)
+        __PYX_ERR(1, 750, __pyx_L1_error)
       }
-      __pyx_t_15 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_15 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_15);
-      __pyx_t_5 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->node_count)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_5 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->node_count)); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_17 = __pyx_array_new(__pyx_t_5, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_15), (char *) "c", (char *) __pyx_t_16);
-      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 683, __pyx_L1_error)
+      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
@@ -11516,25 +11430,25 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_9 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_15, ((PyObject *)__pyx_t_17)) : __Pyx_PyObject_CallOneArg(__pyx_t_4, ((PyObject *)__pyx_t_17));
       __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
       __Pyx_DECREF(((PyObject *)__pyx_t_17)); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 683, __pyx_L1_error)
+      if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_15, __pyx_n_s_np); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_15, __pyx_n_s_np); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_15);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_15, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_15, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
       __pyx_t_16 = __pyx_v_current_node.childs;
       if (!__pyx_t_16) {
         PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-        __PYX_ERR(1, 683, __pyx_L1_error)
+        __PYX_ERR(1, 750, __pyx_L1_error)
       }
-      __pyx_t_18 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_18 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_15 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 683, __pyx_L1_error)
+      __pyx_t_15 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_15);
       __pyx_t_17 = __pyx_array_new(__pyx_t_15, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_18), (char *) "c", (char *) __pyx_t_16);
-      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 683, __pyx_L1_error)
+      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
@@ -11551,7 +11465,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_4 = (__pyx_t_18) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_18, ((PyObject *)__pyx_t_17)) : __Pyx_PyObject_CallOneArg(__pyx_t_5, ((PyObject *)__pyx_t_17));
       __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
       __Pyx_DECREF(((PyObject *)__pyx_t_17)); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 683, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 750, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -11569,7 +11483,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_9, __pyx_t_4};
-        __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_19, 2+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 683, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_19, 2+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 750, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -11579,7 +11493,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_9, __pyx_t_4};
-        __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_19, 2+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 683, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_19, 2+__pyx_t_19); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 750, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -11587,7 +11501,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       } else
       #endif
       {
-        __pyx_t_18 = PyTuple_New(2+__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 683, __pyx_L1_error)
+        __pyx_t_18 = PyTuple_New(2+__pyx_t_19); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 750, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_18);
         if (__pyx_t_5) {
           __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -11598,7 +11512,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
         PyTuple_SET_ITEM(__pyx_t_18, 1+__pyx_t_19, __pyx_t_4);
         __pyx_t_9 = 0;
         __pyx_t_4 = 0;
-        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_18, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 683, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_18, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 750, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       }
@@ -11606,21 +11520,21 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __Pyx_XDECREF_SET(__pyx_v_idx_cart_tree, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "CARTGVTree.pyx":686
+      /* "CARTGVTree.pyx":753
  * 
  *                 # Get the index in the splitting tree of the leaf
  *                 leaf_idx = np.where(idx_cart_tree == leaf_id[0])[0][0]             # <<<<<<<<<<<<<<
  * 
  *                 out_ptr[i] = <SIZE_t>(&self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]] - self.nodes)
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_where); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __pyx_t_18 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_where); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_leaf_id, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_leaf_id, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_idx_cart_tree, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __pyx_t_4 = PyObject_RichCompare(__pyx_v_idx_cart_tree, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_3 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_18))) {
@@ -11635,41 +11549,41 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_8 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_18, __pyx_t_3, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_18, __pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 686, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-      __pyx_t_18 = __Pyx_GetItemInt(__pyx_t_8, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __pyx_t_18 = __Pyx_GetItemInt(__pyx_t_8, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_18, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 686, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_18, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 753, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       __Pyx_XDECREF_SET(__pyx_v_leaf_idx, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "CARTGVTree.pyx":688
+      /* "CARTGVTree.pyx":755
  *                 leaf_idx = np.where(idx_cart_tree == leaf_id[0])[0][0]
  * 
  *                 out_ptr[i] = <SIZE_t>(&self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]] - self.nodes)             # <<<<<<<<<<<<<<
  * 
  *                 # Get the next node
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_np); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_18, __pyx_n_s_np); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_18, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       __pyx_t_16 = __pyx_v_current_node.childs;
       if (!__pyx_t_16) {
         PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-        __PYX_ERR(1, 688, __pyx_L1_error)
+        __PYX_ERR(1, 755, __pyx_L1_error)
       }
-      __pyx_t_3 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_3 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_18 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_18 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
       __pyx_t_17 = __pyx_array_new(__pyx_t_18, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_3), (char *) "c", (char *) __pyx_t_16);
-      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 688, __pyx_L1_error)
+      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -11686,39 +11600,39 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_8 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, ((PyObject *)__pyx_t_17)) : __Pyx_PyObject_CallOneArg(__pyx_t_4, ((PyObject *)__pyx_t_17));
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(((PyObject *)__pyx_t_17)); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 688, __pyx_L1_error)
+      if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_8, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_13 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_13 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 688, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_13 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 755, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       (__pyx_v_out_ptr[__pyx_v_i]) = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)((&(__pyx_v_self->nodes[__pyx_t_13])) - __pyx_v_self->nodes));
 
-      /* "CARTGVTree.pyx":691
+      /* "CARTGVTree.pyx":758
  * 
  *                 # Get the next node
  *                 current_node = self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]]             # <<<<<<<<<<<<<<
  * 
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_16 = __pyx_v_current_node.childs;
       if (!__pyx_t_16) {
         PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-        __PYX_ERR(1, 691, __pyx_L1_error)
+        __PYX_ERR(1, 758, __pyx_L1_error)
       }
-      __pyx_t_18 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_18 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_18);
-      __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_8 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_17 = __pyx_array_new(__pyx_t_8, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_18), (char *) "c", (char *) __pyx_t_16);
-      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 691, __pyx_L1_error)
+      if (unlikely(!__pyx_t_17)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_17);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
@@ -11735,19 +11649,19 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
       __pyx_t_4 = (__pyx_t_18) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_18, ((PyObject *)__pyx_t_17)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_t_17));
       __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
       __Pyx_DECREF(((PyObject *)__pyx_t_17)); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 691, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_13 = __Pyx_PyIndex_AsSsize_t(__pyx_t_3); if (unlikely((__pyx_t_13 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 691, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyIndex_AsSsize_t(__pyx_t_3); if (unlikely((__pyx_t_13 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 758, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_v_current_node = (__pyx_v_self->nodes[__pyx_t_13]);
     }
   }
 
-  /* "CARTGVTree.pyx":694
+  /* "CARTGVTree.pyx":761
  * 
  * 
  *         return out             # <<<<<<<<<<<<<<
@@ -11759,12 +11673,12 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   __pyx_r = ((PyArrayObject *)__pyx_v_out);
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":605
+  /* "CARTGVTree.pyx":680
  *             return self._apply_dense(X)
  * 
  *     cdef inline np.ndarray _apply_dense(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the terminal region (=leaf node) for each sample in X."""
- * 
+ *         """
+ *         Finds the terminal region (=leaf node) for each sample in X.
  */
 
   /* function exit code */
@@ -11809,2314 +11723,15 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense(struct __py
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":792
- *     #     return out
- * 
- *     cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx):             # <<<<<<<<<<<<<<
- * 
- *         return self.apply_sobol(X, group_j, in_bag_idx, oob_idx)
- */
-
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15sobol_indice(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_sobol_indice(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_idx, __Pyx_memviewslice __pyx_v_oob_idx, int __pyx_skip_dispatch) {
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  PyObject *__pyx_t_6 = NULL;
-  PyObject *__pyx_t_7 = NULL;
-  int __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sobol_indice", 0);
-  /* Check if called by wrapper */
-  if (unlikely(__pyx_skip_dispatch)) ;
-  /* Check if overridden in Python */
-  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || (Py_TYPE(((PyObject *)__pyx_v_self))->tp_flags & (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
-    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
-      PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_sobol_indice); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 792, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_15sobol_indice)) {
-        __Pyx_XDECREF(((PyObject *)__pyx_r));
-        __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_group_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 792, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        if (unlikely(!__pyx_v_in_bag_idx.memview)) { __Pyx_RaiseUnboundLocalError("in_bag_idx"); __PYX_ERR(1, 792, __pyx_L1_error) }
-        __pyx_t_4 = __pyx_memoryview_fromslice(__pyx_v_in_bag_idx, 1, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 792, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        if (unlikely(!__pyx_v_oob_idx.memview)) { __Pyx_RaiseUnboundLocalError("oob_idx"); __PYX_ERR(1, 792, __pyx_L1_error) }
-        __pyx_t_5 = __pyx_memoryview_fromslice(__pyx_v_oob_idx, 1, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 792, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_INCREF(__pyx_t_1);
-        __pyx_t_6 = __pyx_t_1; __pyx_t_7 = NULL;
-        __pyx_t_8 = 0;
-        if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-          if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-            __Pyx_INCREF(__pyx_t_7);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_6, function);
-            __pyx_t_8 = 1;
-          }
-        }
-        #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[5] = {__pyx_t_7, __pyx_v_X, __pyx_t_3, __pyx_t_4, __pyx_t_5};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 4+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 792, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        } else
-        #endif
-        #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[5] = {__pyx_t_7, __pyx_v_X, __pyx_t_3, __pyx_t_4, __pyx_t_5};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_8, 4+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 792, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        } else
-        #endif
-        {
-          __pyx_t_9 = PyTuple_New(4+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 792, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          if (__pyx_t_7) {
-            __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
-          }
-          __Pyx_INCREF(__pyx_v_X);
-          __Pyx_GIVEREF(__pyx_v_X);
-          PyTuple_SET_ITEM(__pyx_t_9, 0+__pyx_t_8, __pyx_v_X);
-          __Pyx_GIVEREF(__pyx_t_3);
-          PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_t_3);
-          __Pyx_GIVEREF(__pyx_t_4);
-          PyTuple_SET_ITEM(__pyx_t_9, 2+__pyx_t_8, __pyx_t_4);
-          __Pyx_GIVEREF(__pyx_t_5);
-          PyTuple_SET_ITEM(__pyx_t_9, 3+__pyx_t_8, __pyx_t_5);
-          __pyx_t_3 = 0;
-          __pyx_t_4 = 0;
-          __pyx_t_5 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 792, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        }
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 792, __pyx_L1_error)
-        __pyx_r = ((PyArrayObject *)__pyx_t_2);
-        __pyx_t_2 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        goto __pyx_L0;
-      }
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
-      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
-      if (unlikely(__pyx_type_dict_guard != __pyx_tp_dict_version)) {
-        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
-      }
-      #endif
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
-    }
-    #endif
-  }
-
-  /* "CARTGVTree.pyx":794
- *     cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx):
- * 
- *         return self.apply_sobol(X, group_j, in_bag_idx, oob_idx)             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->apply_sobol(__pyx_v_self, __pyx_v_X, __pyx_v_group_j, __pyx_v_in_bag_idx, __pyx_v_oob_idx)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 794, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "CARTGVTree.pyx":792
- *     #     return out
- * 
- *     cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx):             # <<<<<<<<<<<<<<
- * 
- *         return self.apply_sobol(X, group_j, in_bag_idx, oob_idx)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_AddTraceback("CARTGVTree.CARTGVTree.sobol_indice", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  __pyx_L0:;
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15sobol_indice(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15sobol_indice(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_X = 0;
-  int __pyx_v_group_j;
-  __Pyx_memviewslice __pyx_v_in_bag_idx = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_v_oob_idx = { 0, 0, { 0 }, { 0 }, { 0 } };
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("sobol_indice (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_X,&__pyx_n_s_group_j,&__pyx_n_s_in_bag_idx,&__pyx_n_s_oob_idx,0};
-    PyObject* values[4] = {0,0,0,0};
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-        CYTHON_FALLTHROUGH;
-        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-        CYTHON_FALLTHROUGH;
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_X)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_group_j)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("sobol_indice", 1, 4, 4, 1); __PYX_ERR(1, 792, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_in_bag_idx)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("sobol_indice", 1, 4, 4, 2); __PYX_ERR(1, 792, __pyx_L3_error)
-        }
-        CYTHON_FALLTHROUGH;
-        case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_oob_idx)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("sobol_indice", 1, 4, 4, 3); __PYX_ERR(1, 792, __pyx_L3_error)
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sobol_indice") < 0)) __PYX_ERR(1, 792, __pyx_L3_error)
-      }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
-      goto __pyx_L5_argtuple_error;
-    } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
-    }
-    __pyx_v_X = values[0];
-    __pyx_v_group_j = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_group_j == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 792, __pyx_L3_error)
-    __pyx_v_in_bag_idx = __Pyx_PyObject_to_MemoryviewSlice_dc_int(values[2], PyBUF_WRITABLE); if (unlikely(!__pyx_v_in_bag_idx.memview)) __PYX_ERR(1, 792, __pyx_L3_error)
-    __pyx_v_oob_idx = __Pyx_PyObject_to_MemoryviewSlice_dc_int(values[3], PyBUF_WRITABLE); if (unlikely(!__pyx_v_oob_idx.memview)) __PYX_ERR(1, 792, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sobol_indice", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 792, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("CARTGVTree.CARTGVTree.sobol_indice", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_14sobol_indice(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), __pyx_v_X, __pyx_v_group_j, __pyx_v_in_bag_idx, __pyx_v_oob_idx);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14sobol_indice(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_idx, __Pyx_memviewslice __pyx_v_oob_idx) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("sobol_indice", 0);
-  __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_v_in_bag_idx.memview)) { __Pyx_RaiseUnboundLocalError("in_bag_idx"); __PYX_ERR(1, 792, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_oob_idx.memview)) { __Pyx_RaiseUnboundLocalError("oob_idx"); __PYX_ERR(1, 792, __pyx_L1_error) }
-  __pyx_t_1 = ((PyObject *)__pyx_f_10CARTGVTree_10CARTGVTree_sobol_indice(__pyx_v_self, __pyx_v_X, __pyx_v_group_j, __pyx_v_in_bag_idx, __pyx_v_oob_idx, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 792, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("CARTGVTree.CARTGVTree.sobol_indice", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __PYX_XDEC_MEMVIEW(&__pyx_v_in_bag_idx, 1);
-  __PYX_XDEC_MEMVIEW(&__pyx_v_oob_idx, 1);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "CARTGVTree.pyx":797
- * 
- * 
- *     cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_indx, int[::1] oob_indx):             # <<<<<<<<<<<<<<
- * 
- *         cdef np.ndarray in_bag_idx = np.asarray(in_bag_indx)
- */
-
-static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree_apply_sobol(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_v_group_j, __Pyx_memviewslice __pyx_v_in_bag_indx, __Pyx_memviewslice __pyx_v_oob_indx) {
-  PyArrayObject *__pyx_v_in_bag_idx = 0;
-  PyArrayObject *__pyx_v_oob_idx = 0;
-  CYTHON_UNUSED __Pyx_memviewslice __pyx_v_X_ndarray = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_n_samples;
-  PyArrayObject *__pyx_v_out = 0;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_v_out_ptr;
-  CYTHON_UNUSED __pyx_t_10CARTGVTree_CARTGVNode *__pyx_v_node;
-  CYTHON_UNUSED struct __pyx_t_7sklearn_4tree_5_tree_Node *__pyx_v_splitting_tree_node;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_i;
-  __pyx_t_10CARTGVTree_CARTGVNode __pyx_v_current_node;
-  CYTHON_UNUSED PyObject *__pyx_v_prediction = NULL;
-  CYTHON_UNUSED PyObject *__pyx_v_prob = NULL;
-  PyObject *__pyx_v_nb_samples = NULL;
-  PyObject *__pyx_v_pred = NULL;
-  PyObject *__pyx_v_list_final_nodes = NULL;
-  PyObject *__pyx_v_final_nodes = NULL;
-  PyObject *__pyx_v_stack = NULL;
-  PyObject *__pyx_v_id = NULL;
-  PyObject *__pyx_v_current_split_tree = NULL;
-  PyObject *__pyx_v_group = NULL;
-  PyObject *__pyx_v_len_group = NULL;
-  PyObject *__pyx_v_Xf = NULL;
-  PyObject *__pyx_v_j = NULL;
-  PyObject *__pyx_v_leaf_id = NULL;
-  PyObject *__pyx_v_idx_cart_tree = NULL;
-  PyObject *__pyx_v_leaf_idx = NULL;
-  PyObject *__pyx_v_in_bag_collection = NULL;
-  PyObject *__pyx_v_oob_collection = NULL;
-  Py_ssize_t __pyx_v_k;
-  PyObject *__pyx_v_shared_nodes = NULL;
-  Py_ssize_t __pyx_v_l;
-  PyObject *__pyx_v_idx = NULL;
-  __Pyx_LocalBuf_ND __pyx_pybuffernd_out;
-  __Pyx_Buffer __pyx_pybuffer_out;
-  PyArrayObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  int __pyx_t_5;
-  int __pyx_t_6;
-  __Pyx_memviewslice __pyx_t_7 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_t_8;
-  PyObject *__pyx_t_9 = NULL;
-  PyArrayObject *__pyx_t_10 = NULL;
-  long __pyx_t_11;
-  long __pyx_t_12;
-  int __pyx_t_13;
-  Py_ssize_t __pyx_t_14;
-  PyObject *(*__pyx_t_15)(PyObject *);
-  PyObject *__pyx_t_16 = NULL;
-  __pyx_t_7sklearn_4tree_5_tree_SIZE_t *__pyx_t_17;
-  struct __pyx_array_obj *__pyx_t_18 = NULL;
-  PyObject *__pyx_t_19 = NULL;
-  int __pyx_t_20;
-  Py_ssize_t __pyx_t_21;
-  Py_ssize_t __pyx_t_22;
-  Py_ssize_t __pyx_t_23;
-  Py_ssize_t __pyx_t_24;
-  Py_ssize_t __pyx_t_25;
-  PyObject *__pyx_t_26 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("apply_sobol", 0);
-  __Pyx_INCREF(__pyx_v_X);
-  __pyx_pybuffer_out.pybuffer.buf = NULL;
-  __pyx_pybuffer_out.refcount = 0;
-  __pyx_pybuffernd_out.data = NULL;
-  __pyx_pybuffernd_out.rcbuffer = &__pyx_pybuffer_out;
-
-  /* "CARTGVTree.pyx":799
- *     cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_indx, int[::1] oob_indx):
- * 
- *         cdef np.ndarray in_bag_idx = np.asarray(in_bag_indx)             # <<<<<<<<<<<<<<
- *         cdef np.ndarray oob_idx = np.asarray(oob_indx)
- * 
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 799, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 799, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __pyx_memoryview_fromslice(__pyx_v_in_bag_indx, 1, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 799, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 799, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 799, __pyx_L1_error)
-  __pyx_v_in_bag_idx = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "CARTGVTree.pyx":800
- * 
- *         cdef np.ndarray in_bag_idx = np.asarray(in_bag_indx)
- *         cdef np.ndarray oob_idx = np.asarray(oob_indx)             # <<<<<<<<<<<<<<
- * 
- *                 # Check input
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 800, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 800, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __pyx_memoryview_fromslice(__pyx_v_oob_indx, 1, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 800, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 800, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 800, __pyx_L1_error)
-  __pyx_v_oob_idx = ((PyArrayObject *)__pyx_t_1);
-  __pyx_t_1 = 0;
-
-  /* "CARTGVTree.pyx":803
- * 
- *                 # Check input
- *         if not isinstance(X, np.ndarray):             # <<<<<<<<<<<<<<
- *             raise ValueError("X should be in np.ndarray format, got %s"
- *                             % type(X))
- */
-  __pyx_t_5 = __Pyx_TypeCheck(__pyx_v_X, __pyx_ptype_5numpy_ndarray); 
-  __pyx_t_6 = ((!(__pyx_t_5 != 0)) != 0);
-  if (unlikely(__pyx_t_6)) {
-
-    /* "CARTGVTree.pyx":805
- *         if not isinstance(X, np.ndarray):
- *             raise ValueError("X should be in np.ndarray format, got %s"
- *                             % type(X))             # <<<<<<<<<<<<<<
- * 
- *         if X.dtype != DTYPE:
- */
-    __pyx_t_1 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_should_be_in_np_ndarray_format, ((PyObject *)Py_TYPE(__pyx_v_X))); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 805, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-
-    /* "CARTGVTree.pyx":804
- *                 # Check input
- *         if not isinstance(X, np.ndarray):
- *             raise ValueError("X should be in np.ndarray format, got %s"             # <<<<<<<<<<<<<<
- *                             % type(X))
- * 
- */
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 804, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(1, 804, __pyx_L1_error)
-
-    /* "CARTGVTree.pyx":803
- * 
- *                 # Check input
- *         if not isinstance(X, np.ndarray):             # <<<<<<<<<<<<<<
- *             raise ValueError("X should be in np.ndarray format, got %s"
- *                             % type(X))
- */
-  }
-
-  /* "CARTGVTree.pyx":807
- *                             % type(X))
- * 
- *         if X.dtype != DTYPE:             # <<<<<<<<<<<<<<
- *             raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
- * 
- */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 807, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 807, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 807, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 807, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(__pyx_t_6)) {
-
-    /* "CARTGVTree.pyx":808
- * 
- *         if X.dtype != DTYPE:
- *             raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)             # <<<<<<<<<<<<<<
- * 
- *         # Extract input
- */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 808, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_PyString_FormatSafe(__pyx_kp_s_X_dtype_should_be_np_float32_got, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 808, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 808, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(1, 808, __pyx_L1_error)
-
-    /* "CARTGVTree.pyx":807
- *                             % type(X))
- * 
- *         if X.dtype != DTYPE:             # <<<<<<<<<<<<<<
- *             raise ValueError("X.dtype should be np.float32, got %s" % X.dtype)
- * 
- */
-  }
-
-  /* "CARTGVTree.pyx":811
- * 
- *         # Extract input
- *         cdef const DTYPE_t[:, :] X_ndarray = X             # <<<<<<<<<<<<<<
- *         cdef SIZE_t n_samples = X.shape[0]
- * 
- */
-  __pyx_t_7 = __Pyx_PyObject_to_MemoryviewSlice_dsds_nn___pyx_t_7sklearn_4tree_5_tree_DTYPE_t__const__(__pyx_v_X, 0); if (unlikely(!__pyx_t_7.memview)) __PYX_ERR(1, 811, __pyx_L1_error)
-  __pyx_v_X_ndarray = __pyx_t_7;
-  __pyx_t_7.memview = NULL;
-  __pyx_t_7.data = NULL;
-
-  /* "CARTGVTree.pyx":812
- *         # Extract input
- *         cdef const DTYPE_t[:, :] X_ndarray = X
- *         cdef SIZE_t n_samples = X.shape[0]             # <<<<<<<<<<<<<<
- * 
- *         # Initialize output
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 812, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 812, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_8 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_1); if (unlikely((__pyx_t_8 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 812, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_n_samples = __pyx_t_8;
-
-  /* "CARTGVTree.pyx":815
- * 
- *         # Initialize output
- *         cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)             # <<<<<<<<<<<<<<
- *         cdef SIZE_t* out_ptr = <SIZE_t*> out.data
- * 
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_n_samples); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_1);
-  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_2);
-  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
-  __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_intp); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_9) < 0) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 815, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_9) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_9, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 815, __pyx_L1_error)
-  __pyx_t_10 = ((PyArrayObject *)__pyx_t_9);
-  {
-    __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_out.rcbuffer->pybuffer, (PyObject*)__pyx_t_10, &__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) {
-      __pyx_v_out = ((PyArrayObject *)Py_None); __Pyx_INCREF(Py_None); __pyx_pybuffernd_out.rcbuffer->pybuffer.buf = NULL;
-      __PYX_ERR(1, 815, __pyx_L1_error)
-    } else {__pyx_pybuffernd_out.diminfo[0].strides = __pyx_pybuffernd_out.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_out.diminfo[0].shape = __pyx_pybuffernd_out.rcbuffer->pybuffer.shape[0];
-    }
-  }
-  __pyx_t_10 = 0;
-  __pyx_v_out = ((PyArrayObject *)__pyx_t_9);
-  __pyx_t_9 = 0;
-
-  /* "CARTGVTree.pyx":816
- *         # Initialize output
- *         cdef np.ndarray[SIZE_t] out = np.zeros((n_samples,), dtype=np.intp)
- *         cdef SIZE_t* out_ptr = <SIZE_t*> out.data             # <<<<<<<<<<<<<<
- * 
- *         # Initialize auxiliary data-structure
- */
-  __pyx_v_out_ptr = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t *)__pyx_v_out->data);
-
-  /* "CARTGVTree.pyx":819
- * 
- *         # Initialize auxiliary data-structure
- *         cdef CARTGVNode* node = NULL             # <<<<<<<<<<<<<<
- *         cdef Node* splitting_tree_node = NULL
- *         cdef SIZE_t i = 0
- */
-  __pyx_v_node = NULL;
-
-  /* "CARTGVTree.pyx":820
- *         # Initialize auxiliary data-structure
- *         cdef CARTGVNode* node = NULL
- *         cdef Node* splitting_tree_node = NULL             # <<<<<<<<<<<<<<
- *         cdef SIZE_t i = 0
- * 
- */
-  __pyx_v_splitting_tree_node = NULL;
-
-  /* "CARTGVTree.pyx":821
- *         cdef CARTGVNode* node = NULL
- *         cdef Node* splitting_tree_node = NULL
- *         cdef SIZE_t i = 0             # <<<<<<<<<<<<<<
- * 
- *         cdef CARTGVNode current_node
- */
-  __pyx_v_i = 0;
-
-  /* "CARTGVTree.pyx":824
- * 
- *         cdef CARTGVNode current_node
- *         X = np.array(X)             # <<<<<<<<<<<<<<
- *         prediction = np.array([], dtype=int)
- *         prob = []
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 824, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 824, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_2);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-    }
-  }
-  __pyx_t_9 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_X);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 824, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_9);
-  __pyx_t_9 = 0;
-
-  /* "CARTGVTree.pyx":825
- *         cdef CARTGVNode current_node
- *         X = np.array(X)
- *         prediction = np.array([], dtype=int)             # <<<<<<<<<<<<<<
- *         prob = []
- * 
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GIVEREF(__pyx_t_9);
-  PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9);
-  __pyx_t_9 = 0;
-  __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, ((PyObject *)(&PyInt_Type))) < 0) __PYX_ERR(1, 825, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 825, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_v_prediction = __pyx_t_3;
-  __pyx_t_3 = 0;
-
-  /* "CARTGVTree.pyx":826
- *         X = np.array(X)
- *         prediction = np.array([], dtype=int)
- *         prob = []             # <<<<<<<<<<<<<<
- * 
- *         # Check if there's more than one sample to predict
- */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 826, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_v_prob = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "CARTGVTree.pyx":829
- * 
- *         # Check if there's more than one sample to predict
- *         if(X.ndim > 1):             # <<<<<<<<<<<<<<
- *             nb_samples = X.shape[0]
- *         else:
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 829, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_9 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 829, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 829, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  if (__pyx_t_6) {
-
-    /* "CARTGVTree.pyx":830
- *         # Check if there's more than one sample to predict
- *         if(X.ndim > 1):
- *             nb_samples = X.shape[0]             # <<<<<<<<<<<<<<
- *         else:
- *             nb_samples = 1
- */
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 830, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_9, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 830, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_v_nb_samples = __pyx_t_3;
-    __pyx_t_3 = 0;
-
-    /* "CARTGVTree.pyx":829
- * 
- *         # Check if there's more than one sample to predict
- *         if(X.ndim > 1):             # <<<<<<<<<<<<<<
- *             nb_samples = X.shape[0]
- *         else:
- */
-    goto __pyx_L5;
-  }
-
-  /* "CARTGVTree.pyx":832
- *             nb_samples = X.shape[0]
- *         else:
- *             nb_samples = 1             # <<<<<<<<<<<<<<
- * 
- * #        cdef CARTGVNode* final_nodes = <CARTGVNode*> malloc(sizeof(CARTGVNode)) #Tableau  ralouer  chaque nouveau noeud final
- */
-  /*else*/ {
-    __Pyx_INCREF(__pyx_int_1);
-    __pyx_v_nb_samples = __pyx_int_1;
-  }
-  __pyx_L5:;
-
-  /* "CARTGVTree.pyx":841
- * 
- * 
- *         pred = []             # <<<<<<<<<<<<<<
- *         list_final_nodes = []
- *         # Loop on the number of samples to predict
- */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 841, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_v_pred = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "CARTGVTree.pyx":842
- * 
- *         pred = []
- *         list_final_nodes = []             # <<<<<<<<<<<<<<
- *         # Loop on the number of samples to predict
- *         print("NB samples : "  + str(nb_samples))
- */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 842, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_v_list_final_nodes = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "CARTGVTree.pyx":844
- *         list_final_nodes = []
- *         # Loop on the number of samples to predict
- *         print("NB samples : "  + str(nb_samples))             # <<<<<<<<<<<<<<
- *         for i in range(nb_samples):
- * #            stack[0] = self.nodes[0]
- */
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_nb_samples); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 844, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_9 = PyNumber_Add(__pyx_kp_s_NB_samples, __pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 844, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_9);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_9) < 0) __PYX_ERR(1, 844, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-  /* "CARTGVTree.pyx":845
- *         # Loop on the number of samples to predict
- *         print("NB samples : "  + str(nb_samples))
- *         for i in range(nb_samples):             # <<<<<<<<<<<<<<
- * #            stack[0] = self.nodes[0]
- * #            counter += 1
- */
-  __pyx_t_11 = __Pyx_PyInt_As_long(__pyx_v_nb_samples); if (unlikely((__pyx_t_11 == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 845, __pyx_L1_error)
-  __pyx_t_12 = __pyx_t_11;
-  for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_12; __pyx_t_8+=1) {
-    __pyx_v_i = __pyx_t_8;
-
-    /* "CARTGVTree.pyx":848
- * #            stack[0] = self.nodes[0]
- * #            counter += 1
- *             final_nodes = []             # <<<<<<<<<<<<<<
- *             stack = []
- *             stack.append(0)
- */
-    __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 848, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_XDECREF_SET(__pyx_v_final_nodes, ((PyObject*)__pyx_t_9));
-    __pyx_t_9 = 0;
-
-    /* "CARTGVTree.pyx":849
- * #            counter += 1
- *             final_nodes = []
- *             stack = []             # <<<<<<<<<<<<<<
- *             stack.append(0)
- *             while stack:
- */
-    __pyx_t_9 = PyList_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 849, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_XDECREF_SET(__pyx_v_stack, ((PyObject*)__pyx_t_9));
-    __pyx_t_9 = 0;
-
-    /* "CARTGVTree.pyx":850
- *             final_nodes = []
- *             stack = []
- *             stack.append(0)             # <<<<<<<<<<<<<<
- *             while stack:
- *                 print(len(stack))
- */
-    __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_stack, __pyx_int_0); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 850, __pyx_L1_error)
-
-    /* "CARTGVTree.pyx":851
- *             stack = []
- *             stack.append(0)
- *             while stack:             # <<<<<<<<<<<<<<
- *                 print(len(stack))
- *                 id = stack.pop()
- */
-    while (1) {
-      __pyx_t_6 = (PyList_GET_SIZE(__pyx_v_stack) != 0);
-      if (!__pyx_t_6) break;
-
-      /* "CARTGVTree.pyx":852
- *             stack.append(0)
- *             while stack:
- *                 print(len(stack))             # <<<<<<<<<<<<<<
- *                 id = stack.pop()
- *                 print("id : " + str(id))
- */
-      __pyx_t_14 = PyList_GET_SIZE(__pyx_v_stack); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(1, 852, __pyx_L1_error)
-      __pyx_t_9 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 852, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      if (__Pyx_PrintOne(0, __pyx_t_9) < 0) __PYX_ERR(1, 852, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-      /* "CARTGVTree.pyx":853
- *             while stack:
- *                 print(len(stack))
- *                 id = stack.pop()             # <<<<<<<<<<<<<<
- *                 print("id : " + str(id))
- *                 current_node = self.nodes[id]
- */
-      __pyx_t_9 = __Pyx_PyList_Pop(__pyx_v_stack); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 853, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_XDECREF_SET(__pyx_v_id, __pyx_t_9);
-      __pyx_t_9 = 0;
-
-      /* "CARTGVTree.pyx":854
- *                 print(len(stack))
- *                 id = stack.pop()
- *                 print("id : " + str(id))             # <<<<<<<<<<<<<<
- *                 current_node = self.nodes[id]
- * 
- */
-      __pyx_t_9 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_id); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 854, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_3 = PyNumber_Add(__pyx_kp_s_id, __pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 854, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_3) < 0) __PYX_ERR(1, 854, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-      /* "CARTGVTree.pyx":855
- *                 id = stack.pop()
- *                 print("id : " + str(id))
- *                 current_node = self.nodes[id]             # <<<<<<<<<<<<<<
- * 
- * #            while counter > 0:
- */
-      __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_v_id); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 855, __pyx_L1_error)
-      __pyx_v_current_node = (__pyx_v_self->nodes[__pyx_t_14]);
-
-      /* "CARTGVTree.pyx":861
- * #                counter -= 1
- * 
- *                 if current_node.n_childs != 0:             # <<<<<<<<<<<<<<
- *                     if current_node.group != group_j:
- * 
- */
-      __pyx_t_6 = ((__pyx_v_current_node.n_childs != 0) != 0);
-      if (__pyx_t_6) {
-
-        /* "CARTGVTree.pyx":862
- * 
- *                 if current_node.n_childs != 0:
- *                     if current_node.group != group_j:             # <<<<<<<<<<<<<<
- * 
- *                         # Loads the splitting tree
- */
-        __pyx_t_6 = ((__pyx_v_current_node.group != __pyx_v_group_j) != 0);
-        if (__pyx_t_6) {
-
-          /* "CARTGVTree.pyx":865
- * 
- *                         # Loads the splitting tree
- *                         current_split_tree = pickle.loads(current_node.splitting_tree)             # <<<<<<<<<<<<<<
- * 
- *                         group = self.groups[current_node.group]
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_pickle); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 865, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_loads); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 865, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __pyx_t_9 = __Pyx_PyBytes_FromCString(__pyx_v_current_node.splitting_tree); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 865, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_1 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-            __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-            if (likely(__pyx_t_1)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-              __Pyx_INCREF(__pyx_t_1);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_2, function);
-            }
-          }
-          __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_t_9) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_9);
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 865, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_current_split_tree, __pyx_t_3);
-          __pyx_t_3 = 0;
-
-          /* "CARTGVTree.pyx":867
- *                         current_split_tree = pickle.loads(current_node.splitting_tree)
- * 
- *                         group = self.groups[current_node.group]             # <<<<<<<<<<<<<<
- *                         len_group = self.len_groups[current_node.group]
- *                         if X.ndim > 1:
- */
-          __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_self->groups, __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 867, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_XDECREF_SET(__pyx_v_group, __pyx_t_3);
-          __pyx_t_3 = 0;
-
-          /* "CARTGVTree.pyx":868
- * 
- *                         group = self.groups[current_node.group]
- *                         len_group = self.len_groups[current_node.group]             # <<<<<<<<<<<<<<
- *                         if X.ndim > 1:
- *                             Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
- */
-          __pyx_t_3 = __Pyx_GetItemInt(((PyObject *)__pyx_v_self->len_groups), __pyx_v_current_node.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 868, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_XDECREF_SET(__pyx_v_len_group, __pyx_t_3);
-          __pyx_t_3 = 0;
-
-          /* "CARTGVTree.pyx":869
- *                         group = self.groups[current_node.group]
- *                         len_group = self.len_groups[current_node.group]
- *                         if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                             Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
- *                         else:
- */
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 869, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_2 = PyObject_RichCompare(__pyx_t_3, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 869, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 869, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (__pyx_t_6) {
-
-            /* "CARTGVTree.pyx":870
- *                         len_group = self.len_groups[current_node.group]
- *                         if X.ndim > 1:
- *                             Xf = np.empty((X.shape[0],len_group), dtype=np.float32)             # <<<<<<<<<<<<<<
- *                         else:
- *                             Xf = np.empty(len_group, dtype=np.float32)
- */
-            __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_empty); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_3);
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_9 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_GIVEREF(__pyx_t_9);
-            PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_9);
-            __Pyx_INCREF(__pyx_v_len_group);
-            __Pyx_GIVEREF(__pyx_v_len_group);
-            PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_len_group);
-            __pyx_t_9 = 0;
-            __pyx_t_9 = PyTuple_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_2);
-            __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_float32); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_9, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 870, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_Xf, __pyx_t_4);
-            __pyx_t_4 = 0;
-
-            /* "CARTGVTree.pyx":869
- *                         group = self.groups[current_node.group]
- *                         len_group = self.len_groups[current_node.group]
- *                         if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                             Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
- *                         else:
- */
-            goto __pyx_L12;
-          }
-
-          /* "CARTGVTree.pyx":872
- *                             Xf = np.empty((X.shape[0],len_group), dtype=np.float32)
- *                         else:
- *                             Xf = np.empty(len_group, dtype=np.float32)             # <<<<<<<<<<<<<<
- * 
- *                         for j in range(len_group):
- */
-          /*else*/ {
-            __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_empty); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_INCREF(__pyx_v_len_group);
-            __Pyx_GIVEREF(__pyx_v_len_group);
-            PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_len_group);
-            __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_float32); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_dtype, __pyx_t_1) < 0) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 872, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_Xf, __pyx_t_1);
-            __pyx_t_1 = 0;
-          }
-          __pyx_L12:;
-
-          /* "CARTGVTree.pyx":874
- *                             Xf = np.empty(len_group, dtype=np.float32)
- * 
- *                         for j in range(len_group):             # <<<<<<<<<<<<<<
- *                             if X.ndim > 1:
- *                                 Xf[i,j] = X[i,group[j]]
- */
-          __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_v_len_group); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 874, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
-            __pyx_t_9 = __pyx_t_1; __Pyx_INCREF(__pyx_t_9); __pyx_t_14 = 0;
-            __pyx_t_15 = NULL;
-          } else {
-            __pyx_t_14 = -1; __pyx_t_9 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 874, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __pyx_t_15 = Py_TYPE(__pyx_t_9)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 874, __pyx_L1_error)
-          }
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          for (;;) {
-            if (likely(!__pyx_t_15)) {
-              if (likely(PyList_CheckExact(__pyx_t_9))) {
-                if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_9)) break;
-                #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_1 = PyList_GET_ITEM(__pyx_t_9, __pyx_t_14); __Pyx_INCREF(__pyx_t_1); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(1, 874, __pyx_L1_error)
-                #else
-                __pyx_t_1 = PySequence_ITEM(__pyx_t_9, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 874, __pyx_L1_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                #endif
-              } else {
-                if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_9)) break;
-                #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_9, __pyx_t_14); __Pyx_INCREF(__pyx_t_1); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(1, 874, __pyx_L1_error)
-                #else
-                __pyx_t_1 = PySequence_ITEM(__pyx_t_9, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 874, __pyx_L1_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                #endif
-              }
-            } else {
-              __pyx_t_1 = __pyx_t_15(__pyx_t_9);
-              if (unlikely(!__pyx_t_1)) {
-                PyObject* exc_type = PyErr_Occurred();
-                if (exc_type) {
-                  if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(1, 874, __pyx_L1_error)
-                }
-                break;
-              }
-              __Pyx_GOTREF(__pyx_t_1);
-            }
-            __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_1);
-            __pyx_t_1 = 0;
-
-            /* "CARTGVTree.pyx":875
- * 
- *                         for j in range(len_group):
- *                             if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                                 Xf[i,j] = X[i,group[j]]
- *                             else:
- */
-            __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 875, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_4 = PyObject_RichCompare(__pyx_t_1, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 875, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 875, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            if (__pyx_t_6) {
-
-              /* "CARTGVTree.pyx":876
- *                         for j in range(len_group):
- *                             if X.ndim > 1:
- *                                 Xf[i,j] = X[i,group[j]]             # <<<<<<<<<<<<<<
- *                             else:
- *                                 Xf[j] = X[group[j]]
- */
-              __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_4);
-              __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_GIVEREF(__pyx_t_4);
-              PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4);
-              __Pyx_GIVEREF(__pyx_t_1);
-              PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
-              __pyx_t_4 = 0;
-              __pyx_t_1 = 0;
-              __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_GIVEREF(__pyx_t_2);
-              PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2);
-              __Pyx_INCREF(__pyx_v_j);
-              __Pyx_GIVEREF(__pyx_v_j);
-              PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_j);
-              __pyx_t_2 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_t_4, __pyx_t_1) < 0)) __PYX_ERR(1, 876, __pyx_L1_error)
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-              /* "CARTGVTree.pyx":875
- * 
- *                         for j in range(len_group):
- *                             if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                                 Xf[i,j] = X[i,group[j]]
- *                             else:
- */
-              goto __pyx_L15;
-            }
-
-            /* "CARTGVTree.pyx":878
- *                                 Xf[i,j] = X[i,group[j]]
- *                             else:
- *                                 Xf[j] = X[group[j]]             # <<<<<<<<<<<<<<
- * 
- *                         # Get the id of the splitting tree lead in which the data went
- */
-            /*else*/ {
-              __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_v_group, __pyx_v_j); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 878, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_X, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 878, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_Xf, __pyx_v_j, __pyx_t_4) < 0)) __PYX_ERR(1, 878, __pyx_L1_error)
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-            }
-            __pyx_L15:;
-
-            /* "CARTGVTree.pyx":874
- *                             Xf = np.empty(len_group, dtype=np.float32)
- * 
- *                         for j in range(len_group):             # <<<<<<<<<<<<<<
- *                             if X.ndim > 1:
- *                                 Xf[i,j] = X[i,group[j]]
- */
-          }
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-
-          /* "CARTGVTree.pyx":881
- * 
- *                         # Get the id of the splitting tree lead in which the data went
- *                         if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                             leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
- *                         else:
- */
-          __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_ndim); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 881, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_4 = PyObject_RichCompare(__pyx_t_9, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 881, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 881, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (__pyx_t_6) {
-
-            /* "CARTGVTree.pyx":882
- *                         # Get the id of the splitting tree lead in which the data went
- *                         if X.ndim > 1:
- *                             leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))             # <<<<<<<<<<<<<<
- *                         else:
- *                             leaf_id = current_split_tree.apply(Xf.reshape((1,len(Xf))))
- */
-            __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_3);
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_Xf, __pyx_v_i, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, 1, __Pyx_PyInt_From_Py_intptr_t, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_14 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_16);
-            __Pyx_INCREF(__pyx_int_1);
-            __Pyx_GIVEREF(__pyx_int_1);
-            PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_int_1);
-            __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_t_2);
-            __pyx_t_2 = 0;
-            __pyx_t_2 = NULL;
-            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
-              __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-              if (likely(__pyx_t_2)) {
-                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-                __Pyx_INCREF(__pyx_t_2);
-                __Pyx_INCREF(function);
-                __Pyx_DECREF_SET(__pyx_t_3, function);
-              }
-            }
-            __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_16);
-            __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_3 = NULL;
-            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
-              __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_9);
-              if (likely(__pyx_t_3)) {
-                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-                __Pyx_INCREF(__pyx_t_3);
-                __Pyx_INCREF(function);
-                __Pyx_DECREF_SET(__pyx_t_9, function);
-              }
-            }
-            __pyx_t_4 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_1);
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 882, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_leaf_id, __pyx_t_4);
-            __pyx_t_4 = 0;
-
-            /* "CARTGVTree.pyx":881
- * 
- *                         # Get the id of the splitting tree lead in which the data went
- *                         if X.ndim > 1:             # <<<<<<<<<<<<<<
- *                             leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
- *                         else:
- */
-            goto __pyx_L16;
-          }
-
-          /* "CARTGVTree.pyx":884
- *                             leaf_id = current_split_tree.apply(Xf[i].reshape((1,len(Xf[i]))))
- *                         else:
- *                             leaf_id = current_split_tree.apply(Xf.reshape((1,len(Xf))))             # <<<<<<<<<<<<<<
- * 
- *                         # Get the index of the child in the current node
- */
-          /*else*/ {
-            __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_current_split_tree, __pyx_n_s_apply); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_9);
-            __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_Xf, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_3);
-            __pyx_t_14 = PyObject_Length(__pyx_v_Xf); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(1, 884, __pyx_L1_error)
-            __pyx_t_16 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_16);
-            __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_INCREF(__pyx_int_1);
-            __Pyx_GIVEREF(__pyx_int_1);
-            PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_int_1);
-            __Pyx_GIVEREF(__pyx_t_16);
-            PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_16);
-            __pyx_t_16 = 0;
-            __pyx_t_16 = NULL;
-            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
-              __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_3);
-              if (likely(__pyx_t_16)) {
-                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-                __Pyx_INCREF(__pyx_t_16);
-                __Pyx_INCREF(function);
-                __Pyx_DECREF_SET(__pyx_t_3, function);
-              }
-            }
-            __pyx_t_1 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_16, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2);
-            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __pyx_t_3 = NULL;
-            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_9))) {
-              __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_9);
-              if (likely(__pyx_t_3)) {
-                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-                __Pyx_INCREF(__pyx_t_3);
-                __Pyx_INCREF(function);
-                __Pyx_DECREF_SET(__pyx_t_9, function);
-              }
-            }
-            __pyx_t_4 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_1);
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-            if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 884, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_leaf_id, __pyx_t_4);
-            __pyx_t_4 = 0;
-          }
-          __pyx_L16:;
-
-          /* "CARTGVTree.pyx":887
- * 
- *                         # Get the index of the child in the current node
- *                         idx_cart_tree = np.take(np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx), np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs))             # <<<<<<<<<<<<<<
- * 
- *                         # Get the index in the splitting tree of the leaf
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_np); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_take); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-          __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_17 = __pyx_v_self->nodes_cart_idx;
-          if (!__pyx_t_17) {
-            PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-            __PYX_ERR(1, 887, __pyx_L1_error)
-          }
-          __pyx_t_16 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_3 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->node_count)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_18 = __pyx_array_new(__pyx_t_3, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_16), (char *) "c", (char *) __pyx_t_17);
-          if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_18);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          __pyx_t_16 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-            __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_2);
-            if (likely(__pyx_t_16)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-              __Pyx_INCREF(__pyx_t_16);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_2, function);
-            }
-          }
-          __pyx_t_9 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_16, ((PyObject *)__pyx_t_18)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_t_18));
-          __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-          __Pyx_DECREF(((PyObject *)__pyx_t_18)); __pyx_t_18 = 0;
-          if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_9);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_np); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          __pyx_t_17 = __pyx_v_current_node.childs;
-          if (!__pyx_t_17) {
-            PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-            __PYX_ERR(1, 887, __pyx_L1_error)
-          }
-          __pyx_t_19 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __pyx_t_16 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_16)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_16);
-          __pyx_t_18 = __pyx_array_new(__pyx_t_16, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_19), (char *) "c", (char *) __pyx_t_17);
-          if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_18);
-          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __pyx_t_19 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-            __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_3);
-            if (likely(__pyx_t_19)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-              __Pyx_INCREF(__pyx_t_19);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_3, function);
-            }
-          }
-          __pyx_t_2 = (__pyx_t_19) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_19, ((PyObject *)__pyx_t_18)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_t_18));
-          __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __Pyx_DECREF(((PyObject *)__pyx_t_18)); __pyx_t_18 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 887, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-          __pyx_t_3 = NULL;
-          __pyx_t_20 = 0;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-            __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-            if (likely(__pyx_t_3)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-              __Pyx_INCREF(__pyx_t_3);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_1, function);
-              __pyx_t_20 = 1;
-            }
-          }
-          #if CYTHON_FAST_PYCALL
-          if (PyFunction_Check(__pyx_t_1)) {
-            PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_9, __pyx_t_2};
-            __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_20, 2+__pyx_t_20); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 887, __pyx_L1_error)
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          } else
-          #endif
-          #if CYTHON_FAST_PYCCALL
-          if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
-            PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_t_9, __pyx_t_2};
-            __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_20, 2+__pyx_t_20); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 887, __pyx_L1_error)
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          } else
-          #endif
-          {
-            __pyx_t_19 = PyTuple_New(2+__pyx_t_20); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 887, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_19);
-            if (__pyx_t_3) {
-              __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_3); __pyx_t_3 = NULL;
-            }
-            __Pyx_GIVEREF(__pyx_t_9);
-            PyTuple_SET_ITEM(__pyx_t_19, 0+__pyx_t_20, __pyx_t_9);
-            __Pyx_GIVEREF(__pyx_t_2);
-            PyTuple_SET_ITEM(__pyx_t_19, 1+__pyx_t_20, __pyx_t_2);
-            __pyx_t_9 = 0;
-            __pyx_t_2 = 0;
-            __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_19, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 887, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_4);
-            __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          }
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_idx_cart_tree, __pyx_t_4);
-          __pyx_t_4 = 0;
-
-          /* "CARTGVTree.pyx":890
- * 
- *                         # Get the index in the splitting tree of the leaf
- *                         leaf_idx = np.where(idx_cart_tree == leaf_id[0])[0][0]             # <<<<<<<<<<<<<<
- * 
- *                         out_ptr[i] = <SIZE_t>(&self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]] - self.nodes)
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_where); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_leaf_id, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_2 = PyObject_RichCompare(__pyx_v_idx_cart_tree, __pyx_t_1, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_19))) {
-            __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_19);
-            if (likely(__pyx_t_1)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-              __Pyx_INCREF(__pyx_t_1);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_19, function);
-            }
-          }
-          __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_19, __pyx_t_1, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_2);
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __pyx_t_19 = __Pyx_GetItemInt(__pyx_t_4, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_19, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 890, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_leaf_idx, __pyx_t_4);
-          __pyx_t_4 = 0;
-
-          /* "CARTGVTree.pyx":892
- *                         leaf_idx = np.where(idx_cart_tree == leaf_id[0])[0][0]
- * 
- *                         out_ptr[i] = <SIZE_t>(&self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]] - self.nodes)             # <<<<<<<<<<<<<<
- * 
- *                         # Get the next node
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_np); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_asarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __pyx_t_17 = __pyx_v_current_node.childs;
-          if (!__pyx_t_17) {
-            PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-            __PYX_ERR(1, 892, __pyx_L1_error)
-          }
-          __pyx_t_1 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_19 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __pyx_t_18 = __pyx_array_new(__pyx_t_19, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_1), (char *) "c", (char *) __pyx_t_17);
-          if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_18);
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-            __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-            if (likely(__pyx_t_1)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-              __Pyx_INCREF(__pyx_t_1);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_2, function);
-            }
-          }
-          __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, ((PyObject *)__pyx_t_18)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_t_18));
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __Pyx_DECREF(((PyObject *)__pyx_t_18)); __pyx_t_18 = 0;
-          if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_14 = __Pyx_PyIndex_AsSsize_t(__pyx_t_2); if (unlikely((__pyx_t_14 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 892, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          (__pyx_v_out_ptr[__pyx_v_i]) = ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)((&(__pyx_v_self->nodes[__pyx_t_14])) - __pyx_v_self->nodes));
-
-          /* "CARTGVTree.pyx":897
- * #                        stack[counter] = self.nodes[np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx]]
- * #                        counter += 1
- *                         stack.append(np.asarray(<SIZE_t[:current_node.n_childs]>current_node.childs)[leaf_idx])             # <<<<<<<<<<<<<<
- * 
- *                     else:
- */
-          __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __pyx_t_17 = __pyx_v_current_node.childs;
-          if (!__pyx_t_17) {
-            PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-            __PYX_ERR(1, 897, __pyx_L1_error)
-          }
-          __pyx_t_19 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_19);
-          __pyx_t_4 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_current_node.n_childs)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_18 = __pyx_array_new(__pyx_t_4, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_19), (char *) "c", (char *) __pyx_t_17);
-          if (unlikely(!__pyx_t_18)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_18);
-          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __pyx_t_19 = NULL;
-          if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-            __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_1);
-            if (likely(__pyx_t_19)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-              __Pyx_INCREF(__pyx_t_19);
-              __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_1, function);
-            }
-          }
-          __pyx_t_2 = (__pyx_t_19) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_19, ((PyObject *)__pyx_t_18)) : __Pyx_PyObject_CallOneArg(__pyx_t_1, ((PyObject *)__pyx_t_18));
-          __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
-          __Pyx_DECREF(((PyObject *)__pyx_t_18)); __pyx_t_18 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_leaf_idx); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_stack, __pyx_t_1); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 897, __pyx_L1_error)
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-          /* "CARTGVTree.pyx":862
- * 
- *                 if current_node.n_childs != 0:
- *                     if current_node.group != group_j:             # <<<<<<<<<<<<<<
- * 
- *                         # Loads the splitting tree
- */
-          goto __pyx_L11;
-        }
-
-        /* "CARTGVTree.pyx":906
- * #                        counter += current_node.n_childs
- * 
- *                          for j in range(current_node.n_childs):             # <<<<<<<<<<<<<<
- *                             stack.append(current_node.childs[j])
- *                 else:
- */
-        /*else*/ {
-          __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_current_node.n_childs); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 906, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_range, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 906, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_2);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
-            __pyx_t_1 = __pyx_t_2; __Pyx_INCREF(__pyx_t_1); __pyx_t_14 = 0;
-            __pyx_t_15 = NULL;
-          } else {
-            __pyx_t_14 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 906, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
-            __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(1, 906, __pyx_L1_error)
-          }
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          for (;;) {
-            if (likely(!__pyx_t_15)) {
-              if (likely(PyList_CheckExact(__pyx_t_1))) {
-                if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_1)) break;
-                #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(1, 906, __pyx_L1_error)
-                #else
-                __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 906, __pyx_L1_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                #endif
-              } else {
-                if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
-                #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(1, 906, __pyx_L1_error)
-                #else
-                __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 906, __pyx_L1_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                #endif
-              }
-            } else {
-              __pyx_t_2 = __pyx_t_15(__pyx_t_1);
-              if (unlikely(!__pyx_t_2)) {
-                PyObject* exc_type = PyErr_Occurred();
-                if (exc_type) {
-                  if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else __PYX_ERR(1, 906, __pyx_L1_error)
-                }
-                break;
-              }
-              __Pyx_GOTREF(__pyx_t_2);
-            }
-            __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_2);
-            __pyx_t_2 = 0;
-
-            /* "CARTGVTree.pyx":907
- * 
- *                          for j in range(current_node.n_childs):
- *                             stack.append(current_node.childs[j])             # <<<<<<<<<<<<<<
- *                 else:
- * #                    final_nodes = <CARTGVNode*> realloc(final_nodes, (final_node_counter+1)*sizeof(CARTGVNode))
- */
-            __pyx_t_21 = __Pyx_PyIndex_AsSsize_t(__pyx_v_j); if (unlikely((__pyx_t_21 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 907, __pyx_L1_error)
-            __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_current_node.childs[__pyx_t_21])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 907, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_stack, __pyx_t_2); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 907, __pyx_L1_error)
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-            /* "CARTGVTree.pyx":906
- * #                        counter += current_node.n_childs
- * 
- *                          for j in range(current_node.n_childs):             # <<<<<<<<<<<<<<
- *                             stack.append(current_node.childs[j])
- *                 else:
- */
-          }
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        }
-        __pyx_L11:;
-
-        /* "CARTGVTree.pyx":861
- * #                counter -= 1
- * 
- *                 if current_node.n_childs != 0:             # <<<<<<<<<<<<<<
- *                     if current_node.group != group_j:
- * 
- */
-        goto __pyx_L10;
-      }
-
-      /* "CARTGVTree.pyx":913
- * #                    final_node_counter += 1
- * 
- *                     final_nodes.append(id)             # <<<<<<<<<<<<<<
- * 
- *             print(final_nodes)
- */
-      /*else*/ {
-        __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_final_nodes, __pyx_v_id); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 913, __pyx_L1_error)
-      }
-      __pyx_L10:;
-    }
-
-    /* "CARTGVTree.pyx":915
- *                     final_nodes.append(id)
- * 
- *             print(final_nodes)             # <<<<<<<<<<<<<<
- *             print(self._get_value_ndarray()[final_nodes])
- * 
- */
-    if (__Pyx_PrintOne(0, __pyx_v_final_nodes) < 0) __PYX_ERR(1, 915, __pyx_L1_error)
-
-    /* "CARTGVTree.pyx":916
- * 
- *             print(final_nodes)
- *             print(self._get_value_ndarray()[final_nodes])             # <<<<<<<<<<<<<<
- * 
- *             list_final_nodes.append(final_nodes)
- */
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 916, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_final_nodes); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 916, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(1, 916, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "CARTGVTree.pyx":918
- *             print(self._get_value_ndarray()[final_nodes])
- * 
- *             list_final_nodes.append(final_nodes)             # <<<<<<<<<<<<<<
- * #            np.append(prediction,np.argmax(np.sum(self._get_value_ndarray()[final_nodes], axis=0)))
- * #            print(prediction)
- */
-    __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_list_final_nodes, __pyx_v_final_nodes); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 918, __pyx_L1_error)
-  }
-
-  /* "CARTGVTree.pyx":921
- * #            np.append(prediction,np.argmax(np.sum(self._get_value_ndarray()[final_nodes], axis=0)))
- * #            print(prediction)
- *         print(np.asarray(in_bag_idx))             # <<<<<<<<<<<<<<
- * 
- *         in_bag_collection = np.array(list_final_nodes)[in_bag_idx]
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 921, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 921, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_1)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_1);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_19, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_19, __pyx_t_1, ((PyObject *)__pyx_v_in_bag_idx)) : __Pyx_PyObject_CallOneArg(__pyx_t_19, ((PyObject *)__pyx_v_in_bag_idx));
-  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 921, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(1, 921, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "CARTGVTree.pyx":923
- *         print(np.asarray(in_bag_idx))
- * 
- *         in_bag_collection = np.array(list_final_nodes)[in_bag_idx]             # <<<<<<<<<<<<<<
- *         oob_collection = np.array(list_final_nodes)[oob_idx]
- * 
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_19, __pyx_n_s_np); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 923, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_array); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 923, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-    __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_1);
-    if (likely(__pyx_t_19)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-      __Pyx_INCREF(__pyx_t_19);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_1, function);
-    }
-  }
-  __pyx_t_2 = (__pyx_t_19) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_19, __pyx_v_list_final_nodes) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_list_final_nodes);
-  __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 923, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, ((PyObject *)__pyx_v_in_bag_idx)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 923, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_in_bag_collection = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "CARTGVTree.pyx":924
- * 
- *         in_bag_collection = np.array(list_final_nodes)[in_bag_idx]
- *         oob_collection = np.array(list_final_nodes)[oob_idx]             # <<<<<<<<<<<<<<
- * 
- *         print(in_bag_collection)
- */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 924, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 924, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_2);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_19, function);
-    }
-  }
-  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_19, __pyx_t_2, __pyx_v_list_final_nodes) : __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_list_final_nodes);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 924, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = __Pyx_PyObject_GetItem(__pyx_t_1, ((PyObject *)__pyx_v_oob_idx)); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 924, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_oob_collection = __pyx_t_19;
-  __pyx_t_19 = 0;
-
-  /* "CARTGVTree.pyx":926
- *         oob_collection = np.array(list_final_nodes)[oob_idx]
- * 
- *         print(in_bag_collection)             # <<<<<<<<<<<<<<
- *         print(oob_collection)
- * 
- */
-  if (__Pyx_PrintOne(0, __pyx_v_in_bag_collection) < 0) __PYX_ERR(1, 926, __pyx_L1_error)
-
-  /* "CARTGVTree.pyx":927
- * 
- *         print(in_bag_collection)
- *         print(oob_collection)             # <<<<<<<<<<<<<<
- * 
- *         for k in range(len(oob_collection)):
- */
-  if (__Pyx_PrintOne(0, __pyx_v_oob_collection) < 0) __PYX_ERR(1, 927, __pyx_L1_error)
-
-  /* "CARTGVTree.pyx":929
- *         print(oob_collection)
- * 
- *         for k in range(len(oob_collection)):             # <<<<<<<<<<<<<<
- *             shared_nodes = []
- *             for l in range(len(in_bag_collection)):
- */
-  __pyx_t_14 = PyObject_Length(__pyx_v_oob_collection); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(1, 929, __pyx_L1_error)
-  __pyx_t_21 = __pyx_t_14;
-  for (__pyx_t_22 = 0; __pyx_t_22 < __pyx_t_21; __pyx_t_22+=1) {
-    __pyx_v_k = __pyx_t_22;
-
-    /* "CARTGVTree.pyx":930
- * 
- *         for k in range(len(oob_collection)):
- *             shared_nodes = []             # <<<<<<<<<<<<<<
- *             for l in range(len(in_bag_collection)):
- * #                shared_nodes = np.where(np.intersect1d(oob_collection[k], in_bag_collection[l])) #pas bon
- */
-    __pyx_t_19 = PyList_New(0); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 930, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_19);
-    __Pyx_XDECREF_SET(__pyx_v_shared_nodes, __pyx_t_19);
-    __pyx_t_19 = 0;
-
-    /* "CARTGVTree.pyx":931
- *         for k in range(len(oob_collection)):
- *             shared_nodes = []
- *             for l in range(len(in_bag_collection)):             # <<<<<<<<<<<<<<
- * #                shared_nodes = np.where(np.intersect1d(oob_collection[k], in_bag_collection[l])) #pas bon
- *                 shared_nodes = np.nonzero(np.in1d(oob_collection[k], in_bag_collection[l]))
- */
-    __pyx_t_23 = PyObject_Length(__pyx_v_in_bag_collection); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1))) __PYX_ERR(1, 931, __pyx_L1_error)
-    __pyx_t_24 = __pyx_t_23;
-    for (__pyx_t_25 = 0; __pyx_t_25 < __pyx_t_24; __pyx_t_25+=1) {
-      __pyx_v_l = __pyx_t_25;
-
-      /* "CARTGVTree.pyx":933
- *             for l in range(len(in_bag_collection)):
- * #                shared_nodes = np.where(np.intersect1d(oob_collection[k], in_bag_collection[l])) #pas bon
- *                 shared_nodes = np.nonzero(np.in1d(oob_collection[k], in_bag_collection[l]))             # <<<<<<<<<<<<<<
- * #        shared_nodes = np.intersect1d(in_bag_collection,oob_collection)
- * 
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_nonzero); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_in1d); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_9);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_oob_collection, __pyx_v_k, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_in_bag_collection, __pyx_v_l, Py_ssize_t, 1, PyInt_FromSsize_t, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_16 = NULL;
-      __pyx_t_20 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_9))) {
-        __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_9);
-        if (likely(__pyx_t_16)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_9);
-          __Pyx_INCREF(__pyx_t_16);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_9, function);
-          __pyx_t_20 = 1;
-        }
-      }
-      #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_9)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_16, __pyx_t_4, __pyx_t_3};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_20, 2+__pyx_t_20); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 933, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      } else
-      #endif
-      #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_9)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_16, __pyx_t_4, __pyx_t_3};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_20, 2+__pyx_t_20); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 933, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      } else
-      #endif
-      {
-        __pyx_t_26 = PyTuple_New(2+__pyx_t_20); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 933, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_26);
-        if (__pyx_t_16) {
-          __Pyx_GIVEREF(__pyx_t_16); PyTuple_SET_ITEM(__pyx_t_26, 0, __pyx_t_16); __pyx_t_16 = NULL;
-        }
-        __Pyx_GIVEREF(__pyx_t_4);
-        PyTuple_SET_ITEM(__pyx_t_26, 0+__pyx_t_20, __pyx_t_4);
-        __Pyx_GIVEREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_26, 1+__pyx_t_20, __pyx_t_3);
-        __pyx_t_4 = 0;
-        __pyx_t_3 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_26, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 933, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __pyx_t_9 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_9)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_9);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
-        }
-      }
-      __pyx_t_19 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_9, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1);
-      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 933, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_19);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF_SET(__pyx_v_shared_nodes, __pyx_t_19);
-      __pyx_t_19 = 0;
-    }
-
-    /* "CARTGVTree.pyx":936
- * #        shared_nodes = np.intersect1d(in_bag_collection,oob_collection)
- * 
- *             print(shared_nodes)             # <<<<<<<<<<<<<<
- * 
- *             if len(shared_nodes[0]) == 0:
- */
-    if (__Pyx_PrintOne(0, __pyx_v_shared_nodes) < 0) __PYX_ERR(1, 936, __pyx_L1_error)
-
-    /* "CARTGVTree.pyx":938
- *             print(shared_nodes)
- * 
- *             if len(shared_nodes[0]) == 0:             # <<<<<<<<<<<<<<
- *                 print("Je passe ici")
- *                 idx = np.where(self.nodes[k].parent in in_bag_collection)
- */
-    __pyx_t_19 = __Pyx_GetItemInt(__pyx_v_shared_nodes, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 938, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_19);
-    __pyx_t_23 = PyObject_Length(__pyx_t_19); if (unlikely(__pyx_t_23 == ((Py_ssize_t)-1))) __PYX_ERR(1, 938, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-    __pyx_t_6 = ((__pyx_t_23 == 0) != 0);
-    if (__pyx_t_6) {
-
-      /* "CARTGVTree.pyx":939
- * 
- *             if len(shared_nodes[0]) == 0:
- *                 print("Je passe ici")             # <<<<<<<<<<<<<<
- *                 idx = np.where(self.nodes[k].parent in in_bag_collection)
- *                 print(idx)
- */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Je_passe_ici) < 0) __PYX_ERR(1, 939, __pyx_L1_error)
-
-      /* "CARTGVTree.pyx":940
- *             if len(shared_nodes[0]) == 0:
- *                 print("Je passe ici")
- *                 idx = np.where(self.nodes[k].parent in in_bag_collection)             # <<<<<<<<<<<<<<
- *                 print(idx)
- *             else:
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_where); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyInt_From_Py_intptr_t((__pyx_v_self->nodes[__pyx_v_k]).parent); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_t_2, __pyx_v_in_bag_collection, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-        __pyx_t_9 = PyMethod_GET_SELF(__pyx_t_1);
-        if (likely(__pyx_t_9)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-          __Pyx_INCREF(__pyx_t_9);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_1, function);
-        }
-      }
-      __pyx_t_19 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_9, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
-      __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 940, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_19);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_idx, __pyx_t_19);
-      __pyx_t_19 = 0;
-
-      /* "CARTGVTree.pyx":941
- *                 print("Je passe ici")
- *                 idx = np.where(self.nodes[k].parent in in_bag_collection)
- *                 print(idx)             # <<<<<<<<<<<<<<
- *             else:
- *                 print('Je passe la')
- */
-      if (__Pyx_PrintOne(0, __pyx_v_idx) < 0) __PYX_ERR(1, 941, __pyx_L1_error)
-
-      /* "CARTGVTree.pyx":938
- *             print(shared_nodes)
- * 
- *             if len(shared_nodes[0]) == 0:             # <<<<<<<<<<<<<<
- *                 print("Je passe ici")
- *                 idx = np.where(self.nodes[k].parent in in_bag_collection)
- */
-      goto __pyx_L23;
-    }
-
-    /* "CARTGVTree.pyx":943
- *                 print(idx)
- *             else:
- *                 print('Je passe la')             # <<<<<<<<<<<<<<
- *                 idx = shared_nodes
- * #                parent_nodes = []
- */
-    /*else*/ {
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Je_passe_la) < 0) __PYX_ERR(1, 943, __pyx_L1_error)
-
-      /* "CARTGVTree.pyx":944
- *             else:
- *                 print('Je passe la')
- *                 idx = shared_nodes             # <<<<<<<<<<<<<<
- * #                parent_nodes = []
- * #                parent_nodes.append(self.nodes[k].parent)
- */
-      __Pyx_INCREF(__pyx_v_shared_nodes);
-      __Pyx_XDECREF_SET(__pyx_v_idx, __pyx_v_shared_nodes);
-    }
-    __pyx_L23:;
-
-    /* "CARTGVTree.pyx":949
- * #                final_nodes = parent_nodes
- * 
- *             pred.append(np.argmax(np.sum(self._get_value_ndarray()[idx], axis=0)))             # <<<<<<<<<<<<<<
- * 
- *         return np.array(pred)
- */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_argmax); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_sum); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_9);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = ((PyObject *)((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_get_value_ndarray(__pyx_v_self)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_26 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_idx); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_26);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_26);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_26);
-    __pyx_t_26 = 0;
-    __pyx_t_26 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_26);
-    if (PyDict_SetItem(__pyx_t_26, __pyx_n_s_axis, __pyx_int_0) < 0) __PYX_ERR(1, 949, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, __pyx_t_26); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
-    __pyx_t_26 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_26 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_26)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_26);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    __pyx_t_19 = (__pyx_t_26) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_26, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
-    __Pyx_XDECREF(__pyx_t_26); __pyx_t_26 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_19);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_pred, __pyx_t_19); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(1, 949, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  }
-
-  /* "CARTGVTree.pyx":951
- *             pred.append(np.argmax(np.sum(self._get_value_ndarray()[idx], axis=0)))
- * 
- *         return np.array(pred)             # <<<<<<<<<<<<<<
- * 
- * #            current_node = self.nodes[0]
- */
-  __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 951, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_array); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 951, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
-  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_2)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_2);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  __pyx_t_19 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_pred) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_pred);
-  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_19)) __PYX_ERR(1, 951, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_19) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_19, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 951, __pyx_L1_error)
-  __pyx_r = ((PyArrayObject *)__pyx_t_19);
-  __pyx_t_19 = 0;
-  goto __pyx_L0;
-
-  /* "CARTGVTree.pyx":797
- * 
- * 
- *     cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_indx, int[::1] oob_indx):             # <<<<<<<<<<<<<<
- * 
- *         cdef np.ndarray in_bag_idx = np.asarray(in_bag_indx)
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __PYX_XDEC_MEMVIEW(&__pyx_t_7, 1);
-  __Pyx_XDECREF(__pyx_t_9);
-  __Pyx_XDECREF(__pyx_t_16);
-  __Pyx_XDECREF(((PyObject *)__pyx_t_18));
-  __Pyx_XDECREF(__pyx_t_19);
-  __Pyx_XDECREF(__pyx_t_26);
-  { PyObject *__pyx_type, *__pyx_value, *__pyx_tb;
-    __Pyx_PyThreadState_declare
-    __Pyx_PyThreadState_assign
-    __Pyx_ErrFetch(&__pyx_type, &__pyx_value, &__pyx_tb);
-    __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_out.rcbuffer->pybuffer);
-  __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("CARTGVTree.CARTGVTree.apply_sobol", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = 0;
-  goto __pyx_L2;
-  __pyx_L0:;
-  __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_out.rcbuffer->pybuffer);
-  __pyx_L2:;
-  __Pyx_XDECREF((PyObject *)__pyx_v_in_bag_idx);
-  __Pyx_XDECREF((PyObject *)__pyx_v_oob_idx);
-  __PYX_XDEC_MEMVIEW(&__pyx_v_X_ndarray, 1);
-  __Pyx_XDECREF((PyObject *)__pyx_v_out);
-  __Pyx_XDECREF(__pyx_v_prediction);
-  __Pyx_XDECREF(__pyx_v_prob);
-  __Pyx_XDECREF(__pyx_v_nb_samples);
-  __Pyx_XDECREF(__pyx_v_pred);
-  __Pyx_XDECREF(__pyx_v_list_final_nodes);
-  __Pyx_XDECREF(__pyx_v_final_nodes);
-  __Pyx_XDECREF(__pyx_v_stack);
-  __Pyx_XDECREF(__pyx_v_id);
-  __Pyx_XDECREF(__pyx_v_current_split_tree);
-  __Pyx_XDECREF(__pyx_v_group);
-  __Pyx_XDECREF(__pyx_v_len_group);
-  __Pyx_XDECREF(__pyx_v_Xf);
-  __Pyx_XDECREF(__pyx_v_j);
-  __Pyx_XDECREF(__pyx_v_leaf_id);
-  __Pyx_XDECREF(__pyx_v_idx_cart_tree);
-  __Pyx_XDECREF(__pyx_v_leaf_idx);
-  __Pyx_XDECREF(__pyx_v_in_bag_collection);
-  __Pyx_XDECREF(__pyx_v_oob_collection);
-  __Pyx_XDECREF(__pyx_v_shared_nodes);
-  __Pyx_XDECREF(__pyx_v_idx);
-  __Pyx_XDECREF(__pyx_v_X);
-  __Pyx_XGIVEREF((PyObject *)__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "CARTGVTree.pyx":957
+/* "CARTGVTree.pyx":1021
  * 
  * 
  *     cpdef object decision_path(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the decision path (=node) for each sample in X."""
- *         if issparse(X):
+ *         """
+ *         Finds the decision path (=node) for each sample in X.
  */
 
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
 static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X, int __pyx_skip_dispatch) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -14138,9 +11753,9 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 957, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1021, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_17decision_path)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_15decision_path)) {
         __Pyx_XDECREF(__pyx_r);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
@@ -14155,7 +11770,7 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_X);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 957, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1021, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_r = __pyx_t_2;
@@ -14176,14 +11791,14 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
     #endif
   }
 
-  /* "CARTGVTree.pyx":959
- *     cpdef object decision_path(self, object X):
- *         """Finds the decision path (=node) for each sample in X."""
+  /* "CARTGVTree.pyx":1026
+ *         params X : an object, the data for which we want the decision path
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             return self._decision_path_sparse_csr(X)
  *         else:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 959, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1026, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -14197,22 +11812,22 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 959, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1026, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 959, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(1, 1026, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "CARTGVTree.pyx":960
- *         """Finds the decision path (=node) for each sample in X."""
+    /* "CARTGVTree.pyx":1027
+ *         """
  *         if issparse(X):
  *             return self._decision_path_sparse_csr(X)             # <<<<<<<<<<<<<<
  *         else:
  *             return self._decision_path_dense(X)
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path_sparse_csr); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 960, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path_sparse_csr); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1027, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -14226,23 +11841,23 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 960, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1027, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_1;
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "CARTGVTree.pyx":959
- *     cpdef object decision_path(self, object X):
- *         """Finds the decision path (=node) for each sample in X."""
+    /* "CARTGVTree.pyx":1026
+ *         params X : an object, the data for which we want the decision path
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             return self._decision_path_sparse_csr(X)
  *         else:
  */
   }
 
-  /* "CARTGVTree.pyx":962
+  /* "CARTGVTree.pyx":1029
  *             return self._decision_path_sparse_csr(X)
  *         else:
  *             return self._decision_path_dense(X)             # <<<<<<<<<<<<<<
@@ -14251,7 +11866,7 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
  */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path_dense); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 962, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_decision_path_dense); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -14265,7 +11880,7 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 962, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1029, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_1;
@@ -14273,12 +11888,12 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
     goto __pyx_L0;
   }
 
-  /* "CARTGVTree.pyx":957
+  /* "CARTGVTree.pyx":1021
  * 
  * 
  *     cpdef object decision_path(self, object X):             # <<<<<<<<<<<<<<
- *         """Finds the decision path (=node) for each sample in X."""
- *         if issparse(X):
+ *         """
+ *         Finds the decision path (=node) for each sample in X.
  */
 
   /* function exit code */
@@ -14296,20 +11911,20 @@ static PyObject *__pyx_f_10CARTGVTree_10CARTGVTree_decision_path(struct __pyx_ob
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
-static char __pyx_doc_10CARTGVTree_10CARTGVTree_16decision_path[] = "Finds the decision path (=node) for each sample in X.";
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X) {
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X); /*proto*/
+static char __pyx_doc_10CARTGVTree_10CARTGVTree_14decision_path[] = "\n        Finds the decision path (=node) for each sample in X.\n        params X : an object, the data for which we want the decision path\n        ";
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_15decision_path(PyObject *__pyx_v_self, PyObject *__pyx_v_X) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("decision_path (wrapper)", 0);
-  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_16decision_path(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), ((PyObject *)__pyx_v_X));
+  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_14decision_path(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), ((PyObject *)__pyx_v_X));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X) {
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_14decision_path(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_X) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -14318,7 +11933,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16decision_path(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("decision_path", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_10CARTGVTree_10CARTGVTree_decision_path(__pyx_v_self, __pyx_v_X, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 957, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10CARTGVTree_10CARTGVTree_decision_path(__pyx_v_self, __pyx_v_X, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1021, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14335,7 +11950,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16decision_path(struct __pyx
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1121
+/* "CARTGVTree.pyx":1188
  *     #     return out
  * 
  *     cdef np.ndarray _get_value_ndarray(self):             # <<<<<<<<<<<<<<
@@ -14355,7 +11970,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_value_ndarray", 0);
 
-  /* "CARTGVTree.pyx":1128
+  /* "CARTGVTree.pyx":1195
  *         """
  *         cdef np.npy_intp shape[3]
  *         shape[0] = <np.npy_intp> self.node_count             # <<<<<<<<<<<<<<
@@ -14364,7 +11979,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
  */
   (__pyx_v_shape[0]) = ((npy_intp)__pyx_v_self->node_count);
 
-  /* "CARTGVTree.pyx":1129
+  /* "CARTGVTree.pyx":1196
  *         cdef np.npy_intp shape[3]
  *         shape[0] = <np.npy_intp> self.node_count
  *         shape[1] = <np.npy_intp> self.n_outputs             # <<<<<<<<<<<<<<
@@ -14373,7 +11988,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
  */
   (__pyx_v_shape[1]) = ((npy_intp)__pyx_v_self->n_outputs);
 
-  /* "CARTGVTree.pyx":1130
+  /* "CARTGVTree.pyx":1197
  *         shape[0] = <np.npy_intp> self.node_count
  *         shape[1] = <np.npy_intp> self.n_outputs
  *         shape[2] = <np.npy_intp> self.max_n_classes             # <<<<<<<<<<<<<<
@@ -14382,20 +11997,20 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
  */
   (__pyx_v_shape[2]) = ((npy_intp)__pyx_v_self->max_n_classes);
 
-  /* "CARTGVTree.pyx":1132
+  /* "CARTGVTree.pyx":1199
  *         shape[2] = <np.npy_intp> self.max_n_classes
  *         cdef np.ndarray arr
  *         arr = np.PyArray_SimpleNewFromData(3, shape, np.NPY_DOUBLE, self.value)             # <<<<<<<<<<<<<<
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  */
-  __pyx_t_1 = PyArray_SimpleNewFromData(3, __pyx_v_shape, NPY_DOUBLE, __pyx_v_self->value); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1132, __pyx_L1_error)
+  __pyx_t_1 = PyArray_SimpleNewFromData(3, __pyx_v_shape, NPY_DOUBLE, __pyx_v_self->value); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1199, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1132, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1199, __pyx_L1_error)
   __pyx_v_arr = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":1133
+  /* "CARTGVTree.pyx":1200
  *         cdef np.ndarray arr
  *         arr = np.PyArray_SimpleNewFromData(3, shape, np.NPY_DOUBLE, self.value)
  *         Py_INCREF(self)             # <<<<<<<<<<<<<<
@@ -14404,7 +12019,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
  */
   Py_INCREF(((PyObject *)__pyx_v_self));
 
-  /* "CARTGVTree.pyx":1134
+  /* "CARTGVTree.pyx":1201
  *         arr = np.PyArray_SimpleNewFromData(3, shape, np.NPY_DOUBLE, self.value)
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:             # <<<<<<<<<<<<<<
@@ -14414,20 +12029,20 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
   __pyx_t_2 = ((PyArray_SetBaseObject(__pyx_v_arr, ((PyObject *)__pyx_v_self)) < 0) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "CARTGVTree.pyx":1135
+    /* "CARTGVTree.pyx":1202
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  *             raise ValueError("Can't initialize array.")             # <<<<<<<<<<<<<<
  *         return arr
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1135, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1202, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(1, 1135, __pyx_L1_error)
+    __PYX_ERR(1, 1202, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":1134
+    /* "CARTGVTree.pyx":1201
  *         arr = np.PyArray_SimpleNewFromData(3, shape, np.NPY_DOUBLE, self.value)
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:             # <<<<<<<<<<<<<<
@@ -14436,7 +12051,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
  */
   }
 
-  /* "CARTGVTree.pyx":1136
+  /* "CARTGVTree.pyx":1203
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  *             raise ValueError("Can't initialize array.")
  *         return arr             # <<<<<<<<<<<<<<
@@ -14448,7 +12063,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
   __pyx_r = __pyx_v_arr;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1121
+  /* "CARTGVTree.pyx":1188
  *     #     return out
  * 
  *     cdef np.ndarray _get_value_ndarray(self):             # <<<<<<<<<<<<<<
@@ -14468,7 +12083,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_value_ndarray(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1138
+/* "CARTGVTree.pyx":1205
  *         return arr
  * 
  *     cdef np.ndarray _get_node_ndarray(self):             # <<<<<<<<<<<<<<
@@ -14490,7 +12105,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_node_ndarray", 0);
 
-  /* "CARTGVTree.pyx":1146
+  /* "CARTGVTree.pyx":1213
  *         """
  *         cdef np.npy_intp shape[1]
  *         shape[0] = <np.npy_intp> self.node_count             # <<<<<<<<<<<<<<
@@ -14499,7 +12114,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
  */
   (__pyx_v_shape[0]) = ((npy_intp)__pyx_v_self->node_count);
 
-  /* "CARTGVTree.pyx":1148
+  /* "CARTGVTree.pyx":1215
  *         shape[0] = <np.npy_intp> self.node_count
  *         cdef np.npy_intp strides[1]
  *         strides[0] = sizeof(CARTGVNode)             # <<<<<<<<<<<<<<
@@ -14508,43 +12123,43 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
  */
   (__pyx_v_strides[0]) = (sizeof(__pyx_t_10CARTGVTree_CARTGVNode));
 
-  /* "CARTGVTree.pyx":1150
+  /* "CARTGVTree.pyx":1217
  *         strides[0] = sizeof(CARTGVNode)
  *         cdef np.ndarray arr
  *         Py_INCREF(NODE_DTYPE)             # <<<<<<<<<<<<<<
  *         arr = PyArray_NewFromDescr(<PyTypeObject *> np.ndarray,
  *                                    <np.dtype> NODE_DTYPE, 1, shape,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1150, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   Py_INCREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":1152
+  /* "CARTGVTree.pyx":1219
  *         Py_INCREF(NODE_DTYPE)
  *         arr = PyArray_NewFromDescr(<PyTypeObject *> np.ndarray,
  *                                    <np.dtype> NODE_DTYPE, 1, shape,             # <<<<<<<<<<<<<<
  *                                    strides, <void*> self.nodes,
  *                                    np.NPY_DEFAULT, None)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1152, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_NODE_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "CARTGVTree.pyx":1151
+  /* "CARTGVTree.pyx":1218
  *         cdef np.ndarray arr
  *         Py_INCREF(NODE_DTYPE)
  *         arr = PyArray_NewFromDescr(<PyTypeObject *> np.ndarray,             # <<<<<<<<<<<<<<
  *                                    <np.dtype> NODE_DTYPE, 1, shape,
  *                                    strides, <void*> self.nodes,
  */
-  __pyx_t_2 = PyArray_NewFromDescr(((PyTypeObject *)__pyx_ptype_5numpy_ndarray), ((PyArray_Descr *)__pyx_t_1), 1, __pyx_v_shape, __pyx_v_strides, ((void *)__pyx_v_self->nodes), NPY_DEFAULT, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1151, __pyx_L1_error)
+  __pyx_t_2 = PyArray_NewFromDescr(((PyTypeObject *)__pyx_ptype_5numpy_ndarray), ((PyArray_Descr *)__pyx_t_1), 1, __pyx_v_shape, __pyx_v_strides, ((void *)__pyx_v_self->nodes), NPY_DEFAULT, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1151, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1218, __pyx_L1_error)
   __pyx_v_arr = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "CARTGVTree.pyx":1155
+  /* "CARTGVTree.pyx":1222
  *                                    strides, <void*> self.nodes,
  *                                    np.NPY_DEFAULT, None)
  *         Py_INCREF(self)             # <<<<<<<<<<<<<<
@@ -14553,7 +12168,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
  */
   Py_INCREF(((PyObject *)__pyx_v_self));
 
-  /* "CARTGVTree.pyx":1156
+  /* "CARTGVTree.pyx":1223
  *                                    np.NPY_DEFAULT, None)
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:             # <<<<<<<<<<<<<<
@@ -14563,20 +12178,20 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
   __pyx_t_3 = ((PyArray_SetBaseObject(__pyx_v_arr, ((PyObject *)__pyx_v_self)) < 0) != 0);
   if (unlikely(__pyx_t_3)) {
 
-    /* "CARTGVTree.pyx":1157
+    /* "CARTGVTree.pyx":1224
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  *             raise ValueError("Can't initialize array.")             # <<<<<<<<<<<<<<
  *         return arr
  * 
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1157, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1224, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(1, 1157, __pyx_L1_error)
+    __PYX_ERR(1, 1224, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":1156
+    /* "CARTGVTree.pyx":1223
  *                                    np.NPY_DEFAULT, None)
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:             # <<<<<<<<<<<<<<
@@ -14585,7 +12200,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
  */
   }
 
-  /* "CARTGVTree.pyx":1158
+  /* "CARTGVTree.pyx":1225
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  *             raise ValueError("Can't initialize array.")
  *         return arr             # <<<<<<<<<<<<<<
@@ -14597,7 +12212,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
   __pyx_r = __pyx_v_arr;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1138
+  /* "CARTGVTree.pyx":1205
  *         return arr
  * 
  *     cdef np.ndarray _get_node_ndarray(self):             # <<<<<<<<<<<<<<
@@ -14618,12 +12233,12 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_node_ndarray(struct
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1160
+/* "CARTGVTree.pyx":1227
  *         return arr
  * 
  *     cdef np.ndarray _get_nodes_cart_idx_ndarray(self):             # <<<<<<<<<<<<<<
- *         return np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx)
- * 
+ *         """
+ *         Return an array containing the indexes of the nodes in their respective parent splitting tree
  */
 
 static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_nodes_cart_idx_ndarray(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self) {
@@ -14640,30 +12255,30 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_nodes_cart_idx_ndar
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_nodes_cart_idx_ndarray", 0);
 
-  /* "CARTGVTree.pyx":1161
- * 
- *     cdef np.ndarray _get_nodes_cart_idx_ndarray(self):
+  /* "CARTGVTree.pyx":1231
+ *         Return an array containing the indexes of the nodes in their respective parent splitting tree
+ *         """
  *         return np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx)             # <<<<<<<<<<<<<<
  * 
  *     # cpdef compute_group_importances(self, penality_function, normalize=True):
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = __pyx_v_self->nodes_cart_idx;
   if (!__pyx_t_4) {
     PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-    __PYX_ERR(1, 1161, __pyx_L1_error)
+    __PYX_ERR(1, 1231, __pyx_L1_error)
   }
-  __pyx_t_6 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  __pyx_t_6 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_2 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->node_count)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  __pyx_t_2 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)__pyx_v_self->node_count)); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = __pyx_array_new(__pyx_t_2, sizeof(__pyx_t_7sklearn_4tree_5_tree_SIZE_t), PyBytes_AS_STRING(__pyx_t_6), (char *) "c", (char *) __pyx_t_4);
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -14680,20 +12295,20 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_nodes_cart_idx_ndar
   __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_6, ((PyObject *)__pyx_t_5)) : __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)__pyx_t_5));
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(((PyObject *)__pyx_t_5)); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1161, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1161, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1231, __pyx_L1_error)
   __pyx_r = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1160
+  /* "CARTGVTree.pyx":1227
  *         return arr
  * 
  *     cdef np.ndarray _get_nodes_cart_idx_ndarray(self):             # <<<<<<<<<<<<<<
- *         return np.asarray(<SIZE_t[:self.node_count]>self.nodes_cart_idx)
- * 
+ *         """
+ *         Return an array containing the indexes of the nodes in their respective parent splitting tree
  */
 
   /* function exit code */
@@ -14711,7 +12326,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_nodes_cart_idx_ndar
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1305
+/* "CARTGVTree.pyx":1375
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_resize_CARTGVTree(self, capacity):             # <<<<<<<<<<<<<<
@@ -14719,7 +12334,7 @@ static PyArrayObject *__pyx_f_10CARTGVTree_10CARTGVTree__get_nodes_cart_idx_ndar
  *         self._resize(capacity)
  */
 
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity); /*proto*/
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity); /*proto*/
 static void __pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_capacity, int __pyx_skip_dispatch) {
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -14741,9 +12356,9 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(struct __py
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_resize_CARTGVTree); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1305, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_resize_CARTGVTree); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1375, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_19test_resize_CARTGVTree)) {
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_17test_resize_CARTGVTree)) {
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -14757,7 +12372,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(struct __py
         }
         __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_v_capacity) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_capacity);
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1305, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1375, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -14777,17 +12392,17 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(struct __py
     #endif
   }
 
-  /* "CARTGVTree.pyx":1307
+  /* "CARTGVTree.pyx":1377
  *     cpdef void test_resize_CARTGVTree(self, capacity):
  * 
  *         self._resize(capacity)             # <<<<<<<<<<<<<<
  * 
  *     cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end):
  */
-  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_capacity); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1307, __pyx_L1_error)
-  __pyx_t_6 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize(__pyx_v_self, __pyx_t_5); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(1, 1307, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_capacity); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1377, __pyx_L1_error)
+  __pyx_t_6 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_resize(__pyx_v_self, __pyx_t_5); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(1, 1377, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":1305
+  /* "CARTGVTree.pyx":1375
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_resize_CARTGVTree(self, capacity):             # <<<<<<<<<<<<<<
@@ -14808,19 +12423,19 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(struct __py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity); /*proto*/
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity) {
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity); /*proto*/
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_17test_resize_CARTGVTree(PyObject *__pyx_v_self, PyObject *__pyx_v_capacity) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("test_resize_CARTGVTree (wrapper)", 0);
-  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), ((PyObject *)__pyx_v_capacity));
+  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_16test_resize_CARTGVTree(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), ((PyObject *)__pyx_v_capacity));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_capacity) {
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_16test_resize_CARTGVTree(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, PyObject *__pyx_v_capacity) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -14829,7 +12444,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_resize_CARTGVTree", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(__pyx_v_self, __pyx_v_capacity, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1305, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree(__pyx_v_self, __pyx_v_capacity, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1375, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14846,7 +12461,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(str
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1309
+/* "CARTGVTree.pyx":1379
  *         self._resize(capacity)
  * 
  *     cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end):             # <<<<<<<<<<<<<<
@@ -14854,7 +12469,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_resize_CARTGVTree(str
  *         cdef SIZE_t parent = -2
  */
 
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end, int __pyx_skip_dispatch) {
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_parent;
   struct __pyx_t_14CARTGVSplitter_CARTGVSplitRecord __pyx_v_split;
@@ -14894,12 +12509,12 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_add_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1309, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_add_node); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1379, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node)) {
-        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1309, __pyx_L1_error)
+      if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_10CARTGVTree_19test_add_node)) {
+        __pyx_t_3 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1379, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1309, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1379, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_INCREF(__pyx_t_1);
         __pyx_t_5 = __pyx_t_1; __pyx_t_6 = NULL;
@@ -14917,7 +12532,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[4] = {__pyx_t_6, ((PyObject *)__pyx_v_splitter), __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1309, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1379, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14927,7 +12542,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
           PyObject *__pyx_temp[4] = {__pyx_t_6, ((PyObject *)__pyx_v_splitter), __pyx_t_3, __pyx_t_4};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1309, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1379, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -14935,7 +12550,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
         } else
         #endif
         {
-          __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1309, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(1, 1379, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           if (__pyx_t_6) {
             __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -14949,7 +12564,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
           PyTuple_SET_ITEM(__pyx_t_8, 2+__pyx_t_7, __pyx_t_4);
           __pyx_t_3 = 0;
           __pyx_t_4 = 0;
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1309, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1379, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
@@ -14971,7 +12586,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
     #endif
   }
 
-  /* "CARTGVTree.pyx":1311
+  /* "CARTGVTree.pyx":1381
  *     cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end):
  * 
  *         cdef SIZE_t parent = -2             # <<<<<<<<<<<<<<
@@ -14980,7 +12595,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_parent = -2;
 
-  /* "CARTGVTree.pyx":1313
+  /* "CARTGVTree.pyx":1383
  *         cdef SIZE_t parent = -2
  *         cdef CARTGVSplitRecord split
  *         cdef bint is_leaf = False             # <<<<<<<<<<<<<<
@@ -14989,7 +12604,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_is_leaf = 0;
 
-  /* "CARTGVTree.pyx":1314
+  /* "CARTGVTree.pyx":1384
  *         cdef CARTGVSplitRecord split
  *         cdef bint is_leaf = False
  *         cdef SIZE_t n_constant_features = 0             # <<<<<<<<<<<<<<
@@ -14998,7 +12613,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_n_constant_features = 0;
 
-  /* "CARTGVTree.pyx":1317
+  /* "CARTGVTree.pyx":1387
  *         cdef Tree splitting_tree
  *         cdef double weighted_n_node_samples
  *         cdef double min_impurity_decrease = 0.1             # <<<<<<<<<<<<<<
@@ -15007,31 +12622,31 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_min_impurity_decrease = 0.1;
 
-  /* "CARTGVTree.pyx":1318
+  /* "CARTGVTree.pyx":1388
  *         cdef double weighted_n_node_samples
  *         cdef double min_impurity_decrease = 0.1
  *         cdef parent_start = start             # <<<<<<<<<<<<<<
  *         cdef parent_end = end
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1318, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_start); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1388, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_parent_start = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":1319
+  /* "CARTGVTree.pyx":1389
  *         cdef double min_impurity_decrease = 0.1
  *         cdef parent_start = start
  *         cdef parent_end = end             # <<<<<<<<<<<<<<
  * 
  *         n_node_samples = end - start
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1319, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_end); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_parent_end = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":1321
+  /* "CARTGVTree.pyx":1391
  *         cdef parent_end = end
  * 
  *         n_node_samples = end - start             # <<<<<<<<<<<<<<
@@ -15040,16 +12655,16 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_n_node_samples = (__pyx_v_end - __pyx_v_start);
 
-  /* "CARTGVTree.pyx":1322
+  /* "CARTGVTree.pyx":1392
  * 
  *         n_node_samples = end - start
  *         splitter.node_reset(start, end, &weighted_n_node_samples)             # <<<<<<<<<<<<<<
  * 
  *         impurity = splitter.node_impurity()
  */
-  __pyx_t_7 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&__pyx_v_weighted_n_node_samples)); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(1, 1322, __pyx_L1_error)
+  __pyx_t_7 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&__pyx_v_weighted_n_node_samples)); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(1, 1392, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":1324
+  /* "CARTGVTree.pyx":1394
  *         splitter.node_reset(start, end, &weighted_n_node_samples)
  * 
  *         impurity = splitter.node_impurity()             # <<<<<<<<<<<<<<
@@ -15058,18 +12673,18 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
  */
   __pyx_v_impurity = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_impurity(__pyx_v_splitter);
 
-  /* "CARTGVTree.pyx":1325
+  /* "CARTGVTree.pyx":1395
  * 
  *         impurity = splitter.node_impurity()
  *         splitter.node_split(impurity, &split, &n_constant_features, parent_start, parent_end)             # <<<<<<<<<<<<<<
  * 
  *         is_leaf = (is_leaf or (split.improvement + EPSILON < min_impurity_decrease))
  */
-  __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_v_parent_start); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 1325, __pyx_L1_error)
-  __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_v_parent_end); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 1325, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_v_parent_start); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 1395, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_v_parent_end); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 1395, __pyx_L1_error)
   (void)(((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_split(__pyx_v_splitter, __pyx_v_impurity, (&__pyx_v_split), (&__pyx_v_n_constant_features), __pyx_t_7, __pyx_t_9));
 
-  /* "CARTGVTree.pyx":1327
+  /* "CARTGVTree.pyx":1397
  *         splitter.node_split(impurity, &split, &n_constant_features, parent_start, parent_end)
  * 
  *         is_leaf = (is_leaf or (split.improvement + EPSILON < min_impurity_decrease))             # <<<<<<<<<<<<<<
@@ -15087,7 +12702,7 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
   __pyx_L3_bool_binop_done:;
   __pyx_v_is_leaf = __pyx_t_10;
 
-  /* "CARTGVTree.pyx":1329
+  /* "CARTGVTree.pyx":1399
  *         is_leaf = (is_leaf or (split.improvement + EPSILON < min_impurity_decrease))
  * 
  *         splt_tree = split.splitting_tree             # <<<<<<<<<<<<<<
@@ -15097,16 +12712,16 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
   __pyx_t_12 = __pyx_v_split.splitting_tree;
   __pyx_v_splt_tree = __pyx_t_12;
 
-  /* "CARTGVTree.pyx":1332
+  /* "CARTGVTree.pyx":1402
  * #        splitting_tree = pickle.loads(splt_tree)
  * #        for i in range(100000):
  *         self._add_node(parent, is_leaf, splt_tree, impurity, n_node_samples, split.n_childs, weighted_n_node_samples, split.group, start, end, 0, 0)             # <<<<<<<<<<<<<<
  * 
  * #        print(self.nodes[0].n_childs)
  */
-  __pyx_t_13 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_add_node(__pyx_v_self, __pyx_v_parent, __pyx_v_is_leaf, __pyx_v_splt_tree, __pyx_v_impurity, __pyx_v_n_node_samples, __pyx_v_split.n_childs, __pyx_v_weighted_n_node_samples, __pyx_v_split.group, __pyx_v_start, __pyx_v_end, 0, 0); if (unlikely(__pyx_t_13 == ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)-1))) __PYX_ERR(1, 1332, __pyx_L1_error)
+  __pyx_t_13 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_self->__pyx_vtab)->_add_node(__pyx_v_self, __pyx_v_parent, __pyx_v_is_leaf, __pyx_v_splt_tree, __pyx_v_impurity, __pyx_v_n_node_samples, __pyx_v_split.n_childs, __pyx_v_weighted_n_node_samples, __pyx_v_split.group, __pyx_v_start, __pyx_v_end, 0, 0); if (unlikely(__pyx_t_13 == ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)-1))) __PYX_ERR(1, 1402, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":1309
+  /* "CARTGVTree.pyx":1379
  *         self._resize(capacity)
  * 
  *     cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end):             # <<<<<<<<<<<<<<
@@ -15132,8 +12747,8 @@ static void __pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(struct __pyx_obj_10C
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_19test_add_node(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter = 0;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start;
   __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end;
@@ -15168,17 +12783,17 @@ static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_start)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, 1); __PYX_ERR(1, 1309, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, 1); __PYX_ERR(1, 1379, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_end)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, 2); __PYX_ERR(1, 1309, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, 2); __PYX_ERR(1, 1379, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_add_node") < 0)) __PYX_ERR(1, 1309, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_add_node") < 0)) __PYX_ERR(1, 1379, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -15188,19 +12803,19 @@ static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)values[0]);
-    __pyx_v_start = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_start == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1309, __pyx_L3_error)
-    __pyx_v_end = __Pyx_PyInt_As_Py_intptr_t(values[2]); if (unlikely((__pyx_v_end == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1309, __pyx_L3_error)
+    __pyx_v_start = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_start == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1379, __pyx_L3_error)
+    __pyx_v_end = __Pyx_PyInt_As_Py_intptr_t(values[2]); if (unlikely((__pyx_v_end == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1379, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1309, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_add_node", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1379, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVTree.CARTGVTree.test_add_node", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) __PYX_ERR(1, 1309, __pyx_L1_error)
-  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_20test_add_node(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), __pyx_v_splitter, __pyx_v_start, __pyx_v_end);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) __PYX_ERR(1, 1379, __pyx_L1_error)
+  __pyx_r = __pyx_pf_10CARTGVTree_10CARTGVTree_18test_add_node(((struct __pyx_obj_10CARTGVTree_CARTGVTree *)__pyx_v_self), __pyx_v_splitter, __pyx_v_start, __pyx_v_end);
 
   /* function exit code */
   goto __pyx_L0;
@@ -15211,7 +12826,7 @@ static PyObject *__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node(PyObject *__
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20test_add_node(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end) {
+static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_18test_add_node(struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_self, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *__pyx_v_splitter, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_start, __pyx_t_7sklearn_4tree_5_tree_SIZE_t __pyx_v_end) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -15220,7 +12835,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20test_add_node(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("test_add_node", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(__pyx_v_self, __pyx_v_splitter, __pyx_v_start, __pyx_v_end, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1309, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_f_10CARTGVTree_10CARTGVTree_test_add_node(__pyx_v_self, __pyx_v_splitter, __pyx_v_start, __pyx_v_end, 1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15237,7 +12852,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_20test_add_node(struct __pyx
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":57
+/* "CARTGVTree.pxd":58
  * 
  *   # Input/Output layout
  *   cdef public SIZE_t n_groups           # Number of group             # <<<<<<<<<<<<<<
@@ -15267,7 +12882,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8n_groups___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_groups); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15305,7 +12920,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8n_groups_2__set__(struct __pyx_ob
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 58, __pyx_L1_error)
   __pyx_v_self->n_groups = __pyx_t_1;
 
   /* function exit code */
@@ -15319,7 +12934,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8n_groups_2__set__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":59
+/* "CARTGVTree.pxd":60
  *   cdef public SIZE_t n_groups           # Number of group
  *   cdef int n_features                   # Total number of variables
  *   cdef public np.ndarray len_groups     # Number of features per group             # <<<<<<<<<<<<<<
@@ -15377,7 +12992,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_10len_groups_2__set__(struct __pyx
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  if (!(likely(((__pyx_v_value) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_value, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(2, 59, __pyx_L1_error)
+  if (!(likely(((__pyx_v_value) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_value, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(2, 60, __pyx_L1_error)
   __pyx_t_1 = __pyx_v_value;
   __Pyx_INCREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
@@ -15427,7 +13042,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_10len_groups_4__del__(struct __pyx
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":61
+/* "CARTGVTree.pxd":62
  *   cdef public np.ndarray len_groups     # Number of features per group
  *   cdef SIZE_t* n_classes                # Number of classes un y[:, k]
  *   cdef public SIZE_t n_outputs          # Number of outputs in k             # <<<<<<<<<<<<<<
@@ -15457,7 +13072,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9n_outputs___get__(struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 61, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->n_outputs); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15495,7 +13110,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_9n_outputs_2__set__(struct __pyx_o
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 61, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 62, __pyx_L1_error)
   __pyx_v_self->n_outputs = __pyx_t_1;
 
   /* function exit code */
@@ -15509,7 +13124,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_9n_outputs_2__set__(struct __pyx_o
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":62
+/* "CARTGVTree.pxd":63
  *   cdef SIZE_t* n_classes                # Number of classes un y[:, k]
  *   cdef public SIZE_t n_outputs          # Number of outputs in k
  *   cdef public SIZE_t max_n_classes      # max(n_classes)             # <<<<<<<<<<<<<<
@@ -15539,7 +13154,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_13max_n_classes___get__(stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 62, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_n_classes); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15577,7 +13192,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_13max_n_classes_2__set__(struct __
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 62, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 63, __pyx_L1_error)
   __pyx_v_self->max_n_classes = __pyx_t_1;
 
   /* function exit code */
@@ -15591,7 +13206,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_13max_n_classes_2__set__(struct __
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":66
+/* "CARTGVTree.pxd":67
  *   # Inner structures : values are stored separately from node structure,
  *   # since size is determined at runtime.
  *   cdef public SIZE_t max_depth          # Max depth of the tree             # <<<<<<<<<<<<<<
@@ -15621,7 +13236,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_9max_depth___get__(struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15659,7 +13274,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_9max_depth_2__set__(struct __pyx_o
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 67, __pyx_L1_error)
   __pyx_v_self->max_depth = __pyx_t_1;
 
   /* function exit code */
@@ -15673,7 +13288,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_9max_depth_2__set__(struct __pyx_o
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":67
+/* "CARTGVTree.pxd":68
  *   # since size is determined at runtime.
  *   cdef public SIZE_t max_depth          # Max depth of the tree
  *   cdef public SIZE_t node_count         # Counter for node IDs             # <<<<<<<<<<<<<<
@@ -15703,7 +13318,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_10node_count___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 67, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->node_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15741,7 +13356,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_10node_count_2__set__(struct __pyx
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 67, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 68, __pyx_L1_error)
   __pyx_v_self->node_count = __pyx_t_1;
 
   /* function exit code */
@@ -15755,7 +13370,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_10node_count_2__set__(struct __pyx
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":68
+/* "CARTGVTree.pxd":69
  *   cdef public SIZE_t max_depth          # Max depth of the tree
  *   cdef public SIZE_t node_count         # Counter for node IDs
  *   cdef public int n_leaves              # Number of leaves             # <<<<<<<<<<<<<<
@@ -15785,7 +13400,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8n_leaves___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n_leaves); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 68, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->n_leaves); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15823,7 +13438,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8n_leaves_2__set__(struct __pyx_ob
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(2, 68, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_value); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(2, 69, __pyx_L1_error)
   __pyx_v_self->n_leaves = __pyx_t_1;
 
   /* function exit code */
@@ -15837,7 +13452,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8n_leaves_2__set__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "CARTGVTree.pxd":69
+/* "CARTGVTree.pxd":70
  *   cdef public SIZE_t node_count         # Counter for node IDs
  *   cdef public int n_leaves              # Number of leaves
  *   cdef public SIZE_t capacity           # Capacity of tree, in terms of nodes             # <<<<<<<<<<<<<<
@@ -15867,7 +13482,7 @@ static PyObject *__pyx_pf_10CARTGVTree_10CARTGVTree_8capacity___get__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->capacity); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 69, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->capacity); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -15905,7 +13520,7 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8capacity_2__set__(struct __pyx_ob
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__set__", 0);
-  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 69, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_value); if (unlikely((__pyx_t_1 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(2, 70, __pyx_L1_error)
   __pyx_v_self->capacity = __pyx_t_1;
 
   /* function exit code */
@@ -15919,12 +13534,12 @@ static int __pyx_pf_10CARTGVTree_10CARTGVTree_8capacity_2__set__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1346
+/* "CARTGVTree.pyx":1416
  * 
  *     @property
  *     def splitter(self):             # <<<<<<<<<<<<<<
- *         return self.splitter
- * 
+ *         """
+ *         Return the splitter of the class
  */
 
 /* Python wrapper */
@@ -15945,9 +13560,9 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_8splitter___get__(str
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1347
- *     @property
- *     def splitter(self):
+  /* "CARTGVTree.pyx":1420
+ *         Return the splitter of the class
+ *         """
  *         return self.splitter             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -15957,12 +13572,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_8splitter___get__(str
   __pyx_r = ((PyObject *)__pyx_v_self->splitter);
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1346
+  /* "CARTGVTree.pyx":1416
  * 
  *     @property
  *     def splitter(self):             # <<<<<<<<<<<<<<
- *         return self.splitter
- * 
+ *         """
+ *         Return the splitter of the class
  */
 
   /* function exit code */
@@ -15972,12 +13587,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_8splitter___get__(str
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1350
+/* "CARTGVTree.pyx":1423
  * 
  *     @property
  *     def min_samples_split(self):             # <<<<<<<<<<<<<<
- *         return self.min_samples_split
- * 
+ *         """
+ *         Return the minimal number of samples in a node needed to split it
  */
 
 /* Python wrapper */
@@ -16002,26 +13617,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_17min_samples_split__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1351
- *     @property
- *     def min_samples_split(self):
+  /* "CARTGVTree.pyx":1427
+ *         Return the minimal number of samples in a node needed to split it
+ *         """
  *         return self.min_samples_split             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->min_samples_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1351, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->min_samples_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1350
+  /* "CARTGVTree.pyx":1423
  * 
  *     @property
  *     def min_samples_split(self):             # <<<<<<<<<<<<<<
- *         return self.min_samples_split
- * 
+ *         """
+ *         Return the minimal number of samples in a node needed to split it
  */
 
   /* function exit code */
@@ -16035,12 +13650,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_17min_samples_split__
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1354
+/* "CARTGVTree.pyx":1430
  * 
  *     @property
  *     def min_samples_leaf(self):             # <<<<<<<<<<<<<<
- *         return self.min_samples_leaf
- * 
+ *         """
+ *         Return the minimal number under which the nodes are considered leaves
  */
 
 /* Python wrapper */
@@ -16065,26 +13680,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_16min_samples_leaf___
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1355
- *     @property
- *     def min_samples_leaf(self):
+  /* "CARTGVTree.pyx":1434
+ *         Return the minimal number under which the nodes are considered leaves
+ *         """
  *         return self.min_samples_leaf             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->min_samples_leaf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1355, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->min_samples_leaf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1354
+  /* "CARTGVTree.pyx":1430
  * 
  *     @property
  *     def min_samples_leaf(self):             # <<<<<<<<<<<<<<
- *         return self.min_samples_leaf
- * 
+ *         """
+ *         Return the minimal number under which the nodes are considered leaves
  */
 
   /* function exit code */
@@ -16098,12 +13713,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_16min_samples_leaf___
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1358
+/* "CARTGVTree.pyx":1437
  * 
  *     @property
  *     def min_weight_leaf(self):             # <<<<<<<<<<<<<<
- *         return self.min_weight_leaf
- * 
+ *         """
+ *         Return the minimal weigth in a node under which it is considered a leaf
  */
 
 /* Python wrapper */
@@ -16128,26 +13743,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_15min_weight_leaf___g
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1359
- *     @property
- *     def min_weight_leaf(self):
+  /* "CARTGVTree.pyx":1441
+ *         Return the minimal weigth in a node under which it is considered a leaf
+ *         """
  *         return self.min_weight_leaf             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_weight_leaf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1359, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_weight_leaf); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1358
+  /* "CARTGVTree.pyx":1437
  * 
  *     @property
  *     def min_weight_leaf(self):             # <<<<<<<<<<<<<<
- *         return self.min_weight_leaf
- * 
+ *         """
+ *         Return the minimal weigth in a node under which it is considered a leaf
  */
 
   /* function exit code */
@@ -16161,12 +13776,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_15min_weight_leaf___g
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1362
+/* "CARTGVTree.pyx":1444
  * 
  *     @property
  *     def max_depth(self):             # <<<<<<<<<<<<<<
- *         return self.max_depth
- * 
+ *         """
+ *         Return the maximal depth at which the tree can grow
  */
 
 /* Python wrapper */
@@ -16191,26 +13806,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_9max_depth___get__(st
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1363
- *     @property
- *     def max_depth(self):
+  /* "CARTGVTree.pyx":1448
+ *         Return the maximal depth at which the tree can grow
+ *         """
  *         return self.max_depth             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1363, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_self->max_depth); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1362
+  /* "CARTGVTree.pyx":1444
  * 
  *     @property
  *     def max_depth(self):             # <<<<<<<<<<<<<<
- *         return self.max_depth
- * 
+ *         """
+ *         Return the maximal depth at which the tree can grow
  */
 
   /* function exit code */
@@ -16224,12 +13839,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_9max_depth___get__(st
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1366
+/* "CARTGVTree.pyx":1451
  * 
  *     @property
  *     def mgroup(self):             # <<<<<<<<<<<<<<
- *         return self.mgroup
- * 
+ *         """
+ *         Return the number of group that will be selected to split each node
  */
 
 /* Python wrapper */
@@ -16254,26 +13869,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_6mgroup___get__(struc
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1367
- *     @property
- *     def mgroup(self):
+  /* "CARTGVTree.pyx":1455
+ *         Return the number of group that will be selected to split each node
+ *         """
  *         return self.mgroup             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mgroup); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1367, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mgroup); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1366
+  /* "CARTGVTree.pyx":1451
  * 
  *     @property
  *     def mgroup(self):             # <<<<<<<<<<<<<<
- *         return self.mgroup
- * 
+ *         """
+ *         Return the number of group that will be selected to split each node
  */
 
   /* function exit code */
@@ -16287,12 +13902,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_6mgroup___get__(struc
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1370
+/* "CARTGVTree.pyx":1458
  * 
  *     @property
  *     def mvar(self):             # <<<<<<<<<<<<<<
- *         return self.mvar
- * 
+ *         """
+ *         Return the number of variables in the selected group that will be used to build the splitting tree
  */
 
 /* Python wrapper */
@@ -16317,26 +13932,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_4mvar___get__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1371
- *     @property
- *     def mvar(self):
+  /* "CARTGVTree.pyx":1462
+ *         Return the number of variables in the selected group that will be used to build the splitting tree
+ *         """
  *         return self.mvar             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mvar); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1371, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_mvar); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1370
+  /* "CARTGVTree.pyx":1458
  * 
  *     @property
  *     def mvar(self):             # <<<<<<<<<<<<<<
- *         return self.mvar
- * 
+ *         """
+ *         Return the number of variables in the selected group that will be used to build the splitting tree
  */
 
   /* function exit code */
@@ -16350,12 +13965,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_4mvar___get__(struct 
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1374
+/* "CARTGVTree.pyx":1465
  * 
  *     @property
  *     def min_impurity_decrease(self):             # <<<<<<<<<<<<<<
- *         return self.min_impurity_decrease
- * 
+ *         """
+ *         Return the minimal decrease in impurity needed above which the node isn't considerd a leaf
  */
 
 /* Python wrapper */
@@ -16380,26 +13995,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_21min_impurity_decrea
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1375
- *     @property
- *     def min_impurity_decrease(self):
+  /* "CARTGVTree.pyx":1469
+ *         Return the minimal decrease in impurity needed above which the node isn't considerd a leaf
+ *         """
  *         return self.min_impurity_decrease             # <<<<<<<<<<<<<<
  * 
  *     @property
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_impurity_decrease); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1375, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_impurity_decrease); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1374
+  /* "CARTGVTree.pyx":1465
  * 
  *     @property
  *     def min_impurity_decrease(self):             # <<<<<<<<<<<<<<
- *         return self.min_impurity_decrease
- * 
+ *         """
+ *         Return the minimal decrease in impurity needed above which the node isn't considerd a leaf
  */
 
   /* function exit code */
@@ -16413,12 +14028,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_21min_impurity_decrea
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1378
+/* "CARTGVTree.pyx":1472
  * 
  *     @property
  *     def min_impurity_split(self):             # <<<<<<<<<<<<<<
- *         return self.min_impurity_split
- * 
+ *         """
+ *         Return the minimal impurity under which the node is considered a leaf
  */
 
 /* Python wrapper */
@@ -16443,26 +14058,26 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_18min_impurity_split_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "CARTGVTree.pyx":1379
- *     @property
- *     def min_impurity_split(self):
+  /* "CARTGVTree.pyx":1476
+ *         Return the minimal impurity under which the node is considered a leaf
+ *         """
  *         return self.min_impurity_split             # <<<<<<<<<<<<<<
  * 
  *     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_impurity_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1379, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->min_impurity_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1378
+  /* "CARTGVTree.pyx":1472
  * 
  *     @property
  *     def min_impurity_split(self):             # <<<<<<<<<<<<<<
- *         return self.min_impurity_split
- * 
+ *         """
+ *         Return the minimal impurity under which the node is considered a leaf
  */
 
   /* function exit code */
@@ -16476,7 +14091,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_18min_impurity_split_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1381
+/* "CARTGVTree.pyx":1478
  *         return self.min_impurity_split
  * 
  *     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,             # <<<<<<<<<<<<<<
@@ -16533,41 +14148,41 @@ static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_samples_split)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 1); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_samples_leaf)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 2); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_weight_leaf)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 3); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_max_depth)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 4); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_impurity_decrease)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 5); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_min_impurity_split)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(1, 1381, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, 6); __PYX_ERR(1, 1478, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(1, 1381, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(1, 1478, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 7) {
       goto __pyx_L5_argtuple_error;
@@ -16581,22 +14196,22 @@ static int __pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_1__cinit__(PyObject *__pyx_
       values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
     }
     __pyx_v_splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)values[0]);
-    __pyx_v_min_samples_split = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_min_samples_split == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1381, __pyx_L3_error)
-    __pyx_v_min_samples_leaf = __Pyx_PyInt_As_Py_intptr_t(values[2]); if (unlikely((__pyx_v_min_samples_leaf == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1382, __pyx_L3_error)
-    __pyx_v_min_weight_leaf = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_min_weight_leaf == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1382, __pyx_L3_error)
+    __pyx_v_min_samples_split = __Pyx_PyInt_As_Py_intptr_t(values[1]); if (unlikely((__pyx_v_min_samples_split == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1478, __pyx_L3_error)
+    __pyx_v_min_samples_leaf = __Pyx_PyInt_As_Py_intptr_t(values[2]); if (unlikely((__pyx_v_min_samples_leaf == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1479, __pyx_L3_error)
+    __pyx_v_min_weight_leaf = __pyx_PyFloat_AsDouble(values[3]); if (unlikely((__pyx_v_min_weight_leaf == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1479, __pyx_L3_error)
     __pyx_v_max_depth = values[4];
-    __pyx_v_min_impurity_decrease = __pyx_PyFloat_AsDouble(values[5]); if (unlikely((__pyx_v_min_impurity_decrease == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1383, __pyx_L3_error)
-    __pyx_v_min_impurity_split = __pyx_PyFloat_AsDouble(values[6]); if (unlikely((__pyx_v_min_impurity_split == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1383, __pyx_L3_error)
+    __pyx_v_min_impurity_decrease = __pyx_PyFloat_AsDouble(values[5]); if (unlikely((__pyx_v_min_impurity_decrease == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1480, __pyx_L3_error)
+    __pyx_v_min_impurity_split = __pyx_PyFloat_AsDouble(values[6]); if (unlikely((__pyx_v_min_impurity_split == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1480, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1381, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1478, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVTree.CARTGVTreeBuilder.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) __PYX_ERR(1, 1381, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_splitter), __pyx_ptype_14CARTGVSplitter_CARTGVSplitter, 1, "splitter", 0))) __PYX_ERR(1, 1478, __pyx_L1_error)
   __pyx_r = __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(((struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *)__pyx_v_self), __pyx_v_splitter, __pyx_v_min_samples_split, __pyx_v_min_samples_leaf, __pyx_v_min_weight_leaf, __pyx_v_max_depth, __pyx_v_min_impurity_decrease, __pyx_v_min_impurity_split);
 
   /* function exit code */
@@ -16623,9 +14238,9 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "CARTGVTree.pyx":1384
- *                   SIZE_t min_samples_leaf, double min_weight_leaf,
- *                   object max_depth, double min_impurity_decrease, double min_impurity_split):
+  /* "CARTGVTree.pyx":1491
+ *         params min_impurity_split : A double the minimal impurity under which the node is considered a leaf
+ *         """
  *         self.splitter = splitter             # <<<<<<<<<<<<<<
  *         self.min_samples_split = min_samples_split
  *         self.min_samples_leaf = min_samples_leaf
@@ -16636,8 +14251,8 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
   __Pyx_DECREF(((PyObject *)__pyx_v_self->splitter));
   __pyx_v_self->splitter = __pyx_v_splitter;
 
-  /* "CARTGVTree.pyx":1385
- *                   object max_depth, double min_impurity_decrease, double min_impurity_split):
+  /* "CARTGVTree.pyx":1492
+ *         """
  *         self.splitter = splitter
  *         self.min_samples_split = min_samples_split             # <<<<<<<<<<<<<<
  *         self.min_samples_leaf = min_samples_leaf
@@ -16645,7 +14260,7 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->min_samples_split = __pyx_v_min_samples_split;
 
-  /* "CARTGVTree.pyx":1386
+  /* "CARTGVTree.pyx":1493
  *         self.splitter = splitter
  *         self.min_samples_split = min_samples_split
  *         self.min_samples_leaf = min_samples_leaf             # <<<<<<<<<<<<<<
@@ -16654,7 +14269,7 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->min_samples_leaf = __pyx_v_min_samples_leaf;
 
-  /* "CARTGVTree.pyx":1387
+  /* "CARTGVTree.pyx":1494
  *         self.min_samples_split = min_samples_split
  *         self.min_samples_leaf = min_samples_leaf
  *         self.min_weight_leaf = min_weight_leaf             # <<<<<<<<<<<<<<
@@ -16663,7 +14278,7 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->min_weight_leaf = __pyx_v_min_weight_leaf;
 
-  /* "CARTGVTree.pyx":1388
+  /* "CARTGVTree.pyx":1495
  *         self.min_samples_leaf = min_samples_leaf
  *         self.min_weight_leaf = min_weight_leaf
  *         self.max_depth = (np.iinfo(np.int32).max if max_depth is None             # <<<<<<<<<<<<<<
@@ -16672,14 +14287,14 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_t_2 = (__pyx_v_max_depth == Py_None);
   if ((__pyx_t_2 != 0)) {
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_iinfo); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_iinfo); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_int32); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_int32); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -16695,29 +14310,29 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
     __pyx_t_3 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_4, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_max); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_max); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_5); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1388, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_5); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1495, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_1 = __pyx_t_7;
   } else {
 
-    /* "CARTGVTree.pyx":1389
+    /* "CARTGVTree.pyx":1496
  *         self.min_weight_leaf = min_weight_leaf
  *         self.max_depth = (np.iinfo(np.int32).max if max_depth is None
  *                      else max_depth)             # <<<<<<<<<<<<<<
  *         self.min_impurity_decrease = min_impurity_decrease
  *         self.min_impurity_split = min_impurity_split
  */
-    __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_max_depth); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1389, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_As_Py_intptr_t(__pyx_v_max_depth); if (unlikely((__pyx_t_7 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1496, __pyx_L1_error)
     __pyx_t_1 = __pyx_t_7;
   }
 
-  /* "CARTGVTree.pyx":1388
+  /* "CARTGVTree.pyx":1495
  *         self.min_samples_leaf = min_samples_leaf
  *         self.min_weight_leaf = min_weight_leaf
  *         self.max_depth = (np.iinfo(np.int32).max if max_depth is None             # <<<<<<<<<<<<<<
@@ -16726,7 +14341,7 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->max_depth = __pyx_t_1;
 
-  /* "CARTGVTree.pyx":1390
+  /* "CARTGVTree.pyx":1497
  *         self.max_depth = (np.iinfo(np.int32).max if max_depth is None
  *                      else max_depth)
  *         self.min_impurity_decrease = min_impurity_decrease             # <<<<<<<<<<<<<<
@@ -16735,7 +14350,7 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->min_impurity_decrease = __pyx_v_min_impurity_decrease;
 
-  /* "CARTGVTree.pyx":1391
+  /* "CARTGVTree.pyx":1498
  *                      else max_depth)
  *         self.min_impurity_decrease = min_impurity_decrease
  *         self.min_impurity_split = min_impurity_split             # <<<<<<<<<<<<<<
@@ -16744,16 +14359,16 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
  */
   __pyx_v_self->min_impurity_split = __pyx_v_min_impurity_split;
 
-  /* "CARTGVTree.pyx":1394
+  /* "CARTGVTree.pyx":1501
  * #        self.splitting_tree_builder = TreeBuilder(splitter, min_samples_split, min_samples_leaf, min_weight_leaf,
  * #                                                  max_depth, min_impurity_decrease, min_impurity_split)
  *         faulthandler.enable()             # <<<<<<<<<<<<<<
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1394, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_faulthandler); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1501, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_enable); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1394, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_enable); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1501, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -16768,12 +14383,12 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
   }
   __pyx_t_5 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1394, __pyx_L1_error)
+  if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1501, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "CARTGVTree.pyx":1381
+  /* "CARTGVTree.pyx":1478
  *         return self.min_impurity_split
  * 
  *     def __cinit__(self, CARTGVSplitter splitter, SIZE_t min_samples_split,             # <<<<<<<<<<<<<<
@@ -16796,23 +14411,23 @@ static int __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder___cinit__(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1396
+/* "CARTGVTree.pyx":1503
  *         faulthandler.enable()
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,             # <<<<<<<<<<<<<<
  *                 object pen, np.ndarray sample_weight=None):
- *         """Build a decision tree from the training set (X, y)."""
+ *         """
  */
 
 static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *__pyx_v_self, struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_tree, PyObject *__pyx_v_X, PyArrayObject *__pyx_v_y, PyObject *__pyx_v_groups, PyArrayObject *__pyx_v_len_groups, PyObject *__pyx_v_pen, int __pyx_skip_dispatch, struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_build *__pyx_optional_args) {
 
-  /* "CARTGVTree.pyx":1397
+  /* "CARTGVTree.pyx":1504
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
  *                 object pen, np.ndarray sample_weight=None):             # <<<<<<<<<<<<<<
- *         """Build a decision tree from the training set (X, y)."""
- *         # check input
+ *         """
+ *         Build a decision tree from the training set (X, y).
  */
   PyArrayObject *__pyx_v_sample_weight = ((PyArrayObject *)Py_None);
   __pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *__pyx_v_sample_weight_ptr;
@@ -16879,12 +14494,12 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __Pyx_INCREF((PyObject *)__pyx_v_y);
   __Pyx_INCREF((PyObject *)__pyx_v_sample_weight);
 
-  /* "CARTGVTree.pyx":1396
+  /* "CARTGVTree.pyx":1503
  *         faulthandler.enable()
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,             # <<<<<<<<<<<<<<
  *                 object pen, np.ndarray sample_weight=None):
- *         """Build a decision tree from the training set (X, y)."""
+ *         """
  */
   /* Check if called by wrapper */
   if (unlikely(__pyx_skip_dispatch)) ;
@@ -16895,7 +14510,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_build); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1396, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_build); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1503, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -16914,7 +14529,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[8] = {__pyx_t_4, ((PyObject *)__pyx_v_tree), __pyx_v_X, ((PyObject *)__pyx_v_y), __pyx_v_groups, ((PyObject *)__pyx_v_len_groups), __pyx_v_pen, ((PyObject *)__pyx_v_sample_weight)};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1396, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1503, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
@@ -16922,13 +14537,13 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[8] = {__pyx_t_4, ((PyObject *)__pyx_v_tree), __pyx_v_X, ((PyObject *)__pyx_v_y), __pyx_v_groups, ((PyObject *)__pyx_v_len_groups), __pyx_v_pen, ((PyObject *)__pyx_v_sample_weight)};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1396, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1503, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
         #endif
         {
-          __pyx_t_6 = PyTuple_New(7+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1396, __pyx_L1_error)
+          __pyx_t_6 = PyTuple_New(7+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1503, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           if (__pyx_t_4) {
             __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -16954,7 +14569,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __Pyx_INCREF(((PyObject *)__pyx_v_sample_weight));
           __Pyx_GIVEREF(((PyObject *)__pyx_v_sample_weight));
           PyTuple_SET_ITEM(__pyx_t_6, 6+__pyx_t_5, ((PyObject *)__pyx_v_sample_weight));
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1396, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1503, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         }
@@ -16976,14 +14591,14 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     #endif
   }
 
-  /* "CARTGVTree.pyx":1400
- *         """Build a decision tree from the training set (X, y)."""
+  /* "CARTGVTree.pyx":1516
+ *         """
  *         # check input
  *         X, y, sample_weight = self._check_input(X, y, sample_weight)             # <<<<<<<<<<<<<<
  * 
  *         cdef DOUBLE_t* sample_weight_ptr = NULL
  */
-  __pyx_t_1 = __pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(__pyx_v_self, __pyx_v_X, __pyx_v_y, __pyx_v_sample_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1400, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(__pyx_v_self, __pyx_v_X, __pyx_v_y, __pyx_v_sample_weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1516, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
     PyObject* sequence = __pyx_t_1;
@@ -16991,7 +14606,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     if (unlikely(size != 3)) {
       if (size > 3) __Pyx_RaiseTooManyValuesError(3);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(1, 1400, __pyx_L1_error)
+      __PYX_ERR(1, 1516, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -17007,17 +14622,17 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     __Pyx_INCREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_t_6);
     #else
-    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1400, __pyx_L1_error)
+    __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1400, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1400, __pyx_L1_error)
+    __pyx_t_6 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
     Py_ssize_t index = -1;
-    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1400, __pyx_L1_error)
+    __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 1516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_7 = Py_TYPE(__pyx_t_4)->tp_iternext;
@@ -17027,7 +14642,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     __Pyx_GOTREF(__pyx_t_3);
     index = 2; __pyx_t_6 = __pyx_t_7(__pyx_t_4); if (unlikely(!__pyx_t_6)) goto __pyx_L3_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_4), 3) < 0) __PYX_ERR(1, 1400, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_7(__pyx_t_4), 3) < 0) __PYX_ERR(1, 1516, __pyx_L1_error)
     __pyx_t_7 = NULL;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L4_unpacking_done;
@@ -17035,11 +14650,11 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_7 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(1, 1400, __pyx_L1_error)
+    __PYX_ERR(1, 1516, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1400, __pyx_L1_error)
-  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1400, __pyx_L1_error)
+  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1516, __pyx_L1_error)
+  if (!(likely(((__pyx_t_6) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_6, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1516, __pyx_L1_error)
   __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_2);
   __pyx_t_2 = 0;
   __Pyx_DECREF_SET(__pyx_v_y, ((PyArrayObject *)__pyx_t_3));
@@ -17047,7 +14662,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __Pyx_DECREF_SET(__pyx_v_sample_weight, ((PyArrayObject *)__pyx_t_6));
   __pyx_t_6 = 0;
 
-  /* "CARTGVTree.pyx":1402
+  /* "CARTGVTree.pyx":1518
  *         X, y, sample_weight = self._check_input(X, y, sample_weight)
  * 
  *         cdef DOUBLE_t* sample_weight_ptr = NULL             # <<<<<<<<<<<<<<
@@ -17056,7 +14671,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_sample_weight_ptr = NULL;
 
-  /* "CARTGVTree.pyx":1403
+  /* "CARTGVTree.pyx":1519
  * 
  *         cdef DOUBLE_t* sample_weight_ptr = NULL
  *         if sample_weight is not None:             # <<<<<<<<<<<<<<
@@ -17067,7 +14682,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_9 = (__pyx_t_8 != 0);
   if (__pyx_t_9) {
 
-    /* "CARTGVTree.pyx":1404
+    /* "CARTGVTree.pyx":1520
  *         cdef DOUBLE_t* sample_weight_ptr = NULL
  *         if sample_weight is not None:
  *             sample_weight_ptr = <DOUBLE_t*> sample_weight.data             # <<<<<<<<<<<<<<
@@ -17076,7 +14691,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
     __pyx_v_sample_weight_ptr = ((__pyx_t_7sklearn_4tree_5_tree_DOUBLE_t *)__pyx_v_sample_weight->data);
 
-    /* "CARTGVTree.pyx":1403
+    /* "CARTGVTree.pyx":1519
  * 
  *         cdef DOUBLE_t* sample_weight_ptr = NULL
  *         if sample_weight is not None:             # <<<<<<<<<<<<<<
@@ -17085,7 +14700,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   }
 
-  /* "CARTGVTree.pyx":1409
+  /* "CARTGVTree.pyx":1525
  *         cdef int init_capacity
  * 
  *         if tree.max_depth <= 10:             # <<<<<<<<<<<<<<
@@ -17095,7 +14710,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_9 = ((__pyx_v_tree->max_depth <= 10) != 0);
   if (__pyx_t_9) {
 
-    /* "CARTGVTree.pyx":1410
+    /* "CARTGVTree.pyx":1526
  * 
  *         if tree.max_depth <= 10:
  *             init_capacity = (2 ** (tree.max_depth + 1)) - 1             # <<<<<<<<<<<<<<
@@ -17104,7 +14719,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
     __pyx_v_init_capacity = (__Pyx_pow_long(2, (__pyx_v_tree->max_depth + 1)) - 1);
 
-    /* "CARTGVTree.pyx":1409
+    /* "CARTGVTree.pyx":1525
  *         cdef int init_capacity
  * 
  *         if tree.max_depth <= 10:             # <<<<<<<<<<<<<<
@@ -17114,7 +14729,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
     goto __pyx_L6;
   }
 
-  /* "CARTGVTree.pyx":1412
+  /* "CARTGVTree.pyx":1528
  *             init_capacity = (2 ** (tree.max_depth + 1)) - 1
  *         else:
  *             init_capacity = 2047             # <<<<<<<<<<<<<<
@@ -17126,16 +14741,16 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   }
   __pyx_L6:;
 
-  /* "CARTGVTree.pyx":1415
+  /* "CARTGVTree.pyx":1531
  * 
  *         # Resize the tree, it's field such as nodes
  *         tree._resize(init_capacity)             # <<<<<<<<<<<<<<
  * 
  *         # Parameters
  */
-  __pyx_t_5 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_resize(__pyx_v_tree, __pyx_v_init_capacity); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1415, __pyx_L1_error)
+  __pyx_t_5 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_resize(__pyx_v_tree, __pyx_v_init_capacity); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1531, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":1418
+  /* "CARTGVTree.pyx":1534
  * 
  *         # Parameters
  *         cdef CARTGVSplitter splitter = self.splitter                        # The splitter to create our tree             # <<<<<<<<<<<<<<
@@ -17147,7 +14762,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_v_splitter = ((struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":1419
+  /* "CARTGVTree.pyx":1535
  *         # Parameters
  *         cdef CARTGVSplitter splitter = self.splitter                        # The splitter to create our tree
  *         cdef SIZE_t max_depth = self.max_depth                              # The maximum depth of our splitting tree             # <<<<<<<<<<<<<<
@@ -17157,7 +14772,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_10 = __pyx_v_self->max_depth;
   __pyx_v_max_depth = __pyx_t_10;
 
-  /* "CARTGVTree.pyx":1420
+  /* "CARTGVTree.pyx":1536
  *         cdef CARTGVSplitter splitter = self.splitter                        # The splitter to create our tree
  *         cdef SIZE_t max_depth = self.max_depth                              # The maximum depth of our splitting tree
  *         cdef SIZE_t min_samples_leaf = self.min_samples_leaf                # The minimum number of observation/sample in a leaf             # <<<<<<<<<<<<<<
@@ -17167,7 +14782,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_10 = __pyx_v_self->min_samples_leaf;
   __pyx_v_min_samples_leaf = __pyx_t_10;
 
-  /* "CARTGVTree.pyx":1421
+  /* "CARTGVTree.pyx":1537
  *         cdef SIZE_t max_depth = self.max_depth                              # The maximum depth of our splitting tree
  *         cdef SIZE_t min_samples_leaf = self.min_samples_leaf                # The minimum number of observation/sample in a leaf
  *         cdef double min_weight_leaf = self.min_weight_leaf                  # The minimum weight in a leaf             # <<<<<<<<<<<<<<
@@ -17177,7 +14792,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_11 = __pyx_v_self->min_weight_leaf;
   __pyx_v_min_weight_leaf = __pyx_t_11;
 
-  /* "CARTGVTree.pyx":1422
+  /* "CARTGVTree.pyx":1538
  *         cdef SIZE_t min_samples_leaf = self.min_samples_leaf                # The minimum number of observation/sample in a leaf
  *         cdef double min_weight_leaf = self.min_weight_leaf                  # The minimum weight in a leaf
  *         cdef SIZE_t min_samples_split = self.min_samples_split              # The minimum number needed to split a node             # <<<<<<<<<<<<<<
@@ -17187,7 +14802,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_10 = __pyx_v_self->min_samples_split;
   __pyx_v_min_samples_split = __pyx_t_10;
 
-  /* "CARTGVTree.pyx":1423
+  /* "CARTGVTree.pyx":1539
  *         cdef double min_weight_leaf = self.min_weight_leaf                  # The minimum weight in a leaf
  *         cdef SIZE_t min_samples_split = self.min_samples_split              # The minimum number needed to split a node
  *         cdef double min_impurity_decrease = self.min_impurity_decrease      # The minimum decrease in impurity needed for a node             # <<<<<<<<<<<<<<
@@ -17197,7 +14812,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_11 = __pyx_v_self->min_impurity_decrease;
   __pyx_v_min_impurity_decrease = __pyx_t_11;
 
-  /* "CARTGVTree.pyx":1424
+  /* "CARTGVTree.pyx":1540
  *         cdef SIZE_t min_samples_split = self.min_samples_split              # The minimum number needed to split a node
  *         cdef double min_impurity_decrease = self.min_impurity_decrease      # The minimum decrease in impurity needed for a node
  *         cdef double min_impurity_split = self.min_impurity_split            # The minimum impurity decrease needed for a split             # <<<<<<<<<<<<<<
@@ -17207,7 +14822,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_11 = __pyx_v_self->min_impurity_split;
   __pyx_v_min_impurity_split = __pyx_t_11;
 
-  /* "CARTGVTree.pyx":1425
+  /* "CARTGVTree.pyx":1541
  *         cdef double min_impurity_decrease = self.min_impurity_decrease      # The minimum decrease in impurity needed for a node
  *         cdef double min_impurity_split = self.min_impurity_split            # The minimum impurity decrease needed for a split
  *         cdef bint impurity_childs_bool = True             # <<<<<<<<<<<<<<
@@ -17216,20 +14831,20 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_impurity_childs_bool = 1;
 
-  /* "CARTGVTree.pyx":1428
+  /* "CARTGVTree.pyx":1544
  * 
  *         # Recursive partition (without actual recursion)
  *         splitter.init(X, y, sample_weight_ptr, groups, len_groups)             # <<<<<<<<<<<<<<
  * 
  *         cdef SIZE_t start                                                   # The starting position in the sample array for the node
  */
-  __pyx_t_12 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__(((PyObject *)__pyx_v_y), 0); if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(1, 1428, __pyx_L1_error)
-  __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->init(__pyx_v_splitter, __pyx_v_X, __pyx_t_12, __pyx_v_sample_weight_ptr, __pyx_v_groups, __pyx_v_len_groups); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1428, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_to_MemoryviewSlice_d_dc_nn___pyx_t_7sklearn_4tree_5_tree_DOUBLE_t__const__(((PyObject *)__pyx_v_y), 0); if (unlikely(!__pyx_t_12.memview)) __PYX_ERR(1, 1544, __pyx_L1_error)
+  __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->init(__pyx_v_splitter, __pyx_v_X, __pyx_t_12, __pyx_v_sample_weight_ptr, __pyx_v_groups, __pyx_v_len_groups); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1544, __pyx_L1_error)
   __PYX_XDEC_MEMVIEW(&__pyx_t_12, 1);
   __pyx_t_12.memview = NULL;
   __pyx_t_12.data = NULL;
 
-  /* "CARTGVTree.pyx":1434
+  /* "CARTGVTree.pyx":1550
  *         cdef SIZE_t depth                                                   # The depth of the node
  *         cdef SIZE_t parent                                                  # The parent of the node
  *         cdef SIZE_t n_node_samples = splitter.n_samples                     # The number of samples/observations in the node             # <<<<<<<<<<<<<<
@@ -17239,7 +14854,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_10 = __pyx_v_splitter->n_samples;
   __pyx_v_n_node_samples = __pyx_t_10;
 
-  /* "CARTGVTree.pyx":1435
+  /* "CARTGVTree.pyx":1551
  *         cdef SIZE_t parent                                                  # The parent of the node
  *         cdef SIZE_t n_node_samples = splitter.n_samples                     # The number of samples/observations in the node
  *         cdef double weighted_n_samples = splitter.weighted_n_samples        # The weight of the samples in the node             # <<<<<<<<<<<<<<
@@ -17249,7 +14864,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_11 = __pyx_v_splitter->weighted_n_samples;
   __pyx_v_weighted_n_samples = __pyx_t_11;
 
-  /* "CARTGVTree.pyx":1440
+  /* "CARTGVTree.pyx":1556
  *         cdef SIZE_t node_id                                                 # The current node id
  * 
  *         cdef double impurity = INFINITY                                     # The current impurity             # <<<<<<<<<<<<<<
@@ -17258,7 +14873,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_impurity = __pyx_v_10CARTGVTree_INFINITY;
 
-  /* "CARTGVTree.pyx":1442
+  /* "CARTGVTree.pyx":1558
  *         cdef double impurity = INFINITY                                     # The current impurity
  *         cdef SIZE_t n_constant_features                                     # The number of constant features (not used)
  *         cdef bint is_leaf = False                                           # Boolean, True if the current node is a leaf, False otherwise             # <<<<<<<<<<<<<<
@@ -17267,7 +14882,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_is_leaf = 0;
 
-  /* "CARTGVTree.pyx":1443
+  /* "CARTGVTree.pyx":1559
  *         cdef SIZE_t n_constant_features                                     # The number of constant features (not used)
  *         cdef bint is_leaf = False                                           # Boolean, True if the current node is a leaf, False otherwise
  *         cdef bint first = 1                                                 # Boolean, True if it is the first node added to the tree, false otherwise             # <<<<<<<<<<<<<<
@@ -17276,7 +14891,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_first = 1;
 
-  /* "CARTGVTree.pyx":1444
+  /* "CARTGVTree.pyx":1560
  *         cdef bint is_leaf = False                                           # Boolean, True if the current node is a leaf, False otherwise
  *         cdef bint first = 1                                                 # Boolean, True if it is the first node added to the tree, false otherwise
  *         cdef SIZE_t max_depth_seen = -1                                     #             # <<<<<<<<<<<<<<
@@ -17285,7 +14900,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_max_depth_seen = -1;
 
-  /* "CARTGVTree.pyx":1445
+  /* "CARTGVTree.pyx":1561
  *         cdef bint first = 1                                                 # Boolean, True if it is the first node added to the tree, false otherwise
  *         cdef SIZE_t max_depth_seen = -1                                     #
  *         cdef int rc = 0                                                     # Return code of the stack             # <<<<<<<<<<<<<<
@@ -17294,22 +14909,22 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_rc = 0;
 
-  /* "CARTGVTree.pyx":1449
+  /* "CARTGVTree.pyx":1565
  *         cdef Tree splitting_tree                                            # The splitting tree of the node
  * 
  *         cdef Stack stack = Stack(INITIAL_STACK_SIZE)                        # The stack that contains the records             # <<<<<<<<<<<<<<
  *         cdef StackRecord stack_record                                       # A record for the stack
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_10CARTGVTree_INITIAL_STACK_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1449, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_Py_intptr_t(__pyx_v_10CARTGVTree_INITIAL_STACK_SIZE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_11CARTGVutils_Stack), __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1449, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_11CARTGVutils_Stack), __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_stack = ((struct __pyx_obj_11CARTGVutils_Stack *)__pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "CARTGVTree.pyx":1452
+  /* "CARTGVTree.pyx":1568
  *         cdef StackRecord stack_record                                       # A record for the stack
  * 
  *         cdef SIZE_t cart_idx = -2             # <<<<<<<<<<<<<<
@@ -17318,7 +14933,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   __pyx_v_cart_idx = -2;
 
-  /* "CARTGVTree.pyx":1455
+  /* "CARTGVTree.pyx":1571
  *         cdef SIZE_t* leaves_ids
  * 
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -17333,17 +14948,17 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
       #endif
       /*try:*/ {
 
-        /* "CARTGVTree.pyx":1457
+        /* "CARTGVTree.pyx":1573
  *         with nogil:
  *             # push root node onto stack
  *             rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0, -2)             # <<<<<<<<<<<<<<
  *             if rc == -1:
  *                 # got return code -1 - out-of-memory
  */
-        __pyx_t_5 = ((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->push(__pyx_v_stack, 0, __pyx_v_n_node_samples, 0, __pyx_v_10CARTGVTree__TREE_UNDEFINED, 0, __pyx_v_10CARTGVTree_INFINITY, 0, -2); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1457, __pyx_L8_error)
+        __pyx_t_5 = ((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->push(__pyx_v_stack, 0, __pyx_v_n_node_samples, 0, __pyx_v_10CARTGVTree__TREE_UNDEFINED, 0, __pyx_v_10CARTGVTree_INFINITY, 0, -2); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1573, __pyx_L8_error)
         __pyx_v_rc = __pyx_t_5;
 
-        /* "CARTGVTree.pyx":1458
+        /* "CARTGVTree.pyx":1574
  *             # push root node onto stack
  *             rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0, -2)
  *             if rc == -1:             # <<<<<<<<<<<<<<
@@ -17353,7 +14968,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         __pyx_t_9 = ((__pyx_v_rc == -1L) != 0);
         if (__pyx_t_9) {
 
-          /* "CARTGVTree.pyx":1460
+          /* "CARTGVTree.pyx":1576
  *             if rc == -1:
  *                 # got return code -1 - out-of-memory
  *                 with gil:             # <<<<<<<<<<<<<<
@@ -17366,17 +14981,17 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
               #endif
               /*try:*/ {
 
-                /* "CARTGVTree.pyx":1461
+                /* "CARTGVTree.pyx":1577
  *                 # got return code -1 - out-of-memory
  *                 with gil:
  *                     raise MemoryError()             # <<<<<<<<<<<<<<
  * 
  *             # Loop until the stack is empty (if the last leaf has been treated)
  */
-                PyErr_NoMemory(); __PYX_ERR(1, 1461, __pyx_L12_error)
+                PyErr_NoMemory(); __PYX_ERR(1, 1577, __pyx_L12_error)
               }
 
-              /* "CARTGVTree.pyx":1460
+              /* "CARTGVTree.pyx":1576
  *             if rc == -1:
  *                 # got return code -1 - out-of-memory
  *                 with gil:             # <<<<<<<<<<<<<<
@@ -17393,7 +15008,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
               }
           }
 
-          /* "CARTGVTree.pyx":1458
+          /* "CARTGVTree.pyx":1574
  *             # push root node onto stack
  *             rc = stack.push(0, n_node_samples, 0, _TREE_UNDEFINED, 0, INFINITY, 0, -2)
  *             if rc == -1:             # <<<<<<<<<<<<<<
@@ -17402,7 +15017,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
         }
 
-        /* "CARTGVTree.pyx":1464
+        /* "CARTGVTree.pyx":1580
  * 
  *             # Loop until the stack is empty (if the last leaf has been treated)
  *             while not stack.is_empty():             # <<<<<<<<<<<<<<
@@ -17413,7 +15028,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_9 = ((!(((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->is_empty(__pyx_v_stack) != 0)) != 0);
           if (!__pyx_t_9) break;
 
-          /* "CARTGVTree.pyx":1467
+          /* "CARTGVTree.pyx":1583
  * #                with gil:
  * #                    print("### LOOP " + str(tree.node_count) + " ####")
  *                 stack.pop(&stack_record)             # <<<<<<<<<<<<<<
@@ -17422,7 +15037,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           (void)(((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->pop(__pyx_v_stack, (&__pyx_v_stack_record)));
 
-          /* "CARTGVTree.pyx":1469
+          /* "CARTGVTree.pyx":1585
  *                 stack.pop(&stack_record)
  * 
  *                 start = stack_record.start             # <<<<<<<<<<<<<<
@@ -17432,7 +15047,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.start;
           __pyx_v_start = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1470
+          /* "CARTGVTree.pyx":1586
  * 
  *                 start = stack_record.start
  *                 end = stack_record.end             # <<<<<<<<<<<<<<
@@ -17442,7 +15057,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.end;
           __pyx_v_end = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1471
+          /* "CARTGVTree.pyx":1587
  *                 start = stack_record.start
  *                 end = stack_record.end
  *                 depth = stack_record.depth             # <<<<<<<<<<<<<<
@@ -17452,7 +15067,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.depth;
           __pyx_v_depth = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1472
+          /* "CARTGVTree.pyx":1588
  *                 end = stack_record.end
  *                 depth = stack_record.depth
  *                 parent = stack_record.parent             # <<<<<<<<<<<<<<
@@ -17462,7 +15077,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.parent;
           __pyx_v_parent = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1473
+          /* "CARTGVTree.pyx":1589
  *                 depth = stack_record.depth
  *                 parent = stack_record.parent
  *                 impurity = stack_record.impurity             # <<<<<<<<<<<<<<
@@ -17472,7 +15087,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_11 = __pyx_v_stack_record.impurity;
           __pyx_v_impurity = __pyx_t_11;
 
-          /* "CARTGVTree.pyx":1474
+          /* "CARTGVTree.pyx":1590
  *                 parent = stack_record.parent
  *                 impurity = stack_record.impurity
  *                 n_constant_features = stack_record.n_constant_features             # <<<<<<<<<<<<<<
@@ -17482,7 +15097,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.n_constant_features;
           __pyx_v_n_constant_features = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1475
+          /* "CARTGVTree.pyx":1591
  *                 impurity = stack_record.impurity
  *                 n_constant_features = stack_record.n_constant_features
  *                 cart_idx = stack_record.cart_idx             # <<<<<<<<<<<<<<
@@ -17492,7 +15107,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_10 = __pyx_v_stack_record.cart_idx;
           __pyx_v_cart_idx = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1477
+          /* "CARTGVTree.pyx":1593
  *                 cart_idx = stack_record.cart_idx
  * 
  *                 n_node_samples = end - start             # <<<<<<<<<<<<<<
@@ -17501,16 +15116,16 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           __pyx_v_n_node_samples = (__pyx_v_end - __pyx_v_start);
 
-          /* "CARTGVTree.pyx":1479
+          /* "CARTGVTree.pyx":1595
  *                 n_node_samples = end - start
  * 
  *                 splitter.node_reset(start, end, &weighted_n_node_samples)             # <<<<<<<<<<<<<<
  * 
  *                 is_leaf = (depth >= max_depth or
  */
-          __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&__pyx_v_weighted_n_node_samples)); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1479, __pyx_L8_error)
+          __pyx_t_5 = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_reset(__pyx_v_splitter, __pyx_v_start, __pyx_v_end, (&__pyx_v_weighted_n_node_samples)); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1595, __pyx_L8_error)
 
-          /* "CARTGVTree.pyx":1481
+          /* "CARTGVTree.pyx":1597
  *                 splitter.node_reset(start, end, &weighted_n_node_samples)
  * 
  *                 is_leaf = (depth >= max_depth or             # <<<<<<<<<<<<<<
@@ -17524,7 +15139,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L16_bool_binop_done;
           }
 
-          /* "CARTGVTree.pyx":1482
+          /* "CARTGVTree.pyx":1598
  * 
  *                 is_leaf = (depth >= max_depth or
  *                            n_node_samples < min_samples_split or             # <<<<<<<<<<<<<<
@@ -17538,7 +15153,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L16_bool_binop_done;
           }
 
-          /* "CARTGVTree.pyx":1483
+          /* "CARTGVTree.pyx":1599
  *                 is_leaf = (depth >= max_depth or
  *                            n_node_samples < min_samples_split or
  *                            n_node_samples < 2 * min_samples_leaf or             # <<<<<<<<<<<<<<
@@ -17552,7 +15167,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L16_bool_binop_done;
           }
 
-          /* "CARTGVTree.pyx":1484
+          /* "CARTGVTree.pyx":1600
  *                            n_node_samples < min_samples_split or
  *                            n_node_samples < 2 * min_samples_leaf or
  *                            weighted_n_node_samples < 2 * min_weight_leaf or             # <<<<<<<<<<<<<<
@@ -17566,7 +15181,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L16_bool_binop_done;
           }
 
-          /* "CARTGVTree.pyx":1485
+          /* "CARTGVTree.pyx":1601
  *                            n_node_samples < 2 * min_samples_leaf or
  *                            weighted_n_node_samples < 2 * min_weight_leaf or
  *                            impurity <= min_impurity_split)             # <<<<<<<<<<<<<<
@@ -17578,7 +15193,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_L16_bool_binop_done:;
           __pyx_v_is_leaf = __pyx_t_9;
 
-          /* "CARTGVTree.pyx":1488
+          /* "CARTGVTree.pyx":1604
  * #                           or (n_node_samples == 2 and impurity == 0.5)) #TODO check si cela ne cause pas d'autre erreur
  * 
  *                 if first:             # <<<<<<<<<<<<<<
@@ -17588,7 +15203,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_9 = (__pyx_v_first != 0);
           if (__pyx_t_9) {
 
-            /* "CARTGVTree.pyx":1489
+            /* "CARTGVTree.pyx":1605
  * 
  *                 if first:
  *                     impurity = splitter.node_impurity()             # <<<<<<<<<<<<<<
@@ -17597,7 +15212,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             __pyx_v_impurity = ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_impurity(__pyx_v_splitter);
 
-            /* "CARTGVTree.pyx":1490
+            /* "CARTGVTree.pyx":1606
  *                 if first:
  *                     impurity = splitter.node_impurity()
  *                     first = 0             # <<<<<<<<<<<<<<
@@ -17606,7 +15221,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             __pyx_v_first = 0;
 
-            /* "CARTGVTree.pyx":1488
+            /* "CARTGVTree.pyx":1604
  * #                           or (n_node_samples == 2 and impurity == 0.5)) #TODO check si cela ne cause pas d'autre erreur
  * 
  *                 if first:             # <<<<<<<<<<<<<<
@@ -17615,7 +15230,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           }
 
-          /* "CARTGVTree.pyx":1492
+          /* "CARTGVTree.pyx":1608
  *                     first = 0
  * 
  *                 is_leaf = (is_leaf or             # <<<<<<<<<<<<<<
@@ -17629,7 +15244,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L22_bool_binop_done;
           }
 
-          /* "CARTGVTree.pyx":1493
+          /* "CARTGVTree.pyx":1609
  * 
  *                 is_leaf = (is_leaf or
  *                            (impurity <= min_impurity_split))             # <<<<<<<<<<<<<<
@@ -17641,7 +15256,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_L22_bool_binop_done:;
           __pyx_v_is_leaf = __pyx_t_9;
 
-          /* "CARTGVTree.pyx":1496
+          /* "CARTGVTree.pyx":1612
  * 
  *                 # If the node isn't a leaf, we call the splitter to split it
  *                 if not is_leaf:             # <<<<<<<<<<<<<<
@@ -17651,7 +15266,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_9 = ((!(__pyx_v_is_leaf != 0)) != 0);
           if (__pyx_t_9) {
 
-            /* "CARTGVTree.pyx":1497
+            /* "CARTGVTree.pyx":1613
  *                 # If the node isn't a leaf, we call the splitter to split it
  *                 if not is_leaf:
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -17664,7 +15279,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 #endif
                 /*try:*/ {
 
-                  /* "CARTGVTree.pyx":1498
+                  /* "CARTGVTree.pyx":1614
  *                 if not is_leaf:
  *                     with gil:
  *                         splitter.node_split(impurity, &split, &n_constant_features, start, end) # TODO Make the function no gil             # <<<<<<<<<<<<<<
@@ -17674,7 +15289,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   (void)(((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_split(__pyx_v_splitter, __pyx_v_impurity, (&__pyx_v_split), (&__pyx_v_n_constant_features), __pyx_v_start, __pyx_v_end));
                 }
 
-                /* "CARTGVTree.pyx":1497
+                /* "CARTGVTree.pyx":1613
  *                 # If the node isn't a leaf, we call the splitter to split it
  *                 if not is_leaf:
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -17692,7 +15307,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 }
             }
 
-            /* "CARTGVTree.pyx":1503
+            /* "CARTGVTree.pyx":1619
  *                     # dissimilar to v0.18
  * 
  *                     is_leaf = (is_leaf or             # <<<<<<<<<<<<<<
@@ -17706,7 +15321,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
               goto __pyx_L30_bool_binop_done;
             }
 
-            /* "CARTGVTree.pyx":1504
+            /* "CARTGVTree.pyx":1620
  * 
  *                     is_leaf = (is_leaf or
  *                                (split.improvement + EPSILON <             # <<<<<<<<<<<<<<
@@ -17718,7 +15333,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             __pyx_L30_bool_binop_done:;
             __pyx_v_is_leaf = __pyx_t_9;
 
-            /* "CARTGVTree.pyx":1507
+            /* "CARTGVTree.pyx":1623
  *                                 min_impurity_decrease))
  * 
  *                     if not is_leaf and split.n_childs == 1:             # <<<<<<<<<<<<<<
@@ -17736,7 +15351,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             __pyx_L33_bool_binop_done:;
             if (__pyx_t_9) {
 
-              /* "CARTGVTree.pyx":1508
+              /* "CARTGVTree.pyx":1624
  * 
  *                     if not is_leaf and split.n_childs == 1:
  *                         is_leaf = True             # <<<<<<<<<<<<<<
@@ -17745,7 +15360,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
               __pyx_v_is_leaf = 1;
 
-              /* "CARTGVTree.pyx":1509
+              /* "CARTGVTree.pyx":1625
  *                     if not is_leaf and split.n_childs == 1:
  *                         is_leaf = True
  *                         split.n_childs = 0             # <<<<<<<<<<<<<<
@@ -17754,7 +15369,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
               __pyx_v_split.n_childs = 0;
 
-              /* "CARTGVTree.pyx":1510
+              /* "CARTGVTree.pyx":1626
  *                         is_leaf = True
  *                         split.n_childs = 0
  *                         split.group = -1             # <<<<<<<<<<<<<<
@@ -17763,7 +15378,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
               __pyx_v_split.group = -1;
 
-              /* "CARTGVTree.pyx":1511
+              /* "CARTGVTree.pyx":1627
  *                         split.n_childs = 0
  *                         split.group = -1
  *                         with gil:             # <<<<<<<<<<<<<<
@@ -17776,7 +15391,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   #endif
                   /*try:*/ {
 
-                    /* "CARTGVTree.pyx":1512
+                    /* "CARTGVTree.pyx":1628
  *                         split.group = -1
  *                         with gil:
  *                             splitting_tree = None             # <<<<<<<<<<<<<<
@@ -17787,7 +15402,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                     __Pyx_XDECREF_SET(__pyx_v_splitting_tree, ((struct __pyx_obj_7sklearn_4tree_5_tree_Tree *)Py_None));
                   }
 
-                  /* "CARTGVTree.pyx":1511
+                  /* "CARTGVTree.pyx":1627
  *                         split.n_childs = 0
  *                         split.group = -1
  *                         with gil:             # <<<<<<<<<<<<<<
@@ -17805,7 +15420,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   }
               }
 
-              /* "CARTGVTree.pyx":1507
+              /* "CARTGVTree.pyx":1623
  *                                 min_impurity_decrease))
  * 
  *                     if not is_leaf and split.n_childs == 1:             # <<<<<<<<<<<<<<
@@ -17814,7 +15429,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             }
 
-            /* "CARTGVTree.pyx":1496
+            /* "CARTGVTree.pyx":1612
  * 
  *                 # If the node isn't a leaf, we call the splitter to split it
  *                 if not is_leaf:             # <<<<<<<<<<<<<<
@@ -17824,7 +15439,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L24;
           }
 
-          /* "CARTGVTree.pyx":1515
+          /* "CARTGVTree.pyx":1631
  * 
  *                 else:
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -17838,7 +15453,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 #endif
                 /*try:*/ {
 
-                  /* "CARTGVTree.pyx":1516
+                  /* "CARTGVTree.pyx":1632
  *                 else:
  *                     with gil:
  *                         split.n_childs = 0             # <<<<<<<<<<<<<<
@@ -17847,7 +15462,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   __pyx_v_split.n_childs = 0;
 
-                  /* "CARTGVTree.pyx":1517
+                  /* "CARTGVTree.pyx":1633
  *                     with gil:
  *                         split.n_childs = 0
  *                         split.group = -1             # <<<<<<<<<<<<<<
@@ -17856,7 +15471,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   __pyx_v_split.group = -1;
 
-                  /* "CARTGVTree.pyx":1518
+                  /* "CARTGVTree.pyx":1634
  *                         split.n_childs = 0
  *                         split.group = -1
  *                         splitting_tree = None             # <<<<<<<<<<<<<<
@@ -17867,7 +15482,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   __Pyx_XDECREF_SET(__pyx_v_splitting_tree, ((struct __pyx_obj_7sklearn_4tree_5_tree_Tree *)Py_None));
                 }
 
-                /* "CARTGVTree.pyx":1515
+                /* "CARTGVTree.pyx":1631
  * 
  *                 else:
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -17887,7 +15502,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           }
           __pyx_L24:;
 
-          /* "CARTGVTree.pyx":1521
+          /* "CARTGVTree.pyx":1637
  * 
  *                 # Get the penality function and compute the impurity
  *                 with gil:             # <<<<<<<<<<<<<<
@@ -17900,7 +15515,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
               #endif
               /*try:*/ {
 
-                /* "CARTGVTree.pyx":1522
+                /* "CARTGVTree.pyx":1638
  *                 # Get the penality function and compute the impurity
  *                 with gil:
  *                     penality = 0             # <<<<<<<<<<<<<<
@@ -17910,19 +15525,19 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 __Pyx_INCREF(__pyx_int_0);
                 __Pyx_XDECREF_SET(__pyx_v_penality, __pyx_int_0);
 
-                /* "CARTGVTree.pyx":1523
+                /* "CARTGVTree.pyx":1639
  *                 with gil:
  *                     penality = 0
  *                     if pen == None:             # <<<<<<<<<<<<<<
  *                         penality = 1
  *                     elif pen == "root":
  */
-                __pyx_t_6 = PyObject_RichCompare(__pyx_v_pen, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1523, __pyx_L48_error)
-                __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1523, __pyx_L48_error)
+                __pyx_t_6 = PyObject_RichCompare(__pyx_v_pen, Py_None, Py_EQ); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1639, __pyx_L48_error)
+                __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1639, __pyx_L48_error)
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                 if (__pyx_t_9) {
 
-                  /* "CARTGVTree.pyx":1524
+                  /* "CARTGVTree.pyx":1640
  *                     penality = 0
  *                     if pen == None:
  *                         penality = 1             # <<<<<<<<<<<<<<
@@ -17932,7 +15547,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   __Pyx_INCREF(__pyx_int_1);
                   __Pyx_DECREF_SET(__pyx_v_penality, __pyx_int_1);
 
-                  /* "CARTGVTree.pyx":1523
+                  /* "CARTGVTree.pyx":1639
  *                 with gil:
  *                     penality = 0
  *                     if pen == None:             # <<<<<<<<<<<<<<
@@ -17942,38 +15557,38 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   goto __pyx_L50;
                 }
 
-                /* "CARTGVTree.pyx":1525
+                /* "CARTGVTree.pyx":1641
  *                     if pen == None:
  *                         penality = 1
  *                     elif pen == "root":             # <<<<<<<<<<<<<<
  *                         penality = 1.0/sqrt(len_groups[split.group])
  *                     elif pen == "size":
  */
-                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_root, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1525, __pyx_L48_error)
+                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_root, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1641, __pyx_L48_error)
                 if (__pyx_t_9) {
 
-                  /* "CARTGVTree.pyx":1526
+                  /* "CARTGVTree.pyx":1642
  *                         penality = 1
  *                     elif pen == "root":
  *                         penality = 1.0/sqrt(len_groups[split.group])             # <<<<<<<<<<<<<<
  *                     elif pen == "size":
  *                         penality = 1.0/len_groups[split.group]
  */
-                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1526, __pyx_L48_error)
+                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1642, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_6);
-                  __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1526, __pyx_L48_error)
+                  __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1642, __pyx_L48_error)
                   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                   __pyx_t_13 = sqrt(__pyx_t_11);
                   if (unlikely(__pyx_t_13 == 0)) {
                     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-                    __PYX_ERR(1, 1526, __pyx_L48_error)
+                    __PYX_ERR(1, 1642, __pyx_L48_error)
                   }
-                  __pyx_t_6 = PyFloat_FromDouble((1.0 / __pyx_t_13)); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1526, __pyx_L48_error)
+                  __pyx_t_6 = PyFloat_FromDouble((1.0 / __pyx_t_13)); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1642, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_6);
                   __Pyx_DECREF_SET(__pyx_v_penality, __pyx_t_6);
                   __pyx_t_6 = 0;
 
-                  /* "CARTGVTree.pyx":1525
+                  /* "CARTGVTree.pyx":1641
  *                     if pen == None:
  *                         penality = 1
  *                     elif pen == "root":             # <<<<<<<<<<<<<<
@@ -17983,32 +15598,32 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   goto __pyx_L50;
                 }
 
-                /* "CARTGVTree.pyx":1527
+                /* "CARTGVTree.pyx":1643
  *                     elif pen == "root":
  *                         penality = 1.0/sqrt(len_groups[split.group])
  *                     elif pen == "size":             # <<<<<<<<<<<<<<
  *                         penality = 1.0/len_groups[split.group]
  *                     elif pen == "log":
  */
-                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_size, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1527, __pyx_L48_error)
+                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_size, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1643, __pyx_L48_error)
                 if (__pyx_t_9) {
 
-                  /* "CARTGVTree.pyx":1528
+                  /* "CARTGVTree.pyx":1644
  *                         penality = 1.0/sqrt(len_groups[split.group])
  *                     elif pen == "size":
  *                         penality = 1.0/len_groups[split.group]             # <<<<<<<<<<<<<<
  *                     elif pen == "log":
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)
  */
-                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1528, __pyx_L48_error)
+                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1644, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_6);
-                  __pyx_t_1 = __Pyx_PyFloat_DivideCObj(__pyx_float_1_0, __pyx_t_6, 1.0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1528, __pyx_L48_error)
+                  __pyx_t_1 = __Pyx_PyFloat_DivideCObj(__pyx_float_1_0, __pyx_t_6, 1.0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1644, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_1);
                   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                   __Pyx_DECREF_SET(__pyx_v_penality, __pyx_t_1);
                   __pyx_t_1 = 0;
 
-                  /* "CARTGVTree.pyx":1527
+                  /* "CARTGVTree.pyx":1643
  *                     elif pen == "root":
  *                         penality = 1.0/sqrt(len_groups[split.group])
  *                     elif pen == "size":             # <<<<<<<<<<<<<<
@@ -18018,38 +15633,38 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   goto __pyx_L50;
                 }
 
-                /* "CARTGVTree.pyx":1529
+                /* "CARTGVTree.pyx":1645
  *                     elif pen == "size":
  *                         penality = 1.0/len_groups[split.group]
  *                     elif pen == "log":             # <<<<<<<<<<<<<<
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)
  *                     elif callable(pen):
  */
-                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_log, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1529, __pyx_L48_error)
+                __pyx_t_9 = (__Pyx_PyString_Equals(__pyx_v_pen, __pyx_n_s_log, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(1, 1645, __pyx_L48_error)
                 if (__pyx_t_9) {
 
-                  /* "CARTGVTree.pyx":1530
+                  /* "CARTGVTree.pyx":1646
  *                         penality = 1.0/len_groups[split.group]
  *                     elif pen == "log":
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)             # <<<<<<<<<<<<<<
  *                     elif callable(pen):
  *                         penality = pen(len_groups[split.group])
  */
-                  __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1530, __pyx_L48_error)
+                  __pyx_t_1 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1646, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_1);
-                  __pyx_t_13 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_13 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1530, __pyx_L48_error)
+                  __pyx_t_13 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_13 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1646, __pyx_L48_error)
                   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                   __pyx_t_11 = fmax(log(__pyx_t_13), 1.0);
                   if (unlikely(__pyx_t_11 == 0)) {
                     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-                    __PYX_ERR(1, 1530, __pyx_L48_error)
+                    __PYX_ERR(1, 1646, __pyx_L48_error)
                   }
-                  __pyx_t_1 = PyFloat_FromDouble((1.0 / __pyx_t_11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1530, __pyx_L48_error)
+                  __pyx_t_1 = PyFloat_FromDouble((1.0 / __pyx_t_11)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1646, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_1);
                   __Pyx_DECREF_SET(__pyx_v_penality, __pyx_t_1);
                   __pyx_t_1 = 0;
 
-                  /* "CARTGVTree.pyx":1529
+                  /* "CARTGVTree.pyx":1645
  *                     elif pen == "size":
  *                         penality = 1.0/len_groups[split.group]
  *                     elif pen == "log":             # <<<<<<<<<<<<<<
@@ -18059,25 +15674,25 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   goto __pyx_L50;
                 }
 
-                /* "CARTGVTree.pyx":1531
+                /* "CARTGVTree.pyx":1647
  *                     elif pen == "log":
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)
  *                     elif callable(pen):             # <<<<<<<<<<<<<<
  *                         penality = pen(len_groups[split.group])
  *                     else:
  */
-                __pyx_t_9 = __Pyx_PyCallable_Check(__pyx_v_pen); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 1531, __pyx_L48_error)
+                __pyx_t_9 = __Pyx_PyCallable_Check(__pyx_v_pen); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 1647, __pyx_L48_error)
                 __pyx_t_8 = (__pyx_t_9 != 0);
                 if (__pyx_t_8) {
 
-                  /* "CARTGVTree.pyx":1532
+                  /* "CARTGVTree.pyx":1648
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)
  *                     elif callable(pen):
  *                         penality = pen(len_groups[split.group])             # <<<<<<<<<<<<<<
  *                     else:
  *                         penality = 1
  */
-                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1532, __pyx_L48_error)
+                  __pyx_t_6 = __Pyx_GetItemInt(((PyObject *)__pyx_v_len_groups), __pyx_v_split.group, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1648, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_6);
                   __Pyx_INCREF(__pyx_v_pen);
                   __pyx_t_3 = __pyx_v_pen; __pyx_t_2 = NULL;
@@ -18093,13 +15708,13 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_6);
                   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
                   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1532, __pyx_L48_error)
+                  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1648, __pyx_L48_error)
                   __Pyx_GOTREF(__pyx_t_1);
                   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                   __Pyx_DECREF_SET(__pyx_v_penality, __pyx_t_1);
                   __pyx_t_1 = 0;
 
-                  /* "CARTGVTree.pyx":1531
+                  /* "CARTGVTree.pyx":1647
  *                     elif pen == "log":
  *                         penality = 1.0/fmax(log(len_groups[split.group]),1)
  *                     elif callable(pen):             # <<<<<<<<<<<<<<
@@ -18109,7 +15724,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   goto __pyx_L50;
                 }
 
-                /* "CARTGVTree.pyx":1534
+                /* "CARTGVTree.pyx":1650
  *                         penality = pen(len_groups[split.group])
  *                     else:
  *                         penality = 1             # <<<<<<<<<<<<<<
@@ -18122,24 +15737,24 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 }
                 __pyx_L50:;
 
-                /* "CARTGVTree.pyx":1536
+                /* "CARTGVTree.pyx":1652
  *                         penality = 1
  * 
  *                     impurity = penality*impurity             # <<<<<<<<<<<<<<
  * 
  *                 # Add the node to the tree
  */
-                __pyx_t_1 = PyFloat_FromDouble(__pyx_v_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1536, __pyx_L48_error)
+                __pyx_t_1 = PyFloat_FromDouble(__pyx_v_impurity); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1652, __pyx_L48_error)
                 __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_3 = PyNumber_Multiply(__pyx_v_penality, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1536, __pyx_L48_error)
+                __pyx_t_3 = PyNumber_Multiply(__pyx_v_penality, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1652, __pyx_L48_error)
                 __Pyx_GOTREF(__pyx_t_3);
                 __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1536, __pyx_L48_error)
+                __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 1652, __pyx_L48_error)
                 __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                 __pyx_v_impurity = __pyx_t_11;
               }
 
-              /* "CARTGVTree.pyx":1521
+              /* "CARTGVTree.pyx":1637
  * 
  *                 # Get the penality function and compute the impurity
  *                 with gil:             # <<<<<<<<<<<<<<
@@ -18163,17 +15778,17 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
               }
           }
 
-          /* "CARTGVTree.pyx":1539
+          /* "CARTGVTree.pyx":1655
  * 
  *                 # Add the node to the tree
  *                 node_id = tree._add_node(parent, is_leaf, split.splitting_tree, impurity, n_node_samples, split.n_childs,             # <<<<<<<<<<<<<<
  *                                         weighted_n_node_samples, split.group, start, end, depth, cart_idx)
  * 
  */
-          __pyx_t_10 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_add_node(__pyx_v_tree, __pyx_v_parent, __pyx_v_is_leaf, __pyx_v_split.splitting_tree, __pyx_v_impurity, __pyx_v_n_node_samples, __pyx_v_split.n_childs, __pyx_v_weighted_n_node_samples, __pyx_v_split.group, __pyx_v_start, __pyx_v_end, __pyx_v_depth, __pyx_v_cart_idx); if (unlikely(__pyx_t_10 == ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)-1))) __PYX_ERR(1, 1539, __pyx_L8_error)
+          __pyx_t_10 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_add_node(__pyx_v_tree, __pyx_v_parent, __pyx_v_is_leaf, __pyx_v_split.splitting_tree, __pyx_v_impurity, __pyx_v_n_node_samples, __pyx_v_split.n_childs, __pyx_v_weighted_n_node_samples, __pyx_v_split.group, __pyx_v_start, __pyx_v_end, __pyx_v_depth, __pyx_v_cart_idx); if (unlikely(__pyx_t_10 == ((__pyx_t_7sklearn_4tree_5_tree_SIZE_t)-1))) __PYX_ERR(1, 1655, __pyx_L8_error)
           __pyx_v_node_id = __pyx_t_10;
 
-          /* "CARTGVTree.pyx":1542
+          /* "CARTGVTree.pyx":1658
  *                                         weighted_n_node_samples, split.group, start, end, depth, cart_idx)
  * 
  *                 if node_id == SIZE_MAX:             # <<<<<<<<<<<<<<
@@ -18183,7 +15798,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_8 = ((__pyx_v_node_id == SIZE_MAX) != 0);
           if (__pyx_t_8) {
 
-            /* "CARTGVTree.pyx":1543
+            /* "CARTGVTree.pyx":1659
  * 
  *                 if node_id == SIZE_MAX:
  *                     rc = -1             # <<<<<<<<<<<<<<
@@ -18192,7 +15807,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             __pyx_v_rc = -1;
 
-            /* "CARTGVTree.pyx":1544
+            /* "CARTGVTree.pyx":1660
  *                 if node_id == SIZE_MAX:
  *                     rc = -1
  *                     break             # <<<<<<<<<<<<<<
@@ -18201,7 +15816,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             goto __pyx_L15_break;
 
-            /* "CARTGVTree.pyx":1542
+            /* "CARTGVTree.pyx":1658
  *                                         weighted_n_node_samples, split.group, start, end, depth, cart_idx)
  * 
  *                 if node_id == SIZE_MAX:             # <<<<<<<<<<<<<<
@@ -18210,7 +15825,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           }
 
-          /* "CARTGVTree.pyx":1548
+          /* "CARTGVTree.pyx":1664
  *                 # Store value for all nodes, to facilitate tree/model
  *                 # inspection and interpretation
  *                 splitter.node_value(tree.value + node_id * tree.value_stride)             # <<<<<<<<<<<<<<
@@ -18219,7 +15834,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           ((struct __pyx_vtabstruct_14CARTGVSplitter_CARTGVSplitter *)__pyx_v_splitter->__pyx_vtab)->node_value(__pyx_v_splitter, (__pyx_v_tree->value + (__pyx_v_node_id * __pyx_v_tree->value_stride)));
 
-          /* "CARTGVTree.pyx":1552
+          /* "CARTGVTree.pyx":1668
  *                 # If the current node isn't a leaf, we add it's childs to the stack to be treated
  * 
  *                 if not is_leaf:             # <<<<<<<<<<<<<<
@@ -18229,7 +15844,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_8 = ((!(__pyx_v_is_leaf != 0)) != 0);
           if (__pyx_t_8) {
 
-            /* "CARTGVTree.pyx":1553
+            /* "CARTGVTree.pyx":1669
  * 
  *                 if not is_leaf:
  *                     n_childs = split.n_childs             # <<<<<<<<<<<<<<
@@ -18239,7 +15854,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             __pyx_t_5 = __pyx_v_split.n_childs;
             __pyx_v_n_childs = __pyx_t_5;
 
-            /* "CARTGVTree.pyx":1554
+            /* "CARTGVTree.pyx":1670
  *                 if not is_leaf:
  *                     n_childs = split.n_childs
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -18252,7 +15867,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 #endif
                 /*try:*/ {
 
-                  /* "CARTGVTree.pyx":1555
+                  /* "CARTGVTree.pyx":1671
  *                     n_childs = split.n_childs
  *                     with gil:
  *                         for i in range(n_childs):             # <<<<<<<<<<<<<<
@@ -18264,28 +15879,28 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
                     __pyx_v_i = __pyx_t_15;
 
-                    /* "CARTGVTree.pyx":1556
+                    /* "CARTGVTree.pyx":1672
  *                     with gil:
  *                         for i in range(n_childs):
  *                             split_tree = split.splitting_tree             # <<<<<<<<<<<<<<
  *                             split_tree = pickle.loads(split_tree)
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]
  */
-                    __pyx_t_3 = __Pyx_PyBytes_FromCString(__pyx_v_split.splitting_tree); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1556, __pyx_L56_error)
+                    __pyx_t_3 = __Pyx_PyBytes_FromCString(__pyx_v_split.splitting_tree); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1672, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_3);
                     __Pyx_XDECREF_SET(__pyx_v_split_tree, __pyx_t_3);
                     __pyx_t_3 = 0;
 
-                    /* "CARTGVTree.pyx":1557
+                    /* "CARTGVTree.pyx":1673
  *                         for i in range(n_childs):
  *                             split_tree = split.splitting_tree
  *                             split_tree = pickle.loads(split_tree)             # <<<<<<<<<<<<<<
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)
  */
-                    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pickle); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1557, __pyx_L56_error)
+                    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_pickle); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1673, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_1);
-                    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_loads); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1557, __pyx_L56_error)
+                    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_loads); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1673, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_6);
                     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
                     __pyx_t_1 = NULL;
@@ -18300,27 +15915,27 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                     }
                     __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_1, __pyx_v_split_tree) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_split_tree);
                     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-                    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1557, __pyx_L56_error)
+                    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1673, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_3);
                     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                     __Pyx_DECREF_SET(__pyx_v_split_tree, __pyx_t_3);
                     __pyx_t_3 = 0;
 
-                    /* "CARTGVTree.pyx":1558
+                    /* "CARTGVTree.pyx":1674
  *                             split_tree = split.splitting_tree
  *                             split_tree = pickle.loads(split_tree)
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]             # <<<<<<<<<<<<<<
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)
  *                             if rc == -1:
  */
-                    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_6);
-                    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_where); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_where); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_1);
                     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_split_tree, __pyx_n_s_feature); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_split_tree, __pyx_n_s_feature); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_6);
-                    __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_neg_2, -2L, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_t_6, __pyx_int_neg_2, -2L, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_2);
                     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                     __pyx_t_6 = NULL;
@@ -18336,30 +15951,30 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                     __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
                     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-                    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_3);
                     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_1);
                     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-                    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_GOTREF(__pyx_t_3);
                     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                    __pyx_t_10 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_3); if (unlikely((__pyx_t_10 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1558, __pyx_L56_error)
+                    __pyx_t_10 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_3); if (unlikely((__pyx_t_10 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 1674, __pyx_L56_error)
                     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
                     __pyx_v_cart_idx = __pyx_t_10;
 
-                    /* "CARTGVTree.pyx":1559
+                    /* "CARTGVTree.pyx":1675
  *                             split_tree = pickle.loads(split_tree)
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)             # <<<<<<<<<<<<<<
  *                             if rc == -1:
  *                                 break
  */
-                    __pyx_t_16 = ((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->push(__pyx_v_stack, (__pyx_v_split.starts[__pyx_v_i]), (__pyx_v_split.ends[__pyx_v_i]), (__pyx_v_depth + 1), __pyx_v_node_id, 0, (__pyx_v_split.impurity_childs[__pyx_v_i]), __pyx_v_n_constant_features, __pyx_v_cart_idx); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(1, 1559, __pyx_L56_error)
+                    __pyx_t_16 = ((struct __pyx_vtabstruct_11CARTGVutils_Stack *)__pyx_v_stack->__pyx_vtab)->push(__pyx_v_stack, (__pyx_v_split.starts[__pyx_v_i]), (__pyx_v_split.ends[__pyx_v_i]), (__pyx_v_depth + 1), __pyx_v_node_id, 0, (__pyx_v_split.impurity_childs[__pyx_v_i]), __pyx_v_n_constant_features, __pyx_v_cart_idx); if (unlikely(__pyx_t_16 == ((int)-1))) __PYX_ERR(1, 1675, __pyx_L56_error)
                     __pyx_v_rc = __pyx_t_16;
 
-                    /* "CARTGVTree.pyx":1560
+                    /* "CARTGVTree.pyx":1676
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)
  *                             if rc == -1:             # <<<<<<<<<<<<<<
@@ -18369,7 +15984,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                     __pyx_t_8 = ((__pyx_v_rc == -1L) != 0);
                     if (__pyx_t_8) {
 
-                      /* "CARTGVTree.pyx":1561
+                      /* "CARTGVTree.pyx":1677
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)
  *                             if rc == -1:
  *                                 break             # <<<<<<<<<<<<<<
@@ -18378,7 +15993,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                       goto __pyx_L59_break;
 
-                      /* "CARTGVTree.pyx":1560
+                      /* "CARTGVTree.pyx":1676
  *                             cart_idx = np.where(split_tree.feature == -2)[0][i]
  *                             rc = stack.push(split.starts[i],split.ends[i],depth + 1, node_id,0,split.impurity_childs[i], n_constant_features, cart_idx)
  *                             if rc == -1:             # <<<<<<<<<<<<<<
@@ -18389,7 +16004,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   }
                   __pyx_L59_break:;
 
-                  /* "CARTGVTree.pyx":1563
+                  /* "CARTGVTree.pyx":1679
  *                                 break
  * 
  *                         free(split.splitting_tree)             # <<<<<<<<<<<<<<
@@ -18398,7 +16013,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   free(__pyx_v_split.splitting_tree);
 
-                  /* "CARTGVTree.pyx":1564
+                  /* "CARTGVTree.pyx":1680
  * 
  *                         free(split.splitting_tree)
  *                         free(split.starts)             # <<<<<<<<<<<<<<
@@ -18407,7 +16022,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   free(__pyx_v_split.starts);
 
-                  /* "CARTGVTree.pyx":1565
+                  /* "CARTGVTree.pyx":1681
  *                         free(split.splitting_tree)
  *                         free(split.starts)
  *                         free(split.ends)             # <<<<<<<<<<<<<<
@@ -18416,7 +16031,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   free(__pyx_v_split.ends);
 
-                  /* "CARTGVTree.pyx":1566
+                  /* "CARTGVTree.pyx":1682
  *                         free(split.starts)
  *                         free(split.ends)
  *                         free(split.impurity_childs)             # <<<<<<<<<<<<<<
@@ -18425,7 +16040,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                   free(__pyx_v_split.impurity_childs);
 
-                  /* "CARTGVTree.pyx":1568
+                  /* "CARTGVTree.pyx":1684
  *                         free(split.impurity_childs)
  * 
  *                         if rc == -1:             # <<<<<<<<<<<<<<
@@ -18435,7 +16050,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   __pyx_t_8 = ((__pyx_v_rc == -1L) != 0);
                   if (__pyx_t_8) {
 
-                    /* "CARTGVTree.pyx":1569
+                    /* "CARTGVTree.pyx":1685
  * 
  *                         if rc == -1:
  *                           break             # <<<<<<<<<<<<<<
@@ -18444,7 +16059,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
                     goto __pyx_L54_break;
 
-                    /* "CARTGVTree.pyx":1568
+                    /* "CARTGVTree.pyx":1684
  *                         free(split.impurity_childs)
  * 
  *                         if rc == -1:             # <<<<<<<<<<<<<<
@@ -18454,7 +16069,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                   }
                 }
 
-                /* "CARTGVTree.pyx":1554
+                /* "CARTGVTree.pyx":1670
  *                 if not is_leaf:
  *                     n_childs = split.n_childs
  *                     with gil:             # <<<<<<<<<<<<<<
@@ -18484,7 +16099,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
                 }
             }
 
-            /* "CARTGVTree.pyx":1552
+            /* "CARTGVTree.pyx":1668
  *                 # If the current node isn't a leaf, we add it's childs to the stack to be treated
  * 
  *                 if not is_leaf:             # <<<<<<<<<<<<<<
@@ -18494,7 +16109,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
             goto __pyx_L52;
           }
 
-          /* "CARTGVTree.pyx":1572
+          /* "CARTGVTree.pyx":1688
  * 
  *                 else:
  *                     tree.n_leaves +=1             # <<<<<<<<<<<<<<
@@ -18506,7 +16121,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           }
           __pyx_L52:;
 
-          /* "CARTGVTree.pyx":1574
+          /* "CARTGVTree.pyx":1690
  *                     tree.n_leaves +=1
  * 
  *                 if depth > max_depth_seen:             # <<<<<<<<<<<<<<
@@ -18516,7 +16131,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
           __pyx_t_8 = ((__pyx_v_depth > __pyx_v_max_depth_seen) != 0);
           if (__pyx_t_8) {
 
-            /* "CARTGVTree.pyx":1575
+            /* "CARTGVTree.pyx":1691
  * 
  *                 if depth > max_depth_seen:
  *                     max_depth_seen = depth             # <<<<<<<<<<<<<<
@@ -18525,7 +16140,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
             __pyx_v_max_depth_seen = __pyx_v_depth;
 
-            /* "CARTGVTree.pyx":1574
+            /* "CARTGVTree.pyx":1690
  *                     tree.n_leaves +=1
  * 
  *                 if depth > max_depth_seen:             # <<<<<<<<<<<<<<
@@ -18536,7 +16151,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         }
         __pyx_L15_break:;
 
-        /* "CARTGVTree.pyx":1577
+        /* "CARTGVTree.pyx":1693
  *                     max_depth_seen = depth
  * 
  *             if rc >= 0:             # <<<<<<<<<<<<<<
@@ -18546,7 +16161,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         __pyx_t_8 = ((__pyx_v_rc >= 0) != 0);
         if (__pyx_t_8) {
 
-          /* "CARTGVTree.pyx":1578
+          /* "CARTGVTree.pyx":1694
  * 
  *             if rc >= 0:
  *                 rc = tree._resize_c(tree.node_count)             # <<<<<<<<<<<<<<
@@ -18555,10 +16170,10 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           __pyx_t_17.__pyx_n = 1;
           __pyx_t_17.capacity = __pyx_v_tree->node_count;
-          __pyx_t_5 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_resize_c(__pyx_v_tree, &__pyx_t_17); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1578, __pyx_L8_error)
+          __pyx_t_5 = ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTree *)__pyx_v_tree->__pyx_vtab)->_resize_c(__pyx_v_tree, &__pyx_t_17); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(1, 1694, __pyx_L8_error)
           __pyx_v_rc = __pyx_t_5;
 
-          /* "CARTGVTree.pyx":1577
+          /* "CARTGVTree.pyx":1693
  *                     max_depth_seen = depth
  * 
  *             if rc >= 0:             # <<<<<<<<<<<<<<
@@ -18567,7 +16182,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
         }
 
-        /* "CARTGVTree.pyx":1580
+        /* "CARTGVTree.pyx":1696
  *                 rc = tree._resize_c(tree.node_count)
  * 
  *             if rc >= 0:             # <<<<<<<<<<<<<<
@@ -18577,7 +16192,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         __pyx_t_8 = ((__pyx_v_rc >= 0) != 0);
         if (__pyx_t_8) {
 
-          /* "CARTGVTree.pyx":1581
+          /* "CARTGVTree.pyx":1697
  * 
  *             if rc >= 0:
  *                 tree.max_depth = max_depth_seen             # <<<<<<<<<<<<<<
@@ -18586,7 +16201,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
           __pyx_v_tree->max_depth = __pyx_v_max_depth_seen;
 
-          /* "CARTGVTree.pyx":1580
+          /* "CARTGVTree.pyx":1696
  *                 rc = tree._resize_c(tree.node_count)
  * 
  *             if rc >= 0:             # <<<<<<<<<<<<<<
@@ -18596,7 +16211,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
         }
       }
 
-      /* "CARTGVTree.pyx":1455
+      /* "CARTGVTree.pyx":1571
  *         cdef SIZE_t* leaves_ids
  * 
  *         with nogil:             # <<<<<<<<<<<<<<
@@ -18622,7 +16237,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
       }
   }
 
-  /* "CARTGVTree.pyx":1582
+  /* "CARTGVTree.pyx":1698
  *             if rc >= 0:
  *                 tree.max_depth = max_depth_seen
  *         if rc == -1:             # <<<<<<<<<<<<<<
@@ -18632,16 +16247,16 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
   __pyx_t_8 = ((__pyx_v_rc == -1L) != 0);
   if (unlikely(__pyx_t_8)) {
 
-    /* "CARTGVTree.pyx":1583
+    /* "CARTGVTree.pyx":1699
  *                 tree.max_depth = max_depth_seen
  *         if rc == -1:
  *             raise MemoryError()             # <<<<<<<<<<<<<<
  * 
  *     cdef inline _check_input(self, object X, np.ndarray y,
  */
-    PyErr_NoMemory(); __PYX_ERR(1, 1583, __pyx_L1_error)
+    PyErr_NoMemory(); __PYX_ERR(1, 1699, __pyx_L1_error)
 
-    /* "CARTGVTree.pyx":1582
+    /* "CARTGVTree.pyx":1698
  *             if rc >= 0:
  *                 tree.max_depth = max_depth_seen
  *         if rc == -1:             # <<<<<<<<<<<<<<
@@ -18650,12 +16265,12 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
  */
   }
 
-  /* "CARTGVTree.pyx":1396
+  /* "CARTGVTree.pyx":1503
  *         faulthandler.enable()
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,             # <<<<<<<<<<<<<<
  *                 object pen, np.ndarray sample_weight=None):
- *         """Build a decision tree from the training set (X, y)."""
+ *         """
  */
 
   /* function exit code */
@@ -18682,7 +16297,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build(struct __pyx_obj_10CA
 
 /* Python wrapper */
 static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_10CARTGVTree_17CARTGVTreeBuilder_2build[] = "Build a decision tree from the training set (X, y).";
+static char __pyx_doc_10CARTGVTree_17CARTGVTreeBuilder_2build[] = "\n        Build a decision tree from the training set (X, y).\n        params tree : An instance of CARTGVTree that will be fiiled by\n        params X : An object, the datas\n        params y : A numpy ndarray,  the responses\n        params groups : An object, an array containing the groups\n        params len_groups : A numpy ndarray, the length of each group\n        params pen : An object (string, function with only one parameter), the penality function\n        params sample_weight : A numpy ndarray, the weight  of each samples\n        ";
 static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_10CARTGVTree_CARTGVTree *__pyx_v_tree = 0;
   PyObject *__pyx_v_X = 0;
@@ -18701,12 +16316,12 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__py
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_tree,&__pyx_n_s_X,&__pyx_n_s_y,&__pyx_n_s_groups,&__pyx_n_s_len_groups,&__pyx_n_s_pen,&__pyx_n_s_sample_weight,0};
     PyObject* values[7] = {0,0,0,0,0,0,0};
 
-    /* "CARTGVTree.pyx":1397
+    /* "CARTGVTree.pyx":1504
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
  *                 object pen, np.ndarray sample_weight=None):             # <<<<<<<<<<<<<<
- *         """Build a decision tree from the training set (X, y)."""
- *         # check input
+ *         """
+ *         Build a decision tree from the training set (X, y).
  */
     values[6] = (PyObject *)((PyArrayObject *)Py_None);
     if (unlikely(__pyx_kwds)) {
@@ -18739,31 +16354,31 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_X)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 1); __PYX_ERR(1, 1396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 1); __PYX_ERR(1, 1503, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 2); __PYX_ERR(1, 1396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 2); __PYX_ERR(1, 1503, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 3); __PYX_ERR(1, 1396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 3); __PYX_ERR(1, 1503, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_len_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 4); __PYX_ERR(1, 1396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 4); __PYX_ERR(1, 1503, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pen)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 5); __PYX_ERR(1, 1396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, 5); __PYX_ERR(1, 1503, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -18773,7 +16388,7 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "build") < 0)) __PYX_ERR(1, 1396, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "build") < 0)) __PYX_ERR(1, 1503, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -18799,24 +16414,24 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_3build(PyObject *__py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1396, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("build", 0, 6, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1503, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVTree.CARTGVTreeBuilder.build", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tree), __pyx_ptype_10CARTGVTree_CARTGVTree, 1, "tree", 0))) __PYX_ERR(1, 1396, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) __PYX_ERR(1, 1396, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 1396, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(1, 1397, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tree), __pyx_ptype_10CARTGVTree_CARTGVTree, 1, "tree", 0))) __PYX_ERR(1, 1503, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) __PYX_ERR(1, 1503, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 1503, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(1, 1504, __pyx_L1_error)
   __pyx_r = __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(((struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *)__pyx_v_self), __pyx_v_tree, __pyx_v_X, __pyx_v_y, __pyx_v_groups, __pyx_v_len_groups, __pyx_v_pen, __pyx_v_sample_weight);
 
-  /* "CARTGVTree.pyx":1396
+  /* "CARTGVTree.pyx":1503
  *         faulthandler.enable()
  * 
  *     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,             # <<<<<<<<<<<<<<
  *                 object pen, np.ndarray sample_weight=None):
- *         """Build a decision tree from the training set (X, y)."""
+ *         """
  */
 
   /* function exit code */
@@ -18841,7 +16456,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.sample_weight = __pyx_v_sample_weight;
   __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder->build(__pyx_v_self, __pyx_v_tree, __pyx_v_X, __pyx_v_y, __pyx_v_groups, __pyx_v_len_groups, __pyx_v_pen, 1, &__pyx_t_1); 
-  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1396, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -18858,12 +16473,12 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_2build(struct __pyx_o
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1585
+/* "CARTGVTree.pyx":1701
  *             raise MemoryError()
  * 
  *     cdef inline _check_input(self, object X, np.ndarray y,             # <<<<<<<<<<<<<<
  *                              np.ndarray sample_weight):
- *         """Check input dtype, layout and format"""
+ *         """
  */
 
 static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UNUSED struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *__pyx_v_self, PyObject *__pyx_v_X, PyArrayObject *__pyx_v_y, PyArrayObject *__pyx_v_sample_weight) {
@@ -18884,14 +16499,14 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
   __Pyx_INCREF((PyObject *)__pyx_v_y);
   __Pyx_INCREF((PyObject *)__pyx_v_sample_weight);
 
-  /* "CARTGVTree.pyx":1588
- *                              np.ndarray sample_weight):
- *         """Check input dtype, layout and format"""
+  /* "CARTGVTree.pyx":1709
+ *         params sample_weight : a numpy ndarray, the weight of each sample
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             X = X.tocsc()
  *             X.sort_indices()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1588, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -18905,21 +16520,21 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_X) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_X);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1588, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1709, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1588, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1709, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "CARTGVTree.pyx":1589
- *         """Check input dtype, layout and format"""
+    /* "CARTGVTree.pyx":1710
+ *         """
  *         if issparse(X):
  *             X = X.tocsc()             # <<<<<<<<<<<<<<
  *             X.sort_indices()
  * 
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_tocsc); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1589, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_tocsc); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1710, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -18933,20 +16548,20 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1589, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1710, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "CARTGVTree.pyx":1590
+    /* "CARTGVTree.pyx":1711
  *         if issparse(X):
  *             X = X.tocsc()
  *             X.sort_indices()             # <<<<<<<<<<<<<<
  * 
  *             if X.data.dtype != DTYPE:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_sort_indices); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1590, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_sort_indices); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1711, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -18960,66 +16575,66 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1590, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1711, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "CARTGVTree.pyx":1592
+    /* "CARTGVTree.pyx":1713
  *             X.sort_indices()
  * 
  *             if X.data.dtype != DTYPE:             # <<<<<<<<<<<<<<
  *                 X.data = np.ascontiguousarray(X.data, dtype=DTYPE)
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1592, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1713, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1592, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1713, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1592, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1713, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1592, __pyx_L1_error)
+    __pyx_t_3 = PyObject_RichCompare(__pyx_t_2, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1713, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1592, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1713, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (__pyx_t_4) {
 
-      /* "CARTGVTree.pyx":1593
+      /* "CARTGVTree.pyx":1714
  * 
  *             if X.data.dtype != DTYPE:
  *                 X.data = np.ascontiguousarray(X.data, dtype=DTYPE)             # <<<<<<<<<<<<<<
  * 
  *             if X.indices.dtype != np.int32 or X.indptr.dtype != np.int32:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_data); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 1593, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1593, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_X, __pyx_n_s_data, __pyx_t_5) < 0) __PYX_ERR(1, 1593, __pyx_L1_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_X, __pyx_n_s_data, __pyx_t_5) < 0) __PYX_ERR(1, 1714, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "CARTGVTree.pyx":1592
+      /* "CARTGVTree.pyx":1713
  *             X.sort_indices()
  * 
  *             if X.data.dtype != DTYPE:             # <<<<<<<<<<<<<<
@@ -19028,66 +16643,66 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  */
     }
 
-    /* "CARTGVTree.pyx":1595
+    /* "CARTGVTree.pyx":1716
  *                 X.data = np.ascontiguousarray(X.data, dtype=DTYPE)
  * 
  *             if X.indices.dtype != np.int32 or X.indptr.dtype != np.int32:             # <<<<<<<<<<<<<<
  *                 raise ValueError("No support for np.int64 index based "
  *                                  "sparse matrices")
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_indices); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_indices); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_int32); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_int32); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_2, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (!__pyx_t_6) {
     } else {
       __pyx_t_4 = __pyx_t_6;
       goto __pyx_L6_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_indptr); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_indptr); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_int32); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_int32); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_5 = PyObject_RichCompare(__pyx_t_2, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1595, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1716, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_4 = __pyx_t_6;
     __pyx_L6_bool_binop_done:;
     if (unlikely(__pyx_t_4)) {
 
-      /* "CARTGVTree.pyx":1596
+      /* "CARTGVTree.pyx":1717
  * 
  *             if X.indices.dtype != np.int32 or X.indptr.dtype != np.int32:
  *                 raise ValueError("No support for np.int64 index based "             # <<<<<<<<<<<<<<
  *                                  "sparse matrices")
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1596, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__9, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1717, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __PYX_ERR(1, 1596, __pyx_L1_error)
+      __PYX_ERR(1, 1717, __pyx_L1_error)
 
-      /* "CARTGVTree.pyx":1595
+      /* "CARTGVTree.pyx":1716
  *                 X.data = np.ascontiguousarray(X.data, dtype=DTYPE)
  * 
  *             if X.indices.dtype != np.int32 or X.indptr.dtype != np.int32:             # <<<<<<<<<<<<<<
@@ -19096,9 +16711,9 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  */
     }
 
-    /* "CARTGVTree.pyx":1588
- *                              np.ndarray sample_weight):
- *         """Check input dtype, layout and format"""
+    /* "CARTGVTree.pyx":1709
+ *         params sample_weight : a numpy ndarray, the weight of each sample
+ *         """
  *         if issparse(X):             # <<<<<<<<<<<<<<
  *             X = X.tocsc()
  *             X.sort_indices()
@@ -19106,48 +16721,48 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     goto __pyx_L3;
   }
 
-  /* "CARTGVTree.pyx":1599
+  /* "CARTGVTree.pyx":1720
  *                                  "sparse matrices")
  * 
  *         elif X.dtype != DTYPE:             # <<<<<<<<<<<<<<
  *             # since we have to copy we will make it fortran for efficiency
  *             X = np.asfortranarray(X, dtype=DTYPE)
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1599, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_X, __pyx_n_s_dtype); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1720, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1599, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1720, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_5, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1599, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_5, __pyx_t_3, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1720, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1599, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(1, 1720, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "CARTGVTree.pyx":1601
+    /* "CARTGVTree.pyx":1722
  *         elif X.dtype != DTYPE:
  *             # since we have to copy we will make it fortran for efficiency
  *             X = np.asfortranarray(X, dtype=DTYPE)             # <<<<<<<<<<<<<<
  * 
  *         if y.dtype != DOUBLE or not y.flags.contiguous:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asfortranarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asfortranarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_X);
     __Pyx_GIVEREF(__pyx_v_X);
     PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_X);
-    __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DTYPE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_1) < 0) __PYX_ERR(1, 1601, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_1) < 0) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1601, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1722, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -19155,7 +16770,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     __Pyx_DECREF_SET(__pyx_v_X, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "CARTGVTree.pyx":1599
+    /* "CARTGVTree.pyx":1720
  *                                  "sparse matrices")
  * 
  *         elif X.dtype != DTYPE:             # <<<<<<<<<<<<<<
@@ -19165,72 +16780,72 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
   }
   __pyx_L3:;
 
-  /* "CARTGVTree.pyx":1603
+  /* "CARTGVTree.pyx":1724
  *             X = np.asfortranarray(X, dtype=DTYPE)
  * 
  *         if y.dtype != DOUBLE or not y.flags.contiguous:             # <<<<<<<<<<<<<<
  *             y = np.ascontiguousarray(y, dtype=DOUBLE)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_y), __pyx_n_s_dtype); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_y), __pyx_n_s_dtype); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_6) {
   } else {
     __pyx_t_4 = __pyx_t_6;
     goto __pyx_L9_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_y), __pyx_n_s_flags); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_y), __pyx_n_s_flags); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_contiguous); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_contiguous); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1603, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1724, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_7 = ((!__pyx_t_6) != 0);
   __pyx_t_4 = __pyx_t_7;
   __pyx_L9_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "CARTGVTree.pyx":1604
+    /* "CARTGVTree.pyx":1725
  * 
  *         if y.dtype != DOUBLE or not y.flags.contiguous:
  *             y = np.ascontiguousarray(y, dtype=DOUBLE)             # <<<<<<<<<<<<<<
  * 
  *         if (sample_weight is not None and
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(((PyObject *)__pyx_v_y));
     __Pyx_GIVEREF(((PyObject *)__pyx_v_y));
     PyTuple_SET_ITEM(__pyx_t_5, 0, ((PyObject *)__pyx_v_y));
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(1, 1604, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_3) < 0) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1604, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1604, __pyx_L1_error)
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1725, __pyx_L1_error)
     __Pyx_DECREF_SET(__pyx_v_y, ((PyArrayObject *)__pyx_t_3));
     __pyx_t_3 = 0;
 
-    /* "CARTGVTree.pyx":1603
+    /* "CARTGVTree.pyx":1724
  *             X = np.asfortranarray(X, dtype=DTYPE)
  * 
  *         if y.dtype != DOUBLE or not y.flags.contiguous:             # <<<<<<<<<<<<<<
@@ -19239,7 +16854,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  */
   }
 
-  /* "CARTGVTree.pyx":1606
+  /* "CARTGVTree.pyx":1727
  *             y = np.ascontiguousarray(y, dtype=DOUBLE)
  * 
  *         if (sample_weight is not None and             # <<<<<<<<<<<<<<
@@ -19254,21 +16869,21 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     goto __pyx_L12_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":1607
+  /* "CARTGVTree.pyx":1728
  * 
  *         if (sample_weight is not None and
  *             (sample_weight.dtype != DOUBLE or             # <<<<<<<<<<<<<<
  *             not sample_weight.flags.contiguous)):
  *                 sample_weight = np.asarray(sample_weight, dtype=DOUBLE,
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_sample_weight), __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1607, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_sample_weight), __pyx_n_s_dtype); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1728, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1607, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1728, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1607, __pyx_L1_error)
+  __pyx_t_5 = PyObject_RichCompare(__pyx_t_3, __pyx_t_1, Py_NE); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1728, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1607, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1728, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (!__pyx_t_6) {
   } else {
@@ -19276,25 +16891,25 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
     goto __pyx_L12_bool_binop_done;
   }
 
-  /* "CARTGVTree.pyx":1608
+  /* "CARTGVTree.pyx":1729
  *         if (sample_weight is not None and
  *             (sample_weight.dtype != DOUBLE or
  *             not sample_weight.flags.contiguous)):             # <<<<<<<<<<<<<<
  *                 sample_weight = np.asarray(sample_weight, dtype=DOUBLE,
  *                                            order="C")
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_sample_weight), __pyx_n_s_flags); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1608, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_sample_weight), __pyx_n_s_flags); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_contiguous); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1608, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_contiguous); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1608, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(1, 1729, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_7 = ((!__pyx_t_6) != 0);
   __pyx_t_4 = __pyx_t_7;
   __pyx_L12_bool_binop_done:;
 
-  /* "CARTGVTree.pyx":1606
+  /* "CARTGVTree.pyx":1727
  *             y = np.ascontiguousarray(y, dtype=DOUBLE)
  * 
  *         if (sample_weight is not None and             # <<<<<<<<<<<<<<
@@ -19303,40 +16918,40 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  */
   if (__pyx_t_4) {
 
-    /* "CARTGVTree.pyx":1609
+    /* "CARTGVTree.pyx":1730
  *             (sample_weight.dtype != DOUBLE or
  *             not sample_weight.flags.contiguous)):
  *                 sample_weight = np.asarray(sample_weight, dtype=DOUBLE,             # <<<<<<<<<<<<<<
  *                                            order="C")
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(((PyObject *)__pyx_v_sample_weight));
     __Pyx_GIVEREF(((PyObject *)__pyx_v_sample_weight));
     PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)__pyx_v_sample_weight));
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_DOUBLE); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 1609, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_t_2) < 0) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_order, __pyx_n_s_C) < 0) __PYX_ERR(1, 1609, __pyx_L1_error)
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1609, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_order, __pyx_n_s_C) < 0) __PYX_ERR(1, 1730, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1609, __pyx_L1_error)
+    if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(1, 1730, __pyx_L1_error)
     __Pyx_DECREF_SET(__pyx_v_sample_weight, ((PyArrayObject *)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "CARTGVTree.pyx":1606
+    /* "CARTGVTree.pyx":1727
  *             y = np.ascontiguousarray(y, dtype=DOUBLE)
  * 
  *         if (sample_weight is not None and             # <<<<<<<<<<<<<<
@@ -19345,7 +16960,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  */
   }
 
-  /* "CARTGVTree.pyx":1612
+  /* "CARTGVTree.pyx":1733
  *                                            order="C")
  * 
  *         return X, y, sample_weight             # <<<<<<<<<<<<<<
@@ -19353,7 +16968,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
  *     ########################################## TESTS #############################################
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1612, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1733, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_X);
   __Pyx_GIVEREF(__pyx_v_X);
@@ -19368,12 +16983,12 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "CARTGVTree.pyx":1585
+  /* "CARTGVTree.pyx":1701
  *             raise MemoryError()
  * 
  *     cdef inline _check_input(self, object X, np.ndarray y,             # <<<<<<<<<<<<<<
  *                              np.ndarray sample_weight):
- *         """Check input dtype, layout and format"""
+ *         """
  */
 
   /* function exit code */
@@ -19393,7 +17008,7 @@ static PyObject *__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input(CYTHON_UN
   return __pyx_r;
 }
 
-/* "CARTGVTree.pyx":1616
+/* "CARTGVTree.pyx":1737
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=None):             # <<<<<<<<<<<<<<
@@ -19430,7 +17045,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_type_dict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_build); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1616, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_test_build); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1737, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!PyCFunction_Check(__pyx_t_1) || (PyCFunction_GET_FUNCTION(__pyx_t_1) != (PyCFunction)(void*)__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_5test_build)) {
         __Pyx_INCREF(__pyx_t_1);
@@ -19449,7 +17064,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[8] = {__pyx_t_4, ((PyObject *)__pyx_v_tree), __pyx_v_X, ((PyObject *)__pyx_v_y), __pyx_v_groups, ((PyObject *)__pyx_v_len_groups), __pyx_v_pen, ((PyObject *)__pyx_v_sample_weight)};
-          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1616, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1737, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
@@ -19457,13 +17072,13 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
           PyObject *__pyx_temp[8] = {__pyx_t_4, ((PyObject *)__pyx_v_tree), __pyx_v_X, ((PyObject *)__pyx_v_y), __pyx_v_groups, ((PyObject *)__pyx_v_len_groups), __pyx_v_pen, ((PyObject *)__pyx_v_sample_weight)};
-          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1616, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 7+__pyx_t_5); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1737, __pyx_L1_error)
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
           __Pyx_GOTREF(__pyx_t_2);
         } else
         #endif
         {
-          __pyx_t_6 = PyTuple_New(7+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1616, __pyx_L1_error)
+          __pyx_t_6 = PyTuple_New(7+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 1737, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
           if (__pyx_t_4) {
             __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -19489,7 +17104,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
           __Pyx_INCREF(((PyObject *)__pyx_v_sample_weight));
           __Pyx_GIVEREF(((PyObject *)__pyx_v_sample_weight));
           PyTuple_SET_ITEM(__pyx_t_6, 6+__pyx_t_5, ((PyObject *)__pyx_v_sample_weight));
-          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1616, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1737, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         }
@@ -19511,7 +17126,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
     #endif
   }
 
-  /* "CARTGVTree.pyx":1618
+  /* "CARTGVTree.pyx":1739
  *     cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=None):
  * 
  *         self.build(tree, X, y, groups, len_groups, pen, sample_weight)             # <<<<<<<<<<<<<<
@@ -19522,7 +17137,7 @@ static void __pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build(struct __pyx_obj
   __pyx_t_7.sample_weight = __pyx_v_sample_weight;
   ((struct __pyx_vtabstruct_10CARTGVTree_CARTGVTreeBuilder *)__pyx_v_self->__pyx_vtab)->build(__pyx_v_self, __pyx_v_tree, __pyx_v_X, __pyx_v_y, __pyx_v_groups, __pyx_v_len_groups, __pyx_v_pen, 0, &__pyx_t_7); 
 
-  /* "CARTGVTree.pyx":1616
+  /* "CARTGVTree.pyx":1737
  *     ########################################## TESTS #############################################
  * 
  *     cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=None):             # <<<<<<<<<<<<<<
@@ -19593,31 +17208,31 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_5test_build(PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_X)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 1); __PYX_ERR(1, 1616, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 1); __PYX_ERR(1, 1737, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 2); __PYX_ERR(1, 1616, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 2); __PYX_ERR(1, 1737, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 3); __PYX_ERR(1, 1616, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 3); __PYX_ERR(1, 1737, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_len_groups)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 4); __PYX_ERR(1, 1616, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 4); __PYX_ERR(1, 1737, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pen)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 5); __PYX_ERR(1, 1616, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, 5); __PYX_ERR(1, 1737, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
@@ -19627,7 +17242,7 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_5test_build(PyObject 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_build") < 0)) __PYX_ERR(1, 1616, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "test_build") < 0)) __PYX_ERR(1, 1737, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -19653,16 +17268,16 @@ static PyObject *__pyx_pw_10CARTGVTree_17CARTGVTreeBuilder_5test_build(PyObject 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1616, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("test_build", 0, 6, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1737, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("CARTGVTree.CARTGVTreeBuilder.test_build", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tree), __pyx_ptype_10CARTGVTree_CARTGVTree, 1, "tree", 0))) __PYX_ERR(1, 1616, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) __PYX_ERR(1, 1616, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 1616, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(1, 1616, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tree), __pyx_ptype_10CARTGVTree_CARTGVTree, 1, "tree", 0))) __PYX_ERR(1, 1737, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y), __pyx_ptype_5numpy_ndarray, 1, "y", 0))) __PYX_ERR(1, 1737, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_len_groups), __pyx_ptype_5numpy_ndarray, 1, "len_groups", 0))) __PYX_ERR(1, 1737, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_sample_weight), __pyx_ptype_5numpy_ndarray, 1, "sample_weight", 0))) __PYX_ERR(1, 1737, __pyx_L1_error)
   __pyx_r = __pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_4test_build(((struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *)__pyx_v_self), __pyx_v_tree, __pyx_v_X, __pyx_v_y, __pyx_v_groups, __pyx_v_len_groups, __pyx_v_pen, __pyx_v_sample_weight);
 
   /* function exit code */
@@ -19687,7 +17302,7 @@ static PyObject *__pyx_pf_10CARTGVTree_17CARTGVTreeBuilder_4test_build(struct __
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.sample_weight = __pyx_v_sample_weight;
   __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder->test_build(__pyx_v_self, __pyx_v_tree, __pyx_v_X, __pyx_v_y, __pyx_v_groups, __pyx_v_len_groups, __pyx_v_pen, 1, &__pyx_t_1); 
-  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1616, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1737, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -34446,28 +32061,27 @@ static PyMethodDef __pyx_methods_10CARTGVTree_CARTGVTree[] = {
   {"__setstate__", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_9__setstate__, METH_O, __pyx_doc_10CARTGVTree_10CARTGVTree_8__setstate__},
   {"predict", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_11predict, METH_O, __pyx_doc_10CARTGVTree_10CARTGVTree_10predict},
   {"apply", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_13apply, METH_O, __pyx_doc_10CARTGVTree_10CARTGVTree_12apply},
-  {"sobol_indice", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10CARTGVTree_10CARTGVTree_15sobol_indice, METH_VARARGS|METH_KEYWORDS, 0},
-  {"decision_path", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_17decision_path, METH_O, __pyx_doc_10CARTGVTree_10CARTGVTree_16decision_path},
-  {"test_resize_CARTGVTree", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_19test_resize_CARTGVTree, METH_O, 0},
-  {"test_add_node", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10CARTGVTree_10CARTGVTree_21test_add_node, METH_VARARGS|METH_KEYWORDS, 0},
+  {"decision_path", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_15decision_path, METH_O, __pyx_doc_10CARTGVTree_10CARTGVTree_14decision_path},
+  {"test_resize_CARTGVTree", (PyCFunction)__pyx_pw_10CARTGVTree_10CARTGVTree_17test_resize_CARTGVTree, METH_O, 0},
+  {"test_add_node", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_10CARTGVTree_10CARTGVTree_19test_add_node, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
 static struct PyGetSetDef __pyx_getsets_10CARTGVTree_CARTGVTree[] = {
-  {(char *)"n_classes", __pyx_getprop_10CARTGVTree_10CARTGVTree_n_classes, 0, (char *)0, 0},
-  {(char *)"value_stride", __pyx_getprop_10CARTGVTree_10CARTGVTree_value_stride, 0, (char *)0, 0},
-  {(char *)"value", __pyx_getprop_10CARTGVTree_10CARTGVTree_value, 0, (char *)0, 0},
-  {(char *)"nodes", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes, 0, (char *)0, 0},
-  {(char *)"nodes_splitting_trees", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_splitting_trees, 0, (char *)0, 0},
-  {(char *)"nodes_childs", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_childs, 0, (char *)0, 0},
-  {(char *)"nodes_parent", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_parent, 0, (char *)0, 0},
-  {(char *)"nodes_impurities", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_impurities, 0, (char *)0, 0},
-  {(char *)"nodes_n_node_samples", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_n_node_samples, 0, (char *)0, 0},
-  {(char *)"nodes_weighted_n_node_samples", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_weighted_n_node_samples, 0, (char *)0, 0},
-  {(char *)"nodes_group", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_group, 0, (char *)0, 0},
-  {(char *)"nodes_n_childs", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_n_childs, 0, (char *)0, 0},
-  {(char *)"nodes_depths", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_depths, 0, (char *)0, 0},
-  {(char *)"nodes_cart_idx", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_cart_idx, 0, (char *)0, 0},
+  {(char *)"n_classes", __pyx_getprop_10CARTGVTree_10CARTGVTree_n_classes, 0, (char *)"\n        Return the number of classes\n        ", 0},
+  {(char *)"value_stride", __pyx_getprop_10CARTGVTree_10CARTGVTree_value_stride, 0, (char *)"\n        Return the value stride\n        ", 0},
+  {(char *)"value", __pyx_getprop_10CARTGVTree_10CARTGVTree_value, 0, (char *)"\n        Return the values of each node (The number of observation in each class for the current node)\n        ", 0},
+  {(char *)"nodes", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes, 0, (char *)"\n        Return an array of nodes\n        ", 0},
+  {(char *)"nodes_splitting_trees", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_splitting_trees, 0, (char *)"\n        Return the splitting tree of each node\n        ", 0},
+  {(char *)"nodes_childs", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_childs, 0, (char *)"\n        Return the ids of children of each nodes\n        ", 0},
+  {(char *)"nodes_parent", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_parent, 0, (char *)"\n        Return the id of the parent of each node\n        ", 0},
+  {(char *)"nodes_impurities", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_impurities, 0, (char *)"\n        Return the impurity of each node\n        ", 0},
+  {(char *)"nodes_n_node_samples", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_n_node_samples, 0, (char *)"\n        Return the number of samples/observations in each node\n        ", 0},
+  {(char *)"nodes_weighted_n_node_samples", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_weighted_n_node_samples, 0, (char *)"\n        Return the number of weighted samples/observations in each node\n        ", 0},
+  {(char *)"nodes_group", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_group, 0, (char *)"\n        Return an array containing the groups that cut each nodes (value = -1 if the node wasnt't splitted)\n        ", 0},
+  {(char *)"nodes_n_childs", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_n_childs, 0, (char *)"\n        Return the number of children for each node in an array\n        ", 0},
+  {(char *)"nodes_depths", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_depths, 0, (char *)"\n        Return the depth of each node\n        ", 0},
+  {(char *)"nodes_cart_idx", __pyx_getprop_10CARTGVTree_10CARTGVTree_nodes_cart_idx, 0, (char *)"\n        Return the place of the node in the splitting tree\n        ", 0},
   {(char *)"n_groups", __pyx_getprop_10CARTGVTree_10CARTGVTree_n_groups, __pyx_setprop_10CARTGVTree_10CARTGVTree_n_groups, (char *)0, 0},
   {(char *)"len_groups", __pyx_getprop_10CARTGVTree_10CARTGVTree_len_groups, __pyx_setprop_10CARTGVTree_10CARTGVTree_len_groups, (char *)0, 0},
   {(char *)"n_outputs", __pyx_getprop_10CARTGVTree_10CARTGVTree_n_outputs, __pyx_setprop_10CARTGVTree_10CARTGVTree_n_outputs, (char *)0, 0},
@@ -34643,15 +32257,15 @@ static PyMethodDef __pyx_methods_10CARTGVTree_CARTGVTreeBuilder[] = {
 };
 
 static struct PyGetSetDef __pyx_getsets_10CARTGVTree_CARTGVTreeBuilder[] = {
-  {(char *)"splitter", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_splitter, 0, (char *)0, 0},
-  {(char *)"min_samples_split", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_samples_split, 0, (char *)0, 0},
-  {(char *)"min_samples_leaf", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_samples_leaf, 0, (char *)0, 0},
-  {(char *)"min_weight_leaf", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_weight_leaf, 0, (char *)0, 0},
-  {(char *)"max_depth", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_max_depth, 0, (char *)0, 0},
-  {(char *)"mgroup", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_mgroup, 0, (char *)0, 0},
-  {(char *)"mvar", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_mvar, 0, (char *)0, 0},
-  {(char *)"min_impurity_decrease", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_impurity_decrease, 0, (char *)0, 0},
-  {(char *)"min_impurity_split", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_impurity_split, 0, (char *)0, 0},
+  {(char *)"splitter", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_splitter, 0, (char *)"\n        Return the splitter of the class\n        ", 0},
+  {(char *)"min_samples_split", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_samples_split, 0, (char *)"\n        Return the minimal number of samples in a node needed to split it\n        ", 0},
+  {(char *)"min_samples_leaf", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_samples_leaf, 0, (char *)"\n        Return the minimal number under which the nodes are considered leaves\n        ", 0},
+  {(char *)"min_weight_leaf", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_weight_leaf, 0, (char *)"\n        Return the minimal weigth in a node under which it is considered a leaf\n        ", 0},
+  {(char *)"max_depth", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_max_depth, 0, (char *)"\n        Return the maximal depth at which the tree can grow\n        ", 0},
+  {(char *)"mgroup", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_mgroup, 0, (char *)"\n        Return the number of group that will be selected to split each node\n        ", 0},
+  {(char *)"mvar", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_mvar, 0, (char *)"\n        Return the number of variables in the selected group that will be used to build the splitting tree\n        ", 0},
+  {(char *)"min_impurity_decrease", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_impurity_decrease, 0, (char *)"\n        Return the minimal decrease in impurity needed above which the node isn't considerd a leaf\n        ", 0},
+  {(char *)"min_impurity_split", __pyx_getprop_10CARTGVTree_17CARTGVTreeBuilder_min_impurity_split, 0, (char *)"\n        Return the minimal impurity under which the node is considered a leaf\n        ", 0},
   {0, 0, 0, 0, 0}
 };
 
@@ -35686,12 +33300,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Indirect_dimensions_not_supporte, __pyx_k_Indirect_dimensions_not_supporte, sizeof(__pyx_k_Indirect_dimensions_not_supporte), 0, 0, 1, 0},
   {&__pyx_kp_s_Invalid_mode_expected_c_or_fortr, __pyx_k_Invalid_mode_expected_c_or_fortr, sizeof(__pyx_k_Invalid_mode_expected_c_or_fortr), 0, 0, 1, 0},
   {&__pyx_kp_s_Invalid_shape_in_axis_d_d, __pyx_k_Invalid_shape_in_axis_d_d, sizeof(__pyx_k_Invalid_shape_in_axis_d_d), 0, 0, 1, 0},
-  {&__pyx_kp_s_Je_passe_ici, __pyx_k_Je_passe_ici, sizeof(__pyx_k_Je_passe_ici), 0, 0, 1, 0},
-  {&__pyx_kp_s_Je_passe_la, __pyx_k_Je_passe_la, sizeof(__pyx_k_Je_passe_la), 0, 0, 1, 0},
   {&__pyx_n_s_MemoryError, __pyx_k_MemoryError, sizeof(__pyx_k_MemoryError), 0, 0, 1, 1},
   {&__pyx_kp_s_MemoryView_of_r_at_0x_x, __pyx_k_MemoryView_of_r_at_0x_x, sizeof(__pyx_k_MemoryView_of_r_at_0x_x), 0, 0, 1, 0},
   {&__pyx_kp_s_MemoryView_of_r_object, __pyx_k_MemoryView_of_r_object, sizeof(__pyx_k_MemoryView_of_r_object), 0, 0, 1, 0},
-  {&__pyx_kp_s_NB_samples, __pyx_k_NB_samples, sizeof(__pyx_k_NB_samples), 0, 0, 1, 0},
   {&__pyx_n_s_NODE_DTYPE, __pyx_k_NODE_DTYPE, sizeof(__pyx_k_NODE_DTYPE), 0, 0, 1, 1},
   {&__pyx_kp_s_No_support_for_np_int64_index_ba, __pyx_k_No_support_for_np_int64_index_ba, sizeof(__pyx_k_No_support_for_np_int64_index_ba), 0, 0, 1, 0},
   {&__pyx_n_b_O, __pyx_k_O, sizeof(__pyx_k_O), 0, 0, 0, 1},
@@ -35716,7 +33327,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_s_apply, __pyx_k_apply, sizeof(__pyx_k_apply), 0, 0, 1, 1},
   {&__pyx_n_s_apply_sparse_csr, __pyx_k_apply_sparse_csr, sizeof(__pyx_k_apply_sparse_csr), 0, 0, 1, 1},
-  {&__pyx_n_s_argmax, __pyx_k_argmax, sizeof(__pyx_k_argmax), 0, 0, 1, 1},
   {&__pyx_n_s_array, __pyx_k_array, sizeof(__pyx_k_array), 0, 0, 1, 1},
   {&__pyx_n_s_asarray, __pyx_k_asarray, sizeof(__pyx_k_asarray), 0, 0, 1, 1},
   {&__pyx_n_s_ascontiguousarray, __pyx_k_ascontiguousarray, sizeof(__pyx_k_ascontiguousarray), 0, 0, 1, 1},
@@ -35766,16 +33376,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_getstate, __pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 0, 1, 1},
   {&__pyx_kp_s_got_differing_extents_in_dimensi, __pyx_k_got_differing_extents_in_dimensi, sizeof(__pyx_k_got_differing_extents_in_dimensi), 0, 0, 1, 0},
   {&__pyx_n_s_group, __pyx_k_group, sizeof(__pyx_k_group), 0, 0, 1, 1},
-  {&__pyx_n_s_group_j, __pyx_k_group_j, sizeof(__pyx_k_group_j), 0, 0, 1, 1},
   {&__pyx_n_s_groups, __pyx_k_groups, sizeof(__pyx_k_groups), 0, 0, 1, 1},
   {&__pyx_n_s_i8, __pyx_k_i8, sizeof(__pyx_k_i8), 0, 0, 1, 1},
-  {&__pyx_kp_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 0},
-  {&__pyx_n_s_id_2, __pyx_k_id_2, sizeof(__pyx_k_id_2), 0, 0, 1, 1},
+  {&__pyx_n_s_id, __pyx_k_id, sizeof(__pyx_k_id), 0, 0, 1, 1},
   {&__pyx_n_s_iinfo, __pyx_k_iinfo, sizeof(__pyx_k_iinfo), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_impurity, __pyx_k_impurity, sizeof(__pyx_k_impurity), 0, 0, 1, 1},
-  {&__pyx_n_s_in1d, __pyx_k_in1d, sizeof(__pyx_k_in1d), 0, 0, 1, 1},
-  {&__pyx_n_s_in_bag_idx, __pyx_k_in_bag_idx, sizeof(__pyx_k_in_bag_idx), 0, 0, 1, 1},
   {&__pyx_n_s_indices, __pyx_k_indices, sizeof(__pyx_k_indices), 0, 0, 1, 1},
   {&__pyx_n_s_indptr, __pyx_k_indptr, sizeof(__pyx_k_indptr), 0, 0, 1, 1},
   {&__pyx_n_s_inf, __pyx_k_inf, sizeof(__pyx_k_inf), 0, 0, 1, 1},
@@ -35819,13 +33425,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_node_count, __pyx_k_node_count, sizeof(__pyx_k_node_count), 0, 0, 1, 1},
   {&__pyx_n_s_nodes, __pyx_k_nodes, sizeof(__pyx_k_nodes), 0, 0, 1, 1},
   {&__pyx_n_s_nodes_cart_idx, __pyx_k_nodes_cart_idx, sizeof(__pyx_k_nodes_cart_idx), 0, 0, 1, 1},
-  {&__pyx_n_s_nonzero, __pyx_k_nonzero, sizeof(__pyx_k_nonzero), 0, 0, 1, 1},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
   {&__pyx_kp_s_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 0, 1, 0},
   {&__pyx_kp_s_numpy_core_umath_failed_to_impor, __pyx_k_numpy_core_umath_failed_to_impor, sizeof(__pyx_k_numpy_core_umath_failed_to_impor), 0, 0, 1, 0},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
-  {&__pyx_n_s_oob_idx, __pyx_k_oob_idx, sizeof(__pyx_k_oob_idx), 0, 0, 1, 1},
   {&__pyx_n_s_order, __pyx_k_order, sizeof(__pyx_k_order), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
   {&__pyx_n_s_parent, __pyx_k_parent, sizeof(__pyx_k_parent), 0, 0, 1, 1},
@@ -35833,7 +33437,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pickle, __pyx_k_pickle, sizeof(__pyx_k_pickle), 0, 0, 1, 1},
   {&__pyx_n_s_plot_tree, __pyx_k_plot_tree, sizeof(__pyx_k_plot_tree), 0, 0, 1, 1},
   {&__pyx_n_s_plt, __pyx_k_plt, sizeof(__pyx_k_plt), 0, 0, 1, 1},
-  {&__pyx_n_s_pop, __pyx_k_pop, sizeof(__pyx_k_pop), 0, 0, 1, 1},
   {&__pyx_n_s_predict, __pyx_k_predict, sizeof(__pyx_k_predict), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
@@ -35860,7 +33463,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
   {&__pyx_n_s_sklearn_base, __pyx_k_sklearn_base, sizeof(__pyx_k_sklearn_base), 0, 0, 1, 1},
   {&__pyx_n_s_sklearn_tree, __pyx_k_sklearn_tree, sizeof(__pyx_k_sklearn_tree), 0, 0, 1, 1},
-  {&__pyx_n_s_sobol_indice, __pyx_k_sobol_indice, sizeof(__pyx_k_sobol_indice), 0, 0, 1, 1},
   {&__pyx_n_s_sort_indices, __pyx_k_sort_indices, sizeof(__pyx_k_sort_indices), 0, 0, 1, 1},
   {&__pyx_n_s_splitter, __pyx_k_splitter, sizeof(__pyx_k_splitter), 0, 0, 1, 1},
   {&__pyx_n_s_splitting_tree, __pyx_k_splitting_tree, sizeof(__pyx_k_splitting_tree), 0, 0, 1, 1},
@@ -35873,7 +33475,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_strided_and_indirect, __pyx_k_strided_and_indirect, sizeof(__pyx_k_strided_and_indirect), 0, 0, 1, 0},
   {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
   {&__pyx_n_s_struct, __pyx_k_struct, sizeof(__pyx_k_struct), 0, 0, 1, 1},
-  {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_take, __pyx_k_take, sizeof(__pyx_k_take), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
@@ -35895,13 +33496,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(0, 2, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 271, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 449, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 474, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 508, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(1, 533, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(3, 947, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 151, __pyx_L1_error)
   __pyx_builtin_Ellipsis = __Pyx_GetBuiltinName(__pyx_n_s_Ellipsis); if (!__pyx_builtin_Ellipsis) __PYX_ERR(0, 404, __pyx_L1_error)
-  __pyx_builtin_id = __Pyx_GetBuiltinName(__pyx_n_s_id_2); if (!__pyx_builtin_id) __PYX_ERR(0, 613, __pyx_L1_error)
+  __pyx_builtin_id = __Pyx_GetBuiltinName(__pyx_n_s_id); if (!__pyx_builtin_id) __PYX_ERR(0, 613, __pyx_L1_error)
   __pyx_builtin_IndexError = __Pyx_GetBuiltinName(__pyx_n_s_IndexError); if (!__pyx_builtin_IndexError) __PYX_ERR(0, 832, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -35931,58 +33532,58 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "CARTGVTree.pyx":449
+  /* "CARTGVTree.pyx":508
  * 
  *         if 'nodes' not in d:
  *             raise ValueError('You have loaded Tree version which '             # <<<<<<<<<<<<<<
  *                              'cannot be imported')
  * 
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_You_have_loaded_Tree_version_whi); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 449, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_You_have_loaded_Tree_version_whi); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(1, 508, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "CARTGVTree.pyx":463
+  /* "CARTGVTree.pyx":522
  *             node_ndarray = node_ndarray.byteswap().newbyteorder()
  *             if (node_ndarray.dtype != NODE_DTYPE):
  *                 raise ValueError('Did not recognise loaded array dytpe')             # <<<<<<<<<<<<<<
  * 
  *         if (node_ndarray.ndim != 1 or
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Did_not_recognise_loaded_array_d); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 463, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_s_Did_not_recognise_loaded_array_d); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(1, 522, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "CARTGVTree.pyx":470
+  /* "CARTGVTree.pyx":529
  *                 not value_ndarray.flags.c_contiguous or
  *                 value_ndarray.dtype != np.float64):
  *             raise ValueError('Did not recognise loaded array layout')             # <<<<<<<<<<<<<<
  * 
  *         self.capacity = node_ndarray.shape[0]
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Did_not_recognise_loaded_array_l); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 470, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_Did_not_recognise_loaded_array_l); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(1, 529, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "CARTGVTree.pyx":1135
+  /* "CARTGVTree.pyx":1202
  *         Py_INCREF(self)
  *         if PyArray_SetBaseObject(arr, <PyObject*> self) < 0:
  *             raise ValueError("Can't initialize array.")             # <<<<<<<<<<<<<<
  *         return arr
  * 
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Can_t_initialize_array); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 1135, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Can_t_initialize_array); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 1202, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
 
-  /* "CARTGVTree.pyx":1596
+  /* "CARTGVTree.pyx":1717
  * 
  *             if X.indices.dtype != np.int32 or X.indptr.dtype != np.int32:
  *                 raise ValueError("No support for np.int64 index based "             # <<<<<<<<<<<<<<
  *                                  "sparse matrices")
  * 
  */
-  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_No_support_for_np_int64_index_ba); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 1596, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(1, __pyx_kp_s_No_support_for_np_int64_index_ba); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 1717, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
 
@@ -36219,113 +33820,113 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
 
-  /* "CARTGVTree.pyx":86
+  /* "CARTGVTree.pyx":92
  * #print(splitting_tree_type)
  * NODE_DTYPE = np.dtype([('childs',np.ndarray),
  *                         ('parent','i8'),             # <<<<<<<<<<<<<<
  *                         ('splitting_tree',np.str_),
  *                         ('impurity','f8'),
  */
-  __pyx_tuple__37 = PyTuple_Pack(2, __pyx_n_s_parent, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(1, 86, __pyx_L1_error)
+  __pyx_tuple__37 = PyTuple_Pack(2, __pyx_n_s_parent, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(1, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
 
-  /* "CARTGVTree.pyx":88
+  /* "CARTGVTree.pyx":94
  *                         ('parent','i8'),
  *                         ('splitting_tree',np.str_),
  *                         ('impurity','f8'),             # <<<<<<<<<<<<<<
  *                         ('n_node_samples','i8'),
  *                         ('weighted_n_node_samples','f8'),
  */
-  __pyx_tuple__38 = PyTuple_Pack(2, __pyx_n_s_impurity, __pyx_n_s_f8); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(1, 88, __pyx_L1_error)
+  __pyx_tuple__38 = PyTuple_Pack(2, __pyx_n_s_impurity, __pyx_n_s_f8); if (unlikely(!__pyx_tuple__38)) __PYX_ERR(1, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
 
-  /* "CARTGVTree.pyx":89
+  /* "CARTGVTree.pyx":95
  *                         ('splitting_tree',np.str_),
  *                         ('impurity','f8'),
  *                         ('n_node_samples','i8'),             # <<<<<<<<<<<<<<
  *                         ('weighted_n_node_samples','f8'),
  *                         ('group','i8'),
  */
-  __pyx_tuple__39 = PyTuple_Pack(2, __pyx_n_s_n_node_samples, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(1, 89, __pyx_L1_error)
+  __pyx_tuple__39 = PyTuple_Pack(2, __pyx_n_s_n_node_samples, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(1, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__39);
   __Pyx_GIVEREF(__pyx_tuple__39);
 
-  /* "CARTGVTree.pyx":90
+  /* "CARTGVTree.pyx":96
  *                         ('impurity','f8'),
  *                         ('n_node_samples','i8'),
  *                         ('weighted_n_node_samples','f8'),             # <<<<<<<<<<<<<<
  *                         ('group','i8'),
  *                         ('n_childs','i8'),
  */
-  __pyx_tuple__40 = PyTuple_Pack(2, __pyx_n_s_weighted_n_node_samples, __pyx_n_s_f8); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(1, 90, __pyx_L1_error)
+  __pyx_tuple__40 = PyTuple_Pack(2, __pyx_n_s_weighted_n_node_samples, __pyx_n_s_f8); if (unlikely(!__pyx_tuple__40)) __PYX_ERR(1, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__40);
   __Pyx_GIVEREF(__pyx_tuple__40);
 
-  /* "CARTGVTree.pyx":91
+  /* "CARTGVTree.pyx":97
  *                         ('n_node_samples','i8'),
  *                         ('weighted_n_node_samples','f8'),
  *                         ('group','i8'),             # <<<<<<<<<<<<<<
  *                         ('n_childs','i8'),
  *                         ('current_child','i8'),
  */
-  __pyx_tuple__41 = PyTuple_Pack(2, __pyx_n_s_group, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(1, 91, __pyx_L1_error)
+  __pyx_tuple__41 = PyTuple_Pack(2, __pyx_n_s_group, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(1, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__41);
   __Pyx_GIVEREF(__pyx_tuple__41);
 
-  /* "CARTGVTree.pyx":92
+  /* "CARTGVTree.pyx":98
  *                         ('weighted_n_node_samples','f8'),
  *                         ('group','i8'),
  *                         ('n_childs','i8'),             # <<<<<<<<<<<<<<
  *                         ('current_child','i8'),
  *                         ('start','i8'),
  */
-  __pyx_tuple__42 = PyTuple_Pack(2, __pyx_n_s_n_childs, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(1, 92, __pyx_L1_error)
+  __pyx_tuple__42 = PyTuple_Pack(2, __pyx_n_s_n_childs, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(1, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
 
-  /* "CARTGVTree.pyx":93
+  /* "CARTGVTree.pyx":99
  *                         ('group','i8'),
  *                         ('n_childs','i8'),
  *                         ('current_child','i8'),             # <<<<<<<<<<<<<<
  *                         ('start','i8'),
  *                         ('end','i8'),
  */
-  __pyx_tuple__43 = PyTuple_Pack(2, __pyx_n_s_current_child, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(1, 93, __pyx_L1_error)
+  __pyx_tuple__43 = PyTuple_Pack(2, __pyx_n_s_current_child, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__43);
   __Pyx_GIVEREF(__pyx_tuple__43);
 
-  /* "CARTGVTree.pyx":94
+  /* "CARTGVTree.pyx":100
  *                         ('n_childs','i8'),
  *                         ('current_child','i8'),
  *                         ('start','i8'),             # <<<<<<<<<<<<<<
  *                         ('end','i8'),
  *                         ('depth','i8')])
  */
-  __pyx_tuple__44 = PyTuple_Pack(2, __pyx_n_s_start, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(1, 94, __pyx_L1_error)
+  __pyx_tuple__44 = PyTuple_Pack(2, __pyx_n_s_start, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__44)) __PYX_ERR(1, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__44);
   __Pyx_GIVEREF(__pyx_tuple__44);
 
-  /* "CARTGVTree.pyx":95
+  /* "CARTGVTree.pyx":101
  *                         ('current_child','i8'),
  *                         ('start','i8'),
  *                         ('end','i8'),             # <<<<<<<<<<<<<<
  *                         ('depth','i8')])
  * #NODE_DTYPE = CARTGVNodeClass
  */
-  __pyx_tuple__45 = PyTuple_Pack(2, __pyx_n_s_end, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(1, 95, __pyx_L1_error)
+  __pyx_tuple__45 = PyTuple_Pack(2, __pyx_n_s_end, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__45)) __PYX_ERR(1, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__45);
   __Pyx_GIVEREF(__pyx_tuple__45);
 
-  /* "CARTGVTree.pyx":96
+  /* "CARTGVTree.pyx":102
  *                         ('start','i8'),
  *                         ('end','i8'),
  *                         ('depth','i8')])             # <<<<<<<<<<<<<<
  * #NODE_DTYPE = CARTGVNodeClass
  * ctypedef struct CARTGVNode_PyObject:
  */
-  __pyx_tuple__46 = PyTuple_Pack(2, __pyx_n_s_depth, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(1, 96, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(2, __pyx_n_s_depth, __pyx_n_s_i8); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(1, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
 
@@ -36401,7 +34002,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 }
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
-  __pyx_umethod_PyList_Type_pop.type = (PyObject*)&PyList_Type;
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(1, 1, __pyx_L1_error);
   __pyx_float_1_0 = PyFloat_FromDouble(1.0); if (unlikely(!__pyx_float_1_0)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(1, 1, __pyx_L1_error)
@@ -36468,48 +34068,46 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_10CARTGVTree_CARTGVTree.predict = (PyArrayObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_predict;
   __pyx_vtable_10CARTGVTree_CARTGVTree.apply = (PyArrayObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_apply;
   __pyx_vtable_10CARTGVTree_CARTGVTree._apply_dense = (PyArrayObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *))__pyx_f_10CARTGVTree_10CARTGVTree__apply_dense;
-  __pyx_vtable_10CARTGVTree_CARTGVTree.sobol_indice = (PyArrayObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int, __Pyx_memviewslice, __Pyx_memviewslice, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_sobol_indice;
-  __pyx_vtable_10CARTGVTree_CARTGVTree.apply_sobol = (PyArrayObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int, __Pyx_memviewslice, __Pyx_memviewslice))__pyx_f_10CARTGVTree_10CARTGVTree_apply_sobol;
   __pyx_vtable_10CARTGVTree_CARTGVTree.decision_path = (PyObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_decision_path;
   __pyx_vtable_10CARTGVTree_CARTGVTree.test_resize_CARTGVTree = (void (*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_test_resize_CARTGVTree;
   __pyx_vtable_10CARTGVTree_CARTGVTree.test_add_node = (void (*)(struct __pyx_obj_10CARTGVTree_CARTGVTree *, struct __pyx_obj_14CARTGVSplitter_CARTGVSplitter *, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, __pyx_t_7sklearn_4tree_5_tree_SIZE_t, int __pyx_skip_dispatch))__pyx_f_10CARTGVTree_10CARTGVTree_test_add_node;
-  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 204, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 210, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_10CARTGVTree_CARTGVTree.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10CARTGVTree_CARTGVTree.tp_dictoffset && __pyx_type_10CARTGVTree_CARTGVTree.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10CARTGVTree_CARTGVTree.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVTree.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 204, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVTree, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 204, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVTree.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 210, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVTree, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVTree) < 0) __PYX_ERR(1, 210, __pyx_L1_error)
   __pyx_ptype_10CARTGVTree_CARTGVTree = &__pyx_type_10CARTGVTree_CARTGVTree;
   __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder = &__pyx_vtable_10CARTGVTree_CARTGVTreeBuilder;
   __pyx_vtable_10CARTGVTree_CARTGVTreeBuilder.build = (void (*)(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *, struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, PyArrayObject *, PyObject *, PyArrayObject *, PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_build *__pyx_optional_args))__pyx_f_10CARTGVTree_17CARTGVTreeBuilder_build;
   __pyx_vtable_10CARTGVTree_CARTGVTreeBuilder._check_input = (PyObject *(*)(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *, PyObject *, PyArrayObject *, PyArrayObject *))__pyx_f_10CARTGVTree_17CARTGVTreeBuilder__check_input;
   __pyx_vtable_10CARTGVTree_CARTGVTreeBuilder.test_build = (void (*)(struct __pyx_obj_10CARTGVTree_CARTGVTreeBuilder *, struct __pyx_obj_10CARTGVTree_CARTGVTree *, PyObject *, PyArrayObject *, PyObject *, PyArrayObject *, PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_10CARTGVTree_17CARTGVTreeBuilder_test_build *__pyx_optional_args))__pyx_f_10CARTGVTree_17CARTGVTreeBuilder_test_build;
-  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1343, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1413, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_dictoffset && __pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1343, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVTreeBuilder, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1343, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1343, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVTreeBuilder.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1413, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVTreeBuilder, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1413, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10CARTGVTree_CARTGVTreeBuilder) < 0) __PYX_ERR(1, 1413, __pyx_L1_error)
   __pyx_ptype_10CARTGVTree_CARTGVTreeBuilder = &__pyx_type_10CARTGVTree_CARTGVTreeBuilder;
   __pyx_vtabptr_10CARTGVTree_CARTGVNodeClass = &__pyx_vtable_10CARTGVTree_CARTGVNodeClass;
   __pyx_vtable_10CARTGVTree_CARTGVNodeClass.from_ptr = (struct __pyx_obj_10CARTGVTree_CARTGVNodeClass *(*)(__pyx_t_10CARTGVTree_CARTGVNode *))__pyx_f_10CARTGVTree_15CARTGVNodeClass_from_ptr;
-  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 129, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_10CARTGVTree_CARTGVNodeClass.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10CARTGVTree_CARTGVNodeClass.tp_dictoffset && __pyx_type_10CARTGVTree_CARTGVNodeClass.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10CARTGVTree_CARTGVNodeClass.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVNodeClass.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 129, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVNodeClass, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 129, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 129, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_10CARTGVTree_CARTGVNodeClass.tp_dict, __pyx_vtabptr_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CARTGVNodeClass, (PyObject *)&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_10CARTGVTree_CARTGVNodeClass) < 0) __PYX_ERR(1, 135, __pyx_L1_error)
   __pyx_ptype_10CARTGVTree_CARTGVNodeClass = &__pyx_type_10CARTGVTree_CARTGVNodeClass;
   __pyx_vtabptr_array = &__pyx_vtable_array;
   __pyx_vtable_array.get_memview = (PyObject *(*)(struct __pyx_array_obj *))__pyx_array_get_memview;
@@ -37042,107 +34640,107 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_plt, __pyx_t_2) < 0) __PYX_ERR(1, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "CARTGVTree.pyx":33
+  /* "CARTGVTree.pyx":39
  * from CARTGVCriterion cimport CARTGVCriterion
  * 
  * np.import_array()             # <<<<<<<<<<<<<<
  * 
  * from scipy.sparse import issparse
  */
-  __pyx_t_3 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(1, 33, __pyx_L1_error)
+  __pyx_t_3 = __pyx_f_5numpy_import_array(); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(1, 39, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":35
+  /* "CARTGVTree.pyx":41
  * np.import_array()
  * 
  * from scipy.sparse import issparse             # <<<<<<<<<<<<<<
  * from scipy.sparse import csc_matrix
  * from scipy.sparse import csr_matrix
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 35, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_issparse);
   __Pyx_GIVEREF(__pyx_n_s_issparse);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_issparse);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 35, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 35, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_issparse); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_issparse, __pyx_t_2) < 0) __PYX_ERR(1, 35, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_issparse, __pyx_t_2) < 0) __PYX_ERR(1, 41, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":36
+  /* "CARTGVTree.pyx":42
  * 
  * from scipy.sparse import issparse
  * from scipy.sparse import csc_matrix             # <<<<<<<<<<<<<<
  * from scipy.sparse import csr_matrix
  * from sklearn.base import is_classifier
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 36, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_csc_matrix);
   __Pyx_GIVEREF(__pyx_n_s_csc_matrix);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_csc_matrix);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 36, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_csc_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 36, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_csc_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csc_matrix, __pyx_t_1) < 0) __PYX_ERR(1, 36, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csc_matrix, __pyx_t_1) < 0) __PYX_ERR(1, 42, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "CARTGVTree.pyx":37
+  /* "CARTGVTree.pyx":43
  * from scipy.sparse import issparse
  * from scipy.sparse import csc_matrix
  * from scipy.sparse import csr_matrix             # <<<<<<<<<<<<<<
  * from sklearn.base import is_classifier
  * from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 37, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_csr_matrix);
   __Pyx_GIVEREF(__pyx_n_s_csr_matrix);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_csr_matrix);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 37, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_scipy_sparse, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_csr_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 37, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_csr_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csr_matrix, __pyx_t_2) < 0) __PYX_ERR(1, 37, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_csr_matrix, __pyx_t_2) < 0) __PYX_ERR(1, 43, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":38
+  /* "CARTGVTree.pyx":44
  * from scipy.sparse import csc_matrix
  * from scipy.sparse import csr_matrix
  * from sklearn.base import is_classifier             # <<<<<<<<<<<<<<
  * from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree
  * 
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 38, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_is_classifier);
   __Pyx_GIVEREF(__pyx_n_s_is_classifier);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_is_classifier);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sklearn_base, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 38, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sklearn_base, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_is_classifier); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 38, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_is_classifier); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_classifier, __pyx_t_1) < 0) __PYX_ERR(1, 38, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_classifier, __pyx_t_1) < 0) __PYX_ERR(1, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "CARTGVTree.pyx":39
+  /* "CARTGVTree.pyx":45
  * from scipy.sparse import csr_matrix
  * from sklearn.base import is_classifier
  * from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor, plot_tree             # <<<<<<<<<<<<<<
  * 
  * from sklearn.tree._utils cimport PriorityHeap, PriorityHeapRecord, sizet_ptr_to_ndarray
  */
-  __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_DecisionTreeClassifier);
   __Pyx_GIVEREF(__pyx_n_s_DecisionTreeClassifier);
@@ -37153,82 +34751,82 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_plot_tree);
   __Pyx_GIVEREF(__pyx_n_s_plot_tree);
   PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_plot_tree);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_sklearn_tree, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_sklearn_tree, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_DecisionTreeClassifier); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_DecisionTreeClassifier); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DecisionTreeClassifier, __pyx_t_2) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DecisionTreeClassifier, __pyx_t_2) < 0) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_DecisionTreeRegressor); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_DecisionTreeRegressor); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DecisionTreeRegressor, __pyx_t_2) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DecisionTreeRegressor, __pyx_t_2) < 0) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_plot_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 39, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_plot_tree); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_plot_tree, __pyx_t_2) < 0) __PYX_ERR(1, 39, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_plot_tree, __pyx_t_2) < 0) __PYX_ERR(1, 45, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":57
+  /* "CARTGVTree.pyx":63
  * # =============================================================================
  * 
  * from numpy import float32 as DTYPE             # <<<<<<<<<<<<<<
  * from numpy import float64 as DOUBLE
  * 
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 57, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_float32);
   __Pyx_GIVEREF(__pyx_n_s_float32);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_float32);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_numpy, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 57, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_numpy, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_float32); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_float32); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DTYPE, __pyx_t_1) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DTYPE, __pyx_t_1) < 0) __PYX_ERR(1, 63, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "CARTGVTree.pyx":58
+  /* "CARTGVTree.pyx":64
  * 
  * from numpy import float32 as DTYPE
  * from numpy import float64 as DOUBLE             # <<<<<<<<<<<<<<
  * 
  * cdef double INFINITY = np.inf
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 58, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_float64);
   __Pyx_GIVEREF(__pyx_n_s_float64);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_float64);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 58, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_float64); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 58, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_float64); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DOUBLE, __pyx_t_2) < 0) __PYX_ERR(1, 58, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_DOUBLE, __pyx_t_2) < 0) __PYX_ERR(1, 64, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":60
+  /* "CARTGVTree.pyx":66
  * from numpy import float64 as DOUBLE
  * 
  * cdef double INFINITY = np.inf             # <<<<<<<<<<<<<<
  * cdef double EPSILON = 0.1#np.finfo('double').eps
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 60, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_inf); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 60, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_inf); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 60, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_4 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 66, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_10CARTGVTree_INFINITY = __pyx_t_4;
 
-  /* "CARTGVTree.pyx":61
+  /* "CARTGVTree.pyx":67
  * 
  * cdef double INFINITY = np.inf
  * cdef double EPSILON = 0.1#np.finfo('double').eps             # <<<<<<<<<<<<<<
@@ -37237,7 +34835,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_EPSILON = 0.1;
 
-  /* "CARTGVTree.pyx":64
+  /* "CARTGVTree.pyx":70
  * 
  * # Some handy constants (BestFirstTreeBuilder)
  * cdef int IS_FIRST = 1             # <<<<<<<<<<<<<<
@@ -37246,7 +34844,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_IS_FIRST = 1;
 
-  /* "CARTGVTree.pyx":65
+  /* "CARTGVTree.pyx":71
  * # Some handy constants (BestFirstTreeBuilder)
  * cdef int IS_FIRST = 1
  * cdef int IS_NOT_FIRST = 0             # <<<<<<<<<<<<<<
@@ -37255,7 +34853,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_IS_NOT_FIRST = 0;
 
-  /* "CARTGVTree.pyx":66
+  /* "CARTGVTree.pyx":72
  * cdef int IS_FIRST = 1
  * cdef int IS_NOT_FIRST = 0
  * cdef int IS_LEFT = 1             # <<<<<<<<<<<<<<
@@ -37264,7 +34862,7 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_IS_LEFT = 1;
 
-  /* "CARTGVTree.pyx":67
+  /* "CARTGVTree.pyx":73
  * cdef int IS_NOT_FIRST = 0
  * cdef int IS_LEFT = 1
  * cdef int IS_NOT_LEFT = 0             # <<<<<<<<<<<<<<
@@ -37273,51 +34871,51 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_IS_NOT_LEFT = 0;
 
-  /* "CARTGVTree.pyx":69
+  /* "CARTGVTree.pyx":75
  * cdef int IS_NOT_LEFT = 0
  * 
  * TREE_LEAF = -1             # <<<<<<<<<<<<<<
  * TREE_UNDEFINED = -2
  * cdef SIZE_t _TREE_LEAF = TREE_LEAF
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_TREE_LEAF, __pyx_int_neg_1) < 0) __PYX_ERR(1, 69, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_TREE_LEAF, __pyx_int_neg_1) < 0) __PYX_ERR(1, 75, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":70
+  /* "CARTGVTree.pyx":76
  * 
  * TREE_LEAF = -1
  * TREE_UNDEFINED = -2             # <<<<<<<<<<<<<<
  * cdef SIZE_t _TREE_LEAF = TREE_LEAF
  * cdef SIZE_t _TREE_UNDEFINED = TREE_UNDEFINED
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_TREE_UNDEFINED, __pyx_int_neg_2) < 0) __PYX_ERR(1, 70, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_TREE_UNDEFINED, __pyx_int_neg_2) < 0) __PYX_ERR(1, 76, __pyx_L1_error)
 
-  /* "CARTGVTree.pyx":71
+  /* "CARTGVTree.pyx":77
  * TREE_LEAF = -1
  * TREE_UNDEFINED = -2
  * cdef SIZE_t _TREE_LEAF = TREE_LEAF             # <<<<<<<<<<<<<<
  * cdef SIZE_t _TREE_UNDEFINED = TREE_UNDEFINED
  * cdef SIZE_t INITIAL_STACK_SIZE = 10
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_TREE_LEAF); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 71, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_TREE_LEAF); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_2); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 71, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_2); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 77, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_10CARTGVTree__TREE_LEAF = __pyx_t_5;
 
-  /* "CARTGVTree.pyx":72
+  /* "CARTGVTree.pyx":78
  * TREE_UNDEFINED = -2
  * cdef SIZE_t _TREE_LEAF = TREE_LEAF
  * cdef SIZE_t _TREE_UNDEFINED = TREE_UNDEFINED             # <<<<<<<<<<<<<<
  * cdef SIZE_t INITIAL_STACK_SIZE = 10
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_TREE_UNDEFINED); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 72, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_TREE_UNDEFINED); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_2); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 72, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_Py_intptr_t(__pyx_t_2); if (unlikely((__pyx_t_5 == ((npy_intp)-1)) && PyErr_Occurred())) __PYX_ERR(1, 78, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_10CARTGVTree__TREE_UNDEFINED = __pyx_t_5;
 
-  /* "CARTGVTree.pyx":73
+  /* "CARTGVTree.pyx":79
  * cdef SIZE_t _TREE_LEAF = TREE_LEAF
  * cdef SIZE_t _TREE_UNDEFINED = TREE_UNDEFINED
  * cdef SIZE_t INITIAL_STACK_SIZE = 10             # <<<<<<<<<<<<<<
@@ -37326,14 +34924,14 @@ if (!__Pyx_RefNanny) {
  */
   __pyx_v_10CARTGVTree_INITIAL_STACK_SIZE = 10;
 
-  /* "CARTGVTree.pyx":85
+  /* "CARTGVTree.pyx":91
  * #splitting_tree_type = np.asarray(<unsigned char[:1]>(&dummy.splitting_tree)).dtype
  * #print(splitting_tree_type)
  * NODE_DTYPE = np.dtype([('childs',np.ndarray),             # <<<<<<<<<<<<<<
  *                         ('parent','i8'),
  *                         ('splitting_tree',np.str_),
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 85, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_childs);
   __Pyx_GIVEREF(__pyx_n_s_childs);
@@ -37342,19 +34940,19 @@ if (!__Pyx_RefNanny) {
   __Pyx_GIVEREF(((PyObject *)__pyx_ptype_5numpy_ndarray));
   PyTuple_SET_ITEM(__pyx_t_2, 1, ((PyObject *)__pyx_ptype_5numpy_ndarray));
 
-  /* "CARTGVTree.pyx":87
+  /* "CARTGVTree.pyx":93
  * NODE_DTYPE = np.dtype([('childs',np.ndarray),
  *                         ('parent','i8'),
  *                         ('splitting_tree',np.str_),             # <<<<<<<<<<<<<<
  *                         ('impurity','f8'),
  *                         ('n_node_samples','i8'),
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 87, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_str); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 87, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_str); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 87, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_splitting_tree);
   __Pyx_GIVEREF(__pyx_n_s_splitting_tree);
@@ -37363,14 +34961,14 @@ if (!__Pyx_RefNanny) {
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "CARTGVTree.pyx":85
+  /* "CARTGVTree.pyx":91
  * #splitting_tree_type = np.asarray(<unsigned char[:1]>(&dummy.splitting_tree)).dtype
  * #print(splitting_tree_type)
  * NODE_DTYPE = np.dtype([('childs',np.ndarray),             # <<<<<<<<<<<<<<
  *                         ('parent','i8'),
  *                         ('splitting_tree',np.str_),
  */
-  __pyx_t_6 = PyList_New(12); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 85, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(12); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_2);
   PyList_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
@@ -37408,13 +35006,13 @@ if (!__Pyx_RefNanny) {
   PyList_SET_ITEM(__pyx_t_6, 11, __pyx_tuple__46);
   __pyx_t_2 = 0;
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_dtype), __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 85, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_ptype_5numpy_dtype), __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NODE_DTYPE, __pyx_t_1) < 0) __PYX_ERR(1, 85, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NODE_DTYPE, __pyx_t_1) < 0) __PYX_ERR(1, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "CARTGVTree.pyx":494
+  /* "CARTGVTree.pyx":553
  *                 raise MemoryError()
  * 
  *     cdef int _resize_c(self, SIZE_t capacity=SIZE_MAX) nogil except -1:             # <<<<<<<<<<<<<<
@@ -39531,179 +37129,6 @@ static CYTHON_INLINE void __Pyx_XDEC_MEMVIEW(__Pyx_memviewslice *memslice,
     }
 }
 
-/* None */
-  static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
-    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
-}
-
-/* PyObjectGetMethod */
-  static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method) {
-    PyObject *attr;
-#if CYTHON_UNPACK_METHODS && CYTHON_COMPILING_IN_CPYTHON && CYTHON_USE_PYTYPE_LOOKUP
-    PyTypeObject *tp = Py_TYPE(obj);
-    PyObject *descr;
-    descrgetfunc f = NULL;
-    PyObject **dictptr, *dict;
-    int meth_found = 0;
-    assert (*method == NULL);
-    if (unlikely(tp->tp_getattro != PyObject_GenericGetAttr)) {
-        attr = __Pyx_PyObject_GetAttrStr(obj, name);
-        goto try_unpack;
-    }
-    if (unlikely(tp->tp_dict == NULL) && unlikely(PyType_Ready(tp) < 0)) {
-        return 0;
-    }
-    descr = _PyType_Lookup(tp, name);
-    if (likely(descr != NULL)) {
-        Py_INCREF(descr);
-#if PY_MAJOR_VERSION >= 3
-        #ifdef __Pyx_CyFunction_USED
-        if (likely(PyFunction_Check(descr) || (Py_TYPE(descr) == &PyMethodDescr_Type) || __Pyx_CyFunction_Check(descr)))
-        #else
-        if (likely(PyFunction_Check(descr) || (Py_TYPE(descr) == &PyMethodDescr_Type)))
-        #endif
-#else
-        #ifdef __Pyx_CyFunction_USED
-        if (likely(PyFunction_Check(descr) || __Pyx_CyFunction_Check(descr)))
-        #else
-        if (likely(PyFunction_Check(descr)))
-        #endif
-#endif
-        {
-            meth_found = 1;
-        } else {
-            f = Py_TYPE(descr)->tp_descr_get;
-            if (f != NULL && PyDescr_IsData(descr)) {
-                attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
-                Py_DECREF(descr);
-                goto try_unpack;
-            }
-        }
-    }
-    dictptr = _PyObject_GetDictPtr(obj);
-    if (dictptr != NULL && (dict = *dictptr) != NULL) {
-        Py_INCREF(dict);
-        attr = __Pyx_PyDict_GetItemStr(dict, name);
-        if (attr != NULL) {
-            Py_INCREF(attr);
-            Py_DECREF(dict);
-            Py_XDECREF(descr);
-            goto try_unpack;
-        }
-        Py_DECREF(dict);
-    }
-    if (meth_found) {
-        *method = descr;
-        return 1;
-    }
-    if (f != NULL) {
-        attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
-        Py_DECREF(descr);
-        goto try_unpack;
-    }
-    if (descr != NULL) {
-        *method = descr;
-        return 0;
-    }
-    PyErr_Format(PyExc_AttributeError,
-#if PY_MAJOR_VERSION >= 3
-                 "'%.50s' object has no attribute '%U'",
-                 tp->tp_name, name);
-#else
-                 "'%.50s' object has no attribute '%.400s'",
-                 tp->tp_name, PyString_AS_STRING(name));
-#endif
-    return 0;
-#else
-    attr = __Pyx_PyObject_GetAttrStr(obj, name);
-    goto try_unpack;
-#endif
-try_unpack:
-#if CYTHON_UNPACK_METHODS
-    if (likely(attr) && PyMethod_Check(attr) && likely(PyMethod_GET_SELF(attr) == obj)) {
-        PyObject *function = PyMethod_GET_FUNCTION(attr);
-        Py_INCREF(function);
-        Py_DECREF(attr);
-        *method = function;
-        return 1;
-    }
-#endif
-    *method = attr;
-    return 0;
-}
-
-/* PyObjectCallMethod0 */
-  static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name) {
-    PyObject *method = NULL, *result = NULL;
-    int is_method = __Pyx_PyObject_GetMethod(obj, method_name, &method);
-    if (likely(is_method)) {
-        result = __Pyx_PyObject_CallOneArg(method, obj);
-        Py_DECREF(method);
-        return result;
-    }
-    if (unlikely(!method)) goto bad;
-    result = __Pyx_PyObject_CallNoArg(method);
-    Py_DECREF(method);
-bad:
-    return result;
-}
-
-/* UnpackUnboundCMethod */
-  static int __Pyx_TryUnpackUnboundCMethod(__Pyx_CachedCFunction* target) {
-    PyObject *method;
-    method = __Pyx_PyObject_GetAttrStr(target->type, *target->method_name);
-    if (unlikely(!method))
-        return -1;
-    target->method = method;
-#if CYTHON_COMPILING_IN_CPYTHON
-    #if PY_MAJOR_VERSION >= 3
-    if (likely(__Pyx_TypeCheck(method, &PyMethodDescr_Type)))
-    #endif
-    {
-        PyMethodDescrObject *descr = (PyMethodDescrObject*) method;
-        target->func = descr->d_method->ml_meth;
-        target->flag = descr->d_method->ml_flags & ~(METH_CLASS | METH_STATIC | METH_COEXIST | METH_STACKLESS);
-    }
-#endif
-    return 0;
-}
-
-/* CallUnboundCMethod0 */
-  static PyObject* __Pyx__CallUnboundCMethod0(__Pyx_CachedCFunction* cfunc, PyObject* self) {
-    PyObject *args, *result = NULL;
-    if (unlikely(!cfunc->method) && unlikely(__Pyx_TryUnpackUnboundCMethod(cfunc) < 0)) return NULL;
-#if CYTHON_ASSUME_SAFE_MACROS
-    args = PyTuple_New(1);
-    if (unlikely(!args)) goto bad;
-    Py_INCREF(self);
-    PyTuple_SET_ITEM(args, 0, self);
-#else
-    args = PyTuple_Pack(1, self);
-    if (unlikely(!args)) goto bad;
-#endif
-    result = __Pyx_PyObject_Call(cfunc->method, args, NULL);
-    Py_DECREF(args);
-bad:
-    return result;
-}
-
-/* pop */
-  static CYTHON_INLINE PyObject* __Pyx__PyObject_Pop(PyObject* L) {
-    if (Py_TYPE(L) == &PySet_Type) {
-        return PySet_Pop(L);
-    }
-    return __Pyx_PyObject_CallMethod0(L, __pyx_n_s_pop);
-}
-#if CYTHON_USE_PYLIST_INTERNALS && CYTHON_ASSUME_SAFE_MACROS
-static CYTHON_INLINE PyObject* __Pyx_PyList_Pop(PyObject* L) {
-    if (likely(PyList_GET_SIZE(L) > (((PyListObject*)L)->allocated >> 1))) {
-        __Pyx_SET_SIZE(L, Py_SIZE(L) - 1);
-        return PyList_GET_ITEM(L, PyList_GET_SIZE(L));
-    }
-    return __Pyx_CallUnboundCMethod0(&__pyx_umethod_PyList_Type_pop, L);
-}
-#endif
-
 /* RaiseTooManyValuesToUnpack */
   static CYTHON_INLINE void __Pyx_RaiseTooManyValuesError(Py_ssize_t expected) {
     PyErr_Format(PyExc_ValueError,
@@ -40582,6 +38007,11 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED
 #endif
 
 /* None */
+    static CYTHON_INLINE void __Pyx_RaiseUnboundLocalError(const char *varname) {
+    PyErr_Format(PyExc_UnboundLocalError, "local variable '%s' referenced before assignment", varname);
+}
+
+/* None */
     static CYTHON_INLINE long __Pyx_div_long(long a, long b) {
     long q = a / b;
     long r = a - q*b;
@@ -41205,251 +38635,6 @@ __pyx_capsule_create(void *p, CYTHON_UNUSED const char *sig)
         return (target_type) value;\
     }
 
-/* TypeInfoCompare */
-    static int
-__pyx_typeinfo_cmp(__Pyx_TypeInfo *a, __Pyx_TypeInfo *b)
-{
-    int i;
-    if (!a || !b)
-        return 0;
-    if (a == b)
-        return 1;
-    if (a->size != b->size || a->typegroup != b->typegroup ||
-            a->is_unsigned != b->is_unsigned || a->ndim != b->ndim) {
-        if (a->typegroup == 'H' || b->typegroup == 'H') {
-            return a->size == b->size;
-        } else {
-            return 0;
-        }
-    }
-    if (a->ndim) {
-        for (i = 0; i < a->ndim; i++)
-            if (a->arraysize[i] != b->arraysize[i])
-                return 0;
-    }
-    if (a->typegroup == 'S') {
-        if (a->flags != b->flags)
-            return 0;
-        if (a->fields || b->fields) {
-            if (!(a->fields && b->fields))
-                return 0;
-            for (i = 0; a->fields[i].type && b->fields[i].type; i++) {
-                __Pyx_StructField *field_a = a->fields + i;
-                __Pyx_StructField *field_b = b->fields + i;
-                if (field_a->offset != field_b->offset ||
-                    !__pyx_typeinfo_cmp(field_a->type, field_b->type))
-                    return 0;
-            }
-            return !a->fields[i].type && !b->fields[i].type;
-        }
-    }
-    return 1;
-}
-
-/* MemviewSliceValidateAndInit */
-    static int
-__pyx_check_strides(Py_buffer *buf, int dim, int ndim, int spec)
-{
-    if (buf->shape[dim] <= 1)
-        return 1;
-    if (buf->strides) {
-        if (spec & __Pyx_MEMVIEW_CONTIG) {
-            if (spec & (__Pyx_MEMVIEW_PTR|__Pyx_MEMVIEW_FULL)) {
-                if (unlikely(buf->strides[dim] != sizeof(void *))) {
-                    PyErr_Format(PyExc_ValueError,
-                                 "Buffer is not indirectly contiguous "
-                                 "in dimension %d.", dim);
-                    goto fail;
-                }
-            } else if (unlikely(buf->strides[dim] != buf->itemsize)) {
-                PyErr_SetString(PyExc_ValueError,
-                                "Buffer and memoryview are not contiguous "
-                                "in the same dimension.");
-                goto fail;
-            }
-        }
-        if (spec & __Pyx_MEMVIEW_FOLLOW) {
-            Py_ssize_t stride = buf->strides[dim];
-            if (stride < 0)
-                stride = -stride;
-            if (unlikely(stride < buf->itemsize)) {
-                PyErr_SetString(PyExc_ValueError,
-                                "Buffer and memoryview are not contiguous "
-                                "in the same dimension.");
-                goto fail;
-            }
-        }
-    } else {
-        if (unlikely(spec & __Pyx_MEMVIEW_CONTIG && dim != ndim - 1)) {
-            PyErr_Format(PyExc_ValueError,
-                         "C-contiguous buffer is not contiguous in "
-                         "dimension %d", dim);
-            goto fail;
-        } else if (unlikely(spec & (__Pyx_MEMVIEW_PTR))) {
-            PyErr_Format(PyExc_ValueError,
-                         "C-contiguous buffer is not indirect in "
-                         "dimension %d", dim);
-            goto fail;
-        } else if (unlikely(buf->suboffsets)) {
-            PyErr_SetString(PyExc_ValueError,
-                            "Buffer exposes suboffsets but no strides");
-            goto fail;
-        }
-    }
-    return 1;
-fail:
-    return 0;
-}
-static int
-__pyx_check_suboffsets(Py_buffer *buf, int dim, CYTHON_UNUSED int ndim, int spec)
-{
-    if (spec & __Pyx_MEMVIEW_DIRECT) {
-        if (unlikely(buf->suboffsets && buf->suboffsets[dim] >= 0)) {
-            PyErr_Format(PyExc_ValueError,
-                         "Buffer not compatible with direct access "
-                         "in dimension %d.", dim);
-            goto fail;
-        }
-    }
-    if (spec & __Pyx_MEMVIEW_PTR) {
-        if (unlikely(!buf->suboffsets || (buf->suboffsets[dim] < 0))) {
-            PyErr_Format(PyExc_ValueError,
-                         "Buffer is not indirectly accessible "
-                         "in dimension %d.", dim);
-            goto fail;
-        }
-    }
-    return 1;
-fail:
-    return 0;
-}
-static int
-__pyx_verify_contig(Py_buffer *buf, int ndim, int c_or_f_flag)
-{
-    int i;
-    if (c_or_f_flag & __Pyx_IS_F_CONTIG) {
-        Py_ssize_t stride = 1;
-        for (i = 0; i < ndim; i++) {
-            if (unlikely(stride * buf->itemsize != buf->strides[i]  &&  buf->shape[i] > 1)) {
-                PyErr_SetString(PyExc_ValueError,
-                    "Buffer not fortran contiguous.");
-                goto fail;
-            }
-            stride = stride * buf->shape[i];
-        }
-    } else if (c_or_f_flag & __Pyx_IS_C_CONTIG) {
-        Py_ssize_t stride = 1;
-        for (i = ndim - 1; i >- 1; i--) {
-            if (unlikely(stride * buf->itemsize != buf->strides[i]  &&  buf->shape[i] > 1)) {
-                PyErr_SetString(PyExc_ValueError,
-                    "Buffer not C contiguous.");
-                goto fail;
-            }
-            stride = stride * buf->shape[i];
-        }
-    }
-    return 1;
-fail:
-    return 0;
-}
-static int __Pyx_ValidateAndInit_memviewslice(
-                int *axes_specs,
-                int c_or_f_flag,
-                int buf_flags,
-                int ndim,
-                __Pyx_TypeInfo *dtype,
-                __Pyx_BufFmt_StackElem stack[],
-                __Pyx_memviewslice *memviewslice,
-                PyObject *original_obj)
-{
-    struct __pyx_memoryview_obj *memview, *new_memview;
-    __Pyx_RefNannyDeclarations
-    Py_buffer *buf;
-    int i, spec = 0, retval = -1;
-    __Pyx_BufFmt_Context ctx;
-    int from_memoryview = __pyx_memoryview_check(original_obj);
-    __Pyx_RefNannySetupContext("ValidateAndInit_memviewslice", 0);
-    if (from_memoryview && __pyx_typeinfo_cmp(dtype, ((struct __pyx_memoryview_obj *)
-                                                            original_obj)->typeinfo)) {
-        memview = (struct __pyx_memoryview_obj *) original_obj;
-        new_memview = NULL;
-    } else {
-        memview = (struct __pyx_memoryview_obj *) __pyx_memoryview_new(
-                                            original_obj, buf_flags, 0, dtype);
-        new_memview = memview;
-        if (unlikely(!memview))
-            goto fail;
-    }
-    buf = &memview->view;
-    if (unlikely(buf->ndim != ndim)) {
-        PyErr_Format(PyExc_ValueError,
-                "Buffer has wrong number of dimensions (expected %d, got %d)",
-                ndim, buf->ndim);
-        goto fail;
-    }
-    if (new_memview) {
-        __Pyx_BufFmt_Init(&ctx, stack, dtype);
-        if (unlikely(!__Pyx_BufFmt_CheckString(&ctx, buf->format))) goto fail;
-    }
-    if (unlikely((unsigned) buf->itemsize != dtype->size)) {
-        PyErr_Format(PyExc_ValueError,
-                     "Item size of buffer (%" CYTHON_FORMAT_SSIZE_T "u byte%s) "
-                     "does not match size of '%s' (%" CYTHON_FORMAT_SSIZE_T "u byte%s)",
-                     buf->itemsize,
-                     (buf->itemsize > 1) ? "s" : "",
-                     dtype->name,
-                     dtype->size,
-                     (dtype->size > 1) ? "s" : "");
-        goto fail;
-    }
-    if (buf->len > 0) {
-        for (i = 0; i < ndim; i++) {
-            spec = axes_specs[i];
-            if (unlikely(!__pyx_check_strides(buf, i, ndim, spec)))
-                goto fail;
-            if (unlikely(!__pyx_check_suboffsets(buf, i, ndim, spec)))
-                goto fail;
-        }
-        if (unlikely(buf->strides && !__pyx_verify_contig(buf, ndim, c_or_f_flag)))
-            goto fail;
-    }
-    if (unlikely(__Pyx_init_memviewslice(memview, ndim, memviewslice,
-                                         new_memview != NULL) == -1)) {
-        goto fail;
-    }
-    retval = 0;
-    goto no_fail;
-fail:
-    Py_XDECREF(new_memview);
-    retval = -1;
-no_fail:
-    __Pyx_RefNannyFinishContext();
-    return retval;
-}
-
-/* ObjectToMemviewSlice */
-    static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_int(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_CONTIG) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, __Pyx_IS_C_CONTIG,
-                                                 (PyBUF_C_CONTIGUOUS | PyBUF_FORMAT) | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_int, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
 /* MemviewDtypeToObject */
     static CYTHON_INLINE PyObject *__pyx_memview_get_nn___pyx_t_7sklearn_4tree_5_tree_SIZE_t(const char *itemp) {
     return (PyObject *) __Pyx_PyInt_From_Py_intptr_t(*(__pyx_t_7sklearn_4tree_5_tree_SIZE_t *) itemp);
@@ -41579,18 +38764,6 @@ bad:
   PyGILState_Release(_save);
   #endif
   return err;
-}
-
-/* MemviewDtypeToObject */
-    static CYTHON_INLINE PyObject *__pyx_memview_get_int(const char *itemp) {
-    return (PyObject *) __Pyx_PyInt_From_int(*(int *) itemp);
-}
-static CYTHON_INLINE int __pyx_memview_set_int(const char *itemp, PyObject *obj) {
-    int value = __Pyx_PyInt_As_int(obj);
-    if ((value == (int)-1) && PyErr_Occurred())
-        return 0;
-    *(int *) itemp = value;
-    return 1;
 }
 
 /* None */
@@ -43168,6 +40341,228 @@ raise_neg_overflow:
     PyErr_SetString(PyExc_OverflowError,
         "can't convert negative value to char");
     return (char) -1;
+}
+
+/* TypeInfoCompare */
+    static int
+__pyx_typeinfo_cmp(__Pyx_TypeInfo *a, __Pyx_TypeInfo *b)
+{
+    int i;
+    if (!a || !b)
+        return 0;
+    if (a == b)
+        return 1;
+    if (a->size != b->size || a->typegroup != b->typegroup ||
+            a->is_unsigned != b->is_unsigned || a->ndim != b->ndim) {
+        if (a->typegroup == 'H' || b->typegroup == 'H') {
+            return a->size == b->size;
+        } else {
+            return 0;
+        }
+    }
+    if (a->ndim) {
+        for (i = 0; i < a->ndim; i++)
+            if (a->arraysize[i] != b->arraysize[i])
+                return 0;
+    }
+    if (a->typegroup == 'S') {
+        if (a->flags != b->flags)
+            return 0;
+        if (a->fields || b->fields) {
+            if (!(a->fields && b->fields))
+                return 0;
+            for (i = 0; a->fields[i].type && b->fields[i].type; i++) {
+                __Pyx_StructField *field_a = a->fields + i;
+                __Pyx_StructField *field_b = b->fields + i;
+                if (field_a->offset != field_b->offset ||
+                    !__pyx_typeinfo_cmp(field_a->type, field_b->type))
+                    return 0;
+            }
+            return !a->fields[i].type && !b->fields[i].type;
+        }
+    }
+    return 1;
+}
+
+/* MemviewSliceValidateAndInit */
+    static int
+__pyx_check_strides(Py_buffer *buf, int dim, int ndim, int spec)
+{
+    if (buf->shape[dim] <= 1)
+        return 1;
+    if (buf->strides) {
+        if (spec & __Pyx_MEMVIEW_CONTIG) {
+            if (spec & (__Pyx_MEMVIEW_PTR|__Pyx_MEMVIEW_FULL)) {
+                if (unlikely(buf->strides[dim] != sizeof(void *))) {
+                    PyErr_Format(PyExc_ValueError,
+                                 "Buffer is not indirectly contiguous "
+                                 "in dimension %d.", dim);
+                    goto fail;
+                }
+            } else if (unlikely(buf->strides[dim] != buf->itemsize)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "Buffer and memoryview are not contiguous "
+                                "in the same dimension.");
+                goto fail;
+            }
+        }
+        if (spec & __Pyx_MEMVIEW_FOLLOW) {
+            Py_ssize_t stride = buf->strides[dim];
+            if (stride < 0)
+                stride = -stride;
+            if (unlikely(stride < buf->itemsize)) {
+                PyErr_SetString(PyExc_ValueError,
+                                "Buffer and memoryview are not contiguous "
+                                "in the same dimension.");
+                goto fail;
+            }
+        }
+    } else {
+        if (unlikely(spec & __Pyx_MEMVIEW_CONTIG && dim != ndim - 1)) {
+            PyErr_Format(PyExc_ValueError,
+                         "C-contiguous buffer is not contiguous in "
+                         "dimension %d", dim);
+            goto fail;
+        } else if (unlikely(spec & (__Pyx_MEMVIEW_PTR))) {
+            PyErr_Format(PyExc_ValueError,
+                         "C-contiguous buffer is not indirect in "
+                         "dimension %d", dim);
+            goto fail;
+        } else if (unlikely(buf->suboffsets)) {
+            PyErr_SetString(PyExc_ValueError,
+                            "Buffer exposes suboffsets but no strides");
+            goto fail;
+        }
+    }
+    return 1;
+fail:
+    return 0;
+}
+static int
+__pyx_check_suboffsets(Py_buffer *buf, int dim, CYTHON_UNUSED int ndim, int spec)
+{
+    if (spec & __Pyx_MEMVIEW_DIRECT) {
+        if (unlikely(buf->suboffsets && buf->suboffsets[dim] >= 0)) {
+            PyErr_Format(PyExc_ValueError,
+                         "Buffer not compatible with direct access "
+                         "in dimension %d.", dim);
+            goto fail;
+        }
+    }
+    if (spec & __Pyx_MEMVIEW_PTR) {
+        if (unlikely(!buf->suboffsets || (buf->suboffsets[dim] < 0))) {
+            PyErr_Format(PyExc_ValueError,
+                         "Buffer is not indirectly accessible "
+                         "in dimension %d.", dim);
+            goto fail;
+        }
+    }
+    return 1;
+fail:
+    return 0;
+}
+static int
+__pyx_verify_contig(Py_buffer *buf, int ndim, int c_or_f_flag)
+{
+    int i;
+    if (c_or_f_flag & __Pyx_IS_F_CONTIG) {
+        Py_ssize_t stride = 1;
+        for (i = 0; i < ndim; i++) {
+            if (unlikely(stride * buf->itemsize != buf->strides[i]  &&  buf->shape[i] > 1)) {
+                PyErr_SetString(PyExc_ValueError,
+                    "Buffer not fortran contiguous.");
+                goto fail;
+            }
+            stride = stride * buf->shape[i];
+        }
+    } else if (c_or_f_flag & __Pyx_IS_C_CONTIG) {
+        Py_ssize_t stride = 1;
+        for (i = ndim - 1; i >- 1; i--) {
+            if (unlikely(stride * buf->itemsize != buf->strides[i]  &&  buf->shape[i] > 1)) {
+                PyErr_SetString(PyExc_ValueError,
+                    "Buffer not C contiguous.");
+                goto fail;
+            }
+            stride = stride * buf->shape[i];
+        }
+    }
+    return 1;
+fail:
+    return 0;
+}
+static int __Pyx_ValidateAndInit_memviewslice(
+                int *axes_specs,
+                int c_or_f_flag,
+                int buf_flags,
+                int ndim,
+                __Pyx_TypeInfo *dtype,
+                __Pyx_BufFmt_StackElem stack[],
+                __Pyx_memviewslice *memviewslice,
+                PyObject *original_obj)
+{
+    struct __pyx_memoryview_obj *memview, *new_memview;
+    __Pyx_RefNannyDeclarations
+    Py_buffer *buf;
+    int i, spec = 0, retval = -1;
+    __Pyx_BufFmt_Context ctx;
+    int from_memoryview = __pyx_memoryview_check(original_obj);
+    __Pyx_RefNannySetupContext("ValidateAndInit_memviewslice", 0);
+    if (from_memoryview && __pyx_typeinfo_cmp(dtype, ((struct __pyx_memoryview_obj *)
+                                                            original_obj)->typeinfo)) {
+        memview = (struct __pyx_memoryview_obj *) original_obj;
+        new_memview = NULL;
+    } else {
+        memview = (struct __pyx_memoryview_obj *) __pyx_memoryview_new(
+                                            original_obj, buf_flags, 0, dtype);
+        new_memview = memview;
+        if (unlikely(!memview))
+            goto fail;
+    }
+    buf = &memview->view;
+    if (unlikely(buf->ndim != ndim)) {
+        PyErr_Format(PyExc_ValueError,
+                "Buffer has wrong number of dimensions (expected %d, got %d)",
+                ndim, buf->ndim);
+        goto fail;
+    }
+    if (new_memview) {
+        __Pyx_BufFmt_Init(&ctx, stack, dtype);
+        if (unlikely(!__Pyx_BufFmt_CheckString(&ctx, buf->format))) goto fail;
+    }
+    if (unlikely((unsigned) buf->itemsize != dtype->size)) {
+        PyErr_Format(PyExc_ValueError,
+                     "Item size of buffer (%" CYTHON_FORMAT_SSIZE_T "u byte%s) "
+                     "does not match size of '%s' (%" CYTHON_FORMAT_SSIZE_T "u byte%s)",
+                     buf->itemsize,
+                     (buf->itemsize > 1) ? "s" : "",
+                     dtype->name,
+                     dtype->size,
+                     (dtype->size > 1) ? "s" : "");
+        goto fail;
+    }
+    if (buf->len > 0) {
+        for (i = 0; i < ndim; i++) {
+            spec = axes_specs[i];
+            if (unlikely(!__pyx_check_strides(buf, i, ndim, spec)))
+                goto fail;
+            if (unlikely(!__pyx_check_suboffsets(buf, i, ndim, spec)))
+                goto fail;
+        }
+        if (unlikely(buf->strides && !__pyx_verify_contig(buf, ndim, c_or_f_flag)))
+            goto fail;
+    }
+    if (unlikely(__Pyx_init_memviewslice(memview, ndim, memviewslice,
+                                         new_memview != NULL) == -1)) {
+        goto fail;
+    }
+    retval = 0;
+    goto no_fail;
+fail:
+    Py_XDECREF(new_memview);
+    retval = -1;
+no_fail:
+    __Pyx_RefNannyFinishContext();
+    return retval;
 }
 
 /* ObjectToMemviewSlice */

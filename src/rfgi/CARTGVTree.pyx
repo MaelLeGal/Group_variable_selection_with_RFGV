@@ -27,6 +27,12 @@ import matplotlib.pyplot as plt
 #import importlib
 #tree = importlib.import_module("scikit-learn.sklearn.tree")
 
+#from .CARTGVSplitter import CARTGVSplitter
+#from .CARTGVCriterion import CARTGVCriterion
+
+#from .CARTGVSplitter cimport CARTGVSplitter
+#from .CARTGVCriterion cimport CARTGVCriterion
+
 from CARTGVSplitter cimport CARTGVSplitter
 from CARTGVCriterion cimport CARTGVCriterion
 

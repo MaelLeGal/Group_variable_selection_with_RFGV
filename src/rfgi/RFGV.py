@@ -603,15 +603,15 @@ class RFGVBaseForest():
                 scorer = check_scoring(estimator, scoring=None) #was self instead of estimator
                 baseline_score = self._weights_scorer(scorer, estimator, self.X, self.y, None) #TODO Est ce que je dois mettre les oob ? Même résultats
 
-                try:
-                    print("Pickle")
-                    est = pickle.dumps(estimator)
-                    # print(est)
-                    pickle.loads(est)
-                    print("Estimator is pickleable")
-                except:
-                    print("Estimator not pickleable")
-                    ValueError("Estimator not pickleable")
+                # try:
+                #     print("Pickle")
+                #     est = pickle.dumps(estimator)
+                #     # print(est)
+                #     pickle.loads(est)
+                #     print("Estimator is pickleable")
+                # except:
+                #     print("Estimator not pickleable")
+                #     ValueError("Estimator not pickleable")
 
                 start = time.time()
                 #Launch the function _permutation_importance_Breiman on each group with the oob sample

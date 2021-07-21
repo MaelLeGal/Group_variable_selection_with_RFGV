@@ -11,8 +11,11 @@ from sklearn.datasets import load_iris, load_digits, fetch_california_housing, l
 from sklearn.inspection import permutation_importance
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
-from CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
-from RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
+# from CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
+# from RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
+
+from src.rfgi.CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
+from src.rfgi.RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
 
 df = pd.read_csv('../data/training.csv', sep=",")
 df_test = pd.read_csv('../data/testing.csv', sep=",")
@@ -48,8 +51,8 @@ len_groups = np.array([len(group) for group in groups])
 cartgvtree = DecisionCARTGVTreeClassifier(mvar=len_groups,mgroup=len(groups), random_state=2547, max_depth_splitting_tree=2)
 
 cartgvtree.fit(X.iloc[:,:2],y,groups)
-file = open("cartgvtree_size.txt", "wb")
-pickle.dump(obj=cartgvtree, file=file)
+# file = open("cartgvtree_size.txt", "wb")
+# pickle.dump(obj=cartgvtree, file=file)
 print("Score prédiction multi-classes CARTGV (CART) : " + str(cartgvtree.score(X_test.iloc[:,:2],y_test)))
 print(pd.DataFrame(cartgvtree.predict(X_test.iloc[:,:2])))
 print(cartgvtree.get_n_leaves())
@@ -134,7 +137,7 @@ print(np.where(np.bincount(unsampled_indices) != 0))
 # print(rfgv.importances)
 # print(rfgv.permutation_importance(X.iloc[:n_obs,:2], y[:n_obs], groups=groups, importance="Breiman", random_state=2547))
 # print(rfgv.permutation_importance(cartgvtree,X.iloc[:n_obs,:2], y[:n_obs], random_state=2547, n_repeats=1))
-print(rfgv._permutation_importance(importance="breiman", n_jobs=5, n_repeats=5))
+print(rfgv._permutation_importance(importance="breiman", n_jobs=1, n_repeats=5))
 # print(rfgv._permutation_importance(importance="ishwaran", n_jobs=1, n_repeats=5))
 
 rfc = RandomForestClassifier(n_jobs=1, n_estimators=n_estimators, random_state=2547)
