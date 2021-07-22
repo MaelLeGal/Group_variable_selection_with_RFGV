@@ -439,10 +439,18 @@ class RFGVBaseForest():
     @abstractmethod
     def _set_ib_score(self,X,y):
         """
-        Calculate in bag predictions and score.
+        Compute in bag predictions and score.
         """
 
     def _weights_scorer(self, scorer, estimator, X, y, sample_weight):
+        """
+        Compute the score of the estimator based on the datas and responses
+        params scorer : A scoring function
+        params estimator : An estimator, it needs to have a scorring function
+        params X : An array or matrix, the testing data
+        params y : An array or matrix, the testing responses
+        params sample_weight : An array, the weight of each sample in the testing data
+        """
         # print(self)
         # print(estimator)
         if sample_weight is not None:
@@ -451,7 +459,9 @@ class RFGVBaseForest():
 
     def permutation_importance(self, estimator, X, y, *, scoring=None, n_repeats=5,
                            n_jobs=None, random_state=None, sample_weight=None):
-
+        """
+        Compute the group importance by permutation
+        """
         if not hasattr(X, "iloc"):
             X = check_array(X, force_all_finite='allow-nan', dtype=None)
 
@@ -508,6 +518,17 @@ class RFGVBaseForest():
 
     # @wrap_non_picklable_objects
     def _permutation_importance_Breiman(self, X, y, sample_weight, group_idx, random_state, n_repeats, scorer, estimator):
+        """
+        Compute the group importance by permutation following the Breiman method
+        params X: An array or matrix, the out-of-bag data of the estimator
+        params y: An array of matrix, the out-of-bag responses associated to the out-of-bag data of the estimator
+        params sample_weight: An array, the weight of each sample in the oob sample
+        params group_idx: An int, the index of the group being tested
+        params random_state: An int, the seed to fix the randomness
+        params n_repeats : An int, the number of times the process will be done
+        params scorer : A scoring function, A scoring function most of the time the one from the estimator
+        params estimator: An estimator, A tree of the forest
+        """
 
         random_state = check_random_state(random_state)
 
@@ -534,7 +555,15 @@ class RFGVBaseForest():
 
 
     def _permutation_importance_Ishwaran(self,X_permuted,sample_weight, n_repeats, scorer, random_state, estimator):
-
+        """
+        Compute the group importance by permutation following the Ishwaran method
+        params X_permuted: An array or matrix, the out-of-bag data of the estimator already permuted
+        params sample_weight: An array, the weight of each sample in the oob sample
+        params n_repeats : An int, the number of times the process will be done
+        params scorer : A scoring function, A scoring function most of the time the one from the estimator
+        params random_state: An int, the seed to fix the randomness
+        params estimator: An estimator, A tree of the forest
+        """
         n_samples = self.y.shape[0]
 
         n_samples_bootstrap = _get_n_samples_bootstrap(

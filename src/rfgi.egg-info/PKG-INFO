@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: rfgi
-Version: 0.0.5
+Version: 0.0.6
 Summary: Random Forest for Grouped Inputs
 Home-page: https://github.com/apoterie/Group_variable_selection_with_RFGV
 Author: "Maël Le Gal, Audrey Poterie, Charlotte Pelletier"
