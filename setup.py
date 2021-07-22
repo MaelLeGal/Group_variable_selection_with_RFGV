@@ -2,7 +2,7 @@ import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
-with open('requirements.txt') as req_file:       
+with open('requirements.txt', "r", encoding="utf-8") as req_file:       
 	requirements = [req.strip() for req in req_file.read().splitlines()
 	
 setuptools.setup(
@@ -22,5 +22,13 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.7",
-	install_requires=requirements
+	install_requires= [
+		"numpy",
+		"pandas",
+		"matplotlib",
+		"scikit-learn",
+		"jupyter",
+		"scipy",
+		"joblib"
+	]
 )
