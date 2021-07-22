@@ -13,7 +13,7 @@ import numpy as np
 import pickle as pickle
 import sys
 import random
-import faulthandler
+#import faulthandler
 cimport numpy as np
 import matplotlib.pyplot as plt
 import copy
@@ -206,7 +206,7 @@ cdef class CARTGVSplitter():
         random_state : object
             The user inputted random state to be used for pseudo-randomness
         """
-        faulthandler.enable()
+#        faulthandler.enable()
         self.criterion = criterion
 
         self.samples = NULL

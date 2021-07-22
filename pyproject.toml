@@ -5,6 +5,9 @@ requires = [
     "pandas",
     "matplotlib",
     "scikit-learn",
-    "jupyter"
+    "jupyter",
+    "scipy",
+    "joblib",
+    
 ]
 build-backend = "setuptools.build_meta"

@@ -17,7 +17,7 @@ import numpy as np
 import pickle
 cimport numpy as np
 import sys
-import faulthandler
+#import faulthandler
 import matplotlib.pyplot as plt
 
 
@@ -429,7 +429,7 @@ cdef class CARTGVTree():
           """
 
           #Enable error tracking
-          faulthandler.enable()
+#          faulthandler.enable()
 
           # Input/Output layout
           self.n_groups = n_groups
@@ -1498,7 +1498,7 @@ cdef class CARTGVTreeBuilder():
         self.min_impurity_split = min_impurity_split
 #        self.splitting_tree_builder = TreeBuilder(splitter, min_samples_split, min_samples_leaf, min_weight_leaf,
 #                                                  max_depth, min_impurity_decrease, min_impurity_split)
-        faulthandler.enable()
+#        faulthandler.enable()
 
     cpdef void build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups,
                 object pen, np.ndarray sample_weight=None):

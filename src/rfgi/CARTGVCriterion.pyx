@@ -8,7 +8,7 @@ from libc.stdio cimport printf
 import numpy as np
 cimport numpy as np
 import importlib
-import faulthandler
+#import faulthandler
 import sys
 
 np.import_array()
@@ -213,7 +213,7 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         n_classes : numpy.ndarray, dtype=SIZE_t
             The number of unique classes in each target
         """
-        faulthandler.enable()
+#        faulthandler.enable()
 
         self.sample_weight = NULL
 
@@ -580,7 +580,7 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
         n_classes : numpy.ndarray, dtype=SIZE_t
             The number of unique classes in each target
         """
-        faulthandler.enable()
+#        faulthandler.enable()
 
         self.sample_weight = NULL
 

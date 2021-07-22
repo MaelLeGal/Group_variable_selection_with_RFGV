@@ -24,7 +24,7 @@ from sklearn.utils.multiclass import check_classification_targets
 from sklearn.utils.validation import check_is_fitted
 from sklearn.utils.validation import _deprecate_positional_args
 
-from CARTGVCriterion import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVMSE
+from CARTGVCriterion import CARTGVCriterion, CARTGVClassificationCriterion, CARTGVGini, CARTGVRegressionCriterion, CARTGVMSE
 from CARTGVTree import CARTGVTree, CARTGVTreeBuilder
 from CARTGVSplitter import CARTGVSplitter, BaseDenseCARTGVSplitter, BestCARTGVSplitter
 #from . import CARTGVTree, CARTGVCriterion, CARTGVSplitter
@@ -48,6 +48,9 @@ CRITERIA_REG = {"mse": CARTGVMSE}
 DENSE_SPLITTERS = {"best": BestCARTGVSplitter}
 
 class DecisionCARTGVTree(BaseDecisionTree):
+    """
+    Abstract class for the decision tree for grouped variables.
+    """
 
     def __init__(self, *,
                  criterion,
@@ -67,6 +70,28 @@ class DecisionCARTGVTree(BaseDecisionTree):
                  min_impurity_split,
                  class_weight=None,
                  ccp_alpha):
+        """
+        Constructor of the DecisionCARTGVTree class.
+        Defines the different attributes and parameters for the children classes
+
+        params criterion : A string, the criterion that will be used for the tree (Gini, MSE, ...)
+        params splitter : A string, the splitter that will be used for the tree (Best)
+        params max_depth : An int, the maximal depth at which the tree will grow
+        params max_depth_splitting_tree : An int, the maximal depth at which the splitting trees will grow
+        params min_samples_split : An int, the minimal number of samples in a node needed to split it
+        params min_samples_leaf : An int, the minimal number under which the nodes are considered leaves
+        params min_weight_fraction_leaf : An int, the minimal weigth in a node under which it is considered a leaf
+        params max_features : An int, Not used anymore
+        params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
+        params mgroup : An int, the number of group that will be tested to find the best splitting tree
+        params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
+        params random_state : An int, the seed to fix the randomness
+        params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
+        params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
+        params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
+        params class_weight : A dict, list of dict, or "balanced", The class associated weights
+        params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+        """
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -88,6 +113,17 @@ class DecisionCARTGVTree(BaseDecisionTree):
         self.pen = pen
 
     def fit(self, X, y, groups, sample_weight=None, check_input=True):
+        """
+        Method fit of the DecisionTree.
+        Build a decision tree with the training datas and responses
+        params X : An array or matrix, the training data
+        params y : An array, The responses, needs to have the same number of line than the training data
+        params groups : A matrix, The groups that will be used for the tree construction.
+        Each line of the matrix needs to contain the indices of the variable inside the group.
+        A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
+        params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
+        params check_input : A boolean, If true the datas will be checked before the tree construction.
+        """
 
         random_state = check_random_state(self.random_state)
 
@@ -368,6 +404,10 @@ class DecisionCARTGVTree(BaseDecisionTree):
         return self
 
 class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
+    """
+    Class DecisionCARTGVTreeClassifier.
+    A instance of decision tree for classification problems for grouped variables.
+    """
 
     def __init__(self, *,
                  criterion="gini",
@@ -387,6 +427,28 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
                  min_impurity_split=None,
                  class_weight=None,
                  ccp_alpha=0.0):
+        """
+        Constructor of the DecisionCARTGVTreeClassifier class.
+        Defines the different attributes and parameters for the children classes
+
+        params criterion : A string, the criterion that will be used for the tree (Gini, ...)
+        params splitter : A string, the splitter that will be used for the tree (Best)
+        params max_depth : An int, the maximal depth at which the tree will grow
+        params max_depth_splitting_tree : An int, the maximal depth at which the splitting trees will grow
+        params min_samples_split : An int, the minimal number of samples in a node needed to split it
+        params min_samples_leaf : An int, the minimal number under which the nodes are considered leaves
+        params min_weight_fraction_leaf : An int, the minimal weigth in a node under which it is considered a leaf
+        params max_features : An int, Not used anymore
+        params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
+        params mgroup : An int, the number of group that will be tested to find the best splitting tree
+        params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
+        params random_state : An int, the seed to fix the randomness
+        params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
+        params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
+        params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
+        params class_weight : A dict, list of dict, or "balanced", The class associated weights
+        params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+        """
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -407,6 +469,17 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
             ccp_alpha=ccp_alpha)
 
     def fit(self, X, y, groups, sample_weight=None, check_input=True):
+        """
+        Method fit of the DecisionCARTGVTreeClassifier.
+        Build a decision tree with the training datas and responses
+        params X : An array or matrix, the training data
+        params y : An array, The responses, needs to have the same number of line than the training data
+        params groups : A matrix, The groups that will be used for the tree construction.
+        Each line of the matrix needs to contain the indices of the variable inside the group.
+        A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
+        params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
+        params check_input : A boolean, If true the datas will be checked before the tree construction.
+        """
         super().fit(
             X, y,
             groups,
@@ -415,6 +488,11 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
         return self
 
 class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #DecisionTreeRegressor
+    """
+    Class DecisionCARTGVTreeRegressor.
+    A instance of decision tree for regression problems for grouped variables.
+    """
+
 
     def __init__(self, *,
                  criterion="mse",
@@ -433,7 +511,27 @@ class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #Decision
                  min_impurity_decrease=0.,
                  min_impurity_split=None,
                  ccp_alpha=0.0):
+        """
+        Constructor of the DecisionCARTGVTreeRegressor class.
+        Defines the different attributes and parameters for the children classes
 
+        params criterion : A string, the criterion that will be used for the tree (mse, ...)
+        params splitter : A string, the splitter that will be used for the tree (Best)
+        params max_depth : An int, the maximal depth at which the tree will grow
+        params max_depth_splitting_tree : An int, the maximal depth at which the splitting trees will grow
+        params min_samples_split : An int, the minimal number of samples in a node needed to split it
+        params min_samples_leaf : An int, the minimal number under which the nodes are considered leaves
+        params min_weight_fraction_leaf : An int, the minimal weigth in a node under which it is considered a leaf
+        params max_features : An int, Not used anymore
+        params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
+        params mgroup : An int, the number of group that will be tested to find the best splitting tree
+        params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
+        params random_state : An int, the seed to fix the randomness
+        params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
+        params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
+        params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
+        params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+        """
         super().__init__(
             criterion=criterion,
             splitter=splitter,
@@ -453,6 +551,17 @@ class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #Decision
             ccp_alpha=ccp_alpha)
 
     def fit(self, X, y, groups, sample_weight=None, check_input=True):
+        """
+       Method fit of the DecisionCARTGVTreeRegressor.
+       Build a decision tree with the training datas and responses
+       params X : An array or matrix, the training data
+       params y : An array, The responses, needs to have the same number of line than the training data
+       params groups : A matrix, The groups that will be used for the tree construction.
+       Each line of the matrix needs to contain the indices of the variable inside the group.
+       A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
+       params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
+       params check_input : A boolean, If true the datas will be checked before the tree construction.
+       """
         super().fit(
             X, y,
             groups,
