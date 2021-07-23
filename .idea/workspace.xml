@@ -6,12 +6,49 @@
   <component name="ChangeListManager">
     <list default="true" id="403db3ab-f7e2-446d-91ba-4fa4c79d39f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.5-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/rfgi-0.0.5.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rfgi.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rfgi/RFGV.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rfgi/RFGV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.c" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVCriterion.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVCriterion.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.html" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVCriterion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVCriterion.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVCriterion.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVCriterion.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.c" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVSplitter.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVSplitter.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.html" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVSplitter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVSplitter.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVSplitter.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVSplitter.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVTree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVTree.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVTree.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVTree.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVTree.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGV_trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGV_trees.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.c" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVutils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.cp38-win_amd64.pyd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVutils.cp38-win_amd64.pyd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.html" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVutils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.pxd" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVutils.pxd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/CARTGVutils.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/CARTGVutils.pyx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/RFGV.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/RFGV.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVCriterion.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVSplitter.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVTree.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.lib" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.cp38-win_amd64.lib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/build/temp.win-amd64-3.8/Release/CARTGVutils.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/cython_debug/cython_debug_info_CARTGVCriterion" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/cython_debug/cython_debug_info_CARTGVCriterion" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/cython_debug/cython_debug_info_CARTGVSplitter" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/cython_debug/cython_debug_info_CARTGVSplitter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/cython_debug/cython_debug_info_CARTGVTree" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/cython_debug/cython_debug_info_CARTGVTree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/cython_debug/cython_debug_info_CARTGVutils" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/cython_debug/cython_debug_info_CARTGVutils" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/cython_debug/interpreter" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/cython_debug/interpreter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rfgi/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/rfgi/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -47,8 +84,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/test_unitaire2.py" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
+    <property name="settings.editor.selected.configurable" value="pyconsole" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -66,7 +103,7 @@
       <recent name="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test_python_packaging">
+  <component name="RunManager" selected="Python.test_score">
     <configuration name="Test_python_packaging" type="PythonConfigurationType" factoryName="Python">
       <module name="Group_variable_selection_with_RFGV" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,7 +167,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python">
+      <module name="Group_variable_selection_with_RFGV" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -141,7 +179,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -164,6 +201,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="C:\Users\Alphonse\Documents\Master_2\Stage\Random_forest\Group_variable_selection_with_RFGV\test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_pack" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Group_variable_selection_with_RFGV" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Alphonse\anaconda3\envs\Group_variable_selection_with_RFGV\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -257,19 +315,20 @@
     </configuration>
     <list>
       <item itemvalue="Python.Test_python_packaging" />
+      <item itemvalue="Python.test" />
       <item itemvalue="Python.script" />
       <item itemvalue="Python.test_score" />
       <item itemvalue="Python.test_unitaire2" />
       <item itemvalue="Python.test2" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.test_pack" />
       <item itemvalue="Python.test_unitaire" />
       <item itemvalue="Python tests.pytest for test_predict_score.MyTestCase.test_predict_CART_classif_multi_result" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_pack" />
         <item itemvalue="Python.test_unitaire" />
         <item itemvalue="Python tests.pytest for test_predict_score.MyTestCase.test_predict_CART_classif_multi_result" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test_unitaire" />
       </list>
