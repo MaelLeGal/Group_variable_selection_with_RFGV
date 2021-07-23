@@ -21,7 +21,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 	
 setuptools.setup(
     name="rfgi",
-    version="0.0.10",
+    version="0.0.11",
     author="Maël Le Gal, Audrey Poterie, Charlotte Pelletier",
     author_email="mael.legal@live.fr",
     description="Random Forest for Grouped Inputs",
