@@ -101,10 +101,6 @@ cdef class CARTGVSplitter():
     def splitting_tree_builder(self):
         return self.splitting_tree_builder
 
-    @splitting_tree_builder.setter
-    def splitting_tree_builder(self,splitting_tree_builder_): #TODO retirer les setters une fois qu'ils ne sont plus utiles pour les tests
-        self.splitting_tree_builder = <TreeBuilder>splitting_tree_builder_
-
     @property
     def splitting_tree(self):
         return self.splitting_tree
@@ -285,7 +281,6 @@ cdef class CARTGVSplitter():
         """
 
         self.rand_r_state = self.random_state.randint(0, RAND_R_MAX)
-#        self.rand_r_state = 2547
 
         cdef SIZE_t n_samples, n_features
         n_samples, n_features = X.shape
@@ -324,8 +319,6 @@ cdef class CARTGVSplitter():
         cdef int n_groups = groups.shape[0]
         self.n_groups = n_groups
 
-#        for k in range(n_groups):
-#          self.len_groups[k] = len(groups[k])
         self.len_groups = len_groups
 
         if isinstance(self.mvar,str):
@@ -415,52 +408,6 @@ cdef class CARTGVSplitter():
 
         return node_impurity
 
-    ################################# TEST ##################################
-
-    cpdef int test_init(self,
-                  object X,
-                  DOUBLE_t[:, ::1] y,
-                  np.ndarray sample_weight, object groups, np.ndarray len_groups):
-        res = -1
-        if(sample_weight == None):
-            res = self.init(X,y,NULL,groups, len_groups)
-        else:
-            res = self.init(X,y,<DOUBLE_t*>sample_weight.data, groups, len_groups)
-        return res
-
-    cpdef int test_node_reset(self, SIZE_t start, SIZE_t end,
-                                double weighted_n_node_samples):
-        res = self.node_reset(start,end,&weighted_n_node_samples) #<double*>&wns.data
-        return res
-
-    cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end):
-        pass
-
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
-        pass
-
-    cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
-        pass
-
-    cpdef int test_get_splitting_tree_leaves(self):
-        pass
-
-    cpdef int test_get_splitting_tree_leaves_samples_and_pos(self):
-        pass
-
-    cpdef int test_switch_best_splitting_tree(self):
-        pass
-
-    cpdef int test_node_split(self):
-        pass
-
-    cpdef double test_node_value(self, double dest):
-        self.node_value(&dest)
-        return dest
-
-    cpdef double test_node_impurity(self):
-        return self.node_impurity()
-
 cdef class BaseDenseCARTGVSplitter(CARTGVSplitter):
 
     cdef int init(self,
@@ -530,13 +477,12 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         n_classes = []
 
         for k in range(n_outputs):
-          classes_k = np.unique(self.y[:,k]) #TODO Test self.y instead of y
+          classes_k = np.unique(self.y[:,k])
           classes.append(classes_k)
           n_classes.append(classes_k.shape[0])
 
         n_classes = np.array(n_classes, dtype=np.intp)
 
-        #TODO find a better way to know if we are in classif or reg
         if not isinstance(self.split_criterion,Criterion):
             if self.split_criterion in CRITERIA_CLF:
                 is_classification = True
@@ -556,10 +502,8 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         cdef double min_impurity_decrease = self.min_impurity_decrease
         cdef double min_impurity_split = self.min_impurity_split
         cdef object random_state = self.random_state
-#        random_state = check_random_state(2547)
 
         cdef Criterion criterion
-        #TODO find a better way to know if we are in classif or reg
         if not isinstance(self.split_criterion,Criterion):
             if self.split_criterion in CRITERIA_CLF:
                 is_classification = True
@@ -590,11 +534,6 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         params y : a ndarray, the responses for Xf
         """
         self.splitting_tree_builder.build(self.splitting_tree, Xf, y)
-#        print(self.splitting_tree.feature)
-#        clf = DecisionTreeClassifier()
-#        clf.tree_ = self.splitting_tree
-#        plot_tree(clf)
-#        plt.show()
 
         return 0
 
@@ -819,66 +758,5 @@ cdef class BestCARTGVSplitter(BaseDenseCARTGVSplitter):
         split[0] = best # best if freed later as we free split in the build method of CARTGVTreeBuilder
 
         free(sorted_obs)
-
-        return 0
-
-
-    ################################# TEST ##################################
-
-    cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end):
-        return self.group_sample(group,len_group,start,end)
-
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group):
-        return self.reset_scikit_learn_instances(y,group,len_group)
-
-    cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y):
-        return self.splitting_tree_construction(Xf,y)
-
-    cpdef int test_get_splitting_tree_leaves(self):
-
-        cdef Node* sorted_leaves = <Node*> malloc(self.splitting_tree.n_leaves*sizeof(Node))
-        cdef int res = self.get_splitting_tree_leaves(&sorted_leaves)
-
-        return 0
-
-    cpdef int test_get_splitting_tree_leaves_samples_and_pos(self):
-
-        cdef Node* sorted_leaves = <Node*> malloc(self.splitting_tree.n_leaves*sizeof(Node))
-        self.get_splitting_tree_leaves(&sorted_leaves)
-
-        cdef SIZE_t n_samples = self.splitting_tree_builder.splitter.n_samples
-        cdef SIZE_t* starts = <SIZE_t*> malloc(self.splitting_tree.n_leaves * sizeof(SIZE_t))
-        cdef SIZE_t* ends = <SIZE_t*> malloc(self.splitting_tree.n_leaves * sizeof(SIZE_t))
-
-        res = self.get_splitting_tree_leaves_pos(&starts, &ends, sorted_leaves, self.splitting_tree.n_leaves, n_samples)
-
-    cpdef int test_switch_best_splitting_tree(self):
-        cdef double current_proxy_improvement, best_proxy_improvement
-        current_proxy_improvement = 1.0
-        best_proxy_improvement = 0.0
-        cdef CARTGVSplitRecord best
-        cdef SIZE_t* sorted_obs
-
-        cdef Node* sorted_leaves = <Node*> malloc(self.splitting_tree.n_leaves*sizeof(Node))
-        self.get_splitting_tree_leaves(&sorted_leaves)
-
-        cdef SIZE_t n_samples = self.splitting_tree_builder.splitter.n_samples
-        cdef SIZE_t* starts = <SIZE_t*> malloc(self.splitting_tree.n_leaves * sizeof(SIZE_t))
-        cdef SIZE_t* ends = <SIZE_t*> malloc(self.splitting_tree.n_leaves * sizeof(SIZE_t))
-
-        self.get_splitting_tree_leaves_pos(&starts, &ends, sorted_leaves, self.splitting_tree.n_leaves, n_samples)
-
-        res = self.switch_best_splitting_tree(current_proxy_improvement, &best_proxy_improvement, &best, starts, ends, self.splitting_tree.n_leaves,0, sorted_obs)
-        return 0
-
-    cpdef int test_node_split(self):
-
-        cdef impurity = np.inf
-        cdef CARTGVSplitRecord split
-        cdef SIZE_t n_constant_features
-        cdef int parent_start = 0
-        cdef int parent_end = 10 #TODO refaire le test
-
-        self.node_split(impurity, &split, &n_constant_features, parent_start, parent_end)
 
         return 0

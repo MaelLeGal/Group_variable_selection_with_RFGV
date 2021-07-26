@@ -69,8 +69,6 @@ cdef class CARTGVSplitter():
 #    cdef const DTYPE_t[:,:] X                               # The datas
     cdef const DOUBLE_t[:, ::1] y               # The responses
 
-    cdef int test
-
     # The samples vector `samples` is maintained by the Splitter object such
     # that the samples contained in a node are contiguous. With this setting,
     # `node_split` reorganizes the node samples `samples[start:end]` in two
@@ -172,31 +170,6 @@ cdef class CARTGVSplitter():
     # params parent_start : an int, the starting position in the samples array of the parrent node
     # params parent_end : an int, the ending position in the samples array of the parrent node (Not usefull)
     cdef int node_split(self, double impurity, CARTGVSplitRecord* split, SIZE_t* n_constant_features, int parent_start, int parent_end)
-
-    ########################################## TESTS #############################################
-
-    cpdef int test_init(self, object X, DOUBLE_t[:, ::1] y,
-                  np.ndarray sample_weight, object groups, np.ndarray len_groups)
-
-    cpdef int test_node_reset(self, SIZE_t start, SIZE_t end, double weighted_n_node_samples)
-
-    cpdef double test_node_value(self, double dest)
-
-    cpdef double test_node_impurity(self)
-
-    cpdef np.ndarray test_group_sample(self, int[:] group, int len_group, int start, int end)
-
-    cpdef int test_reset_scikit_learn_instances(self, np.ndarray y, int group, int len_group)
-
-    cpdef int test_splitting_tree_construction(self, np.ndarray Xf, np.ndarray y)
-
-    cpdef int test_get_splitting_tree_leaves(self)
-
-    cpdef int test_get_splitting_tree_leaves_samples_and_pos(self)
-
-    cpdef int test_switch_best_splitting_tree(self)
-
-    cpdef int test_node_split(self)
 
 cdef class BaseDenseCARTGVSplitter(CARTGVSplitter):
 

@@ -87,26 +87,6 @@ cdef class CARTGVCriterion():
     # params impurity_childs : a double*, the impurities of the children
     cdef double impurity_improvement(self, double impurity_parent,double* impurity_childs) nogil
 
-    ########################################## TESTS #############################################
-
-    cpdef int test_init(self, const DOUBLE_t[:, ::1] y, np.ndarray sample_weight,
-                  double weighted_n_samples, np.ndarray samples, SIZE_t start,
-                  SIZE_t end)
-
-    cpdef int test_reset(self)
-
-    cpdef int test_update(self)
-
-    cpdef void test_node_value(self)
-
-    cpdef double test_node_impurity(self)
-
-    cpdef void test_children_impurity(self)
-
-    cpdef double test_proxy_impurity_improvement(self)
-
-    cpdef double test_impurity_improvement(self, double impurity_parent, np.ndarray impurity_childs)
-
 cdef class CARTGVClassificationCriterion(CARTGVCriterion):
     """Abstract criterion for classification."""
 

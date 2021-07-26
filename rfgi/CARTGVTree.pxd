@@ -128,26 +128,6 @@ cdef class CARTGVTree():
   #
   # params X, an object (list, ndarray), the data to be predicted
   cdef np.ndarray _apply_dense(self, object X)
-  # cdef np.ndarray _apply_sparse_csr(self, object X)
-
-  #cpdef np.ndarray sobol_indice(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx)
-
-  #cdef np.ndarray apply_sobol(self, object X, int group_j, int[::1] in_bag_idx, int[::1] oob_idx)
-
-  # Give the decision path for a new observation
-  #
-  # params X, an object (list, ndarray), the data
-  cpdef object decision_path(self, object X)
-  # cdef object _decision_path_dense(serlf, object X)
-  # cdef object _decision_path_sparse_csr(self,object X)
-  
-  # cpdef compute_group_importances(self,penality_function,normalize=*)
-
-    ########################################## TESTS #############################################
-
-  cpdef void test_resize_CARTGVTree(self, capacity)
-
-  cpdef void test_add_node(self, CARTGVSplitter splitter, SIZE_t start, SIZE_t end)
 
 
 cdef class CARTGVTreeBuilder():
@@ -187,10 +167,6 @@ cdef class CARTGVTreeBuilder():
     # params y, a ndarray, the responses of the training samples
     # params sample_weight, a ndarray, the weight of each sample (can be None)
     cdef _check_input(self, object X, np.ndarray y, np.ndarray sample_weight)
-
-    ########################################## TESTS #############################################
-
-    cpdef void test_build(self, CARTGVTree tree, object X, np.ndarray y, object groups, np.ndarray len_groups, object pen, np.ndarray sample_weight=*)
 
   
   

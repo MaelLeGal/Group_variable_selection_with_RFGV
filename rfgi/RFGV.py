@@ -303,6 +303,7 @@ class RFGVBaseForest():
         # print(y)
         X, y = self._validate_data(X, y, multi_output=True,
                                    accept_sparse="csc", dtype=DTYPE)
+
         #TODO Check groups
         # print(X)
         # print(y)
