@@ -5,7 +5,7 @@ Code_R/
 data/
 
 # Ignore the GitHub Pycharl link folder
-.idea/
+.idea/*
 
 # Ignore the notebook checkpoints folder
 notebook/.ipynb_checkpoints/

@@ -114,24 +114,65 @@ cdef class CARTGVCriterion():
     cdef int init(self, const DOUBLE_t[:, ::1] y, DOUBLE_t* sample_weight,
                   double weighted_n_samples, SIZE_t* samples, SIZE_t n_samples, SIZE_t start,
                   SIZE_t end) nogil except -1:
+        """
+        Initialise the CARTGVCriterion
+
+        params y : a memoryview (ndarray), the responses of current sample
+        params sample_weight : a DOUBLE_t*, the weight of each sample
+        params weighted_n_samples : a double, the total weight of all samples
+        params samples : a SIZE_t*, the indices array of the samples
+        params n_samples : a SIZE_t, the number of samples
+        params start : a SIZE_t, the starting position in the samples array
+        params end : a SIZE_t, the ending position in the samples array
+
+        outputs : None, Initialise the criterion
+        """
         pass
 
     cdef int reset(self) nogil except -1:
         pass
 
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
+        """
+         Update the criterion with the informations about the children of the current node
+
+        params starts : a SIZE_t*, the starting positions of the children of the current node
+        params ends : a SIZE_t*, the ending positions of the children of the current node
+        params n_childs : an int, the number of children
+
+        outputs : None, update the criterion
+        """
         pass
 
     cdef double node_impurity(self) nogil:
         pass
 
     cdef void children_impurity(self, double** impurity_childs) nogil:
+        """
+         Compute the impurity of the children
+
+        params impurity_childs : a double**, an empty array for the children impurity
+
+        outputs : None, fill the impurity_childs array
+        """
         pass
 
     cdef void node_value(self, double* dest) nogil:
+        """
+        Get the node value
+
+        params dest : a double*, a double where the value will be put
+
+        outputs : None, fill the dest pointer
+        """
         pass
 
     cdef double proxy_impurity_improvement(self) nogil:
+        """
+        Compute the proxy impurity improvement
+
+        outputs : A double, the proxy impurity improvement
+        """
 
         cdef double* impurity_childs = <double*> malloc(self.n_childs * sizeof(double))
         self.children_impurity(&impurity_childs)
@@ -146,6 +187,14 @@ cdef class CARTGVCriterion():
         return res
 
     cdef double impurity_improvement(self, double impurity_parent, double* impurity_childs) nogil:
+        """
+         Compute the real impurity improvement
+
+        params impurity_parent : a double, the impurity of the parent
+        params impurity_childs : a double*, the impurities of the children
+
+        outputs : A double, the impurity improvement
+        """
 
         cdef double res = 0
         cdef int n_childs = self.n_childs
@@ -212,6 +261,8 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
             The number of targets, the dimensionality of the prediction
         n_classes : numpy.ndarray, dtype=SIZE_t
             The number of unique classes in each target
+
+        outputs : An instance of CARTGVClassificationCriterion
         """
 #        faulthandler.enable()
 
@@ -348,6 +399,13 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         return 0
 
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
+        """
+        Update the criterion with the informations about the children of the current node
+
+        params starts : a SIZE_t*, the starting positions of the children of the current node
+        params ends : a SIZE_t*, the ending positions of the children of the current node
+        params n_childs : an int, the number of children
+        """
 
         cdef double** sum_childs = self.sum_childs
 #        cdef double* sum_total = self.sum_total
@@ -396,9 +454,23 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
         pass
 
     cdef void children_impurity(self, double** impurity_childs) nogil:
+        """
+         Compute the impurity of the children
+
+        params impurity_childs : a double**, an empty array for the children impurity
+
+        outputs : None, fill the impurity_childs array
+        """
         pass
 
     cdef void node_value(self, double* dest) nogil:
+        """
+        Get the node value
+
+        params dest : a double*, a double where the value will be put
+
+        outputs : None, fill the dest pointer
+        """
         cdef double* sum_total = self.sum_total
         cdef SIZE_t* n_classes = self.n_classes
         cdef SIZE_t k
@@ -497,7 +569,11 @@ cdef class CARTGVClassificationCriterion(CARTGVCriterion):
 cdef class CARTGVGini(CARTGVClassificationCriterion):
 
     cdef double node_impurity(self) nogil:
+        """
+        Compute the impurity of the node
 
+        outputs : A float, the node impurity
+        """
         cdef SIZE_t* n_classes = self.n_classes
         cdef double* sum_total = self.sum_total
         cdef double gini = 0.0
@@ -522,6 +598,13 @@ cdef class CARTGVGini(CARTGVClassificationCriterion):
         return gini / self.n_outputs
 
     cdef void children_impurity(self, double** impurity_childs) nogil:
+        """
+        Compute the impurity of the children
+
+        params impurity_childs : a double**, an empty array for the children impurity
+
+        outputs : None, fill the impurity_childs array
+        """
 
         cdef SIZE_t* n_classes = self.n_classes
         cdef double** sum_childs = self.sum_childs
@@ -694,7 +777,13 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
         return 0
 
     cdef int update(self, SIZE_t* starts, SIZE_t* ends,int n_childs) nogil except -1:
+        """
+        Update the criterion with the informations about the children of the current node
 
+        params starts : a SIZE_t*, the starting positions of the children of the current node
+        params ends : a SIZE_t*, the ending positions of the children of the current node
+        params n_childs : an int, the number of children
+        """
         cdef double** sum_childs = self.sum_childs
         cdef double* sum_total = self.sum_total
 
@@ -737,6 +826,11 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
 
     #TODO Check ZeroDivisionError: float division
     cdef void node_value(self, double* dest) nogil:
+        """
+        Get the node value
+
+        params dest : a double*, a double where the value will be put
+        """
         cdef SIZE_t k
 #        with gil:
 #            print(self.sum_total[0])
@@ -748,6 +842,11 @@ cdef class CARTGVRegressionCriterion(CARTGVCriterion):
 cdef class CARTGVMSE(CARTGVRegressionCriterion):
 
     cdef double node_impurity(self) nogil:
+        """
+        Compute the impurity of the node
+
+        outputs : A float, the node impurity
+        """
 
         cdef double* sum_total = self.sum_total
         cdef double impurity
@@ -760,6 +859,11 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
         return impurity / self.n_outputs
 
     cdef double proxy_impurity_improvement(self) nogil:
+        """
+        Compute the proxy impurity improvement
+
+        outputs : A double, the proxy impurity improvement
+        """
 
         cdef SIZE_t k,j,i
         cdef double* proxy_impurity_childs = <double*> calloc(self.n_childs,sizeof(double))
@@ -777,6 +881,13 @@ cdef class CARTGVMSE(CARTGVRegressionCriterion):
         return res
 
     cdef void children_impurity(self, double** impurity_childs) nogil:
+        """
+        Compute the impurity of the children
+
+        params impurity_childs : a double**, an empty array for the children impurity
+
+        outputs : None, fill the impurity_childs array
+        """
 
         cdef double** sum_childs = self.sum_childs
         cdef SIZE_t k

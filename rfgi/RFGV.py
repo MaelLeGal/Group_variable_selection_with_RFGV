@@ -88,6 +88,8 @@ def _generate_sample_indices(random_state, n_samples, n_samples_bootstrap):
     params random_state : An int, the seed used to set the randomness
     params n_samples : An int, the number of samples
     params n_samples_bootstrap : An int, the number of samples taken for the bootstrap sample
+
+    outputs : An array of indices, used to get the in-bag sample to create a tree
     """
     random_instance = check_random_state(random_state)
     sample_indices = random_instance.randint(0, n_samples, n_samples_bootstrap)
@@ -101,6 +103,8 @@ def _generate_unsampled_indices(random_state, n_samples, n_samples_bootstrap):
     params random_state : An int, the seed used to set the randomness
     params n_samples : An int, the number of samples
     params n_samples_bootstrap : An int, the number of samples taken for the bootstrap sample and therefore the unsampled indices
+
+    outputs : An array of indices, used to get the out-of-bag sample of a tree
     """
     sample_indices = _generate_sample_indices(random_state, n_samples,
                                               n_samples_bootstrap)
@@ -125,8 +129,10 @@ def _parallel_build_trees(tree, forest, X, y, groups, sample_weight, tree_idx, n
     params tree_idx : An int, the id of the tree
     params n_trees : An int, the number of trees that will be built
     params verbose : An int, verbose > 1 will print the advancement of the building process
-    params class_weight : #TODO
+    params class_weight : A dict, list of dict, or "balanced", The class associated weights
     params n_samples_boostrap : An int, the number of samples to take in the bootstrap sample
+
+    outputs : An instance of DecisionCARTGVTree, used to create the tree in the forest
     """
     # print("Start parallel_build_trees")
     if verbose > 1:
@@ -211,7 +217,7 @@ class RFGVBaseForest():
         Base class for forests of trees.
         Warning: This class should not be used directly. Use derived classes
         instead.
-        """
+    """
 
     @abstractmethod
     def __init__(self,
@@ -231,20 +237,22 @@ class RFGVBaseForest():
                  random=True):
         """
         The constructor of the RFGVBaseForest
-        params base_estimator :
+        params base_estimator : A DecisionCARTGVTree, a template of the trees
         params n_estimators : An int, the number of trees that will be created
         params estimator_params : A tuple containing the parameters for the base estimator construction
         params bootstrap : A boolean, If true the forest will use the bootstrap method
         params oob_score : A boolean, If true the forest will compute the out-of-bag score
         params ib_score : A boolean, If true, the forest will compute the in-bag score
-        params group_importance :
+        params group_importance : Not used.
         params n_jobs : An int, the number of process, threads that will be used to create the forest
         params random_state : An int, the seed use to fix the randomness
-        params verbose : An int, If verbose > ... It will print the stepts of the forest
-        params warm_start :
-        params class_weight :
-        params max_samples :
-        params random :
+        params verbose : An int, If verbose > 0 It will print the stepts of the forest
+        params warm_start : A boolean, Reuse the solution of the previous fit and add more estimators
+        params class_weight : A dict, list of dict, or "balanced", The class associated weights
+        params max_samples : An int, The number of samples to draw from the data to train each estimator
+        params random : A boolean, Remove the randomness in the forest
+
+        outputs : An instance of RFGVBaseForest
         """
 
         super().__init__(
@@ -440,6 +448,8 @@ class RFGVBaseForest():
     def _set_ib_score(self,X,y):
         """
         Compute in bag predictions and score.
+
+        outputs : A float, the in-bag score of the forest
         """
 
     def _weights_scorer(self, scorer, estimator, X, y, sample_weight):
@@ -450,71 +460,14 @@ class RFGVBaseForest():
         params X : An array or matrix, the testing data
         params y : An array or matrix, the testing responses
         params sample_weight : An array, the weight of each sample in the testing data
+
+        outputs : A float, the tree score of one of the tree (estimator)
         """
         # print(self)
         # print(estimator)
         if sample_weight is not None:
             return scorer(estimator, X, y, sample_weight)
         return scorer(estimator, X, y)
-
-    def permutation_importance(self, estimator, X, y, *, scoring=None, n_repeats=5,
-                           n_jobs=None, random_state=None, sample_weight=None):
-        """
-        Compute the group importance by permutation
-        """
-        if not hasattr(X, "iloc"):
-            X = check_array(X, force_all_finite='allow-nan', dtype=None)
-
-            # Precompute random seed from the random state to be used
-            # to get a fresh independent RandomState instance for each
-            # parallel call to _calculate_permutation_scores, irrespective of
-            # the fact that variables are shared or not depending on the active
-            # joblib backend (sequential, thread-based or process-based).
-        random_state = check_random_state(random_state)
-        random_seed = random_state.randint(np.iinfo(np.int32).max + 1)
-
-        scorer = check_scoring(estimator, scoring=scoring)
-        baseline_score = self._weights_scorer(scorer, estimator, X, y, sample_weight)
-
-        scores = Parallel(n_jobs=n_jobs)(delayed(self._calculate_permutation_scores)(
-            estimator, X, y, sample_weight, col_idx, random_seed, n_repeats, scorer
-        ) for col_idx in range(X.shape[1]))
-
-        print(np.array(scores).shape)
-        importances = baseline_score - np.array(scores)
-        print(np.array(importances).shape)
-        return Bunch(importances_mean=np.mean(importances, axis=1),
-                     importances_std=np.std(importances, axis=1),
-                     importances=importances)
-
-    def _calculate_permutation_scores(self,estimator, X, y, sample_weight, col_idx,
-                                      random_state, n_repeats, scorer):
-        """Calculate score when `col_idx` is permuted."""
-        random_state = check_random_state(random_state)
-
-        # Work on a copy of X to to ensure thread-safety in case of threading based
-        # parallelism. Furthermore, making a copy is also useful when the joblib
-        # backend is 'loky' (default) or the old 'multiprocessing': in those cases,
-        # if X is large it will be automatically be backed by a readonly memory map
-        # (memmap). X.copy() on the other hand is always guaranteed to return a
-        # writable data-structure whose columns can be shuffled inplace.
-        X_permuted = X.copy()
-        scores = np.zeros(n_repeats)
-        shuffling_idx = np.arange(X.shape[0])
-        for n_round in range(n_repeats):
-            random_state.shuffle(shuffling_idx)
-            if hasattr(X_permuted, "iloc"):
-                col = X_permuted.iloc[shuffling_idx, col_idx]
-                col.index = X_permuted.index
-                X_permuted.iloc[:, col_idx] = col
-            else:
-                X_permuted[:, col_idx] = X_permuted[shuffling_idx, col_idx]
-            feature_score = self._weights_scorer(
-                scorer, estimator, X_permuted, y, sample_weight
-            )
-            scores[n_round] = feature_score
-
-        return scores
 
     # @wrap_non_picklable_objects
     def _permutation_importance_Breiman(self, X, y, sample_weight, group_idx, random_state, n_repeats, scorer, estimator):
@@ -528,6 +481,8 @@ class RFGVBaseForest():
         params n_repeats : An int, the number of times the process will be done
         params scorer : A scoring function, A scoring function most of the time the one from the estimator
         params estimator: An estimator, A tree of the forest
+
+        outputs : An array of float, the scores of the estimator in the n_rounds
         """
 
         random_state = check_random_state(random_state)
@@ -563,6 +518,8 @@ class RFGVBaseForest():
         params scorer : A scoring function, A scoring function most of the time the one from the estimator
         params random_state: An int, the seed to fix the randomness
         params estimator: An estimator, A tree of the forest
+
+        outputs : An array of float, the scores of the estimator in the n_round
         """
         n_samples = self.y.shape[0]
 
@@ -603,6 +560,8 @@ class RFGVBaseForest():
         params importance : A string, either "breiman" or "ishwaran", select the method that will be used to compute the importances
         params n_jobs : An int, the number of processes or threads used to compute (Can't be above 1 at the moment)
         params n_repeats : An int, the number of time the process will be done
+
+        outputs : A dictionary containing the mean, deviation and all the values of the importances
         """
 
         n_samples = self.y.shape[0]
@@ -730,7 +689,7 @@ class RFGVBaseForest():
 
 class RFGVClassifier(RFGVBaseForest, ForestClassifier):
     """
-
+    Classification forest for group variables
     """
 
     @_deprecate_positional_args
@@ -762,6 +721,40 @@ class RFGVClassifier(RFGVBaseForest, ForestClassifier):
                  ccp_alpha=0.0,
                  max_samples=None,
                  random=True):
+        """
+        The constructor of the RFGVClassifier
+        params n_estimators : An int, the number of trees that will be created
+        params criterion : A string, the criterion name that will be used to construct the forest
+        params splitter : A string, the splitter name that will be used to construct the forest
+        max_depth : An int, the maximum depth of the trees
+        max_depth_splitting_tree : An int, the maximal depth of the splitting trees
+        params min_samples_split : An int, the minimal number of samples in a node needed to split it
+        params min_samples_leaf : An int, the minimal number under which the nodes are considered leaves
+        params min_weight_fraction_leaf : An int, the minimal weigth in a node under which it is considered a leaf
+        params max_features : An int, Not used anymore
+        params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
+        params mgroup : An int, the number of group that will be tested to find the best splitting tree
+        params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
+        params random_state : An int, the seed to fix the randomness
+        params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
+        params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
+        params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
+        params bootstrap : A boolean, If true the forest will use the bootstrap method
+        params oob_score : A boolean, If true the forest will compute the out-of-bag score
+        params ib_score : A boolean, If true, the forest will compute the in-bag score
+        params group_importance : Not used.
+        params n_jobs : An int, the number of process, threads that will be used to create the forest
+        params random_state : An int, the seed use to fix the randomness
+        params verbose : An int, If verbose > ... It will print the stepts of the forest
+        params verbose : An int, If verbose > 0 It will print the stepts of the forest
+        params warm_start : A boolean, Reuse the solution of the previous fit and add more estimators
+        params class_weight : A dict, list of dict, or "balanced", The class associated weights
+        params max_samples : An int, The number of samples to draw from the data to train each estimator
+        params random : A boolean, Remove the randomness in the forest
+        params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+
+        outputs : An instance of RFGVClassifier
+        """
         super().__init__(
             base_estimator=DecisionCARTGVTreeClassifier(),
             n_estimators=n_estimators,
@@ -799,6 +792,13 @@ class RFGVClassifier(RFGVBaseForest, ForestClassifier):
         self.ccp_alpha = ccp_alpha
 
     def _set_ib_score(self, X, y):
+        """
+        Compute the in-bag score
+        params X : An array or matrix, the data used to construct the forest
+        params y : An array or matrix, the responses used to construct the forest
+
+        outputs : A float, the in-bag score of the forest
+        """
         X = check_array(X, dtype=DTYPE, accept_sparse='csr')
 
         n_classes_ = self.n_classes_
@@ -844,6 +844,9 @@ class RFGVClassifier(RFGVBaseForest, ForestClassifier):
         self.ib_score_ = ib_score / self.n_outputs_
 
 class RFGVRegressor(RFGVBaseForest, ForestRegressor):
+    """
+        Regression forest for group variables
+    """
     @_deprecate_positional_args
     def __init__(self,
                  n_estimators=100, *,
@@ -872,6 +875,39 @@ class RFGVRegressor(RFGVBaseForest, ForestRegressor):
                  ccp_alpha=0.0,
                  max_samples=None,
                  random=True):
+        """
+        The constructor of the RFGVRegressor
+        params n_estimators : An int, the number of trees that will be created
+        params criterion : A string, the criterion name that will be used to construct the forest
+        params splitter : A string, the splitter name that will be used to construct the forest
+        max_depth : An int, the maximum depth of the trees
+        max_depth_splitting_tree : An int, the maximal depth of the splitting trees
+        params min_samples_split : An int, the minimal number of samples in a node needed to split it
+        params min_samples_leaf : An int, the minimal number under which the nodes are considered leaves
+        params min_weight_fraction_leaf : An int, the minimal weigth in a node under which it is considered a leaf
+        params max_features : An int, Not used anymore
+        params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
+        params mgroup : An int, the number of group that will be tested to find the best splitting tree
+        params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
+        params random_state : An int, the seed to fix the randomness
+        params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
+        params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
+        params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
+        params bootstrap : A boolean, If true the forest will use the bootstrap method
+        params oob_score : A boolean, If true the forest will compute the out-of-bag score
+        params ib_score : A boolean, If true, the forest will compute the in-bag score
+        params group_importance : Not used.
+        params n_jobs : An int, the number of process, threads that will be used to create the forest
+        params random_state : An int, the seed use to fix the randomness
+        params verbose : An int, If verbose > 0 It will print the stepts of the forest
+        params warm_start : A boolean, Reuse the solution of the previous fit and add more estimators
+        params class_weight : A dict, list of dict, or "balanced", The class associated weights
+        params max_samples : An int, The number of samples to draw from the data to train each estimator
+        params random : A boolean, Remove the randomness in the forest
+        params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+
+        outputs : An instance of RFGVRegressor
+        """
         super().__init__(
             base_estimator=DecisionCARTGVTreeRegressor(),
             n_estimators=n_estimators,
@@ -909,7 +945,12 @@ class RFGVRegressor(RFGVBaseForest, ForestRegressor):
 
     def _set_ib_score(self, X, y):
         """
-        Compute out-of-bag scores."""
+        Compute in-bag scores.
+        params X : An array or matrix, the data used to construct the forest
+        params y : An array or matrix, the responses used to construct the forest
+
+        outputs : A float, the in-bag score of the forest
+        """
         X = check_array(X, dtype=DTYPE, accept_sparse='csr')
 
         n_samples = y.shape[0]

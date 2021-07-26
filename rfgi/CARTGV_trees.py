@@ -91,6 +91,8 @@ class DecisionCARTGVTree(BaseDecisionTree):
         params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
         params class_weight : A dict, list of dict, or "balanced", The class associated weights
         params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+
+        outputs : An instance of DecisionCARTGVTree
         """
         super().__init__(
             criterion=criterion,
@@ -123,6 +125,8 @@ class DecisionCARTGVTree(BaseDecisionTree):
         A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
         params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
         params check_input : A boolean, If true the datas will be checked before the tree construction.
+
+        outputs : None, the tree will be trained
         """
 
         random_state = check_random_state(self.random_state)
@@ -448,6 +452,8 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
         params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
         params class_weight : A dict, list of dict, or "balanced", The class associated weights
         params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+
+        outputs : An instance of DecisionCARTGVTreeClassifier
         """
         super().__init__(
             criterion=criterion,
@@ -479,6 +485,8 @@ class DecisionCARTGVTreeClassifier(DecisionCARTGVTree,DecisionTreeClassifier):
         A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
         params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
         params check_input : A boolean, If true the datas will be checked before the tree construction.
+
+        outputs : None, the tree will be trained
         """
         super().fit(
             X, y,
@@ -531,6 +539,8 @@ class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #Decision
         params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
         params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
         params ccp_alpha : A non-negative float, the complexity parameter used for tree pruning
+
+        outputs : An instance of DecisionCARTGVTreeRegressor
         """
         super().__init__(
             criterion=criterion,
@@ -561,6 +571,8 @@ class DecisionCARTGVTreeRegressor(DecisionCARTGVTree, RegressorMixin): #Decision
        A variable can be in multiple groups. (Example with a X = [[V1,V2,V3]]), groups = [[V1,V2],[V2,V3],[V1]]
        params sample_weight : An array of shape the number of samples or None, The weight of each sample. If None each sample has the same weight
        params check_input : A boolean, If true the datas will be checked before the tree construction.
+
+       outputs : None, the tree will be trained
        """
         super().fit(
             X, y,

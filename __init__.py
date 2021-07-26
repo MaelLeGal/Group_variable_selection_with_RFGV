@@ -1,4 +1,4 @@
-from src import *
+from rfgi import *
 
 # import sys
 # import logging

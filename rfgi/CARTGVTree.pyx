@@ -426,6 +426,8 @@ cdef class CARTGVTree():
           params n_features : an int, the number of variables in the datas
           params n_classes : a numpy ndarray #TODO
           params n_outputs : an int, the number of outputs, the number of dimension of the responses
+
+          outputs : An instance of CARTGVTree
           """
 
           #Enable error tracking
@@ -606,6 +608,8 @@ cdef class CARTGVTree():
         params end : An int, the index at which we end in the samples array to take the correct samples/observations in the node
         params depth : An int, the depth of the node
         params cart_idx : A SIZE_t, the index of the node in the leaves of the splitting tree
+
+        outputs : An int, the id of the node
         """
 
         cdef SIZE_t node_id = self.node_count #The current node id
@@ -660,6 +664,8 @@ cdef class CARTGVTree():
         """
         Predict target for X.
         params X : an object, the data to predict
+
+        outputs : An array, the predictions of the tree
         """
         out = self._get_value_ndarray().take(self.apply(X), axis=0,
                                               mode='clip')
@@ -671,6 +677,8 @@ cdef class CARTGVTree():
         """
         Finds the terminal region (=leaf node) for each sample in X.
         params X : an object, the data for which we want the terminal regions
+
+        outputs : An array, the terminal region (leaf node) of the data to predict.
         """
         if issparse(X):
             return self._apply_sparse_csr(X)
@@ -681,6 +689,8 @@ cdef class CARTGVTree():
         """
         Finds the terminal region (=leaf node) for each sample in X.
         params X : an object, the data for which we want the terminal regions
+
+        outputs : An array, the terminal region (leaf node) of the data to predict.
         """
 
         # Check input
@@ -1022,6 +1032,8 @@ cdef class CARTGVTree():
         """
         Finds the decision path (=node) for each sample in X.
         params X : an object, the data for which we want the decision path
+
+        outputs :
         """
         if issparse(X):
             return self._decision_path_sparse_csr(X)
@@ -1487,6 +1499,8 @@ cdef class CARTGVTreeBuilder():
         params max_depth : An object, the maximal depth at which the tree can grow
         params min_impurity_decrease : A double, the minimal decrease in impurity needed above which the node isn't considerd a leaf
         params min_impurity_split : A double the minimal impurity under which the node is considered a leaf
+
+        outputs : An instance of CARTGVTreeBuilder
         """
         self.splitter = splitter
         self.min_samples_split = min_samples_split
@@ -1705,6 +1719,8 @@ cdef class CARTGVTreeBuilder():
         params X : An object, the data
         params y : a numpy ndarray the responses
         params sample_weight : a numpy ndarray, the weight of each sample
+
+        outputs : A tuples containing the data, the responses and the sample weight
         """
         if issparse(X):
             X = X.tocsc()

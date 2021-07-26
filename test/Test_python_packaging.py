@@ -14,8 +14,8 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 # from CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
 # from RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
 
-from src.rfgi.CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
-from src.rfgi.RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
+from rfgi.CARTGV_trees import DecisionCARTGVTreeClassifier, DecisionCARTGVTreeRegressor
+from rfgi.RFGV import RFGVClassifier, RFGVRegressor, _get_n_samples_bootstrap, _generate_sample_indices, _generate_unsampled_indices
 
 df = pd.read_csv('../data/training.csv', sep=",")
 df_test = pd.read_csv('../data/testing.csv', sep=",")
