@@ -736,7 +736,6 @@ class RFGVClassifier(RFGVBaseForest, ForestClassifier):
         params mvar : An string or array/list, The number of variable that will be used to construct the splitting trees for each group
         params mgroup : An int, the number of group that will be tested to find the best splitting tree
         params pen : A function with one parameter or a string, The penality function on the group size for the impurity calculation
-        params random_state : An int, the seed to fix the randomness
         params max_leaf_nodes : An int, the maximum number of leaf the tree will be restricted to
         params min_impurity_decrease : A float, The value under which the decrease in impurity of a split need to be to split a node
         params min_impurity_split : A float, The minimal value of impurity under which the node is considered a leaf
@@ -746,7 +745,6 @@ class RFGVClassifier(RFGVBaseForest, ForestClassifier):
         params group_importance : Not used.
         params n_jobs : An int, the number of process, threads that will be used to create the forest
         params random_state : An int, the seed use to fix the randomness
-        params verbose : An int, If verbose > ... It will print the stepts of the forest
         params verbose : An int, If verbose > 0 It will print the stepts of the forest
         params warm_start : A boolean, Reuse the solution of the previous fit and add more estimators
         params class_weight : A dict, list of dict, or "balanced", The class associated weights
