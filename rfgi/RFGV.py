@@ -608,13 +608,13 @@ class RFGVBaseForest():
                 #     print("Estimator not pickleable")
                 #     ValueError("Estimator not pickleable")
 
-                start = time.time()
+                # start = time.time()
                 #Launch the function _permutation_importance_Breiman on each group with the oob sample
                 score = Parallel(n_jobs=n_jobs)(delayed(self._permutation_importance_Breiman)(
                     X_oob, y_oob, self.sample_weight, group_idx, estimator.random_state, n_repeats, scorer, estimator
                 ) for group_idx in self.groups)
-                end = time.time()
-                print("Time score  : " + str(end-start))
+                # end = time.time()
+                # print("Time score  : " + str(end-start))
 
                 scores.append(score)
 
